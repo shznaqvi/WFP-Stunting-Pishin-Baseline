@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimaryDark">#311b92</color>
+    <!--<color name="colorPrimaryDark">#1A237E</color> ===== Blue -->
+    <color name="colorPrimary">#9C27B0</color>
+    <color name="colorPrimaryAlpha">#669C27B0</color>
+    <color name="colorAccent">#EA80FC</color>
+    <color name="pink_100">#eabef1</color>
+    <color name="blue_100">#bebee7</color>
+    <color name="purple_100">#9C27B0</color>
+    <color name="colorHeading">#DFB29B</color>
+
+
+    <color name="black">#000000</color>
+    <color name="blackOverlay">#66000000</color>
+    <color name="dullBlack">#000000</color>
+    <color name="grayOverlay">#7f7f7f7f</color>
+    <color name="gray">#7f7f7f</color>
+    <color name="whiteOverlay">#99ffffff</color>
+    <color name="dullWhile">#d6d6d6</color>
+    <color name="dullWhileOverlay">#99d6d6d6</color>
+    <color name="white">#ffffff</color>
+    <color name="colorText">#050505</color>
+
+    <color name="black_overlay">#66000000</color>
+
+    <color name="year">#999999</color>
+    <color name="title">#222222</color>
+    <color name="green">#4caf50</color>
+    <color name="red">#f44336</color>
+</resources>
