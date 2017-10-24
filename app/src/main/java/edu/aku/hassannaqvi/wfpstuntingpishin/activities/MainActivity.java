@@ -28,7 +28,7 @@ import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import edu.aku.hassannaqvi.wfpstuntingpishin.FormsList;
+import edu.aku.hassannaqvi.wfpstuntingpishin.adapClasses.FormsList;
 import edu.aku.hassannaqvi.wfpstuntingpishin.contracts.FormsContract;
 import edu.aku.hassannaqvi.wfpstuntingpishin.core.AndroidDatabaseManager;
 import edu.aku.hassannaqvi.wfpstuntingpishin.core.DatabaseHelper;
@@ -286,31 +286,31 @@ public class MainActivity extends Activity {
     }
 */
     public void openForm4(View v) {
-        Intent iA = new Intent(this, IdentificationActivity.class);
+        Intent iA = new Intent(this, SectionAActivity.class);
         MainApp.formType = "4";
         startActivity(iA);
     }
 
     public void openForm7(View v) {
-        Intent iA = new Intent(this, IdentificationActivity.class);
+        Intent iA = new Intent(this, SectionAActivity.class);
         MainApp.formType = "7";
         startActivity(iA);
     }
 
     public void openForm8(View v) {
-        Intent iA = new Intent(this, IdentificationActivity.class);
+        Intent iA = new Intent(this, SectionAActivity.class);
         MainApp.formType = "8";
         startActivity(iA);
     }
 
     public void openForm9(View v) {
-        Intent iA = new Intent(this, IdentificationActivity.class);
+        Intent iA = new Intent(this, SectionAActivity.class);
         MainApp.formType = "9";
         startActivity(iA);
     }
 
     public void openForm10(View v) {
-        Intent iA = new Intent(this, IdentificationActivity.class);
+        Intent iA = new Intent(this, SectionAActivity.class);
         MainApp.formType = "10";
         startActivity(iA);
     }

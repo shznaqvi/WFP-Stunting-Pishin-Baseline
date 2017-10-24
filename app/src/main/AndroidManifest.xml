@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="edu.aku.hassannaqvi.wfpstuntingpishin">
+    package="edu.aku.hassannaqvi.wfpstuntingpishin">
 
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <!-- Needed only if your app targets Android 5.0 (API level 21) or higher. -->
-    <uses-feature android:name="android.hardware.location.gps"/>
+    <uses-feature android:name="android.hardware.location.gps" />
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-    <uses-permission android:name="android.hardware.location.gps"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.hardware.location.gps" />
 
     <!-- To auto-complete the email text field in the login form with the user's emails -->
-    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
-    <uses-permission android:name="android.permission.READ_PROFILE"/>
-    <uses-permission android:name="android.permission.READ_CONTACTS"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:name=".core.MainApp"
@@ -27,61 +27,46 @@
             android:name=".activities.SplashscreenActivity"
             android:screenOrientation="portrait">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name=".activities.LoginActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.NoActionBar"
-            android:windowSoftInputMode="stateVisible|adjustPan"/>
+            android:windowSoftInputMode="stateVisible|adjustPan" />
         <activity
             android:name=".activities.MainActivity"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustResize|stateHidden"/>
+            android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
             android:name=".core.AndroidDatabaseManager"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustResize|stateHidden"/>
+            android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
             android:name=".activities.EndingActivity"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustResize|stateHidden"/>
-        <activity android:name=".FormsList"/>
-        <activity android:name=".activities.FamilyInformationActivity">
-        </activity>
-        <activity android:name=".activities.SocioeconomicActivity">
-        </activity>
-        <activity android:name=".activities.HandwashingActivity">
-        </activity>
-        <activity android:name=".activities.IncomeSourcesActivity">
-        </activity>
-        <activity android:name=".activities.ExpendituresActivity">
-        </activity>
-        <activity android:name=".activities.AssistanceToInterventionsActivity">
-        </activity>
-        <activity android:name=".activities.KnowledgeAboutMicroActivity">
-        </activity>
-        <activity android:name=".activities.ReproductiveHistoryActivity">
-        </activity>
-        <activity android:name=".activities.WomenAnthropometryActivity">
-        </activity>
-        <activity android:name=".activities.InitiationOfBreastFeedingActivity">
-        </activity>
-        <activity android:name=".activities.IYCFActivity">
-        </activity>
-        <activity android:name=".activities.VaccinationStatusActivity">
-        </activity>
-        <activity android:name=".activities.ChildMorbidityActivity">
-        </activity>
-        <activity android:name=".activities.AccessToHealthServiceActivity">
-        </activity>
-        <activity android:name=".activities.FoodConsumptionActivity">
-        </activity>
-        <activity android:name=".activities.BirthsAndDeathsActivity">
-        </activity>
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity android:name=".adapClasses.FormsList" />
+        <activity android:name=".activities.SectionBActivity"></activity>
+        <activity android:name=".activities.SectionCActivity"></activity>
+        <activity android:name=".activities.SectionDActivity"></activity>
+        <activity android:name=".activities.SectionEActivity"></activity>
+        <activity android:name=".activities.SectionFActivity"></activity>
+        <activity android:name=".activities.SectionGActivity"></activity>
+        <activity android:name=".activities.SectionHActivity"></activity>
+        <activity android:name=".activities.SectionIActivity"></activity>
+        <activity android:name=".activities.SectionJActivity"></activity>
+        <activity android:name=".activities.SectionKAActivity"></activity>
+        <activity android:name=".activities.SectionKBIYCFActivity"></activity>
+        <activity android:name=".activities.SectionLActivity"></activity>
+        <activity android:name=".activities.SectionMActivity"></activity>
+        <activity android:name=".activities.SectionOActivity"></activity>
+        <activity android:name=".activities.SectionPActivity"></activity>
+        <activity android:name=".activities.SectionQActivity"></activity>
+        <activity android:name=".activities.SectionNActivity"></activity>
     </application>
 
 </manifest>
