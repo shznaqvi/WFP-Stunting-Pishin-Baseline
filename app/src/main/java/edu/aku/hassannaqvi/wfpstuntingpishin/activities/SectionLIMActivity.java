@@ -5,12 +5,12 @@ import android.os.Bundle;
 
 import edu.aku.hassannaqvi.wfpstuntingpishin.R;
 
-public class SectionLActivity extends Activity
+public class SectionLIMActivity extends Activity
 {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_section_l);
+        setContentView(R.layout.activity_section_lIM);
     }
 }

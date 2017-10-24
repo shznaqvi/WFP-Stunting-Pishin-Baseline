@@ -366,7 +366,7 @@ public class MainActivity extends Activity {
     }
 
     public void openL(View v) {
-        /*Intent iEnd = new Intent(this, SectionLActivity.class);
+        /*Intent iEnd = new Intent(this, SectionLIMActivity.class);
         startActivity(iEnd);*/
     }
 
