@@ -14,3 +14,4 @@ public class SectionFActivity extends Activity
         setContentView(R.layout.activity_section_f);
     }
 }
+
