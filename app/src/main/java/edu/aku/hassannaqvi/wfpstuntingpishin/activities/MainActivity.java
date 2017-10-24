@@ -292,14 +292,12 @@ public class MainActivity extends Activity {
     }
 
     public void openForm7(View v) {
-        Intent iA = new Intent(this, SectionAActivity.class);
-        MainApp.formType = "7";
+        Intent iA = new Intent(this, SectionLIMActivity.class);
         startActivity(iA);
     }
 
     public void openForm8(View v) {
-        Intent iA = new Intent(this, SectionAActivity.class);
-        MainApp.formType = "8";
+        Intent iA = new Intent(this, SectionLIMActivity.class);
         startActivity(iA);
     }
 
