@@ -61,7 +61,7 @@
         <activity android:name=".activities.SectionJActivity"></activity>
         <activity android:name=".activities.SectionKAActivity"></activity>
         <activity android:name=".activities.SectionKBIYCFActivity"></activity>
-        <activity android:name=".activities.SectionLActivity"></activity>
+        <activity android:name=".activities.SectionLIMActivity"></activity>
         <activity android:name=".activities.SectionMActivity"></activity>
         <activity android:name=".activities.SectionOActivity"></activity>
         <activity android:name=".activities.SectionPActivity"></activity>
