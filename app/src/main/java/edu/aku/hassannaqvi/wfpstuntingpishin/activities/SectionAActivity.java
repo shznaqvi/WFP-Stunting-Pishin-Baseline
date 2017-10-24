@@ -6,8 +6,6 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.view.View;
-import android.widget.CheckBox;
-import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Toast;
@@ -29,10 +27,8 @@ public class SectionAActivity extends Activity {
 
     @BindView(R.id.participant_id)
     EditText participantId;
-    @BindView(R.id.f08a001)
-    EditText f08a001;
-    @BindView(R.id.f08a001999)
-    CheckBox f08a001999;
+
+
     @BindView(R.id.fldGrpF08)
     LinearLayout fldGrpF08;
 
@@ -52,21 +48,9 @@ public class SectionAActivity extends Activity {
             fldGrpF08.setVisibility(View.VISIBLE);
         } else {
             fldGrpF08.setVisibility(View.GONE);
-            f08a001.setText(null);
-            f08a001999.setChecked(false);
+
         }
 
-        f08a001999.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if (b) {
-                    f08a001.setVisibility(View.GONE);
-                    f08a001.setText(null);
-                } else {
-                    f08a001.setVisibility(View.VISIBLE);
-                }
-            }
-        });
 
     }
 
@@ -127,8 +111,6 @@ public class SectionAActivity extends Activity {
 
         JSONObject sInfo = new JSONObject();
 
-        sInfo.put("f08a001", f08a001999.isChecked() ? "999" : f08a001.getText().toString());
-        MainApp.TotalFetusCount = Integer.valueOf(f08a001.getText().toString().isEmpty() ? "0" : f08a001.getText().toString());
 
         if (MainApp.formType.equals("8")) {
             MainApp.fc.setF08(String.valueOf(sInfo));

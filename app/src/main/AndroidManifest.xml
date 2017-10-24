@@ -67,6 +67,7 @@
         <activity android:name=".activities.SectionPActivity"></activity>
         <activity android:name=".activities.SectionQActivity"></activity>
         <activity android:name=".activities.SectionNActivity"></activity>
+        <activity android:name=".activities.SectionAActivity"></activity>
     </application>
 
 </manifest>

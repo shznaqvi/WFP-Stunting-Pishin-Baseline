@@ -1,0 +1,2423 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="edu.aku.hassannaqvi.wfpstuntingpishin.activities.SectionLIMActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:animateLayoutChanges="true"
+        android:layoutDirection="rtl"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginBottom="5dp"
+            android:background="@color/colorPrimary"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="2dp"
+            android:background="@color/colorPrimaryDark"
+            android:gravity="center"
+            android:text="Vaccination Status"
+            android:textSize="30sp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/colorPrimary"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@color/colorPrimary"
+            android:text="@string/spblName"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@android:color/white"/>
+
+        <Spinner
+            android:id="@+id/spblName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"></Spinner>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bacground_border1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/colorHeading"
+                android:gravity="center"
+                android:text="@string/atbirth"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                tools:typeface="serif"/>
+
+            <android.support.v4.widget.NestedScrollView
+                android:id="@+id/scbirth"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fillViewport="false"
+                android:scrollbars="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bacground_border"
+                        android:orientation="vertical">
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:text="@string/bcg"
+                            android:textAlignment="center"/>
+
+
+                        <android.support.v4.widget.NestedScrollView
+                            android:id="@+id/sc1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fillViewport="false"
+                            android:padding="10dp"
+                            android:scrollbars="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:weightSum="100">
+
+                                    <LinearLayout
+                                        android:id="@+id/fldGrpBcgM"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="50"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="5dp"
+                                            android:background="#efefef"
+                                            android:gravity="center"
+                                            android:text="@string/recall"
+                                            android:textColor="@color/colorPrimaryDark"
+                                            android:textStyle="bold"/>
+
+                                        <RadioGroup
+                                            android:id="@+id/bcgM"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="horizontal">
+
+                                            <RadioButton
+                                                android:id="@+id/bcgM01"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginLeft="1dp"
+                                                android:layout_marginTop="1dp"
+                                                android:layout_weight="1"
+                                                android:text="@string/yes"/>
+
+                                            <RadioButton
+                                                android:id="@+id/bcgM02"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginTop="1dp"
+                                                android:layout_weight="1"
+                                                android:text="@string/no"/>
+
+                                        </RadioGroup>
+
+
+                                    </LinearLayout>
+
+                                    <View
+                                        android:layout_width="3dp"
+                                        android:layout_height="match_parent"
+                                        android:background="@color/colorPrimaryDark"></View>
+
+
+                                    <LinearLayout
+                                        android:id="@+id/fldGrpBcgC"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="50"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="5dp"
+                                            android:background="#efefef"
+                                            android:text="@string/card"
+                                            android:textAlignment="center"
+                                            android:textColor="@color/colorPrimaryDark"
+                                            android:textStyle="bold"/>
+
+                                        <RadioGroup
+                                            android:id="@+id/bcgC"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="horizontal">
+
+                                            <RadioButton
+                                                android:id="@+id/bcgC01"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginLeft="1dp"
+                                                android:layout_marginTop="1dp"
+                                                android:layout_weight="1"
+                                                android:text="@string/yes"/>
+
+                                            <RadioButton
+                                                android:id="@+id/bcgC02"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginTop="1dp"
+                                                android:layout_weight="1"
+                                                android:text="@string/no"/>
+
+                                        </RadioGroup>
+
+
+                                    </LinearLayout>
+
+
+                                </LinearLayout>
+
+
+                            </LinearLayout>
+
+                        </android.support.v4.widget.NestedScrollView>
+
+
+                        <!--- Closing tag of internal Linear Layout-->
+                        <!-- Closing tag of Scroll view-->
+
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/bacground_border"
+                        android:orientation="vertical"
+                        android:padding="8px">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:text="@string/opv0"
+                            android:textAlignment="center"/>
+
+                        <!-- Scrollview-->
+
+                        <android.support.v4.widget.NestedScrollView
+                            android:id="@+id/sc2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fillViewport="false"
+                            android:padding="10dp"
+                            android:scrollbars="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:weightSum="100">
+
+                                    <LinearLayout
+                                        android:id="@+id/fldGrpOpv0M"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="50"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="5dp"
+                                            android:background="#efefef"
+                                            android:gravity="center"
+                                            android:text="@string/recall"
+                                            android:textColor="@color/colorPrimaryDark"
+                                            android:textStyle="bold"/>
+
+                                        <RadioGroup
+                                            android:id="@+id/opv0M"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="horizontal">
+
+                                            <RadioButton
+                                                android:id="@+id/opv0M01"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginLeft="1dp"
+                                                android:layout_marginTop="1dp"
+                                                android:layout_weight="1"
+                                                android:text="@string/yes"/>
+
+                                            <RadioButton
+                                                android:id="@+id/opv0M02"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginTop="1dp"
+                                                android:layout_weight="1"
+                                                android:text="@string/no"/>
+
+                                        </RadioGroup>
+
+
+                                    </LinearLayout>
+
+                                    <View
+                                        android:layout_width="3dp"
+                                        android:layout_height="match_parent"
+                                        android:background="@color/colorPrimaryDark"></View>
+
+
+                                    <LinearLayout
+                                        android:id="@+id/fldGrpopv0C"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="50"
+                                        android:orientation="vertical"
+                                        android:visibility="visible">
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="5dp"
+                                            android:background="#efefef"
+                                            android:text="@string/card"
+                                            android:textAlignment="center"
+                                            android:textColor="@color/colorPrimaryDark"
+                                            android:textStyle="bold"/>
+
+                                        <RadioGroup
+                                            android:id="@+id/opv0C"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="horizontal">
+
+                                            <RadioButton
+                                                android:id="@+id/opv0C01"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginLeft="1dp"
+                                                android:layout_marginTop="1dp"
+                                                android:layout_weight="1"
+                                                android:text="@string/yes"/>
+
+                                            <RadioButton
+                                                android:id="@+id/opv0C02"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginTop="1dp"
+                                                android:layout_weight="1"
+                                                android:text="@string/no"/>
+
+                                        </RadioGroup>
+
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+
+                                <!--End of OPV0-->
+
+                            </LinearLayout>
+                        </android.support.v4.widget.NestedScrollView>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </android.support.v4.widget.NestedScrollView>
+
+        </LinearLayout>
+
+        <!-- Second Group at 6 weeks-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bacground_border1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/colorHeading"
+                android:gravity="center"
+                android:text="@string/at6weeks"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                tools:typeface="serif"/>
+
+            <android.support.v4.widget.NestedScrollView
+                android:id="@+id/sc6wks"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fillViewport="true"
+                android:scrollbars="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bacground_border"
+                        android:orientation="vertical"
+                        android:padding="8px">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:text="@string/opv1"
+                            android:textAlignment="center"/>
+
+                        <android.support.v4.widget.NestedScrollView
+                            android:id="@+id/sc3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fillViewport="false"
+                            android:scrollbars="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:weightSum="100">
+
+                                    <LinearLayout
+                                        android:id="@+id/fldGrpopv1M"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="50"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="5dp"
+                                            android:background="#efefef"
+                                            android:gravity="center"
+                                            android:text="@string/recall"
+                                            android:textColor="@color/colorPrimaryDark"
+                                            android:textStyle="bold"/>
+
+                                        <RadioGroup
+                                            android:id="@+id/opv1M"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="horizontal">
+
+                                            <RadioButton
+                                                android:id="@+id/opv1M01"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginLeft="1dp"
+                                                android:layout_marginTop="1dp"
+                                                android:layout_weight="1"
+                                                android:text="@string/yes"/>
+
+                                            <RadioButton
+                                                android:id="@+id/opv1M02"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginTop="1dp"
+                                                android:layout_weight="1"
+                                                android:text="@string/no"/>
+
+                                        </RadioGroup>
+
+
+                                    </LinearLayout>
+
+                                    <View
+                                        android:layout_width="3dp"
+                                        android:layout_height="match_parent"
+                                        android:background="@color/colorPrimaryDark"></View>
+
+
+                                    <LinearLayout
+                                        android:id="@+id/fldGrpopv1C"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="50"
+                                        android:orientation="vertical"
+                                        android:visibility="visible">
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="5dp"
+                                            android:background="#efefef"
+                                            android:text="@string/card"
+                                            android:textAlignment="center"
+                                            android:textColor="@color/colorPrimaryDark"
+                                            android:textStyle="bold"/>
+
+                                        <RadioGroup
+                                            android:id="@+id/opv1C"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="horizontal">
+
+                                            <RadioButton
+                                                android:id="@+id/opv1C01"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginLeft="1dp"
+                                                android:layout_marginTop="1dp"
+                                                android:layout_weight="1"
+                                                android:text="@string/yes"/>
+
+                                            <RadioButton
+                                                android:id="@+id/opv1C02"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginTop="1dp"
+                                                android:layout_weight="1"
+                                                android:text="@string/no"/>
+
+                                        </RadioGroup>
+
+
+                                    </LinearLayout>
+
+
+                                </LinearLayout>
+
+
+                            </LinearLayout>
+                        </android.support.v4.widget.NestedScrollView>
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/bacground_border"
+                        android:orientation="vertical"
+                        android:padding="8px">
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:text="@string/penta1"
+                            android:textAlignment="center"/>
+
+                        <android.support.v4.widget.NestedScrollView
+                            android:id="@+id/sc4"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fillViewport="false"
+                            android:scrollbars="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:weightSum="100">
+
+                                    <LinearLayout
+                                        android:id="@+id/fldGrpPenta1M"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="50"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="5dp"
+                                            android:background="#efefef"
+                                            android:gravity="center"
+                                            android:text="@string/recall"
+                                            android:textColor="@color/colorPrimaryDark"
+                                            android:textStyle="bold"/>
+
+                                        <RadioGroup
+                                            android:id="@+id/penta1M"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="horizontal">
+
+                                            <RadioButton
+                                                android:id="@+id/penta1M01"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginLeft="1dp"
+                                                android:layout_marginTop="1dp"
+                                                android:layout_weight="1"
+                                                android:text="@string/yes"/>
+
+                                            <RadioButton
+                                                android:id="@+id/Penta1M02"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginTop="1dp"
+                                                android:layout_weight="1"
+                                                android:text="@string/no"/>
+
+                                        </RadioGroup>
+
+
+                                    </LinearLayout>
+
+                                    <View
+                                        android:layout_width="3dp"
+                                        android:layout_height="match_parent"
+                                        android:background="@color/colorPrimaryDark"></View>
+
+
+                                    <LinearLayout
+                                        android:id="@+id/fldGrpPenta1C"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="50"
+                                        android:orientation="vertical"
+                                        android:visibility="visible">
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="5dp"
+                                            android:background="#efefef"
+                                            android:text="@string/card"
+                                            android:textAlignment="center"
+                                            android:textColor="@color/colorPrimaryDark"
+                                            android:textStyle="bold"/>
+
+                                        <RadioGroup
+                                            android:id="@+id/penta1C"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="horizontal">
+
+                                            <RadioButton
+                                                android:id="@+id/penta1C01"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginLeft="1dp"
+                                                android:layout_marginTop="1dp"
+                                                android:layout_weight="1"
+                                                android:text="@string/yes"/>
+
+                                            <RadioButton
+                                                android:id="@+id/penta1C02"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginTop="1dp"
+                                                android:layout_weight="1"
+                                                android:text="@string/no"/>
+
+                                        </RadioGroup>
+
+
+                                    </LinearLayout>
+
+
+                                </LinearLayout>
+
+
+                            </LinearLayout>
+                        </android.support.v4.widget.NestedScrollView>
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/bacground_border"
+                        android:orientation="vertical"
+                        android:padding="8px">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:text="@string/pneumo1"
+                            android:textAlignment="center"/>
+
+                        <android.support.v4.widget.NestedScrollView
+                            android:id="@+id/sc5"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fillViewport="false"
+                            android:scrollbars="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:weightSum="100">
+
+                                    <LinearLayout
+                                        android:id="@+id/fldGrppneumo1M"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="50"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="5dp"
+                                            android:background="#efefef"
+                                            android:gravity="center"
+                                            android:text="@string/recall"
+                                            android:textColor="@color/colorPrimaryDark"
+                                            android:textStyle="bold"/>
+
+                                        <RadioGroup
+                                            android:id="@+id/pneumo1M"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="horizontal">
+
+                                            <RadioButton
+                                                android:id="@+id/pneumo1M01"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginLeft="1dp"
+                                                android:layout_marginTop="1dp"
+                                                android:layout_weight="1"
+                                                android:text="@string/yes"/>
+
+                                            <RadioButton
+                                                android:id="@+id/pneumo1M02"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginTop="1dp"
+                                                android:layout_weight="1"
+                                                android:text="@string/no"/>
+
+                                        </RadioGroup>
+
+
+                                    </LinearLayout>
+
+                                    <View
+                                        android:layout_width="3dp"
+                                        android:layout_height="match_parent"
+                                        android:background="@color/colorPrimaryDark"></View>
+
+
+                                    <LinearLayout
+                                        android:id="@+id/fldGrppneumo1C"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="50"
+                                        android:orientation="vertical"
+                                        android:visibility="visible">
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="5dp"
+                                            android:background="#efefef"
+                                            android:text="@string/card"
+                                            android:textAlignment="center"
+                                            android:textColor="@color/colorPrimaryDark"
+                                            android:textStyle="bold"/>
+
+                                        <RadioGroup
+                                            android:id="@+id/pneumo1C"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="horizontal">
+
+                                            <RadioButton
+                                                android:id="@+id/pneumo1C01"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginLeft="1dp"
+                                                android:layout_marginTop="1dp"
+                                                android:layout_weight="1"
+                                                android:text="@string/yes"/>
+
+                                            <RadioButton
+                                                android:id="@+id/pneumo1C02"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginTop="1dp"
+                                                android:layout_weight="1"
+                                                android:text="@string/no"/>
+
+                                        </RadioGroup>
+
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+
+                            </LinearLayout>
+                        </android.support.v4.widget.NestedScrollView>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </android.support.v4.widget.NestedScrollView>
+
+
+        </LinearLayout>
+
+
+        <!-- 3rd Group at 10 weeks-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bacground_border1"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/colorHeading"
+                android:gravity="center"
+                android:text="@string/at10weeks"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                tools:typeface="serif"/>
+
+
+            <android.support.v4.widget.NestedScrollView
+                android:id="@+id/sc10wks"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fillViewport="false"
+                android:scrollbars="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bacground_border"
+                        android:orientation="vertical"
+                        android:padding="8px">
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:text="@string/opv2"
+                            android:textAlignment="center"/>
+
+                        <android.support.v4.widget.NestedScrollView
+                            android:id="@+id/sc6"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fillViewport="false"
+                            android:scrollbars="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:weightSum="100">
+
+                                    <LinearLayout
+                                        android:id="@+id/fldGrpopv2M"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="50"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="5dp"
+                                            android:background="#efefef"
+                                            android:gravity="center"
+                                            android:text="@string/recall"
+                                            android:textColor="@color/colorPrimaryDark"
+                                            android:textStyle="bold"/>
+
+                                        <RadioGroup
+                                            android:id="@+id/opv2M"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="horizontal">
+
+                                            <RadioButton
+                                                android:id="@+id/opv2M01"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginLeft="1dp"
+                                                android:layout_marginTop="1dp"
+                                                android:layout_weight="1"
+                                                android:text="@string/yes"/>
+
+                                            <RadioButton
+                                                android:id="@+id/opv2M02"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginTop="1dp"
+                                                android:layout_weight="1"
+                                                android:text="@string/no"/>
+
+                                        </RadioGroup>
+
+
+                                    </LinearLayout>
+
+                                    <View
+                                        android:layout_width="3dp"
+                                        android:layout_height="match_parent"
+                                        android:background="@color/colorPrimaryDark"></View>
+
+
+                                    <LinearLayout
+                                        android:id="@+id/fldGrpopv2C"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="50"
+                                        android:orientation="vertical"
+                                        android:visibility="visible">
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="5dp"
+                                            android:background="#efefef"
+                                            android:text="@string/card"
+                                            android:textAlignment="center"
+                                            android:textColor="@color/colorPrimaryDark"
+                                            android:textStyle="bold"/>
+
+                                        <RadioGroup
+                                            android:id="@+id/opv2C"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="horizontal">
+
+                                            <RadioButton
+                                                android:id="@+id/opv2C01"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginLeft="1dp"
+                                                android:layout_marginTop="1dp"
+                                                android:layout_weight="1"
+                                                android:text="@string/yes"/>
+
+                                            <RadioButton
+                                                android:id="@+id/opv2C02"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginTop="1dp"
+                                                android:layout_weight="1"
+                                                android:text="@string/no"/>
+
+                                        </RadioGroup>
+
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+
+                            </LinearLayout>
+                        </android.support.v4.widget.NestedScrollView>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/bacground_border"
+                        android:orientation="vertical"
+                        android:padding="8px">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:text="@string/penta2"
+                            android:textAlignment="center"/>
+
+                        <android.support.v4.widget.NestedScrollView
+                            android:id="@+id/sc7"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fillViewport="false"
+                            android:scrollbars="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:weightSum="100">
+
+                                    <LinearLayout
+                                        android:id="@+id/fldGrppenta2M"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="50"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="5dp"
+                                            android:background="#efefef"
+                                            android:gravity="center"
+                                            android:text="@string/recall"
+                                            android:textColor="@color/colorPrimaryDark"
+                                            android:textStyle="bold"/>
+
+                                        <RadioGroup
+                                            android:id="@+id/penta2M"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="horizontal">
+
+                                            <RadioButton
+                                                android:id="@+id/penta2M01"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginLeft="1dp"
+                                                android:layout_marginTop="1dp"
+                                                android:layout_weight="1"
+                                                android:text="@string/yes"/>
+
+                                            <RadioButton
+                                                android:id="@+id/penta2M02"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginTop="1dp"
+                                                android:layout_weight="1"
+                                                android:text="@string/no"/>
+
+                                        </RadioGroup>
+
+
+                                    </LinearLayout>
+
+                                    <View
+                                        android:layout_width="3dp"
+                                        android:layout_height="match_parent"
+                                        android:background="@color/colorPrimaryDark"></View>
+
+
+                                    <LinearLayout
+                                        android:id="@+id/fldGrppenta2C"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="50"
+                                        android:orientation="vertical"
+                                        android:visibility="visible">
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="5dp"
+                                            android:background="#efefef"
+                                            android:text="@string/card"
+                                            android:textAlignment="center"
+                                            android:textColor="@color/colorPrimaryDark"
+                                            android:textStyle="bold"/>
+
+                                        <RadioGroup
+                                            android:id="@+id/penta2C"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="horizontal">
+
+                                            <RadioButton
+                                                android:id="@+id/penta2C01"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginLeft="1dp"
+                                                android:layout_marginTop="1dp"
+                                                android:layout_weight="1"
+                                                android:text="@string/yes"/>
+
+                                            <RadioButton
+                                                android:id="@+id/penta2C02"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginTop="1dp"
+                                                android:layout_weight="1"
+                                                android:text="@string/no"/>
+
+                                        </RadioGroup>
+
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+
+                            </LinearLayout>
+                        </android.support.v4.widget.NestedScrollView>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/bacground_border"
+                        android:orientation="vertical"
+                        android:padding="8px">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:text="@string/pneumo2"
+                            android:textAlignment="center"/>
+
+                        <android.support.v4.widget.NestedScrollView
+                            android:id="@+id/sc8"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fillViewport="false"
+                            android:scrollbars="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:weightSum="100">
+
+                                    <LinearLayout
+                                        android:id="@+id/fldGrppneumo2M"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="50"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="5dp"
+                                            android:background="#efefef"
+                                            android:gravity="center"
+                                            android:text="@string/recall"
+                                            android:textColor="@color/colorPrimaryDark"
+                                            android:textStyle="bold"/>
+
+                                        <RadioGroup
+                                            android:id="@+id/pneumo2M"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="horizontal">
+
+                                            <RadioButton
+                                                android:id="@+id/pneumo2M01"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginLeft="1dp"
+                                                android:layout_marginTop="1dp"
+                                                android:layout_weight="1"
+                                                android:text="@string/yes"/>
+
+                                            <RadioButton
+                                                android:id="@+id/pneumo2M02"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginTop="1dp"
+                                                android:layout_weight="1"
+                                                android:text="@string/no"/>
+
+                                        </RadioGroup>
+
+
+                                    </LinearLayout>
+
+                                    <View
+                                        android:layout_width="3dp"
+                                        android:layout_height="match_parent"
+                                        android:background="@color/colorPrimaryDark"></View>
+
+
+                                    <LinearLayout
+                                        android:id="@+id/fldGrppneumo2C"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="50"
+                                        android:orientation="vertical"
+                                        android:visibility="visible">
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="5dp"
+                                            android:background="#efefef"
+                                            android:text="@string/card"
+                                            android:textAlignment="center"
+                                            android:textColor="@color/colorPrimaryDark"
+                                            android:textStyle="bold"/>
+
+                                        <RadioGroup
+                                            android:id="@+id/pneumo2C"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="horizontal">
+
+                                            <RadioButton
+                                                android:id="@+id/pneumo2C01"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginLeft="1dp"
+                                                android:layout_marginTop="1dp"
+                                                android:layout_weight="1"
+                                                android:text="@string/yes"/>
+
+                                            <RadioButton
+                                                android:id="@+id/pneumo2C02"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginTop="1dp"
+                                                android:layout_weight="1"
+                                                android:text="@string/no"/>
+
+                                        </RadioGroup>
+
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+
+                            </LinearLayout>
+                        </android.support.v4.widget.NestedScrollView>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </android.support.v4.widget.NestedScrollView>
+        </LinearLayout>
+
+        <!--4th group at 14 weeks-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bacground_border1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/colorHeading"
+                android:gravity="center"
+                android:text="@string/at14weeks"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                tools:typeface="serif"/>
+
+            <android.support.v4.widget.NestedScrollView
+                android:id="@+id/sc14wks"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fillViewport="false"
+                android:scrollbars="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bacground_border"
+                        android:orientation="vertical"
+                        android:padding="8px">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:text="@string/opv3"
+                            android:textAlignment="center"/>
+
+                        <android.support.v4.widget.NestedScrollView
+                            android:id="@+id/sc9"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fillViewport="false"
+                            android:scrollbars="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:weightSum="100">
+
+                                    <LinearLayout
+                                        android:id="@+id/fldGrpopv3M"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="50"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="5dp"
+                                            android:background="#efefef"
+                                            android:gravity="center"
+                                            android:text="@string/recall"
+                                            android:textColor="@color/colorPrimaryDark"
+                                            android:textStyle="bold"/>
+
+                                        <RadioGroup
+                                            android:id="@+id/opv3M"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="horizontal">
+
+                                            <RadioButton
+                                                android:id="@+id/opv3M01"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginBottom="1dp"
+                                                android:layout_marginLeft="1dp"
+                                                android:layout_weight="1"
+                                                android:text="@string/yes"/>
+
+                                            <RadioButton
+                                                android:id="@+id/opv3M02"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginBottom="1dp"
+                                                android:layout_weight="1"
+                                                android:text="@string/no"/>
+
+                                        </RadioGroup>
+
+
+                                    </LinearLayout>
+
+                                    <View
+                                        android:layout_width="3dp"
+                                        android:layout_height="match_parent"
+                                        android:background="@color/colorPrimaryDark"></View>
+
+
+                                    <LinearLayout
+                                        android:id="@+id/fldGrpopv3C"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="50"
+                                        android:orientation="vertical"
+                                        android:visibility="visible">
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="5dp"
+                                            android:background="#efefef"
+                                            android:text="@string/card"
+                                            android:textAlignment="center"
+                                            android:textColor="@color/colorPrimaryDark"
+                                            android:textStyle="bold"/>
+
+                                        <RadioGroup
+                                            android:id="@+id/opv3C"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="horizontal">
+
+                                            <RadioButton
+                                                android:id="@+id/opv3C01"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginBottom="1dp"
+                                                android:layout_marginLeft="1dp"
+                                                android:layout_weight="1"
+                                                android:text="@string/yes"/>
+
+                                            <RadioButton
+                                                android:id="@+id/opv3C02"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginBottom="1dp"
+                                                android:layout_weight="1"
+                                                android:text="@string/no"/>
+
+                                        </RadioGroup>
+
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+
+                            </LinearLayout>
+                        </android.support.v4.widget.NestedScrollView>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/bacground_border"
+                        android:orientation="vertical"
+                        android:padding="8px">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:text="@string/penta3"
+                            android:textAlignment="center"/>
+
+                        <android.support.v4.widget.NestedScrollView
+                            android:id="@+id/sc10"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fillViewport="false"
+                            android:scrollbars="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:weightSum="100">
+
+                                    <LinearLayout
+                                        android:id="@+id/fldGrpPenta3M"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="50"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="5dp"
+                                            android:background="#efefef"
+                                            android:gravity="center"
+                                            android:text="@string/recall"
+                                            android:textColor="@color/colorPrimaryDark"
+                                            android:textStyle="bold"/>
+
+                                        <RadioGroup
+                                            android:id="@+id/penta3M"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="horizontal">
+
+                                            <RadioButton
+                                                android:id="@+id/penta3M01"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginBottom="1dp"
+                                                android:layout_marginLeft="1dp"
+                                                android:layout_weight="1"
+                                                android:text="@string/yes"/>
+
+                                            <RadioButton
+                                                android:id="@+id/penta3M02"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginBottom="1dp"
+                                                android:layout_weight="1"
+                                                android:text="@string/no"/>
+
+                                        </RadioGroup>
+
+
+                                    </LinearLayout>
+
+                                    <View
+                                        android:layout_width="3dp"
+                                        android:layout_height="match_parent"
+                                        android:background="@color/colorPrimaryDark"></View>
+
+
+                                    <LinearLayout
+                                        android:id="@+id/fldGrpenta3C"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="50"
+                                        android:orientation="vertical"
+                                        android:visibility="visible">
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="5dp"
+                                            android:background="#efefef"
+                                            android:text="@string/card"
+                                            android:textAlignment="center"
+                                            android:textColor="@color/colorPrimaryDark"
+                                            android:textStyle="bold"/>
+
+                                        <RadioGroup
+                                            android:id="@+id/penta3C"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="horizontal">
+
+                                            <RadioButton
+                                                android:id="@+id/penta3C01"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginBottom="1dp"
+                                                android:layout_marginLeft="1dp"
+                                                android:layout_weight="1"
+                                                android:text="@string/yes"/>
+
+                                            <RadioButton
+                                                android:id="@+id/penta3C02"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginBottom="1dp"
+                                                android:layout_weight="1"
+                                                android:text="@string/no"/>
+
+                                        </RadioGroup>
+
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+
+                            </LinearLayout>
+                        </android.support.v4.widget.NestedScrollView>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/bacground_border"
+                        android:orientation="vertical"
+                        android:padding="8px">
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:text="@string/pneumo3"
+                            android:textAlignment="center"/>
+
+                        <android.support.v4.widget.NestedScrollView
+                            android:id="@+id/sc11"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fillViewport="false"
+                            android:scrollbars="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:weightSum="100">
+
+                                    <LinearLayout
+                                        android:id="@+id/fldGrppneumo3M"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="50"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="5dp"
+                                            android:background="#efefef"
+                                            android:gravity="center"
+                                            android:text="@string/recall"
+                                            android:textColor="@color/colorPrimaryDark"
+                                            android:textStyle="bold"/>
+
+                                        <RadioGroup
+                                            android:id="@+id/pneumo3M"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="horizontal">
+
+                                            <RadioButton
+                                                android:id="@+id/pneumo3M01"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginBottom="1dp"
+                                                android:layout_marginLeft="1dp"
+                                                android:layout_weight="1"
+                                                android:text="@string/yes"/>
+
+                                            <RadioButton
+                                                android:id="@+id/pneumo3M02"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginBottom="1dp"
+                                                android:layout_weight="1"
+                                                android:text="@string/no"/>
+
+                                        </RadioGroup>
+
+
+                                    </LinearLayout>
+
+                                    <View
+                                        android:layout_width="3dp"
+                                        android:layout_height="match_parent"
+                                        android:background="@color/colorPrimaryDark"></View>
+
+
+                                    <LinearLayout
+                                        android:id="@+id/fldGrppneumo3C"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="50"
+                                        android:orientation="vertical"
+                                        android:visibility="visible">
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="5dp"
+                                            android:background="#efefef"
+                                            android:text="@string/card"
+                                            android:textAlignment="center"
+                                            android:textColor="@color/colorPrimaryDark"
+                                            android:textStyle="bold"/>
+
+                                        <RadioGroup
+                                            android:id="@+id/pneumo3C"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="horizontal">
+
+                                            <RadioButton
+                                                android:id="@+id/pneumo3C01"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginBottom="1dp"
+                                                android:layout_marginLeft="1dp"
+                                                android:layout_weight="1"
+                                                android:text="@string/yes"/>
+
+                                            <RadioButton
+                                                android:id="@+id/pneumo3C02"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginBottom="1dp"
+                                                android:layout_weight="1"
+                                                android:text="@string/no"/>
+
+                                        </RadioGroup>
+
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+
+                            </LinearLayout>
+                        </android.support.v4.widget.NestedScrollView>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/bacground_border"
+                        android:orientation="vertical"
+                        android:padding="8px">
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:text="@string/ipv"
+                            android:textAlignment="center"/>
+
+                        <android.support.v4.widget.NestedScrollView
+                            android:id="@+id/sc12"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fillViewport="false"
+                            android:scrollbars="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:weightSum="100">
+
+                                    <LinearLayout
+                                        android:id="@+id/fldGrpipvM"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="50"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="5dp"
+                                            android:background="#efefef"
+                                            android:gravity="center"
+                                            android:text="@string/recall"
+                                            android:textColor="@color/colorPrimaryDark"
+                                            android:textStyle="bold"/>
+
+                                        <RadioGroup
+                                            android:id="@+id/ipvM"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="horizontal">
+
+                                            <RadioButton
+                                                android:id="@+id/ipvM01"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginBottom="1dp"
+                                                android:layout_marginLeft="1dp"
+                                                android:layout_weight="1"
+                                                android:text="@string/yes"/>
+
+                                            <RadioButton
+                                                android:id="@+id/ipvM02"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginBottom="1dp"
+                                                android:layout_weight="1"
+                                                android:text="@string/no"/>
+
+                                        </RadioGroup>
+
+
+                                    </LinearLayout>
+
+                                    <View
+                                        android:layout_width="3dp"
+                                        android:layout_height="match_parent"
+                                        android:background="@color/colorPrimaryDark"></View>
+
+
+                                    <LinearLayout
+                                        android:id="@+id/fldGrpipvC"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="50"
+                                        android:orientation="vertical"
+                                        android:visibility="visible">
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="5dp"
+                                            android:background="#efefef"
+                                            android:text="@string/card"
+                                            android:textAlignment="center"
+                                            android:textColor="@color/colorPrimaryDark"
+                                            android:textStyle="bold"/>
+
+                                        <RadioGroup
+                                            android:id="@+id/ipvC"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="horizontal">
+
+                                            <RadioButton
+                                                android:id="@+id/ipvC01"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginBottom="1dp"
+                                                android:layout_marginLeft="1dp"
+                                                android:layout_weight="1"
+                                                android:text="@string/yes"/>
+
+                                            <RadioButton
+                                                android:id="@+id/ipvC02"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginBottom="1dp"
+                                                android:layout_weight="1"
+                                                android:text="@string/no"/>
+
+                                        </RadioGroup>
+
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+
+                            </LinearLayout>
+                        </android.support.v4.widget.NestedScrollView>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </android.support.v4.widget.NestedScrollView>
+        </LinearLayout>
+
+        <!-- 5th Group at 9 months-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bacground_border1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/colorHeading"
+                android:gravity="center"
+                android:text="@string/at9month"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                tools:typeface="serif"/>
+
+            <android.support.v4.widget.NestedScrollView
+                android:id="@+id/sc9M"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fillViewport="false"
+                android:scrollbars="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bacground_border"
+                        android:orientation="vertical"
+                        android:padding="8px">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:text="@string/measles1"
+                            android:textAlignment="center"/>
+
+                        <android.support.v4.widget.NestedScrollView
+                            android:id="@+id/sc13"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fillViewport="false"
+                            android:scrollbars="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:weightSum="100">
+
+                                    <LinearLayout
+                                        android:id="@+id/fldGrpMeasles1M"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="50"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="5dp"
+                                            android:background="#efefef"
+                                            android:gravity="center"
+                                            android:text="@string/recall"
+                                            android:textColor="@color/colorPrimaryDark"
+                                            android:textStyle="bold"/>
+
+                                        <RadioGroup
+                                            android:id="@+id/measles1M"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="horizontal">
+
+                                            <RadioButton
+                                                android:id="@+id/measles1M01"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginBottom="1dp"
+                                                android:layout_marginLeft="1dp"
+                                                android:layout_weight="1"
+                                                android:text="@string/yes"/>
+
+                                            <RadioButton
+                                                android:id="@+id/measles1M02"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginBottom="1dp"
+                                                android:layout_weight="1"
+                                                android:text="@string/no"/>
+
+                                        </RadioGroup>
+
+
+                                    </LinearLayout>
+
+                                    <View
+                                        android:layout_width="3dp"
+                                        android:layout_height="match_parent"
+                                        android:background="@color/colorPrimaryDark"></View>
+
+
+                                    <LinearLayout
+                                        android:id="@+id/fldGrpmeasles1C"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="50"
+                                        android:orientation="vertical"
+                                        android:visibility="visible">
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="5dp"
+                                            android:background="#efefef"
+                                            android:text="@string/card"
+                                            android:textAlignment="center"
+                                            android:textColor="@color/colorPrimaryDark"
+                                            android:textStyle="bold"/>
+
+                                        <RadioGroup
+                                            android:id="@+id/measles1C"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="horizontal">
+
+                                            <RadioButton
+                                                android:id="@+id/measles1C01"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginBottom="1dp"
+                                                android:layout_marginLeft="1dp"
+                                                android:layout_weight="1"
+                                                android:text="@string/yes"/>
+
+                                            <RadioButton
+                                                android:id="@+id/measles1C02"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginBottom="1dp"
+                                                android:layout_weight="1"
+                                                android:text="@string/no"/>
+
+                                        </RadioGroup>
+
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+
+                            </LinearLayout>
+                        </android.support.v4.widget.NestedScrollView>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </android.support.v4.widget.NestedScrollView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bacground_border1"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/colorHeading"
+                android:gravity="center"
+                android:text="@string/at15month"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                tools:typeface="serif"/>
+
+            <android.support.v4.widget.NestedScrollView
+                android:id="@+id/sc15M"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fillViewport="false"
+                android:scrollbars="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bacground_border"
+                        android:orientation="vertical"
+                        android:padding="8px">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:text="@string/measles2"
+                            android:textAlignment="center"/>
+
+                        <android.support.v4.widget.NestedScrollView
+                            android:id="@+id/sc14"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fillViewport="false"
+                            android:scrollbars="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:weightSum="100">
+
+                                    <LinearLayout
+                                        android:id="@+id/fldGrpMeasles2M"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="50"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="5dp"
+                                            android:background="#efefef"
+                                            android:gravity="center"
+                                            android:text="@string/recall"
+                                            android:textColor="@color/colorPrimaryDark"
+                                            android:textStyle="bold"/>
+
+                                        <RadioGroup
+                                            android:id="@+id/measles2M"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="horizontal">
+
+                                            <RadioButton
+                                                android:id="@+id/measles2M01"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginBottom="1dp"
+                                                android:layout_marginLeft="1dp"
+                                                android:layout_weight="1"
+                                                android:text="@string/yes"/>
+
+                                            <RadioButton
+                                                android:id="@+id/measles2M02"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginBottom="1dp"
+                                                android:layout_weight="1"
+                                                android:text="@string/no"/>
+
+                                        </RadioGroup>
+
+
+                                    </LinearLayout>
+
+                                    <View
+                                        android:layout_width="3dp"
+                                        android:layout_height="match_parent"
+                                        android:background="@color/colorPrimaryDark"></View>
+
+
+                                    <LinearLayout
+                                        android:id="@+id/fldGrpmeasles2C"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="50"
+                                        android:orientation="vertical"
+                                        android:visibility="visible">
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="5dp"
+                                            android:background="#efefef"
+                                            android:text="@string/card"
+                                            android:textAlignment="center"
+                                            android:textColor="@color/colorPrimaryDark"
+                                            android:textStyle="bold"/>
+
+                                        <RadioGroup
+                                            android:id="@+id/measles2C"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="horizontal">
+
+                                            <RadioButton
+                                                android:id="@+id/measles2C01"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginBottom="1dp"
+                                                android:layout_marginLeft="1dp"
+                                                android:layout_weight="1"
+                                                android:text="@string/yes"/>
+
+                                            <RadioButton
+                                                android:id="@+id/measles2C02"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginBottom="1dp"
+                                                android:layout_weight="1"
+                                                android:text="@string/no"/>
+
+                                        </RadioGroup>
+
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+
+                            </LinearLayout>
+                        </android.support.v4.widget.NestedScrollView>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/bacground_border"
+                        android:orientation="vertical"
+                        android:padding="8px">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:text="@string/vitaminA"
+                            android:textAlignment="center"/>
+
+                        <!-- Scrollview-->
+
+                        <android.support.v4.widget.NestedScrollView
+                            android:id="@+id/sc15"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fillViewport="false"
+                            android:padding="10dp"
+                            android:scrollbars="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:weightSum="100">
+
+                                    <LinearLayout
+                                        android:id="@+id/fldGrpVitaminAM"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="50"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="5dp"
+                                            android:background="#efefef"
+                                            android:gravity="center"
+                                            android:text="@string/recall"
+                                            android:textColor="@color/colorPrimaryDark"
+                                            android:textStyle="bold"/>
+
+                                        <RadioGroup
+                                            android:id="@+id/vitaminAM"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="horizontal">
+
+                                            <RadioButton
+                                                android:id="@+id/vitaminAM01"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginLeft="1dp"
+                                                android:layout_marginTop="1dp"
+                                                android:layout_weight="1"
+                                                android:text="@string/yes"/>
+
+                                            <RadioButton
+                                                android:id="@+id/VitaminAM02"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginTop="1dp"
+                                                android:layout_weight="1"
+                                                android:text="@string/no"/>
+
+                                        </RadioGroup>
+
+
+                                    </LinearLayout>
+
+                                    <View
+                                        android:layout_width="3dp"
+                                        android:layout_height="match_parent"
+                                        android:background="@color/colorPrimaryDark"></View>
+
+
+                                    <LinearLayout
+                                        android:id="@+id/fldGrpVitaminAC"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="50"
+                                        android:orientation="vertical"
+                                        android:visibility="visible">
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="5dp"
+                                            android:background="#efefef"
+                                            android:text="@string/card"
+                                            android:textAlignment="center"
+                                            android:textColor="@color/colorPrimaryDark"
+                                            android:textStyle="bold"/>
+
+                                        <RadioGroup
+                                            android:id="@+id/vitaminAC"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="horizontal">
+
+                                            <RadioButton
+                                                android:id="@+id/vitaminAC01"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginLeft="1dp"
+                                                android:layout_marginTop="1dp"
+                                                android:layout_weight="1"
+                                                android:text="@string/yes"/>
+
+                                            <RadioButton
+                                                android:id="@+id/vitaminAC02"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginTop="1dp"
+                                                android:layout_weight="1"
+                                                android:text="@string/no"/>
+
+                                        </RadioGroup>
+
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+
+                                <!--End of OPV0-->
+
+                            </LinearLayout>
+                        </android.support.v4.widget.NestedScrollView>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </android.support.v4.widget.NestedScrollView>
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_Continue"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="@color/green"
+                android:onClick="startInterview"
+                android:text="@string/nextSection"
+                android:textColor="#1ed61e"/>
+
+            <Button
+                android:id="@+id/btn_End"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="@color/red"
+                android:onClick="endInterview"
+                android:text="@string/end_interview"
+                android:textColor="#ff1e1e"/>
+
+            <!--'onClick' for btn_End will NOT change and always call 'endInterview'-->
+
+
+            <!--'onClick' for btn_Continue will call next section form e.g.: openSection2-->
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</ScrollView>
