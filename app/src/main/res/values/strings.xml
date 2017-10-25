@@ -29,51 +29,50 @@
     <string name="title_activity_splashscreen">SplashscreenActivity</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
-  <string name="other"> دیگر (وضاحت کریں) </string>
-  <string name="dkn"> معلوم نہیں </string>
-  <string name="yes"> ہاں </string>
-  <string name="no"> نہیں </string>
+    <string name="other"> دیگر (وضاحت کریں) </string>
+    <string name="dkn"> معلوم نہیں </string>
+    <string name="yes"> ہاں </string>
+    <string name="no"> نہیں </string>
+    <string name="none"> کوئی نہیں </string>
     <string name="dcna">قابل اطلاق نہیں</string>
     <string name="times">تعداد</string>
     <string name="male"> مرد </string>
     <string name="female"> عورت </string>
-  <string name="day"> دن </string>
-  <string name="month"> مھینہ </string>
+    <string name="day"> دن </string>
+    <string name="month"> مھینہ </string>
     <string name="year"> سال </string>
-  <string name="hour"> گھنٹے </string>
-  <string name="min"> منٹ</string>
+    <string name="hour"> گھنٹے </string>
+    <string name="min"> منٹ</string>
     <string name="Frequency"> تعداد </string>
 
 
     <!-- Strings related to Sections Below -->
-  <!--Vaccination Status Strings-->
+    <!--Vaccination Status Strings-->
 
-  <string name="spblName">بچے کا نام</string>
-  <string name="card"> کارڈ کے مطابق ویسکسینشن کی تصدیق </string>
-  <string name="recall"> ماں کے مطابق </string>
-  <string name="atbirth"> At Birth </string>
-  <string name="bcg"> BCG </string>
-  <string name="opv0"> OPV-0  </string>
-  <string name="at6weeks"> At age of 6 weeks </string>
-  <string name="opv1"> OPV-1 </string>
-  <string name="penta1"> Penta-1  </string>
-  <string name="pneumo1"> Pneumo-1  </string>
-  <string name="at10weeks"> At age of 10 weeks </string>
-  <string name="opv2"> OPV-2  </string>
-  <string name="penta2"> Penta-2  </string>
-  <string name="pneumo2"> Pneumo-2 </string>
-  <string name="at14weeks"> At age of 14 weeks </string>
-  <string name="opv3"> OPV-3  </string>
-  <string name="penta3"> Penta-3  </string>
-  <string name="pneumo3"> Pneumo 3 </string>
-  <string name="ipv"> IPV  </string>
-  <string name="at9month"> At age of 9 months </string>
-  <string name="measles1"> Measles-1  </string>
-  <string name="at15month"> At age 15 months </string>
-  <string name="measles2"> Measels-2  </string>
-  <string name="vitaminA"> Vitamin A </string>
-
-
+    <string name="spblName">بچے کا نام</string>
+    <string name="card"> کارڈ کے مطابق ویسکسینشن کی تصدیق </string>
+    <string name="recall"> ماں کے مطابق </string>
+    <string name="atbirth"> At Birth </string>
+    <string name="bcg"> BCG </string>
+    <string name="opv0"> OPV-0  </string>
+    <string name="at6weeks"> At age of 6 weeks </string>
+    <string name="opv1"> OPV-1 </string>
+    <string name="penta1"> Penta-1  </string>
+    <string name="pneumo1"> Pneumo-1  </string>
+    <string name="at10weeks"> At age of 10 weeks </string>
+    <string name="opv2"> OPV-2  </string>
+    <string name="penta2"> Penta-2  </string>
+    <string name="pneumo2"> Pneumo-2 </string>
+    <string name="at14weeks"> At age of 14 weeks </string>
+    <string name="opv3"> OPV-3  </string>
+    <string name="penta3"> Penta-3  </string>
+    <string name="pneumo3"> Pneumo 3 </string>
+    <string name="ipv"> IPV  </string>
+    <string name="at9month"> At age of 9 months </string>
+    <string name="measles1"> Measles-1  </string>
+    <string name="at15month"> At age 15 months </string>
+    <string name="measles2"> Measels-2  </string>
+    <string name="vitaminA"> Vitamin A </string>
 
 
     <string name="rsvp"> کیا آپ جواب دہندہ ہیں؟ </string>
