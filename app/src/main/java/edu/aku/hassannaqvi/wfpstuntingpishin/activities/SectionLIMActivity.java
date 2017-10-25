@@ -21,6 +21,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import edu.aku.hassannaqvi.wfpstuntingpishin.R;
 import edu.aku.hassannaqvi.wfpstuntingpishin.core.DatabaseHelper;
+import edu.aku.hassannaqvi.wfpstuntingpishin.core.MainApp;
 
 public class SectionLIMActivity extends Activity
 {
@@ -328,6 +329,8 @@ public class SectionLIMActivity extends Activity
 
     @OnClick(R.id.btn_End)
     void onBtnEndClick() {
+
+        MainApp.endActivity(this, this);
 
     }
 

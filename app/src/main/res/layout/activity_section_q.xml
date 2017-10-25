@@ -94,7 +94,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="1dp"
-                android:focusable="true"
+                android:focusable="false"
                 android:hint="@string/bdd"
                 android:textColor="@android:color/black"
                 app:dateFormat="dd-MM-yyyy"/>
@@ -105,7 +105,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="1dp"
-                android:focusable="true"
+                android:focusable="false"
                 android:hint="@string/bdd"
                 android:textColor="@android:color/black"
                 app:dateFormat="dd-MM-yyyy"/>
@@ -161,7 +161,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="1dp"
-                android:focusable="true"
+                android:focusable="false"
                 android:hint="@string/bdd"
                 android:textColor="@android:color/black"
                 app:dateFormat="dd-MM-yyyy"/>
@@ -172,7 +172,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="1dp"
-                android:focusable="true"
+                android:focusable="false"
                 android:hint="@string/bdd"
                 android:textColor="@android:color/black"
                 app:dateFormat="dd-MM-yyyy"/>
@@ -229,7 +229,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="1dp"
-                android:focusable="true"
+                android:focusable="false"
                 android:hint="@string/bdc"
                 android:textColor="@android:color/black"
                 app:dateFormat="dd-MM-yyyy"/>
@@ -239,7 +239,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="1dp"
-                android:focusable="true"
+                android:focusable="false"
                 android:hint="@string/bdc"
                 android:textColor="@android:color/black"
                 app:dateFormat="dd-MM-yyyy"/>
@@ -249,7 +249,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="1dp"
-                android:focusable="true"
+                android:focusable="false"
                 android:hint="@string/bdc"
                 android:textColor="@android:color/black"
                 app:dateFormat="dd-MM-yyyy"/>
@@ -259,7 +259,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="1dp"
-                android:focusable="true"
+                android:focusable="false"
                 android:hint="@string/bdc"
                 android:textColor="@android:color/black"
                 app:dateFormat="dd-MM-yyyy"/>
@@ -269,7 +269,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="1dp"
-                android:focusable="true"
+                android:focusable="false"
                 android:hint="@string/bdc"
                 android:textColor="@android:color/black"
                 app:dateFormat="dd-MM-yyyy"/>
@@ -355,7 +355,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="1dp"
                     android:layout_weight="1"
-                    android:focusable="true"
+                    android:focusable="false"
                     android:hint="@string/bdc"
                     android:textColor="@android:color/black"
                     app:dateFormat="dd-MM-yyyy"/>
@@ -372,7 +372,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="1dp"
                     android:layout_weight="1"
-                    android:focusable="true"
+                    android:focusable="false"
                     android:hint="@string/bdd"
                     android:textColor="@android:color/black"
                     app:dateFormat="dd-MM-yyyy"/>
@@ -391,7 +391,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="1dp"
                     android:layout_weight="1"
-                    android:focusable="true"
+                    android:focusable="false"
                     android:hint="@string/bdc"
                     android:textColor="@android:color/black"
                     app:dateFormat="dd-MM-yyyy"/>
@@ -407,7 +407,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="1dp"
                     android:layout_weight="1"
-                    android:focusable="true"
+                    android:focusable="false"
                     android:hint="@string/bdd"
                     android:textColor="@android:color/black"
                     app:dateFormat="dd-MM-yyyy"/>
@@ -494,7 +494,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="1dp"
                     android:layout_weight="1"
-                    android:focusable="true"
+                    android:focusable="false"
                     android:hint="@string/bdc"
                     android:textColor="@android:color/black"
                     app:dateFormat="dd-MM-yyyy"/>
@@ -510,7 +510,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="1dp"
                     android:layout_weight="1"
-                    android:focusable="true"
+                    android:focusable="false"
                     android:hint="@string/bdd"
                     android:textColor="@android:color/black"
                     app:dateFormat="dd-MM-yyyy"/>
@@ -529,7 +529,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="1dp"
                     android:layout_weight="1"
-                    android:focusable="true"
+                    android:focusable="false"
                     android:hint="@string/bdc"
                     android:textColor="@android:color/black"
                     app:dateFormat="dd-MM-yyyy"/>
@@ -545,7 +545,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="1dp"
                     android:layout_weight="1"
-                    android:focusable="true"
+                    android:focusable="false"
                     android:hint="@string/bdd"
                     android:textColor="@android:color/black"
                     app:dateFormat="dd-MM-yyyy"/>
@@ -632,7 +632,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="1dp"
                     android:layout_weight="1"
-                    android:focusable="true"
+                    android:focusable="false"
                     android:hint="@string/bdc"
                     android:textColor="@android:color/black"
                     app:dateFormat="dd-MM-yyyy"/>
@@ -648,7 +648,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="1dp"
                     android:layout_weight="1"
-                    android:focusable="true"
+                    android:focusable="false"
                     android:hint="@string/bdd"
                     android:textColor="@android:color/black"
                     app:dateFormat="dd-MM-yyyy"/>
@@ -667,7 +667,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="1dp"
                     android:layout_weight="1"
-                    android:focusable="true"
+                    android:focusable="false"
                     android:hint="@string/bdc"
                     android:textColor="@android:color/black"
                     android:visibility="visible"
@@ -684,7 +684,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="1dp"
                     android:layout_weight="1"
-                    android:focusable="true"
+                    android:focusable="false"
                     android:hint="@string/bdd"
                     android:textColor="@android:color/black"
                     android:visibility="visible"
@@ -770,7 +770,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="1dp"
                     android:layout_weight="1"
-                    android:focusable="true"
+                    android:focusable="false"
                     android:hint="@string/bdc"
                     android:textColor="@android:color/black"
                     app:dateFormat="dd-MM-yyyy"/>
@@ -787,7 +787,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="1dp"
                     android:layout_weight="1"
-                    android:focusable="true"
+                    android:focusable="false"
                     android:hint="@string/bdd"
                     android:textColor="@android:color/black"
                     app:dateFormat="dd-MM-yyyy"/>
@@ -807,7 +807,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="1dp"
                     android:layout_weight="1"
-                    android:focusable="true"
+                    android:focusable="false"
                     android:hint="@string/bdc"
                     android:textColor="@android:color/black"
                     app:dateFormat="dd-MM-yyyy"/>
@@ -824,7 +824,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="1dp"
                     android:layout_weight="1"
-                    android:focusable="true"
+                    android:focusable="false"
                     android:hint="@string/bdd"
                     android:textColor="@android:color/black"
                     app:dateFormat="dd-MM-yyyy"/>
@@ -918,7 +918,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="1dp"
                     android:layout_weight="1"
-                    android:focusable="true"
+                    android:focusable="false"
                     android:hint="@string/bdc"
                     android:textColor="@android:color/black"
                     app:dateFormat="dd-MM-yyyy"/>
@@ -934,7 +934,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="1dp"
                     android:layout_weight="1"
-                    android:focusable="true"
+                    android:focusable="false"
                     android:hint="@string/bdd"
                     android:textColor="@android:color/black"
                     app:dateFormat="dd-MM-yyyy"/>
@@ -954,7 +954,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="1dp"
                     android:layout_weight="1"
-                    android:focusable="true"
+                    android:focusable="false"
                     android:hint="@string/bdc"
                     android:textColor="@android:color/black"
                     app:dateFormat="dd-MM-yyyy"/>
@@ -972,7 +972,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="1dp"
                     android:layout_weight="1"
-                    android:focusable="true"
+                    android:focusable="false"
                     android:hint="@string/bdd"
                     android:textColor="@android:color/black"
                     app:dateFormat="dd-MM-yyyy"/>
