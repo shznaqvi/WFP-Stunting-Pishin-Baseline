@@ -53,6 +53,7 @@ public class MainApp extends Application {
     private static final long MINUTES_IN_HOUR = 60;
     private static final long HOURS_IN_DAY = 24;
     public static final long MILLISECONDS_IN_DAY = MILLIS_IN_SECOND * SECONDS_IN_MINUTE * MINUTES_IN_HOUR * HOURS_IN_DAY;
+    public static final long MILLISECONDS_IN_8Days = MILLIS_IN_SECOND * SECONDS_IN_MINUTE * MINUTES_IN_HOUR * HOURS_IN_DAY * 8;
     private static final long DAYS_IN_YEAR = 365;
     public static final long MILLISECONDS_IN_YEAR = MILLIS_IN_SECOND * SECONDS_IN_MINUTE * MINUTES_IN_HOUR * HOURS_IN_DAY * DAYS_IN_YEAR;
     private static final long DAYS_IN_MONTH = 30;
@@ -64,6 +65,14 @@ public class MainApp extends Application {
 
     private static final long DAYS_IN_42_WEEKS = (7 * 42);
     public static final long MILLISECONDS_IN_42_WEEKS = MILLIS_IN_SECOND * SECONDS_IN_MINUTE * MINUTES_IN_HOUR * HOURS_IN_DAY * DAYS_IN_42_WEEKS;
+
+    private static final long DAYS_IN_5Years = 1826;
+    public static final long MILLISECONDS_IN_5Years = MILLIS_IN_SECOND * SECONDS_IN_MINUTE * MINUTES_IN_HOUR * HOURS_IN_DAY * DAYS_IN_5Years;
+    private static final long DAYS_IN_49Years = 17885;
+    public static final long MILLISECONDS_IN_49Years = MILLIS_IN_SECOND * SECONDS_IN_MINUTE * MINUTES_IN_HOUR * HOURS_IN_DAY * DAYS_IN_49Years;
+    private static final long DAYS_IN_15Years = 5475;
+    public static final long MILLISECONDS_IN_15Years = MILLIS_IN_SECOND * SECONDS_IN_MINUTE * MINUTES_IN_HOUR * HOURS_IN_DAY * DAYS_IN_15Years;
+
 
     public static String deviceId;
 
