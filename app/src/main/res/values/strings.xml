@@ -74,7 +74,22 @@
   <string name="vitaminA"> Vitamin A </string>
 
 
+  <string name="bdheading"> Births and Deaths in the Last One Year </string>
+  <string name="bdheadingsub"> پہچلے سال آپ کے گھر میں کتنی پیدائشیں ہوئی اور 5 سال سے کم بچوں کی اموات کتنی ہوئی ۔اور وہ مائیں جن کا حمل کے دوران ،زچگی کے دوران یا پھر زچگی کے بعد 42 دن کے اندر اموات ہوئی ہوں؟ </string>
+  <string name="bda"> Indicators </string>
+  <string name="bdb"> Statistics None = 0 </string>
+  <string name="bdba"> Number </string>
+  <string name="bdc"> تاریخ پیدائش </string>
+  <string name="bdd"> تاریخ وفات </string>
+  <string name="bd01"> حمل ضائع ہونا </string>
+  <string name="bd02"> مردہ پیدائش </string>
+  <string name="bd03"> زندہ پیدائش </string>
+  <string name="bd04"> 7 دن کے اندر بچوں کی اموات </string>
+  <string name="bd05"> 8 سے 28 دن میں بچوں کی اموات </string>
+  <string name="bd06">  29 سے 364 دنوں کے اندر بچوں کی اموات </string>
+  <string name="bd07">    12 سے 59 ماہ کے اندر بچوں کی اموات </string>
+  <string name="bd08"> ماں کی حمل کے دوران یا زچگی کے دوران یا زچگی کے 42 دن تک کی اموات </string>
 
 
-    <string name="rsvp"> کیا آپ جواب دہندہ ہیں؟ </string>
+  <string name="rsvp"> کیا آپ جواب دہندہ ہیں؟ </string>
 </resources>

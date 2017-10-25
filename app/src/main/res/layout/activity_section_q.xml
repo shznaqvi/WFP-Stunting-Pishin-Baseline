@@ -1,9 +1,1023 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="edu.aku.hassannaqvi.wfpstuntingpishin.activities.SectionQActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:animateLayoutChanges="true"
+        android:layoutDirection="rtl"
+        android:orientation="vertical">
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginBottom="5dp"
+            android:background="@color/colorPrimary"/>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="2dp"
+            android:background="@color/colorPrimaryDark"
+            android:gravity="center"
+            android:text="@string/bdheading"
+            android:textSize="30sp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/colorPrimary"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@color/pink_100"
+            android:text="@string/bdheadingsub"
+            android:textColor="@color/colorPrimaryDark"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:text="@string/bd01"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:background="@color/blue_100"
+            android:text="@string/bdb"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="12sp"/>
+
+        <EditText
+            android:id="@+id/bd01s"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:digits="012"
+            android:hint="@string/bdba"
+            android:inputType="number"
+            android:maxLength="1"
+            android:textColor="@android:color/black"/>
+
+        <LinearLayout
+            android:id="@+id/fldGrpbd01"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:background="@color/pink_100"
+                android:text="@string/bdd"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold"/>
+
+            <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                android:id="@+id/bd01dod1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:focusable="true"
+                android:hint="@string/bdd"
+                android:textColor="@android:color/black"
+                app:dateFormat="dd-MM-yyyy"/>
+
+
+            <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                android:id="@+id/bd01dod2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:focusable="true"
+                android:hint="@string/bdd"
+                android:textColor="@android:color/black"
+                app:dateFormat="dd-MM-yyyy"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/bd02"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:background="@color/blue_100"
+            android:text="@string/bdb"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="12sp"/>
+
+        <EditText
+            android:id="@+id/bd02s"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:digits="012"
+            android:hint="@string/bdba"
+            android:inputType="number"
+            android:maxLength="1"
+            android:textColor="@android:color/black"/>
+
+        <LinearLayout
+            android:id="@+id/fldGrpbd02"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:background="@color/pink_100"
+                android:text="@string/bdd"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold"/>
+
+
+            <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                android:id="@+id/bd02dod1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:focusable="true"
+                android:hint="@string/bdd"
+                android:textColor="@android:color/black"
+                app:dateFormat="dd-MM-yyyy"/>
+
+
+            <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                android:id="@+id/bd02dod2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:focusable="true"
+                android:hint="@string/bdd"
+                android:textColor="@android:color/black"
+                app:dateFormat="dd-MM-yyyy"/>
+
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/bd03"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:background="@color/blue_100"
+            android:text="@string/bdb"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="12sp"/>
+
+        <EditText
+            android:id="@+id/bd03s"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:digits="012345"
+            android:hint="@string/bdba"
+            android:inputType="number"
+            android:maxLength="1"
+            android:textColor="@android:color/black"/>
+
+        <LinearLayout
+            android:id="@+id/fldGrpbd03"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:background="@color/pink_100"
+                android:text="@string/bdc"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold"/>
+
+
+            <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                android:id="@+id/bd03dob1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:focusable="true"
+                android:hint="@string/bdc"
+                android:textColor="@android:color/black"
+                app:dateFormat="dd-MM-yyyy"/>
+
+            <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                android:id="@+id/bd03dob2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:focusable="true"
+                android:hint="@string/bdc"
+                android:textColor="@android:color/black"
+                app:dateFormat="dd-MM-yyyy"/>
+
+            <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                android:id="@+id/bd03dob3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:focusable="true"
+                android:hint="@string/bdc"
+                android:textColor="@android:color/black"
+                app:dateFormat="dd-MM-yyyy"/>
+
+            <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                android:id="@+id/bd03dob4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:focusable="true"
+                android:hint="@string/bdc"
+                android:textColor="@android:color/black"
+                app:dateFormat="dd-MM-yyyy"/>
+
+            <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                android:id="@+id/bd03dob5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:focusable="true"
+                android:hint="@string/bdc"
+                android:textColor="@android:color/black"
+                app:dateFormat="dd-MM-yyyy"/>
+
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/bd04"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:background="@color/blue_100"
+            android:text="@string/bdb"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="12sp"/>
+
+        <EditText
+            android:id="@+id/bd04s"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:digits="012"
+            android:hint="@string/bdba"
+            android:inputType="number"
+            android:maxLength="1"
+            android:textColor="@android:color/black"/>
+
+        <LinearLayout
+            android:id="@+id/fldGrpbd04"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:layout_weight="1"
+                    android:background="@color/pink_100"
+                    android:text="@string/bdc"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textStyle="bold"/>
+
+                <View
+                    android:layout_width="3dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorPrimaryDark"></View>
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:layout_weight="1"
+                    android:background="@color/pink_100"
+                    android:text="@string/bdd"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textStyle="bold"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                    android:id="@+id/bd04dob1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:layout_weight="1"
+                    android:focusable="true"
+                    android:hint="@string/bdc"
+                    android:textColor="@android:color/black"
+                    app:dateFormat="dd-MM-yyyy"/>
+
+                <View
+                    android:layout_width="3dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorPrimaryDark"></View>
+
+
+                <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                    android:id="@+id/bd04dod1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:layout_weight="1"
+                    android:focusable="true"
+                    android:hint="@string/bdd"
+                    android:textColor="@android:color/black"
+                    app:dateFormat="dd-MM-yyyy"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/fldGrpbd04dob2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                    android:id="@+id/bd04dob2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:layout_weight="1"
+                    android:focusable="true"
+                    android:hint="@string/bdc"
+                    android:textColor="@android:color/black"
+                    app:dateFormat="dd-MM-yyyy"/>
+
+                <View
+                    android:layout_width="3dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorPrimaryDark"></View>
+
+                <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                    android:id="@+id/bd04dod2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:layout_weight="1"
+                    android:focusable="true"
+                    android:hint="@string/bdd"
+                    android:textColor="@android:color/black"
+                    app:dateFormat="dd-MM-yyyy"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/bd05"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:background="@color/blue_100"
+            android:text="@string/bdb"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="12sp"/>
+
+        <EditText
+            android:id="@+id/bd05s"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:digits="012"
+            android:hint="@string/bdba"
+            android:inputType="number"
+            android:maxLength="1"
+            android:textColor="@android:color/black"/>
+
+        <LinearLayout
+            android:id="@+id/fldGrpbd05"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:layout_weight="1"
+                    android:background="@color/pink_100"
+                    android:text="@string/bdc"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textStyle="bold"/>
+
+                <View
+                    android:layout_width="3dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorPrimaryDark"></View>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:layout_weight="1"
+                    android:background="@color/pink_100"
+                    android:text="@string/bdd"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textStyle="bold"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+
+                <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                    android:id="@+id/bd05dob1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:layout_weight="1"
+                    android:focusable="true"
+                    android:hint="@string/bdc"
+                    android:textColor="@android:color/black"
+                    app:dateFormat="dd-MM-yyyy"/>
+
+                <View
+                    android:layout_width="3dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorPrimaryDark"></View>
+
+                <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                    android:id="@+id/bd05dod1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:layout_weight="1"
+                    android:focusable="true"
+                    android:hint="@string/bdd"
+                    android:textColor="@android:color/black"
+                    app:dateFormat="dd-MM-yyyy"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/fldGrpbd05dob2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                    android:id="@+id/bd05dob2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:layout_weight="1"
+                    android:focusable="true"
+                    android:hint="@string/bdc"
+                    android:textColor="@android:color/black"
+                    app:dateFormat="dd-MM-yyyy"/>
+
+                <View
+                    android:layout_width="3dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorPrimaryDark"></View>
+
+                <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                    android:id="@+id/bd05dod2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:layout_weight="1"
+                    android:focusable="true"
+                    android:hint="@string/bdd"
+                    android:textColor="@android:color/black"
+                    app:dateFormat="dd-MM-yyyy"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/bd06"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:background="@color/blue_100"
+            android:text="@string/bdb"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="12sp"/>
+
+        <EditText
+            android:id="@+id/bd06s"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:digits="012"
+            android:hint="@string/bdba"
+            android:inputType="number"
+            android:maxLength="1"
+            android:textColor="@android:color/black"/>
+
+        <LinearLayout
+            android:id="@+id/fldGrpbd06"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:layout_weight="1"
+                    android:background="@color/pink_100"
+                    android:text="@string/bdc"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textStyle="bold"/>
+
+                <View
+                    android:layout_width="3dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorPrimaryDark"></View>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:layout_weight="1"
+                    android:background="@color/pink_100"
+                    android:text="@string/bdd"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textStyle="bold"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+
+                <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                    android:id="@+id/bd06dob1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:layout_weight="1"
+                    android:focusable="true"
+                    android:hint="@string/bdc"
+                    android:textColor="@android:color/black"
+                    app:dateFormat="dd-MM-yyyy"/>
+
+                <View
+                    android:layout_width="3dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorPrimaryDark"></View>
+
+                <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                    android:id="@+id/bd06dod1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:layout_weight="1"
+                    android:focusable="true"
+                    android:hint="@string/bdd"
+                    android:textColor="@android:color/black"
+                    app:dateFormat="dd-MM-yyyy"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/fldGrpbd06dob2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                    android:id="@+id/bd06dob2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:layout_weight="1"
+                    android:focusable="true"
+                    android:hint="@string/bdc"
+                    android:textColor="@android:color/black"
+                    android:visibility="visible"
+                    app:dateFormat="dd-MM-yyyy"/>
+
+                <View
+                    android:layout_width="3dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorPrimaryDark"></View>
+
+                <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                    android:id="@+id/bd06dod2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:layout_weight="1"
+                    android:focusable="true"
+                    android:hint="@string/bdd"
+                    android:textColor="@android:color/black"
+                    android:visibility="visible"
+                    app:dateFormat="dd-MM-yyyy"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/bd07"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:background="@color/blue_100"
+            android:text="@string/bdb"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="12sp"/>
+
+        <EditText
+            android:id="@+id/bd07s"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:digits="012"
+            android:hint="@string/bdba"
+            android:inputType="number"
+            android:maxLength="1"
+            android:textColor="@android:color/black"/>
+
+        <LinearLayout
+            android:id="@+id/fldGrpbd07"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:layout_weight="1"
+                    android:background="@color/pink_100"
+                    android:text="@string/bdc"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textStyle="bold"/>
+
+                <View
+                    android:layout_width="3dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorPrimaryDark"></View>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:layout_weight="1"
+                    android:background="@color/pink_100"
+                    android:text="@string/bdd"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textStyle="bold"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                    android:id="@+id/bd07dob1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:layout_weight="1"
+                    android:focusable="true"
+                    android:hint="@string/bdc"
+                    android:textColor="@android:color/black"
+                    app:dateFormat="dd-MM-yyyy"/>
+
+                <View
+                    android:layout_width="3dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorPrimaryDark"></View>
+
+
+                <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                    android:id="@+id/bd07dod1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:layout_weight="1"
+                    android:focusable="true"
+                    android:hint="@string/bdd"
+                    android:textColor="@android:color/black"
+                    app:dateFormat="dd-MM-yyyy"/>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/fldGrpbd07dob2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                    android:id="@+id/bd07dob2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:layout_weight="1"
+                    android:focusable="true"
+                    android:hint="@string/bdc"
+                    android:textColor="@android:color/black"
+                    app:dateFormat="dd-MM-yyyy"/>
+
+                <View
+                    android:layout_width="3dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorPrimaryDark"></View>
+
+
+                <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                    android:id="@+id/bd07dod2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:layout_weight="1"
+                    android:focusable="true"
+                    android:hint="@string/bdd"
+                    android:textColor="@android:color/black"
+                    app:dateFormat="dd-MM-yyyy"/>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/bd08"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:background="@color/blue_100"
+            android:text="@string/bdb"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="12sp"/>
+
+        <EditText
+            android:id="@+id/bd08s"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:digits="012"
+            android:hint="@string/bdba"
+            android:inputType="number"
+            android:maxLength="1"
+            android:textColor="@android:color/black"/>
+
+        <LinearLayout
+            android:id="@+id/fldGrpbd08"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:layout_weight="1"
+                    android:background="@color/pink_100"
+                    android:gravity="center"
+                    android:text="@string/bdc"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textStyle="bold"/>
+
+
+                <View
+                    android:layout_width="3dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorPrimaryDark"></View>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:layout_weight="1"
+                    android:background="@color/pink_100"
+                    android:gravity="center"
+                    android:text="@string/bdd"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textStyle="bold"/>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+
+                >
+
+                <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                    android:id="@+id/bd08dob1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:layout_weight="1"
+                    android:focusable="true"
+                    android:hint="@string/bdc"
+                    android:textColor="@android:color/black"
+                    app:dateFormat="dd-MM-yyyy"/>
+
+                <View
+                    android:layout_width="3dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorPrimaryDark"></View>
+
+                <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                    android:id="@+id/bd08dod1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:layout_weight="1"
+                    android:focusable="true"
+                    android:hint="@string/bdd"
+                    android:textColor="@android:color/black"
+                    app:dateFormat="dd-MM-yyyy"/>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/fldGrpbd08dob2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                    android:id="@+id/bd08dob2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:layout_weight="1"
+                    android:focusable="true"
+                    android:hint="@string/bdc"
+                    android:textColor="@android:color/black"
+                    app:dateFormat="dd-MM-yyyy"/>
+
+
+                <View
+                    android:layout_width="3dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorPrimaryDark"></View>
+
+
+                <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                    android:id="@+id/bd08dod2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:layout_weight="1"
+                    android:focusable="true"
+                    android:hint="@string/bdd"
+                    android:textColor="@android:color/black"
+                    app:dateFormat="dd-MM-yyyy"/>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_Continue"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="@color/green"
+                android:onClick="startInterview"
+                android:text="@string/nextSection"
+                android:textColor="#1ed61e"/>
+
+            <Button
+                android:id="@+id/btn_End"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="@color/red"
+                android:onClick="endInterview"
+                android:text="@string/end_interview"
+                android:textColor="#ff1e1e"/>
+
+            <!--'onClick' for btn_End will NOT change and always call 'endInterview'-->
+
+
+            <!--'onClick' for btn_Continue will call next section form e.g.: openSection2-->
+        </LinearLayout>
+
+
+    </LinearLayout>
+
 
 </ScrollView>
