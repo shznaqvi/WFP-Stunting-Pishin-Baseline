@@ -29,10 +29,12 @@
     <string name="title_activity_splashscreen">SplashscreenActivity</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
-  <string name="other"> دیگر (وضاحت کریں) </string>
-  <string name="dkn"> معلوم نہیں </string>
-  <string name="yes"> ہاں </string>
-  <string name="no"> نہیں </string>
+    <string name="other"> دیگر (وضاحت کریں) </string>
+    <string name="dkn"> معلوم نہیں </string>
+    <string name="yes"> ہاں </string>
+    <string name="no"> نہیں </string>
+    <string name="notavail"> گہر بند ہے / اجازت دینے والا موجود نہیں </string>
+    <string name="none"> کوئی نہیں </string>
     <string name="dcna">قابل اطلاق نہیں</string>
     <string name="times">تعداد</string>
     <string name="male"> مرد </string>

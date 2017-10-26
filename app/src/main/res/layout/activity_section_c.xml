@@ -1743,6 +1743,13 @@
                 android:text="@string/spblc14u" />
 
             <RadioButton
+                android:id="@+id/spblc14v"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:text="@string/spblc14v" />
+
+            <RadioButton
                 android:id="@+id/spblc1488"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -2162,7 +2169,7 @@
                     android:text="@string/spblc18c" />
 
                 <EditText
-                    android:id="@+id/spblc1ckn"
+                    android:id="@+id/spblc18mr"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
@@ -2320,6 +2327,23 @@
                 android:layout_marginBottom="1dp"
                 android:digits="0123456789"
                 android:hint="@string/spblc20f"
+                android:inputType="number"
+                android:maxLength="2" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/spblc20g"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <EditText
+                android:id="@+id/spblc20g"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:digits="0123456789"
+                android:hint="@string/spblc20g"
                 android:inputType="number"
                 android:maxLength="2" />
 
