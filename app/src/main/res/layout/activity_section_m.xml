@@ -343,7 +343,7 @@
                 android:text="@string/no" />
 
             <RadioButton
-                android:id="@+id/spblm02c"
+                android:id="@+id/spblm0299"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/dkn" />
@@ -408,13 +408,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
                 android:text="@string/spblm04b" />
-
-            <RadioButton
-                android:id="@+id/spblm04c"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:text="@string/spblm04c" />
 
             <RadioButton
                 android:id="@+id/spblm0488"

@@ -1,16 +1,20 @@
 package edu.aku.hassannaqvi.wfpstuntingpishin.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.app.Activity;
-import android.widget.TextView;
 import android.widget.RadioGroup;
 import android.widget.RadioButton;
 import android.widget.EditText;
-import android.widget.Button;
+import android.widget.Toast;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import edu.aku.hassannaqvi.wfpstuntingpishin.core.DatabaseHelper;
 import edu.aku.hassannaqvi.wfpstuntingpishin.core.MainApp;
 
 public class SectionMActivity extends Activity {
@@ -77,8 +81,8 @@ public class SectionMActivity extends Activity {
     RadioButton spblm02a;
     @BindView(R.id.spblm02b)
     RadioButton spblm02b;
-    @BindView(R.id.spblm02c)
-    RadioButton spblm02c;
+    @BindView(R.id.spblm0299)
+    RadioButton spblm0299;
     @BindView(R.id.spblm03)
     RadioGroup spblm03;
     @BindView(R.id.spblm03a)
@@ -91,8 +95,6 @@ public class SectionMActivity extends Activity {
     RadioButton spblm04a;
     @BindView(R.id.spblm04b)
     RadioButton spblm04b;
-    @BindView(R.id.spblm04c)
-    RadioButton spblm04c;
     @BindView(R.id.spblm0488)
     RadioButton spblm0488;
     @BindView(R.id.spblm0488x)
@@ -131,6 +133,23 @@ public class SectionMActivity extends Activity {
     @OnClick(R.id.btn_Continue)
     void onBtnContinueClick() {
         //TODO implement
+
+        Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();
+        if (formValidation()) {
+            try {
+                SaveDraft();
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+            if (UpdateDB()) {
+                Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
+
+                finish();
+                startActivity(new Intent(this, SectionNActivity.class));
+            } else {
+                Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
+            }
+        }
     }
 
     @OnClick(R.id.btn_End)
@@ -138,6 +157,62 @@ public class SectionMActivity extends Activity {
         //TODO implement
 
         MainApp.endActivity(this, this);
+    }
+
+    private void SaveDraft() throws JSONException {
+        Toast.makeText(this, "Saving Draft for  This Section", Toast.LENGTH_SHORT).show();
+
+        JSONObject sM = new JSONObject();
+
+        sM.put("spblm01a", spblm01aa.isChecked() ? "1" : spblm01ab.isChecked() ? "2" : "0");
+        sM.put("spblm01b", spblm01ba.isChecked() ? "1" : spblm01bb.isChecked() ? "2" : "0");
+        sM.put("spblm01c", spblm01ca.isChecked() ? "1" : spblm01cb.isChecked() ? "2" : "0");
+        sM.put("spblm01d", spblm01da.isChecked() ? "1" : spblm01db.isChecked() ? "2" : "0");
+        sM.put("spblm01e", spblm01ea.isChecked() ? "1" : spblm01eb.isChecked() ? "2" : "0");
+        sM.put("spblm01f", spblm01fa.isChecked() ? "1" : spblm01fb.isChecked() ? "2" : "0");
+        sM.put("spblm01g", spblm01ga.isChecked() ? "1" : spblm01gb.isChecked() ? "2" : "0");
+        sM.put("spblm01h", spblm01ha.isChecked() ? "1" : spblm01hb.isChecked() ? "2" : "0");
+        sM.put("spblm01", spblm01i88.isChecked() ? "88" : spblm01i00.isChecked() ? "00" : "0");
+        sM.put("spblm01i88x", spblm01i88x.getText().toString());
+
+//        02
+        sM.put("spblm02", spblm02a.isChecked() ? "1" : spblm02b.isChecked() ? "2" : spblm0299.isChecked() ? "99" : "0");
+
+//        03
+        sM.put("spblm03", spblm03a.isChecked() ? "1" : spblm03b.isChecked() ? "2" : "0");
+
+//        04
+        sM.put("spblm04", spblm04a.isChecked() ? "1" : spblm04b.isChecked() ? "2" : spblm0488.isChecked() ? "88" : "0");
+        sM.put("spblm0488x", spblm0488x.getText().toString());
+
+//        05
+        sM.put("spblm05", spblm05a.isChecked() ? "1" : spblm05b.isChecked() ? "2" : spblm05c.isChecked() ? "3"
+                : spblm05d.isChecked() ? "4" : spblm05e.isChecked() ? "5" : spblm05f.isChecked() ? "6"
+                : spblm05g.isChecked() ? "7" : spblm05h.isChecked() ? "8" : spblm0588.isChecked() ? "88" : "0");
+        sM.put("spblm0588x", spblm0588x.getText().toString());
+
+        //        MainApp.fc.setsM(String.valueOf(sM));
+    }
+    private boolean UpdateDB() {
+
+        DatabaseHelper db = new DatabaseHelper(this);
+
+        /*int updcount = db.updateSM();
+
+        if (updcount == 1) {
+            Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
+            return true;
+        } else {
+            Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
+            return false;
+        }*/
+        return true;
+    }
+
+    public boolean formValidation() {
+        Toast.makeText(this, "Validating This Section ", Toast.LENGTH_SHORT).show();
+
+        return true;
     }
 }
 
