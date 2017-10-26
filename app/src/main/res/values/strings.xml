@@ -95,7 +95,7 @@
 
     <string name="rsvp"> کیا آپ جواب دہندہ ہیں؟ </string>
 
-    <string name="spbla01">  انٹرویو لینے والے کا نام </string>
+<!--    <string name="spbla01">  انٹرویو لینے والے کا نام </string>
     <string name="spbla02">  انٹرویو کا کوڈ </string>
     <string name="spbla03">  ٹیم کا کوڈ </string>
     <string name="spbla04">  انٹرویو کی تاریخ </string>
@@ -104,24 +104,34 @@
     <string name="spbla05">  تحصیل کا کوڈ </string>
     <string name="spbla06">  تحصیل کا نام </string>
     <string name="spbla07">  یونین کونسل کا کوڈ </string>
-    <string name="spbla08">  یونین کونسل کا نام </string>
-    <string name="spbla09">  گاؤں یا علاقہ کا کوڈ </string>
-    <string name="spbla10">  گاؤں یا علاقہ کا نام </string>
-    <string name="spbla11">  جواب دہندہ کا نام </string>
-    <string name="spbla12">  جواب دہندہ کا علاقہ: </string>
-    <string name="spbla13">  جواب دہندہ کی تعلیم </string>
-    <string name="spbla14">  جواب دہندہ کا پیشہ </string>
-    <string name="spbla15">  جواب دہندہ کون ہے؟ </string>
-    <string name="spbla15a">  حاملہ عورت </string>
-    <string name="spbla15b">  دودھ پلانے والی ماں </string>
-    <string name="spbla15c">  5 سال سے کم عمر بچے کی ماں </string>
-    <string name="spbla16">  مطالعہ شرکاء کی قسم </string>
-    <string name="spbla16a">  حاملہ عورت </string>
-    <string name="spbla16b">  دودھ پلانے والی ماں </string>
-    <string name="spbla16c">  6 سے 23 مہینے کے بچے </string>
-    <string name="spbla16d">  24 سے 59 مہینے کے بچے </string>
+    <string name="spbla08">  یونین کونسل کا نام </string>-->
+    <!--<string name="spbla09">  گاؤں یا علاقہ کا کوڈ </string>-->
+    <string name="spbla03">  گاؤں یا علاقہ کا نام </string>
+    <string name="spbla04">  گہر کا نمبر </string>
+    <!--<string name="spbla11">  جواب دہندہ کا نام </string>-->
+    <!--<string name="spbla12">  جواب دہندہ کا علاقہ: </string>-->
+    <!--<string name="spbla13">  جواب دہندہ کی تعلیم </string>-->
+    <!--<string name="spbla14">  جواب دہندہ کا پیشہ </string>-->
+    <string name="spbla05">  جواب دہندہ کون ہے؟ </string>
+    <string name="spbla05a">  حاملہ عورت </string>
+    <string name="spbla05b">  دودھ پلانے والی ماں </string>
+    <string name="spbla05c">  5 سال سے کم عمر بچے کی ماں </string>
+    <string name="spbla06">  مطالعہ شرکاء کی قسم </string>
+    <string name="spbla06a">  حاملہ عورت </string>
+    <string name="spbla06b">  دودھ پلانے والی ماں </string>
+    <string name="spbla06c">  6 سے 23 مہینے کے بچے </string>
+    <string name="spbla06d">  24 سے 59 مہینے کے بچے </string>
+    <string name="spbla07"> گھر کے افراد اور شرکاء کی تعداد </string>
+    <string name="spbla07t"> گھر کے کل افراد کی تعداد </string>
+    <string name="spbla07pw"> حاملہ عورت </string>
+    <string name="spbla07mw"> 5 سال سے کم عمر بچوں کی ماؤں کی تعداد </string>
+    <string name="spbla07lw"> دودھ پلانے والی ماؤں کی تعداد </string>
+    <string name="spbla07a"> 6 ماہ سے کم عمر بچے </string>
+    <string name="spbla07b"> 6 سے 23 مہینے کے بچے </string>
+    <string name="spbla07c"> 24 سے 59 مہینے کے بچے </string>
+    <string name="spbla08"> Have you got the permission to start interview? </string>
 
-    <string name="spblbheading">  خاندان کی معلومات </string>
+    <string name="secBLabel">  خاندان کی معلومات </string>
     <string name="spblb01">  گھر کے افراد کا نام گھر کے سربراہ سے شروع کریں. </string>
     <string name="spblb02">  جنس </string>
     <string name="spblb02m">  مرد </string>
@@ -133,7 +143,12 @@
     <string name="spblb04d">  دن </string>
     <string name="spblb05">  تعلیمی معیار </string>
     <string name="spblb06">  پیشہ </string>
-    <string name="spblcheading">  سماجی اقتصادی معلومات </string>
+    <string name="spblb07">  کیا یہ حاملہ عورت ہے؟ </string>
+    <string name="spblb08">  کیا یہ دودھ پلانے والی ماء ہے؟ </string>
+
+
+
+    <string name="secCLabel"> سماجی اقتصادی معلومات </string>
     <string name="spblc01">  آپ کی مادری زبان کیا ہے؟ </string>
     <string name="spblc01a">  اردو </string>
     <string name="spblc01b">  پنجابی </string>
