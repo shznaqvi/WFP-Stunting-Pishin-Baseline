@@ -3,6 +3,20 @@ package edu.aku.hassannaqvi.wfpstuntingpishin.activities;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.IdRes;
+import android.util.Log;
+import android.view.View;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
+import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -11,21 +25,9 @@ import edu.aku.hassannaqvi.wfpstuntingpishin.R;
 import edu.aku.hassannaqvi.wfpstuntingpishin.core.DatabaseHelper;
 import edu.aku.hassannaqvi.wfpstuntingpishin.core.MainApp;
 
-import android.support.annotation.IdRes;
-import android.view.View;
-import android.widget.CompoundButton;
-import android.widget.RadioGroup;
-import android.widget.RadioButton;
-import android.widget.EditText;
-import android.widget.LinearLayout;
-import android.widget.CheckBox;
-import android.widget.TextView;
-import android.widget.Toast;
-
-import org.json.JSONException;
-import org.json.JSONObject;
-
 public class SectionCActivity extends Activity {
+
+    private static final String TAG = SectionCActivity.class.getName();
 
     @BindView(R.id.spblc01)
     RadioGroup spblc01;
@@ -800,7 +802,7 @@ public class SectionCActivity extends Activity {
     void onBtnEndClick() {
         //TODO implement
 
-        MainApp.endActivity(this, this);
+        MainApp.endActivity(this,this);
     }
 
     private void SaveDraft() throws JSONException {
@@ -969,9 +971,742 @@ public class SectionCActivity extends Activity {
     public boolean formValidation() {
         Toast.makeText(this, "Validating This Section ", Toast.LENGTH_SHORT).show();
 
+        if (spblc01.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc01), Toast.LENGTH_SHORT).show();
+            spblc01a.setError("This data is Required!");    // Set Error on last radio button
+            spblc01a.setFocusable(true);
+            spblc01a.setFocusableInTouchMode(true);
+            spblc01a.requestFocus();
+            Log.i(TAG, "spblc01a: This data is Required!");
+            return false;
+        } else {
+            spblc01a.setError(null);
+        }
+
+
+        if (spblc0188x.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_SHORT).show();
+            spblc0188x.setError("This data is Required!");    // Set Error on last radio button
+            spblc0188x.requestFocus();
+            Log.i(TAG, "spblc0188x: This data is Required!");
+            return false;
+        } else {
+            spblc0188x.setError(null);
+        }
+
+
+        if (spblc02.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc02), Toast.LENGTH_SHORT).show();
+            spblc02a.setError("This data is Required!");    // Set Error on last radio button
+            spblc02a.setFocusable(true);
+            spblc02a.setFocusableInTouchMode(true);
+            spblc02a.requestFocus();
+            Log.i(TAG, "spblc02a: This data is Required!");
+            return false;
+        } else {
+            spblc02a.setError(null);
+        }
+
+
+        if (spblc0288x.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_SHORT).show();
+            spblc0288x.setError("This data is Required!");    // Set Error on last radio button
+            spblc0288x.requestFocus();
+            Log.i(TAG, "spblc0288x: This data is Required!");
+            return false;
+        } else {
+            spblc0288x.setError(null);
+        }
+
+
+        if (spblc03.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc03a), Toast.LENGTH_SHORT).show();
+            spblc03a.setError("This data is Required!");    // Set Error on last radio button
+            spblc03a.setFocusable(true);
+            spblc03a.setFocusableInTouchMode(true);
+            spblc03a.requestFocus();
+            Log.i(TAG, "spblc03a: This data is Required!");
+            return false;
+        } else {
+            spblc03a.setError(null);
+        }
+
+
+        if (spblc04.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc04), Toast.LENGTH_SHORT).show();
+            spblc04a.setError("This data is Required!");    // Set Error on last radio button
+            spblc04a.setFocusable(true);
+            spblc04a.setFocusableInTouchMode(true);
+            spblc04a.requestFocus();
+            Log.i(TAG, "spblc04a: This data is Required!");
+            return false;
+        } else {
+            spblc04a.setError(null);
+        }
+
+
+        if (spblc0488x.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_SHORT).show();
+            spblc0488x.setError("This data is Required!");    // Set Error on last radio button
+            spblc0488x.requestFocus();
+            Log.i(TAG, "spblc0488x: This data is Required!");
+            return false;
+        } else {
+            spblc0488x.setError(null);
+        }
+
+
+        if (spblc05.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc05), Toast.LENGTH_SHORT).show();
+            spblc05a.setError("This data is Required!");    // Set Error on last radio button
+            spblc05a.setFocusable(true);
+            spblc05a.setFocusableInTouchMode(true);
+            spblc05a.requestFocus();
+            Log.i(TAG, "spblc05a: This data is Required!");
+            return false;
+        } else {
+            spblc05a.setError(null);
+        }
+
+
+        if (spblc0588x.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_SHORT).show();
+            spblc0588x.setError("This data is Required!");    // Set Error on last radio button
+            spblc0588x.requestFocus();
+            Log.i(TAG, "spblc0588x: This data is Required!");
+            return false;
+        } else {
+            spblc0588x.setError(null);
+        }
+
+
+        if (spblc06.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc06), Toast.LENGTH_SHORT).show();
+            spblc06a.setError("This data is Required!");    // Set Error on last radio button
+            spblc06a.setFocusable(true);
+            spblc06a.setFocusableInTouchMode(true);
+            spblc06a.requestFocus();
+            Log.i(TAG, "spblc06a: This data is Required!");
+            return false;
+        } else {
+            spblc06a.setError(null);
+        }
+
+
+        if (spblc07.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc07), Toast.LENGTH_SHORT).show();
+            spblc07.setError("This data is Required!");    // Set Error on last radio button
+            spblc07.requestFocus();
+            Log.i(TAG, "spblc07: This data is Required!");
+            return false;
+        } else {
+            spblc07.setError(null);
+        }
+
+
+        if (spblc08a.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc08a), Toast.LENGTH_SHORT).show();
+            spblc08aa.setError("This data is Required!");    // Set Error on last radio button
+            spblc08aa.setFocusable(true);
+            spblc08aa.setFocusableInTouchMode(true);
+            spblc08aa.requestFocus();
+            Log.i(TAG, "spblc08aa: This data is Required!");
+            return false;
+        } else {
+            spblc08aa.setError(null);
+        }
+
+
+        if (spblc08b.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc08a), Toast.LENGTH_SHORT).show();
+            spblc08aa.setError("This data is Required!");    // Set Error on last radio button
+            spblc08aa.setFocusable(true);
+            spblc08aa.setFocusableInTouchMode(true);
+            spblc08aa.requestFocus();
+            Log.i(TAG, "spblc08aa: This data is Required!");
+            return false;
+        } else {
+            spblc08aa.setError(null);
+        }
+
+
+        if (spblc08c.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc08c), Toast.LENGTH_SHORT).show();
+            spblc08ca.setError("This data is Required!");    // Set Error on last radio button
+            spblc08ca.setFocusable(true);
+            spblc08ca.setFocusableInTouchMode(true);
+            spblc08ca.requestFocus();
+            Log.i(TAG, "spblc08ca: This data is Required!");
+            return false;
+        } else {
+            spblc08ca.setError(null);
+        }
+
+
+        if (spblc08d.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc08d), Toast.LENGTH_SHORT).show();
+            spblc08da.setError("This data is Required!");    // Set Error on last radio button
+            spblc08da.setFocusable(true);
+            spblc08da.setFocusableInTouchMode(true);
+            spblc08da.requestFocus();
+            Log.i(TAG, "spblc08da: This data is Required!");
+            return false;
+        } else {
+            spblc08da.setError(null);
+        }
+
+
+        if (spblc08e.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc08e), Toast.LENGTH_SHORT).show();
+            spblc08ea.setError("This data is Required!");    // Set Error on last radio button
+            spblc08ea.setFocusable(true);
+            spblc08ea.setFocusableInTouchMode(true);
+            spblc08ea.requestFocus();
+            Log.i(TAG, "spblc08ea: This data is Required!");
+            return false;
+        } else {
+            spblc08ea.setError(null);
+        }
+
+
+        if (spblc08f.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc08f), Toast.LENGTH_SHORT).show();
+            spblc08fa.setError("This data is Required!");    // Set Error on last radio button
+            spblc08fa.setFocusable(true);
+            spblc08fa.setFocusableInTouchMode(true);
+            spblc08fa.requestFocus();
+            Log.i(TAG, "spblc08fa: This data is Required!");
+            return false;
+        } else {
+            spblc08fa.setError(null);
+        }
+
+
+        if (spblc08g.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc08g), Toast.LENGTH_SHORT).show();
+            spblc08ga.setError("This data is Required!");    // Set Error on last radio button
+            spblc08ga.setFocusable(true);
+            spblc08ga.setFocusableInTouchMode(true);
+            spblc08ga.requestFocus();
+            Log.i(TAG, "spblc08ga: This data is Required!");
+            return false;
+        } else {
+            spblc08ga.setError(null);
+        }
+
+
+        if (spblc08h.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc08h), Toast.LENGTH_SHORT).show();
+            spblc08ha.setError("This data is Required!");    // Set Error on last radio button
+            spblc08ha.setFocusable(true);
+            spblc08ha.setFocusableInTouchMode(true);
+            spblc08ha.requestFocus();
+            Log.i(TAG, "spblc08ha: This data is Required!");
+            return false;
+        } else {
+            spblc08ha.setError(null);
+        }
+
+
+        if (spblc08i.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc08), Toast.LENGTH_SHORT).show();
+            spblc08ia.setError("This data is Required!");    // Set Error on last radio button
+            spblc08ia.setFocusable(true);
+            spblc08ia.setFocusableInTouchMode(true);
+            spblc08ia.requestFocus();
+            Log.i(TAG, "spblc08i: This data is Required!");
+            return false;
+        } else {
+            spblc08ia.setError(null);
+        }
+
+
+        if (spblc08j.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc08j), Toast.LENGTH_SHORT).show();
+            spblc08ja.setError("This data is Required!");    // Set Error on last radio button
+            spblc08ja.setFocusable(true);
+            spblc08ja.setFocusableInTouchMode(true);
+            spblc08ja.requestFocus();
+            Log.i(TAG, "spblc08ja: This data is Required!");
+            return false;
+        } else {
+            spblc08ja.setError(null);
+        }
+
+
+        if (spblc08k.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc08k), Toast.LENGTH_SHORT).show();
+            spblc08ka.setError("This data is Required!");    // Set Error on last radio button
+            spblc08ka.setFocusable(true);
+            spblc08ka.setFocusableInTouchMode(true);
+            spblc08ka.requestFocus();
+            Log.i(TAG, "spblc08ka: This data is Required!");
+            return false;
+        } else {
+            spblc08ka.setError(null);
+        }
+
+
+        if (spblc08l.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc08l), Toast.LENGTH_SHORT).show();
+            spblc08la.setError("This data is Required!");    // Set Error on last radio button
+            spblc08la.setFocusable(true);
+            spblc08la.setFocusableInTouchMode(true);
+            spblc08la.requestFocus();
+            Log.i(TAG, "spblc08la: This data is Required!");
+            return false;
+        } else {
+            spblc08la.setError(null);
+        }
+
+
+        if (spblc08m.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc08m), Toast.LENGTH_SHORT).show();
+            spblc08ma.setError("This data is Required!");    // Set Error on last radio button
+            spblc08ma.setFocusable(true);
+            spblc08ma.setFocusableInTouchMode(true);
+            spblc08ma.requestFocus();
+            Log.i(TAG, "spblc08ma: This data is Required!");
+            return false;
+        } else {
+            spblc08ma.setError(null);
+        }
+
+
+        if (spblc08n.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc08n), Toast.LENGTH_SHORT).show();
+            spblc08na.setError("This data is Required!");    // Set Error on last radio button
+            spblc08na.setFocusable(true);
+            spblc08na.setFocusableInTouchMode(true);
+            spblc08na.requestFocus();
+            Log.i(TAG, "spblc08na: This data is Required!");
+            return false;
+        } else {
+            spblc08na.setError(null);
+        }
+
+
+        if (spblc08o.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc08o), Toast.LENGTH_SHORT).show();
+            spblc08oa.setError("This data is Required!");    // Set Error on last radio button
+            spblc08oa.setFocusable(true);
+            spblc08oa.setFocusableInTouchMode(true);
+            spblc08oa.requestFocus();
+            Log.i(TAG, "spblc08oa: This data is Required!");
+            return false;
+        } else {
+            spblc08oa.setError(null);
+        }
+
+
+        if (spblc08p.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc08p), Toast.LENGTH_SHORT).show();
+            spblc08pa.setError("This data is Required!");    // Set Error on last radio button
+            spblc08pa.setFocusable(true);
+            spblc08pa.setFocusableInTouchMode(true);
+            spblc08pa.requestFocus();
+            Log.i(TAG, "spblc08pa: This data is Required!");
+            return false;
+        } else {
+            spblc08pa.setError(null);
+        }
+
+
+        if (spblc08q.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc08q), Toast.LENGTH_SHORT).show();
+            spblc08qa.setError("This data is Required!");    // Set Error on last radio button
+            spblc08qa.setFocusable(true);
+            spblc08qa.setFocusableInTouchMode(true);
+            spblc08qa.requestFocus();
+            Log.i(TAG, "spblc08qa: This data is Required!");
+            return false;
+        } else {
+            spblc08qa.setError(null);
+        }
+
+
+        if (spblc08r.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc08r), Toast.LENGTH_SHORT).show();
+            spblc08ra.setError("This data is Required!");    // Set Error on last radio button
+            spblc08ra.setFocusable(true);
+            spblc08ra.setFocusableInTouchMode(true);
+            spblc08ra.requestFocus();
+            Log.i(TAG, "spblc08ra: This data is Required!");
+            return false;
+        } else {
+            spblc08ra.setError(null);
+        }
+
+
+        if (spblc09.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc09), Toast.LENGTH_SHORT).show();
+            spblc09a.setError("This data is Required!");    // Set Error on last radio button
+            spblc09a.setFocusable(true);
+            spblc09a.setFocusableInTouchMode(true);
+            spblc09a.requestFocus();
+            Log.i(TAG, "spblc09a: This data is Required!");
+            return false;
+        } else {
+            spblc09a.setError(null);
+        }
+
+
+        if (spblc0988x.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_SHORT).show();
+            spblc0988x.setError("This data is Required!");    // Set Error on last radio button
+            spblc0988x.requestFocus();
+            Log.i(TAG, "spblc0988x: This data is Required!");
+            return false;
+        } else {
+            spblc0988x.setError(null);
+        }
+
+
+        if (spblc10.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc10a), Toast.LENGTH_SHORT).show();
+            spblc10a.setError("This data is Required!");    // Set Error on last radio button
+            spblc10a.setFocusable(true);
+            spblc10a.setFocusableInTouchMode(true);
+            spblc10a.requestFocus();
+            Log.i(TAG, "spblc10a: This data is Required!");
+            return false;
+        } else {
+            spblc10a.setError(null);
+        }
+
+
+        if (spblc1088x.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_SHORT).show();
+            spblc1088x.setError("This data is Required!");    // Set Error on last radio button
+            spblc1088x.requestFocus();
+            Log.i(TAG, "spblc1088x: This data is Required!");
+            return false;
+        } else {
+            spblc1088x.setError(null);
+        }
+
+
+        if (spblc11.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc11), Toast.LENGTH_SHORT).show();
+            spblc11a.setError("This data is Required!");    // Set Error on last radio button
+            spblc11a.setFocusable(true);
+            spblc11a.setFocusableInTouchMode(true);
+            spblc11a.requestFocus();
+            Log.i(TAG, "spblc11a: This data is Required!");
+            return false;
+        } else {
+            spblc11a.setError(null);
+        }
+
+
+        if (spblc12.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc12), Toast.LENGTH_SHORT).show();
+            spblc12a.setError("This data is Required!");    // Set Error on last radio button
+            spblc12a.setFocusable(true);
+            spblc12a.setFocusableInTouchMode(true);
+            spblc12a.requestFocus();
+            Log.i(TAG, "spblc12a: This data is Required!");
+            return false;
+        } else {
+            spblc12a.setError(null);
+        }
+
+
+        if (spblc1288x.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_SHORT).show();
+            spblc1288x.setError("This data is Required!");    // Set Error on last radio button
+            spblc1288x.requestFocus();
+            Log.i(TAG, "spblc1288x: This data is Required!");
+            return false;
+        } else {
+            spblc1288x.setError(null);
+        }
+
+
+        if (spblc13.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc13a), Toast.LENGTH_SHORT).show();
+            spblc13a.setError("This data is Required!");    // Set Error on last radio button
+            spblc13a.setFocusable(true);
+            spblc13a.setFocusableInTouchMode(true);
+            spblc13a.requestFocus();
+            Log.i(TAG, "spblc13a: This data is Required!");
+            return false;
+        } else {
+            spblc13a.setError(null);
+        }
+
+
+        if (spblc1388x.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_SHORT).show();
+            spblc1388x.setError("This data is Required!");    // Set Error on last radio button
+            spblc1388x.requestFocus();
+            Log.i(TAG, "spblc1388x: This data is Required!");
+            return false;
+        } else {
+            spblc1388x.setError(null);
+        }
+
+
+        if (spblc14.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc14a), Toast.LENGTH_SHORT).show();
+            spblc14a.setError("This data is Required!");    // Set Error on last radio button
+            spblc14a.setFocusable(true);
+            spblc14a.setFocusableInTouchMode(true);
+            spblc14a.requestFocus();
+            Log.i(TAG, "spblc14a: This data is Required!");
+            return false;
+        } else {
+            spblc14a.setError(null);
+        }
+
+
+        if (spblc1488x.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_SHORT).show();
+            spblc1488x.setError("This data is Required!");    // Set Error on last radio button
+            spblc1488x.requestFocus();
+            Log.i(TAG, "spblc1488x: This data is Required!");
+            return false;
+        } else {
+            spblc1488x.setError(null);
+        }
+
+
+        if (spblc15.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc15), Toast.LENGTH_SHORT).show();
+            spblc15.setError("This data is Required!");    // Set Error on last radio button
+            spblc15.requestFocus();
+            Log.i(TAG, "spblc15: This data is Required!");
+            return false;
+        } else {
+            spblc15.setError(null);
+        }
+
+
+        if (spblc16a.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc16a), Toast.LENGTH_SHORT).show();
+            spblc16aa.setError("This data is Required!");    // Set Error on last radio button
+            spblc16aa.setFocusable(true);
+            spblc16aa.setFocusableInTouchMode(true);
+            spblc16aa.requestFocus();
+            Log.i(TAG, "spblc16aa: This data is Required!");
+            return false;
+        } else {
+            spblc16aa.setError(null);
+        }
+
+
+        if (spblc16b.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc16b), Toast.LENGTH_SHORT).show();
+            spblc16ba.setError("This data is Required!");    // Set Error on last radio button
+            spblc16ba.setFocusable(true);
+            spblc16ba.setFocusableInTouchMode(true);
+            spblc16ba.requestFocus();
+            Log.i(TAG, "spblc16ba: This data is Required!");
+            return false;
+        } else {
+            spblc16ba.setError(null);
+        }
+
+
+        if (spblc16c.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc16c), Toast.LENGTH_SHORT).show();
+            spblc16ca.setError("This data is Required!");    // Set Error on last radio button
+            spblc16ca.setFocusable(true);
+            spblc16ca.setFocusableInTouchMode(true);
+            spblc16ca.requestFocus();
+            Log.i(TAG, "spblc16ca: This data is Required!");
+            return false;
+        } else {
+            spblc16ca.setError(null);
+        }
+
+
+        if (spblc16d.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc16d), Toast.LENGTH_SHORT).show();
+            spblc16da.setError("This data is Required!");    // Set Error on last radio button
+            spblc16da.setFocusable(true);
+            spblc16da.setFocusableInTouchMode(true);
+            spblc16da.requestFocus();
+            Log.i(TAG, "spblc16da: This data is Required!");
+            return false;
+        } else {
+            spblc16da.setError(null);
+        }
+
+
+        if (spblc16e.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc16e), Toast.LENGTH_SHORT).show();
+            spblc16ea.setError("This data is Required!");    // Set Error on last radio button
+            spblc16ea.setFocusable(true);
+            spblc16ea.setFocusableInTouchMode(true);
+            spblc16ea.requestFocus();
+            Log.i(TAG, "spblc16ea: This data is Required!");
+            return false;
+        } else {
+            spblc16ea.setError(null);
+        }
+
+
+        if (spblc16f.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc16f), Toast.LENGTH_SHORT).show();
+            spblc16fa.setError("This data is Required!");    // Set Error on last radio button
+            spblc16fa.setFocusable(true);
+            spblc16fa.setFocusableInTouchMode(true);
+            spblc16fa.requestFocus();
+            Log.i(TAG, "spblc16fa: This data is Required!");
+            return false;
+        } else {
+            spblc16fa.setError(null);
+        }
+
+
+        if (spblc16g.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc16g), Toast.LENGTH_SHORT).show();
+            spblc16ga.setError("This data is Required!");    // Set Error on last radio button
+            spblc16ga.setFocusable(true);
+            spblc16ga.setFocusableInTouchMode(true);
+            spblc16ga.requestFocus();
+            Log.i(TAG, "spblc16ga: This data is Required!");
+            return false;
+        } else {
+            spblc16ga.setError(null);
+        }
+
+
+        if (spblc16h.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc16h), Toast.LENGTH_SHORT).show();
+            spblc16ha.setError("This data is Required!");    // Set Error on last radio button
+            spblc16ha.setFocusable(true);
+            spblc16ha.setFocusableInTouchMode(true);
+            spblc16ha.requestFocus();
+            Log.i(TAG, "spblc16ha: This data is Required!");
+            return false;
+        } else {
+            spblc16ha.setError(null);
+        }
+
+
+        if (spblc16i.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc16i), Toast.LENGTH_SHORT).show();
+            spblc16ia.setError("This data is Required!");    // Set Error on last radio button
+            spblc16ia.setFocusable(true);
+            spblc16ia.setFocusableInTouchMode(true);
+            spblc16ia.requestFocus();
+            Log.i(TAG, "spblc16ia: This data is Required!");
+            return false;
+        } else {
+            spblc16ia.setError(null);
+        }
+
+
+        if (spblc17.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc17), Toast.LENGTH_SHORT).show();
+            spblc17a.setError("This data is Required!");    // Set Error on last radio button
+            spblc17a.setFocusable(true);
+            spblc17a.setFocusableInTouchMode(true);
+            spblc17a.requestFocus();
+            Log.i(TAG, "spblc17a: This data is Required!");
+            return false;
+        } else {
+            spblc17a.setError(null);
+        }
+
+
+        if (spblc18.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc18), Toast.LENGTH_SHORT).show();
+            spblc18a.setError("This data is Required!");    // Set Error on last radio button
+            spblc18a.setFocusable(true);
+            spblc18a.setFocusableInTouchMode(true);
+            spblc18a.requestFocus();
+            Log.i(TAG, "spblc18a: This data is Required!");
+            return false;
+        } else {
+            spblc18a.setError(null);
+        }
+
+
+        if (spblc19.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc19), Toast.LENGTH_SHORT).show();
+            spblc19a.setError("This data is Required!");    // Set Error on last radio button
+            spblc19a.setFocusable(true);
+            spblc19a.setFocusableInTouchMode(true);
+            spblc19a.requestFocus();
+            Log.i(TAG, "spblc19a: This data is Required!");
+            return false;
+        } else {
+            spblc19a.setError(null);
+        }
+
+
+        if (spblc20a.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc20a), Toast.LENGTH_SHORT).show();
+            spblc20a.setError("This data is Required!");    // Set Error on last radio button
+            spblc20a.requestFocus();
+            Log.i(TAG, "spblc20a: This data is Required!");
+            return false;
+        } else {
+            spblc20a.setError(null);
+        }
+
+
+        if (spblc20b.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc20b), Toast.LENGTH_SHORT).show();
+            spblc20b.setError("This data is Required!");    // Set Error on last radio button
+            spblc20b.requestFocus();
+            Log.i(TAG, "spblc20b: This data is Required!");
+            return false;
+        } else {
+            spblc20b.setError(null);
+        }
+
+
+        if (spblc20c.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc20c), Toast.LENGTH_SHORT).show();
+            spblc20c.setError("This data is Required!");    // Set Error on last radio button
+            spblc20c.requestFocus();
+            Log.i(TAG, "spblc20c: This data is Required!");
+            return false;
+        } else {
+            spblc20c.setError(null);
+        }
+
+
+        if (spblc20d.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc20d), Toast.LENGTH_SHORT).show();
+            spblc20d.setError("This data is Required!");    // Set Error on last radio button
+            spblc20d.requestFocus();
+            Log.i(TAG, "spblc20d: This data is Required!");
+            return false;
+        } else {
+            spblc20d.setError(null);
+        }
+
+
+        if (spblc20e.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc20e), Toast.LENGTH_SHORT).show();
+            spblc20e.setError("This data is Required!");    // Set Error on last radio button
+            spblc20e.requestFocus();
+            Log.i(TAG, "spblc20e: This data is Required!");
+            return false;
+        } else {
+            spblc20e.setError(null);
+        }
+
+
+        if (spblc20f.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc20f), Toast.LENGTH_SHORT).show();
+            spblc20f.setError("This data is Required!");    // Set Error on last radio button
+            spblc20f.requestFocus();
+            Log.i(TAG, "spblc20f: This data is Required!");
+            return false;
+        } else {
+            spblc20f.setError(null);
+        }
+
 
         return true;
     }
 
-}
 
+
+}
