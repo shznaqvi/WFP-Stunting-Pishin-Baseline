@@ -15,26 +15,24 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="2dp"
-            android:background="@color/colorPrimaryDark" />
+            android:layout_marginBottom="5dp"
+            android:background="@color/colorPrimary" />
 
         <TextView
-            android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
-            android:layout_marginTop="5dp"
-            android:background="@color/colorHeading"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="2dp"
+            android:background="@color/colorPrimaryDark"
+            android:gravity="center"
             android:text="@string/spblhheading"
-            android:textAlignment="center"
-            android:textColor="@android:color/black"
-            android:textSize="30sp"
-            android:textStyle="bold"
-            tools:typeface="serif" />
+            android:textSize="30sp" />
 
         <View
             android:layout_width="match_parent"
             android:layout_height="2dp"
-            android:background="@color/colorPrimaryDark" />
+            android:layout_marginTop="5dp"
+            android:background="@color/colorPrimary" />
 
         <TextView
             android:layout_width="match_parent"
@@ -1391,7 +1389,8 @@
                 android:id="@+id/fldGrpspblh24"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:visibility="gone">
 
                 <TextView
                     android:layout_width="match_parent"

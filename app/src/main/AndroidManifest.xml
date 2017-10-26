@@ -50,31 +50,27 @@
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity android:name=".adapClasses.FormsList" />
-        <activity android:name=".activities.SectionBActivity"></activity>
-        <activity android:name=".activities.SectionCActivity"></activity>
-        <activity android:name=".activities.SectionDActivity"></activity>
-        <activity android:name=".activities.SectionEActivity"></activity>
-        <activity android:name=".activities.SectionFActivity"></activity>
-        <activity android:name=".activities.SectionGActivity"></activity>
-        <activity android:name=".activities.SectionHActivity"></activity>
-        <activity android:name=".activities.SectionIActivity"></activity>
-        <activity android:name=".activities.SectionJActivity"></activity>
+        <activity android:name=".activities.SectionBActivity" />
+        <activity android:name=".activities.SectionCActivity" />
+        <activity android:name=".activities.SectionDActivity" />
+        <activity android:name=".activities.SectionEActivity" />
+        <activity android:name=".activities.SectionFActivity" />
+        <activity android:name=".activities.SectionGActivity" />
+        <activity android:name=".activities.SectionHActivity" />
+        <activity android:name=".activities.SectionIActivity" />
+        <activity android:name=".activities.SectionJActivity" />
         <activity
             android:name=".activities.SectionKActivity"
-            android:theme="@style/AppTheme1">
-
-        </activity>
-        <activity android:name=".activities.SectionLIMActivity"></activity>
-        <activity android:name=".activities.SectionMActivity"></activity>
-        <activity android:name=".activities.SectionOActivity"></activity>
-        <activity android:name=".activities.SectionPActivity"></activity>
+            android:theme="@style/AppTheme1"></activity>
+        <activity android:name=".activities.SectionLIMActivity" />
+        <activity android:name=".activities.SectionMActivity" />
+        <activity android:name=".activities.SectionOActivity" />
+        <activity android:name=".activities.SectionPActivity" />
         <activity
             android:name=".activities.SectionQActivity"
-            android:theme="@style/AppTheme1">
-
-        </activity>
-        <activity android:name=".activities.SectionNActivity"></activity>
-        <activity android:name=".activities.SectionAActivity"></activity>
+            android:theme="@style/AppTheme1"></activity>
+        <activity android:name=".activities.SectionNActivity" />
+        <activity android:name=".activities.SectionAActivity" />
     </application>
 
 </manifest>

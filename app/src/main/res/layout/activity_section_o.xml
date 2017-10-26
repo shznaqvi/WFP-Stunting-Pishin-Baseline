@@ -14,27 +14,24 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="2dp"
-            android:layout_marginTop="32dp"
-            android:background="@color/colorPrimaryDark" />
-
+            android:layout_marginBottom="5dp"
+            android:background="@color/colorPrimary" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
-            android:layout_marginTop="5dp"
-            android:background="@color/colorHeading"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="2dp"
+            android:background="@color/colorPrimaryDark"
+            android:gravity="center"
             android:text="@string/spbloheading"
-            android:textAlignment="center"
-            android:textColor="@android:color/black"
-            android:textSize="30sp"
-            android:textStyle="bold"
-            tools:typeface="serif" />
+            android:textSize="30sp" />
 
         <View
             android:layout_width="match_parent"
             android:layout_height="2dp"
-            android:background="@color/colorPrimaryDark" />
+            android:layout_marginTop="5dp"
+            android:background="@color/colorPrimary" />
 
         <TextView
             android:layout_width="match_parent"
@@ -205,18 +202,18 @@
                 android:text="@string/spblo05" />
 
             <EditText
-                android:id="@+id/spblo0501"
+                android:id="@+id/spblo05a"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-                android:hint="@string/spblo0501"
+                android:hint="@string/spblo05a"
                 android:inputType="textCapWords" />
 
             <CheckBox
                 android:id="@+id/spblo0599"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/na" />
+                android:text="@string/dkn" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -225,26 +222,26 @@
                 android:text="@string/spblo06" />
 
             <EditText
-                android:id="@+id/spblo0601"
+                android:id="@+id/spblo06a"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/spblo0601"
+                android:hint="@string/spblo06a"
                 android:inputType="number"
                 android:maxLength="2" />
 
             <EditText
-                android:id="@+id/spblo0602"
+                android:id="@+id/spblo06b"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/spblo0602"
+                android:hint="@string/spblo06b"
                 android:inputType="number"
                 android:maxLength="2" />
 
             <CheckBox
-                android:id="@+id/spblo0699"
+                android:id="@+id/spblo06c"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/na" />
+                android:text="@string/spblo06c" />
 
             <LinearLayout
                 android:id="@+id/fldGrpspblo06"
@@ -383,18 +380,18 @@
                 android:text="@string/spblo09" />
 
             <EditText
-                android:id="@+id/spblo0901"
+                android:id="@+id/spblo09a"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/spblo0901"
+                android:hint="@string/spblo09a"
                 android:inputType="number"
                 android:maxLength="2" />
 
             <EditText
-                android:id="@+id/spblo0902"
+                android:id="@+id/spblo09b"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/spblo0902"
+                android:hint="@string/spblo09b"
                 android:inputType="number"
                 android:maxLength="2" />
 
@@ -506,11 +503,11 @@
                 android:text="@string/spblo12" />
 
             <EditText
-                android:id="@+id/spblo12"
+                android:id="@+id/spblo12a"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-                android:hint="@string/spblo1201"
+                android:hint="@string/spblo12a"
                 android:inputType="textCapWords" />
 
         </LinearLayout>
@@ -820,7 +817,7 @@
                 android:layout_margin="4dp"
                 android:layout_weight="1"
                 android:onClick="endForm"
-                android:text="@string/endForm"
+                android:text="@string/end_interview"
                 android:textColor="@android:color/holo_red_light"
                 android:textSize="24sp"
                 android:textStyle="bold" />

@@ -26,78 +26,78 @@ public class SectionGActivity extends Activity {
 
     private static final String TAG = SectionGActivity.class.getSimpleName();
 
-    @BindView(R.id.spblg01a)
-    RadioGroup spblg01a;
-    @BindView(R.id.spblg01a01)
-    RadioButton spblg01a01;
-    @BindView(R.id.spblg01a02)
-    RadioButton spblg01a02;
-    @BindView(R.id.fldGrpspblg01a)
-    LinearLayout fldGrpspblg01a;
-    @BindView(R.id.spblg01anum)
-    EditText spblg01anum;
-    @BindView(R.id.spblg01asrc)
-    EditText spblg01asrc;
-    @BindView(R.id.spblg01b)
-    RadioGroup spblg01b;
-    @BindView(R.id.spblg01b01)
-    RadioButton spblg01b01;
-    @BindView(R.id.spblg01b02)
-    RadioButton spblg01b02;
-    @BindView(R.id.fldGrpspblg01b)
-    LinearLayout fldGrpspblg01b;
-    @BindView(R.id.spblg01bnum)
-    EditText spblg01bnum;
-    @BindView(R.id.spblg01bsrc)
-    EditText spblg01bsrc;
-    @BindView(R.id.spblg01c)
-    RadioGroup spblg01c;
-    @BindView(R.id.spblg01c01)
-    RadioButton spblg01c01;
-    @BindView(R.id.spblg01c02)
-    RadioButton spblg01c02;
-    @BindView(R.id.fldGrpspblg01c)
-    LinearLayout fldGrpspblg01c;
-    @BindView(R.id.spblg01cnum)
-    EditText spblg01cnum;
-    @BindView(R.id.spblg01csrc)
-    EditText spblg01csrc;
-    @BindView(R.id.spblg01d)
-    RadioGroup spblg01d;
-    @BindView(R.id.spblg01d01)
-    RadioButton spblg01d01;
-    @BindView(R.id.spblg01d02)
-    RadioButton spblg01d02;
-    @BindView(R.id.fldGrpspblg01d)
-    LinearLayout fldGrpspblg01d;
-    @BindView(R.id.spblg01dnum)
-    EditText spblg01dnum;
-    @BindView(R.id.spblg01dsrc)
-    EditText spblg01dsrc;
-    @BindView(R.id.spblg01e)
-    RadioGroup spblg01e;
-    @BindView(R.id.spblg01e01)
-    RadioButton spblg01e01;
-    @BindView(R.id.spblg01e02)
-    RadioButton spblg01e02;
-    @BindView(R.id.fldGrpspblg01e)
-    LinearLayout fldGrpspblg01e;
-    @BindView(R.id.spblg01enum)
-    EditText spblg01enum;
-    @BindView(R.id.spblg01esrc)
-    EditText spblg01esrc;
-    @BindView(R.id.spblg01f)
-    RadioGroup spblg01f;
-    @BindView(R.id.spblg01f01)
-    RadioButton spblg01f01;
-    @BindView(R.id.spblg01f02)
-    RadioButton spblg01f02;
-    @BindView(R.id.fldGrpspblg01f)
-    LinearLayout fldGrpspblg01f;
-    @BindView(R.id.spblg01fnum)
-    EditText spblg01fnum;
-    @BindView(R.id.spblg01fsrc)
-    EditText spblg01fsrc;
+    @BindView(R.id.spblg0101)
+    RadioGroup spblg0101;
+    @BindView(R.id.spblg0101a)
+    RadioButton spblg0101a;
+    @BindView(R.id.spblg0101b)
+    RadioButton spblg0101b;
+    @BindView(R.id.fldGrpspblg0101)
+    LinearLayout fldGrpspblg0101;
+    @BindView(R.id.spblg0101num)
+    EditText spblg0101num;
+    @BindView(R.id.spblg0101src)
+    EditText spblg0101src;
+    @BindView(R.id.spblg0102)
+    RadioGroup spblg0102;
+    @BindView(R.id.spblg010201)
+    RadioButton spblg010201;
+    @BindView(R.id.spblg010202)
+    RadioButton spblg010202;
+    @BindView(R.id.fldGrpspblg0102)
+    LinearLayout fldGrpspblg0102;
+    @BindView(R.id.spblg0102num)
+    EditText spblg0102num;
+    @BindView(R.id.spblg0102src)
+    EditText spblg0102src;
+    @BindView(R.id.spblg0103)
+    RadioGroup spblg0103;
+    @BindView(R.id.spblg010301)
+    RadioButton spblg010301;
+    @BindView(R.id.spblg010302)
+    RadioButton spblg010302;
+    @BindView(R.id.fldGrpspblg0103)
+    LinearLayout fldGrpspblg0103;
+    @BindView(R.id.spblg0103num)
+    EditText spblg0103num;
+    @BindView(R.id.spblg0103src)
+    EditText spblg0103src;
+    @BindView(R.id.spblg0104)
+    RadioGroup spblg0104;
+    @BindView(R.id.spblg010401)
+    RadioButton spblg010401;
+    @BindView(R.id.spblg010402)
+    RadioButton spblg010402;
+    @BindView(R.id.fldGrpspblg0104)
+    LinearLayout fldGrpspblg0104;
+    @BindView(R.id.spblg0104num)
+    EditText spblg0104num;
+    @BindView(R.id.spblg0104src)
+    EditText spblg0104src;
+    @BindView(R.id.spblg0105)
+    RadioGroup spblg0105;
+    @BindView(R.id.spblg010501)
+    RadioButton spblg010501;
+    @BindView(R.id.spblg010502)
+    RadioButton spblg010502;
+    @BindView(R.id.fldGrpspblg0105)
+    LinearLayout fldGrpspblg0105;
+    @BindView(R.id.spblg0105num)
+    EditText spblg0105num;
+    @BindView(R.id.spblg0105src)
+    EditText spblg0105src;
+    @BindView(R.id.spblg0106)
+    RadioGroup spblg0106;
+    @BindView(R.id.spblg010601)
+    RadioButton spblg010601;
+    @BindView(R.id.spblg010602)
+    RadioButton spblg010602;
+    @BindView(R.id.fldGrpspblg0106)
+    LinearLayout fldGrpspblg0106;
+    @BindView(R.id.spblg0106num)
+    EditText spblg0106num;
+    @BindView(R.id.spblg0106src)
+    EditText spblg0106src;
     @BindView(R.id.spblg01g)
     RadioGroup spblg01g;
     @BindView(R.id.spblg01g01)
@@ -110,118 +110,118 @@ public class SectionGActivity extends Activity {
     EditText spblg01gnum;
     @BindView(R.id.spblg01gsrc)
     EditText spblg01gsrc;
-    @BindView(R.id.spblg01h)
-    RadioGroup spblg01h;
-    @BindView(R.id.spblg01h01)
-    RadioButton spblg01h01;
-    @BindView(R.id.spblg01h02)
-    RadioButton spblg01h02;
+    @BindView(R.id.spblg0108)
+    RadioGroup spblg0108;
+    @BindView(R.id.spblg010801)
+    RadioButton spblg010801;
+    @BindView(R.id.spblg010802)
+    RadioButton spblg010802;
     @BindView(R.id.fldGrpcrj01h)
-    LinearLayout fldGrpspblg01h;
-    @BindView(R.id.spblg01hnum)
-    EditText spblg01hnum;
-    @BindView(R.id.spblg01hsrc)
-    EditText spblg01hsrc;
-    @BindView(R.id.spblg01i)
-    RadioGroup spblg01i;
-    @BindView(R.id.spblg01i01)
-    RadioButton spblg01i01;
-    @BindView(R.id.spblg01i02)
-    RadioButton spblg01i02;
-    @BindView(R.id.fldGrpspblg01i)
-    LinearLayout fldGrpspblg01i;
-    @BindView(R.id.spblg01inum)
-    EditText spblg01inum;
-    @BindView(R.id.spblg01isrc)
-    EditText spblg01isrc;
-    @BindView(R.id.spblg01j)
-    RadioGroup spblg01j;
-    @BindView(R.id.spblg01j01)
-    RadioButton spblg01j01;
-    @BindView(R.id.spblg01j02)
-    RadioButton spblg01j02;
-    @BindView(R.id.fldGrpspblg01j)
-    LinearLayout fldGrpspblg01j;
-    @BindView(R.id.spblg01jnum)
-    EditText spblg01jnum;
-    @BindView(R.id.spblg01jsrc)
-    EditText spblg01jsrc;
-    @BindView(R.id.spblg01k)
-    RadioGroup spblg01k;
-    @BindView(R.id.spblg01k01)
-    RadioButton spblg01k01;
-    @BindView(R.id.spblg01k02)
-    RadioButton spblg01k02;
-    @BindView(R.id.fldGrpspblg01k)
-    LinearLayout fldGrpspblg01k;
-    @BindView(R.id.spblg01knum)
-    EditText spblg01knum;
-    @BindView(R.id.spblg01ksrc)
-    EditText spblg01ksrc;
-    @BindView(R.id.spblg01l)
-    RadioGroup spblg01l;
-    @BindView(R.id.spblg01l01)
-    RadioButton spblg01l01;
-    @BindView(R.id.spblg01l02)
-    RadioButton spblg01l02;
-    @BindView(R.id.fldGrpspblg01l)
-    LinearLayout fldGrpspblg01l;
-    @BindView(R.id.spblg01lnum)
-    EditText spblg01lnum;
-    @BindView(R.id.spblg01lsrc)
-    EditText spblg01lsrc;
-    @BindView(R.id.spblg01m)
-    RadioGroup spblg01m;
-    @BindView(R.id.spblg01m01)
-    RadioButton spblg01m01;
-    @BindView(R.id.spblg01m02)
-    RadioButton spblg01m02;
-    @BindView(R.id.fldGrpspblg01m)
-    LinearLayout fldGrpspblg01m;
-    @BindView(R.id.spblg01mnum)
-    EditText spblg01mnum;
-    @BindView(R.id.spblg01msrc)
-    EditText spblg01msrc;
-    @BindView(R.id.spblg01n)
-    RadioGroup spblg01n;
-    @BindView(R.id.spblg01n01)
-    RadioButton spblg01n01;
-    @BindView(R.id.spblg01n02)
-    RadioButton spblg01n02;
-    @BindView(R.id.fldGrpspblg01n)
-    LinearLayout fldGrpspblg01n;
-    @BindView(R.id.spblg01nnum)
-    EditText spblg01nnum;
-    @BindView(R.id.spblg01nsrc)
-    EditText spblg01nsrc;
-    @BindView(R.id.spblg01o)
-    RadioGroup spblg01o;
-    @BindView(R.id.spblg01o01)
-    RadioButton spblg01o01;
-    @BindView(R.id.spblg01o02)
-    RadioButton spblg01o02;
-    @BindView(R.id.fldGrpspblg01o)
-    LinearLayout fldGrpspblg01o;
-    @BindView(R.id.spblg01ox)
-    EditText spblg01ox;
-    @BindView(R.id.spblg01onum)
-    EditText spblg01onum;
-    @BindView(R.id.spblg01osrc)
-    EditText spblg01osrc;
-    @BindView(R.id.spblg01p)
-    RadioGroup spblg01p;
-    @BindView(R.id.spblg01p01)
-    RadioButton spblg01p01;
-    @BindView(R.id.spblg01p02)
-    RadioButton spblg01p02;
-    @BindView(R.id.fldGrpspblg01p)
-    LinearLayout fldGrpspblg01p;
-    @BindView(R.id.spblg01px)
-    EditText spblg01px;
-    @BindView(R.id.spblg01pnum)
-    EditText spblg01pnum;
-    @BindView(R.id.spblg01psrc)
-    EditText spblg01psrc;
+    LinearLayout fldGrpspblg0108;
+    @BindView(R.id.spblg0108num)
+    EditText spblg0108num;
+    @BindView(R.id.spblg0108src)
+    EditText spblg0108src;
+    @BindView(R.id.spblg0109)
+    RadioGroup spblg0109;
+    @BindView(R.id.spblg010901)
+    RadioButton spblg010901;
+    @BindView(R.id.spblg010902)
+    RadioButton spblg010902;
+    @BindView(R.id.fldGrpspblg0109)
+    LinearLayout fldGrpspblg0109;
+    @BindView(R.id.spblg0109num)
+    EditText spblg0109num;
+    @BindView(R.id.spblg0109src)
+    EditText spblg0109src;
+    @BindView(R.id.spblg0110)
+    RadioGroup spblg0110;
+    @BindView(R.id.spblg011001)
+    RadioButton spblg011001;
+    @BindView(R.id.spblg011002)
+    RadioButton spblg011002;
+    @BindView(R.id.fldGrpspblg0110)
+    LinearLayout fldGrpspblg0110;
+    @BindView(R.id.spblg0110num)
+    EditText spblg0110num;
+    @BindView(R.id.spblg0110src)
+    EditText spblg0110src;
+    @BindView(R.id.spblg0111)
+    RadioGroup spblg0111;
+    @BindView(R.id.spblg011101)
+    RadioButton spblg011101;
+    @BindView(R.id.spblg011102)
+    RadioButton spblg011102;
+    @BindView(R.id.fldGrpspblg0111)
+    LinearLayout fldGrpspblg0111;
+    @BindView(R.id.spblg0111num)
+    EditText spblg0111num;
+    @BindView(R.id.spblg0111src)
+    EditText spblg0111src;
+    @BindView(R.id.spblg0112)
+    RadioGroup spblg0112;
+    @BindView(R.id.spblg011201)
+    RadioButton spblg011201;
+    @BindView(R.id.spblg011202)
+    RadioButton spblg011202;
+    @BindView(R.id.fldGrpspblg0112)
+    LinearLayout fldGrpspblg0112;
+    @BindView(R.id.spblg0112num)
+    EditText spblg0112num;
+    @BindView(R.id.spblg0112src)
+    EditText spblg0112src;
+    @BindView(R.id.spblg0113)
+    RadioGroup spblg0113;
+    @BindView(R.id.spblg011301)
+    RadioButton spblg011301;
+    @BindView(R.id.spblg011302)
+    RadioButton spblg011302;
+    @BindView(R.id.fldGrpspblg0113)
+    LinearLayout fldGrpspblg0113;
+    @BindView(R.id.spblg0113num)
+    EditText spblg0113num;
+    @BindView(R.id.spblg0113src)
+    EditText spblg0113src;
+    @BindView(R.id.spblg0114)
+    RadioGroup spblg0114;
+    @BindView(R.id.spblg011401)
+    RadioButton spblg011401;
+    @BindView(R.id.spblg011402)
+    RadioButton spblg011402;
+    @BindView(R.id.fldGrpspblg0114)
+    LinearLayout fldGrpspblg0114;
+    @BindView(R.id.spblg0114num)
+    EditText spblg0114num;
+    @BindView(R.id.spblg0114src)
+    EditText spblg0114src;
+    @BindView(R.id.spblg0115)
+    RadioGroup spblg0115;
+    @BindView(R.id.spblg011501)
+    RadioButton spblg011501;
+    @BindView(R.id.spblg011502)
+    RadioButton spblg011502;
+    @BindView(R.id.fldGrpspblg0115)
+    LinearLayout fldGrpspblg0115;
+    @BindView(R.id.spblg0115x)
+    EditText spblg0115x;
+    @BindView(R.id.spblg0115num)
+    EditText spblg0115num;
+    @BindView(R.id.spblg0115src)
+    EditText spblg0115src;
+    @BindView(R.id.spblg0116)
+    RadioGroup spblg0116;
+    @BindView(R.id.spblg011601)
+    RadioButton spblg011601;
+    @BindView(R.id.spblg011602)
+    RadioButton spblg011602;
+    @BindView(R.id.fldGrpspblg0116)
+    LinearLayout fldGrpspblg0116;
+    @BindView(R.id.spblg0116x)
+    EditText spblg0116x;
+    @BindView(R.id.spblg0116num)
+    EditText spblg0116num;
+    @BindView(R.id.spblg0116src)
+    EditText spblg0116src;
     @BindView(R.id.fldGrpbtn)
     LinearLayout fldGrpbtn;
 
@@ -231,80 +231,80 @@ public class SectionGActivity extends Activity {
         setContentView(R.layout.activity_section_g);
         ButterKnife.bind(this);
 
-        spblg01a01.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        spblg0101a.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
-                    fldGrpspblg01a.setVisibility(View.VISIBLE);
+                    fldGrpspblg0101.setVisibility(View.VISIBLE);
                 } else {
-                    fldGrpspblg01a.setVisibility(View.GONE);
-                    spblg01anum.setText(null);
-                    spblg01asrc.setText(null);
+                    fldGrpspblg0101.setVisibility(View.GONE);
+                    spblg0101num.setText(null);
+                    spblg0101src.setText(null);
                 }
             }
         });
 
-        spblg01b01.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        spblg010201.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
-                    fldGrpspblg01b.setVisibility(View.VISIBLE);
+                    fldGrpspblg0102.setVisibility(View.VISIBLE);
                 } else {
-                    fldGrpspblg01b.setVisibility(View.GONE);
-                    spblg01bnum.setText(null);
-                    spblg01bsrc.setText(null);
+                    fldGrpspblg0102.setVisibility(View.GONE);
+                    spblg0102num.setText(null);
+                    spblg0102src.setText(null);
                 }
             }
         });
 
-        spblg01c01.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        spblg010301.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
-                    fldGrpspblg01c.setVisibility(View.VISIBLE);
+                    fldGrpspblg0103.setVisibility(View.VISIBLE);
                 } else {
-                    fldGrpspblg01c.setVisibility(View.GONE);
-                    spblg01cnum.setText(null);
-                    spblg01csrc.setText(null);
+                    fldGrpspblg0103.setVisibility(View.GONE);
+                    spblg0103num.setText(null);
+                    spblg0103src.setText(null);
                 }
             }
         });
 
-        spblg01d01.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        spblg010401.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
-                    fldGrpspblg01d.setVisibility(View.VISIBLE);
+                    fldGrpspblg0104.setVisibility(View.VISIBLE);
                 } else {
-                    fldGrpspblg01d.setVisibility(View.GONE);
-                    spblg01dnum.setText(null);
-                    spblg01dsrc.setText(null);
+                    fldGrpspblg0104.setVisibility(View.GONE);
+                    spblg0104num.setText(null);
+                    spblg0104src.setText(null);
                 }
             }
         });
 
-        spblg01e01.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        spblg010501.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
-                    fldGrpspblg01e.setVisibility(View.VISIBLE);
+                    fldGrpspblg0105.setVisibility(View.VISIBLE);
                 } else {
-                    fldGrpspblg01e.setVisibility(View.GONE);
-                    spblg01enum.setText(null);
-                    spblg01esrc.setText(null);
+                    fldGrpspblg0105.setVisibility(View.GONE);
+                    spblg0105num.setText(null);
+                    spblg0105src.setText(null);
                 }
             }
         });
 
-        spblg01f01.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        spblg010601.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
-                    fldGrpspblg01f.setVisibility(View.VISIBLE);
+                    fldGrpspblg0106.setVisibility(View.VISIBLE);
                 } else {
-                    fldGrpspblg01f.setVisibility(View.GONE);
-                    spblg01fnum.setText(null);
-                    spblg01fsrc.setText(null);
+                    fldGrpspblg0106.setVisibility(View.GONE);
+                    spblg0106num.setText(null);
+                    spblg0106src.setText(null);
                 }
             }
         });
@@ -322,121 +322,121 @@ public class SectionGActivity extends Activity {
             }
         });
 
-        spblg01h01.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        spblg010801.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
-                    fldGrpspblg01h.setVisibility(View.VISIBLE);
+                    fldGrpspblg0108.setVisibility(View.VISIBLE);
                 } else {
-                    fldGrpspblg01h.setVisibility(View.GONE);
-                    spblg01hnum.setText(null);
-                    spblg01hsrc.setText(null);
+                    fldGrpspblg0108.setVisibility(View.GONE);
+                    spblg0108num.setText(null);
+                    spblg0108src.setText(null);
                 }
             }
         });
 
-        spblg01i01.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        spblg010901.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
-                    fldGrpspblg01i.setVisibility(View.VISIBLE);
+                    fldGrpspblg0109.setVisibility(View.VISIBLE);
                 } else {
-                    fldGrpspblg01i.setVisibility(View.GONE);
-                    spblg01inum.setText(null);
-                    spblg01isrc.setText(null);
+                    fldGrpspblg0109.setVisibility(View.GONE);
+                    spblg0109num.setText(null);
+                    spblg0109src.setText(null);
                 }
             }
         });
 
-        spblg01j01.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        spblg011001.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
-                    fldGrpspblg01j.setVisibility(View.VISIBLE);
+                    fldGrpspblg0110.setVisibility(View.VISIBLE);
                 } else {
-                    fldGrpspblg01j.setVisibility(View.GONE);
-                    spblg01jnum.setText(null);
-                    spblg01jsrc.setText(null);
+                    fldGrpspblg0110.setVisibility(View.GONE);
+                    spblg0110num.setText(null);
+                    spblg0110src.setText(null);
                 }
             }
         });
 
-        spblg01k01.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        spblg011101.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
-                    fldGrpspblg01k.setVisibility(View.VISIBLE);
+                    fldGrpspblg0111.setVisibility(View.VISIBLE);
                 } else {
-                    fldGrpspblg01k.setVisibility(View.GONE);
-                    spblg01knum.setText(null);
-                    spblg01ksrc.setText(null);
+                    fldGrpspblg0111.setVisibility(View.GONE);
+                    spblg0111num.setText(null);
+                    spblg0111src.setText(null);
                 }
             }
         });
 
-        spblg01l01.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        spblg011201.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
-                    fldGrpspblg01l.setVisibility(View.VISIBLE);
+                    fldGrpspblg0112.setVisibility(View.VISIBLE);
                 } else {
-                    fldGrpspblg01l.setVisibility(View.GONE);
-                    spblg01lnum.setText(null);
-                    spblg01lsrc.setText(null);
+                    fldGrpspblg0112.setVisibility(View.GONE);
+                    spblg0112num.setText(null);
+                    spblg0112src.setText(null);
                 }
             }
         });
 
-        spblg01m01.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        spblg011301.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
-                    fldGrpspblg01m.setVisibility(View.VISIBLE);
+                    fldGrpspblg0113.setVisibility(View.VISIBLE);
                 } else {
-                    fldGrpspblg01m.setVisibility(View.GONE);
-                    spblg01mnum.setText(null);
-                    spblg01msrc.setText(null);
+                    fldGrpspblg0113.setVisibility(View.GONE);
+                    spblg0113num.setText(null);
+                    spblg0113src.setText(null);
                 }
             }
         });
 
-        spblg01n01.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        spblg011401.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
-                    fldGrpspblg01n.setVisibility(View.VISIBLE);
+                    fldGrpspblg0114.setVisibility(View.VISIBLE);
                 } else {
-                    fldGrpspblg01n.setVisibility(View.GONE);
-                    spblg01nnum.setText(null);
-                    spblg01nsrc.setText(null);
+                    fldGrpspblg0114.setVisibility(View.GONE);
+                    spblg0114num.setText(null);
+                    spblg0114src.setText(null);
                 }
             }
         });
 
-        spblg01o01.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        spblg011501.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
-                    fldGrpspblg01o.setVisibility(View.VISIBLE);
+                    fldGrpspblg0115.setVisibility(View.VISIBLE);
                 } else {
-                    fldGrpspblg01o.setVisibility(View.GONE);
-                    spblg01onum.setText(null);
-                    spblg01ox.setText(null);
-                    spblg01osrc.setText(null);
+                    fldGrpspblg0115.setVisibility(View.GONE);
+                    spblg0115num.setText(null);
+                    spblg0115x.setText(null);
+                    spblg0115src.setText(null);
                 }
             }
         });
 
-        spblg01p01.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        spblg011601.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
-                    fldGrpspblg01p.setVisibility(View.VISIBLE);
+                    fldGrpspblg0116.setVisibility(View.VISIBLE);
                 } else {
-                    fldGrpspblg01p.setVisibility(View.GONE);
-                    spblg01pnum.setText(null);
-                    spblg01px.setText(null);
-                    spblg01psrc.setText(null);
+                    fldGrpspblg0116.setVisibility(View.GONE);
+                    spblg0116num.setText(null);
+                    spblg0116x.setText(null);
+                    spblg0116src.setText(null);
                 }
             }
         });
@@ -514,56 +514,56 @@ public class SectionGActivity extends Activity {
 
         JSONObject sg = new JSONObject();
 
-        sg.put("spblg01a", spblg01a01.isChecked() ? "1" : spblg01a02.isChecked() ? "2" : "0");
-        sg.put("spblg01anum", spblg01anum.getText().toString());
-        sg.put("spblg01asrc", spblg01asrc.getText().toString());
-        sg.put("spblg01b", spblg01b01.isChecked() ? "1" : spblg01b02.isChecked() ? "2" : "0");
-        sg.put("spblg01bnum", spblg01bnum.getText().toString());
-        sg.put("spblg01bsrc", spblg01bsrc.getText().toString());
-        sg.put("spblg01c", spblg01c01.isChecked() ? "1" : spblg01c02.isChecked() ? "2" : "0");
-        sg.put("spblg01cnum", spblg01cnum.getText().toString());
-        sg.put("spblg01csrc", spblg01csrc.getText().toString());
-        sg.put("spblg01d", spblg01d01.isChecked() ? "1" : spblg01d02.isChecked() ? "2" : "0");
-        sg.put("spblg01dnum", spblg01dnum.getText().toString());
-        sg.put("spblg01dsrc", spblg01dsrc.getText().toString());
-        sg.put("spblg01e", spblg01e01.isChecked() ? "1" : spblg01e02.isChecked() ? "2" : "0");
-        sg.put("spblg01enum", spblg01enum.getText().toString());
-        sg.put("spblg01esrc", spblg01esrc.getText().toString());
-        sg.put("spblg01f", spblg01f01.isChecked() ? "1" : spblg01f02.isChecked() ? "2" : "0");
-        sg.put("spblg01fnum", spblg01fnum.getText().toString());
-        sg.put("spblg01fsrc", spblg01fsrc.getText().toString());
+        sg.put("spblg0101", spblg0101a.isChecked() ? "1" : spblg0101b.isChecked() ? "2" : "0");
+        sg.put("spblg0101num", spblg0101num.getText().toString());
+        sg.put("spblg0101src", spblg0101src.getText().toString());
+        sg.put("spblg0102", spblg010201.isChecked() ? "1" : spblg010202.isChecked() ? "2" : "0");
+        sg.put("spblg0102num", spblg0102num.getText().toString());
+        sg.put("spblg0102src", spblg0102src.getText().toString());
+        sg.put("spblg0103", spblg010301.isChecked() ? "1" : spblg010302.isChecked() ? "2" : "0");
+        sg.put("spblg0103num", spblg0103num.getText().toString());
+        sg.put("spblg0103src", spblg0103src.getText().toString());
+        sg.put("spblg0104", spblg010401.isChecked() ? "1" : spblg010402.isChecked() ? "2" : "0");
+        sg.put("spblg0104num", spblg0104num.getText().toString());
+        sg.put("spblg0104src", spblg0104src.getText().toString());
+        sg.put("spblg0105", spblg010501.isChecked() ? "1" : spblg010502.isChecked() ? "2" : "0");
+        sg.put("spblg0105num", spblg0105num.getText().toString());
+        sg.put("spblg0105src", spblg0105src.getText().toString());
+        sg.put("spblg0106", spblg010601.isChecked() ? "1" : spblg010602.isChecked() ? "2" : "0");
+        sg.put("spblg0106num", spblg0106num.getText().toString());
+        sg.put("spblg0106src", spblg0106src.getText().toString());
         sg.put("spblg01g", spblg01g01.isChecked() ? "1" : spblg01g02.isChecked() ? "2" : "0");
         sg.put("spblg01gnum", spblg01gnum.getText().toString());
         sg.put("spblg01gsrc", spblg01gsrc.getText().toString());
-        sg.put("spblg01h", spblg01h01.isChecked() ? "1" : spblg01h02.isChecked() ? "2" : "0");
-        sg.put("spblg01hnum", spblg01hnum.getText().toString());
-        sg.put("spblg01hsrc", spblg01hsrc.getText().toString());
-        sg.put("spblg01i", spblg01i01.isChecked() ? "1" : spblg01i02.isChecked() ? "2" : "0");
-        sg.put("spblg01inum", spblg01inum.getText().toString());
-        sg.put("spblg01isrc", spblg01isrc.getText().toString());
-        sg.put("spblg01j", spblg01j01.isChecked() ? "1" : spblg01j02.isChecked() ? "2" : "0");
-        sg.put("spblg01jnum", spblg01jnum.getText().toString());
-        sg.put("spblg01jsrc", spblg01jsrc.getText().toString());
-        sg.put("spblg01k", spblg01k01.isChecked() ? "1" : spblg01k02.isChecked() ? "2" : "0");
-        sg.put("spblg01knum", spblg01knum.getText().toString());
-        sg.put("spblg01ksrc", spblg01ksrc.getText().toString());
-        sg.put("spblg01l", spblg01l01.isChecked() ? "1" : spblg01l02.isChecked() ? "2" : "0");
-        sg.put("spblg01lnum", spblg01lnum.getText().toString());
-        sg.put("spblg01lsrc", spblg01lsrc.getText().toString());
-        sg.put("spblg01m", spblg01m01.isChecked() ? "1" : spblg01m02.isChecked() ? "2" : "0");
-        sg.put("spblg01mnum", spblg01mnum.getText().toString());
-        sg.put("spblg01msrc", spblg01msrc.getText().toString());
-        sg.put("spblg01n", spblg01n01.isChecked() ? "1" : spblg01n02.isChecked() ? "2" : "0");
-        sg.put("spblg01nnum", spblg01nnum.getText().toString());
-        sg.put("spblg01nsrc", spblg01nsrc.getText().toString());
-        sg.put("spblg01o", spblg01o01.isChecked() ? "1" : spblg01o02.isChecked() ? "2" : "0");
-        sg.put("spblg01onum", spblg01onum.getText().toString());
-        sg.put("spblg01ox", spblg01ox.getText().toString());
-        sg.put("spblg01osrc", spblg01osrc.getText().toString());
-        sg.put("spblg01p", spblg01p01.isChecked() ? "1" : spblg01p02.isChecked() ? "2" : "0");
-        sg.put("spblg01pnum", spblg01pnum.getText().toString());
-        sg.put("spblg01px", spblg01px.getText().toString());
-        sg.put("spblg01psrc", spblg01psrc.getText().toString());
+        sg.put("spblg0108", spblg010801.isChecked() ? "1" : spblg010802.isChecked() ? "2" : "0");
+        sg.put("spblg0108num", spblg0108num.getText().toString());
+        sg.put("spblg0108src", spblg0108src.getText().toString());
+        sg.put("spblg0109", spblg010901.isChecked() ? "1" : spblg010902.isChecked() ? "2" : "0");
+        sg.put("spblg0109num", spblg0109num.getText().toString());
+        sg.put("spblg0109src", spblg0109src.getText().toString());
+        sg.put("spblg0110", spblg011001.isChecked() ? "1" : spblg011002.isChecked() ? "2" : "0");
+        sg.put("spblg0110num", spblg0110num.getText().toString());
+        sg.put("spblg0110src", spblg0110src.getText().toString());
+        sg.put("spblg0111", spblg011101.isChecked() ? "1" : spblg011102.isChecked() ? "2" : "0");
+        sg.put("spblg0111num", spblg0111num.getText().toString());
+        sg.put("spblg0111src", spblg0111src.getText().toString());
+        sg.put("spblg0112", spblg011201.isChecked() ? "1" : spblg011202.isChecked() ? "2" : "0");
+        sg.put("spblg0112num", spblg0112num.getText().toString());
+        sg.put("spblg0112src", spblg0112src.getText().toString());
+        sg.put("spblg0113", spblg011301.isChecked() ? "1" : spblg011302.isChecked() ? "2" : "0");
+        sg.put("spblg0113num", spblg0113num.getText().toString());
+        sg.put("spblg0113src", spblg0113src.getText().toString());
+        sg.put("spblg0114", spblg011401.isChecked() ? "1" : spblg011402.isChecked() ? "2" : "0");
+        sg.put("spblg0114num", spblg0114num.getText().toString());
+        sg.put("spblg0114src", spblg0114src.getText().toString());
+        sg.put("spblg0115", spblg011501.isChecked() ? "1" : spblg011502.isChecked() ? "2" : "0");
+        sg.put("spblg0115num", spblg0115num.getText().toString());
+        sg.put("spblg0115x", spblg0115x.getText().toString());
+        sg.put("spblg0115src", spblg0115src.getText().toString());
+        sg.put("spblg0116", spblg011601.isChecked() ? "1" : spblg011602.isChecked() ? "2" : "0");
+        sg.put("spblg0116num", spblg0116num.getText().toString());
+        sg.put("spblg0116x", spblg0116x.getText().toString());
+        sg.put("spblg0116src", spblg0116src.getText().toString());
 
         //   MainApp.fc.setsG(String.valueOf(sg));
 
@@ -572,213 +572,218 @@ public class SectionGActivity extends Activity {
 
     public boolean ValidateForm() {
 
-        //=================== splg01a ==============
-
-        //================== 1.1===================
-        if (spblg01a.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblg01a), Toast.LENGTH_SHORT).show();
-            spblg01a02.setError("This data is Required!");
-            spblg01a02.setFocusableInTouchMode(true);
-            spblg01a02.setFocusable(true);
-            spblg01a02.requestFocus();
-            Log.i(TAG, "spblg01a: This data is Required!");
+        //=================== spblg0101 ==============
+        if (spblg0101.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblg0101), Toast.LENGTH_SHORT).show();
+            spblg0101b.setError("This data is Required!");
+            spblg0101b.setFocusableInTouchMode(true);
+            spblg0101b.setFocusable(true);
+            spblg0101b.requestFocus();
+            Log.i(TAG, "spblg0101: This data is Required!");
             return false;
         } else {
-            spblg01a02.setError(null);
+            spblg0101b.setError(null);
         }
-        if (spblg01a01.isChecked()) {
-            if (spblg01anum.getText().toString().isEmpty()) {
+        if (spblg0101a.isChecked()) {
+            if (spblg0101num.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.bnf), Toast.LENGTH_SHORT).show();
-                spblg01anum.setError("This data is Required!");
-                spblg01anum.requestFocus();
-                Log.i(TAG, "spblg01anum: This data is Required!");
+                spblg0101num.setError("This data is Required!");
+                spblg0101num.requestFocus();
+                Log.i(TAG, "spblg0101num: This data is Required!");
                 return false;
             } else {
-                spblg01anum.setError(null);
+                spblg0101num.setError(null);
             }
 
-            if (spblg01asrc.getText().toString().isEmpty()) {
+            if (spblg0101src.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.src), Toast.LENGTH_SHORT).show();
-                spblg01asrc.setError("This data is Required!");
-                spblg01asrc.requestFocus();
-                Log.i(TAG, "spblg01asrc: This data is Required!");
+                spblg0101src.setError("This data is Required!");
+                spblg0101src.requestFocus();
+                Log.i(TAG, "spblg0101src: This data is Required!");
                 return false;
             } else {
-                spblg01asrc.setError(null);
+                spblg0101src.setError(null);
             }
 
         }
 
-        if (spblg01b.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblg01b), Toast.LENGTH_SHORT).show();
-            spblg01b02.setError("This data is Required!");
-            spblg01b02.setFocusableInTouchMode(true);
-            spblg01b02.setFocusable(true);
-            spblg01b02.requestFocus();
-            Log.i(TAG, "spblg01b: This data is Required!");
+        //=================== spblg0102 ==============
+        if (spblg0102.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblg0102), Toast.LENGTH_SHORT).show();
+            spblg010202.setError("This data is Required!");
+            spblg010202.setFocusableInTouchMode(true);
+            spblg010202.setFocusable(true);
+            spblg010202.requestFocus();
+            Log.i(TAG, "spblg0102: This data is Required!");
             return false;
         } else {
-            spblg01b02.setError(null);
+            spblg010202.setError(null);
         }
-        if (spblg01b01.isChecked()) {
-            if (spblg01bnum.getText().toString().isEmpty()) {
+        if (spblg010201.isChecked()) {
+            if (spblg0102num.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.bnf), Toast.LENGTH_SHORT).show();
-                spblg01bnum.setError("This data is Required!");
-                spblg01bnum.requestFocus();
-                Log.i(TAG, "spblg01bnum: This data is Required!");
+                spblg0102num.setError("This data is Required!");
+                spblg0102num.requestFocus();
+                Log.i(TAG, "spblg0102num: This data is Required!");
                 return false;
             } else {
-                spblg01bnum.setError(null);
+                spblg0102num.setError(null);
             }
 
-            if (spblg01bsrc.getText().toString().isEmpty()) {
+            if (spblg0102src.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.src), Toast.LENGTH_SHORT).show();
-                spblg01bsrc.setError("This data is Required!");
-                spblg01bsrc.requestFocus();
-                Log.i(TAG, "spblg01bsrc: This data is Required!");
+                spblg0102src.setError("This data is Required!");
+                spblg0102src.requestFocus();
+                Log.i(TAG, "spblg0102src: This data is Required!");
                 return false;
             } else {
-                spblg01bsrc.setError(null);
+                spblg0102src.setError(null);
             }
 
         }
 
-        if (spblg01c.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblg01c), Toast.LENGTH_SHORT).show();
-            spblg01c02.setError("This data is Required!");
-            spblg01c02.setFocusableInTouchMode(true);
-            spblg01c02.setFocusable(true);
-            spblg01c02.requestFocus();
-            Log.i(TAG, "spblg01c: This data is Required!");
+        //=================== spblg0103 ==============
+        if (spblg0103.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblg0103), Toast.LENGTH_SHORT).show();
+            spblg010302.setError("This data is Required!");
+            spblg010302.setFocusableInTouchMode(true);
+            spblg010302.setFocusable(true);
+            spblg010302.requestFocus();
+            Log.i(TAG, "spblg0103: This data is Required!");
             return false;
         } else {
-            spblg01c02.setError(null);
+            spblg010302.setError(null);
         }
-        if (spblg01c01.isChecked()) {
-            if (spblg01cnum.getText().toString().isEmpty()) {
+        if (spblg010301.isChecked()) {
+            if (spblg0103num.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.bnf), Toast.LENGTH_SHORT).show();
-                spblg01cnum.setError("This data is Required!");
-                spblg01cnum.requestFocus();
-                Log.i(TAG, "spblg01cnum: This data is Required!");
+                spblg0103num.setError("This data is Required!");
+                spblg0103num.requestFocus();
+                Log.i(TAG, "spblg0103num: This data is Required!");
                 return false;
             } else {
-                spblg01cnum.setError(null);
+                spblg0103num.setError(null);
             }
 
-            if (spblg01csrc.getText().toString().isEmpty()) {
+            if (spblg0103src.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.src), Toast.LENGTH_SHORT).show();
-                spblg01csrc.setError("This data is Required!");
-                spblg01csrc.requestFocus();
-                Log.i(TAG, "spblg01csrc: This data is Required!");
+                spblg0103src.setError("This data is Required!");
+                spblg0103src.requestFocus();
+                Log.i(TAG, "spblg0103src: This data is Required!");
                 return false;
             } else {
-                spblg01csrc.setError(null);
+                spblg0103src.setError(null);
             }
 
         }
 
-        if (spblg01d.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblg01d), Toast.LENGTH_SHORT).show();
-            spblg01d02.setError("This data is Required!");
-            spblg01d02.setFocusableInTouchMode(true);
-            spblg01d02.setFocusable(true);
-            spblg01d02.requestFocus();
-            Log.i(TAG, "spblg01d: This data is Required!");
+        //=================== spblg0104 ==============
+        if (spblg0104.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblg0104), Toast.LENGTH_SHORT).show();
+            spblg010402.setError("This data is Required!");
+            spblg010402.setFocusableInTouchMode(true);
+            spblg010402.setFocusable(true);
+            spblg010402.requestFocus();
+            Log.i(TAG, "spblg0104: This data is Required!");
             return false;
         } else {
-            spblg01d02.setError(null);
+            spblg010402.setError(null);
         }
-        if (spblg01d01.isChecked()) {
-            if (spblg01dnum.getText().toString().isEmpty()) {
+        if (spblg010401.isChecked()) {
+            if (spblg0104num.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.bnf), Toast.LENGTH_SHORT).show();
-                spblg01dnum.setError("This data is Required!");
-                spblg01dnum.requestFocus();
-                Log.i(TAG, "spblg01dnum: This data is Required!");
+                spblg0104num.setError("This data is Required!");
+                spblg0104num.requestFocus();
+                Log.i(TAG, "spblg0104num: This data is Required!");
                 return false;
             } else {
-                spblg01dnum.setError(null);
+                spblg0104num.setError(null);
             }
 
-            if (spblg01dsrc.getText().toString().isEmpty()) {
+            if (spblg0104src.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.src), Toast.LENGTH_SHORT).show();
-                spblg01dsrc.setError("This data is Required!");
-                spblg01dsrc.requestFocus();
-                Log.i(TAG, "spblg01dsrc: This data is Required!");
+                spblg0104src.setError("This data is Required!");
+                spblg0104src.requestFocus();
+                Log.i(TAG, "spblg0104src: This data is Required!");
                 return false;
             } else {
-                spblg01dsrc.setError(null);
+                spblg0104src.setError(null);
             }
 
         }
 
-        if (spblg01e.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblg01e), Toast.LENGTH_SHORT).show();
-            spblg01e02.setError("This data is Required!");
-            spblg01e02.setFocusableInTouchMode(true);
-            spblg01e02.setFocusable(true);
-            spblg01e02.requestFocus();
-            Log.i(TAG, "spblg01e: This data is Required!");
+        //=================== spblg0105 ==============
+        if (spblg0105.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblg0105), Toast.LENGTH_SHORT).show();
+            spblg010502.setError("This data is Required!");
+            spblg010502.setFocusableInTouchMode(true);
+            spblg010502.setFocusable(true);
+            spblg010502.requestFocus();
+            Log.i(TAG, "spblg0105: This data is Required!");
             return false;
         } else {
-            spblg01e02.setError(null);
+            spblg010502.setError(null);
         }
-        if (spblg01e01.isChecked()) {
-            if (spblg01enum.getText().toString().isEmpty()) {
+        if (spblg010501.isChecked()) {
+            if (spblg0105num.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.bnf), Toast.LENGTH_SHORT).show();
-                spblg01enum.setError("This data is Required!");
-                spblg01enum.requestFocus();
-                Log.i(TAG, "spblg01enum: This data is Required!");
+                spblg0105num.setError("This data is Required!");
+                spblg0105num.requestFocus();
+                Log.i(TAG, "spblg0105num: This data is Required!");
                 return false;
             } else {
-                spblg01enum.setError(null);
+                spblg0105num.setError(null);
             }
 
-            if (spblg01esrc.getText().toString().isEmpty()) {
+            if (spblg0105src.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.src), Toast.LENGTH_SHORT).show();
-                spblg01esrc.setError("This data is Required!");
-                spblg01esrc.requestFocus();
-                Log.i(TAG, "spblg01esrc: This data is Required!");
+                spblg0105src.setError("This data is Required!");
+                spblg0105src.requestFocus();
+                Log.i(TAG, "spblg0105src: This data is Required!");
                 return false;
             } else {
-                spblg01esrc.setError(null);
+                spblg0105src.setError(null);
             }
 
         }
 
-        if (spblg01f.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblg01f), Toast.LENGTH_SHORT).show();
-            spblg01f02.setError("This data is Required!");
-            spblg01f02.setFocusableInTouchMode(true);
-            spblg01f02.setFocusable(true);
-            spblg01f02.requestFocus();
-            Log.i(TAG, "spblg01f: This data is Required!");
+        //=================== spblg0106 ==============
+        if (spblg0106.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblg0106), Toast.LENGTH_SHORT).show();
+            spblg010602.setError("This data is Required!");
+            spblg010602.setFocusableInTouchMode(true);
+            spblg010602.setFocusable(true);
+            spblg010602.requestFocus();
+            Log.i(TAG, "spblg0106: This data is Required!");
             return false;
         } else {
-            spblg01f02.setError(null);
+            spblg010602.setError(null);
         }
-        if (spblg01f01.isChecked()) {
-            if (spblg01fnum.getText().toString().isEmpty()) {
+
+        if (spblg010601.isChecked()) {
+            if (spblg0106num.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.bnf), Toast.LENGTH_SHORT).show();
-                spblg01fnum.setError("This data is Required!");
-                spblg01fnum.requestFocus();
-                Log.i(TAG, "spblg01fnum: This data is Required!");
+                spblg0106num.setError("This data is Required!");
+                spblg0106num.requestFocus();
+                Log.i(TAG, "spblg0106num: This data is Required!");
                 return false;
             } else {
-                spblg01fnum.setError(null);
+                spblg0106num.setError(null);
             }
 
-            if (spblg01fsrc.getText().toString().isEmpty()) {
+            if (spblg0106src.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.src), Toast.LENGTH_SHORT).show();
-                spblg01fsrc.setError("This data is Required!");
-                spblg01fsrc.requestFocus();
-                Log.i(TAG, "spblg01fsrc: This data is Required!");
+                spblg0106src.setError("This data is Required!");
+                spblg0106src.requestFocus();
+                Log.i(TAG, "spblg0106src: This data is Required!");
                 return false;
             } else {
-                spblg01fsrc.setError(null);
+                spblg0106src.setError(null);
             }
 
         }
 
+        //=================== spblg01g ==============
         if (spblg01g.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblg01g), Toast.LENGTH_SHORT).show();
             spblg01g02.setError("This data is Required!");
@@ -813,174 +818,341 @@ public class SectionGActivity extends Activity {
 
         }
 
-        if (spblg01h.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblg01h), Toast.LENGTH_SHORT).show();
-            spblg01h02.setError("This data is Required!");
-            spblg01h02.setFocusableInTouchMode(true);
-            spblg01h02.setFocusable(true);
-            spblg01h02.requestFocus();
-            Log.i(TAG, "spblg01h: This data is Required!");
+        //=================== spblg0108 ==============
+        if (spblg0108.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblg0108), Toast.LENGTH_SHORT).show();
+            spblg010802.setError("This data is Required!");
+            spblg010802.setFocusableInTouchMode(true);
+            spblg010802.setFocusable(true);
+            spblg010802.requestFocus();
+            Log.i(TAG, "spblg0108: This data is Required!");
             return false;
         } else {
-            spblg01h02.setError(null);
+            spblg010802.setError(null);
         }
-        if (spblg01h01.isChecked()) {
-            if (spblg01hnum.getText().toString().isEmpty()) {
+        if (spblg010801.isChecked()) {
+            if (spblg0108num.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.bnf), Toast.LENGTH_SHORT).show();
-                spblg01hnum.setError("This data is Required!");
-                spblg01hnum.requestFocus();
-                Log.i(TAG, "spblg01hnum: This data is Required!");
+                spblg0108num.setError("This data is Required!");
+                spblg0108num.requestFocus();
+                Log.i(TAG, "spblg0108num: This data is Required!");
                 return false;
             } else {
-                spblg01hnum.setError(null);
+                spblg0108num.setError(null);
             }
 
-            if (spblg01hsrc.getText().toString().isEmpty()) {
+            if (spblg0108src.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.src), Toast.LENGTH_SHORT).show();
-                spblg01hsrc.setError("This data is Required!");
-                spblg01hsrc.requestFocus();
-                Log.i(TAG, "spblg01hsrc: This data is Required!");
+                spblg0108src.setError("This data is Required!");
+                spblg0108src.requestFocus();
+                Log.i(TAG, "spblg0108src: This data is Required!");
                 return false;
             } else {
-                spblg01hsrc.setError(null);
+                spblg0108src.setError(null);
             }
 
         }
 
-        if (spblg01i.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblg01i), Toast.LENGTH_SHORT).show();
-            spblg01i02.setError("This data is Required!");
-            spblg01i02.setFocusableInTouchMode(true);
-            spblg01i02.setFocusable(true);
-            spblg01i02.requestFocus();
-            Log.i(TAG, "spblg01i: This data is Required!");
+        //=================== spblg0109 ==============
+        if (spblg0109.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblg0109), Toast.LENGTH_SHORT).show();
+            spblg010902.setError("This data is Required!");
+            spblg010902.setFocusableInTouchMode(true);
+            spblg010902.setFocusable(true);
+            spblg010902.requestFocus();
+            Log.i(TAG, "spblg0109: This data is Required!");
             return false;
         } else {
-            spblg01i02.setError(null);
+            spblg010902.setError(null);
         }
-        if (spblg01i01.isChecked()) {
-            if (spblg01inum.getText().toString().isEmpty()) {
+        if (spblg010901.isChecked()) {
+            if (spblg0109num.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.bnf), Toast.LENGTH_SHORT).show();
-                spblg01inum.setError("This data is Required!");
-                spblg01inum.requestFocus();
-                Log.i(TAG, "spblg01inum: This data is Required!");
+                spblg0109num.setError("This data is Required!");
+                spblg0109num.requestFocus();
+                Log.i(TAG, "spblg0109num: This data is Required!");
                 return false;
             } else {
-                spblg01inum.setError(null);
+                spblg0109num.setError(null);
             }
 
-            if (spblg01isrc.getText().toString().isEmpty()) {
+            if (spblg0109src.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.src), Toast.LENGTH_SHORT).show();
-                spblg01isrc.setError("This data is Required!");
-                spblg01isrc.requestFocus();
-                Log.i(TAG, "spblg01isrc: This data is Required!");
+                spblg0109src.setError("This data is Required!");
+                spblg0109src.requestFocus();
+                Log.i(TAG, "spblg0109src: This data is Required!");
                 return false;
             } else {
-                spblg01isrc.setError(null);
+                spblg0109src.setError(null);
             }
 
         }
 
-        if (spblg01j.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblg01j), Toast.LENGTH_SHORT).show();
-            spblg01j02.setError("This data is Required!");
-            spblg01j02.setFocusableInTouchMode(true);
-            spblg01j02.setFocusable(true);
-            spblg01j02.requestFocus();
-            Log.i(TAG, "spblg01j: This data is Required!");
+        //=================== spblg0110 ==============
+        if (spblg0110.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblg0110), Toast.LENGTH_SHORT).show();
+            spblg011002.setError("This data is Required!");
+            spblg011002.setFocusableInTouchMode(true);
+            spblg011002.setFocusable(true);
+            spblg011002.requestFocus();
+            Log.i(TAG, "spblg0110: This data is Required!");
             return false;
         } else {
-            spblg01j02.setError(null);
+            spblg011002.setError(null);
         }
-        if (spblg01j01.isChecked()) {
-            if (spblg01jnum.getText().toString().isEmpty()) {
+        if (spblg011001.isChecked()) {
+            if (spblg0110num.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.bnf), Toast.LENGTH_SHORT).show();
-                spblg01jnum.setError("This data is Required!");
-                spblg01jnum.requestFocus();
-                Log.i(TAG, "spblg01jnum: This data is Required!");
+                spblg0110num.setError("This data is Required!");
+                spblg0110num.requestFocus();
+                Log.i(TAG, "spblg0110num: This data is Required!");
                 return false;
             } else {
-                spblg01jnum.setError(null);
+                spblg0110num.setError(null);
             }
 
-            if (spblg01jsrc.getText().toString().isEmpty()) {
+            if (spblg0110src.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.src), Toast.LENGTH_SHORT).show();
-                spblg01jsrc.setError("This data is Required!");
-                spblg01jsrc.requestFocus();
-                Log.i(TAG, "spblg01jsrc: This data is Required!");
+                spblg0110src.setError("This data is Required!");
+                spblg0110src.requestFocus();
+                Log.i(TAG, "spblg0110src: This data is Required!");
                 return false;
             } else {
-                spblg01jsrc.setError(null);
+                spblg0110src.setError(null);
             }
 
         }
 
-        if (spblg01k.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblg01k), Toast.LENGTH_SHORT).show();
-            spblg01k02.setError("This data is Required!");
-            spblg01k02.setFocusableInTouchMode(true);
-            spblg01k02.setFocusable(true);
-            spblg01k02.requestFocus();
-            Log.i(TAG, "spblg01k: This data is Required!");
+        //=================== spblg0111 ==============
+        if (spblg0111.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblg0111), Toast.LENGTH_SHORT).show();
+            spblg011102.setError("This data is Required!");
+            spblg011102.setFocusableInTouchMode(true);
+            spblg011102.setFocusable(true);
+            spblg011102.requestFocus();
+            Log.i(TAG, "spblg0111: This data is Required!");
             return false;
         } else {
-            spblg01k02.setError(null);
+            spblg011102.setError(null);
         }
-        if (spblg01k01.isChecked()) {
-            if (spblg01knum.getText().toString().isEmpty()) {
+        if (spblg011101.isChecked()) {
+            if (spblg0111num.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.bnf), Toast.LENGTH_SHORT).show();
-                spblg01knum.setError("This data is Required!");
-                spblg01knum.requestFocus();
-                Log.i(TAG, "spblg01knum: This data is Required!");
+                spblg0111num.setError("This data is Required!");
+                spblg0111num.requestFocus();
+                Log.i(TAG, "spblg0111num: This data is Required!");
                 return false;
             } else {
-                spblg01knum.setError(null);
+                spblg0111num.setError(null);
             }
 
-            if (spblg01ksrc.getText().toString().isEmpty()) {
+            if (spblg0111src.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.src), Toast.LENGTH_SHORT).show();
-                spblg01ksrc.setError("This data is Required!");
-                spblg01ksrc.requestFocus();
-                Log.i(TAG, "spblg01ksrc: This data is Required!");
+                spblg0111src.setError("This data is Required!");
+                spblg0111src.requestFocus();
+                Log.i(TAG, "spblg0111src: This data is Required!");
                 return false;
             } else {
-                spblg01ksrc.setError(null);
+                spblg0111src.setError(null);
             }
 
         }
 
-        if (spblg01l.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblg01l), Toast.LENGTH_SHORT).show();
-            spblg01l02.setError("This data is Required!");
-            spblg01l02.setFocusableInTouchMode(true);
-            spblg01l02.setFocusable(true);
-            spblg01l02.requestFocus();
-            Log.i(TAG, "spblg01l: This data is Required!");
+        //=================== spblg0112 ==============
+        if (spblg0112.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblg0112), Toast.LENGTH_SHORT).show();
+            spblg011202.setError("This data is Required!");
+            spblg011202.setFocusableInTouchMode(true);
+            spblg011202.setFocusable(true);
+            spblg011202.requestFocus();
+            Log.i(TAG, "spblg0112: This data is Required!");
             return false;
         } else {
-            spblg01l02.setError(null);
+            spblg011202.setError(null);
         }
-        if (spblg01l01.isChecked()) {
-            if (spblg01lnum.getText().toString().isEmpty()) {
+        if (spblg011201.isChecked()) {
+            if (spblg0112num.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.bnf), Toast.LENGTH_SHORT).show();
-                spblg01lnum.setError("This data is Required!");
-                spblg01lnum.requestFocus();
-                Log.i(TAG, "spblg01lnum: This data is Required!");
+                spblg0112num.setError("This data is Required!");
+                spblg0112num.requestFocus();
+                Log.i(TAG, "spblg0112num: This data is Required!");
                 return false;
             } else {
-                spblg01lnum.setError(null);
+                spblg0112num.setError(null);
             }
 
-            if (spblg01lsrc.getText().toString().isEmpty()) {
+            if (spblg0112src.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.src), Toast.LENGTH_SHORT).show();
-                spblg01lsrc.setError("This data is Required!");
-                spblg01lsrc.requestFocus();
-                Log.i(TAG, "spblg01lsrc: This data is Required!");
+                spblg0112src.setError("This data is Required!");
+                spblg0112src.requestFocus();
+                Log.i(TAG, "spblg0112src: This data is Required!");
                 return false;
             } else {
-                spblg01lsrc.setError(null);
+                spblg0112src.setError(null);
             }
 
+        }
+
+        //=================== spblg0113 ==============
+        if (spblg0113.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblg0113), Toast.LENGTH_SHORT).show();
+            spblg011302.setError("This data is Required!");
+            spblg011302.setFocusableInTouchMode(true);
+            spblg011302.setFocusable(true);
+            spblg011302.requestFocus();
+            Log.i(TAG, "spblg0113: This data is Required!");
+            return false;
+        } else {
+            spblg011302.setError(null);
+        }
+
+        if (spblg011301.isChecked()) {
+            if (spblg0113num.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.bnf), Toast.LENGTH_SHORT).show();
+                spblg0113num.setError("This data is Required!");
+                spblg0113num.requestFocus();
+                Log.i(TAG, "spblg0113num: This data is Required!");
+                return false;
+            } else {
+                spblg0113num.setError(null);
+            }
+
+            if (spblg0113src.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.src), Toast.LENGTH_SHORT).show();
+                spblg0113src.setError("This data is Required!");
+                spblg0113src.requestFocus();
+                Log.i(TAG, "spblg0113src: This data is Required!");
+                return false;
+            } else {
+                spblg0113src.setError(null);
+            }
+
+        }
+
+        //=================== spblg0114 ==============
+        if (spblg0114.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblg0114), Toast.LENGTH_SHORT).show();
+            spblg011402.setError("This data is Required!");
+            spblg011402.setFocusableInTouchMode(true);
+            spblg011402.setFocusable(true);
+            spblg011402.requestFocus();
+            Log.i(TAG, "spblg0114: This data is Required!");
+            return false;
+        } else {
+            spblg011402.setError(null);
+        }
+        if (spblg011401.isChecked()) {
+            if (spblg0114num.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.bnf), Toast.LENGTH_SHORT).show();
+                spblg0114num.setError("This data is Required!");
+                spblg0114num.requestFocus();
+                Log.i(TAG, "spblg0114num: This data is Required!");
+                return false;
+            } else {
+                spblg0114num.setError(null);
+            }
+
+            if (spblg0114src.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.src), Toast.LENGTH_SHORT).show();
+                spblg0114src.setError("This data is Required!");
+                spblg0114src.requestFocus();
+                Log.i(TAG, "spblg0114src: This data is Required!");
+                return false;
+            } else {
+                spblg0114src.setError(null);
+            }
+
+        }
+
+        //=================== spblg0115 ==============
+        if (spblg0115.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblg0115), Toast.LENGTH_SHORT).show();
+            spblg011502.setError("This data is Required!");
+            spblg011502.setFocusableInTouchMode(true);
+            spblg011502.setFocusable(true);
+            spblg011502.requestFocus();
+            Log.i(TAG, "spblg0115: This data is Required!");
+            return false;
+        } else {
+            spblg011502.setError(null);
+        }
+        if (spblg011501.isChecked()) {
+
+            if (spblg0115x.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblg0115), Toast.LENGTH_SHORT).show();
+                spblg0115x.setError("This data is Required!");
+                spblg0115x.requestFocus();
+                Log.i(TAG, "spblg0115x: This data is Required!");
+                return false;
+            } else {
+                spblg0115x.setError(null);
+            }
+
+            if (spblg0115num.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.bnf), Toast.LENGTH_SHORT).show();
+                spblg0115num.setError("This data is Required!");
+                spblg0115num.requestFocus();
+                Log.i(TAG, "spblg0115num: This data is Required!");
+                return false;
+            } else {
+                spblg0115num.setError(null);
+            }
+
+            if (spblg0115src.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.src), Toast.LENGTH_SHORT).show();
+                spblg0115src.setError("This data is Required!");
+                spblg0115src.requestFocus();
+                Log.i(TAG, "spblg0115src: This data is Required!");
+                return false;
+            } else {
+                spblg0115src.setError(null);
+            }
+        }
+
+        //=================== spblg0116 ==============
+        if (spblg0116.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblg0116), Toast.LENGTH_SHORT).show();
+            spblg011602.setError("This data is Required!");
+            spblg011602.setFocusableInTouchMode(true);
+            spblg011602.setFocusable(true);
+            spblg011602.requestFocus();
+            Log.i(TAG, "spblg0116: This data is Required!");
+            return false;
+        } else {
+            spblg011602.setError(null);
+        }
+
+        if (spblg011601.isChecked()) {
+
+            if (spblg0116x.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblg0116), Toast.LENGTH_SHORT).show();
+                spblg0116x.setError("This data is Required!");
+                spblg0116x.requestFocus();
+                Log.i(TAG, "spblg0116x: This data is Required!");
+                return false;
+            } else {
+                spblg0116x.setError(null);
+            }
+
+            if (spblg0116num.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.bnf), Toast.LENGTH_SHORT).show();
+                spblg0116num.setError("This data is Required!");
+                spblg0116num.requestFocus();
+                Log.i(TAG, "spblg0116num: This data is Required!");
+                return false;
+            } else {
+                spblg0116num.setError(null);
+            }
+
+            if (spblg0116src.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.src), Toast.LENGTH_SHORT).show();
+                spblg0116src.setError("This data is Required!");
+                spblg0116src.requestFocus();
+                Log.i(TAG, "spblg0116src: This data is Required!");
+                return false;
+            } else {
+                spblg0116src.setError(null);
+            }
         }
 
 
