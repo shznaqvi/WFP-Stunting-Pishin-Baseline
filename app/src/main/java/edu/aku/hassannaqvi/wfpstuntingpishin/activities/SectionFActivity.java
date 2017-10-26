@@ -1,11 +1,17 @@
 package edu.aku.hassannaqvi.wfpstuntingpishin.activities;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Toast;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import butterknife.ButterKnife;
-
-//import edu.aku.hassannaqvi.wfpstuntingpishin.R;
+import butterknife.OnClick;
+import edu.aku.hassannaqvi.wfpstuntingpishin.core.DatabaseHelper;
+import edu.aku.hassannaqvi.wfpstuntingpishin.core.MainApp;
 
 public class SectionFActivity extends Activity {
     private static final String TAG = SectionFActivity.class.getName();
@@ -14,11 +20,11 @@ public class SectionFActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.activity_section_f);
+        setContentView(R.layout.activity_section_f);
         ButterKnife.bind(this);
     }
 
-    /*@OnClick(R.id.btnNext)
+    @OnClick(R.id.btnNext)
     void SaveData() {
 
         if (ValidateForm()) {
@@ -159,5 +165,5 @@ public class SectionFActivity extends Activity {
         MainApp.fc.setsHE(String.valueOf(sHE));
 
     }
-*/
+
 }
