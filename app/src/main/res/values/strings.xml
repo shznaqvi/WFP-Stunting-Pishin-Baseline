@@ -412,8 +412,8 @@
     <string name="spblgheading">  ASSISTANCE/EXPOSURE TO INTERVENTIONS </string>
     <string name="spblg01">  کیا پچھلے 3 مہینے میں آپ کے گھر سے کسی نے درج ذیل میں سے کوئی امدد حاصل کی تھی؟
     ایک ایک کر کے پوچھیں </string>
-    <string name="spblg01sub1">  فائدہ مندوں کی تعداد </string>
-    <string name="spblg01sub2">  ذرائع/ این جی او </string>
+  <string name="bnf">  فائدہ مندوں کی تعداد </string>
+  <string name="src">  ذرائع/ این جی او </string>
     <string name="spblg0101">  بچے کے لیئے آر یو ٹی ایف/ وا وا میم </string>
     <string name="spblg0102">  بچوں کے لئے آر یو ایس ایف </string>
     <string name="spblg0103">  بچوں کے لیے وٹا مکسی </string>
@@ -786,7 +786,7 @@
     <string name="spblo03d">  طبی اخراجات برداشت نہیں کر سکتے </string>
     <string name="spblo03e">  شوہر/گھر کے افراد کی اجازت نہیں </string>
     <string name="spblo03f">  24 گھنٹوں خدمات کی سہولیات موجود نہیں </string>
-    <string name="spblo04g">  کیا آپ جانتی ہیں کہ آپ کے علاقے میں ایل ایچ ڈبلیو موجود ہے؟ </string>
+  <string name="spblo04">  کیا آپ جانتی ہیں کہ آپ کے علاقے میں ایل ایچ ڈبلیو موجود ہے؟ </string>
     <string name="spblo05">  اگر ہاں، تو اس کا کیا نام ہے؟ </string>
     <string name="spblo05a">  ایل ایچ ڈبلیو کا نام </string>
     <string name="spblo06">  آخری مرتبہ کب انہوں نے آپ کے گھر کا دورہ کیا تھا؟ </string>
