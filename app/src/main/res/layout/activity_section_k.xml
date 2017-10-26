@@ -27,7 +27,7 @@
             android:layout_marginTop="2dp"
             android:background="@color/colorPrimaryDark"
             android:gravity="center"
-            android:text="@string/secK"
+            android:text="@string/spblkaheading"
             android:textSize="30sp"/>
 
         <View
@@ -43,7 +43,7 @@
             android:layout_marginTop="10dp"
             android:background="@color/blue_100"
             android:gravity="center"
-            android:text="INITIATION OF BREASTFEEDING MODULE"
+            android:text="@string/spblkasubhead"
             android:textColor="@color/colorPrimaryDark"
             android:textSize="30sp"/>
 
@@ -179,6 +179,12 @@
 
         </RadioGroup>
 
+        <LinearLayout
+            android:id="@+id/fldGrpspblk08"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
 
         <TextView
             android:layout_width="match_parent"
@@ -212,6 +218,15 @@
                 android:layout_weight="1"
                 android:text="@string/spblk08b"/>
 
+            <EditText
+                android:id="@+id/spblk08bx"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hour"
+                android:inputType="number"
+                android:maxLength="2"
+                android:visibility="gone"/>
+
             <RadioButton
                 android:id="@+id/spblk08c"
                 android:layout_width="match_parent"
@@ -220,26 +235,19 @@
                 android:layout_weight="1"
                 android:text="@string/spblk08c"/>
 
+            <EditText
+                android:id="@+id/spblk08cx"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/day"
+                android:inputType="number"
+                android:maxLength="2"
+                android:visibility="gone"/>
+
 
         </RadioGroup>
 
-        <EditText
-            android:id="@+id/spbl08bx"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/hour"
-            android:inputType="number"
-            android:maxLength="2"
-            android:visibility="gone"/>
-
-        <EditText
-            android:id="@+id/spbl08cx"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/day"
-            android:inputType="number"
-            android:maxLength="2"
-            android:visibility="gone"/>
+        </LinearLayout>
 
 
         <TextView
@@ -254,7 +262,13 @@
             android:textSize="30sp"/>
 
 
-        <TextView
+        <LinearLayout
+            android:id="@+id/fldGrpspblk09"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -288,7 +302,7 @@
                 android:text="@string/no"/>
 
             <RadioButton
-                android:id="@+id/spblk09c"
+                android:id="@+id/spblk0999"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="1dp"
@@ -298,8 +312,16 @@
 
         </RadioGroup>
 
+        </LinearLayout>
 
-        <TextView
+
+        <LinearLayout
+            android:id="@+id/fldGrpspblk10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -332,7 +354,7 @@
                 android:text="@string/no"/>
 
             <RadioButton
-                android:id="@+id/spblk10c"
+                android:id="@+id/spblk1099"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="1dp"
@@ -341,6 +363,8 @@
 
 
         </RadioGroup>
+
+        </LinearLayout>
 
 
         <TextView
@@ -376,7 +400,7 @@
                 android:text="@string/no"/>
 
             <RadioButton
-                android:id="@+id/spblk11c"
+                android:id="@+id/spblk1199"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="1dp"
@@ -419,7 +443,7 @@
                 android:text="@string/no"/>
 
             <RadioButton
-                android:id="@+id/spblk12c"
+                android:id="@+id/spblk1299"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="1dp"
@@ -443,7 +467,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/bacground_border1"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            >
             <!--A-->
             <TextView
                 android:layout_width="match_parent"
@@ -451,7 +476,7 @@
                 android:layout_marginTop="16dp"
                 android:background="@color/colorHeading"
                 android:gravity="center"
-                android:text="@string/spbl1301"
+                android:text="@string/spblk1301"
                 android:textColor="@color/colorPrimaryDark"
                 />
 
@@ -498,7 +523,7 @@
                 android:layout_marginTop="16dp"
                 android:background="@color/colorHeading"
                 android:gravity="center"
-                android:text="@string/spbl1302"
+                android:text="@string/spblk1302"
                 android:textColor="@color/colorPrimaryDark"
                 />
 
@@ -553,7 +578,7 @@
                 android:layout_marginTop="16dp"
                 android:background="@color/colorHeading"
                 android:gravity="center"
-                android:text="@string/spbl1303"
+                android:text="@string/spblk1303"
                 android:textColor="@color/colorPrimaryDark"
                 />
 
@@ -609,7 +634,7 @@
                 android:layout_marginTop="16dp"
                 android:background="@color/colorHeading"
                 android:gravity="center"
-                android:text="@string/spbl1304"
+                android:text="@string/spblk1304"
                 android:textColor="@color/colorPrimaryDark"
                 />
 
@@ -657,7 +682,7 @@
                 android:layout_marginTop="16dp"
                 android:background="@color/colorHeading"
                 android:gravity="center"
-                android:text="@string/spbl1305"
+                android:text="@string/spblk1305"
                 android:textColor="@color/colorPrimaryDark"
                 />
 
@@ -702,7 +727,7 @@
                 android:layout_marginTop="16dp"
                 android:background="@color/colorHeading"
                 android:gravity="center"
-                android:text="@string/spbl1306"
+                android:text="@string/spblk1306"
                 android:textColor="@color/colorPrimaryDark"
                 />
 
@@ -757,7 +782,7 @@
                 android:layout_marginTop="16dp"
                 android:background="@color/colorHeading"
                 android:gravity="center"
-                android:text="@string/spbl1307"
+                android:text="@string/spblk1307"
                 android:textColor="@color/colorPrimaryDark"
                 />
 
@@ -803,7 +828,7 @@
                 android:layout_marginTop="16dp"
                 android:background="@color/colorHeading"
                 android:gravity="center"
-                android:text="@string/spbl1308"
+                android:text="@string/spblk1308"
                 android:textColor="@color/colorPrimaryDark"
                 />
 
@@ -849,7 +874,7 @@
                 android:layout_marginTop="16dp"
                 android:background="@color/colorHeading"
                 android:gravity="center"
-                android:text="@string/spbl1309"
+                android:text="@string/spblk1309"
                 android:textColor="@color/colorPrimaryDark"
                 />
 
@@ -904,7 +929,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/bacground_border1"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            >
 
             <!--A-->
             <TextView
@@ -913,7 +939,7 @@
                 android:layout_marginTop="16dp"
                 android:background="@color/colorHeading"
                 android:gravity="center"
-                android:text="@string/spbl1401"
+                android:text="@string/spblk1401"
                 android:textColor="@color/colorPrimaryDark"
                 />
 
@@ -959,7 +985,7 @@
                 android:layout_marginTop="16dp"
                 android:background="@color/colorHeading"
                 android:gravity="center"
-                android:text="@string/spbl1402"
+                android:text="@string/spblk1402"
                 android:textColor="@color/colorPrimaryDark"
                 />
 
@@ -1005,7 +1031,7 @@
                 android:layout_marginTop="16dp"
                 android:background="@color/colorHeading"
                 android:gravity="center"
-                android:text="@string/spbl1403"
+                android:text="@string/spblk1403"
                 android:textColor="@color/colorPrimaryDark"
                 />
 
@@ -1051,7 +1077,7 @@
                 android:layout_marginTop="16dp"
                 android:background="@color/colorHeading"
                 android:gravity="center"
-                android:text="@string/spbl1404"
+                android:text="@string/spblk1404"
                 android:textColor="@color/colorPrimaryDark"
                 />
 
@@ -1097,7 +1123,7 @@
                 android:layout_marginTop="16dp"
                 android:background="@color/colorHeading"
                 android:gravity="center"
-                android:text="@string/spbl1405"
+                android:text="@string/spblk1405"
                 android:textColor="@color/colorPrimaryDark"
                 />
 
@@ -1143,7 +1169,7 @@
                 android:layout_marginTop="16dp"
                 android:background="@color/colorHeading"
                 android:gravity="center"
-                android:text="@string/spbl1406"
+                android:text="@string/spblk1406"
                 android:textColor="@color/colorPrimaryDark"
                 />
 
@@ -1189,7 +1215,7 @@
                 android:layout_marginTop="16dp"
                 android:background="@color/colorHeading"
                 android:gravity="center"
-                android:text="@string/spbl1407"
+                android:text="@string/spblk1407"
                 android:textColor="@color/colorPrimaryDark"
                 />
 
@@ -1235,7 +1261,7 @@
                 android:layout_marginTop="16dp"
                 android:background="@color/colorHeading"
                 android:gravity="center"
-                android:text="@string/spbl1408"
+                android:text="@string/spblk1408"
                 android:textColor="@color/colorPrimaryDark"
                 />
 
@@ -1281,7 +1307,7 @@
                 android:layout_marginTop="16dp"
                 android:background="@color/colorHeading"
                 android:gravity="center"
-                android:text="@string/spbl1409"
+                android:text="@string/spblk1409"
                 android:textColor="@color/colorPrimaryDark"
                 />
 
@@ -1327,7 +1353,7 @@
                 android:layout_marginTop="16dp"
                 android:background="@color/colorHeading"
                 android:gravity="center"
-                android:text="@string/spbl1410"
+                android:text="@string/spblk1410"
                 android:textColor="@color/colorPrimaryDark"
                 />
 
@@ -1373,7 +1399,7 @@
                 android:layout_marginTop="16dp"
                 android:background="@color/colorHeading"
                 android:gravity="center"
-                android:text="@string/spbl1411"
+                android:text="@string/spblk1411"
                 android:textColor="@color/colorPrimaryDark"
                 />
 
@@ -1419,7 +1445,7 @@
                 android:layout_marginTop="16dp"
                 android:background="@color/colorHeading"
                 android:gravity="center"
-                android:text="@string/spbl1412"
+                android:text="@string/spblk1412"
                 android:textColor="@color/colorPrimaryDark"
                 />
 
@@ -1466,7 +1492,7 @@
                 android:layout_marginTop="16dp"
                 android:background="@color/colorHeading"
                 android:gravity="center"
-                android:text="@string/spbl1413"
+                android:text="@string/spblk1413"
                 android:textColor="@color/colorPrimaryDark"
                 />
 
@@ -1512,7 +1538,7 @@
                 android:layout_marginTop="16dp"
                 android:background="@color/colorHeading"
                 android:gravity="center"
-                android:text="@string/spbl1414"
+                android:text="@string/spblk1414"
                 android:textColor="@color/colorPrimaryDark"
                 />
 
@@ -1558,7 +1584,7 @@
                 android:layout_marginTop="16dp"
                 android:background="@color/colorHeading"
                 android:gravity="center"
-                android:text="@string/spbl1415"
+                android:text="@string/spblk1415"
                 android:textColor="@color/colorPrimaryDark"
                 />
 
@@ -1604,7 +1630,7 @@
                 android:layout_marginTop="16dp"
                 android:background="@color/colorHeading"
                 android:gravity="center"
-                android:text="@string/spbl1416"
+                android:text="@string/spblk1416"
                 android:textColor="@color/colorPrimaryDark"
                 />
 
@@ -1645,15 +1671,20 @@
 
         </LinearLayout>
 
-        <TextView
+        <LinearLayout
+            android:id="@+id/fldGrpspblk15"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:background="@color/colorHeading"
-            android:gravity="center"
-            android:text="@string/spbl15"
-            android:textColor="@color/colorPrimaryDark"
-            />
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@color/colorPrimary"
+                android:text="@string/spblk15"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@android:color/white"/>
 
 
         <RadioGroup
@@ -1690,15 +1721,22 @@
 
         </RadioGroup>
 
-        <TextView
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/fldGrpspblk16"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:background="@color/colorHeading"
-            android:gravity="center"
-            android:text="@string/spbl16"
-            android:textColor="@color/colorPrimaryDark"
-            />
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@color/colorPrimary"
+                android:text="@string/spblk16"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@android:color/white"/>
 
         <RadioGroup
             android:id="@+id/spblk16"
@@ -1726,6 +1764,7 @@
 
         </RadioGroup>
 
+
         <EditText
             android:id="@+id/spblk16x"
             android:layout_width="match_parent"
@@ -1734,17 +1773,17 @@
             android:inputType="number"
             android:maxLength="2"/>
 
+        </LinearLayout>
+
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:background="@color/colorHeading"
-            android:gravity="center"
-            android:text="@string/spbl17"
-            android:textColor="@color/colorPrimaryDark"
-            />
-
+            android:background="@color/colorPrimary"
+            android:text="@string/spblk17"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@android:color/white"/>
 
         <RadioGroup
             android:id="@+id/spblk17"
@@ -1784,12 +1823,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:background="@color/colorHeading"
-            android:gravity="center"
-            android:text="@string/spbl18"
-            android:textColor="@color/colorPrimaryDark"
-            />
-
+            android:background="@color/colorPrimary"
+            android:text="@string/spblk18"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@android:color/white"/>
 
         <RadioGroup
             android:id="@+id/spblk18"
@@ -1829,12 +1866,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:background="@color/colorHeading"
-            android:gravity="center"
-            android:text="@string/spbl19"
-            android:textColor="@color/colorPrimaryDark"
-            />
-
+            android:background="@color/colorPrimary"
+            android:text="@string/spblk19"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@android:color/white"/>
 
         <RadioGroup
             android:id="@+id/spblk19"
@@ -1874,11 +1909,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:background="@color/colorHeading"
-            android:gravity="center"
-            android:text="@string/spbl20"
-            android:textColor="@color/colorPrimaryDark"
-            />
+            android:background="@color/colorPrimary"
+            android:text="@string/spblk20"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@android:color/white"/>
 
 
         <RadioGroup
@@ -1919,11 +1953,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:background="@color/colorHeading"
-            android:gravity="center"
-            android:text="@string/spbl21"
-            android:textColor="@color/colorPrimaryDark"
-            />
+            android:background="@color/colorPrimary"
+            android:text="@string/spblk21"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@android:color/white"/>
 
 
         <RadioGroup

@@ -45,6 +45,7 @@
   <string name="hour"> گھنٹے </string>
   <string name="min"> منٹ</string>
     <string name="Frequency"> تعداد </string>
+    <string name="kg">کلو گرام</string>
 
 
     <!-- Strings related to Sections Below -->
@@ -143,12 +144,20 @@
     <string name="spblb04d">  دن </string>
     <string name="spblb05">  تعلیمی معیار </string>
     <string name="spblb06">  پیشہ </string>
-    <string name="spblb07">  کیا یہ حاملہ عورت ہے؟ </string>
-    <string name="spblb08">  کیا یہ دودھ پلانے والی ماء ہے؟ </string>
+    <string name="spblb06a">  گھریلو عورت </string>
+    <string name="spblb06b"> ڈاکٹر / انجینئر / ماسٹر / مینیجر وغیرہ </string>
+    <string name="spblb06c">  کلرک / ٹیکنیکل </string>
+    <string name="spblb06d">  سیلز اور سروسز </string>
+    <string name="spblb06e">     ہنر مند مزدور </string>
+    <string name="spblb06f">  غیر ہنر مند مزدور  </string>
+    <string name="spblb06g">  زراعت </string>
+    <string name="spblb06h">  کاروبار </string>
+    <string name="spblb06i">  شاگرد </string>
+    <string name="spblb06j">  بیروز گار </string>
+    <string name="spblb07">حاملہ عورت</string>
+    <string name="spblb08">دودھ پلانے والی ماں</string>
 
-
-
-    <string name="secCLabel"> سماجی اقتصادی معلومات </string>
+    <string name="spblcheading">  سماجی اقتصادی معلومات </string>
     <string name="spblc01">  آپ کی مادری زبان کیا ہے؟ </string>
     <string name="spblc01a">  اردو </string>
     <string name="spblc01b">  پنجابی </string>
@@ -182,17 +191,17 @@
     <string name="spblc04f">  برتن میں ڈال کے حل ہونے کا انتظار </string>
     <string name="spblc05">  آپ کے گھر کے افراد عام طور پر کس قسم کی لیٹرین استعمال کرتے ہیں؟ </string>
     <string name="spblc05asuba">  Flush or Pour Flush Toilet </string>
-    <string name="spblc05a01">  نکاسی کا با قاعدہ نظام </string>
-    <string name="spblc05a02">  فلش حفظان صحت کے مطابق </string>
-    <string name="spblc05a03">  گڑھے والی لیٹرین </string>
-    <string name="spblc05a04">  کھلی جگہ جاتے ہیں </string>
-    <string name="spblc05a05">  فلش،کہاں نہیں پتہ </string>
+    <string name="spblc05a">  نکاسی کا با قاعدہ نظام </string>
+    <string name="spblc05b">  فلش حفظان صحت کے مطابق </string>
+    <string name="spblc05c">  گڑھے والی لیٹرین </string>
+    <string name="spblc05d">  کھلی جگہ جاتے ہیں </string>
+    <string name="spblc05e">  فلش،کہاں نہیں پتہ </string>
     <string name="spblc05bsubb">  PIT Latrine </string>
-    <string name="spblc05b01">  بہتر اور ہوادار گڑھے والی لیٹرین </string>
-    <string name="spblc05b02">  گڑھے والی لیٹرین سلیب کے ساتھ </string>
-    <string name="spblc05b03">  گڑھے والی لیٹرین سلیب کے بغیر </string>
-    <string name="spblc05b04">  بالٹی والا ٹائلٹ </string>
-    <string name="spblc05b05">  کوئیسہولت نہیں؍جھاڑیاں؍کھیت </string>
+    <string name="spblc05f">  بہتر اور ہوادار گڑھے والی لیٹرین </string>
+    <string name="spblc05g">  گڑھے والی لیٹرین سلیب کے ساتھ </string>
+    <string name="spblc05h">  گڑھے والی لیٹرین سلیب کے بغیر </string>
+    <string name="spblc05i">  بالٹی والا ٹائلٹ </string>
+    <string name="spblc05j">  کوئیسہولت نہیں؍جھاڑیاں؍کھیت </string>
     <string name="spblc06">  کیا یہ سہولت دوسرے گھر انےبھی استعمال کرتے ہیں؟ </string>
     <string name="spblc07">  اگرہاں تو دوسرے کتنے گھر لیٹرین کی یہ سہولت استعمال کرتے ہیں؟ </string>
     <string name="spblc07a">  گھروں کی تعداد </string>
@@ -343,11 +352,20 @@
     <string name="spbld05e">  کچھ نہیں </string>
     <string name="spbld06">  کن حالات میں آپ صابن سے ہاتھ دھوتے ہو۔
     یہ کھلا سوال ہے کوئی بھی جواب پڑھ کے نہیں سنانا ہے۔ہر سوال کےوقفے کے بعد بار بار دھرانا ہے جب تک جوابدہندہ سمجھیں کہ ان کے پاس کوئی اور جواب نہیں۔ </string>
+    <string name="spbld06a">  کھانا تیار کرنے سے پہلے </string>
+    <string name="spbld06b"> کھانا پکانے سے پہلے  </string>
+    <string name="spbld06c"> کھانا کھانے سے پہلے   </string>
+    <string name="spbld06d">  بچے کو  کھانا کھلانے  سے پہلے  </string>
+    <string name="spbld06e"> بچے کو  ما ں کا دودھ پلانے سے پہلے  </string>
+    <string name="spbld06f">  بچے کا پاخانہ  صاف  کرنے کے  بعد </string>
+    <string name="spbld06g">  بچے کی نیپی تبدیل کرنے کے بعد  </string>
+    <string name="spbld06h">  بچوں کا پاخانہ پھینکنے کے بعد   </string>
+    <string name="spbld06i">  لیٹرین استعمال کرنے کے بعد  </string>
     <string name="spbleheading">  INCOME SOURCES </string>
     <string name="spble01">  آپ کے گھر کے تین اہم آمدنی کے ذرائع کون کون سے ہیں؟ نیچے دئیے ہوئے کوڈ استعمال کریں۔ </string>
-    <string name="spble0101">  پہلا ذرئعہ آمدنی </string>
-    <string name="spble0102">  دوسرا ذرئعہ آمدنی </string>
-    <string name="spble0103">  تیسرا ذرئعہ آمدنی </string>
+    <string name="spble01a">  پہلا ذرئعہ آمدنی </string>
+    <string name="spble01b">  دوسرا ذرئعہ آمدنی </string>
+    <string name="spble01c">  تیسرا ذرئعہ آمدنی </string>
     <string name="spble0103a">  زراعت </string>
     <string name="spble0103b">  مال مویشی پالنا اور فروخت کرنا </string>
     <string name="spble0103c">  مچھلی کا کاروبار </string>
@@ -364,32 +382,32 @@
     <string name="spble02sub">  PKR </string>
     <string name="spblfheading">  EXPENDITURES </string>
     <string name="spblf01">  نیچے دی ہوئی چیزوں پرآپ کے گھر والوں نے پچھلے ہفتے میں کتنا خرچ کیا ؟ </string>
-    <string name="spblf0101">  روٹی؍آٹا ؍چاول؍دالیں؍اناج </string>
-    <string name="spblf0102">  تازہ سبزیاں </string>
-    <string name="spblf0103">  پھل </string>
-    <string name="spblf0104">  دالیں(بیچ ، چنے) </string>
-    <string name="spblf0105">  دودھ؍دودھ سے بنی اشیأ؍مکھن ؍گھی </string>
-    <string name="spblf0106">  گوشت؍ مر غی </string>
-    <string name="spblf0107">  انڈے </string>
-    <string name="spblf0108">  چینی ، میٹھائیاں </string>
-    <string name="spblf0109">  پکانے کا تیل، مکھن، گھی </string>
-    <string name="spblf0110">  کھانے ،ہلکے پھلکے کھانے جو باہر کھائے جاتے ہیں۔ </string>
-    <string name="spblf0111">  تمباکو،سگریٹ،پان </string>
-    <string name="spblf0112">  پینے کا پانی </string>
-    <string name="spblf0113">  کھانا پکانے کے لئیے ایندھن ؍لکڑی </string>
+    <string name="spblf01a">  روٹی؍آٹا ؍چاول؍دالیں؍اناج </string>
+    <string name="spblf01b">  تازہ سبزیاں </string>
+    <string name="spblf01c">  پھل </string>
+    <string name="spblf01d">  دالیں(بیچ ، چنے) </string>
+    <string name="spblf01e">  دودھ؍دودھ سے بنی اشیأ؍مکھن ؍گھی </string>
+    <string name="spblf01f">  گوشت؍ مر غی </string>
+    <string name="spblf01g">  انڈے </string>
+    <string name="spblf01h">  چینی ، میٹھائیاں </string>
+    <string name="spblf01i">  پکانے کا تیل، مکھن، گھی </string>
+    <string name="spblf01j">  کھانے ،ہلکے پھلکے کھانے جو باہر کھائے جاتے ہیں۔ </string>
+    <string name="spblf01k">  تمباکو،سگریٹ،پان </string>
+    <string name="spblf01l">  پینے کا پانی </string>
+    <string name="spblf01m">  کھانا پکانے کے لئیے ایندھن ؍لکڑی </string>
     <string name="spblf02">  نیچے دی ہوئی چیزوں پرآپ کے گھر والوں نے پچھلے 6مہینوں میں کتنا خرچ کیا ؟ </string>
-    <string name="spblf0201">  کپڑے </string>
-    <string name="spblf0202">  تعلیم(کتابیں،سکول فیس) </string>
-    <string name="spblf0203">  صحت ، دوائیاں </string>
-    <string name="spblf0204">  دوائیاں،جانوروں کی خوراک </string>
-    <string name="spblf0205">  مکان؍ زمین کرایہ </string>
-    <string name="spblf0206">  مکان کی تعمیر؍ مرمت </string>
-    <string name="spblf0207">  کھاد بیج کاشتکاری کے اوزار </string>
-    <string name="spblf0208">  یوٹیلیٹیز (بجلی، گیس) </string>
-    <string name="spblf0209">  ٹرانسپورٹ </string>
-    <string name="spblf0210">  سوپ، ذاتی صفائی،ٹو تھ پیسٹ ،برش </string>
-    <string name="spblf0211">  قرضوں کی واپسی </string>
-    <string name="spblf0212">  سماجی تقریبات،تہوار </string>
+    <string name="spblf02a">  کپڑے </string>
+    <string name="spblf02b">  تعلیم(کتابیں،سکول فیس) </string>
+    <string name="spblf02c">  صحت ، دوائیاں </string>
+    <string name="spblf02d">  دوائیاں،جانوروں کی خوراک </string>
+    <string name="spblf02e">  مکان؍ زمین کرایہ </string>
+    <string name="spblf02f">  مکان کی تعمیر؍ مرمت </string>
+    <string name="spblf02g">  کھاد بیج کاشتکاری کے اوزار </string>
+    <string name="spblf02h">  یوٹیلیٹیز (بجلی، گیس) </string>
+    <string name="spblf02i">  ٹرانسپورٹ </string>
+    <string name="spblf02j">  سوپ، ذاتی صفائی،ٹو تھ پیسٹ ،برش </string>
+    <string name="spblf02k">  قرضوں کی واپسی </string>
+    <string name="spblf02l">  سماجی تقریبات،تہوار </string>
     <string name="spblf03">  گزشتہ ہفتے جو کھا نا آپ نے اپنی پیداوار سے کھاۓ ان کی قیمت روپوں میں کتنی ہوگی؟ </string>
     <string name="spblgheading">  ASSISTANCE/EXPOSURE TO INTERVENTIONS </string>
     <string name="spblg01">  کیا پچھلے 3 مہینے میں آپ کے گھر سے کسی نے درج ذیل میں سے کوئی امدد حاصل کی تھی؟
@@ -617,6 +635,7 @@
     <string name="spbli26a">  گھنٹے </string>
     <string name="spbli26b">  دن </string>
     <string name="spbli26c">  ہفتے </string>
+    <string name="spbli01w">  عورت کا نام </string>
     <string name="spbli26d">  کوئی نہیں </string>
     <string name="spbli27">  اس وقت کس نے آپ کا معائنہ کیا؟ </string>
     <string name="spbli27suba">  صحت کے اہلکار </string>
@@ -638,48 +657,49 @@
     <string name="spblj02">  منتخب عورت کی شناخت </string>
     <string name="spblj03">  ہیموگلوبن کے نتائج </string>
     <string name="spblj04">  لمبائی </string>
-    <string name="spblj04suba">  Measurer 1: Code </string>
-    <string name="spblj04subb">  Measurer 2: Code </string>
+    <string name="spblj0401">  Measurer 1: Code </string>
+    <string name="spblj0402">  Measurer 2: Code </string>
     <string name="spblj05">  Weight in Kg </string>
     <string name="spblkaheading">  Infant and Young Child Feeding (IYCF) Practices for Children under 2 Years </string>
     <string name="spblkasubhead">  INITIATION OF BREASTFEEDING MODULE </string>
-    <string name="spblka01">  بچے کا نام </string>
-    <string name="spblka02">  بچے کا سیریل نمبر </string>
-    <string name="spblka03">  بچے کی جنس </string>
-    <string name="spblka03m">  مرد </string>
-    <string name="spblka03f">  عورت </string>
-    <string name="spblka04">  بچے کی تاریخ َپیدائش
+    <string name="spblk01">  بچے کا نام </string>
+    <string name="spblk02">  بچے کا سیریل نمبر </string>
+    <string name="spblk03">  بچے کی جنس </string>
+    <string name="spblk03m">  مرد </string>
+    <string name="spblk03f">  عورت </string>
+    <string name="spblk04">  بچے کی تاریخ َپیدائش
     صحت یا حفاظتی ٹیکوں کے کارڈ یا پیدائش سرٹیفکیٹ سے DOB حاصل کریں </string>
-    <string name="spblka05">  تاریخ پیدائش کا ذریعہ
+    <string name="spblk05">  تاریخ پیدائش کا ذریعہ
     کارڈ ایک شناختی کارڈ، صحت یا حفاظتی ٹیکوں ، ایک پیدائش سرٹیفکیٹ ہو سکتا ہے </string>
-    <string name="spblka05a">  حفاظتی ٹیکوں کے کارڈ / پیدائش سرٹیفکیٹ </string>
-    <string name="spblka05b">  ماں/ دیکھ بھال کرنے والا کے مطابق </string>
-    <string name="spblka06">  (نام) کتنے مہینے کا ہے </string>
-    <string name="spblka06a">  مکمل مہینوں میں عمر </string>
-    <string name="spblka07">  کیا آپ نے کبھی بچے کو ماں کا دودھ دیا؟ </string>
-    <string name="spblka08">  پیدائش کے کتنی دیر بعد پہلی دفعہ بچے کو اپنا دودھ دیا؟ </string>
-    <string name="spblka08a">  فوراً </string>
-    <string name="spblka08b">  گھنٹے </string>
-    <string name="spblka08c">  دن </string>
+    <string name="spblk05a">  حفاظتی ٹیکوں کے کارڈ / پیدائش سرٹیفکیٹ </string>
+    <string name="spblk05b">  ماں/ دیکھ بھال کرنے والا کے مطابق </string>
+    <string name="spblk06">  (نام) کتنے مہینے کا ہے </string>
+    <string name="spblk06a">  مکمل مہینوں میں عمر </string>
+    <string name="spblk07">  کیا آپ نے کبھی بچے کو ماں کا دودھ دیا؟ </string>
+    <string name="spblk08">  پیدائش کے کتنی دیر بعد پہلی دفعہ بچے کو اپنا دودھ دیا؟ </string>
+    <string name="spblk08a">  فوراً </string>
+    <string name="spblk08b">  گھنٹے </string>
+    <string name="spblk08c">  دن </string>
+    <string name="spblk16a">  Number Of Times </string>
     <string name="spblkbheading">  INFANT AND YOUNG CHILD FEEDING MODULE </string>
-    <string name="spblkb09">  کیا بچے کو کل دن کے وقت یا رات کے وقت ماں کا دودھ دودھ دیا تھا؟ </string>
-    <string name="spblkb10">  کبھی کبھار بچوں کو مختلف طریقے سے دودھ پلاپا جاتاہے۔مثال کے طور پر چمچ کے ذریعے،کپ یا بوتل میں۔یہ اس وقت ہوتا ہے جب بچہ ہمیشہ ماں کے پاس نہیں ہوتا ہے۔کبھی کبھار دوسری عورت بچے کو دودھ پلاتی ہے۔یہ اس وقت ہوتا ہے جب ماں اپنے بچے کو دودھ نہیں پلا سکتی ہے۔
+    <string name="spblk09">  کیا بچے کو کل دن کے وقت یا رات کے وقت ماں کا دودھ دودھ دیا تھا؟ </string>
+    <string name="spblk10">  کبھی کبھار بچوں کو مختلف طریقے سے دودھ پلاپا جاتاہے۔مثال کے طور پر چمچ کے ذریعے،کپ یا بوتل میں۔یہ اس وقت ہوتا ہے جب بچہ ہمیشہ ماں کے پاس نہیں ہوتا ہے۔کبھی کبھار دوسری عورت بچے کو دودھ پلاتی ہے۔یہ اس وقت ہوتا ہے جب ماں اپنے بچے کو دودھ نہیں پلا سکتی ہے۔
     کیا بچے کو کل دن یا رات کے وقت ان میں سے کسی طریقے سے دودھ پلایا گیا؟ </string>
-    <string name="spblkb11">  ابھی میں آپ سے کچھ دواؤں اور وٹامنز کے بارے میں پوچھوں گا /گی جو کبھی کبھار چھوٹے بچوں کو دئیے جاتے ہیں؟
+    <string name="spblk11">  ابھی میں آپ سے کچھ دواؤں اور وٹامنز کے بارے میں پوچھوں گا /گی جو کبھی کبھار چھوٹے بچوں کو دئیے جاتے ہیں؟
     کیا بچے کو وٹامن کے قطرے یا کوئی اور دوا کل دن یا رات کے دوران دی گیا؟ </string>
-    <string name="spblkb12">  کیا بچے کوکل دن یا رات کے دوران نمکول یا او- آر- ایس دیا گیا تھا ؟ </string>
-    <string name="spblkb13">  اب میں آپ سے کچھ مائع اشیاء کے بارے میں جاننا چاہتی ہوں جو کہ بچے نے کل دن یا رات میں لی ہو؟
+    <string name="spblk12">  کیا بچے کوکل دن یا رات کے دوران نمکول یا او- آر- ایس دیا گیا تھا ؟ </string>
+    <string name="spblk13">  اب میں آپ سے کچھ مائع اشیاء کے بارے میں جاننا چاہتی ہوں جو کہ بچے نے کل دن یا رات میں لی ہو؟
     کیا (نام) نے نیچے دی ہوئی لسٹ میں سے کچھ لیا ۔لسٹ پڑھتے ہوے پانی سے شروع کریں۔ </string>
-    <string name="spblkb1301">  سادہ پانی </string>
-    <string name="spblkb1302">  بچوں کے لئے بننے والے دودھ جیسے [لییکٹگن، ندو] </string>
-    <string name="spblkb1303">  ڈٰبے کا دودھ، پاؤڈر،یا جانوروں کا تازہ دودھ </string>
-    <string name="spblkb1304">  جوس یا جوس کے مشروبات </string>
-    <string name="spblkb1305">  شوربہ؍سوپ </string>
-    <string name="spblkb1306">  دہی </string>
-    <string name="spblkb1307">  پتلا دلیہ </string>
-    <string name="spblkb1308">  اور کوئی مائع جیسے (گرائیپ واٹر ،چائے،چاول کا پانی) </string>
-    <string name="spblkb1309">  کوئی اور مائع </string>
-    <string name="spblkb14">  مہربانی کر کے اس ہر اشیاء کے بارے میں بتائیں جو (بچے کا نام) نے کل د ن اور رات کے دوران گھر یا گھر کے باہر کھائی ہو۔
+    <string name="spblk1301">  سادہ پانی </string>
+    <string name="spblk1302">  بچوں کے لئے بننے والے دودھ جیسے [لییکٹگن، ندو] </string>
+    <string name="spblk1303">  ڈٰبے کا دودھ، پاؤڈر،یا جانوروں کا تازہ دودھ </string>
+    <string name="spblk1304">  جوس یا جوس کے مشروبات </string>
+    <string name="spblk1305">  شوربہ؍سوپ </string>
+    <string name="spblk1306">  دہی </string>
+    <string name="spblk1307">  پتلا دلیہ </string>
+    <string name="spblk1308">  اور کوئی مائع جیسے (گرائیپ واٹر ،چائے،چاول کا پانی) </string>
+    <string name="spblk1309">  کوئی اور مائع </string>
+    <string name="spblk14">  مہربانی کر کے اس ہر اشیاء کے بارے میں بتائیں جو (بچے کا نام) نے کل د ن اور رات کے دوران گھر یا گھر کے باہر کھائی ہو۔
     ذرا سوچئے کل جس وقت (بچے کا نام) صبح کے وقت پہلی دفعہ نیند سے اٹھا تھا تو بچے نے اس وقت کچھ کھایا تھا؟ اگر ہاں تووہ سب اشیاء بتائیں جو بچے نے اس وقت کھائیں۔ اس وقت تک پوچھتیں رہیں جب تک جواب دہند ہ نہیں کرتا، اگر نہیں توسوالنمبر بی پے جائیں۔
     اس کے بعد (بچے کا نام) نے کیا کیا؟ (بچے کا نام)نے اس وقت کوئی اشیاء کھائی؟
     اگر ہاں تو مہربانی کر کے مجھے ہر اس اشیاء کے بارے میں بتائیں جو کہ اس نے اس وقت کھائیں۔ اس وقت تک پوچھتیں رہیں جب تک جواب دہندہ نہیں کرتا
@@ -690,32 +710,32 @@
     جیسے ہی جواب دینے والا کھانے کے بارے میں مکمل بتائے، تو آپ ہر گروپ میں ۱و پر گول دائرہ نہ لگا ہوا ہو تو مندرجہ ذیل سوالات پوچھیں اگر جواب دینے والا ہاں کرے تو و۱ پر گول دائرہ لگائیں، ورنہ ۲ یا ۹۹ پے دائرہ لگائیں۔
     ان دی ہوئی اشیا میں سےگزشتہ دن اور رات کے دوران (بچے کا نام) نے کچھ کھایا یا پیا؟
     دوسری غذائیں :- برائے مہربانی ان غذاوں کے بارے میں لکھیں جو جواب دہندہ نے بتائی ہیں لیکن ان کا ذکر لسٹ میں نہیں ہے </string>
-    <string name="spblkb1401">  کھچڑی،دلیہ ، روٹی، چاول، نوڈلز، یا دیگر اناج سے بنائے گئے کھانے کی اشیاء </string>
-    <string name="spblkb1402">  کدو، گاجر، اسکواش، یا میٹھی آلو پیلے یا نارنجی اندر سے </string>
-    <string name="spblkb1403">  سفید آلو، شکرگندی ،سفید یامس،کساوا، یا جڑوں سے بنائی گئی کسی دوسرے کھانے کی اشیا </string>
-    <string name="spblkb1404">  کوئی بھی گہری ہری پتےدار سبزیاں </string>
-    <string name="spblkb1405">  یا (دیگر مقامی وٹامن اے سے بھرپور پھل شامل کریں ) پکا ہوا آم، پکا ہوا پپیتا </string>
-    <string name="spblkb1406">  کوئی دوسرے پھل یا سبزیاں </string>
-    <string name="spblkb1407">  جگر، گردے، دل، یا دوسرے اعضاء کا گوشت </string>
-    <string name="spblkb1408">  کوئی بھی گوشت، جیسے بڑا گوشت، بھیڑ کے بچےکا گوشت، بکری، چکن، بطخ کا گوشت </string>
-    <string name="spblkb1409">  انڈے </string>
-    <string name="spblkb1410">  تازہ یا خشک مچھلی، شیلفش، یا سمندری غذا </string>
-    <string name="spblkb1411">  پھلیاں، مٹر، دال، گری دار میوے، یا بیجوں سے بنائی گئی کسی بھی کھانے کی اشیاء </string>
-    <string name="spblkb1412">  پنیر، دہی، یا دوسرے دودھ کی مصنوعات </string>
-    <string name="spblkb1413">  کوئی تیل، چربی، یا مکھن، یا ان میں سے کسی کے ساتھ کی گئی کھانے کی اشیاء </string>
-    <string name="spblkb1414">  شگر سے بنی اشیأ جیسے چاکلیٹ، مٹھائیاں، کینڈی، پیسٹری، کیک، بسکٹ یا کوئی اور </string>
-    <string name="spblkb1415">  جیسے مرچیں، جڑی بوٹیاں، یا مچھلی پاؤڈر ذائقہ کے لئے مصالحہ جات </string>
-    <string name="spblkb1416">  سرخ پام آئل یا سرخ کھجور نٹ یا سرخ پام نٹ، گدہ یا چٹنی کے فوڈذ </string>
-    <string name="spblkb15">  کیا بچے (نام)نے گزشتہ دن اور رات کے دوران ٹھوس یا نیم ٹھوس یا نرم غذا کھایا/کھائی تھی؟
+    <string name="spblk1401">  کھچڑی،دلیہ ، روٹی، چاول، نوڈلز، یا دیگر اناج سے بنائے گئے کھانے کی اشیاء </string>
+    <string name="spblk1402">  کدو، گاجر، اسکواش، یا میٹھی آلو پیلے یا نارنجی اندر سے </string>
+    <string name="spblk1403">  سفید آلو، شکرگندی ،سفید یامس،کساوا، یا جڑوں سے بنائی گئی کسی دوسرے کھانے کی اشیا </string>
+    <string name="spblk1404">  کوئی بھی گہری ہری پتےدار سبزیاں </string>
+    <string name="spblk1405">  یا (دیگر مقامی وٹامن اے سے بھرپور پھل شامل کریں ) پکا ہوا آم، پکا ہوا پپیتا </string>
+    <string name="spblk1406">  کوئی دوسرے پھل یا سبزیاں </string>
+    <string name="spblk1407">  جگر، گردے، دل، یا دوسرے اعضاء کا گوشت </string>
+    <string name="spblk1408">  کوئی بھی گوشت، جیسے بڑا گوشت، بھیڑ کے بچےکا گوشت، بکری، چکن، بطخ کا گوشت </string>
+    <string name="spblk1409">  انڈے </string>
+    <string name="spblk1410">  تازہ یا خشک مچھلی، شیلفش، یا سمندری غذا </string>
+    <string name="spblk1411">  پھلیاں، مٹر، دال، گری دار میوے، یا بیجوں سے بنائی گئی کسی بھی کھانے کی اشیاء </string>
+    <string name="spblk1412">  پنیر، دہی، یا دوسرے دودھ کی مصنوعات </string>
+    <string name="spblk1413">  کوئی تیل، چربی، یا مکھن، یا ان میں سے کسی کے ساتھ کی گئی کھانے کی اشیاء </string>
+    <string name="spblk1414">  شگر سے بنی اشیأ جیسے چاکلیٹ، مٹھائیاں، کینڈی، پیسٹری، کیک، بسکٹ یا کوئی اور </string>
+    <string name="spblk1415">  جیسے مرچیں، جڑی بوٹیاں، یا مچھلی پاؤڈر ذائقہ کے لئے مصالحہ جات </string>
+    <string name="spblk1416">  سرخ پام آئل یا سرخ کھجور نٹ یا سرخ پام نٹ، گدہ یا چٹنی کے فوڈذ </string>
+    <string name="spblk15">  کیا بچے (نام)نے گزشتہ دن اور رات کے دوران ٹھوس یا نیم ٹھوس یا نرم غذا کھایا/کھائی تھی؟
     اگر ہاں توبار بار پوچھیں کیا ٹھوس یا نیم ٹھوس یا نرم غذا کھایا/کھائی تھی؟ </string>
-    <string name="spblkb16">  کتنی مرتبہ ٹھوس یا نیم ٹھوس یا نرم غذا کھایا/کھائی تھی؟مائع یا پانی جیسی غذاؤں کے علاوہ۔ </string>
-    <string name="spblkb17">  کیا بچے (نام)نے گزشتہ دن اور رات کے دوران بوتل سے دودھ یا کوئی اور مائع چیز پی تھی؟ </string>
-    <string name="spblkb18">  کیا بچے (نام)نے گزشتہ دن اور رات کے دوران بچوں کے لیے بنائے گئے خوراک میں سے کچھ کھایا/کھائی تھی؟ </string>
-    <string name="spblkb19">  کل دن اور رات سے کیا بچے نے ایسا کھانا کھایا جس میں پاوڈر یا سپرنکلز ، وٹامیکس موجود ہو۔
+    <string name="spblk16">  کتنی مرتبہ ٹھوس یا نیم ٹھوس یا نرم غذا کھایا/کھائی تھی؟مائع یا پانی جیسی غذاؤں کے علاوہ۔ </string>
+    <string name="spblk17">  کیا بچے (نام)نے گزشتہ دن اور رات کے دوران بوتل سے دودھ یا کوئی اور مائع چیز پی تھی؟ </string>
+    <string name="spblk18">  کیا بچے (نام)نے گزشتہ دن اور رات کے دوران بچوں کے لیے بنائے گئے خوراک میں سے کچھ کھایا/کھائی تھی؟ </string>
+    <string name="spblk19">  کل دن اور رات سے کیا بچے نے ایسا کھانا کھایا جس میں پاوڈر یا سپرنکلز ، وٹامیکس موجود ہو۔
     کیا بچے (نام)نے گزشتہ دن اور رات کے دوران بچے نے سپرینکل پاوڈر یا وٹامکس کھایا /کھائی تھی </string>
-    <string name="spblkb20">  کل دن اور رات سے کیا بچے نے نیوٹرنٹ سپلیمنٹ یا ایل ،این ،ایس استعمال کیں۔ سروے ائریا میں واوامیم دکھائیں۔
+    <string name="spblk20">  کل دن اور رات سے کیا بچے نے نیوٹرنٹ سپلیمنٹ یا ایل ،این ،ایس استعمال کیں۔ سروے ائریا میں واوامیم دکھائیں۔
     کیا بچے (نام)نے گزشتہ دن اور رات کے دوران بچے نے Wawamumیا اس جیسی تیار شدہ اضافی خوراک کی پیکٹ کھایا /کھائی تھی؟ </string>
-    <string name="spblkb21">  کیا بچے (نام)نے گزشتہ دن اور رات کے دوران بچے نےبچوں کے لیے بنے ہوئے دودھ کا استعمال کیا تھا /کی تھی؟ </string>
+    <string name="spblk21">  کیا بچے (نام)نے گزشتہ دن اور رات کے دوران بچے نےبچوں کے لیے بنے ہوئے دودھ کا استعمال کیا تھا /کی تھی؟ </string>
     <string name="spblmheading">  بچوں کے مرض اور دیکھ بھال (5 سال سے کم) </string>
     <string name="spblm01">  کیا بچہ پچھلے دو ہفتوں کے دوران ان میں سے کسی بیماری میں مبتلہ رہا ہے ؟
     (اس کے علاوہ کوئی اور؟ </string>

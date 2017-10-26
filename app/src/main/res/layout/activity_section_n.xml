@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="edu.aku.hassannaqvi.wfpstuntingpishin.activities.SectionNActivity">
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context="edu.aku.hassannaqvi.wfpstuntingpishin.activities.SectionNActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -18,7 +17,7 @@
         android:layout_gravity="center_horizontal"
         android:background="@color/colorPrimaryDark"
         android:gravity="center"
-        android:text="@string/secNLabel"
+        android:text="@string/spblnheading"
         android:textSize="40sp" />
 
     <View
@@ -76,9 +75,9 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="1dp"
             android:digits="0123456789."
-            android:maxLength="3"
             android:hint="@string/spbln03"
-            android:inputType="number" />
+            android:inputType="number"
+            android:maxLength="3"/>
 
 
         <!--04-->
@@ -206,7 +205,7 @@
                     android:layout_marginBottom="5dp"
                     android:layout_marginTop="16dp"
                     android:background="@color/colorPrimary"
-                    android:text="@string/spblj0501"
+                    android:text="@string/spblj0401"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:textColor="@android:color/white" />
 
@@ -223,7 +222,7 @@
                     android:layout_margin="8dp"
                     android:layout_marginBottom="1dp"
                     android:digits="0123456789."
-                    android:hint="@string/spblj0501"
+                    android:hint="@string/spblj05"
                     android:inputType="number"
                     android:maxLength="3"
                     android:padding="10dp" />
@@ -243,7 +242,7 @@
                     android:layout_marginBottom="5dp"
                     android:layout_marginTop="16dp"
                     android:background="@color/colorPrimary"
-                    android:text="@string/spblj0502"
+                    android:text="@string/spblj0402"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:textColor="@android:color/white" />
 
@@ -260,7 +259,7 @@
                     android:layout_margin="8dp"
                     android:layout_marginBottom="1dp"
                     android:digits="0123456789."
-                    android:hint="@string/spblj0502"
+                    android:hint="@string/spblj05"
                     android:inputType="number"
                     android:maxLength="3"
                     android:padding="10dp" />

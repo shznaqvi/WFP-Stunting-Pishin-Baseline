@@ -17,7 +17,7 @@
             android:layout_gravity="center_horizontal"
             android:background="@color/colorPrimaryDark"
             android:gravity="center"
-            android:text="@string/secCLabel"
+            android:text="@string/spblmheading"
             android:textSize="40sp" />
 
         <View
@@ -408,6 +408,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
                 android:text="@string/spblm04b" />
+
 
             <RadioButton
                 android:id="@+id/spblm0488"

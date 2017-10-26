@@ -56,20 +56,23 @@
         <RadioGroup
             android:id="@+id/spblb02"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
             <RadioButton
                 android:id="@+id/spblb02a"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
-                android:text="@string/male" />
+                android:layout_weight="1"
+                android:text="@string/male"/>
 
             <RadioButton
                 android:id="@+id/spblb02b"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/female" />
+                android:layout_weight="1"
+                android:text="@string/female"/>
 
         </RadioGroup>
 
@@ -103,62 +106,115 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="@android:color/white" />
 
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="1dp"
-            android:layout_marginTop="12dp"
-            android:background="@color/pink_100"
-            android:text="@string/year"
-            android:textColor="@color/colorPrimaryDark" />
+            android:background="@drawable/bacground_border1"
+            android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/spblb04y"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="1dp"
-            android:digits="0123456789 "
-            android:hint="@string/year"
-            android:inputType="number"
-            android:maxLength="2" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="1dp"
-            android:layout_marginTop="12dp"
-            android:background="@color/pink_100"
-            android:text="@string/month"
-            android:textColor="@color/colorPrimaryDark" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_weight="1"
+                    android:background="@color/pink_100"
+                    android:text="@string/year"
+                    android:textColor="@color/colorPrimaryDark"/>
 
-        <EditText
-            android:id="@+id/spblb04m"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="1dp"
-            android:digits="0123456789 "
-            android:hint="@string/month"
-            android:inputType="number"
-            android:maxLength="2" />
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorPrimaryDark"
+                    />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="1dp"
-            android:layout_marginTop="12dp"
-            android:background="@color/pink_100"
-            android:text="@string/day"
-            android:textColor="@color/colorPrimaryDark" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_weight="1"
+                    android:background="@color/pink_100"
+                    android:text="@string/month"
+                    android:textColor="@color/colorPrimaryDark"/>
 
-        <EditText
-            android:id="@+id/spblb04d"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="1dp"
-            android:digits="0123456789 "
-            android:hint="@string/day"
-            android:inputType="number"
-            android:maxLength="2" />
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorPrimaryDark"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_weight="1"
+                    android:background="@color/pink_100"
+                    android:text="@string/day"
+                    android:textColor="@color/colorPrimaryDark"/>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/spblb04y"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:layout_weight="1"
+                    android:digits="0123456789 "
+                    android:hint="@string/year"
+                    android:inputType="number"
+                    android:maxLength="2"/>
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorPrimaryDark"
+                    />
+
+                <EditText
+                    android:id="@+id/spblb04m"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:layout_weight="1"
+                    android:digits="0123456789 "
+                    android:hint="@string/month"
+                    android:inputType="number"
+                    android:maxLength="2"/>
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorPrimaryDark"
+                    />
+
+                <EditText
+                    android:id="@+id/spblb04d"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:layout_weight="1"
+                    android:digits="0123456789 "
+                    android:hint="@string/day"
+                    android:inputType="number"
+                    android:maxLength="2"/>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
 
         <!--05-->
         <TextView
@@ -193,6 +249,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
+
+            <RadioButton
+                android:id="@+id/spblb0677"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:text="@string/dcna"/>
 
             <RadioButton
                 android:id="@+id/spblb06a"
@@ -264,14 +327,13 @@
                 android:layout_marginBottom="1dp"
                 android:text="@string/spblb06j" />
 
-            <RadioButton
-                android:id="@+id/spblb06k"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:text="@string/spblb06k" />
-
         </RadioGroup>
+
+        <LinearLayout
+            android:id="@+id/fldGrpspblb07"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
         <!--07-->
         <TextView
@@ -300,6 +362,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/spblb08"/>
+
+        </LinearLayout>
 
 
         <!--  = = = = =  END OF FORM FIELDS  = = = = = -->

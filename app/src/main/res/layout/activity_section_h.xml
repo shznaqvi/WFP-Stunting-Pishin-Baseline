@@ -1494,7 +1494,7 @@
                 android:layout_margin="4dp"
                 android:layout_weight="1"
                 android:onClick="endForm"
-                android:text="@string/endForm"
+                android:text="@string/end_interview"
                 android:textColor="@android:color/holo_red_light"
                 android:textSize="24sp"
                 android:textStyle="bold" />

@@ -1,11 +1,16 @@
 package edu.aku.hassannaqvi.wfpstuntingpishin.activities;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.annotation.IdRes;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
+import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
@@ -15,15 +20,19 @@ import android.widget.Toast;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.List;
+
 import butterknife.BindView;
+import butterknife.BindViews;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import edu.aku.hassannaqvi.wfpstuntingpishin.core.DatabaseHelper;
 import edu.aku.hassannaqvi.wfpstuntingpishin.core.MainApp;
 import io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText;
 
-public class SectionKActivity extends AppCompatActivity
+public class SectionKActivity extends AppCompatActivity implements RadioGroup.OnCheckedChangeListener
 {
+    private static final String TAG = SectionKActivity.class.getSimpleName();
 
     @BindView(R.id.spblk01)
     Spinner spblk01;
@@ -53,42 +62,42 @@ public class SectionKActivity extends AppCompatActivity
     RadioButton spblk08b;
     @BindView(R.id.spblk08c)
     RadioButton spblk08c;
-    @BindView(R.id.spbl08bx)
-    EditText spbl08bx;
-    @BindView(R.id.spbl08cx)
-    EditText spbl08cx;
+    @BindView(R.id.spblk08bx)
+    EditText spblk08bx;
+    @BindView(R.id.spblk08cx)
+    EditText spblk08cx;
     @BindView(R.id.spblk09)
     RadioGroup spblk09;
     @BindView(R.id.spblk09a)
     RadioButton spblk09a;
     @BindView(R.id.spblk09b)
     RadioButton spblk09b;
-    @BindView(R.id.spblk09c)
-    RadioButton spblk09c;
+    @BindView(R.id.spblk0999)
+    RadioButton spblk0999;
     @BindView(R.id.spblk10)
     RadioGroup spblk10;
     @BindView(R.id.spblk10a)
     RadioButton spblk10a;
     @BindView(R.id.spblk10b)
     RadioButton spblk10b;
-    @BindView(R.id.spblk10c)
-    RadioButton spblk10c;
+    @BindView(R.id.spblk1099)
+    RadioButton spblk1099;
     @BindView(R.id.spblk11)
     RadioGroup spblk11;
     @BindView(R.id.spblk11a)
     RadioButton spblk11a;
     @BindView(R.id.spblk11b)
     RadioButton spblk11b;
-    @BindView(R.id.spblk11c)
-    RadioButton spblk11c;
+    @BindView(R.id.spblk1199)
+    RadioButton spblk1199;
     @BindView(R.id.spblk12)
     RadioGroup spblk12;
     @BindView(R.id.spblk12a)
     RadioButton spblk12a;
     @BindView(R.id.spblk12b)
     RadioButton spblk12b;
-    @BindView(R.id.spblk12c)
-    RadioButton spblk12c;
+    @BindView(R.id.spblk1299)
+    RadioButton spblk1299;
     @BindView(R.id.spblk1301)
     RadioGroup spblk1301;
     @BindView(R.id.spblk1301a)
@@ -351,6 +360,31 @@ public class SectionKActivity extends AppCompatActivity
     RadioButton spblk21b;
     @BindView(R.id.spblk2199)
     RadioButton spblk2199;
+    @BindView(R.id.fldGrpspblk08)
+    LinearLayout fldGrpspblk08;
+    @BindView(R.id.fldGrpspblk09)
+    LinearLayout fldGrpspblk09;
+    @BindView(R.id.fldGrpspblk10)
+    LinearLayout fldGrpspblk10;
+    @BindView(R.id.fldGrpspblk15)
+    LinearLayout fldGrpspblk15;
+    @BindView(R.id.fldGrpspblk16)
+    LinearLayout fldGrpspblk16;
+
+    @BindViews({R.id.spblk1401, R.id.spblk1402, R.id.spblk1403, R.id.spblk1404, R.id.spblk1405, R.id.spblk1406, R.id.spblk1407,
+            R.id.spblk1408, R.id.spblk1409, R.id.spblk1410, R.id.spblk1411, R.id.spblk1412, R.id.spblk1413, R.id.spblk1414,
+            R.id.spblk1415, R.id.spblk1416})
+    List<RadioGroup> spblk14;
+
+    @BindViews({R.id.spblk1401b, R.id.spblk1402b, R.id.spblk1403b, R.id.spblk1404b, R.id.spblk1405b, R.id.spblk1406b,
+            R.id.spblk1407b, R.id.spblk1408b, R.id.spblk1409b, R.id.spblk1410b, R.id.spblk1411b, R.id.spblk1412b,
+            R.id.spblk1413b, R.id.spblk1414b, R.id.spblk1415b, R.id.spblk1416b})
+    List<RadioButton> spblk14b;
+
+    @BindViews({R.id.spblk140199, R.id.spblk140299, R.id.spblk140399, R.id.spblk140499, R.id.spblk140599, R.id.spblk140699,
+            R.id.spblk140799, R.id.spblk140899, R.id.spblk140999, R.id.spblk141099, R.id.spblk141199, R.id.spblk141299,
+            R.id.spblk141399, R.id.spblk141499, R.id.spblk141599, R.id.spblk141699})
+    List<RadioButton> spblk1499;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -358,10 +392,121 @@ public class SectionKActivity extends AppCompatActivity
         setContentView(R.layout.activity_section_k);
         ButterKnife.bind(this);
 
+        spblk07.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
+        {
+            @Override
+            public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
+                if (spblk07a.isChecked()) {
+                    fldGrpspblk08.setVisibility(View.VISIBLE);
+                    fldGrpspblk09.setVisibility(View.VISIBLE);
+
+                } else {
+                    fldGrpspblk08.setVisibility(View.GONE);
+                    fldGrpspblk09.setVisibility(View.GONE);
+                    spblk08.clearCheck();
+                    spblk09.clearCheck();
+                    spblk08bx.setText(null);
+                    spblk08cx.setText(null);
+                }
+            }
+        });
+
+        spblk09.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
+        {
+            @Override
+            public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
+                if (spblk09a.isChecked()) {
+                    fldGrpspblk10.setVisibility(View.GONE);
+                    spblk10.clearCheck();
+                } else {
+                    fldGrpspblk10.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
+        spblk1302.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
+        {
+            @Override
+            public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
+                if (spblk1302a.isChecked()) {
+                    spblk1302x.setVisibility(View.VISIBLE);
+                } else {
+                    spblk1302x.setVisibility(View.GONE);
+                    spblk1302x.setText(null);
+                }
+            }
+        });
+
+        spblk1303.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
+        {
+            @Override
+            public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
+                if (spblk1303a.isChecked()) {
+                    spblk1303x.setVisibility(View.VISIBLE);
+                } else {
+                    spblk1303x.setVisibility(View.GONE);
+                    spblk1303x.setText(null);
+                }
+            }
+        });
+
+        spblk1306.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
+        {
+            @Override
+            public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
+                if (spblk1306a.isChecked()) {
+                    spblk1306x.setVisibility(View.VISIBLE);
+                } else {
+                    spblk1306x.setVisibility(View.GONE);
+                    spblk1306x.setText(null);
+                }
+            }
+        });
+
+        spblk1699.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
+        {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    spblk16x.setVisibility(View.GONE);
+                    spblk16x.setText(null);
+                } else {
+                    spblk16x.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
+        for (RadioGroup rg : spblk14) {
+            rg.setOnCheckedChangeListener(this);
+        }
+
+
+
     }
 
     @OnClick(R.id.btn_Continue)
     void onBtnContinueClick() {
+
+        if (ValidateForm()) {
+            try {
+                SaveDraft();
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+            if (UpdateDB()) {
+                Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
+
+                finish();
+
+
+                Intent endSec = new Intent(this, EndingActivity.class);
+                endSec.putExtra("complete", true);
+                startActivity(endSec);
+
+            } else {
+                Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
+            }
+        }
 
     }
 
@@ -387,56 +532,56 @@ public class SectionKActivity extends AppCompatActivity
 
         SharedPreferences sharedPref = getSharedPreferences("tagName", MODE_PRIVATE);
 
-        /*MainApp.ims = new SectionIIMContract();
 
-        MainApp.ims.set_UUID(MainApp.fc.getUID());
-        MainApp.ims.setFormDate(MainApp.fc.getFormDate());
-        MainApp.ims.setDeviceId(MainApp.fc.getDeviceID());
-        MainApp.ims.setUser(MainApp.fc.getUser());
-        MainApp.ims.setDevicetagID(sharedPref.getString("tagName", null));
-*/
-        JSONObject sI = new JSONObject();
+        JSONObject sK = new JSONObject();
 
-        /*sI.put("ta01", MainApp.cluster);
-        sI.put("ta05h", MainApp.hhno);
-        sI.put("ta05u", MainApp.billno);
-*/
-        //sI.put("tiImsSerial", MainApp.childsMap.get(tiname.getSelectedItem().toString()).getSerialNo());
-
-        sI.put("bcgM", bcgM01.isChecked() ? "1" : bcgM02.isChecked() ? "2" : "0");
-        sI.put("bcgC", bcgC01.isChecked() ? "1" : bcgC02.isChecked() ? "2" : "0");
-        sI.put("opv0M", opv0M01.isChecked() ? "1" : opv0M02.isChecked() ? "2" : "0");
-        sI.put("opv0C", opv0C01.isChecked() ? "1" : opv0C02.isChecked() ? "2" : "0");
-        sI.put("penta1M", penta1M01.isChecked() ? "1" : penta1M02.isChecked() ? "2" : "0");
-        sI.put("penta1C", penta1C01.isChecked() ? "1" : penta1C02.isChecked() ? "2" : "0");
-        sI.put("pneumo1M", pneumo1M01.isChecked() ? "1" : pneumo1M02.isChecked() ? "2" : "0");
-        sI.put("pneumo1C", pneumo1C01.isChecked() ? "1" : pneumo1C02.isChecked() ? "2" : "0");
-        sI.put("opv1M", opv1M01.isChecked() ? "1" : opv1M02.isChecked() ? "2" : "0");
-        sI.put("opv1C", opv1C01.isChecked() ? "1" : opv1C02.isChecked() ? "2" : "0");
-        sI.put("penta2M", penta2M01.isChecked() ? "1" : penta2M02.isChecked() ? "2" : "0");
-        sI.put("penta2C", penta2C01.isChecked() ? "1" : penta2C02.isChecked() ? "2" : "0");
-        sI.put("pneumo2M", pneumo2M01.isChecked() ? "1" : pneumo2M02.isChecked() ? "2" : "0");
-        sI.put("pneumo2C", pneumo2C01.isChecked() ? "1" : pneumo2C02.isChecked() ? "2" : "0");
-
-        sI.put("opv2M", opv2M01.isChecked() ? "1" : opv2M02.isChecked() ? "2" : "0");
-        sI.put("opv2C", opv2C01.isChecked() ? "1" : opv2C02.isChecked() ? "2" : "0");
-        sI.put("penta3M", penta3M01.isChecked() ? "1" : penta3M02.isChecked() ? "2" : "0");
-        sI.put("penta3C", penta3C01.isChecked() ? "1" : penta3C02.isChecked() ? "2" : "0");
-        sI.put("pneumo3M", pneumo3M01.isChecked() ? "1" : pneumo3M02.isChecked() ? "2" : "0");
-        sI.put("pneumo3C", pneumo3C01.isChecked() ? "1" : pneumo3C02.isChecked() ? "2" : "0");
-        sI.put("opv3M", opv3M01.isChecked() ? "1" : opv3M02.isChecked() ? "2" : "0");
-        sI.put("opv3C", opv3C01.isChecked() ? "1" : opv3C02.isChecked() ? "2" : "0");
-        // pneumo 3 at 14 weeks
-        sI.put("ipvM", ipvM01.isChecked() ? "1" : ipvM02.isChecked() ? "2" : "0");
-        sI.put("ipvC", ipvC01.isChecked() ? "1" : ipvC02.isChecked() ? "2" : "0");
-
-        sI.put("measles1M", measles1M01.isChecked() ? "1" : measles1M02.isChecked() ? "2" : "0");
-        sI.put("measles1C", measles1C01.isChecked() ? "1" : measles1C02.isChecked() ? "2" : "0");
-
-        sI.put("measles2M", measles2M01.isChecked() ? "1" : measles2M02.isChecked() ? "2" : "0");
-        sI.put("measles2C", measles2C01.isChecked() ? "1" : measles2C02.isChecked() ? "2" : "0");
-        sI.put("vitaminAM", vitaminAM01.isChecked() ? "1" : vitaminAM02.isChecked() ? "2" : "0");
-        sI.put("vitaminAC", vitaminAC01.isChecked() ? "1" : vitaminAC02.isChecked() ? "2" : "0");
+        sK.put("spblk01", spblk01.getSelectedItem().toString());
+        sK.put("spblk02", spblk01.getSelectedItem().toString());
+        sK.put("spblk03", spblk01.getSelectedItem().toString());
+        sK.put("spblk04", spblk04.getText().toString());
+        sK.put("spblk05", spblk05a.isChecked() ? "1" : spblk05b.isChecked() ? "2" : spblk0599.isChecked() ? "99" : "0");
+        sK.put("spblk06", spblk06.getText().toString());
+        sK.put("spblk07", spblk07a.isChecked() ? "1" : spblk07b.isChecked() ? "2" : "0");
+        sK.put("spblk08", spblk08a.isChecked() ? "1" : spblk08b.isChecked() ? "2" : spblk08c.isChecked() ? "3" : "0");
+        sK.put("spblk08bx", spblk08bx.getText().toString());
+        sK.put("spblk08cx", spblk08cx.getText().toString());
+        sK.put("spblk09", spblk09a.isChecked() ? "1" : spblk09b.isChecked() ? "2" : spblk0999.isChecked() ? "99" : "0");
+        sK.put("spblk10", spblk10a.isChecked() ? "1" : spblk10b.isChecked() ? "2" : spblk1099.isChecked() ? "99" : "0");
+        sK.put("spblk11", spblk11a.isChecked() ? "1" : spblk11b.isChecked() ? "2" : spblk1199.isChecked() ? "99" : "0");
+        sK.put("spblk12", spblk12a.isChecked() ? "1" : spblk12b.isChecked() ? "2" : spblk1299.isChecked() ? "99" : "0");
+        sK.put("spblk1301", spblk1301a.isChecked() ? "1" : spblk1301b.isChecked() ? "2" : spblk130199.isChecked() ? "99" : "0");
+        sK.put("spblk1302", spblk1302a.isChecked() ? "1" : spblk1302b.isChecked() ? "2" : spblk130299.isChecked() ? "99" : "0");
+        sK.put("spblk1303", spblk1303a.isChecked() ? "1" : spblk1303b.isChecked() ? "2" : spblk130399.isChecked() ? "99" : "0");
+        sK.put("spblk1304", spblk1304a.isChecked() ? "1" : spblk1304b.isChecked() ? "2" : spblk130499.isChecked() ? "99" : "0");
+        sK.put("spblk1305", spblk1305a.isChecked() ? "1" : spblk1305b.isChecked() ? "2" : spblk130599.isChecked() ? "99" : "0");
+        sK.put("spblk1306", spblk1306a.isChecked() ? "1" : spblk1306b.isChecked() ? "2" : spblk130699.isChecked() ? "99" : "0");
+        sK.put("spblk1307", spblk1307a.isChecked() ? "1" : spblk1307b.isChecked() ? "2" : spblk130799.isChecked() ? "99" : "0");
+        sK.put("spblk1308", spblk1308a.isChecked() ? "1" : spblk1308b.isChecked() ? "2" : spblk130899.isChecked() ? "99" : "0");
+        sK.put("spblk1309", spblk1309a.isChecked() ? "1" : spblk1309b.isChecked() ? "2" : spblk130999.isChecked() ? "99" : "0");
+        sK.put("spblk1401", spblk1401a.isChecked() ? "1" : spblk1401b.isChecked() ? "2" : spblk140199.isChecked() ? "99" : "0");
+        sK.put("spblk1402", spblk1402a.isChecked() ? "1" : spblk1402b.isChecked() ? "2" : spblk140299.isChecked() ? "99" : "0");
+        sK.put("spblk1403", spblk1403a.isChecked() ? "1" : spblk1403b.isChecked() ? "2" : spblk140399.isChecked() ? "99" : "0");
+        sK.put("spblk1404", spblk1404a.isChecked() ? "1" : spblk1404b.isChecked() ? "2" : spblk140499.isChecked() ? "99" : "0");
+        sK.put("spblk1405", spblk1405a.isChecked() ? "1" : spblk1405b.isChecked() ? "2" : spblk140599.isChecked() ? "99" : "0");
+        sK.put("spblk1406", spblk1406a.isChecked() ? "1" : spblk1406b.isChecked() ? "2" : spblk140699.isChecked() ? "99" : "0");
+        sK.put("spblk1407", spblk1407a.isChecked() ? "1" : spblk1407b.isChecked() ? "2" : spblk140799.isChecked() ? "99" : "0");
+        sK.put("spblk1408", spblk1408a.isChecked() ? "1" : spblk1408b.isChecked() ? "2" : spblk140899.isChecked() ? "99" : "0");
+        sK.put("spblk1409", spblk1409a.isChecked() ? "1" : spblk1409b.isChecked() ? "2" : spblk140999.isChecked() ? "99" : "0");
+        sK.put("spblk1410", spblk1410a.isChecked() ? "1" : spblk1410b.isChecked() ? "2" : spblk141099.isChecked() ? "99" : "0");
+        sK.put("spblk1411", spblk1411a.isChecked() ? "1" : spblk1411b.isChecked() ? "2" : spblk141199.isChecked() ? "99" : "0");
+        sK.put("spblk1412", spblk1412a.isChecked() ? "1" : spblk1412b.isChecked() ? "2" : spblk141299.isChecked() ? "99" : "0");
+        sK.put("spblk1413", spblk1413a.isChecked() ? "1" : spblk1413b.isChecked() ? "2" : spblk141399.isChecked() ? "99" : "0");
+        sK.put("spblk1414", spblk1414a.isChecked() ? "1" : spblk1414b.isChecked() ? "2" : spblk141499.isChecked() ? "99" : "0");
+        sK.put("spblk1415", spblk1415a.isChecked() ? "1" : spblk1415b.isChecked() ? "2" : spblk141599.isChecked() ? "99" : "0");
+        sK.put("spblk1416", spblk1416a.isChecked() ? "1" : spblk1416b.isChecked() ? "2" : spblk141699.isChecked() ? "99" : "0");
+        sK.put("spblk15", spblk15a.isChecked() ? "1" : spblk15b.isChecked() ? "2" : spblk1599.isChecked() ? "99" : "0");
+        sK.put("spblk16", spblk16a.isChecked() ? "1" : spblk1699.isChecked() ? "99" : "0");
+        sK.put("spblk16x", spblk16x.getText().toString());
+        sK.put("spblk17", spblk17a.isChecked() ? "1" : spblk17b.isChecked() ? "2" : spblk1799.isChecked() ? "99" : "0");
+        sK.put("spblk18", spblk18a.isChecked() ? "1" : spblk18b.isChecked() ? "2" : spblk1899.isChecked() ? "99" : "0");
+        sK.put("spblk19", spblk19a.isChecked() ? "1" : spblk19b.isChecked() ? "2" : spblk1999.isChecked() ? "99" : "0");
+        sK.put("spblk20", spblk20a.isChecked() ? "1" : spblk20b.isChecked() ? "2" : spblk2099.isChecked() ? "99" : "0");
+        sK.put("spblk21", spblk21a.isChecked() ? "1" : spblk21b.isChecked() ? "2" : spblk2199.isChecked() ? "99" : "0");
 
 //        MainApp.ims.setsI(String.valueOf(sI));
 
@@ -448,30 +593,121 @@ public class SectionKActivity extends AppCompatActivity
 
         Toast.makeText(this, "Validating This Section ", Toast.LENGTH_SHORT).show();
 
-        if (spblName.getSelectedItem() == "....") {
-            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblName), Toast.LENGTH_SHORT).show();
-            ((TextView) spblName.getSelectedView()).setText("This Data is Required");
-            ((TextView) spblName.getSelectedView()).setTextColor(Color.RED);
-            spblName.requestFocus();
-            Log.i(TAG, "spblname: This Data is Required!");
+        if (spblk01.getSelectedItem() == "....") {
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblk01), Toast.LENGTH_SHORT).show();
+            ((TextView) spblk01.getSelectedView()).setText("This Data is Required");
+            ((TextView) spblk01.getSelectedView()).setTextColor(Color.RED);
+            spblk01.requestFocus();
+            Log.i(TAG, "spblk01: This Data is Required!");
             return false;
         } else {
-            ((TextView) spblName.getSelectedView()).setError(null);
+            ((TextView) spblk01.getSelectedView()).setError(null);
+        }
+
+        if (spblk04.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblk04), Toast.LENGTH_SHORT).show();
+            spblk04.setError("This Data is Required!");
+            spblk04.requestFocus();
+            Log.i(TAG, "spblk01: This Data is Required!");
+            return false;
+        } else {
+            spblk04.setError(null);
         }
 
 
-        //============ BCG / Mother ==========
-        if (bcgM.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.bcg), Toast.LENGTH_SHORT).show();
-            bcgM02.setError("This data is Required!");
-            Log.i(TAG, "bcgM: This data is Required!");
-            bcgM02.setFocusable(true);
-            bcgM02.setFocusableInTouchMode(true);
-            bcgM02.requestFocus();
+        if (spblk05.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblk05), Toast.LENGTH_SHORT).show();
+            spblk05a.setError("This data is Required!");
+            Log.i(TAG, "spblk05: This data is Required!");
+            spblk05a.setFocusable(true);
+            spblk05a.setFocusableInTouchMode(true);
+            spblk05a.requestFocus();
             return false;
         } else {
-            bcgM02.setError(null);
+            spblk05a.setError(null);
         }
+
+        if (spblk06.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblk06), Toast.LENGTH_SHORT).show();
+            spblk06.setError("This Data is Required!");
+            spblk06.requestFocus();
+            Log.i(TAG, "spblk06: This Data is Required!");
+            return false;
+        } else {
+            spblk06.setError(null);
+        }
+
+        if (Integer.valueOf(spblk06.getText().toString()) < 0 || Integer.valueOf(spblk06.getText().toString()) > 23) {
+            Toast.makeText(this, "ERROR(Invalid)" + getString(R.string.spblk06), Toast.LENGTH_SHORT).show();
+            spblk06.setError("Age Range is 0 to 23 months");
+            spblk06.requestFocus();
+            Log.i(TAG, "spblk06: Age Range is 0 to 23 months");
+            return false;
+        } else {
+            spblk06.setError(null);
+        }
+
+        if (spblk07.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblk07), Toast.LENGTH_SHORT).show();
+            spblk07a.setError("This data is Required!");
+            Log.i(TAG, "spblk07: This data is Required!");
+            spblk07a.setFocusable(true);
+            spblk07a.setFocusableInTouchMode(true);
+            spblk07a.requestFocus();
+            return false;
+        } else {
+            spblk07a.setError(null);
+        }
+
+        if (spblk07a.isChecked()) {
+            if (spblk08.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblk08), Toast.LENGTH_SHORT).show();
+                spblk08a.setError("This data is Required!");
+                Log.i(TAG, "spblk08: This data is Required!");
+                spblk08a.setFocusable(true);
+                spblk08a.setFocusableInTouchMode(true);
+                spblk08a.requestFocus();
+                return false;
+            } else {
+                spblk08a.setError(null);
+            }
+
+            if (spblk08b.isChecked() && spblk08bx.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblk08) + " - " + getString(R.string.hour), Toast.LENGTH_SHORT).show();
+                spblk08bx.setError("This Data is Required!");
+                spblk08bx.requestFocus();
+                Log.i(TAG, "spblk08bx: This Data is Required!");
+                return false;
+            } else {
+                spblk08bx.setError(null);
+            }
+
+            if (spblk08c.isChecked() && spblk08cx.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblk08) + " - " + getString(R.string.day), Toast.LENGTH_SHORT).show();
+                spblk08cx.setError("This Data is Required!");
+                spblk08cx.requestFocus();
+                Log.i(TAG, "spblk08cx: This Data is Required!");
+                return false;
+            } else {
+                spblk08cx.setError(null);
+            }
+
+
+            if (spblk09.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblk09), Toast.LENGTH_SHORT).show();
+                spblk09a.setError("This data is Required!");
+                Log.i(TAG, "spblk09: This data is Required!");
+                spblk09a.setFocusable(true);
+                spblk09a.setFocusableInTouchMode(true);
+                spblk09a.requestFocus();
+                return false;
+            } else {
+                spblk09a.setError(null);
+            }
+
+        }
+
+
 
 
         return true;
@@ -483,5 +719,34 @@ public class SectionKActivity extends AppCompatActivity
     }
 
 
+    @Override
+    public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
+
+        if (is14AllNo()) {
+            // Show answer here
+            fldGrpspblk15.setVisibility(View.VISIBLE);
+            fldGrpspblk15.setVisibility(View.GONE);
+            spblk16x.setText(null);
+            spblk16.clearCheck();
+
+        } else {
+            fldGrpspblk15.setVisibility(View.GONE);
+            fldGrpspblk15.setVisibility(View.VISIBLE);
+            spblk15.clearCheck();
+        }
+
+    }
+
+    public boolean is14AllNo() {
+
+        int i = 0;
+        for (RadioButton rg : spblk14b) {
+            if (rg.isChecked())
+                i++;
+        }
+
+        // Show answer here
+        return i == spblk14b.size();
+    }
 
 }

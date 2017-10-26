@@ -1,6 +1,7 @@
 package edu.aku.hassannaqvi.wfpstuntingpishin.activities;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -323,6 +324,27 @@ public class SectionLIMActivity extends Activity
 
     @OnClick(R.id.btn_Continue)
     void onBtnContinueClick() {
+
+        if (ValidateForm()) {
+            try {
+                SaveDraft();
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+            if (UpdateDB()) {
+                Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
+
+                finish();
+
+
+                Intent endSec = new Intent(this, EndingActivity.class);
+                endSec.putExtra("complete", true);
+                startActivity(endSec);
+
+            } else {
+                Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
+            }
+        }
 
     }
 
