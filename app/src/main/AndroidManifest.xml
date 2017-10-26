@@ -59,13 +59,20 @@
         <activity android:name=".activities.SectionHActivity"></activity>
         <activity android:name=".activities.SectionIActivity"></activity>
         <activity android:name=".activities.SectionJActivity"></activity>
-        <activity android:name=".activities.SectionKAActivity"></activity>
-        <activity android:name=".activities.SectionKBIYCFActivity"></activity>
+        <activity
+            android:name=".activities.SectionKActivity"
+            android:theme="@style/AppTheme1">
+
+        </activity>
         <activity android:name=".activities.SectionLIMActivity"></activity>
         <activity android:name=".activities.SectionMActivity"></activity>
         <activity android:name=".activities.SectionOActivity"></activity>
         <activity android:name=".activities.SectionPActivity"></activity>
-        <activity android:name=".activities.SectionQActivity"></activity>
+        <activity
+            android:name=".activities.SectionQActivity"
+            android:theme="@style/AppTheme1">
+
+        </activity>
         <activity android:name=".activities.SectionNActivity"></activity>
         <activity android:name=".activities.SectionAActivity"></activity>
     </application>
