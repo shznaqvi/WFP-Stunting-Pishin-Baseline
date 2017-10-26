@@ -1,20 +1,29 @@
 package edu.aku.hassannaqvi.wfpstuntingpishin.activities;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import edu.aku.hassannaqvi.wfpstuntingpishin.R;
+import edu.aku.hassannaqvi.wfpstuntingpishin.core.DatabaseHelper;
 import edu.aku.hassannaqvi.wfpstuntingpishin.core.MainApp;
 
+import android.support.annotation.IdRes;
+import android.view.View;
+import android.widget.CompoundButton;
 import android.widget.RadioGroup;
 import android.widget.RadioButton;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.CheckBox;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 public class SectionCActivity extends Activity {
 
@@ -400,6 +409,8 @@ public class SectionCActivity extends Activity {
     RadioButton spblc14t;
     @BindView(R.id.spblc14u)
     RadioButton spblc14u;
+    @BindView(R.id.spblc14v)
+    RadioButton spblc14v;
     @BindView(R.id.spblc1488)
     RadioButton spblc1488;
     @BindView(R.id.spblc1488x)
@@ -482,8 +493,8 @@ public class SectionCActivity extends Activity {
     EditText spblc18kn;
     @BindView(R.id.spblc18c)
     RadioButton spblc18c;
-    @BindView(R.id.spblc1ckn)
-    EditText spblc1ckn;
+    @BindView(R.id.spblc18mr)
+    EditText spblc18mr;
     @BindView(R.id.spblc1899)
     RadioButton spblc1899;
     @BindView(R.id.spblc19)
@@ -506,6 +517,8 @@ public class SectionCActivity extends Activity {
     EditText spblc20e;
     @BindView(R.id.spblc20f)
     EditText spblc20f;
+    @BindView(R.id.spblc20g)
+    EditText spblc20g;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -513,20 +526,451 @@ public class SectionCActivity extends Activity {
         setContentView(R.layout.activity_section_c);
         ButterKnife.bind(this);
 
+
+//        Skips
+
+//        03
+        spblc03.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
+                if (i == R.id.spblc03b) {
+                    fldGrpspblc01.setVisibility(View.VISIBLE);
+                } else {
+                    fldGrpspblc01.setVisibility(View.GONE);
+                    spblc04.clearCheck();
+                    spblc0488x.setText(null);
+                }
+            }
+        });
+
+//        06
+        spblc06.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
+                if (i == R.id.spblc06b) {
+                    fldGrpspblc02.setVisibility(View.VISIBLE);
+                } else {
+                    fldGrpspblc02.setVisibility(View.GONE);
+                    spblc0799.setChecked(false);
+                    spblc07.setText(null);
+                }
+            }
+        });
+
+//        17
+        spblc17.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
+                if (i == R.id.spblc17b) {
+                    fldGrpspblc03.setVisibility(View.VISIBLE);
+                } else {
+                    fldGrpspblc03.setVisibility(View.GONE);
+                    spblc18.clearCheck();
+                    spblc18ac.setText(null);
+                    spblc18kn.setText(null);
+                    spblc18mr.setText(null);
+                }
+            }
+        });
+
+//        19
+        spblc19.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
+                if (i == R.id.spblc19b) {
+                    fldGrpspblc04.setVisibility(View.VISIBLE);
+                } else {
+                    fldGrpspblc04.setVisibility(View.GONE);
+                    spblc20a.setText(null);
+                    spblc20b.setText(null);
+                    spblc20c.setText(null);
+                    spblc20d.setText(null);
+                    spblc20e.setText(null);
+                    spblc20f.setText(null);
+                    spblc20g.setText(null);
+                }
+            }
+        });
+
+//        Others Skip
+
+//        01
+        spblc01.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
+                if (i == R.id.spblc0188) {
+                    spblc0188x.setVisibility(View.VISIBLE);
+                } else {
+                    spblc0188x.setVisibility(View.GONE);
+                    spblc0188x.setText(null);
+                }
+            }
+        });
+
+
+//        02
+        spblc02.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
+                if (i == R.id.spblc0288) {
+                    spblc0288x.setVisibility(View.VISIBLE);
+                } else {
+                    spblc0288x.setVisibility(View.GONE);
+                    spblc0288x.setText(null);
+                }
+            }
+        });
+
+//        04
+        spblc04.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
+                if (i == R.id.spblc0488) {
+                    spblc0488x.setVisibility(View.VISIBLE);
+                } else {
+                    spblc0488x.setVisibility(View.GONE);
+                    spblc0488x.setText(null);
+                }
+            }
+        });
+
+//        05
+        spblc05.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
+                if (i == R.id.spblc0588) {
+                    spblc0588x.setVisibility(View.VISIBLE);
+                } else {
+                    spblc0588x.setVisibility(View.GONE);
+                    spblc0588x.setText(null);
+                }
+            }
+        });
+
+//        07
+        spblc0799.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (b) {
+                    spblc07.setVisibility(View.VISIBLE);
+                } else {
+                    spblc07.setVisibility(View.GONE);
+                    spblc07.setText(null);
+                }
+            }
+        });
+
+//        09
+        spblc09.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
+                if (i == R.id.spblc0988) {
+                    spblc0988x.setVisibility(View.VISIBLE);
+                } else {
+                    spblc0988x.setVisibility(View.GONE);
+                    spblc0988x.setText(null);
+                }
+            }
+        });
+
+//        10
+        spblc10.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
+                if (i == R.id.spblc1088) {
+                    spblc1088x.setVisibility(View.VISIBLE);
+                } else {
+                    spblc1088x.setVisibility(View.GONE);
+                    spblc1088x.setText(null);
+                }
+            }
+        });
+
+//        10
+        spblc10.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
+                if (i == R.id.spblc1088) {
+                    spblc1088x.setVisibility(View.VISIBLE);
+                } else {
+                    spblc1088x.setVisibility(View.GONE);
+                    spblc1088x.setText(null);
+                }
+            }
+        });
+
+//        12
+        spblc12.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
+                if (i == R.id.spblc1288) {
+                    spblc1288x.setVisibility(View.VISIBLE);
+                } else {
+                    spblc1288x.setVisibility(View.GONE);
+                    spblc1288x.setText(null);
+                }
+            }
+        });
+
+//        13
+        spblc13.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
+                if (i == R.id.spblc1388) {
+                    spblc1388x.setVisibility(View.VISIBLE);
+                } else {
+                    spblc1388x.setVisibility(View.GONE);
+                    spblc1388x.setText(null);
+                }
+            }
+        });
+
+//        14
+        spblc14.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
+                if (i == R.id.spblc1488) {
+                    spblc1488x.setVisibility(View.VISIBLE);
+                } else {
+                    spblc1488x.setVisibility(View.GONE);
+                    spblc1488x.setText(null);
+                }
+            }
+        });
+
+//        18
+        spblc18.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
+                if (i == R.id.spblc18a) {
+                    spblc18ac.setVisibility(View.VISIBLE);
+                    spblc18kn.setVisibility(View.GONE);
+                    spblc18kn.setText(null);
+                    spblc18mr.setVisibility(View.GONE);
+                    spblc18mr.setText(null);
+                } else if (i == R.id.spblc18b) {
+                    spblc18kn.setVisibility(View.VISIBLE);
+                    spblc18ac.setVisibility(View.GONE);
+                    spblc18ac.setText(null);
+                    spblc18mr.setVisibility(View.GONE);
+                    spblc18mr.setText(null);
+                } else if (i == R.id.spblc18c) {
+                    spblc18mr.setVisibility(View.VISIBLE);
+                    spblc18ac.setVisibility(View.GONE);
+                    spblc18ac.setText(null);
+                    spblc18kn.setVisibility(View.GONE);
+                    spblc18kn.setText(null);
+                } else {
+                    spblc18ac.setVisibility(View.GONE);
+                    spblc18ac.setText(null);
+                    spblc18kn.setVisibility(View.GONE);
+                    spblc18kn.setText(null);
+                    spblc18mr.setVisibility(View.GONE);
+                    spblc18mr.setText(null);
+                }
+            }
+        });
+
+
     }
 
     @OnClick(R.id.btn_Continue)
     void onBtnContinueClick() {
         //TODO implement
 
+        Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();
+        if (formValidation()) {
+            try {
+                SaveDraft();
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+            if (UpdateDB()) {
+                Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
 
+                finish();
+                startActivity(new Intent(this, SectionDActivity.class));
+            } else {
+                Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
+            }
+        }
     }
 
     @OnClick(R.id.btn_End)
     void onBtnEndClick() {
         //TODO implement
 
-        MainApp.endActivity(this,this);
+        MainApp.endActivity(this, this);
+    }
+
+    private void SaveDraft() throws JSONException {
+        Toast.makeText(this, "Saving Draft for  This Section", Toast.LENGTH_SHORT).show();
+
+        JSONObject sC = new JSONObject();
+
+//        01
+        sC.put("spblc01", spblc01a.isChecked() ? "1" : spblc01b.isChecked() ? "2" : spblc01c.isChecked() ? "3"
+                : spblc01d.isChecked() ? "4" : spblc01e.isChecked() ? "5" : spblc01f.isChecked() ? "6"
+                : spblc0188.isChecked() ? "88" : "0");
+        sC.put("spblc0188x", spblc0188x.getText().toString());
+
+//        02
+        sC.put("spblc02", spblc02a.isChecked() ? "1" : spblc02b.isChecked() ? "2" : spblc02c.isChecked() ? "3"
+                : spblc02d.isChecked() ? "4" : spblc02e.isChecked() ? "5" : spblc02f.isChecked() ? "6"
+                : spblc02g.isChecked() ? "7" : spblc02h.isChecked() ? "8" : spblc02i.isChecked() ? "9" : spblc02j.isChecked() ? "10"
+                : spblc02k.isChecked() ? "11" : spblc02l.isChecked() ? "12" : spblc02m.isChecked() ? "13"
+                : spblc02n.isChecked() ? "14" : spblc02o.isChecked() ? "15" : spblc0288.isChecked() ? "88"
+                : "0");
+        sC.put("spblc0288x", spblc0288x.getText().toString());
+
+//        03
+        sC.put("spblc03", spblc03a.isChecked() ? "1" : spblc03b.isChecked() ? "2" : "0");
+
+//        04
+        sC.put("spblc04", spblc04a.isChecked() ? "1" : spblc04b.isChecked() ? "2" : spblc04c.isChecked() ? "3"
+                : spblc04d.isChecked() ? "4" : spblc04e.isChecked() ? "5" : spblc04f.isChecked() ? "6"
+                : spblc0488.isChecked() ? "88" : "0");
+        sC.put("spblc0488x", spblc0488x.getText().toString());
+
+//        05
+        sC.put("spblc05", spblc05a.isChecked() ? "1" : spblc05b.isChecked() ? "2" : spblc05c.isChecked() ? "3"
+                : spblc05d.isChecked() ? "4" : spblc05e.isChecked() ? "5" : spblc05f.isChecked() ? "6"
+                : spblc05g.isChecked() ? "7" : spblc05h.isChecked() ? "8" : spblc05i.isChecked() ? "9"
+                : spblc05j.isChecked() ? "10" : spblc0588.isChecked() ? "88" : "0");
+        sC.put("spblc0588x", spblc0588x.getText().toString());
+
+//        06
+        sC.put("spblc06", spblc06a.isChecked() ? "1" : spblc06b.isChecked() ? "2" : "0");
+
+//        07
+        sC.put("spblc07", spblc0799.isChecked() ? "99" : spblc07.getText().toString());
+
+//        08
+        sC.put("spblc08a", spblc08aa.isChecked() ? "1" : spblc08ab.isChecked() ? "2" : "0");
+        sC.put("spblc08b", spblc08ba.isChecked() ? "1" : spblc08bb.isChecked() ? "2" : "0");
+        sC.put("spblc08c", spblc08ca.isChecked() ? "1" : spblc08cb.isChecked() ? "2" : "0");
+        sC.put("spblc08d", spblc08da.isChecked() ? "1" : spblc08db.isChecked() ? "2" : "0");
+        sC.put("spblc08e", spblc08ea.isChecked() ? "1" : spblc08eb.isChecked() ? "2" : "0");
+        sC.put("spblc08f", spblc08fa.isChecked() ? "1" : spblc08fb.isChecked() ? "2" : "0");
+        sC.put("spblc08g", spblc08ga.isChecked() ? "1" : spblc08gb.isChecked() ? "2" : "0");
+        sC.put("spblc08h", spblc08ha.isChecked() ? "1" : spblc08hb.isChecked() ? "2" : "0");
+        sC.put("spblc08i", spblc08ia.isChecked() ? "1" : spblc08ib.isChecked() ? "2" : "0");
+        sC.put("spblc08j", spblc08ja.isChecked() ? "1" : spblc08jb.isChecked() ? "2" : "0");
+        sC.put("spblc08k", spblc08ka.isChecked() ? "1" : spblc08kb.isChecked() ? "2" : "0");
+        sC.put("spblc08l", spblc08la.isChecked() ? "1" : spblc08lb.isChecked() ? "2" : "0");
+        sC.put("spblc08m", spblc08ma.isChecked() ? "1" : spblc08mb.isChecked() ? "2" : "0");
+        sC.put("spblc08n", spblc08na.isChecked() ? "1" : spblc08nb.isChecked() ? "2" : "0");
+        sC.put("spblc08o", spblc08oa.isChecked() ? "1" : spblc08ob.isChecked() ? "2" : "0");
+        sC.put("spblc08p", spblc08pa.isChecked() ? "1" : spblc08pb.isChecked() ? "2" : "0");
+        sC.put("spblc08q", spblc08qa.isChecked() ? "1" : spblc08qb.isChecked() ? "2" : "0");
+        sC.put("spblc08r", spblc08ra.isChecked() ? "1" : spblc08rb.isChecked() ? "2" : "0");
+
+//        09
+        sC.put("spblc09", spblc09a.isChecked() ? "1" : spblc09b.isChecked() ? "2" : spblc09c.isChecked() ? "3"
+                : spblc09d.isChecked() ? "4" : spblc09e.isChecked() ? "5" : spblc09f.isChecked() ? "6"
+                : spblc09g.isChecked() ? "7" : spblc09h.isChecked() ? "8" : spblc09i.isChecked() ? "9"
+                : spblc09j.isChecked() ? "10" : spblc0988.isChecked() ? "88" : "0");
+        sC.put("spblc0988x", spblc0988x.getText().toString());
+
+//        10
+        sC.put("spblc10", spblc10a.isChecked() ? "1" : spblc10b.isChecked() ? "2" : spblc10c.isChecked() ? "3"
+                : "0");
+        sC.put("spblc1088x", spblc1088x.getText().toString());
+
+//        11
+        sC.put("spblc11", spblc11a.isChecked() ? "1" : spblc11b.isChecked() ? "2" : "0");
+
+//        12
+        sC.put("spblc12", spblc12a.isChecked() ? "1" : spblc12b.isChecked() ? "2" : spblc12c.isChecked() ? "3"
+                : spblc12d.isChecked() ? "4" : spblc12e.isChecked() ? "5" : spblc12f.isChecked() ? "6"
+                : spblc12g.isChecked() ? "7" : spblc12h.isChecked() ? "8" : spblc12i.isChecked() ? "9"
+                : spblc12j.isChecked() ? "10" : spblc12k.isChecked() ? "11" : spblc12l.isChecked() ? "12"
+                : spblc12m.isChecked() ? "13" : spblc1288.isChecked() ? "88" : "0");
+        sC.put("spblc1288x", spblc1288x.getText().toString());
+
+//        13
+        sC.put("spblc13", spblc13a.isChecked() ? "1" : spblc13b.isChecked() ? "2" : spblc13c.isChecked() ? "3"
+                : spblc13d.isChecked() ? "4" : spblc13e.isChecked() ? "5" : spblc13f.isChecked() ? "6"
+                : spblc13g.isChecked() ? "7" : spblc13h.isChecked() ? "8" : spblc13i.isChecked() ? "9"
+                : spblc13j.isChecked() ? "10" : spblc13k.isChecked() ? "11" : spblc13l.isChecked() ? "12"
+                : spblc13m.isChecked() ? "13" : spblc13n.isChecked() ? "14" : spblc1388.isChecked() ? "88" : "0");
+        sC.put("spblc1388x", spblc1388x.getText().toString());
+
+//        14
+        sC.put("spblc14", spblc14a.isChecked() ? "1" : spblc14b.isChecked() ? "2" : spblc14c.isChecked() ? "3"
+                : spblc14d.isChecked() ? "4" : spblc14e.isChecked() ? "5" : spblc14f.isChecked() ? "6"
+                : spblc14g.isChecked() ? "7" : spblc14h.isChecked() ? "8" : spblc14i.isChecked() ? "9"
+                : spblc14j.isChecked() ? "10" : spblc14k.isChecked() ? "11" : spblc14l.isChecked() ? "12"
+                : spblc14m.isChecked() ? "13" : spblc14n.isChecked() ? "14" : spblc14o.isChecked() ? "15"
+                : spblc14p.isChecked() ? "15" : spblc14q.isChecked() ? "16" : spblc14r.isChecked() ? "17"
+                : spblc14s.isChecked() ? "18" : spblc14t.isChecked() ? "19" : spblc14u.isChecked() ? "20"
+                : spblc14v.isChecked() ? "21" : spblc1488.isChecked() ? "88" : "0");
+        sC.put("spblc1488x", spblc1488x.getText().toString());
+
+//        15
+        sC.put("spblc15", spblc15.getText().toString());
+
+//        16
+        sC.put("spblc16a", spblc16aa.isChecked() ? "1" : spblc16ab.isChecked() ? "2" : "0");
+        sC.put("spblc16b", spblc16ba.isChecked() ? "1" : spblc16bb.isChecked() ? "2" : "0");
+        sC.put("spblc16c", spblc16ca.isChecked() ? "1" : spblc16cb.isChecked() ? "2" : "0");
+        sC.put("spblc16d", spblc16da.isChecked() ? "1" : spblc16db.isChecked() ? "2" : "0");
+        sC.put("spblc16e", spblc16ea.isChecked() ? "1" : spblc16eb.isChecked() ? "2" : "0");
+        sC.put("spblc16f", spblc16fa.isChecked() ? "1" : spblc16fb.isChecked() ? "2" : "0");
+        sC.put("spblc16g", spblc16ga.isChecked() ? "1" : spblc16gb.isChecked() ? "2" : "0");
+        sC.put("spblc16h", spblc16ha.isChecked() ? "1" : spblc16hb.isChecked() ? "2" : "0");
+        sC.put("spblc16i", spblc16ia.isChecked() ? "1" : spblc16ib.isChecked() ? "2" : "0");
+
+//        17
+        sC.put("spblc17", spblc17a.isChecked() ? "1" : spblc17b.isChecked() ? "2" : "0");
+
+//        18
+        sC.put("spblc18", spblc18a.isChecked() ? "1" : spblc18b.isChecked() ? "2"
+                : spblc18c.isChecked() ? "3" : spblc1899.isChecked() ? "99" : "0");
+        if (spblc18a.isChecked()) {
+            sC.put("spblc18ac", spblc18ac.getText().toString());
+        } else if (spblc18b.isChecked()) {
+            sC.put("spblc18kn", spblc18kn.getText().toString());
+        } else if (spblc18c.isChecked()) {
+            sC.put("spblc18mr", spblc18mr.getText().toString());
+        }
+
+//        19
+        sC.put("spblc19", spblc19a.isChecked() ? "1" : spblc19b.isChecked() ? "2" : "0");
+
+//        20
+        sC.put("spblc20a", spblc20a.getText().toString());
+        sC.put("spblc20b", spblc20b.getText().toString());
+        sC.put("spblc20c", spblc20c.getText().toString());
+        sC.put("spblc20d", spblc20d.getText().toString());
+        sC.put("spblc20e", spblc20e.getText().toString());
+        sC.put("spblc20f", spblc20f.getText().toString());
+        sC.put("spblc20g", spblc20g.getText().toString());
+
+//        MainApp.fc.setsC(String.valueOf(sC));
+    }
+
+    private boolean UpdateDB() {
+
+        DatabaseHelper db = new DatabaseHelper(this);
+
+        /*int updcount = db.updateSC();
+
+        if (updcount == 1) {
+            Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
+            return true;
+        } else {
+            Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
+            return false;
+        }*/
+        return true;
+    }
+
+    public boolean formValidation() {
+        Toast.makeText(this, "Validating This Section ", Toast.LENGTH_SHORT).show();
+
+
+        return true;
     }
 
 }

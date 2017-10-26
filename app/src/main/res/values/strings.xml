@@ -33,6 +33,7 @@
     <string name="dkn"> معلوم نہیں </string>
     <string name="yes"> ہاں </string>
     <string name="no"> نہیں </string>
+    <string name="notavail"> گہر بند ہے / اجازت دینے والا موجود نہیں </string>
     <string name="none"> کوئی نہیں </string>
     <string name="dcna">قابل اطلاق نہیں</string>
     <string name="times">تعداد</string>
