@@ -280,41 +280,87 @@
 
             </RadioGroup>
 
-            <RadioGroup
-                android:id="@+id/spblm01i"
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:layout_marginTop="10dp"
+                android:background="@color/colorHeading"
+                android:text="@string/other"
+                android:textColor="@color/colorPrimaryDark"/>
+
+            <RadioGroup
+                android:id="@+id/spblm0188"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
 
                 <RadioButton
-                    android:id="@+id/spblm01i88"
+                    android:id="@+id/spblm0188a"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:text="@string/other" />
+                    android:text="@string/yes"/>
+
+                <EditText
+                    android:id="@+id/spblm0188x"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
+                    android:hint="@string/other"
+                    android:inputType="textCapWords"
+                    android:visibility="gone"/>
 
                 <RadioButton
-                    android:id="@+id/spblm01i00"
+                    android:id="@+id/spblm0188b"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:text="@string/none" />
+                    android:text="@string/no"/>
 
             </RadioGroup>
 
-            <EditText
-                android:id="@+id/spblm01i88x"
+
+            <TextView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
-                android:hint="@string/other"
-                android:inputType="textCapWords"
-                android:visibility="gone" />
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:background="@color/colorHeading"
+                android:text="@string/none"
+                android:textColor="@color/colorPrimaryDark"/>
+
+            <RadioGroup
+                android:id="@+id/spblm0166"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/spblm0166a"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="@string/yes"/>
+
+                <RadioButton
+                    android:id="@+id/spblm0166b"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="@string/no"/>
+
+            </RadioGroup>
+
 
         </LinearLayout>
 
-        <!--02-->
+        <LinearLayout
+            android:id="@+id/fldGrpspblm02"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!--02-->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -380,7 +426,13 @@
 
         </RadioGroup>
 
-        <!--04-->
+            <LinearLayout
+                android:id="@+id/fldGrpspblm04"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!--04-->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -508,6 +560,10 @@
                 android:text="@string/other" />
 
         </RadioGroup>
+
+            </LinearLayout>
+
+        </LinearLayout>
 
         <EditText
             android:id="@+id/spblm0588x"

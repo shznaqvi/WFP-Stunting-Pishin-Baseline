@@ -3,6 +3,7 @@ package edu.aku.hassannaqvi.wfpstuntingpishin.activities;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
 import android.util.Log;
@@ -10,6 +11,7 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONException;
@@ -208,6 +210,96 @@ public class SectionBActivity extends Activity {
         } else {
             spblb01.setError(null);
         }
+
+        if (spblb02.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblb02), Toast.LENGTH_SHORT).show();
+            spblb02a.setError("This data is required");
+            spblb02a.setFocusable(true);
+            spblb02a.setFocusableInTouchMode(true);
+            spblb02a.requestFocus();
+            Log.i(TAG, "spblb02: This Data is Required!");
+            return false;
+        } else {
+            spblb02a.setError(null);
+        }
+
+        if (spblb03.getSelectedItem() == "....") {
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblb03), Toast.LENGTH_SHORT).show();
+            ((TextView) spblb03.getSelectedView()).setText("This Data is Required");
+            ((TextView) spblb03.getSelectedView()).setTextColor(Color.RED);
+            spblb03.requestFocus();
+            Log.i(TAG, "spblb03: This Data is Required!");
+            return false;
+        } else {
+            ((TextView) spblb03.getSelectedView()).setError(null);
+        }
+
+        if (spblb04y.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblb04y), Toast.LENGTH_SHORT).show();
+            spblb04y.setError("This data is required");
+            spblb04y.requestFocus();
+            Log.i(TAG, "spblb04y: This Data is Required!");
+            return false;
+        } else {
+            spblb04y.setError(null);
+        }
+
+        if (spblb04m.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblb04m), Toast.LENGTH_SHORT).show();
+            spblb04m.setError("This data is required");
+            spblb04m.requestFocus();
+            Log.i(TAG, "spblb04m: This Data is Required!");
+            return false;
+        } else {
+            spblb04m.setError(null);
+        }
+
+        if (spblb04d.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblb04d), Toast.LENGTH_SHORT).show();
+            spblb04d.setError("This data is required");
+            spblb04d.requestFocus();
+            Log.i(TAG, "spblb04d: This Data is Required!");
+            return false;
+        } else {
+            spblb04d.setError(null);
+        }
+        if (spblb07.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblb07), Toast.LENGTH_SHORT).show();
+            spblb07a.setError("This data is required");
+            spblb07a.setFocusable(true);
+            spblb07a.setFocusableInTouchMode(true);
+            spblb07a.requestFocus();
+            Log.i(TAG, "spblb07: This Data is Required!");
+            return false;
+        } else {
+            spblb07a.setError(null);
+        }
+
+
+        if (spblb05.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblb05), Toast.LENGTH_SHORT).show();
+            spblb05a.setError("This data is required");
+            spblb05a.setFocusable(true);
+            spblb05a.setFocusableInTouchMode(true);
+            spblb05a.requestFocus();
+            Log.i(TAG, "spblb05: This Data is Required!");
+            return false;
+        } else {
+            spblb05a.setError(null);
+        }
+
+        if (spblb06.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblb06), Toast.LENGTH_SHORT).show();
+            spblb06a.setError("This data is required");
+            spblb06a.setFocusable(true);
+            spblb06a.setFocusableInTouchMode(true);
+            spblb06a.requestFocus();
+            Log.i(TAG, "spblb06: This Data is Required!");
+            return false;
+        } else {
+            spblb06a.setError(null);
+        }
+
 
 
         return true;

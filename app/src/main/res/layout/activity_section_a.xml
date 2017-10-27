@@ -117,33 +117,50 @@
             android:text="@string/spbla06"
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
-        <CheckBox
+        <RadioGroup
             android:id="@+id/spbla06a"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="1dp"
-            android:text="@string/spbla06a" />
+            android:layout_height="wrap_content">
 
-        <CheckBox
+            <RadioButton
+                android:id="@+id/spbla06a1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:text="@string/spbla06a"/>
+
+            <RadioButton
+                android:id="@+id/spbla06a2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:text="@string/spbla06b"/>
+
+
+        </RadioGroup>
+
+
+        <RadioGroup
             android:id="@+id/spbla06b"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="1dp"
-            android:text="@string/spbla06b" />
+            android:layout_height="wrap_content">
 
-        <CheckBox
-            android:id="@+id/spbla06c"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="1dp"
-            android:text="@string/spbla06c" />
+            <RadioButton
+                android:id="@+id/spbla06b1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:text="@string/spbla06c"/>
 
-        <CheckBox
-            android:id="@+id/spbla06d"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="1dp"
-            android:text="@string/spbla06d" />
+            <RadioButton
+                android:id="@+id/spbla06b2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:text="@string/spbla06d"/>
+
+        </RadioGroup>
+
 
         <!--07-->
         <TextView
@@ -181,6 +198,7 @@
                     android:hint="@string/spbla07t"
                     android:inputType="number"
                     android:maxLength="2" />
+
             </LinearLayout>
 
             <!--Womens-->
@@ -327,7 +345,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="16dp"
-                        android:gravity="left"
+                        android:gravity="center"
                         android:text="@string/spbla07a"
                         android:textAppearance="?android:attr/textAppearanceLarge" />
 
