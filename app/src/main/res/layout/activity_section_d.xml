@@ -297,6 +297,13 @@
             android:text="@string/spbld06g" />
 
         <CheckBox
+            android:id="@+id/spbld06h"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:text="@string/spbld06h" />
+
+        <CheckBox
             android:id="@+id/spbld06i"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
