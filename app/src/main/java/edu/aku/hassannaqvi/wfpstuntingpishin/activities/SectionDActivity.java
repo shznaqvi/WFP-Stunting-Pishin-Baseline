@@ -15,9 +15,9 @@ import org.json.JSONException;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import edu.aku.hassannaqvi.wfpstuntingpisdin.R;
-import edu.aku.hassannaqvi.wfpstuntingpisdin.core.DatabaseHelper;
-import edu.aku.hassannaqvi.wfpstuntingpisdin.core.MainApp;
+import edu.aku.hassannaqvi.wfpstuntingpishin.R;
+import edu.aku.hassannaqvi.wfpstuntingpishin.core.DatabaseHelper;
+import edu.aku.hassannaqvi.wfpstuntingpishin.core.MainApp;
 import edu.aku.hassannaqvi.wfpstuntingpishin.activities.SectionEActivity;
 
 public class SectionDActivity extends Activity {
@@ -121,7 +121,7 @@ public class SectionDActivity extends Activity {
                 startActivity(secNext);
 
             } else {
-                Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).sdow();
+                Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }
         }
     }
