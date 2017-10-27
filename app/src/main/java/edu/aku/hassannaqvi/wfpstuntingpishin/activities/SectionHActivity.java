@@ -12,7 +12,6 @@ import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONException;
@@ -27,8 +26,6 @@ import edu.aku.hassannaqvi.wfpstuntingpishin.core.MainApp;
 
 public class SectionHActivity extends Activity {
 
-    @BindView(R.id.textView)
-    TextView textView;
     @BindView(R.id.spblh01)
     Spinner spblh01;
     @BindView(R.id.spblh02)
