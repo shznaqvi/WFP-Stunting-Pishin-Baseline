@@ -183,96 +183,126 @@
                     android:maxLength="2" />
             </LinearLayout>
 
-
             <!--Womens-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
                 android:layout_weight="100"
                 android:background="@drawable/bacground_border1"
-                android:orientation="horizontal">
+                android:orientation="vertical"
+                >
 
-                <!--PW-->
                 <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="30"
-                    android:orientation="vertical">
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="50"
+                    android:orientation="horizontal"
+                    android:weightSum="100">
 
                     <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="1dp"
+                        android:layout_weight="33"
+                        android:background="@color/pink_100"
                         android:gravity="center"
                         android:text="@string/spbla07pw"
-                        android:textAppearance="?android:attr/textAppearanceLarge" />
+                        android:textColor="@color/colorPrimaryDark"/>
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.5"
+                        android:background="@color/colorPrimaryDark"
+                        />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="100dp"
+                        android:layout_marginBottom="1dp"
+                        android:layout_weight="33"
+                        android:background="@color/pink_100"
+                        android:gravity="center"
+                        android:text="@string/spbla07lw"
+                        android:textColor="@color/colorPrimaryDark"/>
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.5"
+                        android:background="@color/colorPrimaryDark"
+                        />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="1dp"
+                        android:layout_weight="33"
+                        android:background="@color/pink_100"
+                        android:gravity="center"
+                        android:text="@string/spbla07mw"
+                        android:textColor="@color/colorPrimaryDark"/>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="50"
+                    android:orientation="horizontal">
 
                     <EditText
                         android:id="@+id/spbla07pw"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
                         android:layout_marginBottom="1dp"
+                        android:layout_weight="33"
                         android:digits="0123456789 "
                         android:gravity="center"
                         android:hint="@string/spbla07pw"
                         android:inputType="number"
-                        android:maxLength="2" />
-                </LinearLayout>
+                        android:maxLength="2"/>
 
-                <!--lactating-->
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="30"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
-                        android:gravity="center"
-                        android:text="@string/spbla07lw"
-                        android:textAppearance="?android:attr/textAppearanceLarge" />
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.5"
+                        android:background="@color/colorPrimaryDark"
+                        />
 
                     <EditText
                         android:id="@+id/spbla07lw"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
                         android:layout_marginBottom="1dp"
+                        android:layout_weight="33"
                         android:digits="0123456789 "
                         android:gravity="center"
                         android:hint="@string/spbla07lw"
                         android:inputType="number"
                         android:maxLength="2" />
-                </LinearLayout>
 
-                <!--mother children < 5-->
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="30"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
-                        android:gravity="center"
-                        android:text="@string/spbla07mw"
-                        android:textAppearance="?android:attr/textAppearanceLarge" />
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.5"
+                        android:background="@color/colorPrimaryDark"
+                        />
 
                     <EditText
                         android:id="@+id/spbla07mw"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
                         android:layout_marginBottom="1dp"
+                        android:layout_weight="33"
                         android:digits="0123456789 "
                         android:gravity="center"
                         android:hint="@string/spbla07mw"
                         android:inputType="number"
                         android:maxLength="2" />
+
                 </LinearLayout>
+
 
             </LinearLayout>
 
@@ -282,7 +312,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/bacground_border1"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:padding="15dp"
+                android:weightSum="100">
 
                 <!--children < 6 months-->
                 <LinearLayout
@@ -295,7 +327,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="16dp"
-                        android:gravity="center"
+                        android:gravity="left"
                         android:text="@string/spbla07a"
                         android:textAppearance="?android:attr/textAppearanceLarge" />
 
@@ -315,9 +347,11 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="16dp"
+                                android:background="@color/pink_100"
                                 android:gravity="center"
                                 android:text="@string/male"
-                                android:textAppearance="?android:attr/textAppearanceLarge" />
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:textColor="@color/colorPrimaryDark"/>
 
                             <EditText
                                 android:id="@+id/spbla07m6"
@@ -332,6 +366,13 @@
 
                         </LinearLayout>
 
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="16dp"
+                            android:layout_weight="0.5"
+                            android:background="@color/colorPrimary"/>
+
                         <!--Female-->
                         <LinearLayout
                             android:layout_width="0dp"
@@ -343,9 +384,11 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="16dp"
+                                android:background="@color/pink_100"
                                 android:gravity="center"
                                 android:text="@string/female"
-                                android:textAppearance="?android:attr/textAppearanceLarge" />
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:textColor="@color/colorPrimaryDark"/>
 
                             <EditText
                                 android:id="@+id/spbla07f6"
@@ -364,11 +407,18 @@
 
                 </LinearLayout>
 
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="16dp"
+                    android:layout_weight="0.5"
+                    android:background="@color/colorPrimaryDark"/>
+
                 <!--children 6-23-->
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="30"
+                    android:layout_weight="32"
                     android:orientation="vertical">
 
                     <TextView
@@ -395,9 +445,11 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="16dp"
+                                android:background="@color/pink_100"
                                 android:gravity="center"
                                 android:text="@string/male"
-                                android:textAppearance="?android:attr/textAppearanceLarge" />
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:textColor="@color/colorPrimaryDark"/>
 
                             <EditText
                                 android:id="@+id/spbla07m23"
@@ -412,6 +464,13 @@
 
                         </LinearLayout>
 
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="16dp"
+                            android:layout_weight="0.5"
+                            android:background="@color/colorPrimary"/>
+
                         <!--Female-->
                         <LinearLayout
                             android:layout_width="0dp"
@@ -423,9 +482,11 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="16dp"
+                                android:background="@color/pink_100"
                                 android:gravity="center"
                                 android:text="@string/female"
-                                android:textAppearance="?android:attr/textAppearanceLarge" />
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:textColor="@color/colorPrimaryDark"/>
 
                             <EditText
                                 android:id="@+id/spbla07f23"
@@ -444,11 +505,18 @@
 
                 </LinearLayout>
 
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="16dp"
+                    android:layout_weight="0.5"
+                    android:background="@color/colorPrimaryDark"/>
+
                 <!--children 24-59-->
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="30"
+                    android:layout_weight="37"
                     android:orientation="vertical">
 
                     <TextView
@@ -475,9 +543,11 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="16dp"
+                                android:background="@color/pink_100"
                                 android:gravity="center"
                                 android:text="@string/male"
-                                android:textAppearance="?android:attr/textAppearanceLarge" />
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:textColor="@color/colorPrimaryDark"/>
 
                             <EditText
                                 android:id="@+id/spbla07m59"
@@ -492,6 +562,13 @@
 
                         </LinearLayout>
 
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="16dp"
+                            android:layout_weight="0.5"
+                            android:background="@color/colorPrimary"/>
+
                         <!--Female-->
                         <LinearLayout
                             android:layout_width="0dp"
@@ -503,9 +580,11 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="16dp"
+                                android:background="@color/pink_100"
                                 android:gravity="center"
                                 android:text="@string/female"
-                                android:textAppearance="?android:attr/textAppearanceLarge" />
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:textColor="@color/colorPrimaryDark"/>
 
                             <EditText
                                 android:id="@+id/spbla07f59"

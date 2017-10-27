@@ -34,7 +34,7 @@
     <string name="yes"> ہاں </string>
     <string name="no"> نہیں </string>
     <string name="notavail"> گہر بند ہے / اجازت دینے والا موجود نہیں </string>
-    <string name="none"> کوئی نہیں </string>
+  <string name="none">  کچھ نہیں</string>
     <string name="dcna">قابل اطلاق نہیں</string>
     <string name="times">تعداد</string>
     <string name="male"> مرد </string>
@@ -337,22 +337,19 @@
     <string name="spblc20f">  بھینسیں </string>
     <string name="spblc20g">  اونٹ </string>
     <string name="spbldheading">  Hand Washing </string>
-    <string name="spbld01">  صرف مشاہدہ براہ مہربانی وہ جگہ دکھا ئیں جہاں آپ اور آپ کے گھروالے اکثر ہاتھ دھوتے ہیں؟ </string>
+  <string name="spbld01">  براہ مہربانی وہ جگہ دکھا ئیں جہاں آپ اور آپ کے گھروالے اکثر ہاتھ دھوتے ہیں؟ </string>
     <string name="spbld01a">  مشاہدہ کیا </string>
     <string name="spbld01b">  مشاہدہ نہیں کیا </string>
     <string name="spbld01c">  رہا یشی جگہ اور پلاٹ میں موجود نہیں </string>
     <string name="spbld01d">  دیکھنے کی اجازت نہیں </string>
-    <string name="spbld01e">  کو ئی اور وجہ </string>
-    <string name="spbld02">  صرف مشاہدہ ہاتھ دھونے کے لئے مخصوص جگہ پر پانی کی موجودگی کا مشاہدہ </string>
+  <string name="spbld02">  ہاتھ دھونے کے لئے مخصوص جگہ پر پانی کی موجودگی کا مشاہدہ </string>
     <string name="spbld02a">  پانی موجود ہے </string>
     <string name="spbld02b">  پانی موجود نہیں ہے </string>
-    <string name="spbld03">  صرف مشاہدہ
-    صابن، ڈٹرجنٹ یا دیگر صفائی ایجنٹ کی موجودگی کا مشاہدہ </string>
+  <string name="spbld03"> صابن، ڈٹرجنٹ یا دیگر صفائی ایجنٹ کی موجودگی کا مشاہدہ</string>
     <string name="spbld03a">  نہانے یا ہاتھ دھونے ولا صابن </string>
     <string name="spbld03b">  ڈیٹرجن پاوڈریا پانی جیسی پیسٹ </string>
     <string name="spbld03c">  مائع یا پانی والا صابن </string>
-    <string name="spbld03d">  خاک /مٹی/ریت </string>
-    <string name="spbld03e">  کچھ نہیں </string>
+  <string name="spbld03d">  خاک /مٹی/ریت </string>
     <string name="spbld04">  کیاآپ کے گھر میں ہاتھ دھونے کے لئے کوئی صابن یا ڈٹرجنٹ ہے </string>
     <string name="spbld05">  اگرہاں تو کیا آپ مجھے دکھا سکتے ہیں ؟ </string>
     <string name="spbld05a">  صابن </string>
