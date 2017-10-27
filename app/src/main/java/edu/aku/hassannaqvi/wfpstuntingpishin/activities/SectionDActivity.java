@@ -3,7 +3,11 @@ package edu.aku.hassannaqvi.wfpstuntingpishin.activities;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.IdRes;
+import android.util.Log;
+import android.view.View;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
@@ -11,6 +15,7 @@ import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import org.json.JSONException;
+import org.json.JSONObject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -18,12 +23,10 @@ import butterknife.OnClick;
 import edu.aku.hassannaqvi.wfpstuntingpishin.R;
 import edu.aku.hassannaqvi.wfpstuntingpishin.core.DatabaseHelper;
 import edu.aku.hassannaqvi.wfpstuntingpishin.core.MainApp;
-import edu.aku.hassannaqvi.wfpstuntingpishin.activities.SectionEActivity;
 
 public class SectionDActivity extends Activity {
 
     private static final String TAG = SectionDActivity.class.getName();
-
 
     @BindView(R.id.spbld01)
     RadioGroup spbld01;
@@ -94,12 +97,183 @@ public class SectionDActivity extends Activity {
     @BindView(R.id.fldGrpbtn)
     LinearLayout fldGrpbtn;
 
+    @BindView(R.id.fldGrpspbld02)
+    LinearLayout fldGrpspbld02;
+
+    @BindView(R.id.fldGrpspbld05)
+    LinearLayout fldGrpspbld05;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_section_d);
         ButterKnife.bind(this);
+
+
+        spbld01.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
+                if (spbld01a.isChecked()) {
+                    fldGrpspbld02.setVisibility(View.VISIBLE);
+                } else {
+                    spbld02.clearCheck();
+
+                    spbld03a.setChecked(false);
+                    spbld03b.setChecked(false);
+                    spbld03c.setChecked(false);
+                    spbld03d.setChecked(false);
+
+                    fldGrpspbld02.setVisibility(View.GONE);
+                }
+            }
+        });
+
+
+        spbld03a.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (spbld03a.isChecked()) {
+                    spbld0366.setChecked(false);
+                }
+            }
+        });
+
+        spbld03b.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (spbld03b.isChecked()) {
+                    spbld0366.setChecked(false);
+                }
+            }
+        });
+
+        spbld03c.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (spbld03c.isChecked()) {
+                    spbld0366.setChecked(false);
+                }
+            }
+        });
+
+        spbld03d.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (spbld03d.isChecked()) {
+                    spbld0366.setChecked(false);
+                }
+            }
+        });
+
+
+        spbld0366.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (spbld0366.isChecked()) {
+                    spbld03a.setChecked(false);
+                    spbld03b.setChecked(false);
+                    spbld03c.setChecked(false);
+                    spbld03d.setChecked(false);
+                }
+            }
+        });
+
+
+        spbld04.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
+                if (spbld04b.isChecked()) {
+
+                    spbld05a.setChecked(false);
+                    spbld05b.setChecked(false);
+                    spbld05c.setChecked(false);
+                    spbld05d.setChecked(false);
+                    spbld0566.setChecked(false);
+
+                    fldGrpspbld05.setVisibility(View.GONE);
+                } else {
+                    fldGrpspbld05.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
+        spbld05a.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (spbld05a.isChecked()) {
+                    spbld0566.setChecked(false);
+                }
+            }
+        });
+
+        spbld05b.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (spbld05b.isChecked()) {
+                    spbld0566.setChecked(false);
+                }
+            }
+        });
+
+        spbld05c.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (spbld05c.isChecked()) {
+                    spbld0566.setChecked(false);
+                }
+            }
+        });
+
+        spbld05d.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (spbld05d.isChecked()) {
+                    spbld0566.setChecked(false);
+                }
+            }
+        });
+
+        spbld0566.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (spbld0566.isChecked()) {
+                    spbld05a.setChecked(false);
+                    spbld05b.setChecked(false);
+                    spbld05c.setChecked(false);
+                    spbld05d.setChecked(false);
+                }
+            }
+        });
+
+
+        spbld0188.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (spbld0188.isChecked()) {
+                    spbld0188x.setVisibility(View.VISIBLE);
+                    spbld0188x.requestFocus();
+                } else {
+                    spbld0188x.setText(null);
+                    spbld0188x.setVisibility(View.GONE);
+                }
+            }
+        });
+
+
+        spbld0688.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (spbld0688.isChecked()) {
+                    spbld0688x.setVisibility(View.VISIBLE);
+                    spbld0688x.requestFocus();
+                } else {
+                    spbld0688x.setText(null);
+                    spbld0688x.setVisibility(View.GONE);
+                }
+            }
+        });
+
     }
 
     @OnClick(R.id.btnNext)
@@ -114,7 +288,6 @@ public class SectionDActivity extends Activity {
                 Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
 
                 finish();
-
 
                 Intent secNext = new Intent(this, SectionEActivity.class);
                 secNext.putExtra("check", false);
@@ -160,11 +333,10 @@ public class SectionDActivity extends Activity {
 
 
     private boolean ValidateForm() {
-/*
 
         //        spbld01
         if (spbld01.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spbld01), Toast.LENGTH_sdORT).sdow();
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spbld01), Toast.LENGTH_SHORT).show();
             spbld0188.setError("This data is Required!");    // Set Error on last radio button
             Log.i(TAG, "spbld01: This data is Required!");
             spbld0188.setFocusable(true);
@@ -175,8 +347,9 @@ public class SectionDActivity extends Activity {
             spbld0188.setError(null);
         }
 
-            if (spbld0188.isChecked() && spbld0188x.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_sdORT).sdow();
+
+        if (spbld0188.isChecked() && spbld0188x.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_SHORT).show();
             spbld0188x.setError("This data is Required!");    // Set Error on last radio button
             Log.i(TAG, "spbld0188x: This data is Required!");
             spbld0188x.requestFocus();
@@ -186,34 +359,41 @@ public class SectionDActivity extends Activity {
         }
 
 
-        //        spbld02
-        if (spbld02.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spbld02), Toast.LENGTH_sdORT).sdow();
-            spbld02b.setError("This data is Required!");    // Set Error on last radio button
-            Log.i(TAG, "spbld02: This data is Required!");
-            spbld02b.setFocusable(true);
-            spbld02b.setFocusableInTouchMode(true);
-            spbld02b.requestFocus();
-            return false;
-        } else {
-            spbld02b.setError(null);
-        }
+        if (spbld01a.isChecked()) {
+
+            //        spbld02
+            if (spbld02.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.spbld02), Toast.LENGTH_SHORT).show();
+                spbld02b.setError("This data is Required!");    // Set Error on last radio button
+                Log.i(TAG, "spbld02: This data is Required!");
+                spbld02b.setFocusable(true);
+                spbld02b.setFocusableInTouchMode(true);
+                spbld02b.requestFocus();
+                return false;
+            } else {
+                spbld02b.setError(null);
+            }
 
 
-             if (!(spbld03a.isChecked() || spbld03b.isChecked() || spbld03c.isChecked() || spbld03d.isChecked()
+            if (!(spbld03a.isChecked() || spbld03b.isChecked() || spbld03c.isChecked() || spbld03d.isChecked()
                     || spbld0366.isChecked())) {
                 Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spbld03), Toast.LENGTH_SHORT).show();
                 spbld0366.setError("This Data is Required");
                 Log.d(TAG, "spbld03 :This Data is Required");
+                spbld0366.setFocusable(true);
+                spbld0366.setFocusableInTouchMode(true);
+                spbld0366.requestFocus();
+                return false;
             } else {
                 spbld0366.setError(null);
             }
 
+        }
 
 
         //        spbld04
         if (spbld04.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spbld04), Toast.LENGTH_sdORT).sdow();
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spbld04), Toast.LENGTH_SHORT).show();
             spbld04b.setError("This data is Required!");    // Set Error on last radio button
             Log.i(TAG, "spbld04: This data is Required!");
             spbld04b.setFocusable(true);
@@ -224,28 +404,36 @@ public class SectionDActivity extends Activity {
             spbld04b.setError(null);
         }
 
-           if (!(spbld05a.isChecked() || spbld05b.isChecked() || spbld05c.isChecked() || spbld05d.isChecked()
+
+        if (spbld04a.isChecked()) {
+
+            if (!(spbld05a.isChecked() || spbld05b.isChecked() || spbld05c.isChecked() || spbld05d.isChecked()
                     || spbld0566.isChecked())) {
                 Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spbld05), Toast.LENGTH_SHORT).show();
                 spbld0566.setError("This Data is Required");
                 Log.d(TAG, "spbld05 :This Data is Required");
+                return false;
             } else {
                 spbld0566.setError(null);
             }
 
+        }
 
-             if (!(spbld06a.isChecked() || spbld06b.isChecked() || spbld06c.isChecked() || spbld06d.isChecked()
-             spbld06e.isChecked() || spbld06f.isChecked() || spbld06g.isChecked() || spbld06h.isChecked() ||
-                spbld06i.isChecked()    || spbld0688.isChecked())) {
-                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spbld03), Toast.LENGTH_SHORT).show();
-                spbld0688.setError("This Data is Required");
-                Log.d(TAG, "spbld06 :This Data is Required");
-            } else {
-                spbld0688.setError(null);
-            }
 
-         if (spbld0688.isChecked() && spbld0688x.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_sdORT).sdow();
+        if (!(spbld06a.isChecked() || spbld06b.isChecked() || spbld06c.isChecked() || spbld06d.isChecked() ||
+                spbld06e.isChecked() || spbld06f.isChecked() || spbld06g.isChecked() || spbld06h.isChecked() ||
+                spbld06i.isChecked() || spbld0688.isChecked())) {
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spbld06), Toast.LENGTH_SHORT).show();
+            spbld0688.setError("This Data is Required");
+            Log.d(TAG, "spbld06 :This Data is Required");
+            return false;
+        } else {
+            spbld0688.setError(null);
+        }
+
+
+        if (spbld0688.isChecked() && spbld0688x.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_SHORT).show();
             spbld0688x.setError("This data is Required!");    // Set Error on last radio button
             Log.i(TAG, "spbld0688x: This data is Required!");
             spbld0688x.requestFocus();
@@ -253,8 +441,6 @@ public class SectionDActivity extends Activity {
         } else {
             spbld0688x.setError(null);
         }
-*/
-
 
         return true;
     }
@@ -262,44 +448,43 @@ public class SectionDActivity extends Activity {
     private void SaveDraft() throws JSONException {
         Toast.makeText(this, "Saving Draft for  This Section", Toast.LENGTH_SHORT).show();
 
-        /*JSONObject sd = new JSONObject();
+        JSONObject sd = new JSONObject();
 
-        sd.put("spbld01", spbld01a.isChecked() ? "1" : spbld01b.isChecked() ? "2"
-                : spbld01c.isChecked() ? "3"
+        sd.put("spbld01", spbld01a.isChecked() ? "1" : spbld01c.isChecked() ? "3"
                 : spbld01d.isChecked() ? "4"
                 : "0");
         sd.put("spbld0188x", spbld0188x.getText().toString());
 
         sd.put("spbld02", spbld02a.isChecked() ? "1" : spbld02b.isChecked() ? "2" : "0");
 
-        sd.put("spbld03a", spblh03a.isChecked() ? "1" : "0");
-        sd.put("spbld03b", spblh03b.isChecked() ? "2" : "0");
-        sd.put("spbld03c", spblh03c.isChecked() ? "3" : "0");
-        sd.put("spbld03d", spblh03d.isChecked() ? "4" : "0");
-      sd.put("spbld0366", spblh0366.isChecked() ? "66" : "0");
+        sd.put("spbld03a", spbld03a.isChecked() ? "1" : "0");
+        sd.put("spbld03b", spbld03b.isChecked() ? "2" : "0");
+        sd.put("spbld03c", spbld03c.isChecked() ? "3" : "0");
+        sd.put("spbld03d", spbld03d.isChecked() ? "4" : "0");
+        sd.put("spbld0366", spbld0366.isChecked() ? "66" : "0");
 
         sd.put("spbld04", spbld04a.isChecked() ? "1" : spbld04b.isChecked() ? "2" : "0");
 
-       sd.put("spbld05a", spblh05a.isChecked() ? "1" : "0");
-        sd.put("spbld05b", spblh05b.isChecked() ? "2" : "0");
-        sd.put("spbld05c", spblh05c.isChecked() ? "3" : "0");
-        sd.put("spbld05d", spblh05d.isChecked() ? "4" : "0");
-      sd.put("spbld0566", spblh0566.isChecked() ? "66" : "0");
+        sd.put("spbld05a", spbld05a.isChecked() ? "1" : "0");
+        sd.put("spbld05b", spbld05b.isChecked() ? "2" : "0");
+        sd.put("spbld05c", spbld05c.isChecked() ? "3" : "0");
+        sd.put("spbld05d", spbld05d.isChecked() ? "4" : "0");
+        sd.put("spbld0566", spbld0566.isChecked() ? "66" : "0");
 
-         sd.put("spbld06a", spblh06a.isChecked() ? "1" : "0");
-        sd.put("spbld06b", spblh06b.isChecked() ? "2" : "0");
-        sd.put("spbld06c", spblh06c.isChecked() ? "3" : "0");
-        sd.put("spbld06d", spblh06d.isChecked() ? "4" : "0");
-      sd.put("spbld06e", spblh06e.isChecked() ? "5" : "0");
-      sd.put("spbld06f", spblh06f.isChecked() ? "6" : "0");
-      sd.put("spbld06g", spblh06g.isChecked() ? "7" : "0");
-      sd.put("spbld06h", spblh06h.isChecked() ? "8" : "0");
-      sd.put("spbld06i", spblh06i.isChecked() ? "9" : "0");
-      sd.put("spbld0688", spblh0688.isChecked() ? "88" : "0");
+        sd.put("spbld06a", spbld06a.isChecked() ? "1" : "0");
+        sd.put("spbld06b", spbld06b.isChecked() ? "2" : "0");
+        sd.put("spbld06c", spbld06c.isChecked() ? "3" : "0");
+        sd.put("spbld06d", spbld06d.isChecked() ? "4" : "0");
+        sd.put("spbld06e", spbld06e.isChecked() ? "5" : "0");
+        sd.put("spbld06f", spbld06f.isChecked() ? "6" : "0");
+        sd.put("spbld06g", spbld06g.isChecked() ? "7" : "0");
+        sd.put("spbld06h", spbld06h.isChecked() ? "8" : "0");
+        sd.put("spbld06i", spbld06i.isChecked() ? "9" : "0");
+        sd.put("spbld0688", spbld0688.isChecked() ? "88" : "0");
         sd.put("spbld0688x", spbld0688x.getText().toString());
 
-        sd.put("appver", MainApp.versionName + "." + MainApp.versionCode);
+        //sd.put("appver", MainApp.versionName + "." + MainApp.versionCode);
 
-        MainApp.fc.setsd(String.valueOf(sD));*/
+        //MainApp.fc.setsd(String.valueOf(sD));
     }
 }

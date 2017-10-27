@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -14,6 +15,8 @@ import android.widget.Toast;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -53,6 +56,27 @@ public class SectionEActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_section_e);
         ButterKnife.bind(this);
+
+
+        ArrayList<String> arrlst = new ArrayList<>();
+
+        arrlst.add(0, "....");
+        arrlst.add(1, "زراعت");
+        arrlst.add(2, "مال مویشی پالنا اور فروخت کرنا");
+        arrlst.add(3, "مچھلی کا کاروبار");
+        arrlst.add(4, "ہاتھ سے بننے والی اشیاٗ کی فروخت");
+        arrlst.add(5, "لکڑیوں کی فروخت");
+        arrlst.add(6, "کوئلے کا فروخت");
+        arrlst.add(7, "مزدوری زرعی زمینوں پر");
+        arrlst.add(8, "مزدوری");
+        arrlst.add(9, "گلی میں چیزیں فروخت کرنا");
+        arrlst.add(10, "کاروبار /دکان/تجارت");
+        arrlst.add(11, "سرکاری /گورنمنٹ کی نوکری");
+        arrlst.add(12, "پرائیویٹ نوکری");
+        arrlst.add(13, "دیگر وضاحت کریں");
+
+        spble01a.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, arrlst));
+
     }
 
     @OnClick(R.id.btnNext)
@@ -80,7 +104,6 @@ public class SectionEActivity extends Activity {
         Intent secNext = new Intent(this, SectionFActivity.class);
         secNext.putExtra("check", false);
         startActivity(secNext);
-
     }
 
 
