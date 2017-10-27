@@ -215,6 +215,38 @@
 
         </LinearLayout>
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@color/colorPrimary"
+            android:text="@string/spblb07"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@android:color/white"/>
+
+        <RadioGroup
+            android:id="@+id/spblb07"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/spblb07a"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:layout_weight="1"
+                android:text="@string/spblb07a"/>
+
+            <RadioButton
+                android:id="@+id/spblb07b"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/spblb07b"/>
+
+        </RadioGroup>
+
 
         <!--05-->
         <TextView
@@ -226,16 +258,73 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="@android:color/white" />
 
-        <EditText
+        <RadioGroup
             android:id="@+id/spblb05"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="1dp"
-            android:digits="0123456789 "
-            android:hint="@string/spblb05"
-            android:inputType="number"
-            android:maxLength="2" />
+            >
 
+            <RadioButton
+                android:id="@+id/spblb0566"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:layout_weight="1"
+                android:text="@string/none"/>
+
+            <RadioButton
+                android:id="@+id/spblb05a"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:layout_weight="1"
+                android:text="@string/spblb05a"/>
+
+            <RadioButton
+                android:id="@+id/spblb05b"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/spblb05b"/>
+
+            <RadioButton
+                android:id="@+id/spblb05c"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/spblb05c"/>
+
+
+            <RadioButton
+                android:id="@+id/spblb05d"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/spblb05d"/>
+
+            <RadioButton
+                android:id="@+id/spblb05e"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/spblb05e"/>
+
+            <RadioButton
+                android:id="@+id/spblb05f"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/spblb05f"/>
+
+            <RadioButton
+                android:id="@+id/spblb05g"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/spblb05g"/>
+
+
+        </RadioGroup>
         <!--06-->
         <TextView
             android:layout_width="match_parent"
@@ -329,14 +418,14 @@
 
         </RadioGroup>
 
-        <LinearLayout
+        <!--<LinearLayout
             android:id="@+id/fldGrpspblb07"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical">-->
 
         <!--07-->
-        <TextView
+        <!--<TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -349,7 +438,7 @@
             android:layout_height="wrap_content"
             android:text="@string/spblb07"/>
 
-        <!--08-->
+        &lt;!&ndash;08&ndash;&gt;
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -362,9 +451,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/spblb08"/>
-
-        </LinearLayout>
-
+-->
+        <!-- </LinearLayout>
+ -->
 
         <!--  = = = = =  END OF FORM FIELDS  = = = = = -->
 

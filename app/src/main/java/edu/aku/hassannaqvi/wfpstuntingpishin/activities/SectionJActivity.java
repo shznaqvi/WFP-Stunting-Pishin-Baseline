@@ -17,6 +17,7 @@ import org.json.JSONObject;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import edu.aku.hassannaqvi.wfpstuntingpishin.R;
 import edu.aku.hassannaqvi.wfpstuntingpishin.core.DatabaseHelper;
 import edu.aku.hassannaqvi.wfpstuntingpishin.core.MainApp;
 
@@ -118,7 +119,7 @@ public class SectionJActivity extends Activity {
         Toast.makeText(this, "Validating This Section ", Toast.LENGTH_SHORT).show();
 
         if (spblj01.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblj01), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblj03), Toast.LENGTH_SHORT).show();
             spblj01.setError("This data is Required!");
             Log.i(TAG, "spblj01: This data is Required!");
             spblj01.requestFocus();
@@ -128,7 +129,7 @@ public class SectionJActivity extends Activity {
         }
 
         if (spblj0201a.getSelectedItem() == "....") {
-            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblj0201a), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblj0401), Toast.LENGTH_SHORT).show();
             ((TextView) spblj0201a.getSelectedView()).setText("This Data is Required");
             ((TextView) spblj0201a.getSelectedView()).setTextColor(Color.RED);
             spblj0201a.requestFocus();
@@ -139,7 +140,7 @@ public class SectionJActivity extends Activity {
         }
 
         if (spblj0201b.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblj0201b), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblj04), Toast.LENGTH_SHORT).show();
             spblj0201b.setError("This data is Required!");
             Log.i(TAG, "spblj0201b: This data is Required!");
             spblj0201b.requestFocus();
@@ -149,7 +150,7 @@ public class SectionJActivity extends Activity {
         }
 
         if (spblj0202a.getSelectedItem() == "....") {
-            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblj0202a), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblj0401), Toast.LENGTH_SHORT).show();
             ((TextView) spblj0202a.getSelectedView()).setText("This Data is Required");
             ((TextView) spblj0202a.getSelectedView()).setTextColor(Color.RED);
             spblj0202a.requestFocus();
@@ -160,7 +161,7 @@ public class SectionJActivity extends Activity {
         }
 
         if (spblj0202b.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblj0202b), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblj04), Toast.LENGTH_SHORT).show();
             spblj0202b.setError("This data is Required!");
             Log.i(TAG, "spblj0202b: This data is Required!");
             spblj0202b.requestFocus();
@@ -171,7 +172,7 @@ public class SectionJActivity extends Activity {
 
 
         if (spblj0301a.getSelectedItem() == "....") {
-            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblj0301a), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblj0401), Toast.LENGTH_SHORT).show();
             ((TextView) spblj0301a.getSelectedView()).setText("This Data is Required");
             ((TextView) spblj0301a.getSelectedView()).setTextColor(Color.RED);
             spblj0301a.requestFocus();
@@ -182,7 +183,7 @@ public class SectionJActivity extends Activity {
         }
 
         if (spblj0301b.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblj0301b), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblj05), Toast.LENGTH_SHORT).show();
             spblj0301b.setError("This data is Required!");
             Log.i(TAG, "spblj0301b: This data is Required!");
             spblj0301b.requestFocus();
@@ -192,7 +193,7 @@ public class SectionJActivity extends Activity {
         }
 
         if (spblj0302a.getSelectedItem() == "....") {
-            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblj0302a), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblj0401), Toast.LENGTH_SHORT).show();
             ((TextView) spblj0302a.getSelectedView()).setText("This Data is Required");
             ((TextView) spblj0302a.getSelectedView()).setTextColor(Color.RED);
             spblj0302a.requestFocus();
@@ -203,7 +204,7 @@ public class SectionJActivity extends Activity {
         }
 
         if (spblj0302b.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblj0302b), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblj05), Toast.LENGTH_SHORT).show();
             spblj0302b.setError("This data is Required!");
             Log.i(TAG, "spblj0302b: This data is Required!");
             spblj0302b.requestFocus();

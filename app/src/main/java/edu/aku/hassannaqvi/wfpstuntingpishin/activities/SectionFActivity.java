@@ -10,6 +10,7 @@ import org.json.JSONObject;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import edu.aku.hassannaqvi.wfpstuntingpishin.R;
 import edu.aku.hassannaqvi.wfpstuntingpishin.core.DatabaseHelper;
 import edu.aku.hassannaqvi.wfpstuntingpishin.core.MainApp;
 
@@ -63,7 +64,7 @@ public class SectionFActivity extends Activity {
 
         DatabaseHelper db = new DatabaseHelper(this);
 
-        int updcount = db.updateSHF();
+        /*int updcount = db.updateSHF();
 
         if (updcount == 1) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
@@ -71,13 +72,16 @@ public class SectionFActivity extends Activity {
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
             return false;
-        }
+        }*/
+
+        return true;
 
     }
 
 
     private boolean ValidateForm() {
 
+/*
         //        spblf01a
         if (spblf01a.getText().toString().isEmpty()) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblf01a), Toast.LENGTH_SHORT).show();
@@ -149,6 +153,7 @@ public class SectionFActivity extends Activity {
             spblf01f.setError(null);
         }
 
+*/
 
         return true;
     }
@@ -159,11 +164,11 @@ public class SectionFActivity extends Activity {
 
         JSONObject sHE = new JSONObject();
 
-        sHE.put("spble01a", spble01a.getSelectedItem().toString());
+        /*sHE.put("spble01a", spble01a.getSelectedItem().toString());
 
 
         MainApp.fc.setsHE(String.valueOf(sHE));
-
+*/
     }
 
 }

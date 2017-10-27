@@ -143,7 +143,15 @@
     <string name="spblb04m">  ہینے </string>
     <string name="spblb04d">  دن </string>
     <string name="spblb05">  تعلیمی معیار </string>
-    <string name="spblb06">  پیشہ </string>
+  <string name="spblb05a">  پرائمری </string>
+  <string name="spblb05b">  مڈل پاس </string>
+  <string name="spblb05c">  سیکنڈری </string>
+  <string name="spblb05d">  انٹرمیڈیٹ </string>
+  <string name="spblb05e">  گریجویشن </string>
+  <string name="spblb05f">  ماسٹرز </string>
+  <string name="spblb05g">  ایم فل / پی ایچ ڈی </string>
+
+  <string name="spblb06">  پیشہ </string>
     <string name="spblb06a">  گھریلو عورت </string>
     <string name="spblb06b"> ڈاکٹر / انجینئر / ماسٹر / مینیجر وغیرہ </string>
     <string name="spblb06c">  کلرک / ٹیکنیکل </string>
@@ -154,10 +162,12 @@
     <string name="spblb06h">  کاروبار </string>
     <string name="spblb06i">  شاگرد </string>
     <string name="spblb06j">  بیروز گار </string>
-    <string name="spblb07">حاملہ عورت</string>
-    <string name="spblb08">دودھ پلانے والی ماں</string>
+  <string name="spblb07">ازدواجی حیثیت</string>
+  <string name="spblb07a">شادی شدہ</string>
+  <string name="spblb07b">غیر شادی شدہ</string>
 
-    <string name="spblcheading">  سماجی اقتصادی معلومات </string>
+
+  <string name="spblcheading">  سماجی اقتصادی معلومات </string>
     <string name="spblc01">  آپ کی مادری زبان کیا ہے؟ </string>
     <string name="spblc01a">  اردو </string>
     <string name="spblc01b">  پنجابی </string>

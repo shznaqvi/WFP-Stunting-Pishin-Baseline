@@ -411,8 +411,6 @@ public class SectionCActivity extends Activity {
     RadioButton spblc14t;
     @BindView(R.id.spblc14u)
     RadioButton spblc14u;
-    @BindView(R.id.spblc14v)
-    RadioButton spblc14v;
     @BindView(R.id.spblc1488)
     RadioButton spblc1488;
     @BindView(R.id.spblc1488x)
@@ -780,7 +778,7 @@ public class SectionCActivity extends Activity {
     void onBtnContinueClick() {
         //TODO implement
 
-        Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();
+        /*Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();
         if (formValidation()) {
             try {
                 SaveDraft();
@@ -795,7 +793,12 @@ public class SectionCActivity extends Activity {
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }
-        }
+        }*/
+
+        Intent secNext = new Intent(this, SectionDActivity.class);
+        secNext.putExtra("check", false);
+        startActivity(secNext);
+
     }
 
     @OnClick(R.id.btn_End)
@@ -906,7 +909,7 @@ public class SectionCActivity extends Activity {
                 : spblc14m.isChecked() ? "13" : spblc14n.isChecked() ? "14" : spblc14o.isChecked() ? "15"
                 : spblc14p.isChecked() ? "15" : spblc14q.isChecked() ? "16" : spblc14r.isChecked() ? "17"
                 : spblc14s.isChecked() ? "18" : spblc14t.isChecked() ? "19" : spblc14u.isChecked() ? "20"
-                : spblc14v.isChecked() ? "21" : spblc1488.isChecked() ? "88" : "0");
+                : spblc1488.isChecked() ? "88" : "0");
         sC.put("spblc1488x", spblc1488x.getText().toString());
 
 //        15
@@ -1020,7 +1023,7 @@ public class SectionCActivity extends Activity {
 
 
         if (spblc03.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc03a), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc03), Toast.LENGTH_SHORT).show();
             spblc03a.setError("This data is Required!");    // Set Error on last radio button
             spblc03a.setFocusable(true);
             spblc03a.setFocusableInTouchMode(true);

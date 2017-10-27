@@ -2,9 +2,7 @@ package edu.aku.hassannaqvi.wfpstuntingpishin.activities;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.Toast;
 
 import org.json.JSONException;
@@ -67,7 +65,7 @@ public class SectionEActivity extends Activity {
 
         DatabaseHelper db = new DatabaseHelper(this);
 
-        int updcount = db.updateSHE();
+        /*int updcount = db.updateSHE();
 
         if (updcount == 1) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
@@ -76,13 +74,15 @@ public class SectionEActivity extends Activity {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
             return false;
         }
+*/
 
+        return true;
     }
 
 
     private boolean ValidateForm() {
 
-        //        spble01a
+     /*   //        spble01a
         if (spble01a.getSelectedItem() == "....") {
             Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spble01a), Toast.LENGTH_SHORT).show();
             ((TextView) spble01a.getSelectedView()).setText("This Data is Required");
@@ -168,7 +168,7 @@ public class SectionEActivity extends Activity {
             spble02.setError(null);
         }
 
-
+*/
         return true;
     }
 
@@ -178,7 +178,7 @@ public class SectionEActivity extends Activity {
 
         JSONObject sHE = new JSONObject();
 
-        sHE.put("spble01a", spble01a.getSelectedItem().toString());
+        /*sHE.put("spble01a", spble01a.getSelectedItem().toString());
         sHE.put("spble01a88x", spble01a88x.getText().toString());
 
         sHE.put("spble01b", spble01b.getSelectedItem().toString());
@@ -193,6 +193,6 @@ public class SectionEActivity extends Activity {
         sHE.put("appver", MainApp.versionName + "." + MainApp.versionCode);
 
         MainApp.fc.setsHE(String.valueOf(sHE));
-
+*/
     }
 }

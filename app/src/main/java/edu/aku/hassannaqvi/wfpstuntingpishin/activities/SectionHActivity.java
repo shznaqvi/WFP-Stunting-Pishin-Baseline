@@ -26,6 +26,7 @@ import edu.aku.hassannaqvi.wfpstuntingpishin.core.MainApp;
 
 public class SectionHActivity extends Activity {
 
+
     @BindView(R.id.spblh01)
     Spinner spblh01;
     @BindView(R.id.spblh02)

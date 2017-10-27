@@ -1,6 +1,7 @@
 package edu.aku.hassannaqvi.wfpstuntingpishin.activities;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.provider.Settings;
@@ -91,7 +92,7 @@ public class SectionAActivity extends Activity {
     @OnClick(R.id.btn_Continue)
     void onBtnContinueClick() {
 
-        if (formValidation()) {
+        /*if (formValidation()) {
             try {
                 SaveDraft();
             } catch (JSONException e) {
@@ -104,7 +105,13 @@ public class SectionAActivity extends Activity {
                 finish();
 
             }
-        }
+
+        }*/
+
+        Intent secNext = new Intent(this, SectionBActivity.class);
+        secNext.putExtra("check", false);
+        startActivity(secNext);
+
     }
 
     private void SaveDraft() throws JSONException {
