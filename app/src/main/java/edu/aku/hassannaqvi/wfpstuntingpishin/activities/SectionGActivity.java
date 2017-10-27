@@ -2,6 +2,7 @@ package edu.aku.hassannaqvi.wfpstuntingpishin.activities;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -10,6 +11,8 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONException;
@@ -210,6 +213,10 @@ public class SectionGActivity extends Activity {
     EditText spblg0115src;
     @BindView(R.id.fldGrpbtn)
     LinearLayout fldGrpbtn;
+
+    @BindView(R.id.spbli01c)
+    Spinner spbli01c;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -545,6 +552,19 @@ public class SectionGActivity extends Activity {
     }
 
     public boolean ValidateForm() {
+
+
+        if (spbli01c.getSelectedItem() == "....") {
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spbli01c), Toast.LENGTH_SHORT).show();
+            ((TextView) spbli01c.getSelectedView()).setText("This Data is Required");
+            ((TextView) spbli01c.getSelectedView()).setTextColor(Color.RED);
+            spbli01c.requestFocus();
+            Log.i(TAG, "spbli01c: This Data is Required!");
+            return false;
+        } else {
+            ((TextView) spbli01c.getSelectedView()).setError(null);
+        }
+
 
         //=================== spblg0101 ==============
         if (spblg0101.getCheckedRadioButtonId() == -1) {
@@ -1082,9 +1102,6 @@ public class SectionGActivity extends Activity {
                 spblg0115src.setError(null);
             }
         }
-
-
-
 
 
         return true;

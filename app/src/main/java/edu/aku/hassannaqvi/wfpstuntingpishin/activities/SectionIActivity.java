@@ -386,7 +386,7 @@ public class SectionIActivity extends Activity {
 
 
         if (spbli01w.getSelectedItem() == "....") {
-            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.tha03), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spbli01w), Toast.LENGTH_SHORT).show();
             ((TextView) spbli01w.getSelectedView()).setText("This Data is Required");
             ((TextView) spbli01w.getSelectedView()).setTextColor(Color.RED);
             spbli01w.requestFocus();

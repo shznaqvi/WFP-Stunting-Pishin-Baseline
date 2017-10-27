@@ -2,10 +2,14 @@ package edu.aku.hassannaqvi.wfpstuntingpishin.activities;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONException;
@@ -36,6 +40,10 @@ public class SectionEActivity extends Activity {
     EditText spble01c88x;
     @BindView(R.id.spble02)
     EditText spble02;
+
+    @BindView(R.id.spble0299)
+    CheckBox spble0299;
+
     @BindView(R.id.fldGrpbtn)
     LinearLayout fldGrpbtn;
 
@@ -50,7 +58,7 @@ public class SectionEActivity extends Activity {
     @OnClick(R.id.btnNext)
     void SaveData() {
 
-        /*if (ValidateForm()) {
+        if (ValidateForm()) {
             try {
                 SaveDraft();
             } catch (JSONException e) {
@@ -67,7 +75,7 @@ public class SectionEActivity extends Activity {
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }
-        }*/
+        }
 
         Intent secNext = new Intent(this, SectionFActivity.class);
         secNext.putExtra("check", false);
@@ -108,7 +116,7 @@ public class SectionEActivity extends Activity {
 
     private boolean ValidateForm() {
 
-     /*   //        spble01a
+        //        spble01a
         if (spble01a.getSelectedItem() == "....") {
             Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spble01a), Toast.LENGTH_SHORT).show();
             ((TextView) spble01a.getSelectedView()).setText("This Data is Required");
@@ -133,7 +141,7 @@ public class SectionEActivity extends Activity {
         }
 
 
-        //        spble01b
+        /*//        spble01b
         if (spble01b.getSelectedItem() == "....") {
             Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spble01b), Toast.LENGTH_SHORT).show();
             ((TextView) spble01b.getSelectedView()).setText("This Data is Required");
@@ -143,7 +151,7 @@ public class SectionEActivity extends Activity {
             return false;
         } else {
             ((TextView) spble01b.getSelectedView()).setError(null);
-        }
+        }*/
 
 
         //        spble01b88x
@@ -158,7 +166,7 @@ public class SectionEActivity extends Activity {
         }
 
 
-        //        spble01c
+        /*//        spble01c
         if (spble01c.getSelectedItem() == "....") {
             Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spble01c), Toast.LENGTH_SHORT).show();
             ((TextView) spble01c.getSelectedView()).setText("This Data is Required");
@@ -168,7 +176,7 @@ public class SectionEActivity extends Activity {
             return false;
         } else {
             ((TextView) spble01c.getSelectedView()).setError(null);
-        }
+        }*/
 
 
         //        spble01c88x
@@ -194,7 +202,7 @@ public class SectionEActivity extends Activity {
             spble02.setError(null);
         }
 
-*/
+
         return true;
     }
 
@@ -204,7 +212,7 @@ public class SectionEActivity extends Activity {
 
         JSONObject sHE = new JSONObject();
 
-        /*sHE.put("spble01a", spble01a.getSelectedItem().toString());
+        sHE.put("spble01a", spble01a.getSelectedItem().toString());
         sHE.put("spble01a88x", spble01a88x.getText().toString());
 
         sHE.put("spble01b", spble01b.getSelectedItem().toString());
@@ -216,9 +224,9 @@ public class SectionEActivity extends Activity {
 
         sHE.put("spble02", spble02.getText().toString());
 
-        sHE.put("appver", MainApp.versionName + "." + MainApp.versionCode);
+        //sHE.put("appver", MainApp.versionName + "." + MainApp.versionCode);
 
-        MainApp.fc.setsHE(String.valueOf(sHE));
-*/
+        //MainApp.fc.setsHE(String.valueOf(sHE));
+
     }
 }

@@ -3,12 +3,15 @@ package edu.aku.hassannaqvi.wfpstuntingpishin.activities;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import org.json.JSONException;
+import org.json.JSONObject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -20,7 +23,6 @@ import edu.aku.hassannaqvi.wfpstuntingpishin.core.MainApp;
 public class SectionDActivity extends Activity {
 
     private static final String TAG = SectionDActivity.class.getName();
-
 
     @BindView(R.id.spbld01)
     RadioGroup spbld01;
@@ -38,61 +40,59 @@ public class SectionDActivity extends Activity {
     RadioButton spbld02a;
     @BindView(R.id.spbld02b)
     RadioButton spbld02b;
-    @BindView(R.id.spbld03)
-    RadioGroup spbld03;
+
+
     @BindView(R.id.spbld03a)
-    RadioButton spbld03a;
+    CheckBox spbld03a;
     @BindView(R.id.spbld03b)
-    RadioButton spbld03b;
+    CheckBox spbld03b;
     @BindView(R.id.spbld03c)
-    RadioButton spbld03c;
+    CheckBox spbld03c;
     @BindView(R.id.spbld03d)
-    RadioButton spbld03d;
+    CheckBox spbld03d;
     @BindView(R.id.spbld03e)
-    RadioButton spbld03e;
+    CheckBox spbld03e;
     @BindView(R.id.spbld04)
+
     RadioGroup spbld04;
     @BindView(R.id.spbld04a)
     RadioButton spbld04a;
     @BindView(R.id.spbld04b)
     RadioButton spbld04b;
-    @BindView(R.id.spbld05)
-    RadioGroup spbld05;
+
+
     @BindView(R.id.spbld05a)
-    RadioButton spbld05a;
+    CheckBox spbld05a;
     @BindView(R.id.spbld05b)
-    RadioButton spbld05b;
+    CheckBox spbld05b;
     @BindView(R.id.spbld05c)
-    RadioButton spbld05c;
+    CheckBox spbld05c;
     @BindView(R.id.spbld05d)
-    RadioButton spbld05d;
+    CheckBox spbld05d;
     @BindView(R.id.spbld05e)
-    RadioButton spbld05e;
-    @BindView(R.id.spbld06)
-    RadioGroup spbld06;
+    CheckBox spbld05e;
+
+
     @BindView(R.id.spbld06a)
-    RadioButton spbld06a;
+    CheckBox spbld06a;
     @BindView(R.id.spbld06b)
-    RadioButton spbld06b;
+    CheckBox spbld06b;
     @BindView(R.id.spbld06c)
-    RadioButton spbld06c;
+    CheckBox spbld06c;
     @BindView(R.id.spbld06d)
-    RadioButton spbld06d;
+    CheckBox spbld06d;
     @BindView(R.id.spbld06e)
-    RadioButton spbld06e;
+    CheckBox spbld06e;
     @BindView(R.id.spbld06f)
-    RadioButton spbld06f;
+    CheckBox spbld06f;
     @BindView(R.id.spbld06g)
-    RadioButton spbld06g;
+    CheckBox spbld06g;
     @BindView(R.id.spbld06i)
-    RadioButton spbld06i;
+    CheckBox spbld06i;
     @BindView(R.id.spbld0688)
-    RadioButton spbld0688;
+    CheckBox spbld0688;
     @BindView(R.id.spbld0688x)
     EditText spbld0688x;
-
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -104,7 +104,7 @@ public class SectionDActivity extends Activity {
     @OnClick(R.id.btnNext)
     void SaveData() {
 
-        /*if (ValidateForm()) {
+        if (ValidateForm()) {
             try {
                 SaveDraft();
             } catch (JSONException e) {
@@ -121,12 +121,7 @@ public class SectionDActivity extends Activity {
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }
-        }*/
-
-        Intent secNext = new Intent(this, SectionEActivity.class);
-        secNext.putExtra("check", false);
-        startActivity(secNext);
-
+        }
     }
 
 
@@ -145,7 +140,7 @@ public class SectionDActivity extends Activity {
 
         DatabaseHelper db = new DatabaseHelper(this);
 
-        /*int updcount = db.updateSHD();
+       /* int updcount = db.updateSHD();
 
         if (updcount == 1) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
@@ -154,14 +149,13 @@ public class SectionDActivity extends Activity {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
             return false;
         }
-*/
+        */
 
         return true;
     }
 
 
     private boolean ValidateForm() {
-/*
 
         //        spbld01
         if (spbld01.getCheckedRadioButtonId() == -1) {
@@ -255,7 +249,6 @@ public class SectionDActivity extends Activity {
         } else {
             spbld0688x.setError(null);
         }
-*/
 
 
         return true;
@@ -264,7 +257,7 @@ public class SectionDActivity extends Activity {
     private void SaveDraft() throws JSONException {
         Toast.makeText(this, "Saving Draft for  This Section", Toast.LENGTH_SHORT).show();
 
-        /*JSONObject sHD = new JSONObject();
+        JSONObject sHD = new JSONObject();
 
         sHD.put("spbld01", spbld01a.isChecked() ? "1" : spbld01b.isChecked() ? "2"
                 : spbld01c.isChecked() ? "3"
@@ -303,8 +296,8 @@ public class SectionDActivity extends Activity {
 
         sHD.put("spbld0688x", spbld0688x.getText().toString());
 
-        sHD.put("appver", MainApp.versionName + "." + MainApp.versionCode);
+        //sHD.put("appver", MainApp.versionName + "." + MainApp.versionCode);
 
-        MainApp.fc.setsHD(String.valueOf(sHD));*/
+        //MainApp.fc.setsHD(String.valueOf(sHD));
     }
 }
