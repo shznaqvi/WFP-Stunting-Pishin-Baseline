@@ -878,20 +878,20 @@
     <string name="spblp0205">  پورے دن میں کھانوں کی تعداد کم کرنا </string>
     <string name="spblp03suba">  Hunger Scale - 4 weeks (30 days) Recall </string>
     <string name="spblp03subb">  Frequency </string>
-    <string name="spblp03">  گزشتہ 4 ہفتوں میں(30دن)، کبھی ایسا وقت آیا کہ آپ کے گھر میں زرائع کی کمی کی وجہ سے کھانا نہیں تھا؟ </string>
-    <string name="spblp03a">  کبھی نہیں </string>
-    <string name="spblp03b">  بہت مشکل سے ایک مرتبہ(1 سے 2 مرتبہ) </string>
-    <string name="spblp03c">  کبھی کبھی (3 کان 10 وقت) </string>
-    <string name="spblp03d">  اکثر اوقات (10 مرتبہ سے زیادہ) </string>
-    <string name="spblp04">  گزشتہ 4 ہفتوں میں(30دن)، کبھی ایساہوا کہ آپ یا آپ کے گھر کے کسی فرد کوگھر میں کھانا نہ ہونے کی وجہ سے خالی پیٹ سونا پڑا ہو؟ </string>
-    <string name="spblp04a">  کبھی نہیں </string>
-    <string name="spblp04b">  بہت مشکل سے ایک مرتبہ(1 سے 2 مرتبہ) </string>
-    <string name="spblp04c">  کبھی کبھی (3 کان 10 وقت) </string>
-    <string name="spblp04d">  اکثر اوقات (10 مرتبہ سے زیادہ) </string>
-    <string name="spblp05">  گزشتہ 4 ہفتوں میں(30دن)، کبھی ایساہوا کہ آپ یا آپ کے گھر کے کسی فرد کو کھانے کی کمی کی وجہ سےپورا دن اور رات بغیر کچھ کھائے پیئے خالی پیٹ گزارنا پڑا ہو؟ </string>
-    <string name="spblp05a">  کبھی نہیں </string>
-    <string name="spblp05b">  بہت مشکل سے ایک مرتبہ(1 سے 2 مرتبہ) </string>
-    <string name="spblp05c">  کبھی کبھی (3 کان 10 وقت) </string>
-    <string name="spblp05d">  اکثر اوقات (10 مرتبہ سے زیادہ) </string>
+  <string name="spblp0301">  گزشتہ 4 ہفتوں میں(30دن)، کبھی ایسا وقت آیا کہ آپ کے گھر میں زرائع کی کمی کی وجہ سے کھانا نہیں تھا؟ </string>
+  <string name="spblp0301a">  کبھی نہیں </string>
+  <string name="spblp0301b">  بہت مشکل سے ایک مرتبہ(1 سے 2 مرتبہ) </string>
+  <string name="spblp0301c">  کبھی کبھی (3 کان 10 وقت) </string>
+  <string name="spblp0301d">  اکثر اوقات (10 مرتبہ سے زیادہ) </string>
+  <string name="spblp0302">  گزشتہ 4 ہفتوں میں(30دن)، کبھی ایساہوا کہ آپ یا آپ کے گھر کے کسی فرد کوگھر میں کھانا نہ ہونے کی وجہ سے خالی پیٹ سونا پڑا ہو؟ </string>
+  <string name="spblp0302a">  کبھی نہیں </string>
+  <string name="spblp0302b">  بہت مشکل سے ایک مرتبہ(1 سے 2 مرتبہ) </string>
+  <string name="spblp0302c">  کبھی کبھی (3 کان 10 وقت) </string>
+  <string name="spblp0302d">  اکثر اوقات (10 مرتبہ سے زیادہ) </string>
+  <string name="spblp0303">  گزشتہ 4 ہفتوں میں(30دن)، کبھی ایساہوا کہ آپ یا آپ کے گھر کے کسی فرد کو کھانے کی کمی کی وجہ سےپورا دن اور رات بغیر کچھ کھائے پیئے خالی پیٹ گزارنا پڑا ہو؟ </string>
+  <string name="spblp0303a">  کبھی نہیں </string>
+  <string name="spblp0303b">  بہت مشکل سے ایک مرتبہ(1 سے 2 مرتبہ) </string>
+  <string name="spblp0303c">  کبھی کبھی (3 کان 10 وقت) </string>
+  <string name="spblp0303d">  اکثر اوقات (10 مرتبہ سے زیادہ) </string>
 
 </resources>
