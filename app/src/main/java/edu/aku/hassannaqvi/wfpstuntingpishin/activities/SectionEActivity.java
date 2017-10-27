@@ -3,11 +3,15 @@ package edu.aku.hassannaqvi.wfpstuntingpishin.activities;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import edu.aku.hassannaqvi.wfpstuntingpishin.R;
@@ -17,6 +21,23 @@ import edu.aku.hassannaqvi.wfpstuntingpishin.core.MainApp;
 public class SectionEActivity extends Activity {
 
     private static final String TAG = SectionEActivity.class.getName();
+
+    @BindView(R.id.spble01a)
+    Spinner spble01a;
+    @BindView(R.id.spble01a88x)
+    EditText spble01a88x;
+    @BindView(R.id.spble01b)
+    Spinner spble01b;
+    @BindView(R.id.spble01b88x)
+    EditText spble01b88x;
+    @BindView(R.id.spble01c)
+    Spinner spble01c;
+    @BindView(R.id.spble01c88x)
+    EditText spble01c88x;
+    @BindView(R.id.spble02)
+    EditText spble02;
+    @BindView(R.id.fldGrpbtn)
+    LinearLayout fldGrpbtn;
 
 
     @Override
@@ -29,7 +50,7 @@ public class SectionEActivity extends Activity {
     @OnClick(R.id.btnNext)
     void SaveData() {
 
-        if (ValidateForm()) {
+        /*if (ValidateForm()) {
             try {
                 SaveDraft();
             } catch (JSONException e) {
@@ -46,7 +67,12 @@ public class SectionEActivity extends Activity {
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }
-        }
+        }*/
+
+        Intent secNext = new Intent(this, SectionFActivity.class);
+        secNext.putExtra("check", false);
+        startActivity(secNext);
+
     }
 
 

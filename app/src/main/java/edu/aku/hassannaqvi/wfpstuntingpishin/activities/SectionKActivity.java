@@ -488,7 +488,7 @@ public class SectionKActivity extends AppCompatActivity implements RadioGroup.On
     @OnClick(R.id.btn_Continue)
     void onBtnContinueClick() {
 
-        if (ValidateForm()) {
+        /*if (ValidateForm()) {
             try {
                 SaveDraft();
             } catch (JSONException e) {
@@ -507,7 +507,12 @@ public class SectionKActivity extends AppCompatActivity implements RadioGroup.On
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }
-        }
+        }*/
+
+        Intent secNext = new Intent(this, SectionLIMActivity.class);
+        secNext.putExtra("check", false);
+        startActivity(secNext);
+
 
     }
 

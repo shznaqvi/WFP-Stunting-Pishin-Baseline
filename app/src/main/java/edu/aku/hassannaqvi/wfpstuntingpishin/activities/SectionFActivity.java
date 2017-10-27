@@ -3,11 +3,14 @@ package edu.aku.hassannaqvi.wfpstuntingpishin.activities;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import edu.aku.hassannaqvi.wfpstuntingpishin.R;
@@ -17,6 +20,61 @@ import edu.aku.hassannaqvi.wfpstuntingpishin.core.MainApp;
 public class SectionFActivity extends Activity {
     private static final String TAG = SectionFActivity.class.getName();
 
+
+    @BindView(R.id.spblf01a)
+    EditText spblf01a;
+    @BindView(R.id.spblf01b)
+    EditText spblf01b;
+    @BindView(R.id.spblf01c)
+    EditText spblf01c;
+    @BindView(R.id.spblf01d)
+    EditText spblf01d;
+    @BindView(R.id.spblf01e)
+    EditText spblf01e;
+    @BindView(R.id.spblf01f)
+    EditText spblf01f;
+    @BindView(R.id.spblf01g)
+    EditText spblf01g;
+    @BindView(R.id.spblf01h)
+    EditText spblf01h;
+    @BindView(R.id.spblf01i)
+    EditText spblf01i;
+    @BindView(R.id.spblf01j)
+    EditText spblf01j;
+    @BindView(R.id.spblf01k)
+    EditText spblf01k;
+    @BindView(R.id.spblf01l)
+    EditText spblf01l;
+    @BindView(R.id.spblf01m)
+    EditText spblf01m;
+    @BindView(R.id.spblf02a)
+    EditText spblf02a;
+    @BindView(R.id.spblf02b)
+    EditText spblf02b;
+    @BindView(R.id.spblf02c)
+    EditText spblf02c;
+    @BindView(R.id.spblf02d)
+    EditText spblf02d;
+    @BindView(R.id.spblf02e)
+    EditText spblf02e;
+    @BindView(R.id.spblf02f)
+    EditText spblf02f;
+    @BindView(R.id.spblf02g)
+    EditText spblf02g;
+    @BindView(R.id.spblf02h)
+    EditText spblf02h;
+    @BindView(R.id.spblf02i)
+    EditText spblf02i;
+    @BindView(R.id.spblf02j)
+    EditText spblf02j;
+    @BindView(R.id.spblf02k)
+    EditText spblf02k;
+    @BindView(R.id.spblf02l)
+    EditText spblf02l;
+    @BindView(R.id.spblf03)
+    EditText spblf03;
+    @BindView(R.id.fldGrpbtn)
+    LinearLayout fldGrpbtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +86,7 @@ public class SectionFActivity extends Activity {
     @OnClick(R.id.btnNext)
     void SaveData() {
 
-        if (ValidateForm()) {
+        /*if (ValidateForm()) {
             try {
                 SaveDraft();
             } catch (JSONException e) {
@@ -45,7 +103,12 @@ public class SectionFActivity extends Activity {
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }
-        }
+        }*/
+
+        Intent secNext = new Intent(this, SectionGActivity.class);
+        secNext.putExtra("check", false);
+        startActivity(secNext);
+
     }
 
 

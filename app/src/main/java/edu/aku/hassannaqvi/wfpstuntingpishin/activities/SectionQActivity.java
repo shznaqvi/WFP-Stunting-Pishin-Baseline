@@ -1,5 +1,6 @@
 package edu.aku.hassannaqvi.wfpstuntingpishin.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
@@ -834,6 +835,11 @@ public class SectionQActivity extends AppCompatActivity
         }
 
 */
+
+        Intent secNext = new Intent(this, EndingActivity.class);
+        secNext.putExtra("check", true);
+        startActivity(secNext);
+
     }
 
 

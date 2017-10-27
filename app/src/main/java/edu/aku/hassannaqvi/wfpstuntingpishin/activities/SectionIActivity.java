@@ -1,14 +1,320 @@
 package edu.aku.hassannaqvi.wfpstuntingpishin.activities;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.CheckBox;
+import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.Spinner;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
+import edu.aku.hassannaqvi.wfpstuntingpishin.R;
 
 //import edu.aku.hassannaqvi.wfpstuntingpishin.R;
 
 public class SectionIActivity extends Activity {
     private static final String TAG = SectionIActivity.class.getName();
+
+
+    @BindView(R.id.spbli01w)
+    Spinner spbli01w;
+    @BindView(R.id.spbli01)
+    RadioGroup spbli01;
+    @BindView(R.id.spbli01a)
+    RadioButton spbli01a;
+    @BindView(R.id.spbli01b)
+    RadioButton spbli01b;
+    @BindView(R.id.spbli01c)
+    RadioButton spbli01c;
+    @BindView(R.id.spbli02)
+    EditText spbli02;
+    @BindView(R.id.spbli03)
+    RadioGroup spbli03;
+    @BindView(R.id.spbli03a)
+    RadioButton spbli03a;
+    @BindView(R.id.spbli03b)
+    RadioButton spbli03b;
+    @BindView(R.id.spbli03c)
+    RadioButton spbli03c;
+    @BindView(R.id.spbli04)
+    RadioGroup spbli04;
+    @BindView(R.id.spbli04a)
+    RadioButton spbli04a;
+    @BindView(R.id.spbli04b)
+    RadioButton spbli04b;
+    @BindView(R.id.spbli04c)
+    RadioButton spbli04c;
+    @BindView(R.id.spbli04d)
+    RadioButton spbli04d;
+    @BindView(R.id.spbli04e)
+    RadioButton spbli04e;
+    @BindView(R.id.spbli04f)
+    RadioButton spbli04f;
+    @BindView(R.id.spbli04g)
+    RadioButton spbli04g;
+    @BindView(R.id.spbli04h)
+    RadioButton spbli04h;
+    @BindView(R.id.spbli0488)
+    RadioButton spbli0488;
+    @BindView(R.id.spbli0488x)
+    EditText spbli0488x;
+    @BindView(R.id.spbli05)
+    RadioGroup spbli05;
+    @BindView(R.id.spbli05a)
+    RadioButton spbli05a;
+    @BindView(R.id.spbli05b)
+    RadioButton spbli05b;
+    @BindView(R.id.spbli05c)
+    RadioButton spbli05c;
+    @BindView(R.id.spbli05d)
+    RadioButton spbli05d;
+    @BindView(R.id.spbli0588)
+    RadioButton spbli0588;
+    @BindView(R.id.spbli0588x)
+    EditText spbli0588x;
+    @BindView(R.id.spbli06)
+    EditText spbli06;
+    @BindView(R.id.spbli06999)
+    CheckBox spbli06999;
+    @BindView(R.id.spbli07)
+    EditText spbli07;
+    @BindView(R.id.spbli07999)
+    CheckBox spbli07999;
+    @BindView(R.id.spbli08)
+    RadioGroup spbli08;
+    @BindView(R.id.spbli08a)
+    RadioButton spbli08a;
+    @BindView(R.id.spbli08b)
+    RadioButton spbli08b;
+    @BindView(R.id.spbli08c)
+    RadioButton spbli08c;
+    @BindView(R.id.spbli08d)
+    RadioButton spbli08d;
+    @BindView(R.id.spbli08e)
+    RadioButton spbli08e;
+    @BindView(R.id.spbli0888)
+    RadioButton spbli0888;
+    @BindView(R.id.spbli0888x)
+    EditText spbli0888x;
+    @BindView(R.id.spbli09)
+    RadioGroup spbli09;
+    @BindView(R.id.spbli09a)
+    RadioButton spbli09a;
+    @BindView(R.id.spbli09b)
+    RadioButton spbli09b;
+    @BindView(R.id.spbli0999)
+    RadioButton spbli0999;
+    @BindView(R.id.spbli010)
+    EditText spbli010;
+    @BindView(R.id.spbli01099)
+    CheckBox spbli01099;
+    @BindView(R.id.spbli011)
+    RadioGroup spbli011;
+    @BindView(R.id.spbli011a)
+    RadioButton spbli011a;
+    @BindView(R.id.spbli011b)
+    RadioButton spbli011b;
+    @BindView(R.id.spbli01199)
+    RadioButton spbli01199;
+    @BindView(R.id.spbli012)
+    EditText spbli012;
+    @BindView(R.id.spbli01299)
+    CheckBox spbli01299;
+    @BindView(R.id.spbli013)
+    EditText spbli013;
+    @BindView(R.id.spbli014)
+    RadioGroup spbli014;
+    @BindView(R.id.spbli014a)
+    RadioButton spbli014a;
+    @BindView(R.id.spbli014b)
+    RadioButton spbli014b;
+    @BindView(R.id.spbli01499)
+    RadioButton spbli01499;
+    @BindView(R.id.spbli015)
+    EditText spbli015;
+    @BindView(R.id.spbli01597)
+    CheckBox spbli01597;
+    @BindView(R.id.spbli01599)
+    CheckBox spbli01599;
+    @BindView(R.id.spbli016)
+    RadioGroup spbli016;
+    @BindView(R.id.spbli016a)
+    RadioButton spbli016a;
+    @BindView(R.id.spbli016b)
+    RadioButton spbli016b;
+    @BindView(R.id.spbli01699)
+    RadioButton spbli01699;
+    @BindView(R.id.spbli017)
+    RadioGroup spbli017;
+    @BindView(R.id.spbli017a)
+    RadioButton spbli017a;
+    @BindView(R.id.spbli017b)
+    RadioButton spbli017b;
+    @BindView(R.id.spbli017c)
+    RadioButton spbli017c;
+    @BindView(R.id.spbli017d)
+    RadioButton spbli017d;
+    @BindView(R.id.spbli017e)
+    RadioButton spbli017e;
+    @BindView(R.id.spbli017f)
+    RadioButton spbli017f;
+    @BindView(R.id.spbli017g)
+    RadioButton spbli017g;
+    @BindView(R.id.spbli017h)
+    RadioButton spbli017h;
+    @BindView(R.id.spbli017i)
+    RadioButton spbli017i;
+    @BindView(R.id.spbli01788)
+    RadioButton spbli01788;
+    @BindView(R.id.spbli01788x)
+    EditText spbli01788x;
+    @BindView(R.id.spbli018)
+    RadioGroup spbli018;
+    @BindView(R.id.spbli018a)
+    RadioButton spbli018a;
+    @BindView(R.id.spbli018b)
+    RadioButton spbli018b;
+    @BindView(R.id.spbli018c)
+    RadioButton spbli018c;
+    @BindView(R.id.spbli01888)
+    RadioButton spbli01888;
+    @BindView(R.id.spbli01888x)
+    EditText spbli01888x;
+    @BindView(R.id.spbli019)
+    RadioGroup spbli019;
+    @BindView(R.id.spbli019a)
+    RadioButton spbli019a;
+    @BindView(R.id.spbli019b)
+    RadioButton spbli019b;
+    @BindView(R.id.spbli019c)
+    RadioButton spbli019c;
+    @BindView(R.id.spbli019d)
+    RadioButton spbli019d;
+    @BindView(R.id.spbli020)
+    RadioGroup spbli020;
+    @BindView(R.id.spbli020a)
+    RadioButton spbli020a;
+    @BindView(R.id.spbli020b)
+    RadioButton spbli020b;
+    @BindView(R.id.spbli02099)
+    RadioButton spbli02099;
+    @BindView(R.id.spbli021)
+    RadioGroup spbli021;
+    @BindView(R.id.spbli021a)
+    RadioButton spbli021a;
+    @BindView(R.id.spbli021b)
+    RadioButton spbli021b;
+    @BindView(R.id.spbli021a1)
+    EditText spbli021a1;
+    @BindView(R.id.spbli021a2)
+    EditText spbli021a2;
+    @BindView(R.id.spbli022)
+    RadioGroup spbli022;
+    @BindView(R.id.spbli022a)
+    RadioButton spbli022a;
+    @BindView(R.id.spbli022b)
+    RadioButton spbli022b;
+    @BindView(R.id.spbli02288)
+    RadioButton spbli02288;
+    @BindView(R.id.spbli02299)
+    RadioButton spbli02299;
+    @BindView(R.id.spbli02288x)
+    EditText spbli02288x;
+    @BindView(R.id.spbli023)
+    RadioGroup spbli023;
+    @BindView(R.id.spbli023a)
+    RadioButton spbli023a;
+    @BindView(R.id.spbli023b)
+    RadioButton spbli023b;
+    @BindView(R.id.spbli023c)
+    RadioButton spbli023c;
+    @BindView(R.id.spbli023d)
+    RadioButton spbli023d;
+    @BindView(R.id.spbli023e)
+    RadioButton spbli023e;
+    @BindView(R.id.spbli023f)
+    RadioButton spbli023f;
+    @BindView(R.id.spbli02399)
+    RadioButton spbli02399;
+    @BindView(R.id.spbli024)
+    RadioGroup spbli024;
+    @BindView(R.id.spbli24a)
+    RadioButton spbli24a;
+    @BindView(R.id.spbli024b)
+    RadioButton spbli024b;
+    @BindView(R.id.spbli02499)
+    RadioButton spbli02499;
+    @BindView(R.id.spbli025)
+    RadioGroup spbli025;
+    @BindView(R.id.spbli025a)
+    RadioButton spbli025a;
+    @BindView(R.id.spbli025b)
+    RadioButton spbli025b;
+    @BindView(R.id.spbli025c)
+    RadioButton spbli025c;
+    @BindView(R.id.spbli02588)
+    RadioButton spbli02588;
+    @BindView(R.id.spbli02599)
+    RadioButton spbli02599;
+    @BindView(R.id.spbli02588x)
+    EditText spbli02588x;
+    @BindView(R.id.spbli026)
+    RadioGroup spbli026;
+    @BindView(R.id.spbli026h)
+    RadioButton spbli026h;
+    @BindView(R.id.spbli026d)
+    RadioButton spbli026d;
+    @BindView(R.id.spbli026w)
+    RadioButton spbli026w;
+    @BindView(R.id.spbli26n)
+    RadioButton spbli26n;
+    @BindView(R.id.spbli026hr)
+    EditText spbli026hr;
+    @BindView(R.id.spbli026day)
+    EditText spbli026day;
+    @BindView(R.id.spbli026wk)
+    EditText spbli026wk;
+    @BindView(R.id.spbli027)
+    RadioGroup spbli027;
+    @BindView(R.id.spbli027a)
+    RadioButton spbli027a;
+    @BindView(R.id.spbli027b)
+    RadioButton spbli027b;
+    @BindView(R.id.spbli027c)
+    RadioButton spbli027c;
+    @BindView(R.id.spbli027d)
+    RadioButton spbli027d;
+    @BindView(R.id.spbli027e)
+    RadioButton spbli027e;
+    @BindView(R.id.spbli027f)
+    RadioButton spbli027f;
+    @BindView(R.id.spbli027g)
+    RadioButton spbli027g;
+    @BindView(R.id.spbli027h)
+    RadioButton spbli027h;
+    @BindView(R.id.spbli02788)
+    RadioButton spbli02788;
+    @BindView(R.id.spbli02788x)
+    EditText spbli02788x;
+    @BindView(R.id.spbli028)
+    RadioGroup spbli028;
+    @BindView(R.id.spbli028a)
+    RadioButton spbli028a;
+    @BindView(R.id.spbli028b)
+    RadioButton spbli028b;
+    @BindView(R.id.spbli028c)
+    RadioButton spbli028c;
+    @BindView(R.id.spbli02888)
+    RadioButton spbli02888;
+    @BindView(R.id.spbli02888x)
+    EditText spbli02888x;
+    @BindView(R.id.fldGrpbtn)
+    LinearLayout fldGrpbtn;
 
 
     @Override
@@ -19,10 +325,10 @@ public class SectionIActivity extends Activity {
     }
 
 
-    /*@OnClick(R.id.btn_Continue)
+    @OnClick(R.id.btn_Continue)
     void SaveData() {
 
-        if (ValidateForm()) {
+        /*if (ValidateForm()) {
             try {
                 SaveDraft();
             } catch (JSONException e) {
@@ -39,10 +345,15 @@ public class SectionIActivity extends Activity {
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }
-        }
+        }*/
+
+        Intent secNext = new Intent(this, SectionJActivity.class);
+        secNext.putExtra("check", false);
+        startActivity(secNext);
+
     }
 
-
+/*
     @OnClick(R.id.btn_End)
     void onBtnEndClick() {
 
