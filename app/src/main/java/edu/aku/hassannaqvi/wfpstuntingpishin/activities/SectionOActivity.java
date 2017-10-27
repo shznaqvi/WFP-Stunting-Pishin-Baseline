@@ -1,6 +1,7 @@
 package edu.aku.hassannaqvi.wfpstuntingpishin.activities;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -203,7 +204,11 @@ public class SectionOActivity extends Activity {
 
     @OnClick(R.id.btnNext)
     void onBtnNextClick() {
-        //TODO implement
+
+        Intent secNext = new Intent(this, SectionPActivity.class);
+        secNext.putExtra("check", false);
+        startActivity(secNext);
+
     }
 
 

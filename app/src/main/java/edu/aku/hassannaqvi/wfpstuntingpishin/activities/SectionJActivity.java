@@ -55,7 +55,7 @@ public class SectionJActivity extends Activity {
     @OnClick(R.id.btn_Continue)
     void onBtnContinueClick() {
 
-        if (ValidateForm()) {
+        /*if (ValidateForm()) {
             try {
                 SaveDraft();
             } catch (JSONException e) {
@@ -74,7 +74,12 @@ public class SectionJActivity extends Activity {
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }
-        }
+        }*/
+
+        Intent secNext = new Intent(this, SectionKActivity.class);
+        secNext.putExtra("check", false);
+        startActivity(secNext);
+
 
     }
 

@@ -196,9 +196,8 @@ public class MainActivity extends Activity {
 
     public void openForm(View v) {
         if (sharedPref.getString("tagName", null) != "" && sharedPref.getString("tagName", null) != null && !MainApp.userName.equals("0000")) {
-          /*  Intent oF = new Intent(MainActivity.this, F03AActivity.class);
-            MainApp.formType = "3";
-            startActivity(oF);*/
+            Intent oF = new Intent(MainActivity.this, SectionAActivity.class);
+            startActivity(oF);
         } else {
 
             builder = new AlertDialog.Builder(MainActivity.this);
@@ -220,9 +219,9 @@ public class MainActivity extends Activity {
                         editor.commit();
 
                         if (!MainApp.userName.equals("0000")) {
-                           /* Intent oF = new Intent(MainActivity.this, F03AActivity.class);
+                            Intent oF = new Intent(MainActivity.this, SectionAActivity.class);
                             MainApp.formType = "3";
-                            startActivity(oF);*/
+                            startActivity(oF);
                         }
                     }
                 }
@@ -313,64 +312,90 @@ public class MainActivity extends Activity {
         startActivity(iA);
     }
 
+
+    public void openA(View v) {
+        Intent iB = new Intent(this, SectionAActivity.class);
+        startActivity(iB);
+    }
     public void openB(View v) {
-      /*  Intent iB = new Intent(this, F04AActivity.class);
-        startActivity(iB);*/
+        Intent iB = new Intent(this, SectionBActivity.class);
+        startActivity(iB);
     }
 
     public void openC(View v) {
-        /*Intent iC = new Intent(this, SectionCActivity.class);
-        startActivity(iC);*/
+        Intent iC = new Intent(this, SectionCActivity.class);
+        startActivity(iC);
     }
 
     public void openD(View v) {
-        /*Intent iD = new Intent(this, SectionDActivity.class);
-        startActivity(iD);*/
+        Intent iD = new Intent(this, SectionDActivity.class);
+        startActivity(iD);
     }
 
     public void openE(View v) {
-        /*Intent iD = new Intent(this, SectionEActivity.class);
-        startActivity(iD);*/
+        Intent iD = new Intent(this, SectionEActivity.class);
+        startActivity(iD);
     }
 
     public void openF(View v) {
-        /*Intent iD = new Intent(this, SectionFActivity.class);
-        startActivity(iD);*/
+        Intent iD = new Intent(this, SectionFActivity.class);
+        startActivity(iD);
     }
 
     public void openG(View v) {
-        /*Intent iG = new Intent(this, SectionGActivity.class);
-        startActivity(iG);*/
+        Intent iG = new Intent(this, SectionGActivity.class);
+        startActivity(iG);
     }
 
     public void openH(View v) {
-        /*Intent iEnd = new Intent(this, SectionHActivity.class);
-        startActivity(iEnd);*/
+        Intent iEnd = new Intent(this, SectionHActivity.class);
+        startActivity(iEnd);
     }
 
     public void openI(View v) {
-        /*Intent iEnd = new Intent(this, SectionIActivity.class);
-        startActivity(iEnd);*/
+        Intent iEnd = new Intent(this, SectionIActivity.class);
+        startActivity(iEnd);
     }
 
     public void openJ(View v) {
-        /*Intent iEnd = new Intent(this, SectionJActivity.class);
-        startActivity(iEnd);*/
+        Intent iEnd = new Intent(this, SectionJActivity.class);
+        startActivity(iEnd);
     }
 
     public void openK(View v) {
-        /*Intent iEnd = new Intent(this, SectionKActivity.class);
-        startActivity(iEnd);*/
+        Intent iEnd = new Intent(this, SectionKActivity.class);
+        startActivity(iEnd);
     }
 
     public void openL(View v) {
-        /*Intent iEnd = new Intent(this, SectionLIMActivity.class);
-        startActivity(iEnd);*/
+        Intent iEnd = new Intent(this, SectionLIMActivity.class);
+        startActivity(iEnd);
     }
 
     public void openM(View v) {
-        /*Intent iEnd = new Intent(this, SectionMActivity.class);
-        startActivity(iEnd);*/
+        Intent iEnd = new Intent(this, SectionMActivity.class);
+        startActivity(iEnd);
+    }
+
+    public void openN(View v) {
+        Intent iEnd = new Intent(this, SectionNActivity.class);
+        startActivity(iEnd);
+    }
+
+    public void openO(View v) {
+        Intent iEnd = new Intent(this, SectionOActivity.class);
+        startActivity(iEnd);
+    }
+
+    public void openP(View v) {
+        Intent iEnd = new Intent(this, SectionPActivity.class);
+        startActivity(iEnd);
+    }
+
+
+    public void openQ(View v) {
+        Intent iEnd = new Intent(this, SectionQActivity.class);
+        startActivity(iEnd);
     }
 
     public void testGPS(View v) {

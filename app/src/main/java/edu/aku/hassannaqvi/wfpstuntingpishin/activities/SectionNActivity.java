@@ -55,7 +55,7 @@ public class SectionNActivity extends Activity {
         //TODO implement
 
         Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();
-        if (formValidation()) {
+        /*if (formValidation()) {
             try {
                 SaveDraft();
             } catch (JSONException e) {
@@ -69,7 +69,12 @@ public class SectionNActivity extends Activity {
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }
-        }
+        }*/
+
+        Intent secNext = new Intent(this, SectionOActivity.class);
+        secNext.putExtra("check", false);
+        startActivity(secNext);
+
     }
 
     @OnClick(R.id.btn_End)
