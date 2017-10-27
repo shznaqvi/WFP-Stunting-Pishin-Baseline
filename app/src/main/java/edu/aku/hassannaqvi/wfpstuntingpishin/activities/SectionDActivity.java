@@ -294,7 +294,7 @@ public class SectionDActivity extends Activity {
                 startActivity(secNext);
 
             } else {
-                Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).sdow();
             }
         }
     }

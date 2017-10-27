@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
+import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
@@ -26,6 +27,7 @@ import edu.aku.hassannaqvi.wfpstuntingpishin.core.MainApp;
 
 public class SectionHActivity extends Activity {
 
+    private static final String TAG = SectionHActivity.class.getSimpleName();
 
     @BindView(R.id.spblh01)
     Spinner spblh01;
@@ -784,22 +786,12 @@ public class SectionHActivity extends Activity {
             }
         });
 
-        spblh2588.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
-                    spblh2588x.setVisibility(View.VISIBLE);
-                } else {
-                    spblh2588x.setVisibility(View.GONE);
-                    spblh2588x.setText(null);
-                }
-            }
-        });
+
 
         spblh24.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
-                if (spblh24a.isChecked()) {
+                if (spblh24b.isChecked()) {
                     fldGrpspblh24.setVisibility(View.VISIBLE);
                 } else {
                     fldGrpspblh24.setVisibility(View.GONE);
@@ -815,6 +807,19 @@ public class SectionHActivity extends Activity {
                 }
             }
         });
+
+        spblh2588.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    spblh2588x.setVisibility(View.VISIBLE);
+                } else {
+                    spblh2588x.setVisibility(View.GONE);
+                    spblh2588x.setText(null);
+                }
+            }
+        });
+
 
         spblh0399.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -1377,6 +1382,109 @@ public class SectionHActivity extends Activity {
         sh.put("spblh0799", spblh0799.isChecked() ? "99" : "0");
         sh.put("spblh0788", spblh0788.isChecked() ? "88" : "0");
         sh.put("spblh0788x", spblh0788x.getText().toString());
+        sh.put("spblh08", spblh08a.isChecked() ? "1" : spblh08b.isChecked() ? "2" : spblh0899.isChecked() ? "99" : "0");
+        sh.put("spblh09a", spblh09a.isChecked() ? "1" : "0");
+        sh.put("spblh09b", spblh09b.isChecked() ? "2" : "0");
+        sh.put("spblh09c", spblh09c.isChecked() ? "3" : "0");
+        sh.put("spblh09d", spblh09d.isChecked() ? "4" : "0");
+        sh.put("spblh09e", spblh09e.isChecked() ? "5" : "0");
+        sh.put("spblh0999", spblh0999.isChecked() ? "99" : "0");
+        sh.put("spblh0988", spblh0988.isChecked() ? "88" : "0");
+        sh.put("spblh0988x", spblh0988x.getText().toString());
+        sh.put("spblh10a", spblh10a.isChecked() ? "1" : "0");
+        sh.put("spblh10b", spblh10b.isChecked() ? "2" : "0");
+        sh.put("spblh10c", spblh10c.isChecked() ? "3" : "0");
+        sh.put("spblh10d", spblh10d.isChecked() ? "4" : "0");
+        sh.put("spblh1099", spblh1099.isChecked() ? "99" : "0");
+        sh.put("spblh1088", spblh1088.isChecked() ? "88" : "0");
+        sh.put("spblh1088x", spblh1088x.getText().toString());
+        sh.put("spblh11", spblh11a.isChecked() ? "1" : spblh11b.isChecked() ? "2" : spblh1199.isChecked() ? "99" : "0");
+        sh.put("spblh12a", spblh12a.isChecked() ? "1" : "0");
+        sh.put("spblh12b", spblh12b.isChecked() ? "2" : "0");
+        sh.put("spblh12c", spblh12c.isChecked() ? "3" : "0");
+        sh.put("spblh12d", spblh12d.isChecked() ? "4" : "0");
+        sh.put("spblh12e", spblh12e.isChecked() ? "5" : "0");
+        sh.put("spblh12f", spblh12f.isChecked() ? "6" : "0");
+        sh.put("spblh1299", spblh1299.isChecked() ? "99" : "0");
+        sh.put("spblh1288", spblh1288.isChecked() ? "88" : "0");
+        sh.put("spblh1288x", spblh1288x.getText().toString());
+        sh.put("spblh13a", spblh13a.isChecked() ? "1" : "0");
+        sh.put("spblh13b", spblh13b.isChecked() ? "2" : "0");
+        sh.put("spblh13c", spblh13c.isChecked() ? "3" : "0");
+        sh.put("spblh1399", spblh1399.isChecked() ? "99" : "0");
+        sh.put("spblh1388", spblh1388.isChecked() ? "88" : "0");
+        sh.put("spblh1388x", spblh1388x.getText().toString());
+        sh.put("spblh14", spblh14a.isChecked() ? "1" : spblh14b.isChecked() ? "2" : spblh1499.isChecked() ? "99" : "0");
+        sh.put("spblh15a", spblh15a.isChecked() ? "1" : "0");
+        sh.put("spblh15b", spblh15b.isChecked() ? "2" : "0");
+        sh.put("spblh15c", spblh15c.isChecked() ? "3" : "0");
+        sh.put("spblh15d", spblh15d.isChecked() ? "4" : "0");
+        sh.put("spblh15e", spblh15e.isChecked() ? "5" : "0");
+        sh.put("spblh15f", spblh15f.isChecked() ? "6" : "0");
+        sh.put("spblh15g", spblh15g.isChecked() ? "7" : "0");
+        sh.put("spblh15h", spblh15h.isChecked() ? "8" : "0");
+        sh.put("spblh1599", spblh1599.isChecked() ? "99" : "0");
+        sh.put("spblh1588", spblh1588.isChecked() ? "88" : "0");
+        sh.put("spblh1588x", spblh1588x.getText().toString());
+        sh.put("spblh16a", spblh16a.isChecked() ? "1" : "0");
+        sh.put("spblh16b", spblh16b.isChecked() ? "2" : "0");
+        sh.put("spblh16c", spblh16c.isChecked() ? "3" : "0");
+        sh.put("spblh16d", spblh16d.isChecked() ? "4" : "0");
+        sh.put("spblh16e", spblh16e.isChecked() ? "5" : "0");
+        sh.put("spblh16f", spblh16f.isChecked() ? "6" : "0");
+        sh.put("spblh16g", spblh16g.isChecked() ? "7" : "0");
+        sh.put("spblh16h", spblh16h.isChecked() ? "8" : "0");
+        sh.put("spblh16i", spblh16i.isChecked() ? "9" : "0");
+        sh.put("spblh1699", spblh1699.isChecked() ? "99" : "0");
+        sh.put("spblh1688", spblh1688.isChecked() ? "88" : "0");
+        sh.put("spblh1688x", spblh1688x.getText().toString());
+        sh.put("spblh17", spblh17a.isChecked() ? "1" : spblh17b.isChecked() ? "2" : spblh1799.isChecked() ? "99" : "0");
+        sh.put("spblh18a", spblh18a.isChecked() ? "1" : "0");
+        sh.put("spblh18b", spblh18b.isChecked() ? "2" : "0");
+        sh.put("spblh18c", spblh18c.isChecked() ? "3" : "0");
+        sh.put("spblh18d", spblh18d.isChecked() ? "4" : "0");
+        sh.put("spblh18e", spblh18e.isChecked() ? "5" : "0");
+        sh.put("spblh18f", spblh18f.isChecked() ? "6" : "0");
+        sh.put("spblh18g", spblh18g.isChecked() ? "7" : "0");
+        sh.put("spblh18h", spblh18h.isChecked() ? "8" : "0");
+        sh.put("spblh1899", spblh1899.isChecked() ? "99" : "0");
+        sh.put("spblh1888", spblh1888.isChecked() ? "88" : "0");
+        sh.put("spblh1888x", spblh1888x.getText().toString());
+        sh.put("spblh19a", spblh19a.isChecked() ? "1" : "0");
+        sh.put("spblh19b", spblh19b.isChecked() ? "2" : "0");
+        sh.put("spblh19c", spblh19c.isChecked() ? "3" : "0");
+        sh.put("spblh19d", spblh19d.isChecked() ? "4" : "0");
+        sh.put("spblh19e", spblh19e.isChecked() ? "5" : "0");
+        sh.put("spblh1999", spblh1999.isChecked() ? "99" : "0");
+        sh.put("spblh1988", spblh1988.isChecked() ? "88" : "0");
+        sh.put("spblh1988x", spblh1988x.getText().toString());
+        sh.put("spblh20", spblh20a.isChecked() ? "1" : spblh20b.isChecked() ? "2" : spblh2099.isChecked() ? "99" : "0");
+        sh.put("spblh21a", spblh21a.isChecked() ? "1" : "0");
+        sh.put("spblh21b", spblh21b.isChecked() ? "2" : "0");
+        sh.put("spblh21c", spblh21c.isChecked() ? "3" : "0");
+        sh.put("spblh21d", spblh21d.isChecked() ? "4" : "0");
+        sh.put("spblh21e", spblh21e.isChecked() ? "5" : "0");
+        sh.put("spblh21f", spblh21f.isChecked() ? "6" : "0");
+        sh.put("spblh2199", spblh2199.isChecked() ? "99" : "0");
+        sh.put("spblh2188", spblh2188.isChecked() ? "88" : "0");
+        sh.put("spblh2188x", spblh2188x.getText().toString());
+        sh.put("spblh22a", spblh22a.isChecked() ? "1" : "0");
+        sh.put("spblh22b", spblh22b.isChecked() ? "2" : "0");
+        sh.put("spblh22c", spblh22c.isChecked() ? "3" : "0");
+        sh.put("spblh2299", spblh2299.isChecked() ? "99" : "0");
+        sh.put("spblh2288", spblh2288.isChecked() ? "88" : "0");
+        sh.put("spblh2288x", spblh2288x.getText().toString());
+        sh.put("spblh23", spblh23a.isChecked() ? "1" : spblh23b.isChecked() ? "2" : spblh2399.isChecked() ? "99" : "0");
+        sh.put("spblh24", spblh23a.isChecked() ? "1" : spblh24b.isChecked() ? "2" : spblh2499.isChecked() ? "99" : "0");
+        sh.put("spblh25a", spblh25a.isChecked() ? "1" : "0");
+        sh.put("spblh25b", spblh25b.isChecked() ? "2" : "0");
+        sh.put("spblh25c", spblh25c.isChecked() ? "3" : "0");
+        sh.put("spblh25d", spblh25d.isChecked() ? "4" : "0");
+        sh.put("spblh25e", spblh25e.isChecked() ? "5" : "0");
+        sh.put("spblh25f", spblh25f.isChecked() ? "6" : "0");
+        sh.put("spblh2599", spblh2599.isChecked() ? "99" : "0");
+        sh.put("spblh2588", spblh2588.isChecked() ? "88" : "0");
+        sh.put("spblh2588x", spblh2588x.getText().toString());
 
 
         //   MainApp.fc.setsH(String.valueOf(sh));
@@ -1386,7 +1494,613 @@ public class SectionHActivity extends Activity {
 
     public boolean ValidateForm() {
 
-        //=================== spblh01a ==============
+
+        // =================== Q2 ====================
+        if (spblh02.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblh02), Toast.LENGTH_SHORT).show();
+            spblh0299.setError("This Data is Required");
+            spblh0299.setFocusableInTouchMode(true);
+            spblh0299.setFocusable(true);
+            spblh0299.requestFocus();
+            Log.d(TAG, "spblh02:This Data is Required");
+            return false;
+        } else {
+            spblh0299.setError(null);
+        }
+
+        if (spblh02a.isChecked()) {
+
+            // =================== Q3 ====================
+            if (!(spblh03a.isChecked() || spblh03b.isChecked() || spblh03c.isChecked() || spblh03d.isChecked()
+                    || spblh03e.isChecked() || spblh03f.isChecked() || spblh03g.isChecked() || spblh0399.isChecked() || spblh0388.isChecked())) {
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblh03), Toast.LENGTH_SHORT).show();
+                spblh0388.setError("This Data is Required");
+                Log.d(TAG, "spblh03:This Data is Required");
+            } else {
+                spblh0388.setError(null);
+            }
+
+            if (!spblh0399.isChecked()) {
+                if (!(spblh03a.isChecked() || spblh03b.isChecked() || spblh03c.isChecked() || spblh03d.isChecked()
+                        || spblh03e.isChecked() || spblh03f.isChecked() || spblh03g.isChecked() || spblh0388.isChecked())) {
+                    Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblh03), Toast.LENGTH_SHORT).show();
+                    spblh0388.setError("This Data is Required");
+                    Log.d(TAG, "spblh03:This Data is Required");
+                } else {
+                    spblh0388.setError(null);
+                }
+            }
+
+            if (spblh0388.isChecked() && spblh0388x.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblh03) + " - " + getString(R.string.other), Toast.LENGTH_LONG).show();
+                spblh0388x.setError("This data is Required!");    // Set Error on last radio button
+                spblh0388x.requestFocus();
+                Log.d(TAG, "spblh0388x: This data is Required!");
+                return false;
+            } else {
+                spblh0388x.setError(null);
+            }
+
+            // =================== Q4 ====================
+            if (!(spblh04a.isChecked() || spblh04b.isChecked() || spblh0499.isChecked() || spblh0488.isChecked())) {
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblh04), Toast.LENGTH_SHORT).show();
+                spblh0488.setError("This Data is Required");
+                Log.d(TAG, "spblh04:This Data is Required");
+            } else {
+                spblh0488.setError(null);
+            }
+
+            if (!spblh0499.isChecked()) {
+                if (!(spblh04a.isChecked() || spblh04b.isChecked() || spblh0488.isChecked())) {
+                    Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblh04), Toast.LENGTH_SHORT).show();
+                    spblh0488.setError("This Data is Required");
+                    Log.d(TAG, "spblh04:This Data is Required");
+                } else {
+                    spblh0488.setError(null);
+                }
+            }
+
+            if (spblh0488.isChecked() && spblh0488x.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblh04) + " - " + getString(R.string.other), Toast.LENGTH_LONG).show();
+                spblh0488x.setError("This data is Required!");    // Set Error on last radio button
+                spblh0488x.requestFocus();
+                Log.d(TAG, "spblh0488x: This data is Required!");
+                return false;
+            } else {
+                spblh0488x.setError(null);
+            }
+        }
+
+        // =================== Q5 ====================
+        if (spblh05.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblh05), Toast.LENGTH_SHORT).show();
+            spblh0599.setError("This Data is Required");
+            spblh0599.setFocusableInTouchMode(true);
+            spblh0599.setFocusable(true);
+            spblh0599.requestFocus();
+            Log.d(TAG, "spblh05:This Data is Required");
+            return false;
+        } else {
+            spblh0599.setError(null);
+        }
+
+        if (spblh05a.isChecked()) {
+            // =================== Q6 ====================
+            if (!(spblh06a.isChecked() || spblh06b.isChecked() || spblh06c.isChecked() || spblh06d.isChecked()
+                    || spblh06e.isChecked() || spblh06f.isChecked() || spblh06g.isChecked() || spblh06h.isChecked() || spblh0699.isChecked() || spblh0688.isChecked())) {
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblh06), Toast.LENGTH_SHORT).show();
+                spblh0688.setError("This Data is Required");
+                Log.d(TAG, "spblh06:This Data is Required");
+            } else {
+                spblh0688.setError(null);
+            }
+
+            if (!spblh0699.isChecked()) {
+                if (!(spblh06a.isChecked() || spblh06b.isChecked() || spblh06c.isChecked() || spblh06d.isChecked()
+                        || spblh06e.isChecked() || spblh06f.isChecked() || spblh06g.isChecked() || spblh0688.isChecked())) {
+                    Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblh06), Toast.LENGTH_SHORT).show();
+                    spblh0688.setError("This Data is Required");
+                    Log.d(TAG, "spblh06:This Data is Required");
+                } else {
+                    spblh0688.setError(null);
+                }
+            }
+
+            if (spblh0688.isChecked() && spblh0688x.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblh06) + " - " + getString(R.string.other), Toast.LENGTH_LONG).show();
+                spblh0688x.setError("This data is Required!");    // Set Error on last radio button
+                spblh0688x.requestFocus();
+                Log.d(TAG, "spblh0688x: This data is Required!");
+                return false;
+            } else {
+                spblh0688x.setError(null);
+            }
+
+            // =================== Q7 ====================
+            if (!(spblh07a.isChecked() || spblh07b.isChecked() || spblh07c.isChecked() || spblh07d.isChecked()
+                    || spblh07e.isChecked() || spblh07f.isChecked() || spblh07g.isChecked() || spblh07h.isChecked()
+                    || spblh0799.isChecked() || spblh0788.isChecked())) {
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblh07), Toast.LENGTH_SHORT).show();
+                spblh0788.setError("This Data is Required");
+                Log.d(TAG, "spblh07:This Data is Required");
+            } else {
+                spblh0788.setError(null);
+            }
+
+            if (!spblh0799.isChecked()) {
+                if (!(spblh07a.isChecked() || spblh07b.isChecked() || spblh07c.isChecked() || spblh07d.isChecked()
+                        || spblh07e.isChecked() || spblh07f.isChecked() || spblh07g.isChecked() || spblh07h.isChecked()
+                        || spblh0788.isChecked())) {
+                    Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblh07), Toast.LENGTH_SHORT).show();
+                    spblh0788.setError("This Data is Required");
+                    Log.d(TAG, "spblh07:This Data is Required");
+                } else {
+                    spblh0788.setError(null);
+                }
+            }
+            if (spblh0788.isChecked() && spblh0788x.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblh07) + " - " + getString(R.string.other), Toast.LENGTH_LONG).show();
+                spblh0788x.setError("This data is Required!");    // Set Error on last radio button
+                spblh0788x.requestFocus();
+                Log.d(TAG, "spblh0788x: This data is Required!");
+                return false;
+            } else {
+                spblh0788x.setError(null);
+            }
+        }
+
+        // =================== Q8 ====================
+        if (spblh08.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblh08), Toast.LENGTH_SHORT).show();
+            spblh0899.setError("This Data is Required");
+            spblh0899.setFocusableInTouchMode(true);
+            spblh0899.setFocusable(true);
+            spblh0899.requestFocus();
+            Log.d(TAG, "spblh08:This Data is Required");
+            return false;
+        } else {
+            spblh0899.setError(null);
+        }
+
+        if (spblh08a.isChecked()) {
+            // =================== Q6 ====================
+            if (!(spblh09a.isChecked() || spblh09b.isChecked() || spblh09c.isChecked() || spblh09d.isChecked()
+                    || spblh09e.isChecked() || spblh0999.isChecked() || spblh0988.isChecked())) {
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblh09), Toast.LENGTH_SHORT).show();
+                spblh0988.setError("This Data is Required");
+                Log.d(TAG, "spblh09:This Data is Required");
+            } else {
+                spblh0988.setError(null);
+            }
+
+            if (!spblh0999.isChecked()) {
+                if (!(spblh09a.isChecked() || spblh09b.isChecked() || spblh09c.isChecked() || spblh09d.isChecked()
+                        || spblh09e.isChecked() || spblh0988.isChecked())) {
+                    Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblh09), Toast.LENGTH_SHORT).show();
+                    spblh0988.setError("This Data is Required");
+                    Log.d(TAG, "spblh09:This Data is Required");
+                } else {
+                    spblh0988.setError(null);
+                }
+            }
+
+            if (spblh0988.isChecked() && spblh0988x.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblh09) + " - " + getString(R.string.other), Toast.LENGTH_LONG).show();
+                spblh0988x.setError("This data is Required!");    // Set Error on last radio button
+                spblh0988x.requestFocus();
+                Log.d(TAG, "spblh0988x: This data is Required!");
+                return false;
+            } else {
+                spblh0988x.setError(null);
+            }
+
+            // =================== Q10 ====================
+            if (!(spblh10a.isChecked() || spblh10b.isChecked() || spblh10c.isChecked() || spblh10d.isChecked()
+                    || spblh1099.isChecked() || spblh1088.isChecked())) {
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblh10), Toast.LENGTH_SHORT).show();
+                spblh1088.setError("This Data is Required");
+                Log.d(TAG, "spblh10:This Data is Required");
+            } else {
+                spblh1088.setError(null);
+            }
+
+            if (!spblh1099.isChecked()) {
+                if (!(spblh10a.isChecked() || spblh10b.isChecked() || spblh10c.isChecked() || spblh10d.isChecked()
+                        || spblh1088.isChecked())) {
+                    Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblh10), Toast.LENGTH_SHORT).show();
+                    spblh1088.setError("This Data is Required");
+                    Log.d(TAG, "spblh10:This Data is Required");
+                } else {
+                    spblh1088.setError(null);
+                }
+            }
+
+            if (spblh1088.isChecked() && spblh1088x.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblh10) + " - " + getString(R.string.other), Toast.LENGTH_LONG).show();
+                spblh1088x.setError("This data is Required!");    // Set Error on last radio button
+                spblh1088x.requestFocus();
+                Log.d(TAG, "spblh1088x: This data is Required!");
+                return false;
+            } else {
+                spblh1088x.setError(null);
+            }
+        }
+
+        // =================== Q11 ====================
+        if (spblh11.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblh11), Toast.LENGTH_SHORT).show();
+            spblh1199.setError("This Data is Required");
+            spblh1199.setFocusableInTouchMode(true);
+            spblh1199.setFocusable(true);
+            spblh1199.requestFocus();
+            Log.d(TAG, "spblh11:This Data is Required");
+            return false;
+        } else {
+            spblh1199.setError(null);
+        }
+
+        if (spblh11a.isChecked()) {
+            // =================== Q6 ====================
+            if (!(spblh12a.isChecked() || spblh12b.isChecked() || spblh12c.isChecked() || spblh12d.isChecked()
+                    || spblh12e.isChecked() || spblh12f.isChecked() || spblh1299.isChecked() || spblh1288.isChecked())) {
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblh12), Toast.LENGTH_SHORT).show();
+                spblh1288.setError("This Data is Required");
+                Log.d(TAG, "spblh12:This Data is Required");
+            } else {
+                spblh1288.setError(null);
+            }
+
+            if (!spblh1299.isChecked()) {
+                if (!(spblh12a.isChecked() || spblh12b.isChecked() || spblh12c.isChecked() || spblh12d.isChecked()
+                        || spblh12e.isChecked() || spblh12f.isChecked() || spblh1288.isChecked())) {
+                    Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblh12), Toast.LENGTH_SHORT).show();
+                    spblh1288.setError("This Data is Required");
+                    Log.d(TAG, "spblh12:This Data is Required");
+                } else {
+                    spblh1288.setError(null);
+                }
+            }
+
+            if (spblh1288.isChecked() && spblh1288x.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblh12) + " - " + getString(R.string.other), Toast.LENGTH_LONG).show();
+                spblh1288x.setError("This data is Required!");    // Set Error on last radio button
+                spblh1288x.requestFocus();
+                Log.d(TAG, "spblh1288x: This data is Required!");
+                return false;
+            } else {
+                spblh1288x.setError(null);
+            }
+
+            // =================== Q13 ====================
+            if (!(spblh13a.isChecked() || spblh13b.isChecked() || spblh13c.isChecked()
+                    || spblh1399.isChecked() || spblh1388.isChecked())) {
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblh13), Toast.LENGTH_SHORT).show();
+                spblh1388.setError("This Data is Required");
+                Log.d(TAG, "spblh13:This Data is Required");
+            } else {
+                spblh1388.setError(null);
+            }
+
+            if (!spblh1399.isChecked()) {
+                if (!(spblh13a.isChecked() || spblh13b.isChecked() || spblh13c.isChecked()
+                        || spblh1388.isChecked())) {
+                    Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblh13), Toast.LENGTH_SHORT).show();
+                    spblh1388.setError("This Data is Required");
+                    Log.d(TAG, "spblh13:This Data is Required");
+                } else {
+                    spblh1388.setError(null);
+                }
+            }
+
+            if (spblh1388.isChecked() && spblh1388x.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblh13) + " - " + getString(R.string.other), Toast.LENGTH_LONG).show();
+                spblh1388x.setError("This data is Required!");    // Set Error on last radio button
+                spblh1388x.requestFocus();
+                Log.d(TAG, "spblh1388x: This data is Required!");
+                return false;
+            } else {
+                spblh1388x.setError(null);
+            }
+        }
+
+        // =================== Q14 ====================
+        if (spblh14.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblh14), Toast.LENGTH_SHORT).show();
+            spblh1499.setError("This Data is Required");
+            spblh1499.setFocusableInTouchMode(true);
+            spblh1499.setFocusable(true);
+            spblh1499.requestFocus();
+            Log.d(TAG, "spblh14:This Data is Required");
+            return false;
+        } else {
+            spblh1499.setError(null);
+        }
+
+        if (spblh14a.isChecked()) {
+            // =================== Q15 ====================
+            if (!(spblh15a.isChecked() || spblh15b.isChecked() || spblh15c.isChecked() || spblh15d.isChecked()
+                    || spblh15e.isChecked() || spblh15f.isChecked() || spblh15g.isChecked() || spblh15h.isChecked()
+                    || spblh1599.isChecked() || spblh1588.isChecked())) {
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblh15), Toast.LENGTH_SHORT).show();
+                spblh1588.setError("This Data is Required");
+                Log.d(TAG, "spblh15:This Data is Required");
+            } else {
+                spblh1588.setError(null);
+            }
+
+            if (!spblh1599.isChecked()) {
+                if (!(spblh15a.isChecked() || spblh15b.isChecked() || spblh15c.isChecked() || spblh15d.isChecked()
+                        || spblh15e.isChecked() || spblh15f.isChecked() || spblh15g.isChecked() || spblh15h.isChecked()
+                        || spblh1588.isChecked())) {
+                    Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblh15), Toast.LENGTH_SHORT).show();
+                    spblh1588.setError("This Data is Required");
+                    Log.d(TAG, "spblh15:This Data is Required");
+                } else {
+                    spblh1588.setError(null);
+                }
+            }
+
+            if (spblh1588.isChecked() && spblh1588x.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblh15) + " - " + getString(R.string.other), Toast.LENGTH_LONG).show();
+                spblh1588x.setError("This data is Required!");    // Set Error on last radio button
+                spblh1588x.requestFocus();
+                Log.d(TAG, "spblh1588x: This data is Required!");
+                return false;
+            } else {
+                spblh1288x.setError(null);
+            }
+
+            // =================== Q16 ====================
+            if (!(spblh16a.isChecked() || spblh16b.isChecked() || spblh16c.isChecked() || spblh16c.isChecked()
+                    || spblh16d.isChecked() || spblh16e.isChecked() || spblh16f.isChecked() || spblh16g.isChecked()
+                    || spblh16h.isChecked() || spblh16i.isChecked() || spblh1699.isChecked() || spblh1688.isChecked())) {
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblh16), Toast.LENGTH_SHORT).show();
+                spblh1688.setError("This Data is Required");
+                Log.d(TAG, "spblh16:This Data is Required");
+            } else {
+                spblh1688.setError(null);
+            }
+
+            if (!spblh1699.isChecked()) {
+                if (!(spblh16a.isChecked() || spblh16b.isChecked() || spblh16c.isChecked()
+                        || spblh16d.isChecked() || spblh16e.isChecked() || spblh16f.isChecked() || spblh16g.isChecked()
+                        || spblh16h.isChecked() || spblh16i.isChecked() || spblh1688.isChecked())) {
+                    Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblh16), Toast.LENGTH_SHORT).show();
+                    spblh1688.setError("This Data is Required");
+                    Log.d(TAG, "spblh16:This Data is Required");
+                } else {
+                    spblh1688.setError(null);
+                }
+            }
+
+            if (spblh1688.isChecked() && spblh1688x.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblh16) + " - " + getString(R.string.other), Toast.LENGTH_LONG).show();
+                spblh1688x.setError("This data is Required!");    // Set Error on last radio button
+                spblh1688x.requestFocus();
+                Log.d(TAG, "spblh1688x: This data is Required!");
+                return false;
+            } else {
+                spblh1688x.setError(null);
+            }
+        }
+
+        // =================== Q17 ====================
+        if (spblh17.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblh17), Toast.LENGTH_SHORT).show();
+            spblh1799.setError("This Data is Required");
+            spblh1799.setFocusableInTouchMode(true);
+            spblh1799.setFocusable(true);
+            spblh1799.requestFocus();
+            Log.d(TAG, "spblh17:This Data is Required");
+            return false;
+        } else {
+            spblh1799.setError(null);
+        }
+
+        if (spblh18a.isChecked()) {
+            // =================== Q18 ====================
+            if (!(spblh18a.isChecked() || spblh18b.isChecked() || spblh18c.isChecked() || spblh18d.isChecked()
+                    || spblh18e.isChecked() || spblh18f.isChecked() || spblh18g.isChecked() || spblh18h.isChecked()
+                    || spblh1899.isChecked() || spblh1888.isChecked())) {
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblh18), Toast.LENGTH_SHORT).show();
+                spblh1888.setError("This Data is Required");
+                Log.d(TAG, "spblh18:This Data is Required");
+            } else {
+                spblh1888.setError(null);
+            }
+
+            if (!spblh1899.isChecked()) {
+                if (!(spblh18a.isChecked() || spblh18b.isChecked() || spblh18c.isChecked() || spblh18d.isChecked()
+                        || spblh18e.isChecked() || spblh18f.isChecked() || spblh18g.isChecked() || spblh18h.isChecked()
+                        || spblh1888.isChecked())) {
+                    Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblh18), Toast.LENGTH_SHORT).show();
+                    spblh1888.setError("This Data is Required");
+                    Log.d(TAG, "spblh18:This Data is Required");
+                } else {
+                    spblh1888.setError(null);
+                }
+            }
+
+            if (spblh1888.isChecked() && spblh1888x.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblh18) + " - " + getString(R.string.other), Toast.LENGTH_LONG).show();
+                spblh1888x.setError("This data is Required!");    // Set Error on last radio button
+                spblh1888x.requestFocus();
+                Log.d(TAG, "spblh1888x: This data is Required!");
+                return false;
+            } else {
+                spblh1888x.setError(null);
+            }
+
+            // =================== Q19 ====================
+            if (!(spblh19a.isChecked() || spblh19b.isChecked() || spblh19c.isChecked()
+                    || spblh19d.isChecked() || spblh19e.isChecked() || spblh1999.isChecked() || spblh1988.isChecked())) {
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblh19), Toast.LENGTH_SHORT).show();
+                spblh1988.setError("This Data is Required");
+                Log.d(TAG, "spblh19:This Data is Required");
+            } else {
+                spblh1988.setError(null);
+            }
+
+            if (!spblh1999.isChecked()) {
+                if (!(spblh19a.isChecked() || spblh19b.isChecked() || spblh19c.isChecked()
+                        || spblh19d.isChecked() || spblh19e.isChecked() || spblh1988.isChecked())) {
+                    Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblh19), Toast.LENGTH_SHORT).show();
+                    spblh1988.setError("This Data is Required");
+                    Log.d(TAG, "spblh19:This Data is Required");
+                } else {
+                    spblh1988.setError(null);
+                }
+            }
+
+            if (spblh1988.isChecked() && spblh1988x.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblh19) + " - " + getString(R.string.other), Toast.LENGTH_LONG).show();
+                spblh1988x.setError("This data is Required!");    // Set Error on last radio button
+                spblh1988x.requestFocus();
+                Log.d(TAG, "spblh1988x: This data is Required!");
+                return false;
+            } else {
+                spblh1988x.setError(null);
+            }
+        }
+
+        // =================== Q20 ====================
+        if (spblh20.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblh20), Toast.LENGTH_SHORT).show();
+            spblh2099.setError("This Data is Required");
+            spblh2099.setFocusableInTouchMode(true);
+            spblh2099.setFocusable(true);
+            spblh2099.requestFocus();
+            Log.d(TAG, "spblh20:This Data is Required");
+            return false;
+        } else {
+            spblh2099.setError(null);
+        }
+
+        if (spblh20a.isChecked()) {
+            // =================== Q21 ====================
+            if (!(spblh21a.isChecked() || spblh21b.isChecked() || spblh21c.isChecked() || spblh21d.isChecked()
+                    || spblh21e.isChecked() || spblh21f.isChecked()
+                    || spblh2199.isChecked() || spblh2188.isChecked())) {
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblh21), Toast.LENGTH_SHORT).show();
+                spblh2188.setError("This Data is Required");
+                Log.d(TAG, "spblh21:This Data is Required");
+            } else {
+                spblh2188.setError(null);
+            }
+
+            if (!spblh2199.isChecked()) {
+                if (!(spblh21a.isChecked() || spblh21b.isChecked() || spblh21c.isChecked() || spblh21d.isChecked()
+                        || spblh21e.isChecked() || spblh21f.isChecked() || spblh2188.isChecked())) {
+                    Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblh21), Toast.LENGTH_SHORT).show();
+                    spblh2188.setError("This Data is Required");
+                    Log.d(TAG, "spblh21:This Data is Required");
+                } else {
+                    spblh2188.setError(null);
+                }
+            }
+
+            if (spblh2188.isChecked() && spblh2188x.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblh21) + " - " + getString(R.string.other), Toast.LENGTH_LONG).show();
+                spblh2188x.setError("This data is Required!");    // Set Error on last radio button
+                spblh2188x.requestFocus();
+                Log.d(TAG, "spblh2188x: This data is Required!");
+                return false;
+            } else {
+                spblh2188x.setError(null);
+            }
+
+            // =================== Q22 ====================
+            if (!(spblh22a.isChecked() || spblh22b.isChecked() || spblh22c.isChecked()
+                    || spblh2299.isChecked() || spblh2288.isChecked())) {
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblh22), Toast.LENGTH_SHORT).show();
+                spblh2288.setError("This Data is Required");
+                Log.d(TAG, "spblh22:This Data is Required");
+            } else {
+                spblh2288.setError(null);
+            }
+
+            if (!spblh2299.isChecked()) {
+                if (!(spblh22a.isChecked() || spblh22b.isChecked() || spblh22c.isChecked()
+                        || spblh2288.isChecked())) {
+                    Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblh22), Toast.LENGTH_SHORT).show();
+                    spblh2288.setError("This Data is Required");
+                    Log.d(TAG, "spblh22:This Data is Required");
+                } else {
+                    spblh2288.setError(null);
+                }
+            }
+
+            if (spblh2288.isChecked() && spblh2288x.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblh22) + " - " + getString(R.string.other), Toast.LENGTH_LONG).show();
+                spblh2288x.setError("This data is Required!");    // Set Error on last radio button
+                spblh2288x.requestFocus();
+                Log.d(TAG, "spblh2288x: This data is Required!");
+                return false;
+            } else {
+                spblh2288x.setError(null);
+            }
+        }
+
+        // =================== Q23 ====================
+        if (spblh23.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblh23), Toast.LENGTH_SHORT).show();
+            spblh2399.setError("This Data is Required");
+            spblh2399.setFocusableInTouchMode(true);
+            spblh2399.setFocusable(true);
+            spblh2399.requestFocus();
+            Log.d(TAG, "spblh23:This Data is Required");
+            return false;
+        } else {
+            spblh2399.setError(null);
+        }
+
+        if (spblh23a.isChecked()) {
+            if (spblh24.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblh24), Toast.LENGTH_SHORT).show();
+                spblh2499.setError("This Data is Required");
+                spblh2499.setFocusableInTouchMode(true);
+                spblh2499.setFocusable(true);
+                spblh2499.requestFocus();
+                Log.d(TAG, "spblh24:This Data is Required");
+                return false;
+            } else {
+                spblh2499.setError(null);
+            }
+            if (spblh24b.isChecked()) {
+                // =================== Q25 ====================
+                if (!(spblh25a.isChecked() || spblh25b.isChecked() || spblh25c.isChecked()
+                        || spblh25d.isChecked() || spblh25e.isChecked() || spblh25f.isChecked()
+                        || spblh2599.isChecked() || spblh2588.isChecked())) {
+                    Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblh25), Toast.LENGTH_SHORT).show();
+                    spblh2588.setError("This Data is Required");
+                    Log.d(TAG, "spblh25:This Data is Required");
+                } else {
+                    spblh2588.setError(null);
+                }
+
+                if (!spblh2599.isChecked()) {
+                    if (!(spblh25a.isChecked() || spblh25b.isChecked() || spblh25c.isChecked()
+                            || spblh25d.isChecked() || spblh25e.isChecked() || spblh25f.isChecked()
+                            || spblh2588.isChecked())) {
+                        Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblh25), Toast.LENGTH_SHORT).show();
+                        spblh2588.setError("This Data is Required");
+                        Log.d(TAG, "spblh25:This Data is Required");
+                    } else {
+                        spblh2588.setError(null);
+                    }
+                }
+
+                if (spblh2588.isChecked() && spblh2588x.getText().toString().isEmpty()) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblh25) + " - " + getString(R.string.other), Toast.LENGTH_LONG).show();
+                    spblh2588x.setError("This data is Required!");    // Set Error on last radio button
+                    spblh2588x.requestFocus();
+                    Log.d(TAG, "spblh2588x: This data is Required!");
+                    return false;
+                } else {
+                    spblh2588x.setError(null);
+                }
+            }
+        }
 
         return true;
 
