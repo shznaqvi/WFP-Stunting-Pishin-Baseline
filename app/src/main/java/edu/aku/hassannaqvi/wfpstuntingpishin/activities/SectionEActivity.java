@@ -76,7 +76,6 @@ public class SectionEActivity extends Activity {
         arrlst.add(13, "دیگر وضاحت کریں");
 
 
-
         spble01a.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, arrlst));
 
     }
