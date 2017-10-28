@@ -463,6 +463,61 @@ public class SectionMActivity extends Activity {
                 spblm02a.setError(null);
             }
 
+            if (spblm03.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblm03), Toast.LENGTH_SHORT).show();
+                spblm03a.setError("This data is Required!");
+                Log.i(TAG, "spblm03: This data is Required!");
+                spblm03a.setFocusable(true);
+                spblm03a.setFocusableInTouchMode(true);
+                spblm03a.requestFocus();
+                return false;
+            } else {
+                spblm03a.setError(null);
+            }
+
+            if (spblm04.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblm04), Toast.LENGTH_SHORT).show();
+                spblm04a.setError("This data is Required!");
+                Log.i(TAG, "spblm04: This data is Required!");
+                spblm04a.setFocusable(true);
+                spblm04a.setFocusableInTouchMode(true);
+                spblm04a.requestFocus();
+                return false;
+            } else {
+                spblm04a.setError(null);
+            }
+
+            if (spblm0488.isChecked() && spblm0488x.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblm04) + "-" + getString(R.string.other), Toast.LENGTH_SHORT).show();
+                spblm0488x.setError("This data is Required!");
+                Log.i(TAG, "spblm0488x: This data is Required!");
+                spblm0488x.requestFocus();
+                return false;
+            } else {
+                spblm0488x.setError(null);
+            }
+
+            if (spblm05.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblm05), Toast.LENGTH_SHORT).show();
+                spblm05a.setError("This data is Required!");
+                Log.i(TAG, "spblm05: This data is Required!");
+                spblm05a.setFocusable(true);
+                spblm05a.setFocusableInTouchMode(true);
+                spblm05a.requestFocus();
+                return false;
+            } else {
+                spblm05a.setError(null);
+            }
+
+            if (spblm0588.isChecked() && spblm0588x.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblm05) + "-" + getString(R.string.other), Toast.LENGTH_SHORT).show();
+                spblm0588x.setError("This data is Required!");
+                Log.i(TAG, "spblm0588x: This data is Required!");
+                spblm0588x.requestFocus();
+                return false;
+            } else {
+                spblm0588x.setError(null);
+            }
 
         }
         return true;

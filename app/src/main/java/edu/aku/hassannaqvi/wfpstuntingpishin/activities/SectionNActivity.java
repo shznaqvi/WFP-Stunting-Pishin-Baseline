@@ -144,6 +144,20 @@ public class SectionNActivity extends Activity {
     public boolean formValidation() {
         Toast.makeText(this, "Validating This Section ", Toast.LENGTH_SHORT).show();
 
+
+        /*if (spbln01.getSelectedItem() == "....") {
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spbln01), Toast.LENGTH_SHORT).show();
+            ((TextView) spbln01.getSelectedView()).setText("This Data is Required");
+            ((TextView) spbln01.getSelectedView()).setTextColor(Color.RED);
+            spblk01.requestFocus();
+            Log.i(TAG, "spbln01: This Data is Required!");
+            return false;
+        } else {
+            ((TextView) spbln01.getSelectedView()).setError(null);
+        }
+*/
+
+
         return true;
     }
 }
