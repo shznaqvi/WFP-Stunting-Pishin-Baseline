@@ -47,9 +47,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="1dp"
-            android:digits="0123456789 "
+            android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
             android:hint="@string/other"
-            android:inputType="number"
+            android:inputType="textCapWords"
             android:visibility="gone" />
 
 
@@ -73,9 +73,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="1dp"
-            android:digits="0123456789 "
+            android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
             android:hint="@string/other"
-            android:inputType="number"
+            android:inputType="textCapWords"
             android:visibility="gone" />
 
 
@@ -99,9 +99,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="1dp"
-            android:digits="0123456789 "
+            android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
             android:hint="@string/other"
-            android:inputType="number"
+            android:inputType="textCapWords"
             android:visibility="gone" />
 
         <TextView
