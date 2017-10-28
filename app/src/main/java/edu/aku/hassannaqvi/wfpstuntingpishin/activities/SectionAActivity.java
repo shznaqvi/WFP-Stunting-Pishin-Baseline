@@ -7,6 +7,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.util.Log;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -17,8 +18,11 @@ import android.widget.Toast;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.Arrays;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.BindViews;
@@ -28,9 +32,9 @@ import edu.aku.hassannaqvi.wfpstuntingpishin.R;
 import edu.aku.hassannaqvi.wfpstuntingpishin.contracts.FormsContract;
 import edu.aku.hassannaqvi.wfpstuntingpishin.core.DatabaseHelper;
 import edu.aku.hassannaqvi.wfpstuntingpishin.core.MainApp;
+import edu.aku.hassannaqvi.wfpstuntingpishin.otherClasses.MembersCount;
 
-public class SectionAActivity extends Activity
-{
+public class SectionAActivity extends Activity {
 
     private static final String TAG = SectionAActivity.class.getSimpleName();
     @BindView(R.id.spbla03)
@@ -96,6 +100,8 @@ public class SectionAActivity extends Activity
         setContentView(R.layout.activity_section_a);
         ButterKnife.bind(this);
 
+        spbla03.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item,
+                Arrays.asList(new String[]{"....", "abc"})));
 
     }
 
@@ -117,14 +123,13 @@ public class SectionAActivity extends Activity
             if (UpdateDB()) {
                 Toast.makeText(this, "starting next section", Toast.LENGTH_SHORT).show();
 
-                Intent secNext = new Intent(this, SectionBActivity.class);
+                Intent secNext = new Intent(this, FamilyMemberListActivity.class);
                 secNext.putExtra("check", false);
                 startActivity(secNext);
                 finish();
 
             }
         }
-
 
 
     }
@@ -159,10 +164,38 @@ public class SectionAActivity extends Activity
         sInfo.put("spbla07f59", spbla07f59.getText().toString());
         sInfo.put("spbla08", spbla08a.isChecked() ? "1" : spbla08b.isChecked() ? "2" : spbla08c.isChecked() ? "3" : "0");
 
+        MainApp.fc.setInfo(String.valueOf(sInfo));
+
+        Map<Integer, Map<Integer, String>> children = new HashMap<>();
+        Map<Integer, String> child = new HashMap<>();
+        child.put(1, spbla07m6.getText().toString());
+        child.put(2, spbla07f6.getText().toString());
+
+        children.put(0, child);
+        child = new HashMap<>();
+
+        child.put(1, spbla07m23.getText().toString());
+        child.put(2, spbla07f23.getText().toString());
+
+        children.put(1, child);
+        child = new HashMap<>();
+
+        child.put(1, spbla07m59.getText().toString());
+        child.put(2, spbla07f59.getText().toString());
+
+        children.put(2, child);
+
+//        Women
+        Map<Integer, String> women = new HashMap<>();
+        women.put(0, spbla07pw.getText().toString());
+        women.put(1, spbla07lw.getText().toString());
+        women.put(2, spbla07mw.getText().toString());
+
+        MainApp.members = new MembersCount(Integer.parseInt(spbla07t.getText().toString()), children, women);
+
         MainApp.setGPS(this);
 
         Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
-
 
     }
 
@@ -427,8 +460,6 @@ public class SectionAActivity extends Activity
         } else {
             spbla08a.setError(null);
         }
-
-
 
 
         return true;

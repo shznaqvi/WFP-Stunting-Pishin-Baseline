@@ -183,14 +183,14 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
         values.add("04");
 
 
-        // Creating adapter for spinner
+        // Creating mAdapter for spinner
         ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(getApplicationContext(),
                 android.R.layout.simple_spinner_item, lables);
 
         // Drop down layout style - list view with radio button
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
-        // attaching data adapter to spinner
+        // attaching data mAdapter to spinner
         spUC.setAdapter(dataAdapter);
         spUC.setBackgroundColor(getResources().getColor(edu.aku.hassannaqvi.wfpstuntingpishin.R.color.colorPrimaryDark));
 
