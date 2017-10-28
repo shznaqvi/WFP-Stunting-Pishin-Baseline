@@ -722,6 +722,7 @@ public class SectionIActivity extends Activity {
             return false;
         } else {
             ((TextView) spbli01w.getSelectedView()).setError(null);
+
         }
 
 
