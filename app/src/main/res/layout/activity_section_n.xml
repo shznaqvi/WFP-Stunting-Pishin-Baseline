@@ -116,13 +116,13 @@
                     android:textColor="@android:color/white" />
 
                 <Spinner
-                    android:id="@+id/spblj0401a"
+                    android:id="@+id/spbln0401a"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="10dp"></Spinner>
 
                 <EditText
-                    android:id="@+id/spblj0401b"
+                    android:id="@+id/spbln0401b"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
@@ -153,13 +153,13 @@
                     android:textColor="@android:color/white" />
 
                 <Spinner
-                    android:id="@+id/spblj0402a"
+                    android:id="@+id/spbln0402a"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="10dp"></Spinner>
 
                 <EditText
-                    android:id="@+id/spblj0402b"
+                    android:id="@+id/spbln0402b"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
@@ -210,13 +210,13 @@
                     android:textColor="@android:color/white" />
 
                 <Spinner
-                    android:id="@+id/spblj0501a"
+                    android:id="@+id/spbln0501a"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="10dp"></Spinner>
 
                 <EditText
-                    android:id="@+id/spblj0501b"
+                    android:id="@+id/spbln0501b"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
@@ -247,13 +247,13 @@
                     android:textColor="@android:color/white" />
 
                 <Spinner
-                    android:id="@+id/spblj0502a"
+                    android:id="@+id/spbln0502a"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="10dp"></Spinner>
 
                 <EditText
-                    android:id="@+id/spblj0502b"
+                    android:id="@+id/spbln0502b"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"

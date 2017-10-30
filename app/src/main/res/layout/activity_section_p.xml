@@ -232,63 +232,63 @@
                     android:text="@string/spblpfood01" />
 
                 <RadioButton
-                    android:id="@+id/spblp02bb"
+                    android:id="@+id/spblp0102bb"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:text="@string/spblpfood02" />
 
                 <RadioButton
-                    android:id="@+id/spblp02bc"
+                    android:id="@+id/spblp0102bc"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:text="@string/spblpfood03" />
 
                 <RadioButton
-                    android:id="@+id/spblp02bd"
+                    android:id="@+id/spblp0102bd"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:text="@string/spblpfood04" />
 
                 <RadioButton
-                    android:id="@+id/spblp02be"
+                    android:id="@+id/spblp0102be"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:text="@string/spblpfood05" />
 
                 <RadioButton
-                    android:id="@+id/spblp02bf"
+                    android:id="@+id/spblp0102bf"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:text="@string/spblpfood06" />
 
                 <RadioButton
-                    android:id="@+id/spblp02bg"
+                    android:id="@+id/spblp0102bg"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:text="@string/spblpfood07" />
 
                 <RadioButton
-                    android:id="@+id/spblp02bh"
+                    android:id="@+id/spblp0102bh"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:text="@string/spblpfood08" />
 
                 <RadioButton
-                    android:id="@+id/spblp02bi"
+                    android:id="@+id/spblp0102bi"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:text="@string/spblpfood09" />
 
                 <RadioButton
-                    android:id="@+id/spblp02bj"
+                    android:id="@+id/spblp0102bj"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
@@ -990,70 +990,70 @@
                     android:layout_height="wrap_content">
 
                     <RadioButton
-                        android:id="@+id/spblp010404b01"
+                        android:id="@+id/spblp010404ba"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="1dp"
                         android:text="@string/spblpfood01" />
 
                     <RadioButton
-                        android:id="@+id/spblp010404b02"
+                        android:id="@+id/spblp010404bb"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="1dp"
                         android:text="@string/spblpfood02" />
 
                     <RadioButton
-                        android:id="@+id/spblp010404b03"
+                        android:id="@+id/spblp010404bc"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="1dp"
                         android:text="@string/spblpfood03" />
 
                     <RadioButton
-                        android:id="@+id/spblp010404b04"
+                        android:id="@+id/spblp010404bd"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="1dp"
                         android:text="@string/spblpfood04" />
 
                     <RadioButton
-                        android:id="@+id/spblp010404b05"
+                        android:id="@+id/spblp010404be"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="1dp"
                         android:text="@string/spblpfood05" />
 
                     <RadioButton
-                        android:id="@+id/spblp010404b06"
+                        android:id="@+id/spblp010404bf"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="1dp"
                         android:text="@string/spblpfood06" />
 
                     <RadioButton
-                        android:id="@+id/spblp010404b07"
+                        android:id="@+id/spblp010404bg"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="1dp"
                         android:text="@string/spblpfood07" />
 
                     <RadioButton
-                        android:id="@+id/spblp010404b08"
+                        android:id="@+id/spblp010404bh"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="1dp"
                         android:text="@string/spblpfood08" />
 
                     <RadioButton
-                        android:id="@+id/spblp010404b09"
+                        android:id="@+id/spblp010404bi"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="1dp"
                         android:text="@string/spblpfood09" />
 
                     <RadioButton
-                        android:id="@+id/spblp010404b10"
+                        android:id="@+id/spblp010404bj"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="1dp"
