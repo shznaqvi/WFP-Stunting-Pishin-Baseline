@@ -64,7 +64,7 @@ public class EndingActivity extends Activity {
             }
             if (UpdateDB()) {
 
-                MainApp.FetusCount = 1;
+                MainApp.familyMembersList.clear();
 
                 finish();
 

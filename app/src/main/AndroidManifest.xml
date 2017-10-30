@@ -61,16 +61,17 @@
         <activity android:name=".activities.SectionJActivity" />
         <activity
             android:name=".activities.SectionKActivity"
-            android:theme="@style/AppTheme1"></activity>
+            android:theme="@style/AppTheme1" />
         <activity android:name=".activities.SectionLIMActivity" />
         <activity android:name=".activities.SectionMActivity" />
         <activity android:name=".activities.SectionOActivity" />
         <activity android:name=".activities.SectionPActivity" />
         <activity
             android:name=".activities.SectionQActivity"
-            android:theme="@style/AppTheme1"></activity>
+            android:theme="@style/AppTheme1" />
         <activity android:name=".activities.SectionNActivity" />
         <activity android:name=".activities.SectionAActivity" />
+        <activity android:name=".activities.FamilyMemberListActivity"></activity>
     </application>
 
 </manifest>

@@ -7,6 +7,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
 import android.util.Log;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -17,12 +18,16 @@ import android.widget.Toast;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.Arrays;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import edu.aku.hassannaqvi.wfpstuntingpishin.R;
+import edu.aku.hassannaqvi.wfpstuntingpishin.contracts.FamilyMembersContract;
 import edu.aku.hassannaqvi.wfpstuntingpishin.core.DatabaseHelper;
 import edu.aku.hassannaqvi.wfpstuntingpishin.core.MainApp;
+import edu.aku.hassannaqvi.wfpstuntingpishin.otherClasses.FamilyMembers;
 
 public class SectionBActivity extends Activity {
 
@@ -99,8 +104,12 @@ public class SectionBActivity extends Activity {
         setContentView(R.layout.activity_section_b);
         ButterKnife.bind(this);
 
-        spblb02.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
-        {
+//        Fill spinner
+        spblb03.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item,
+                Arrays.asList(new String[]{"....", "1"})));
+
+
+        spblb02.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
 
@@ -115,8 +124,6 @@ public class SectionBActivity extends Activity {
                 }
             }
         });
-
-
 
 
     }
@@ -145,9 +152,7 @@ public class SectionBActivity extends Activity {
             }
         }*/
 
-        Intent secNext = new Intent(this, SectionCActivity.class);
-        secNext.putExtra("check", false);
-        startActivity(secNext);
+        finish();
 
     }
 
@@ -171,6 +176,12 @@ public class SectionBActivity extends Activity {
 
         SharedPreferences sharedPref = getSharedPreferences("tagName", MODE_PRIVATE);
 
+        MainApp.fmc = new FamilyMembersContract();
+        MainApp.fmc.setFormDate(MainApp.fc.getFormDate());
+        MainApp.fmc.setDeviceId(MainApp.fc.getDeviceID());
+        MainApp.fmc.setUser(MainApp.fc.getUser());
+        MainApp.fmc.set_UUID(MainApp.fc.get_UID());
+        MainApp.fmc.setDevicetagID(sharedPref.getString("tagName", null));
 
         JSONObject sB = new JSONObject();
 
@@ -189,9 +200,15 @@ public class SectionBActivity extends Activity {
                 : spblb06j.isChecked() ? "10" : "0");
         sB.put("spblb07", spblb07a.isChecked() ? "1" : spblb07b.isChecked() ? "2" : "0");
 
+        MainApp.fmc.setsB(String.valueOf(sB));
 
+        MainApp.familyMembersList.add(new FamilyMembers(spblb01.getText().toString(), spblb07a.isChecked() ? "Married" : "Un-Married",
+                spblb02a.isChecked() ? "Male" : "Female",
+                spblb04y.getText().toString() + "-" +
+                        spblb04m.getText().toString() + "-" +
+                        spblb04d.getText().toString(),
+                spblb03.getSelectedItemPosition() != 0 ? spblb03.getSelectedItem().toString() : "N/A"));
 
-//        MainApp.ims.setsI(String.valueOf(sI));
 
         Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
 
@@ -301,7 +318,6 @@ public class SectionBActivity extends Activity {
         }
 
 
-
         return true;
     }
 
@@ -309,14 +325,6 @@ public class SectionBActivity extends Activity {
     public void onBackPressed() {
         Toast.makeText(getApplicationContext(), "You Can't go back", Toast.LENGTH_LONG).show();
     }
-
-
-
-
-
-
-
-
 
 
 }

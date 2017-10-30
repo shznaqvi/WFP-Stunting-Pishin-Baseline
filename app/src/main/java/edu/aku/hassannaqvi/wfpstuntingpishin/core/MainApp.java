@@ -24,9 +24,12 @@ import java.util.Date;
 import java.util.List;
 
 import edu.aku.hassannaqvi.wfpstuntingpishin.activities.EndingActivity;
+import edu.aku.hassannaqvi.wfpstuntingpishin.contracts.FamilyMembersContract;
 import edu.aku.hassannaqvi.wfpstuntingpishin.contracts.FetusContract;
 import edu.aku.hassannaqvi.wfpstuntingpishin.contracts.FormsContract;
+import edu.aku.hassannaqvi.wfpstuntingpishin.otherClasses.FamilyMembers;
 import edu.aku.hassannaqvi.wfpstuntingpishin.otherClasses.MothersLst;
+import edu.aku.hassannaqvi.wfpstuntingpishin.otherClasses.MembersCount;
 
 /**
  * Created by hassan.naqvi on 11/30/2016.
@@ -80,7 +83,7 @@ public class MainApp extends Application {
     public static String interviewerCode;
     public static int loginFieldArea = -1;
     public static String child_name = "TEST";
-    public static FormsContract fc = new FormsContract();
+    public static FormsContract fc ;
     public static FetusContract fec;
     public static JSONObject f03 = new JSONObject();
     public static String userName = "0000";
@@ -125,6 +128,12 @@ public class MainApp extends Application {
     public static boolean eligibleFlag = false;
     protected static LocationManager locationManager;
     Location location;
+
+//    Ali
+
+    public static MembersCount members;
+    public static ArrayList<FamilyMembers> familyMembersList;
+    public static FamilyMembersContract fmc;
 
     public static int monthsBetweenDates(Date startDate, Date endDate) {
 
