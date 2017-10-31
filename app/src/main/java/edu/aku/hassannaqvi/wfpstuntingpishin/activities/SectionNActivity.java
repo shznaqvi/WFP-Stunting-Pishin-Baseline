@@ -2,9 +2,12 @@ package edu.aku.hassannaqvi.wfpstuntingpishin.activities;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONException;
@@ -19,28 +22,30 @@ import edu.aku.hassannaqvi.wfpstuntingpishin.core.MainApp;
 
 public class SectionNActivity extends Activity {
 
+    private static final String TAG = SectionNActivity.class.getSimpleName();
+
     @BindView(R.id.spbln01)
     Spinner spbln01;
     @BindView(R.id.spbln02)
     EditText spbln02;
     @BindView(R.id.spbln03)
     EditText spbln03;
-    @BindView(R.id.spblj0401a)
-    Spinner spblj0401a;
-    @BindView(R.id.spblj0401b)
-    EditText spblj0401b;
-    @BindView(R.id.spblj0402a)
-    Spinner spblj0402a;
-    @BindView(R.id.spblj0402b)
-    EditText spblj0402b;
-    @BindView(R.id.spblj0501a)
-    Spinner spblj0501a;
-    @BindView(R.id.spblj0501b)
-    EditText spblj0501b;
-    @BindView(R.id.spblj0502a)
-    Spinner spblj0502a;
-    @BindView(R.id.spblj0502b)
-    EditText spblj0502b;
+    @BindView(R.id.spbln0401a)
+    Spinner spbln0401a;
+    @BindView(R.id.spbln0401b)
+    EditText spbln0401b;
+    @BindView(R.id.spbln0402a)
+    Spinner spbln0402a;
+    @BindView(R.id.spbln0402b)
+    EditText spbln0402b;
+    @BindView(R.id.spbln0501a)
+    Spinner spbln0501a;
+    @BindView(R.id.spbln0501b)
+    EditText spbln0501b;
+    @BindView(R.id.spbln0502a)
+    Spinner spbln0502a;
+    @BindView(R.id.spbln0502b)
+    EditText spbln0502b;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -99,28 +104,28 @@ public class SectionNActivity extends Activity {
         sN.put("spbln03", spbln03.getText().toString());
 
 //        0401a
-        sN.put("spblj0401a",spblj0401a.getSelectedItem().toString());
+        sN.put("spblj0401a", spbln0401a.getSelectedItem().toString());
 
 //        0401b
-        sN.put("spblj0401b", spblj0401b.getText().toString());
+        sN.put("spbln0401b", spbln0401b.getText().toString());
 
 //        0402a
-        sN.put("spblj0402a",spblj0402a.getSelectedItem().toString());
+        sN.put("spblj0402a", spbln0402a.getSelectedItem().toString());
 
 //        0402b
-        sN.put("spblj0402b", spblj0402b.getText().toString());
+        sN.put("spbln0402b", spbln0402b.getText().toString());
 
 //        0501a
-        sN.put("spblj0501a",spblj0501a.getSelectedItem().toString());
+        sN.put("spblj0501a", spbln0501a.getSelectedItem().toString());
 
 //        0501b
-        sN.put("spblj0501b", spblj0501b.getText().toString());
+        sN.put("spbln0501b", spbln0501b.getText().toString());
 
 //        0502a
-        sN.put("spblj0502a",spblj0502a.getSelectedItem().toString());
+        sN.put("spblj0502a", spbln0502a.getSelectedItem().toString());
 
 //        0502b
-        sN.put("spblj0502b", spblj0502b.getText().toString());
+        sN.put("spbln0502b", spbln0502b.getText().toString());
 
 //        MainApp.fc.setsN(String.valueOf(sN));
     }
@@ -157,6 +162,100 @@ public class SectionNActivity extends Activity {
         }
 */
 
+        if (spbln03.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spbln03), Toast.LENGTH_SHORT).show();
+            spbln03.setError("This data is Required!");
+            Log.i(TAG, "spbln03: This data is Required!");
+            spbln03.requestFocus();
+            return false;
+        } else {
+            spbln03.setError(null);
+        }
+
+        if (spbln0401a.getSelectedItem() == "....") {
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblj0401), Toast.LENGTH_SHORT).show();
+            ((TextView) spbln0401a.getSelectedView()).setText("This Data is Required");
+            ((TextView) spbln0401a.getSelectedView()).setTextColor(Color.RED);
+            spbln0401a.requestFocus();
+            Log.i(TAG, "spbln0401a: This Data is Required!");
+            return false;
+        } else {
+            ((TextView) spbln0401a.getSelectedView()).setError(null);
+        }
+
+        if (spbln0401b.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblj04), Toast.LENGTH_SHORT).show();
+            spbln0401b.setError("This data is Required!");
+            Log.i(TAG, "spblj0201b: This data is Required!");
+            spbln0401b.requestFocus();
+            return false;
+        } else {
+            spbln0401b.setError(null);
+        }
+
+        if (spbln0402a.getSelectedItem() == "....") {
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblj0401), Toast.LENGTH_SHORT).show();
+            ((TextView) spbln0402a.getSelectedView()).setText("This Data is Required");
+            ((TextView) spbln0402a.getSelectedView()).setTextColor(Color.RED);
+            spbln0402a.requestFocus();
+            Log.i(TAG, "spbln0402a: This Data is Required!");
+            return false;
+        } else {
+            ((TextView) spbln0402a.getSelectedView()).setError(null);
+        }
+
+        if (spbln0402b.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblj04), Toast.LENGTH_SHORT).show();
+            spbln0402b.setError("This data is Required!");
+            Log.i(TAG, "spbln0402b: This data is Required!");
+            spbln0402b.requestFocus();
+            return false;
+        } else {
+            spbln0402b.setError(null);
+        }
+
+
+        if (spbln0501a.getSelectedItem() == "....") {
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblj0401), Toast.LENGTH_SHORT).show();
+            ((TextView) spbln0501a.getSelectedView()).setText("This Data is Required");
+            ((TextView) spbln0501a.getSelectedView()).setTextColor(Color.RED);
+            spbln0501a.requestFocus();
+            Log.i(TAG, "spblj0301a: This Data is Required!");
+            return false;
+        } else {
+            ((TextView) spbln0501a.getSelectedView()).setError(null);
+        }
+
+        if (spbln0501b.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblj05), Toast.LENGTH_SHORT).show();
+            spbln0501b.setError("This data is Required!");
+            Log.i(TAG, "spbln0501b: This data is Required!");
+            spbln0501b.requestFocus();
+            return false;
+        } else {
+            spbln0501b.setError(null);
+        }
+
+        if (spbln0502a.getSelectedItem() == "....") {
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblj0401), Toast.LENGTH_SHORT).show();
+            ((TextView) spbln0502a.getSelectedView()).setText("This Data is Required");
+            ((TextView) spbln0502a.getSelectedView()).setTextColor(Color.RED);
+            spbln0502a.requestFocus();
+            Log.i(TAG, "spbln0502a: This Data is Required!");
+            return false;
+        } else {
+            ((TextView) spbln0502a.getSelectedView()).setError(null);
+        }
+
+        if (spbln0502b.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblj05), Toast.LENGTH_SHORT).show();
+            spbln0502b.setError("This data is Required!");
+            Log.i(TAG, "spbln0502b: This data is Required!");
+            spbln0502b.requestFocus();
+            return false;
+        } else {
+            spbln0502b.setError(null);
+        }
 
         return true;
     }
