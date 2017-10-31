@@ -13,7 +13,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
-import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,7 +25,6 @@ import butterknife.BindView;
 import butterknife.BindViews;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import butterknife.OnTextChanged;
 import edu.aku.hassannaqvi.wfpstuntingpishin.R;
 import edu.aku.hassannaqvi.wfpstuntingpishin.core.MainApp;
 import edu.aku.hassannaqvi.wfpstuntingpishin.otherClasses.FamilyMembers;
@@ -126,97 +124,6 @@ public class FamilyMemberListActivity extends Activity implements TextWatcher {
 
 
     }*/
-
-    private class CustomTextWatcher implements TextWatcher {
-        private EditText edit;
-
-        public CustomTextWatcher(EditText e) {
-            edit = e;
-        }
-
-        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-        }
-
-        public void onTextChanged(CharSequence s, int start, int before, int count) {
-        }
-
-        public void afterTextChanged(Editable s) {
-            Map<Integer, Map<Integer, String>> children = new HashMap<>();
-            Map<Integer, String> child = new HashMap<>();
-
-            switch (edit.getId()) {
-
-                case R.id.spbla07m6:
-                    if (Integer.valueOf(MainApp.checkMembers.getChildren().get(0).get(1)) < Integer.valueOf(spbla07m6.getText().toString())) {
-                        child.put(1, spbla07m6.getText().toString());
-                    } else {
-                        createToast("Can't subtract already added", spbla07m6);
-                    }
-                    break;
-
-                case R.id.spbla07f6:
-                    if (Integer.valueOf(MainApp.checkMembers.getChildren().get(0).get(2)) < Integer.valueOf(spbla07f6.getText().toString())) {
-                        child.put(2, spbla07f6.getText().toString());
-                    } else {
-                        createToast("Can't subtract already added", spbla07f6);
-                    }
-
-                    children.put(0, child);
-                    child = new HashMap<>();
-
-                    break;
-
-                case R.id.spbla07m23:
-                    if (Integer.valueOf(MainApp.checkMembers.getChildren().get(1).get(1)) < Integer.valueOf(spbla07m23.getText().toString())) {
-                        child.put(1, spbla07m23.getText().toString());
-                    } else {
-                        createToast("Can't subtract already added", spbla07m23);
-                    }
-                    break;
-
-                case R.id.spbla07f23:
-                    if (Integer.valueOf(MainApp.checkMembers.getChildren().get(1).get(2)) < Integer.valueOf(spbla07f23.getText().toString())) {
-                        child.put(2, spbla07f23.getText().toString());
-                    } else {
-                        createToast("Can't subtract already added", spbla07f23);
-                    }
-
-                    children.put(1, child);
-                    child = new HashMap<>();
-
-                    break;
-
-                case R.id.spbla07m59:
-                    if (Integer.valueOf(MainApp.checkMembers.getChildren().get(2).get(1)) < Integer.valueOf(spbla07m59.getText().toString())) {
-                        child.put(1, spbla07m59.getText().toString());
-                    } else {
-                        createToast("Can't subtract already added", spbla07m59);
-                    }
-                    break;
-
-                case R.id.spbla07f59:
-                    if (Integer.valueOf(MainApp.checkMembers.getChildren().get(2).get(2)) < Integer.valueOf(spbla07f59.getText().toString())) {
-                        child.put(2, spbla07f59.getText().toString());
-                    } else {
-                        createToast("Can't subtract already added", spbla07f59);
-                    }
-
-                    children.put(2, child);
-
-                    break;
-
-            }
-
-
-//        Women
-            Map<Integer, String> women = new HashMap<>();
-            women.put(0, spbla07pw.getText().toString());
-            women.put(1, spbla07lw.getText().toString());
-            women.put(2, spbla07mw.getText().toString());
-
-            MainApp.members = new MembersCount(Integer.parseInt(spbla07t.getText().toString()), children, women);
-        }
-    }
 
     public void createToast(String msg, EditText name) {
         Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
@@ -408,6 +315,98 @@ public class FamilyMemberListActivity extends Activity implements TextWatcher {
     public void afterTextChanged(Editable editable) {
 
 
+    }
+
+    private class CustomTextWatcher implements TextWatcher
+    {
+        private EditText edit;
+
+        public CustomTextWatcher(EditText e) {
+            edit = e;
+        }
+
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+        }
+
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
+        }
+
+        public void afterTextChanged(Editable s) {
+            Map<Integer, Map<Integer, String>> children = new HashMap<>();
+            Map<Integer, String> child = new HashMap<>();
+
+            switch (edit.getId()) {
+
+                case R.id.spbla07m6:
+                    if (Integer.valueOf(MainApp.checkMembers.getChildren().get(0).get(1)) < Integer.valueOf(spbla07m6.getText().toString())) {
+                        child.put(1, spbla07m6.getText().toString());
+                    } else {
+                        createToast("Can't subtract already added", spbla07m6);
+                    }
+                    break;
+
+                case R.id.spbla07f6:
+                    if (Integer.valueOf(MainApp.checkMembers.getChildren().get(0).get(2)) < Integer.valueOf(spbla07f6.getText().toString())) {
+                        child.put(2, spbla07f6.getText().toString());
+                    } else {
+                        createToast("Can't subtract already added", spbla07f6);
+                    }
+
+                    children.put(0, child);
+                    child = new HashMap<>();
+
+                    break;
+
+                case R.id.spbla07m23:
+                    if (Integer.valueOf(MainApp.checkMembers.getChildren().get(1).get(1)) < Integer.valueOf(spbla07m23.getText().toString())) {
+                        child.put(1, spbla07m23.getText().toString());
+                    } else {
+                        createToast("Can't subtract already added", spbla07m23);
+                    }
+                    break;
+
+                case R.id.spbla07f23:
+                    if (Integer.valueOf(MainApp.checkMembers.getChildren().get(1).get(2)) < Integer.valueOf(spbla07f23.getText().toString())) {
+                        child.put(2, spbla07f23.getText().toString());
+                    } else {
+                        createToast("Can't subtract already added", spbla07f23);
+                    }
+
+                    children.put(1, child);
+                    child = new HashMap<>();
+
+                    break;
+
+                case R.id.spbla07m59:
+                    if (Integer.valueOf(MainApp.checkMembers.getChildren().get(2).get(1)) < Integer.valueOf(spbla07m59.getText().toString())) {
+                        child.put(1, spbla07m59.getText().toString());
+                    } else {
+                        createToast("Can't subtract already added", spbla07m59);
+                    }
+                    break;
+
+                case R.id.spbla07f59:
+                    if (Integer.valueOf(MainApp.checkMembers.getChildren().get(2).get(2)) < Integer.valueOf(spbla07f59.getText().toString())) {
+                        child.put(2, spbla07f59.getText().toString());
+                    } else {
+                        createToast("Can't subtract already added", spbla07f59);
+                    }
+
+                    children.put(2, child);
+
+                    break;
+
+            }
+
+
+//        Women
+            Map<Integer, String> women = new HashMap<>();
+            women.put(0, spbla07pw.getText().toString());
+            women.put(1, spbla07lw.getText().toString());
+            women.put(2, spbla07mw.getText().toString());
+
+            MainApp.members = new MembersCount(Integer.parseInt(spbla07t.getText().toString()), children, women);
+        }
     }
 
     public class familyMembersAdapter extends RecyclerView.Adapter<familyMembersAdapter.viewHolder> {
