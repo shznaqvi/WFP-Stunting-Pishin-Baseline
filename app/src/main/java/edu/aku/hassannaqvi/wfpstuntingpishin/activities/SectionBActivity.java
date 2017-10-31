@@ -131,7 +131,7 @@ public class SectionBActivity extends Activity {
     @OnClick(R.id.btn_Continue)
     void onBtnContinueClick() {
 
-        /*if (ValidateForm()) {
+        if (ValidateForm()) {
             try {
                 SaveDraft();
             } catch (JSONException e) {
@@ -142,17 +142,10 @@ public class SectionBActivity extends Activity {
 
                 finish();
 
-
-                Intent endSec = new Intent(this, EndingActivity.class);
-                endSec.putExtra("complete", true);
-                startActivity(endSec);
-
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }
-        }*/
-
-        finish();
+        }
 
     }
 
@@ -166,6 +159,21 @@ public class SectionBActivity extends Activity {
 
         DatabaseHelper db = new DatabaseHelper(this);
 
+        /*long updcount = db.addFamilyMember(MainApp.fmc);
+
+        MainApp.fmc.set_ID(String.valueOf(updcount));
+
+        if (updcount != 0) {
+            Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
+
+            MainApp.fmc.set_UID(
+                    (MainApp.fc.getDeviceID() + MainApp.fc.get_ID()));
+            db.updateFormID();
+            return true;
+        } else {
+            Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
+            return false;
+        }*/
 
         return true;
 
@@ -202,15 +210,38 @@ public class SectionBActivity extends Activity {
 
         MainApp.fmc.setsB(String.valueOf(sB));
 
+
+//        Checking Type
+        String type;
+        int childType = checkChildAge(spblb04y.getText().toString(), spblb04m.getText().toString(), spblb04d.getText().toString());
+        if (childType == 0) {
+            type = spblb02b.isChecked() && spblb07a.isChecked() ? "mw" :
+                    spblb02b.isChecked() && spblb07b.isChecked() ? "w" : "m";
+        } else {
+            type = "ch";
+        }
+
+
         MainApp.familyMembersList.add(new FamilyMembers(spblb01.getText().toString(), spblb07a.isChecked() ? "Married" : "Un-Married",
                 spblb02a.isChecked() ? "Male" : "Female",
                 spblb04y.getText().toString() + "-" +
                         spblb04m.getText().toString() + "-" +
                         spblb04d.getText().toString(),
-                spblb03.getSelectedItemPosition() != 0 ? spblb03.getSelectedItem().toString() : "N/A"));
+                spblb03.getSelectedItemPosition() != 0 ? "" + spblb03.getSelectedItem().toString() : "N/A",
+                type));
 
 
         Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
+
+    }
+
+    public int checkChildAge(String y, String m, String d) {
+
+        int age = Integer.parseInt(y) * 12 + Integer.parseInt(m) + (Integer.parseInt(d) / 29);
+
+        age = age < 6 ? 1 : age >= 6 && age < 23 ? 2 : age >= 24 && age < 59 ? 3 : 0;
+
+        return age;
 
     }
 
@@ -240,7 +271,7 @@ public class SectionBActivity extends Activity {
             spblb02a.setError(null);
         }
 
-        if (spblb03.getSelectedItem() == "....") {
+        /*if (spblb03.getSelectedItem() == "....") {
             Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblb03), Toast.LENGTH_SHORT).show();
             ((TextView) spblb03.getSelectedView()).setText("This Data is Required");
             ((TextView) spblb03.getSelectedView()).setTextColor(Color.RED);
@@ -249,7 +280,7 @@ public class SectionBActivity extends Activity {
             return false;
         } else {
             ((TextView) spblb03.getSelectedView()).setError(null);
-        }
+        }*/
 
         if (spblb04y.getText().toString().isEmpty()) {
             Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblb04y), Toast.LENGTH_SHORT).show();

@@ -132,6 +132,7 @@ public class MainApp extends Application {
 //    Ali
 
     public static MembersCount members;
+    public static MembersCount checkMembers;
     public static ArrayList<FamilyMembers> familyMembersList;
     public static FamilyMembersContract fmc;
 

@@ -10,6 +10,7 @@ public class FamilyMembers {
     String gender;
     String dob;
     String motherName;
+    String type;
 
     public String getMotherName() {
         return motherName;
@@ -31,11 +32,16 @@ public class FamilyMembers {
         return dob;
     }
 
-    public FamilyMembers(String memberName, String mStatus, String gender, String dob, String motherName) {
+    public String getType() {
+        return type;
+    }
+
+    public FamilyMembers(String memberName, String mStatus, String gender, String dob, String motherName, String type) {
         this.memberName = memberName;
         this.mStatus = mStatus;
         this.gender = gender;
         this.dob = dob;
         this.motherName = motherName;
+        this.type = type;
     }
 }

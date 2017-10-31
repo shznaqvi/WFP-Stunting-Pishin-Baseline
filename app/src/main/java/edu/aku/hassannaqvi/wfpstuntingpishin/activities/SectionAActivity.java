@@ -193,6 +193,27 @@ public class SectionAActivity extends Activity {
 
         MainApp.members = new MembersCount(Integer.parseInt(spbla07t.getText().toString()), children, women);
 
+        children = new HashMap<>();
+        child = new HashMap<>();
+        child.put(1, "0");
+        child.put(2, "0");
+
+        children.put(0, child);
+        child = new HashMap<>();
+
+        child.put(1, "0");
+        child.put(2, "0");
+
+        children.put(1, child);
+        child = new HashMap<>();
+
+        child.put(1, "0");
+        child.put(2, "0");
+
+        children.put(2, child);
+
+        MainApp.checkMembers = new MembersCount(0, children);
+
         MainApp.setGPS(this);
 
         Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
@@ -213,10 +234,11 @@ public class SectionAActivity extends Activity {
             MainApp.fc.set_UID(
                     (MainApp.fc.getDeviceID() + MainApp.fc.get_ID()));
             db.updateFormID();
+            return true;
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
+            return false;
         }
-        return true;
     }
 
     public boolean formValidation() {
