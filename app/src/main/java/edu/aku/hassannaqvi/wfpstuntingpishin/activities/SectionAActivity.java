@@ -6,8 +6,11 @@ import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.support.annotation.IdRes;
 import android.util.Log;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -92,6 +95,10 @@ public class SectionAActivity extends Activity {
 
     @BindViews({R.id.spbla06a, R.id.spbla06b})
     List<RadioGroup> spbla06;
+    @BindView(R.id.btn_Continue)
+    Button btn_Continue;
+    @BindView(R.id.btn_End)
+    Button btn_End;
 
 
     @Override
@@ -103,11 +110,25 @@ public class SectionAActivity extends Activity {
         spbla03.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item,
                 Arrays.asList(new String[]{"....", "abc"})));
 
+        spbla08.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
+        {
+            @Override
+            public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
+                if (spbla08a.isChecked()) {
+                    btn_Continue.setVisibility(View.VISIBLE);
+                    btn_End.setVisibility(View.GONE);
+                } else {
+                    btn_Continue.setVisibility(View.GONE);
+                    btn_End.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
     }
 
     @OnClick(R.id.btn_End)
     void onBtnEndClick() {
-        //TODO implement
+        MainApp.endActivity(this, this);
     }
 
     @OnClick(R.id.btn_Continue)
@@ -458,16 +479,14 @@ public class SectionAActivity extends Activity {
                 + Integer.valueOf(spbla07m6.getText().toString()) + Integer.valueOf(spbla07f6.getText().toString())
                 + Integer.valueOf(spbla07m23.getText().toString()) + Integer.valueOf(spbla07f23.getText().toString())
                 + Integer.valueOf(spbla07m59.getText().toString()) + Integer.valueOf(spbla07f59.getText().toString()))) {
-            Toast.makeText(this, "ERROR(Invalid): " + getString(R.string.spbla07c), Toast.LENGTH_SHORT).show();
-            spbla07m59.setError("Can not be zero..!");
-            spbla07f59.setError("Can not be zero..!");
-            Log.i(TAG, "spbla07c: Can not be zero..!");
+            Toast.makeText(this, "ERROR(Invalid): " + getString(R.string.spbla07t), Toast.LENGTH_SHORT).show();
+            spbla07t.setError("Can not be greater than total members..!");
+            Log.i(TAG, "spbla07: Can not be zero..!");
 
-            spbla07m59.requestFocus();
+            spbla07t.requestFocus();
             return false;
         } else {
-            spbla07m59.setError(null);
-            spbla07f59.setError(null);
+            spbla07t.setError(null);
         }
 
 

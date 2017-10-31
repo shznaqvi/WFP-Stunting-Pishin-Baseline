@@ -1,9 +1,7 @@
 package edu.aku.hassannaqvi.wfpstuntingpishin.activities;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
 import android.util.Log;
@@ -12,15 +10,16 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.Arrays;
+import java.util.List;
 
 import butterknife.BindView;
+import butterknife.BindViews;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import edu.aku.hassannaqvi.wfpstuntingpishin.R;
@@ -29,7 +28,8 @@ import edu.aku.hassannaqvi.wfpstuntingpishin.core.DatabaseHelper;
 import edu.aku.hassannaqvi.wfpstuntingpishin.core.MainApp;
 import edu.aku.hassannaqvi.wfpstuntingpishin.otherClasses.FamilyMembers;
 
-public class SectionBActivity extends Activity {
+public class SectionBActivity extends Activity
+{
 
     private static final String TAG = SectionBActivity.class.getSimpleName();
     @BindView(R.id.spblb01)
@@ -96,6 +96,8 @@ public class SectionBActivity extends Activity {
     RadioButton spblb06i;
     @BindView(R.id.spblb06j)
     RadioButton spblb06j;
+    @BindViews({R.id.spblb04y, R.id.spblb04m, R.id.spblb04d})
+    List<EditText> spblb04;
 
 
     @Override
@@ -103,6 +105,7 @@ public class SectionBActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_section_b);
         ButterKnife.bind(this);
+
 
 //        Fill spinner
         spblb03.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item,
@@ -352,11 +355,9 @@ public class SectionBActivity extends Activity {
         return true;
     }
 
-    @Override
-    public void onBackPressed() {
-        Toast.makeText(getApplicationContext(), "You Can't go back", Toast.LENGTH_LONG).show();
-    }
 
 
 }
+
+
 
