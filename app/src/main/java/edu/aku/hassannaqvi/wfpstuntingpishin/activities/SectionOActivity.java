@@ -538,7 +538,9 @@ public class SectionOActivity extends Activity {
                     || spblo03e.isChecked() || spblo03f.isChecked() || spblo0388.isChecked())) {
                 Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblh03), Toast.LENGTH_SHORT).show();
                 spblo0388.setError("This Data is Required");
-
+                spblo0388.setFocusableInTouchMode(true);
+                spblo0388.setFocusable(true);
+                spblo0388.requestFocus();
                 Log.d(TAG, "spblo03:This Data is Required");
             } else {
                 spblo0388.setError(null);
@@ -624,6 +626,10 @@ public class SectionOActivity extends Activity {
                     || spblo07e.isChecked() || spblo07f.isChecked() || spblo07g.isChecked() || spblo0788.isChecked())) {
                 Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblh03), Toast.LENGTH_SHORT).show();
                 spblo0788.setError("This Data is Required");
+                spblo0788.setError("This Data is Required");
+                spblo0788.setFocusableInTouchMode(true);
+                spblo0788.setFocusable(true);
+                spblo0788.requestFocus();
                 Log.d(TAG, "spblo07:This Data is Required");
             } else {
                 spblo0788.setError(null);
@@ -699,6 +705,10 @@ public class SectionOActivity extends Activity {
                     || spblo1088.isChecked())) {
                 Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblh10), Toast.LENGTH_SHORT).show();
                 spblo1088.setError("This Data is Required");
+                spblo1088.setError("This Data is Required");
+                spblo1088.setFocusableInTouchMode(true);
+                spblo1088.setFocusable(true);
+                spblo1088.requestFocus();
                 Log.d(TAG, "spblo10:This Data is Required");
             } else {
                 spblo1088.setError(null);

@@ -77,7 +77,7 @@
             android:digits="0123456789."
             android:hint="@string/spbln03"
             android:inputType="number"
-            android:maxLength="3"/>
+            android:maxLength="4" />
 
 
         <!--04-->
@@ -130,7 +130,7 @@
                     android:digits="0123456789."
                     android:hint="@string/spblj0401"
                     android:inputType="number"
-                    android:maxLength="4"
+                    android:maxLength="5"
                     android:padding="10dp" />
 
             </LinearLayout>
@@ -167,7 +167,7 @@
                     android:digits="0123456789."
                     android:hint="@string/spblj0402"
                     android:inputType="number"
-                    android:maxLength="4"
+                    android:maxLength="5"
                     android:padding="10dp" />
 
             </LinearLayout>
@@ -224,7 +224,7 @@
                     android:digits="0123456789."
                     android:hint="@string/spblj05"
                     android:inputType="number"
-                    android:maxLength="3"
+                    android:maxLength="4"
                     android:padding="10dp" />
 
             </LinearLayout>
@@ -261,7 +261,7 @@
                     android:digits="0123456789."
                     android:hint="@string/spblj05"
                     android:inputType="number"
-                    android:maxLength="3"
+                    android:maxLength="4"
                     android:padding="10dp" />
 
             </LinearLayout>
