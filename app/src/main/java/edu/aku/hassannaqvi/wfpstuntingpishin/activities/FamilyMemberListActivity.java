@@ -6,25 +6,33 @@ import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import butterknife.BindView;
+import butterknife.BindViews;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import butterknife.OnTextChanged;
 import edu.aku.hassannaqvi.wfpstuntingpishin.R;
 import edu.aku.hassannaqvi.wfpstuntingpishin.core.MainApp;
 import edu.aku.hassannaqvi.wfpstuntingpishin.otherClasses.FamilyMembers;
+import edu.aku.hassannaqvi.wfpstuntingpishin.otherClasses.MembersCount;
 
-public class FamilyMemberListActivity extends Activity {
+public class FamilyMemberListActivity extends Activity implements TextWatcher {
 
     private static final String TAG = FamilyMemberListActivity.class.getName();
     @BindView(R.id.spbla07t)
@@ -47,10 +55,20 @@ public class FamilyMemberListActivity extends Activity {
     EditText spbla07m59;
     @BindView(R.id.spbla07f59)
     EditText spbla07f59;
+
     @BindView(R.id.recycler_noMembers)
     RecyclerView recyclerNoMembers;
 
     familyMembersAdapter mAdapter;
+
+    @BindViews({R.id.spbla07t,
+    R.id.spbla07m6,
+    R.id.spbla07f6,
+    R.id.spbla07m23,
+    R.id.spbla07f23,
+    R.id.spbla07m59,
+    R.id.spbla07f59})
+    List<EditText> spbla07;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,7 +100,80 @@ public class FamilyMemberListActivity extends Activity {
         recyclerNoMembers.setAdapter(mAdapter);
 
         mAdapter.notifyDataSetChanged();
+    }
 
+    //        Key pressed events
+    @OnTextChanged(value = {R.id.spbla07t,
+            R.id.spbla07m6,
+            R.id.spbla07f6,
+            R.id.spbla07m23,
+            R.id.spbla07f23,
+            R.id.spbla07m59,
+            R.id.spbla07f59}, callback = OnTextChanged.Callback.AFTER_TEXT_CHANGED)
+    public void listener(Editable edit) {
+
+        /*Map<Integer, Map<Integer, String>> children = new HashMap<>();
+        Map<Integer, String> child = new HashMap<>();
+
+        if (Integer.valueOf(MainApp.checkMembers.getChildren().get(0).get(1)) < Integer.valueOf(spbla07m6.getText().toString())) {
+            child.put(1, spbla07m6.getText().toString());
+        } else {
+            createToast("Can't subtract already added", spbla07m6);
+        }
+
+        if (Integer.valueOf(MainApp.checkMembers.getChildren().get(0).get(2)) < Integer.valueOf(spbla07f6.getText().toString())) {
+            child.put(2, spbla07f6.getText().toString());
+        } else {
+            createToast("Can't subtract already added", spbla07f6);
+        }
+
+        children.put(0, child);
+        child = new HashMap<>();
+
+        if (Integer.valueOf(MainApp.checkMembers.getChildren().get(1).get(1)) < Integer.valueOf(spbla07m23.getText().toString())) {
+            child.put(1, spbla07m23.getText().toString());
+        } else {
+            createToast("Can't subtract already added", spbla07m23);
+        }
+
+        if (Integer.valueOf(MainApp.checkMembers.getChildren().get(1).get(2)) < Integer.valueOf(spbla07f23.getText().toString())) {
+            child.put(2, spbla07f23.getText().toString());
+        } else {
+            createToast("Can't subtract already added", spbla07f23);
+        }
+
+        children.put(1, child);
+        child = new HashMap<>();
+
+
+        if (Integer.valueOf(MainApp.checkMembers.getChildren().get(2).get(1)) < Integer.valueOf(spbla07m59.getText().toString())) {
+            child.put(1, spbla07m59.getText().toString());
+        } else {
+            createToast("Can't subtract already added", spbla07m59);
+        }
+
+        if (Integer.valueOf(MainApp.checkMembers.getChildren().get(2).get(2)) < Integer.valueOf(spbla07f59.getText().toString())) {
+            child.put(2, spbla07f59.getText().toString());
+        } else {
+            createToast("Can't subtract already added", spbla07f59);
+        }
+
+        children.put(2, child);
+
+
+//        Women
+        Map<Integer, String> women = new HashMap<>();
+        women.put(0, spbla07pw.getText().toString());
+        women.put(1, spbla07lw.getText().toString());
+        women.put(2, spbla07mw.getText().toString());
+
+        MainApp.members = new MembersCount(Integer.parseInt(spbla07t.getText().toString()), children, women);*/
+    }
+
+    public void createToast(String msg, EditText name) {
+        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
+        EditText edit = name;
+        edit.setText("Invalid");
     }
 
     @OnClick(R.id.btn_addMember)
@@ -255,6 +346,23 @@ public class FamilyMemberListActivity extends Activity {
         return true;
     }
 
+    @Override
+    public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+    }
+
+    @Override
+    public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+    }
+
+    @Override
+    public void afterTextChanged(Editable editable) {
+
+
+
+    }
+
     public class familyMembersAdapter extends RecyclerView.Adapter<familyMembersAdapter.viewHolder> {
 
         private List<FamilyMembers> familyMembersList;
@@ -277,9 +385,12 @@ public class FamilyMemberListActivity extends Activity {
 
             holder.memberName.setText(familyMembers.getMemberName());
             holder.gender.setText(familyMembers.getGender());
-            holder.motherName.setText(familyMembers.getMotherName());
+            holder.motherName.setText("Mother:" + familyMembers.getMotherName());
             holder.martialStatus.setText(familyMembers.getmStatus());
-            holder.age.setText(familyMembers.getDob());
+
+            String[] dob = familyMembers.getDob().split("-");
+
+            holder.age.setText(dob[0] + "y - " + dob[1] + "m - " + dob[2] + "d");
         }
 
         @Override
