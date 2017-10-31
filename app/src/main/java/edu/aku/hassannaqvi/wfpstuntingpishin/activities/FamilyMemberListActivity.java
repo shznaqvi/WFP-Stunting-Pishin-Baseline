@@ -12,8 +12,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
-import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,16 +23,13 @@ import java.util.List;
 import java.util.Map;
 
 import butterknife.BindView;
-import butterknife.BindViews;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import butterknife.OnTextChanged;
 import edu.aku.hassannaqvi.wfpstuntingpishin.R;
 import edu.aku.hassannaqvi.wfpstuntingpishin.core.MainApp;
 import edu.aku.hassannaqvi.wfpstuntingpishin.otherClasses.FamilyMembers;
-import edu.aku.hassannaqvi.wfpstuntingpishin.otherClasses.MembersCount;
 
-public class FamilyMemberListActivity extends Activity implements TextWatcher {
+public class FamilyMemberListActivity extends Activity {
 
     private static final String TAG = FamilyMemberListActivity.class.getName();
     @BindView(R.id.spbla07t)
@@ -56,19 +53,15 @@ public class FamilyMemberListActivity extends Activity implements TextWatcher {
     @BindView(R.id.spbla07f59)
     EditText spbla07f59;
 
+    @BindView(R.id.btn_Continue)
+    Button btn_Continue;
+    @BindView(R.id.btn_addMember)
+    Button btn_addMember;
+
     @BindView(R.id.recycler_noMembers)
     RecyclerView recyclerNoMembers;
 
     familyMembersAdapter mAdapter;
-
-    @BindViews({R.id.spbla07t,
-            R.id.spbla07m6,
-            R.id.spbla07f6,
-            R.id.spbla07m23,
-            R.id.spbla07f23,
-            R.id.spbla07m59,
-            R.id.spbla07f59})
-    List<EditText> spbla07;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -138,75 +131,92 @@ public class FamilyMemberListActivity extends Activity implements TextWatcher {
         }
 
         public void onTextChanged(CharSequence s, int start, int before, int count) {
-        }
 
-        public void afterTextChanged(Editable s) {
             Map<Integer, Map<Integer, String>> children = new HashMap<>();
             Map<Integer, String> child = new HashMap<>();
 
             switch (edit.getId()) {
 
-                case R.id.spbla07m6:
-                    if (Integer.valueOf(MainApp.checkMembers.getChildren().get(0).get(1)) < Integer.valueOf(spbla07m6.getText().toString())) {
-                        child.put(1, spbla07m6.getText().toString());
-                    } else {
-                        createToast("Can't subtract already added", spbla07m6);
+                case R.id.spbla07t:
+                    if (spbla07t.getText().toString().isEmpty()) {
+                        MainApp.members.setCount(Integer.valueOf(spbla07t.getText().toString()));
                     }
                     break;
 
+                case R.id.spbla07m6:
                 case R.id.spbla07f6:
-                    if (Integer.valueOf(MainApp.checkMembers.getChildren().get(0).get(2)) < Integer.valueOf(spbla07f6.getText().toString())) {
-                        child.put(2, spbla07f6.getText().toString());
-                    } else {
-                        createToast("Can't subtract already added", spbla07f6);
+
+                    if (!spbla07m6.getText().toString().isEmpty()) {
+                        if (Integer.valueOf(MainApp.checkMembers.getChildren().get(0).get(1)) > Integer.valueOf(spbla07m6.getText().toString())) {
+                            spbla07m6.setText(spbla07m6.getText().toString());
+                            createToast("Can't subtract already added", spbla07m6);
+                        }
                     }
 
+                    if (!spbla07f6.getText().toString().isEmpty()) {
+                        if (Integer.valueOf(MainApp.checkMembers.getChildren().get(0).get(2)) > Integer.valueOf(spbla07f6.getText().toString())) {
+                            spbla07f6.setText(spbla07f6.getText().toString());
+                            createToast("Can't subtract already added", spbla07f6);
+                        }
+                    }
+                    child.put(1, spbla07m6.getText().toString());
+                    child.put(2, spbla07f6.getText().toString());
+
                     children.put(0, child);
-                    child = new HashMap<>();
+                    MainApp.members.setChildren(children);
 
                     break;
 
                 case R.id.spbla07m23:
-                    if (Integer.valueOf(MainApp.checkMembers.getChildren().get(1).get(1)) < Integer.valueOf(spbla07m23.getText().toString())) {
-                        child.put(1, spbla07m23.getText().toString());
-                    } else {
-                        createToast("Can't subtract already added", spbla07m23);
-                    }
-                    break;
-
                 case R.id.spbla07f23:
-                    if (Integer.valueOf(MainApp.checkMembers.getChildren().get(1).get(2)) < Integer.valueOf(spbla07f23.getText().toString())) {
-                        child.put(2, spbla07f23.getText().toString());
-                    } else {
-                        createToast("Can't subtract already added", spbla07f23);
+
+                    if (!spbla07m23.getText().toString().isEmpty()) {
+                        if (Integer.valueOf(MainApp.checkMembers.getChildren().get(1).get(1)) > Integer.valueOf(spbla07m23.getText().toString())) {
+                            spbla07m23.setText(spbla07m23.getText().toString());
+                            createToast("Can't subtract already added", spbla07m23);
+                        }
                     }
+
+                    if (!spbla07f23.getText().toString().isEmpty()) {
+                        if (Integer.valueOf(MainApp.checkMembers.getChildren().get(1).get(2)) > Integer.valueOf(spbla07f23.getText().toString())) {
+                            spbla07f23.setText(spbla07f23.getText().toString());
+                            createToast("Can't subtract already added", spbla07f23);
+                        }
+                    }
+
+                    child.put(1, spbla07m23.getText().toString());
+                    child.put(2, spbla07f23.getText().toString());
 
                     children.put(1, child);
-                    child = new HashMap<>();
+                    MainApp.members.setChildren(children);
 
                     break;
 
                 case R.id.spbla07m59:
-                    if (Integer.valueOf(MainApp.checkMembers.getChildren().get(2).get(1)) < Integer.valueOf(spbla07m59.getText().toString())) {
-                        child.put(1, spbla07m59.getText().toString());
-                    } else {
-                        createToast("Can't subtract already added", spbla07m59);
-                    }
-                    break;
-
                 case R.id.spbla07f59:
-                    if (Integer.valueOf(MainApp.checkMembers.getChildren().get(2).get(2)) < Integer.valueOf(spbla07f59.getText().toString())) {
-                        child.put(2, spbla07f59.getText().toString());
-                    } else {
-                        createToast("Can't subtract already added", spbla07f59);
+
+                    if (!spbla07m59.getText().toString().isEmpty()) {
+                        if (Integer.valueOf(MainApp.checkMembers.getChildren().get(2).get(1)) > Integer.valueOf(spbla07m59.getText().toString())) {
+                            spbla07m59.setText(spbla07m59.getText().toString());
+                            createToast("Can't subtract already added", spbla07m59);
+                        }
                     }
+
+                    if (!spbla07f59.getText().toString().isEmpty()) {
+                        if (Integer.valueOf(MainApp.checkMembers.getChildren().get(2).get(2)) > Integer.valueOf(spbla07f59.getText().toString())) {
+                            spbla07f59.setText(spbla07f59.getText().toString());
+                            createToast("Can't subtract already added", spbla07f59);
+                        }
+                    }
+
+                    child.put(1, spbla07m59.getText().toString());
+                    child.put(2, spbla07f59.getText().toString());
 
                     children.put(2, child);
+                    MainApp.members.setChildren(children);
 
                     break;
-
             }
-
 
 //        Women
             Map<Integer, String> women = new HashMap<>();
@@ -214,7 +224,11 @@ public class FamilyMemberListActivity extends Activity implements TextWatcher {
             women.put(1, spbla07lw.getText().toString());
             women.put(2, spbla07mw.getText().toString());
 
-            MainApp.members = new MembersCount(Integer.parseInt(spbla07t.getText().toString()), children, women);
+            MainApp.members.setWomen(women);
+        }
+
+        public void afterTextChanged(Editable s) {
+
         }
     }
 
@@ -228,15 +242,16 @@ public class FamilyMemberListActivity extends Activity implements TextWatcher {
     void onBtnAddMemberClick() {
         //TODO implement
 
-        startActivity(new Intent(this, SectionBActivity.class));
-
+        if (formValidation(false)) {
+            startActivity(new Intent(this, SectionBActivity.class));
+        }
     }
 
     @OnClick(R.id.btn_Continue)
     void onBtnContinueClick() {
         //TODO implement
 
-        if (formValidation()) {
+        if (formValidation(true)) {
             finish();
             startActivity(new Intent(this, SectionDActivity.class));
         }
@@ -247,6 +262,32 @@ public class FamilyMemberListActivity extends Activity implements TextWatcher {
         super.onResume();
 
         mAdapter.notifyDataSetChanged();
+
+        resumeWork();
+
+    }
+
+    public void resumeWork() {
+        if (MainApp.members.getCount() == MainApp.checkMembers.getCount()
+                &&
+                Integer.valueOf(MainApp.members.getChildren().get(0).get(1)) == Integer.valueOf(MainApp.checkMembers.getChildren().get(0).get(1))
+                &&
+                Integer.valueOf(MainApp.members.getChildren().get(0).get(2)) == Integer.valueOf(MainApp.checkMembers.getChildren().get(0).get(2))
+                &&
+                Integer.valueOf(MainApp.members.getChildren().get(1).get(1)) == Integer.valueOf(MainApp.checkMembers.getChildren().get(1).get(1))
+                &&
+                Integer.valueOf(MainApp.members.getChildren().get(1).get(2)) == Integer.valueOf(MainApp.checkMembers.getChildren().get(1).get(2))
+                &&
+                Integer.valueOf(MainApp.members.getChildren().get(2).get(1)) == Integer.valueOf(MainApp.checkMembers.getChildren().get(2).get(1))
+                &&
+                Integer.valueOf(MainApp.members.getChildren().get(2).get(2)) == Integer.valueOf(MainApp.checkMembers.getChildren().get(2).get(2))) {
+
+            btn_addMember.setEnabled(false);
+            btn_Continue.setEnabled(true);
+        } else {
+            btn_addMember.setEnabled(true);
+            btn_Continue.setEnabled(false);
+        }
     }
 
     @OnClick(R.id.btn_End)
@@ -258,7 +299,7 @@ public class FamilyMemberListActivity extends Activity implements TextWatcher {
         MainApp.endActivity(this, this);
     }
 
-    public boolean formValidation() {
+    public boolean formValidation(boolean flag) {
 
         if (spbla07t.getText().toString().isEmpty()) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.spbla07t), Toast.LENGTH_SHORT).show();
@@ -371,43 +412,28 @@ public class FamilyMemberListActivity extends Activity implements TextWatcher {
             spbla07f59.setError(null);
         }
 
-        if (Integer.valueOf(spbla07t.getText().toString()) < (Integer.valueOf(spbla07pw.getText().toString())
-                + Integer.valueOf(spbla07lw.getText().toString()) + Integer.valueOf(spbla07mw.getText().toString())
-                + Integer.valueOf(spbla07m6.getText().toString()) + Integer.valueOf(spbla07f6.getText().toString())
-                + Integer.valueOf(spbla07m23.getText().toString()) + Integer.valueOf(spbla07f23.getText().toString())
-                + Integer.valueOf(spbla07m59.getText().toString()) + Integer.valueOf(spbla07f59.getText().toString()))) {
-            Toast.makeText(this, "ERROR(Invalid): " + getString(R.string.spbla07c), Toast.LENGTH_SHORT).show();
-            spbla07m59.setError("Can not be zero..!");
-            spbla07f59.setError("Can not be zero..!");
-            Log.i(TAG, "spbla07c: Can not be zero..!");
+        if (flag) {
+            if (Integer.valueOf(spbla07t.getText().toString()) < (Integer.valueOf(spbla07pw.getText().toString())
+                    + Integer.valueOf(spbla07lw.getText().toString()) + Integer.valueOf(spbla07mw.getText().toString())
+                    + Integer.valueOf(spbla07m6.getText().toString()) + Integer.valueOf(spbla07f6.getText().toString())
+                    + Integer.valueOf(spbla07m23.getText().toString()) + Integer.valueOf(spbla07f23.getText().toString())
+                    + Integer.valueOf(spbla07m59.getText().toString()) + Integer.valueOf(spbla07f59.getText().toString()))) {
+                Toast.makeText(this, "ERROR(Invalid): " + getString(R.string.spbla07c), Toast.LENGTH_SHORT).show();
+                spbla07m59.setError("Can not be zero..!");
+                spbla07f59.setError("Can not be zero..!");
+                Log.i(TAG, "spbla07c: Can not be zero..!");
 
-            spbla07m59.requestFocus();
-            return false;
-        } else {
-            spbla07m59.setError(null);
-            spbla07f59.setError(null);
+                spbla07m59.requestFocus();
+                return false;
+            } else {
+                spbla07m59.setError(null);
+                spbla07f59.setError(null);
+            }
         }
 
 //        Main Validation
 
-
         return true;
-    }
-
-    @Override
-    public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-    }
-
-    @Override
-    public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-    }
-
-    @Override
-    public void afterTextChanged(Editable editable) {
-
-
     }
 
     public class familyMembersAdapter extends RecyclerView.Adapter<familyMembersAdapter.viewHolder> {
@@ -433,11 +459,30 @@ public class FamilyMemberListActivity extends Activity implements TextWatcher {
             holder.memberName.setText(familyMembers.getMemberName());
             holder.gender.setText(familyMembers.getGender());
             holder.motherName.setText("Mother:" + familyMembers.getMotherName());
-            holder.martialStatus.setText(familyMembers.getmStatus());
+            holder.type.setText(memberType(familyMembers.getType()));
 
             String[] dob = familyMembers.getDob().split("-");
 
             holder.age.setText(dob[0] + "y - " + dob[1] + "m - " + dob[2] + "d");
+        }
+
+        public String memberType(String type) {
+            String value = "";
+            switch (type) {
+                case "mw":
+                    value = "Married-Women";
+                    break;
+                case "w":
+                    value = "Women";
+                    break;
+                case "m":
+                    value = "Men";
+                    break;
+                case "ch":
+                    value = "Child";
+                    break;
+            }
+            return value;
         }
 
         @Override
@@ -452,8 +497,8 @@ public class FamilyMemberListActivity extends Activity implements TextWatcher {
             TextView gender;
             @BindView(R.id.age)
             TextView age;
-            @BindView(R.id.martialStatus)
-            TextView martialStatus;
+            @BindView(R.id.type)
+            TextView type;
             @BindView(R.id.motherName)
             TextView motherName;
 

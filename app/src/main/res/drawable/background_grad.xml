@@ -8,6 +8,5 @@
             <corners android:radius="3dp" />
             <stroke android:width="8px" android:color="@color/grayOverlay" />
         </shape>
-
     </item>
 </selector>

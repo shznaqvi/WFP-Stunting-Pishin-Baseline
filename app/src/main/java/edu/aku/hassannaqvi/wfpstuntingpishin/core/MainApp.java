@@ -135,6 +135,7 @@ public class MainApp extends Application {
     public static MembersCount checkMembers;
     public static ArrayList<FamilyMembers> familyMembersList;
     public static FamilyMembersContract fmc;
+    public static int counter = 0;
 
     public static int monthsBetweenDates(Date startDate, Date endDate) {
 

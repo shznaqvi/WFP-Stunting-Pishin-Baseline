@@ -1,11 +1,12 @@
 package edu.aku.hassannaqvi.wfpstuntingpishin.activities;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
@@ -18,7 +19,10 @@ import android.widget.Toast;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -97,6 +101,10 @@ public class SectionBActivity extends Activity {
     @BindView(R.id.spblb06j)
     RadioButton spblb06j;
 
+    List<String> mothersList;
+    Map<String, String> mothersMap;
+
+    Boolean flag = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -104,10 +112,7 @@ public class SectionBActivity extends Activity {
         setContentView(R.layout.activity_section_b);
         ButterKnife.bind(this);
 
-//        Fill spinner
-        spblb03.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item,
-                Arrays.asList(new String[]{"....", "1"})));
-
+        spblb03.setEnabled(false);
 
         spblb02.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -125,6 +130,27 @@ public class SectionBActivity extends Activity {
             }
         });
 
+        //Fill Spinner
+
+        mothersList = new ArrayList<>();
+        mothersMap = new HashMap<>();
+
+        mothersList.add("....");
+        mothersList.add("N/A");
+        mothersMap.put("N/A", "0");
+
+        for (FamilyMembers mem : MainApp.familyMembersList) {
+            if (mem.getMemberName().equals("mw") || mem.getMemberName().equals("w")) {
+                mothersList.add(mem.getMemberName());
+                mothersMap.put(mem.getMemberName(), mem.getSerial());
+            }
+        }
+
+        spblb03.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, mothersList));
+
+        spblb04y.addTextChangedListener(new CustomTextWatcher(spblb04y));
+        spblb04m.addTextChangedListener(new CustomTextWatcher(spblb04m));
+        spblb04d.addTextChangedListener(new CustomTextWatcher(spblb04d));
 
     }
 
@@ -152,7 +178,7 @@ public class SectionBActivity extends Activity {
     @OnClick(R.id.btn_End)
     void onBtnEndClick() {
 
-        MainApp.endActivity(this, this);
+        finish();
     }
 
     private boolean UpdateDB() {
@@ -191,11 +217,15 @@ public class SectionBActivity extends Activity {
         MainApp.fmc.set_UUID(MainApp.fc.get_UID());
         MainApp.fmc.setDevicetagID(sharedPref.getString("tagName", null));
 
+        MainApp.counter++;
+
         JSONObject sB = new JSONObject();
 
+        sB.put("spblb01Serial", String.valueOf(MainApp.counter));
         sB.put("spblb01", spblb01.getText().toString());
         sB.put("spblb02", spblb02a.isChecked() ? "1" : spblb02b.isChecked() ? "2" : "0");
         sB.put("spblb03", spblb03.getSelectedItem().toString());
+        sB.put("spblb03Serial", mothersMap.get(spblb03.getSelectedItem().toString()));
         sB.put("spblb04y", spblb04y.getText().toString());
         sB.put("spblb04m", spblb04m.getText().toString());
         sB.put("spblb04d", spblb04d.getText().toString());
@@ -213,7 +243,7 @@ public class SectionBActivity extends Activity {
 
 //        Checking Type
         String type;
-        int childType = checkChildAge(spblb04y.getText().toString(), spblb04m.getText().toString(), spblb04d.getText().toString());
+        int childType = checkChildAgeMonths(spblb04y.getText().toString(), spblb04m.getText().toString(), spblb04d.getText().toString());
         if (childType == 0) {
             type = spblb02b.isChecked() && spblb07a.isChecked() ? "mw" :
                     spblb02b.isChecked() && spblb07b.isChecked() ? "w" : "m";
@@ -221,8 +251,41 @@ public class SectionBActivity extends Activity {
             type = "ch";
         }
 
+        Map<Integer, String> child = new HashMap<>();
 
-        MainApp.familyMembersList.add(new FamilyMembers(spblb01.getText().toString(), spblb07a.isChecked() ? "Married" : "Un-Married",
+        if (childType == 1) {
+            if (spblb02a.isChecked()) {
+                child.put(1, String.valueOf(Integer.valueOf(MainApp.checkMembers.getChildren().get(0).get(1) + 1)));
+                child.put(2, MainApp.checkMembers.getChildren().get(0).get(2));
+            } else if (spblb02b.isChecked()) {
+                child.put(1, MainApp.checkMembers.getChildren().get(0).get(1));
+                child.put(2, String.valueOf(Integer.valueOf(MainApp.checkMembers.getChildren().get(0).get(2) + 1)));
+            }
+            MainApp.checkMembers.setChildren(0, child);
+        } else if (childType == 2) {
+            if (spblb02a.isChecked()) {
+                child.put(1, String.valueOf(Integer.valueOf(MainApp.checkMembers.getChildren().get(1).get(1) + 1)));
+                child.put(2, MainApp.checkMembers.getChildren().get(1).get(2));
+            } else if (spblb02b.isChecked()) {
+                child.put(1, MainApp.checkMembers.getChildren().get(1).get(1));
+                child.put(2, String.valueOf(Integer.valueOf(MainApp.checkMembers.getChildren().get(1).get(2) + 1)));
+            }
+            MainApp.checkMembers.setChildren(1, child);
+        } else if (childType == 3) {
+            if (spblb02a.isChecked()) {
+                child.put(1, String.valueOf(Integer.valueOf(MainApp.checkMembers.getChildren().get(2).get(1) + 1)));
+                child.put(2, MainApp.checkMembers.getChildren().get(2).get(2));
+            } else if (spblb02b.isChecked()) {
+                child.put(1, MainApp.checkMembers.getChildren().get(2).get(1));
+                child.put(2, String.valueOf(Integer.valueOf(MainApp.checkMembers.getChildren().get(2).get(2) + 1)));
+            }
+            MainApp.checkMembers.setChildren(2, child);
+        }
+
+        MainApp.checkMembers.setCount(MainApp.checkMembers.getCount() + 1);
+
+        MainApp.familyMembersList.add(new FamilyMembers(spblb01.getText().toString(),
+                String.valueOf(MainApp.counter),
                 spblb02a.isChecked() ? "Male" : "Female",
                 spblb04y.getText().toString() + "-" +
                         spblb04m.getText().toString() + "-" +
@@ -235,7 +298,7 @@ public class SectionBActivity extends Activity {
 
     }
 
-    public int checkChildAge(String y, String m, String d) {
+    public int checkChildAgeMonths(String y, String m, String d) {
 
         int age = Integer.parseInt(y) * 12 + Integer.parseInt(m) + (Integer.parseInt(d) / 29);
 
@@ -271,16 +334,18 @@ public class SectionBActivity extends Activity {
             spblb02a.setError(null);
         }
 
-        /*if (spblb03.getSelectedItem() == "....") {
-            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblb03), Toast.LENGTH_SHORT).show();
-            ((TextView) spblb03.getSelectedView()).setText("This Data is Required");
-            ((TextView) spblb03.getSelectedView()).setTextColor(Color.RED);
-            spblb03.requestFocus();
-            Log.i(TAG, "spblb03: This Data is Required!");
-            return false;
-        } else {
-            ((TextView) spblb03.getSelectedView()).setError(null);
-        }*/
+        if (flag) {
+            if (spblb03.getSelectedItem() == "....") {
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblb03), Toast.LENGTH_SHORT).show();
+                ((TextView) spblb03.getSelectedView()).setText("This Data is Required");
+                ((TextView) spblb03.getSelectedView()).setTextColor(Color.RED);
+                spblb03.requestFocus();
+                Log.i(TAG, "spblb03: This Data is Required!");
+                return false;
+            } else {
+                ((TextView) spblb03.getSelectedView()).setError(null);
+            }
+        }
 
         if (spblb04y.getText().toString().isEmpty()) {
             Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblb04y), Toast.LENGTH_SHORT).show();
@@ -357,6 +422,41 @@ public class SectionBActivity extends Activity {
         Toast.makeText(getApplicationContext(), "You Can't go back", Toast.LENGTH_LONG).show();
     }
 
+    private class CustomTextWatcher implements TextWatcher {
+        private EditText edit;
+
+        public CustomTextWatcher(EditText e) {
+            edit = e;
+        }
+
+        @Override
+        public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+        }
+
+        @Override
+        public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            String year = spblb04y.getText().toString().isEmpty() ? "0" : spblb04y.getText().toString();
+            String month = spblb04m.getText().toString().isEmpty() ? "0" : spblb04m.getText().toString();
+            String day = spblb04d.getText().toString().isEmpty() ? "0" : spblb04d.getText().toString();
+
+            int ageMonths = checkChildAgeMonths(year, month, day);
+
+            if (ageMonths == 0) {
+                flag = false;
+                spblb03.setEnabled(false);
+            } else {
+                flag = true;
+                spblb03.setEnabled(true);
+            }
+        }
+
+        @Override
+        public void afterTextChanged(Editable editable) {
+
+        }
+    }
 
 }
 
