@@ -172,6 +172,15 @@ public class SectionNActivity extends Activity {
             spbln03.setError(null);
         }
 
+        if (Double.valueOf(spbln03.getText().toString()) < 4.0 || Double.valueOf(spbln03.getText().toString()) > 18.0) {
+            Toast.makeText(this, "ERROR(invalid): " + getString(R.string.spbln03), Toast.LENGTH_SHORT).show();
+            spbln03.setError("Range is 4.0 to 20.0");
+            Log.i(TAG, "spbln03: Range is 4.0 to 20.0");
+            return false;
+        } else {
+            spbln03.setError(null);
+        }
+
         if (spbln0401a.getSelectedItem() == "....") {
             Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblj0401), Toast.LENGTH_SHORT).show();
             ((TextView) spbln0401a.getSelectedView()).setText("This Data is Required");
@@ -191,6 +200,31 @@ public class SectionNActivity extends Activity {
             return false;
         } else {
             spbln0401b.setError(null);
+            if (!spbln0401b.getText().toString().contains(".")) {
+                Toast.makeText(this, "ERROR(invalid): " + getString(R.string.spblj04), Toast.LENGTH_SHORT).show();
+                spbln0401b.setError("Invalid: Decimal value is Required!");
+                Log.i(TAG, "spbln0401b: Invalid Decimal value is Required!");
+                return false;
+            } else {
+                spbln0401b.setError(null);
+                if (Double.parseDouble(spbln0401b.getText().toString()) < 1) {
+                    Toast.makeText(this, "ERROR(invalid): " + getString(R.string.spblj04), Toast.LENGTH_SHORT).show();
+                    spbln0401b.setError("Invalid: Greater then 0");
+                    Log.i(TAG, "spbln0401b: Invalid Greater then 0");
+                    return false;
+                } else {
+                    spbln0401b.setError(null);
+                    if (Double.parseDouble(spbln0401b.getText().toString()) < 20 || Double.parseDouble(spbln0401b.getText().toString()) > 120) {
+                        Toast.makeText(this, "ERROR(invalid): " + getString(R.string.spblj04), Toast.LENGTH_SHORT).show();
+                        spbln0401b.setError("Invalid: Range between 20-120");
+                        Log.i(TAG, "spbln0401b: Invalid Range between 20-120");
+                        return false;
+                    } else {
+                        spbln0401b.setError(null);
+                    }
+                }
+            }
+
         }
 
         if (spbln0402a.getSelectedItem() == "....") {
@@ -212,6 +246,30 @@ public class SectionNActivity extends Activity {
             return false;
         } else {
             spbln0402b.setError(null);
+            if (!spbln0402b.getText().toString().contains(".")) {
+                Toast.makeText(this, "ERROR(invalid): " + getString(R.string.spblj04), Toast.LENGTH_SHORT).show();
+                spbln0402b.setError("Invalid: Decimal value is Required!");
+                Log.i(TAG, "spbln0402b: Invalid Decimal value is Required!");
+                return false;
+            } else {
+                spbln0402b.setError(null);
+                if (Double.parseDouble(spbln0402b.getText().toString()) < 1) {
+                    Toast.makeText(this, "ERROR(invalid): " + getString(R.string.spblj04), Toast.LENGTH_SHORT).show();
+                    spbln0402b.setError("Invalid: Greater then 0");
+                    Log.i(TAG, "spbln0402b: Invalid Greater then 0");
+                    return false;
+                } else {
+                    spbln0402b.setError(null);
+                    if (Double.parseDouble(spbln0402b.getText().toString()) < 20 || Double.parseDouble(spbln0402b.getText().toString()) > 120) {
+                        Toast.makeText(this, "ERROR(invalid): " + getString(R.string.spblj04), Toast.LENGTH_SHORT).show();
+                        spbln0402b.setError("Invalid: Range between 20-120");
+                        Log.i(TAG, "spbln0402b: Invalid Range between 20-120");
+                        return false;
+                    } else {
+                        spbln0402b.setError(null);
+                    }
+                }
+            }
         }
 
 
@@ -234,7 +292,24 @@ public class SectionNActivity extends Activity {
             return false;
         } else {
             spbln0501b.setError(null);
+            if (!spbln0501b.getText().toString().contains(".")) {
+                Toast.makeText(this, "ERROR(invalid): " + getString(R.string.spblj05), Toast.LENGTH_SHORT).show();
+                spbln0501b.setError("Invalid: Decimal value is Required!");
+                Log.i(TAG, "spbln0501b: Invalid Decimal value is Required!");
+                return false;
+            } else {
+                spbln0501b.setError(null);
+                if (Double.parseDouble(spbln0501b.getText().toString()) < 0.9 || Double.parseDouble(spbln0501b.getText().toString()) > 80.0) {
+                    Toast.makeText(this, "ERROR(invalid): " + getString(R.string.spblj05), Toast.LENGTH_SHORT).show();
+                    spbln0501b.setError("Invalid: Range between 0.9-80.0");
+                    Log.i(TAG, "spbln0501b: Invalid Range between 0.9-80.0");
+                    return false;
+                } else {
+                    spbln0501b.setError(null);
+                }
+            }
         }
+
 
         if (spbln0502a.getSelectedItem() == "....") {
             Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblj0401), Toast.LENGTH_SHORT).show();
@@ -255,6 +330,22 @@ public class SectionNActivity extends Activity {
             return false;
         } else {
             spbln0502b.setError(null);
+            if (!spbln0502b.getText().toString().contains(".")) {
+                Toast.makeText(this, "ERROR(invalid): " + getString(R.string.spblj05), Toast.LENGTH_SHORT).show();
+                spbln0502b.setError("Invalid: Decimal value is Required!");
+                Log.i(TAG, "spbln0502b: Invalid Decimal value is Required!");
+                return false;
+            } else {
+                spbln0502b.setError(null);
+                if (Double.parseDouble(spbln0502b.getText().toString()) < 0.9 || Double.parseDouble(spbln0502b.getText().toString()) > 80.0) {
+                    Toast.makeText(this, "ERROR(invalid): " + getString(R.string.spblj05), Toast.LENGTH_SHORT).show();
+                    spbln0502b.setError("Invalid: Range between 0.9-80.0");
+                    Log.i(TAG, "spbln0502b: Invalid Range between 0.9-80.0");
+                    return false;
+                } else {
+                    spbln0502b.setError(null);
+                }
+            }
         }
 
         return true;
