@@ -805,7 +805,7 @@ public class SectionCActivity extends Activity {
     void onBtnEndClick() {
         //TODO implement
 
-        MainApp.endActivity(this,this);
+        MainApp.endActivity(this, this);
     }
 
     private void SaveDraft() throws JSONException {
@@ -1709,7 +1709,6 @@ public class SectionCActivity extends Activity {
 
         return true;
     }
-
 
 
 }
