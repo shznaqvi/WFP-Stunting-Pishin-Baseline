@@ -71,7 +71,7 @@
             android:theme="@style/AppTheme1" />
         <activity android:name=".activities.SectionNActivity" />
         <activity android:name=".activities.SectionAActivity" />
-        <activity android:name=".activities.FamilyMemberListActivity"></activity>
+        <activity android:name=".activities.FamilyMemberListActivity" />
     </application>
 
 </manifest>

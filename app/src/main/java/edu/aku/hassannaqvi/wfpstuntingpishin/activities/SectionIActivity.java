@@ -416,6 +416,34 @@ public class SectionIActivity extends Activity {
         });
 
 
+        spbli06999.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (spbli06999.isChecked()) {
+                    spbli06.setText(null);
+                    spbli06.setVisibility(View.GONE);
+                } else {
+                    spbli06.setVisibility(View.VISIBLE);
+                    spbli06.requestFocus();
+                }
+            }
+        });
+
+
+        spbli07999.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (spbli07999.isChecked()) {
+                    spbli07.setText(null);
+                    spbli07.setVisibility(View.GONE);
+                } else {
+                    spbli07.setVisibility(View.VISIBLE);
+                    spbli07.requestFocus();
+                }
+            }
+        });
+
+
         spbli0888.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
@@ -444,6 +472,20 @@ public class SectionIActivity extends Activity {
         });
 
 
+        spbli01099.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (spbli01099.isChecked()) {
+                    spbli010.setText(null);
+                    spbli010.setVisibility(View.GONE);
+                } else {
+                    spbli010.setVisibility(View.VISIBLE);
+                    spbli010.requestFocus();
+                }
+            }
+        });
+
+
         spbli011.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
@@ -462,6 +504,20 @@ public class SectionIActivity extends Activity {
         });
 
 
+        spbli01299.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (spbli01299.isChecked()) {
+                    spbli012.setText(null);
+                    spbli012.setVisibility(View.GONE);
+                } else {
+                    spbli012.setVisibility(View.VISIBLE);
+                    spbli012.requestFocus();
+                }
+            }
+        });
+
+
         spbli014.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
@@ -475,6 +531,39 @@ public class SectionIActivity extends Activity {
                     spbli01599.setChecked(false);
 
                     fldGrpspbli015.setVisibility(View.GONE);
+                }
+            }
+        });
+
+
+        spbli01599.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (spbli01599.isChecked()) {
+                    spbli015.setText(null);
+                    spbli01597.setChecked(false);
+                    spbli01597.setVisibility(View.GONE);
+                    spbli015.setVisibility(View.GONE);
+                } else {
+                    spbli015.setVisibility(View.VISIBLE);
+                    spbli01597.setVisibility(View.VISIBLE);
+                    spbli015.requestFocus();
+                }
+            }
+        });
+
+        spbli01597.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (spbli01597.isChecked()) {
+                    spbli015.setText(null);
+                    spbli01599.setChecked(false);
+                    spbli01599.setVisibility(View.GONE);
+                    spbli015.setVisibility(View.GONE);
+                } else {
+                    spbli015.setVisibility(View.VISIBLE);
+                    spbli01599.setVisibility(View.VISIBLE);
+                    spbli015.requestFocus();
                 }
             }
         });
@@ -651,7 +740,7 @@ public class SectionIActivity extends Activity {
     }
 
 
-    @OnClick(R.id.btn_Continue)
+    @OnClick(R.id.btnNext)
     void SaveData() {
 
         if (ValidateForm()) {
@@ -680,7 +769,7 @@ public class SectionIActivity extends Activity {
     }
 
 
-    @OnClick(R.id.btn_End)
+    @OnClick(R.id.btnEnd)
     void onBtnEndClick() {
 
         Toast.makeText(this, "Not Processing This Section", Toast.LENGTH_SHORT).show();
@@ -712,6 +801,8 @@ public class SectionIActivity extends Activity {
 
     private boolean ValidateForm() {
 
+        Toast.makeText(this, "Validating This Section ", Toast.LENGTH_SHORT).show();
+
 
         if (spbli01w.getSelectedItem().toString() == "....") {
             Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spbli01w), Toast.LENGTH_SHORT).show();
@@ -722,7 +813,6 @@ public class SectionIActivity extends Activity {
             return false;
         } else {
             ((TextView) spbli01w.getSelectedView()).setError(null);
-
         }
 
 
@@ -1338,11 +1428,20 @@ public class SectionIActivity extends Activity {
 
         }
 
+        if (Integer.valueOf(spbli02.getText().toString()) < 1 || Integer.valueOf(spbli02.getText().toString()) > 42) {
+            Toast.makeText(this, "Gestational age must be 1 - 42", Toast.LENGTH_SHORT).show();
+            spbli02.setError("Gestational age must be 1 - 42");    // Set Error on last radio button
+            Log.i(TAG, "spbli02: This data is Required!");
+            spbli02.requestFocus();
+            return false;
+        }
+
 
         return true;
     }
 
     private void SaveDraft() throws JSONException {
+
         Toast.makeText(this, "Saving Draft for  This Section", Toast.LENGTH_SHORT).show();
 
         JSONObject sHI = new JSONObject();
@@ -1521,8 +1620,6 @@ public class SectionIActivity extends Activity {
         sHI.put("spbli02888x", spbli02888x.getText().toString());
 
         //MainApp.fc.setsI(String.valueOf(sHI));
-
-        Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
 
     }
 

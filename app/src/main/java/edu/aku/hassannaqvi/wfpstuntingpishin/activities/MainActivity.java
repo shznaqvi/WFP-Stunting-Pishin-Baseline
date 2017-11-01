@@ -317,6 +317,7 @@ public class MainActivity extends Activity {
         Intent iB = new Intent(this, SectionAActivity.class);
         startActivity(iB);
     }
+
     public void openB(View v) {
         Intent iB = new Intent(this, SectionBActivity.class);
         startActivity(iB);
@@ -397,6 +398,7 @@ public class MainActivity extends Activity {
         Intent iEnd = new Intent(this, SectionQActivity.class);
         startActivity(iEnd);
     }
+
 
     public void testGPS(View v) {
 
