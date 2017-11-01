@@ -119,19 +119,6 @@ public class FamilyMemberListActivity extends Activity implements View.OnKeyList
 
     }
 
-/*    //        Key pressed events
-    @OnTextChanged(value = {R.id.spbla07t,
-            R.id.spbla07m6,
-            R.id.spbla07f6,
-            R.id.spbla07m23,
-            R.id.spbla07f23,
-            R.id.spbla07m59,
-            R.id.spbla07f59}, callback = OnTextChanged.Callback.AFTER_TEXT_CHANGED)
-    public void listener(Editable edit) {
-
-
-    }*/
-
     private class CustomTextWatcher implements TextWatcher {
         private EditText edit;
 
@@ -163,9 +150,12 @@ public class FamilyMemberListActivity extends Activity implements View.OnKeyList
 //                            spbla07m6.setText(spbla07m6.getText().toString());
                             createToast("Can't subtract already added", spbla07m6);
                         } else {
+                            if (R.id.spbla07f6 != edit.getId()) {
+                                flag = true;
+                                btn_Continue.setEnabled(true);
+                                btn_addMember.setEnabled(true);
+                            }
                             spbla07m6.setError(null);
-                            btn_Continue.setEnabled(true);
-                            btn_addMember.setEnabled(true);
                         }
                     }
 
@@ -174,9 +164,12 @@ public class FamilyMemberListActivity extends Activity implements View.OnKeyList
 //                            spbla07f6.setText(spbla07f6.getText().toString());
                             createToast("Can't subtract already added", spbla07f6);
                         } else {
+                            if (R.id.spbla07m6 != edit.getId()) {
+                                flag = true;
+                                btn_Continue.setEnabled(true);
+                                btn_addMember.setEnabled(true);
+                            }
                             spbla07f6.setError(null);
-                            btn_Continue.setEnabled(true);
-                            btn_addMember.setEnabled(true);
                         }
                     }
                     child.put(1, spbla07m6.getText().toString());
@@ -195,9 +188,12 @@ public class FamilyMemberListActivity extends Activity implements View.OnKeyList
 //                            spbla07m23.setText(spbla07m23.getText().toString());
                             createToast("Can't subtract already added", spbla07m23);
                         } else {
+                            if (R.id.spbla07f23 != edit.getId()) {
+                                flag = true;
+                                btn_Continue.setEnabled(true);
+                                btn_addMember.setEnabled(true);
+                            }
                             spbla07f23.setError(null);
-                            btn_Continue.setEnabled(true);
-                            btn_addMember.setEnabled(true);
                         }
                     }
 
@@ -206,9 +202,13 @@ public class FamilyMemberListActivity extends Activity implements View.OnKeyList
 //                            spbla07f23.setText(spbla07f23.getText().toString());
                             createToast("Can't subtract already added", spbla07f23);
                         } else {
+
+                            if (R.id.spbla07m23 != edit.getId()) {
+                                flag = true;
+                                btn_Continue.setEnabled(true);
+                                btn_addMember.setEnabled(true);
+                            }
                             spbla07f23.setError(null);
-                            btn_Continue.setEnabled(true);
-                            btn_addMember.setEnabled(true);
                         }
                     }
 
@@ -229,9 +229,12 @@ public class FamilyMemberListActivity extends Activity implements View.OnKeyList
                             createToast("Can't subtract already added", spbla07m59);
                         }
                     } else {
+                        if (R.id.spbla07f59 != edit.getId()) {
+                            flag = true;
+                            btn_Continue.setEnabled(true);
+                            btn_addMember.setEnabled(true);
+                        }
                         spbla07m59.setError(null);
-                        btn_Continue.setEnabled(true);
-                        btn_addMember.setEnabled(true);
                     }
 
                     if (!spbla07f59.getText().toString().isEmpty()) {
@@ -240,9 +243,12 @@ public class FamilyMemberListActivity extends Activity implements View.OnKeyList
                             createToast("Can't subtract already added", spbla07f59);
                         }
                     } else {
+                        if (R.id.spbla07m59 != edit.getId()) {
+                            flag = true;
+                            btn_Continue.setEnabled(true);
+                            btn_addMember.setEnabled(true);
+                        }
                         spbla07f59.setError(null);
-                        btn_Continue.setEnabled(true);
-                        btn_addMember.setEnabled(true);
                     }
 
                     child.put(1, spbla07m59.getText().toString());
@@ -331,7 +337,7 @@ public class FamilyMemberListActivity extends Activity implements View.OnKeyList
     void onBtnAddMemberClick() {
         //TODO implement
 
-        if (formValidation(false)) {
+        if (formValidation(true)) {
             startActivity(new Intent(this, SectionBActivity.class));
         }
     }
@@ -507,16 +513,14 @@ public class FamilyMemberListActivity extends Activity implements View.OnKeyList
                     + Integer.valueOf(spbla07m6.getText().toString()) + Integer.valueOf(spbla07f6.getText().toString())
                     + Integer.valueOf(spbla07m23.getText().toString()) + Integer.valueOf(spbla07f23.getText().toString())
                     + Integer.valueOf(spbla07m59.getText().toString()) + Integer.valueOf(spbla07f59.getText().toString()))) {
-                Toast.makeText(this, "ERROR(Invalid): " + getString(R.string.spbla07c), Toast.LENGTH_SHORT).show();
-                spbla07m59.setError("Can not be zero..!");
-                spbla07f59.setError("Can not be zero..!");
-                Log.i(TAG, "spbla07c: Can not be zero..!");
+                Toast.makeText(this, "ERROR(Invalid): " + getString(R.string.spbla07t), Toast.LENGTH_SHORT).show();
+                spbla07t.setError("Can not be greater than total members..!");
+                Log.i(TAG, "spbla07: Can not be zero..!");
 
-                spbla07m59.requestFocus();
+                spbla07t.requestFocus();
                 return false;
             } else {
-                spbla07m59.setError(null);
-                spbla07f59.setError(null);
+                spbla07t.setError(null);
             }
         }
 
