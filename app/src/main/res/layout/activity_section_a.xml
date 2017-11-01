@@ -897,7 +897,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:backgroundTint="@color/green"
+                android:backgroundTint="@color/black"
                 android:text="@string/start_interview"
                 android:textColor="#1ed61e" />
 

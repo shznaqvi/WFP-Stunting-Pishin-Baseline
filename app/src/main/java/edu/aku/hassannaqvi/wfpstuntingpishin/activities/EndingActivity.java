@@ -65,6 +65,7 @@ public class EndingActivity extends Activity {
             if (UpdateDB()) {
 
                 MainApp.familyMembersList.clear();
+                MainApp.counter = 0;
 
                 finish();
 

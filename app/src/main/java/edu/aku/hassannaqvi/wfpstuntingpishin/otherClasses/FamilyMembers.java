@@ -11,6 +11,7 @@ public class FamilyMembers {
     String dob;
     String motherName;
     String type;
+    String serial;
 
     public String getMotherName() {
         return motherName;
@@ -36,9 +37,13 @@ public class FamilyMembers {
         return type;
     }
 
-    public FamilyMembers(String memberName, String mStatus, String gender, String dob, String motherName, String type) {
+    public String getSerial() {
+        return serial;
+    }
+
+    public FamilyMembers(String memberName, String serial, String gender, String dob, String motherName, String type) {
         this.memberName = memberName;
-        this.mStatus = mStatus;
+        this.serial = serial;
         this.gender = gender;
         this.dob = dob;
         this.motherName = motherName;
