@@ -23,7 +23,8 @@
 
 
     <style name="BackgroundStyle" parent="android:Widget.ScrollView">
-        <item name="android:background">#efefef</item>
+        <!--<item name="android:background">#efefef</item>-->
+        <item name="android:background">#d6d6d6</item>
         <item name="android:padding">24dp</item>
     </style>
 
@@ -100,7 +101,7 @@
 
     <style name="textInput" parent="android:Widget.Material.Light.EditText">
         <item name="android:textSize">24sp</item>
-        <item name="android:background">#d6d6d6</item>
+        <item name="android:background">#efefef</item>
         <item name="android:paddingBottom">8dp</item>
         <item name="android:paddingStart">8dp</item>
         <item name="android:paddingEnd">8dp</item>
@@ -142,7 +143,7 @@
         <item name="android:gravity">right</item>
         <item name="android:orientation">vertical</item>
         <item name="android:layout_marginBottom">16dp</item>
-        <item name="android:background">#d6d6d6</item>
+        <item name="android:background">#efefef</item>
         <item name="android:textSize">24sp</item>
         <item name="android:typeface">serif</item>
         <item name="android:padding">16dp</item>
@@ -156,7 +157,7 @@
         <item name="android:drawableRight">@android:drawable/btn_radio</item>
         <item name="android:textSize">24sp</item>
         <item name="android:typeface">serif</item>
-        <item name="android:background">#d6d6d6</item>
+        <item name="android:background">#efefef</item>
         <item name="android:padding">4dp</item>
     </style>
 
@@ -179,7 +180,7 @@
         <item name="android:textSize">24sp</item>
         <item name="android:typeface">serif</item>
         <item name="android:drawableRight">?android:attr/listChoiceIndicatorMultiple</item>
-        <item name="android:background">#d6d6d6</item>
+        <item name="android:background">#efefef</item>
         <item name="android:padding">4dp</item>
 
 

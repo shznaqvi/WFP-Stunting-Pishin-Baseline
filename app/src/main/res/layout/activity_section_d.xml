@@ -51,13 +51,10 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:layout_marginTop="16dp"
                 android:background="@color/colorHeading"
+                android:gravity="center"
                 android:text="@string/spbld01b"
-                android:textColor="@color/colorPrimaryDark"
-                android:textSize="25sp"
-                tools:typeface="serif" />
+                android:textColor="@color/colorPrimaryDark"/>
 
             <RadioButton
                 android:id="@+id/spbld01c"
@@ -110,21 +107,24 @@
             <RadioGroup
                 android:id="@+id/spbld02"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
                 <RadioButton
                     android:id="@+id/spbld02a"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
-                    android:text="@string/spbld02a" />
+                    android:layout_weight="1"
+                    android:text="@string/spbld02a"/>
 
                 <RadioButton
                     android:id="@+id/spbld02b"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
-                    android:text="@string/spbld02b" />
+                    android:layout_weight="1"
+                    android:text="@string/spbld02b"/>
 
             </RadioGroup>
 
@@ -183,21 +183,24 @@
         <RadioGroup
             android:id="@+id/spbld04"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
             <RadioButton
                 android:id="@+id/spbld04a"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
-                android:text="@string/yes" />
+                android:layout_weight="1"
+                android:text="@string/yes"/>
 
             <RadioButton
                 android:id="@+id/spbld04b"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
-                android:text="@string/no" />
+                android:layout_weight="1"
+                android:text="@string/no"/>
 
         </RadioGroup>
 

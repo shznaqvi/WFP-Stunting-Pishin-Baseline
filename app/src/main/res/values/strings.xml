@@ -109,10 +109,10 @@
     <!--<string name="spbla09">  گاؤں یا علاقہ کا کوڈ </string>-->
     <string name="spbla03">  گاؤں یا علاقہ کا نام </string>
   <string name="spbla04">  گھر کا نمبر </string>
-    <!--<string name="spbla11">  جواب دہندہ کا نام </string>-->
-    <!--<string name="spbla12">  جواب دہندہ کا علاقہ: </string>-->
-    <!--<string name="spbla13">  جواب دہندہ کی تعلیم </string>-->
-    <!--<string name="spbla14">  جواب دہندہ کا پیشہ </string>-->
+  <string name="spbla11">  جواب دہندہ کا نام </string>
+  <string name="spbla12">  جواب دہندہ کی عمر </string>
+  <string name="spbla13">  جواب دہندہ کی تعلیم </string>
+  <string name="spbla14">  جواب دہندہ کا پیشہ </string>
     <string name="spbla05">  جواب دہندہ کون ہے؟ </string>
     <string name="spbla05a">  حاملہ عورت </string>
     <string name="spbla05b">  دودھ پلانے والی ماں </string>
