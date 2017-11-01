@@ -327,49 +327,34 @@
             android:text="@string/spbla06"
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
-        <!--<RadioGroup
-            android:id="@+id/spbla06a"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">-->
-
         <CheckBox
             android:id="@+id/spbla06a"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:text="@string/spbla06a"/>
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:text="@string/spbla06a"/>
 
         <CheckBox
             android:id="@+id/spbla06b"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:text="@string/spbla06b"/>
-
-
-        <!--</RadioGroup>-->
-
-
-        <!--<RadioGroup
-            android:id="@+id/spbla06b"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">-->
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:text="@string/spbla06b"/>
+
 
         <CheckBox
             android:id="@+id/spbla06c"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:text="@string/spbla06c"/>
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:text="@string/spbla06c"/>
 
         <CheckBox
             android:id="@+id/spbla06d"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:text="@string/spbla06d"/>
-
-        <!--</RadioGroup>-->
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:text="@string/spbla06d"/>
 
 
         <!--07-->

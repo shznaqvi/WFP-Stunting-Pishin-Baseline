@@ -396,6 +396,7 @@ public class SectionHActivity extends Activity {
         setContentView(R.layout.activity_section_h);
         ButterKnife.bind(this);
 
+
         spblh02.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {

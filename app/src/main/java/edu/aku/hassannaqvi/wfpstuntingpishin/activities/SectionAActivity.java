@@ -25,11 +25,9 @@ import org.json.JSONObject;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import butterknife.BindView;
-import butterknife.BindViews;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import edu.aku.hassannaqvi.wfpstuntingpishin.R;
@@ -136,8 +134,8 @@ public class SectionAActivity extends Activity {
     @BindView(R.id.spbla08c)
     RadioButton spbla08c;
 
-    @BindViews({R.id.spbla06a, R.id.spbla06b})
-    List<RadioGroup> spbla06;
+    /*@BindViews({R.id.spbla06a, R.id.spbla06b})
+    List<RadioGroup> spbla06;*/
     @BindView(R.id.btn_Continue)
     Button btn_Continue;
     @BindView(R.id.btn_End)
@@ -205,13 +203,11 @@ public class SectionAActivity extends Activity {
 
         MainApp.fc.setDevicetagID(sharedPref.getString("tagName", null));
         MainApp.fc.setFormDate(new Date().toString());
-        MainApp.fc.setInterviewer01(MainApp.loginMem[1]);
-        MainApp.fc.setInterviewer01(MainApp.loginMem[2]);
+        //MainApp.fc.setInterviewer01(MainApp.loginMem[1]);
+        //MainApp.fc.setInterviewer02(MainApp.loginMem[2]);
         MainApp.fc.setDeviceID(Settings.Secure.getString(getApplicationContext().getContentResolver(),
                 Settings.Secure.ANDROID_ID));
         MainApp.fc.setAppVersion(MainApp.versionName + "." + MainApp.versionCode);
-        //MainApp.fc.setFormType(MainApp.formType);
-//        MainApp.fc.setParticipantID(participantId.getText().toString());
 
         JSONObject sInfo = new JSONObject();
 
