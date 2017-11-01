@@ -232,7 +232,7 @@ public class SectionBActivity extends Activity {
 
             MainApp.fmc.set_UID(
                     (MainApp.fc.getDeviceID() + MainApp.fc.get_ID()));
-            db.updateFormID();
+            db.updateFamilyMemberID();
             return true;
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
@@ -280,7 +280,8 @@ public class SectionBActivity extends Activity {
         String type;
         int childType = checkChildAgeMonths(spblb04y.getText().toString(), spblb04m.getText().toString(), spblb04d.getText().toString());
         if (childType == 0) {
-            type = spblb02b.isChecked() && spblb07a.isChecked() ? "mw" :
+            type = spblb02b.isChecked() && spblb07a.isChecked() &&
+                    (Integer.valueOf(spblb04y.getText().toString()) >= 15 && Integer.valueOf(spblb04y.getText().toString()) < 50) ? "mw" :
                     spblb02b.isChecked() && spblb07b.isChecked() ? "w" : "m";
         } else {
             type = "ch";
