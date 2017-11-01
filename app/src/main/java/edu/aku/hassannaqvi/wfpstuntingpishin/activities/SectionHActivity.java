@@ -1284,7 +1284,7 @@ public class SectionHActivity extends Activity {
 
     @OnClick(R.id.btnNext)
     void onBtnNextClick() {
-       /* if (ValidateForm()) {
+        if (ValidateForm()) {
             try {
                 SaveDraft();
             } catch (JSONException e) {
@@ -1296,14 +1296,14 @@ public class SectionHActivity extends Activity {
                 finish();
 
 
-                Intent endSec = new Intent(this, EndingActivity.class);
+                Intent endSec = new Intent(this, SectionIActivity.class);
                 endSec.putExtra("complete", true);
                 startActivity(endSec);
 
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }
-        }*/
+        }
 
         Intent secNext = new Intent(this, SectionIActivity.class);
         secNext.putExtra("check", false);
@@ -1325,7 +1325,7 @@ public class SectionHActivity extends Activity {
     private boolean UpdateDB() {
         DatabaseHelper db = new DatabaseHelper(this);
 
-     /*   int updcount = db.updateSH();
+        int updcount = db.updateSH();
 
         if (updcount == 1) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
@@ -1333,9 +1333,9 @@ public class SectionHActivity extends Activity {
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
             return false;
-        }*/
+        }
 
-        return true;
+
     }
 
     private void SaveDraft() throws JSONException {
@@ -1487,7 +1487,7 @@ public class SectionHActivity extends Activity {
         sh.put("spblh2588x", spblh2588x.getText().toString());
 
 
-        //   MainApp.fc.setsH(String.valueOf(sh));
+        MainApp.fc.setsH(String.valueOf(sh));
 
         Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
     }

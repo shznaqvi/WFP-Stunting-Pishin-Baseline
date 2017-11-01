@@ -425,7 +425,7 @@ public class SectionGActivity extends Activity {
 
     @OnClick(R.id.btnNext)
     void onBtnNextClick() {
-        /*if (ValidateForm()) {
+        if (ValidateForm()) {
             try {
                 SaveDraft();
             } catch (JSONException e) {
@@ -437,18 +437,16 @@ public class SectionGActivity extends Activity {
                 finish();
 
 
-                Intent endSec = new Intent(this, EndingActivity.class);
+                Intent endSec = new Intent(this, SectionHActivity.class);
                 endSec.putExtra("complete", true);
                 startActivity(endSec);
 
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }
-        }*/
+        }
 
-        Intent secNext = new Intent(this, SectionHActivity.class);
-        secNext.putExtra("check", false);
-        startActivity(secNext);
+
 
     }
 
@@ -481,7 +479,7 @@ public class SectionGActivity extends Activity {
     private boolean UpdateDB() {
         DatabaseHelper db = new DatabaseHelper(this);
 
-     /*   int updcount = db.updateSG();
+        int updcount = db.updateSG();
 
         if (updcount == 1) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
@@ -489,9 +487,9 @@ public class SectionGActivity extends Activity {
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
             return false;
-        }*/
+        }
 
-        return true;
+
     }
 
     private void SaveDraft() throws JSONException {
@@ -546,7 +544,7 @@ public class SectionGActivity extends Activity {
         sg.put("spblg0115x", spblg0115x.getText().toString());
         sg.put("spblg0115src", spblg0115src.getText().toString());
 
-        //   MainApp.fc.setsG(String.valueOf(sg));
+        MainApp.fc.setsG(String.valueOf(sg));
 
         Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
     }

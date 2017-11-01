@@ -205,10 +205,12 @@ public class SectionAActivity extends Activity {
 
         MainApp.fc.setDevicetagID(sharedPref.getString("tagName", null));
         MainApp.fc.setFormDate(new Date().toString());
-        MainApp.fc.setUser(MainApp.userName);
+        MainApp.fc.setInterviewer01(MainApp.loginMem[1]);
+        MainApp.fc.setInterviewer01(MainApp.loginMem[2]);
         MainApp.fc.setDeviceID(Settings.Secure.getString(getApplicationContext().getContentResolver(),
                 Settings.Secure.ANDROID_ID));
-        MainApp.fc.setFormType(MainApp.formType);
+        MainApp.fc.setAppVersion(MainApp.versionName + "." + MainApp.versionCode);
+        //MainApp.fc.setFormType(MainApp.formType);
 //        MainApp.fc.setParticipantID(participantId.getText().toString());
 
         JSONObject sInfo = new JSONObject();
@@ -240,7 +242,7 @@ public class SectionAActivity extends Activity {
         sInfo.put("spbla07f59", spbla07f59.getText().toString());
         sInfo.put("spbla08", spbla08a.isChecked() ? "1" : spbla08b.isChecked() ? "2" : spbla08c.isChecked() ? "3" : "0");
 
-        MainApp.fc.setInfo(String.valueOf(sInfo));
+        MainApp.fc.setsA(String.valueOf(sInfo));
 
         Map<Integer, Map<Integer, String>> children = new HashMap<>();
         Map<Integer, String> child = new HashMap<>();

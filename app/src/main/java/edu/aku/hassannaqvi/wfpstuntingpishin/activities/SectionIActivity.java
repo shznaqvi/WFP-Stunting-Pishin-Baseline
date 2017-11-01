@@ -24,6 +24,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import edu.aku.hassannaqvi.wfpstuntingpishin.R;
+import edu.aku.hassannaqvi.wfpstuntingpishin.core.DatabaseHelper;
 import edu.aku.hassannaqvi.wfpstuntingpishin.core.MainApp;
 
 //import edu.aku.hassannaqvi.wfpstuntingpishin.R;
@@ -755,7 +756,7 @@ public class SectionIActivity extends Activity {
 
                 finish();
 
-                Intent secNext = new Intent(this, SectionEActivity.class);
+                Intent secNext = new Intent(this, SectionJActivity.class);
                 startActivity(secNext);
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
@@ -782,9 +783,9 @@ public class SectionIActivity extends Activity {
 
     private boolean UpdateDB() {
 
-        //DatabaseHelper db = new DatabaseHelper(this);
+        DatabaseHelper db = new DatabaseHelper(this);
 
-        /*int updcount = db.updateSHI();
+        int updcount = db.updateSI();
 
         if (updcount == 1) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
@@ -792,9 +793,8 @@ public class SectionIActivity extends Activity {
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
             return false;
-        }*/
+        }
 
-        return true;
 
     }
 
@@ -1619,7 +1619,7 @@ public class SectionIActivity extends Activity {
 
         sHI.put("spbli02888x", spbli02888x.getText().toString());
 
-        //MainApp.fc.setsI(String.valueOf(sHI));
+        MainApp.fc.setsI(String.valueOf(sHI));
 
     }
 

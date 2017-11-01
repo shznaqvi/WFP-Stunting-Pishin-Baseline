@@ -60,7 +60,7 @@ public class SectionNActivity extends Activity {
         //TODO implement
 
         Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();
-        /*if (formValidation()) {
+        if (formValidation()) {
             try {
                 SaveDraft();
             } catch (JSONException e) {
@@ -74,11 +74,9 @@ public class SectionNActivity extends Activity {
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }
-        }*/
+        }
 
-        Intent secNext = new Intent(this, SectionOActivity.class);
-        secNext.putExtra("check", false);
-        startActivity(secNext);
+
 
     }
 
@@ -127,14 +125,14 @@ public class SectionNActivity extends Activity {
 //        0502b
         sN.put("spbln0502b", spbln0502b.getText().toString());
 
-//        MainApp.fc.setsN(String.valueOf(sN));
+        MainApp.fc.setsN(String.valueOf(sN));
     }
 
     private boolean UpdateDB() {
 
         DatabaseHelper db = new DatabaseHelper(this);
 
-        /*int updcount = db.updateSN();
+        int updcount = db.updateSN();
 
         if (updcount == 1) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
@@ -142,8 +140,8 @@ public class SectionNActivity extends Activity {
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
             return false;
-        }*/
-        return true;
+        }
+
     }
 
     public boolean formValidation() {

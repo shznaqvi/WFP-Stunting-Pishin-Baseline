@@ -55,7 +55,7 @@ public class SectionJActivity extends Activity {
     @OnClick(R.id.btn_Continue)
     void onBtnContinueClick() {
 
-        /*if (ValidateForm()) {
+        if (ValidateForm()) {
             try {
                 SaveDraft();
             } catch (JSONException e) {
@@ -67,18 +67,14 @@ public class SectionJActivity extends Activity {
                 finish();
 
 
-                Intent endSec = new Intent(this, EndingActivity.class);
+                Intent endSec = new Intent(this, SectionKActivity.class);
                 endSec.putExtra("complete", true);
                 startActivity(endSec);
 
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }
-        }*/
-
-        Intent secNext = new Intent(this, SectionKActivity.class);
-        secNext.putExtra("check", false);
-        startActivity(secNext);
+        }
 
 
     }
@@ -113,7 +109,7 @@ public class SectionJActivity extends Activity {
         sJ.put("spblj0302a", spblj0201a.getSelectedItem().toString());
         sJ.put("spblj0302b", spblj0201b.getText().toString());
 
-//        MainApp.ims.setsI(String.valueOf(sI));
+        MainApp.fc.setsJ(String.valueOf(sJ));
 
         Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
 

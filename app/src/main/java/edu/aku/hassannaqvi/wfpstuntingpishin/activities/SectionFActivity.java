@@ -87,7 +87,7 @@ public class SectionFActivity extends Activity {
     @OnClick(R.id.btnNext)
     void SaveData() {
 
-        /*if (ValidateForm()) {
+        if (ValidateForm()) {
             try {
                 SaveDraft();
             } catch (JSONException e) {
@@ -99,12 +99,12 @@ public class SectionFActivity extends Activity {
 
                 finish();
 
-                Intent secNext = new Intent(this, SectionEActivity.class);
+                Intent secNext = new Intent(this, SectionGActivity.class);
                 startActivity(secNext);
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }
-        }*/
+        }
 
         Intent secNext = new Intent(this, SectionGActivity.class);
         secNext.putExtra("check", false);
@@ -128,7 +128,7 @@ public class SectionFActivity extends Activity {
 
         DatabaseHelper db = new DatabaseHelper(this);
 
-        /*int updcount = db.updateSHF();
+        int updcount = db.updateSF();
 
         if (updcount == 1) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
@@ -136,9 +136,9 @@ public class SectionFActivity extends Activity {
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
             return false;
-        }*/
+        }
 
-        return true;
+
 
     }
 
@@ -258,7 +258,7 @@ public class SectionFActivity extends Activity {
         sHE.put("spblf03", spblf03.getText().toString());
 
 
-        //MainApp.fc.setsHE(String.valueOf(sHE));
+        MainApp.fc.setsF(String.valueOf(sHE));
 
     }
 

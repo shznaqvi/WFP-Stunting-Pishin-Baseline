@@ -325,7 +325,7 @@ public class SectionLIMActivity extends Activity
     @OnClick(R.id.btn_Continue)
     void onBtnContinueClick() {
 
-        /*if (ValidateForm()) {
+        if (ValidateForm()) {
             try {
                 SaveDraft();
             } catch (JSONException e) {
@@ -337,18 +337,15 @@ public class SectionLIMActivity extends Activity
                 finish();
 
 
-                Intent endSec = new Intent(this, EndingActivity.class);
+                Intent endSec = new Intent(this, SectionMActivity.class);
                 endSec.putExtra("complete", true);
                 startActivity(endSec);
 
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }
-        }*/
+        }
 
-        Intent secNext = new Intent(this, SectionMActivity.class);
-        secNext.putExtra("check", false);
-        startActivity(secNext);
 
 
     }
@@ -427,7 +424,7 @@ public class SectionLIMActivity extends Activity
         sI.put("vitaminAM", vitaminAM01.isChecked() ? "1" : vitaminAM02.isChecked() ? "2" : "0");
         sI.put("vitaminAC", vitaminAC01.isChecked() ? "1" : vitaminAC02.isChecked() ? "2" : "0");
 
-//        MainApp.ims.setsI(String.valueOf(sI));
+        MainApp.fc.setsL(String.valueOf(sI));
 
         Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
 

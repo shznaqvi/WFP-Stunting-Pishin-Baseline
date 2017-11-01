@@ -196,7 +196,7 @@ public class SectionEActivity extends Activity {
 
         DatabaseHelper db = new DatabaseHelper(this);
 
-        /*int updcount = db.updateSHE();
+        int updcount = db.updateSE();
 
         if (updcount == 1) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
@@ -205,9 +205,8 @@ public class SectionEActivity extends Activity {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
             return false;
         }
-*/
 
-        return true;
+
     }
 
 
@@ -368,7 +367,7 @@ public class SectionEActivity extends Activity {
 
         //sHE.put("appver", MainApp.versionName + "." + MainApp.versionCode);
 
-        //MainApp.fc.setsHE(String.valueOf(sHE));
+        MainApp.fc.setsE(String.valueOf(sHE));
 
     }
 }

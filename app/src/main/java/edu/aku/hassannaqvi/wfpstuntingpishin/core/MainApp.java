@@ -28,8 +28,8 @@ import edu.aku.hassannaqvi.wfpstuntingpishin.contracts.FamilyMembersContract;
 import edu.aku.hassannaqvi.wfpstuntingpishin.contracts.FetusContract;
 import edu.aku.hassannaqvi.wfpstuntingpishin.contracts.FormsContract;
 import edu.aku.hassannaqvi.wfpstuntingpishin.otherClasses.FamilyMembers;
-import edu.aku.hassannaqvi.wfpstuntingpishin.otherClasses.MothersLst;
 import edu.aku.hassannaqvi.wfpstuntingpishin.otherClasses.MembersCount;
+import edu.aku.hassannaqvi.wfpstuntingpishin.otherClasses.MothersLst;
 
 /**
  * Created by hassan.naqvi on 11/30/2016.
@@ -75,7 +75,8 @@ public class MainApp extends Application {
     public static final long MILLISECONDS_IN_49Years = MILLIS_IN_SECOND * SECONDS_IN_MINUTE * MINUTES_IN_HOUR * HOURS_IN_DAY * DAYS_IN_49Years;
     private static final long DAYS_IN_15Years = 5475;
     public static final long MILLISECONDS_IN_15Years = MILLIS_IN_SECOND * SECONDS_IN_MINUTE * MINUTES_IN_HOUR * HOURS_IN_DAY * DAYS_IN_15Years;
-
+    public static int versionCode;
+    public static String versionName;
 
     public static String deviceId;
 
@@ -87,6 +88,7 @@ public class MainApp extends Application {
     public static FetusContract fec;
     public static JSONObject f03 = new JSONObject();
     public static String userName = "0000";
+    public static String[] loginMem;
     public static String areaCode;
     //    Total No of members got from Section A
     public static int NoMembersCount = 0;
@@ -126,16 +128,15 @@ public class MainApp extends Application {
     public static List<FormsContract> participantList;
     public static String formType;
     public static boolean eligibleFlag = false;
-    protected static LocationManager locationManager;
-    Location location;
-
-//    Ali
-
     public static MembersCount members;
     public static MembersCount checkMembers;
+
+    //    Ali
     public static ArrayList<FamilyMembers> familyMembersList;
     public static FamilyMembersContract fmc;
     public static int counter = 0;
+    protected static LocationManager locationManager;
+    Location location;
 
     public static int monthsBetweenDates(Date startDate, Date endDate) {
 
