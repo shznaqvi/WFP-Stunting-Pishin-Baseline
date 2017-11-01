@@ -9,6 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,13 +24,14 @@ import java.util.List;
 import java.util.Map;
 
 import butterknife.BindView;
+import butterknife.BindViews;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import edu.aku.hassannaqvi.wfpstuntingpishin.R;
 import edu.aku.hassannaqvi.wfpstuntingpishin.core.MainApp;
 import edu.aku.hassannaqvi.wfpstuntingpishin.otherClasses.FamilyMembers;
 
-public class FamilyMemberListActivity extends Activity {
+public class FamilyMemberListActivity extends Activity implements View.OnKeyListener {
 
     private static final String TAG = FamilyMemberListActivity.class.getName();
     @BindView(R.id.spbla07t)
@@ -62,6 +64,8 @@ public class FamilyMemberListActivity extends Activity {
     RecyclerView recyclerNoMembers;
 
     familyMembersAdapter mAdapter;
+
+    Boolean flag = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -96,12 +100,20 @@ public class FamilyMemberListActivity extends Activity {
 
 //        Text Watchers
 
+
+        spbla07t.setOnKeyListener(this);
         spbla07t.addTextChangedListener(new CustomTextWatcher(spbla07t));
+        spbla07m6.setOnKeyListener(this);
         spbla07m6.addTextChangedListener(new CustomTextWatcher(spbla07m6));
+        spbla07f6.setOnKeyListener(this);
         spbla07f6.addTextChangedListener(new CustomTextWatcher(spbla07f6));
+        spbla07m23.setOnKeyListener(this);
         spbla07m23.addTextChangedListener(new CustomTextWatcher(spbla07m23));
+        spbla07f23.setOnKeyListener(this);
         spbla07f23.addTextChangedListener(new CustomTextWatcher(spbla07f23));
+        spbla07m59.setOnKeyListener(this);
         spbla07m59.addTextChangedListener(new CustomTextWatcher(spbla07m59));
+        spbla07f59.setOnKeyListener(this);
         spbla07f59.addTextChangedListener(new CustomTextWatcher(spbla07f59));
 
 
@@ -148,22 +160,30 @@ public class FamilyMemberListActivity extends Activity {
 
                     if (!spbla07m6.getText().toString().isEmpty()) {
                         if (Integer.valueOf(MainApp.checkMembers.getChildren().get(0).get(1)) > Integer.valueOf(spbla07m6.getText().toString())) {
-                            spbla07m6.setText(spbla07m6.getText().toString());
+//                            spbla07m6.setText(spbla07m6.getText().toString());
                             createToast("Can't subtract already added", spbla07m6);
+                        } else {
+                            spbla07m6.setError(null);
+                            btn_Continue.setEnabled(true);
+                            btn_addMember.setEnabled(true);
                         }
                     }
 
                     if (!spbla07f6.getText().toString().isEmpty()) {
                         if (Integer.valueOf(MainApp.checkMembers.getChildren().get(0).get(2)) > Integer.valueOf(spbla07f6.getText().toString())) {
-                            spbla07f6.setText(spbla07f6.getText().toString());
+//                            spbla07f6.setText(spbla07f6.getText().toString());
                             createToast("Can't subtract already added", spbla07f6);
+                        } else {
+                            spbla07f6.setError(null);
+                            btn_Continue.setEnabled(true);
+                            btn_addMember.setEnabled(true);
                         }
                     }
                     child.put(1, spbla07m6.getText().toString());
                     child.put(2, spbla07f6.getText().toString());
 
                     children.put(0, child);
-                    MainApp.members.setChildren(children);
+                    MainApp.members.setChildren(0, child);
 
                     break;
 
@@ -172,15 +192,23 @@ public class FamilyMemberListActivity extends Activity {
 
                     if (!spbla07m23.getText().toString().isEmpty()) {
                         if (Integer.valueOf(MainApp.checkMembers.getChildren().get(1).get(1)) > Integer.valueOf(spbla07m23.getText().toString())) {
-                            spbla07m23.setText(spbla07m23.getText().toString());
+//                            spbla07m23.setText(spbla07m23.getText().toString());
                             createToast("Can't subtract already added", spbla07m23);
+                        } else {
+                            spbla07f23.setError(null);
+                            btn_Continue.setEnabled(true);
+                            btn_addMember.setEnabled(true);
                         }
                     }
 
                     if (!spbla07f23.getText().toString().isEmpty()) {
                         if (Integer.valueOf(MainApp.checkMembers.getChildren().get(1).get(2)) > Integer.valueOf(spbla07f23.getText().toString())) {
-                            spbla07f23.setText(spbla07f23.getText().toString());
+//                            spbla07f23.setText(spbla07f23.getText().toString());
                             createToast("Can't subtract already added", spbla07f23);
+                        } else {
+                            spbla07f23.setError(null);
+                            btn_Continue.setEnabled(true);
+                            btn_addMember.setEnabled(true);
                         }
                     }
 
@@ -188,7 +216,7 @@ public class FamilyMemberListActivity extends Activity {
                     child.put(2, spbla07f23.getText().toString());
 
                     children.put(1, child);
-                    MainApp.members.setChildren(children);
+                    MainApp.members.setChildren(1, child);
 
                     break;
 
@@ -197,23 +225,31 @@ public class FamilyMemberListActivity extends Activity {
 
                     if (!spbla07m59.getText().toString().isEmpty()) {
                         if (Integer.valueOf(MainApp.checkMembers.getChildren().get(2).get(1)) > Integer.valueOf(spbla07m59.getText().toString())) {
-                            spbla07m59.setText(spbla07m59.getText().toString());
+//                            spbla07m59.setText(spbla07m59.getText().toString());
                             createToast("Can't subtract already added", spbla07m59);
                         }
+                    } else {
+                        spbla07m59.setError(null);
+                        btn_Continue.setEnabled(true);
+                        btn_addMember.setEnabled(true);
                     }
 
                     if (!spbla07f59.getText().toString().isEmpty()) {
                         if (Integer.valueOf(MainApp.checkMembers.getChildren().get(2).get(2)) > Integer.valueOf(spbla07f59.getText().toString())) {
-                            spbla07f59.setText(spbla07f59.getText().toString());
+//                            spbla07f59.setText(spbla07f59.getText().toString());
                             createToast("Can't subtract already added", spbla07f59);
                         }
+                    } else {
+                        spbla07f59.setError(null);
+                        btn_Continue.setEnabled(true);
+                        btn_addMember.setEnabled(true);
                     }
 
                     child.put(1, spbla07m59.getText().toString());
                     child.put(2, spbla07f59.getText().toString());
 
                     children.put(2, child);
-                    MainApp.members.setChildren(children);
+                    MainApp.members.setChildren(2, child);
 
                     break;
             }
@@ -225,17 +261,70 @@ public class FamilyMemberListActivity extends Activity {
             women.put(2, spbla07mw.getText().toString());
 
             MainApp.members.setWomen(women);
+
+
         }
 
         public void afterTextChanged(Editable s) {
-
+            if (flag && !(spbla07t.getText().toString().isEmpty() &&
+                    spbla07m6.getText().toString().isEmpty() && spbla07f6.getText().toString().isEmpty() &&
+                    spbla07m23.getText().toString().isEmpty() && spbla07f23.getText().toString().isEmpty() &&
+                    spbla07m59.getText().toString().isEmpty() && spbla07f59.getText().toString().isEmpty())) {
+                resumeWork();
+            }
         }
+    }
+
+    @Override
+    public boolean onKey(View view, int keyCode, KeyEvent keyEvent) {
+        if (keyCode == KeyEvent.KEYCODE_DEL) {
+            switch (view.getId()) {
+
+                case R.id.spbla07m6:
+                    if (Integer.valueOf(MainApp.checkMembers.getChildren().get(0).get(1)) < Integer.valueOf(spbla07m6.getText().toString())) {
+                        return false;
+                    }
+                    break;
+                case R.id.spbla07f6:
+                    if (Integer.valueOf(MainApp.checkMembers.getChildren().get(0).get(2)) < Integer.valueOf(spbla07f6.getText().toString())) {
+                        return false;
+                    }
+                    break;
+                case R.id.spbla07m23:
+                    if (Integer.valueOf(MainApp.checkMembers.getChildren().get(1).get(1)) < Integer.valueOf(spbla07m23.getText().toString())) {
+                        return false;
+                    }
+                    break;
+                case R.id.spbla07f23:
+                    if (Integer.valueOf(MainApp.checkMembers.getChildren().get(1).get(2)) < Integer.valueOf(spbla07f23.getText().toString())) {
+                        return false;
+                    }
+                    break;
+                case R.id.spbla07m59:
+                    if (Integer.valueOf(MainApp.checkMembers.getChildren().get(2).get(1)) < Integer.valueOf(spbla07m59.getText().toString())) {
+                        return false;
+                    }
+                    break;
+                case R.id.spbla07f59:
+                    if (Integer.valueOf(MainApp.checkMembers.getChildren().get(2).get(2)) < Integer.valueOf(spbla07f59.getText().toString())) {
+                        return false;
+                    }
+                    break;
+            }
+        }
+        return true;
     }
 
     public void createToast(String msg, EditText name) {
         Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Fix Error to open buttons!", Toast.LENGTH_SHORT).show();
         EditText edit = name;
-        edit.setText("Invalid");
+        edit.setError("Invalid");
+
+        btn_Continue.setEnabled(false);
+        btn_addMember.setEnabled(false);
+
+        flag = false;
     }
 
     @OnClick(R.id.btn_addMember)

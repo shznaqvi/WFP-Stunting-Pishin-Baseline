@@ -64,7 +64,7 @@
         android:layout_marginRight="8dp"
         android:gravity="right"
         android:text="Status"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/colorPrimary"
         android:textSize="18sp"
         android:textStyle="bold" />
 
@@ -80,7 +80,7 @@
         android:layout_marginRight="8dp"
         android:gravity="right"
         android:text="Status"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/colorPrimary"
         android:textSize="18sp"
         android:textStyle="bold" />
 

@@ -140,7 +140,7 @@ public class SectionBActivity extends Activity {
         mothersMap.put("N/A", "0");
 
         for (FamilyMembers mem : MainApp.familyMembersList) {
-            if (mem.getMemberName().equals("mw") || mem.getMemberName().equals("w")) {
+            if (mem.getType().equals("mw") || mem.getType().equals("w")) {
                 mothersList.add(mem.getMemberName());
                 mothersMap.put(mem.getMemberName(), mem.getSerial());
             }
@@ -158,21 +158,59 @@ public class SectionBActivity extends Activity {
     void onBtnContinueClick() {
 
         if (ValidateForm()) {
-            try {
-                SaveDraft();
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-            if (UpdateDB()) {
-                Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
+            if (validateChecks()) {
+                try {
+                    SaveDraft();
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                if (UpdateDB()) {
+                    Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
 
-                finish();
+                    finish();
 
-            } else {
-                Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
+                }
             }
         }
+    }
 
+    public boolean validateChecks() {
+
+        int childType = checkChildAgeMonths(spblb04y.getText().toString(), spblb04m.getText().toString(), spblb04d.getText().toString());
+
+        if (MainApp.members.getCount() < MainApp.checkMembers.getCount()) {
+            Toast.makeText(this, "Error", Toast.LENGTH_SHORT).show();
+            MainApp.errorCountDialog(this, this, "First increase no of members in previous section");
+
+            return false;
+        }
+        switch (childType) {
+            case 1:
+                if (Integer.valueOf(MainApp.members.getChildren().get(0).get(1)) == Integer.valueOf(MainApp.checkMembers.getChildren().get(0).get(1))
+                        && Integer.valueOf(MainApp.members.getChildren().get(0).get(2)) == Integer.valueOf(MainApp.checkMembers.getChildren().get(0).get(2))) {
+                    MainApp.errorCountDialog(this, this, "First increase no of count of  < 6 Months child");
+                    return false;
+                }
+                break;
+            case 2:
+                if (Integer.valueOf(MainApp.members.getChildren().get(1).get(1)) == Integer.valueOf(MainApp.checkMembers.getChildren().get(1).get(1))
+                        && Integer.valueOf(MainApp.members.getChildren().get(1).get(2)) == Integer.valueOf(MainApp.checkMembers.getChildren().get(1).get(2))) {
+                    MainApp.errorCountDialog(this, this, "First increase no of count of  6-23 Months child");
+                    return false;
+                }
+                break;
+            case 3:
+                if (Integer.valueOf(MainApp.members.getChildren().get(2).get(1)) == Integer.valueOf(MainApp.checkMembers.getChildren().get(2).get(1))
+                        && Integer.valueOf(MainApp.members.getChildren().get(2).get(2)) == Integer.valueOf(MainApp.checkMembers.getChildren().get(2).get(2))) {
+                    MainApp.errorCountDialog(this, this, "First increase no of count of  24-59 Months child");
+                    return false;
+                }
+                break;
+        }
+
+        return true;
     }
 
     @OnClick(R.id.btn_End)
@@ -185,7 +223,7 @@ public class SectionBActivity extends Activity {
 
         DatabaseHelper db = new DatabaseHelper(this);
 
-        /*long updcount = db.addFamilyMember(MainApp.fmc);
+        long updcount = db.addFamilyMembers(MainApp.fmc);
 
         MainApp.fmc.set_ID(String.valueOf(updcount));
 
@@ -199,10 +237,7 @@ public class SectionBActivity extends Activity {
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
             return false;
-        }*/
-
-        return true;
-
+        }
     }
 
     private void SaveDraft() throws JSONException {
@@ -255,29 +290,29 @@ public class SectionBActivity extends Activity {
 
         if (childType == 1) {
             if (spblb02a.isChecked()) {
-                child.put(1, String.valueOf(Integer.valueOf(MainApp.checkMembers.getChildren().get(0).get(1) + 1)));
+                child.put(1, String.valueOf(Integer.valueOf(MainApp.checkMembers.getChildren().get(0).get(1)) + 1));
                 child.put(2, MainApp.checkMembers.getChildren().get(0).get(2));
             } else if (spblb02b.isChecked()) {
                 child.put(1, MainApp.checkMembers.getChildren().get(0).get(1));
-                child.put(2, String.valueOf(Integer.valueOf(MainApp.checkMembers.getChildren().get(0).get(2) + 1)));
+                child.put(2, String.valueOf(Integer.valueOf(MainApp.checkMembers.getChildren().get(0).get(2)) + 1));
             }
             MainApp.checkMembers.setChildren(0, child);
         } else if (childType == 2) {
             if (spblb02a.isChecked()) {
-                child.put(1, String.valueOf(Integer.valueOf(MainApp.checkMembers.getChildren().get(1).get(1) + 1)));
+                child.put(1, String.valueOf(Integer.valueOf(MainApp.checkMembers.getChildren().get(1).get(1)) + 1));
                 child.put(2, MainApp.checkMembers.getChildren().get(1).get(2));
             } else if (spblb02b.isChecked()) {
                 child.put(1, MainApp.checkMembers.getChildren().get(1).get(1));
-                child.put(2, String.valueOf(Integer.valueOf(MainApp.checkMembers.getChildren().get(1).get(2) + 1)));
+                child.put(2, String.valueOf(Integer.valueOf(MainApp.checkMembers.getChildren().get(1).get(2)) + 1));
             }
             MainApp.checkMembers.setChildren(1, child);
         } else if (childType == 3) {
             if (spblb02a.isChecked()) {
-                child.put(1, String.valueOf(Integer.valueOf(MainApp.checkMembers.getChildren().get(2).get(1) + 1)));
+                child.put(1, String.valueOf(Integer.valueOf(MainApp.checkMembers.getChildren().get(2).get(1)) + 1));
                 child.put(2, MainApp.checkMembers.getChildren().get(2).get(2));
             } else if (spblb02b.isChecked()) {
                 child.put(1, MainApp.checkMembers.getChildren().get(2).get(1));
-                child.put(2, String.valueOf(Integer.valueOf(MainApp.checkMembers.getChildren().get(2).get(2) + 1)));
+                child.put(2, String.valueOf(Integer.valueOf(MainApp.checkMembers.getChildren().get(2).get(2)) + 1));
             }
             MainApp.checkMembers.setChildren(2, child);
         }
