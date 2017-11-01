@@ -18,12 +18,14 @@ import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
+import edu.aku.hassannaqvi.wfpstuntingpishin.contracts.FamilyMembersContract;
 import edu.aku.hassannaqvi.wfpstuntingpishin.contracts.FetusContract;
 import edu.aku.hassannaqvi.wfpstuntingpishin.contracts.FormsContract;
 import edu.aku.hassannaqvi.wfpstuntingpishin.contracts.FormsContract.FormsTable;
 import edu.aku.hassannaqvi.wfpstuntingpishin.contracts.UsersContract;
 import edu.aku.hassannaqvi.wfpstuntingpishin.contracts.UsersContract.UsersTable;
 import edu.aku.hassannaqvi.wfpstuntingpishin.otherClasses.MothersLst;
+import edu.aku.hassannaqvi.wfpstuntingpishin.contracts.FamilyMembersContract.familyMembers;
 
 
 /**
@@ -75,22 +77,20 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
             + " );";
 
-
-    private static final String SQL_CREATE_FETUS = "CREATE TABLE "
-            + FetusContract.FetusTable.TABLE_NAME + "("
-            + FetusContract.FetusTable._ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
-            + FetusContract.FetusTable.COLUMN_PROJECTNAME + " TEXT,"
-            + FetusContract.FetusTable.COLUMN__UID + " TEXT," +
-            FetusContract.FetusTable.COLUMN__UUID + " TEXT," +
-            FetusContract.FetusTable.COLUMN_USER + " TEXT," +
-            FetusContract.FetusTable.COLUMN_PARTICIPANTID + " TEXT," +
-            FetusContract.FetusTable.COLUMN_FORMDATE + " TEXT," +
-            FetusContract.FetusTable.COLUMN_F08 + " TEXT," +
-            FetusContract.FetusTable.COLUMN_DEVICEID + " TEXT," +
-            FetusContract.FetusTable.COLUMN_DEVICETAGID + " TEXT," +
-            FetusContract.FetusTable.COLUMN_SYNCED + " TEXT," +
-            FetusContract.FetusTable.COLUMN_SYNCED_DATE + " TEXT"
-
+    private static final String SQL_CREATE_FAMILY_MEMBERS = "CREATE TABLE "
+            + familyMembers.TABLE_NAME + "("
+            + familyMembers.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+            + familyMembers.COLUMN_PROJECT_NAME + " TEXT," +
+            familyMembers.COLUMN_DEVICETAGID + " TEXT," +
+            familyMembers.COLUMN_UID + " TEXT," +
+            familyMembers.COLUMN_UUID + " TEXT," +
+            familyMembers.COLUMN_FORMDATE + " TEXT," +
+            familyMembers.COLUMN_DEVICEID + " TEXT," +
+            familyMembers.COLUMN_USER + " TEXT," +
+            familyMembers.COLUMN_SB + " TEXT," +
+            familyMembers.COLUMN_ISTATUS + " TEXT," +
+            familyMembers.COLUMN_SYNCED + " TEXT," +
+            familyMembers.COLUMN_SYNCED_DATE + " TEXT"
             + " );";
 
 
@@ -99,8 +99,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String SQL_DELETE_FORMS =
             "DROP TABLE IF EXISTS " + FormsTable.TABLE_NAME;
 
-    private static final String SQL_DELETE_FETUS =
-            "DROP TABLE IF EXISTS " + FetusContract.FetusTable.TABLE_NAME;
+    private static final String SQL_DELETE_FAMILY_MEMBERS =
+            "DROP TABLE IF EXISTS " + familyMembers.TABLE_NAME;
 
     private static final String SQL_SELECT_MOTHER_BY_CHILD =
             "SELECT c.agem cm, c.agey cy, c.aged cd, c.gender, c.serial serial, m.serial serialm, c.name child_name, c.dss_id_member child_id, m.name mother_name, c.dss_id_member mother_id, c.dob date_of_birth FROM census C join census m on c.dss_id_m = m.dss_id_member where c.member_type =? and c.uuid = m.uuid and c.current_status IN ('1', '2') and c.uuid = ? group by mother_id order by substr(c.dob, 7) desc, substr(c.dob, 4,2) desc, substr(c.dob, 1,2) desc;";
@@ -125,7 +125,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         db.execSQL(SQL_CREATE_USERS);
         db.execSQL(SQL_CREATE_FORMS);
-        db.execSQL(SQL_CREATE_FETUS);
+        db.execSQL(SQL_CREATE_FAMILY_MEMBERS);
 
     }
 
@@ -133,7 +133,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
         db.execSQL(SQL_DELETE_USERS);
         db.execSQL(SQL_DELETE_FORMS);
-        db.execSQL(SQL_DELETE_FETUS);
+        db.execSQL(SQL_DELETE_FAMILY_MEMBERS);
 
     }
 
@@ -302,30 +302,28 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
-    public Long addFetus(FetusContract fec) {
+    public Long addFamilyMembers(FamilyMembersContract fmc) {
 
         // Gets the data repository in write mode
         SQLiteDatabase db = this.getWritableDatabase();
 
 // Create a new map of values, where column names are the keys
         ContentValues values = new ContentValues();
-        values.put(FetusContract.FetusTable.COLUMN_PROJECTNAME, fec.getProjectName());
-        values.put(FetusContract.FetusTable.COLUMN__UID, fec.get_UID());
-        values.put(FetusContract.FetusTable.COLUMN__UUID, fec.get_UUID());
-        values.put(FetusContract.FetusTable.COLUMN_USER, fec.getUser());
-        values.put(FetusContract.FetusTable.COLUMN_PARTICIPANTID, fec.getParticipantID());
-        values.put(FetusContract.FetusTable.COLUMN_FORMDATE, fec.getFormDate());
-        values.put(FetusContract.FetusTable.COLUMN_F08, fec.getF08());
-        values.put(FetusContract.FetusTable.COLUMN_DEVICEID, fec.getDeviceID());
-        values.put(FetusContract.FetusTable.COLUMN_DEVICETAGID, fec.getDevicetagID());
-        values.put(FetusContract.FetusTable.COLUMN_SYNCED, fec.getSynced());
-        values.put(FetusContract.FetusTable.COLUMN_SYNCED_DATE, fec.getSynced_date());
+        values.put(familyMembers.COLUMN_PROJECT_NAME, fmc.getProjectName());
+        values.put(familyMembers.COLUMN_UID, fmc.get_UID());
+        values.put(familyMembers.COLUMN_UUID, fmc.get_UUID());
+        values.put(familyMembers.COLUMN_FORMDATE, fmc.getFormDate());
+        values.put(familyMembers.COLUMN_USER, fmc.getUser());
+        values.put(familyMembers.COLUMN_ISTATUS, fmc.getIstatus());
+        values.put(familyMembers.COLUMN_SB, fmc.getsB());
+        values.put(familyMembers.COLUMN_DEVICETAGID, fmc.getDevicetagID());
+        values.put(familyMembers.COLUMN_DEVICEID, fmc.getDeviceId());
 
         // Insert the new row, returning the primary key value of the new row
         long newRowId;
         newRowId = db.insert(
-                FetusContract.FetusTable.TABLE_NAME,
-                FetusContract.FetusTable.COLUMN_NAME_NULLABLE,
+                familyMembers.TABLE_NAME,
+                familyMembers.COLUMN_NAME_NULLABLE,
                 values);
         return newRowId;
     }

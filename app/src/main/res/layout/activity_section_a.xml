@@ -679,7 +679,7 @@
                 android:layout_weight="1"
                 android:backgroundTint="@color/red"
                 android:text="@string/end_interview"
-                android:textColor="#ff1e1e"
+                android:textColor="@color/white"
                 android:visibility="gone" />
 
             <Button
@@ -687,9 +687,9 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:backgroundTint="@color/black"
+                android:backgroundTint="#1ed61e"
                 android:text="@string/start_interview"
-                android:textColor="#1ed61e" />
+                android:textColor="@color/white" />
 
         </LinearLayout>
 
