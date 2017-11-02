@@ -36,11 +36,14 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="@android:color/white" />
 
-        <Spinner
+        <TextView
             android:id="@+id/spbli01w"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"></Spinner>
+            android:layout_marginTop="10dp"
+            android:background="@color/pink_100"
+            android:text=""
+            android:textColor="@color/colorPrimaryDark" />
 
         <TextView
             android:layout_width="match_parent"
@@ -102,9 +105,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
                 android:digits="0123456789"
-                android:maxLength="2"
                 android:hint="@string/month"
-                android:inputType="number" />
+                android:inputType="number"
+                android:maxLength="2" />
 
         </LinearLayout>
 
@@ -322,7 +325,8 @@
                 android:layout_marginBottom="1dp"
                 android:digits="0123456789"
                 android:hint="@string/spbli06"
-                android:inputType="number" />
+                android:inputType="number"
+                android:maxLength="2" />
 
             <CheckBox
                 android:id="@+id/spbli06999"
@@ -347,7 +351,8 @@
                 android:layout_marginBottom="1dp"
                 android:digits="0123456789"
                 android:hint="@string/spbli07"
-                android:inputType="number" />
+                android:inputType="number"
+                android:maxLength="2" />
 
             <CheckBox
                 android:id="@+id/spbli07999"
@@ -489,7 +494,8 @@
                 android:layout_marginBottom="1dp"
                 android:digits="0123456789"
                 android:hint="@string/spbli10"
-                android:inputType="number" />
+                android:inputType="number"
+                android:maxLength="2" />
 
             <CheckBox
                 android:id="@+id/spbli01099"
@@ -561,7 +567,8 @@
                 android:layout_marginBottom="1dp"
                 android:digits="0123456789"
                 android:hint="@string/spbli12"
-                android:inputType="number" />
+                android:inputType="number"
+                android:maxLength="2" />
 
             <CheckBox
                 android:id="@+id/spbli01299"
@@ -586,7 +593,8 @@
                 android:layout_marginBottom="1dp"
                 android:digits="0123456789"
                 android:hint="@string/spbli13"
-                android:inputType="number" />
+                android:inputType="number"
+                android:maxLength="2" />
 
         </LinearLayout>
 
@@ -652,7 +660,8 @@
                 android:layout_marginBottom="1dp"
                 android:digits="0123456789"
                 android:hint="@string/spbli15"
-                android:inputType="number" />
+                android:inputType="number"
+                android:maxLength="2" />
 
             <CheckBox
                 android:id="@+id/spbli01597"
@@ -1271,9 +1280,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="1dp"
-            android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz "
+            android:digits="0123456789"
             android:hint="@string/spbli26a"
-            android:inputType="textCapWords"
+            android:inputType="number"
+            android:maxLength="2"
             android:visibility="gone" />
 
         <EditText
@@ -1281,9 +1291,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="1dp"
-            android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz "
+            android:digits="0123456789"
             android:hint="@string/spbli26b"
             android:inputType="textCapWords"
+            android:maxLength="2"
             android:visibility="gone" />
 
         <EditText
@@ -1291,9 +1302,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="1dp"
-            android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz "
+            android:digits="0123456789"
             android:hint="@string/spbli26c"
-            android:inputType="textCapWords"
+            android:inputType="number"
+            android:maxLength="2"
             android:visibility="gone" />
 
 

@@ -88,6 +88,7 @@ public class MainApp extends Application {
     public static FetusContract fec;
     public static JSONObject f03 = new JSONObject();
     public static String userName = "0000";
+    public static String userName2 = "0000";
     public static String[] loginMem;
     public static String areaCode;
     //    Total No of members got from Section A
@@ -130,6 +131,7 @@ public class MainApp extends Application {
     public static boolean eligibleFlag = false;
     public static MembersCount members;
     public static MembersCount checkMembers;
+    public static String selectedWoman = "";
 
     //    Ali
     public static ArrayList<FamilyMembers> familyMembersList;

@@ -24,7 +24,6 @@ import java.util.List;
 import java.util.Map;
 
 import butterknife.BindView;
-import butterknife.BindViews;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import edu.aku.hassannaqvi.wfpstuntingpishin.R;
@@ -119,168 +118,6 @@ public class FamilyMemberListActivity extends Activity implements View.OnKeyList
 
     }
 
-    private class CustomTextWatcher implements TextWatcher {
-        private EditText edit;
-
-        public CustomTextWatcher(EditText e) {
-            edit = e;
-        }
-
-        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-        }
-
-        public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-            Map<Integer, Map<Integer, String>> children = new HashMap<>();
-            Map<Integer, String> child = new HashMap<>();
-
-            switch (edit.getId()) {
-
-                case R.id.spbla07t:
-                    if (spbla07t.getText().toString().isEmpty()) {
-                        MainApp.members.setCount(Integer.valueOf(spbla07t.getText().toString()));
-                    }
-                    break;
-
-                case R.id.spbla07m6:
-                case R.id.spbla07f6:
-
-                    if (!spbla07m6.getText().toString().isEmpty()) {
-                        if (Integer.valueOf(MainApp.checkMembers.getChildren().get(0).get(1)) > Integer.valueOf(spbla07m6.getText().toString())) {
-//                            spbla07m6.setText(spbla07m6.getText().toString());
-                            createToast("Can't subtract already added", spbla07m6);
-                        } else {
-                            if (R.id.spbla07f6 != edit.getId()) {
-                                flag = true;
-                                btn_Continue.setEnabled(true);
-                                btn_addMember.setEnabled(true);
-                            }
-                            spbla07m6.setError(null);
-                        }
-                    }
-
-                    if (!spbla07f6.getText().toString().isEmpty()) {
-                        if (Integer.valueOf(MainApp.checkMembers.getChildren().get(0).get(2)) > Integer.valueOf(spbla07f6.getText().toString())) {
-//                            spbla07f6.setText(spbla07f6.getText().toString());
-                            createToast("Can't subtract already added", spbla07f6);
-                        } else {
-                            if (R.id.spbla07m6 != edit.getId()) {
-                                flag = true;
-                                btn_Continue.setEnabled(true);
-                                btn_addMember.setEnabled(true);
-                            }
-                            spbla07f6.setError(null);
-                        }
-                    }
-                    child.put(1, spbla07m6.getText().toString());
-                    child.put(2, spbla07f6.getText().toString());
-
-                    children.put(0, child);
-                    MainApp.members.setChildren(0, child);
-
-                    break;
-
-                case R.id.spbla07m23:
-                case R.id.spbla07f23:
-
-                    if (!spbla07m23.getText().toString().isEmpty()) {
-                        if (Integer.valueOf(MainApp.checkMembers.getChildren().get(1).get(1)) > Integer.valueOf(spbla07m23.getText().toString())) {
-//                            spbla07m23.setText(spbla07m23.getText().toString());
-                            createToast("Can't subtract already added", spbla07m23);
-                        } else {
-                            if (R.id.spbla07f23 != edit.getId()) {
-                                flag = true;
-                                btn_Continue.setEnabled(true);
-                                btn_addMember.setEnabled(true);
-                            }
-                            spbla07f23.setError(null);
-                        }
-                    }
-
-                    if (!spbla07f23.getText().toString().isEmpty()) {
-                        if (Integer.valueOf(MainApp.checkMembers.getChildren().get(1).get(2)) > Integer.valueOf(spbla07f23.getText().toString())) {
-//                            spbla07f23.setText(spbla07f23.getText().toString());
-                            createToast("Can't subtract already added", spbla07f23);
-                        } else {
-
-                            if (R.id.spbla07m23 != edit.getId()) {
-                                flag = true;
-                                btn_Continue.setEnabled(true);
-                                btn_addMember.setEnabled(true);
-                            }
-                            spbla07f23.setError(null);
-                        }
-                    }
-
-                    child.put(1, spbla07m23.getText().toString());
-                    child.put(2, spbla07f23.getText().toString());
-
-                    children.put(1, child);
-                    MainApp.members.setChildren(1, child);
-
-                    break;
-
-                case R.id.spbla07m59:
-                case R.id.spbla07f59:
-
-                    if (!spbla07m59.getText().toString().isEmpty()) {
-                        if (Integer.valueOf(MainApp.checkMembers.getChildren().get(2).get(1)) > Integer.valueOf(spbla07m59.getText().toString())) {
-//                            spbla07m59.setText(spbla07m59.getText().toString());
-                            createToast("Can't subtract already added", spbla07m59);
-                        }
-                    } else {
-                        if (R.id.spbla07f59 != edit.getId()) {
-                            flag = true;
-                            btn_Continue.setEnabled(true);
-                            btn_addMember.setEnabled(true);
-                        }
-                        spbla07m59.setError(null);
-                    }
-
-                    if (!spbla07f59.getText().toString().isEmpty()) {
-                        if (Integer.valueOf(MainApp.checkMembers.getChildren().get(2).get(2)) > Integer.valueOf(spbla07f59.getText().toString())) {
-//                            spbla07f59.setText(spbla07f59.getText().toString());
-                            createToast("Can't subtract already added", spbla07f59);
-                        }
-                    } else {
-                        if (R.id.spbla07m59 != edit.getId()) {
-                            flag = true;
-                            btn_Continue.setEnabled(true);
-                            btn_addMember.setEnabled(true);
-                        }
-                        spbla07f59.setError(null);
-                    }
-
-                    child.put(1, spbla07m59.getText().toString());
-                    child.put(2, spbla07f59.getText().toString());
-
-                    children.put(2, child);
-                    MainApp.members.setChildren(2, child);
-
-                    break;
-            }
-
-//        Women
-            Map<Integer, String> women = new HashMap<>();
-            women.put(0, spbla07pw.getText().toString());
-            women.put(1, spbla07lw.getText().toString());
-            women.put(2, spbla07mw.getText().toString());
-
-            MainApp.members.setWomen(women);
-
-
-        }
-
-        public void afterTextChanged(Editable s) {
-            if (flag && !(spbla07t.getText().toString().isEmpty() &&
-                    spbla07m6.getText().toString().isEmpty() && spbla07f6.getText().toString().isEmpty() &&
-                    spbla07m23.getText().toString().isEmpty() && spbla07f23.getText().toString().isEmpty() &&
-                    spbla07m59.getText().toString().isEmpty() && spbla07f59.getText().toString().isEmpty())) {
-                resumeWork();
-            }
-        }
-    }
-
     @Override
     public boolean onKey(View view, int keyCode, KeyEvent keyEvent) {
         if (keyCode == KeyEvent.KEYCODE_DEL) {
@@ -348,7 +185,7 @@ public class FamilyMemberListActivity extends Activity implements View.OnKeyList
 
         if (formValidation(true)) {
             finish();
-            startActivity(new Intent(this, SectionDActivity.class));
+            startActivity(new Intent(this, SectionHActivity.class));
         }
     }
 
@@ -527,6 +364,169 @@ public class FamilyMemberListActivity extends Activity implements View.OnKeyList
 //        Main Validation
 
         return true;
+    }
+
+    private class CustomTextWatcher implements TextWatcher
+    {
+        private EditText edit;
+
+        public CustomTextWatcher(EditText e) {
+            edit = e;
+        }
+
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+        }
+
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            Map<Integer, Map<Integer, String>> children = new HashMap<>();
+            Map<Integer, String> child = new HashMap<>();
+
+            switch (edit.getId()) {
+
+                case R.id.spbla07t:
+                    if (spbla07t.getText().toString().isEmpty()) {
+                        MainApp.members.setCount(Integer.valueOf(spbla07t.getText().toString()));
+                    }
+                    break;
+
+                case R.id.spbla07m6:
+                case R.id.spbla07f6:
+
+                    if (!spbla07m6.getText().toString().isEmpty()) {
+                        if (Integer.valueOf(MainApp.checkMembers.getChildren().get(0).get(1)) > Integer.valueOf(spbla07m6.getText().toString())) {
+//                            spbla07m6.setText(spbla07m6.getText().toString());
+                            createToast("Can't subtract already added", spbla07m6);
+                        } else {
+                            if (R.id.spbla07f6 != edit.getId()) {
+                                flag = true;
+                                btn_Continue.setEnabled(true);
+                                btn_addMember.setEnabled(true);
+                            }
+                            spbla07m6.setError(null);
+                        }
+                    }
+
+                    if (!spbla07f6.getText().toString().isEmpty()) {
+                        if (Integer.valueOf(MainApp.checkMembers.getChildren().get(0).get(2)) > Integer.valueOf(spbla07f6.getText().toString())) {
+//                            spbla07f6.setText(spbla07f6.getText().toString());
+                            createToast("Can't subtract already added", spbla07f6);
+                        } else {
+                            if (R.id.spbla07m6 != edit.getId()) {
+                                flag = true;
+                                btn_Continue.setEnabled(true);
+                                btn_addMember.setEnabled(true);
+                            }
+                            spbla07f6.setError(null);
+                        }
+                    }
+                    child.put(1, spbla07m6.getText().toString());
+                    child.put(2, spbla07f6.getText().toString());
+
+                    children.put(0, child);
+                    MainApp.members.setChildren(0, child);
+
+                    break;
+
+                case R.id.spbla07m23:
+                case R.id.spbla07f23:
+
+                    if (!spbla07m23.getText().toString().isEmpty()) {
+                        if (Integer.valueOf(MainApp.checkMembers.getChildren().get(1).get(1)) > Integer.valueOf(spbla07m23.getText().toString())) {
+//                            spbla07m23.setText(spbla07m23.getText().toString());
+                            createToast("Can't subtract already added", spbla07m23);
+                        } else {
+                            if (R.id.spbla07f23 != edit.getId()) {
+                                flag = true;
+                                btn_Continue.setEnabled(true);
+                                btn_addMember.setEnabled(true);
+                            }
+                            spbla07f23.setError(null);
+                        }
+                    }
+
+                    if (!spbla07f23.getText().toString().isEmpty()) {
+                        if (Integer.valueOf(MainApp.checkMembers.getChildren().get(1).get(2)) > Integer.valueOf(spbla07f23.getText().toString())) {
+//                            spbla07f23.setText(spbla07f23.getText().toString());
+                            createToast("Can't subtract already added", spbla07f23);
+                        } else {
+
+                            if (R.id.spbla07m23 != edit.getId()) {
+                                flag = true;
+                                btn_Continue.setEnabled(true);
+                                btn_addMember.setEnabled(true);
+                            }
+                            spbla07f23.setError(null);
+                        }
+                    }
+
+                    child.put(1, spbla07m23.getText().toString());
+                    child.put(2, spbla07f23.getText().toString());
+
+                    children.put(1, child);
+                    MainApp.members.setChildren(1, child);
+
+                    break;
+
+                case R.id.spbla07m59:
+                case R.id.spbla07f59:
+
+                    if (!spbla07m59.getText().toString().isEmpty()) {
+                        if (Integer.valueOf(MainApp.checkMembers.getChildren().get(2).get(1)) > Integer.valueOf(spbla07m59.getText().toString())) {
+//                            spbla07m59.setText(spbla07m59.getText().toString());
+                            createToast("Can't subtract already added", spbla07m59);
+                        }
+                    } else {
+                        if (R.id.spbla07f59 != edit.getId()) {
+                            flag = true;
+                            btn_Continue.setEnabled(true);
+                            btn_addMember.setEnabled(true);
+                        }
+                        spbla07m59.setError(null);
+                    }
+
+                    if (!spbla07f59.getText().toString().isEmpty()) {
+                        if (Integer.valueOf(MainApp.checkMembers.getChildren().get(2).get(2)) > Integer.valueOf(spbla07f59.getText().toString())) {
+//                            spbla07f59.setText(spbla07f59.getText().toString());
+                            createToast("Can't subtract already added", spbla07f59);
+                        }
+                    } else {
+                        if (R.id.spbla07m59 != edit.getId()) {
+                            flag = true;
+                            btn_Continue.setEnabled(true);
+                            btn_addMember.setEnabled(true);
+                        }
+                        spbla07f59.setError(null);
+                    }
+
+                    child.put(1, spbla07m59.getText().toString());
+                    child.put(2, spbla07f59.getText().toString());
+
+                    children.put(2, child);
+                    MainApp.members.setChildren(2, child);
+
+                    break;
+            }
+
+//        Women
+            Map<Integer, String> women = new HashMap<>();
+            women.put(0, spbla07pw.getText().toString());
+            women.put(1, spbla07lw.getText().toString());
+            women.put(2, spbla07mw.getText().toString());
+
+            MainApp.members.setWomen(women);
+
+
+        }
+
+        public void afterTextChanged(Editable s) {
+            if (flag && !(spbla07t.getText().toString().isEmpty() &&
+                    spbla07m6.getText().toString().isEmpty() && spbla07f6.getText().toString().isEmpty() &&
+                    spbla07m23.getText().toString().isEmpty() && spbla07f23.getText().toString().isEmpty() &&
+                    spbla07m59.getText().toString().isEmpty() && spbla07f59.getText().toString().isEmpty())) {
+                resumeWork();
+            }
+        }
     }
 
     public class familyMembersAdapter extends RecyclerView.Adapter<familyMembersAdapter.viewHolder> {

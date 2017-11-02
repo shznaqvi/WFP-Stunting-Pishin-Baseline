@@ -268,7 +268,30 @@
                         android:singleLine="true"
                         android:textSize="18sp">
 
+
+                    </EditText>
+
+                    <EditText
+                        android:id="@+id/email2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:layout_weight="0.99"
+                        android:drawableEnd="@drawable/ic_assignment_ind_black_24dp"
+                        android:drawablePadding="8dp"
+                        android:hint="Username/Code"
+                        android:imeActionId="@+id/login"
+                        android:imeActionLabel="@string/action_sign_in_short"
+                        android:imeOptions="actionUnspecified"
+                        android:inputType="textEmailAddress"
+                        android:maxLines="1"
+                        android:paddingEnd="4dp"
+                        android:paddingStart="4dp"
+                        android:singleLine="true"
+                        android:textSize="18sp">
+
                         <requestFocus />
+
                     </EditText>
 
                 </LinearLayout>
@@ -294,6 +317,37 @@
 
                     <EditText
                         android:id="@+id/password"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_weight="0.99"
+                        android:drawableEnd="@drawable/ic_lock_black_24dp"
+                        android:drawablePadding="8dp"
+                        android:hint="@string/prompt_password"
+                        android:imeActionId="@+id/login"
+                        android:imeActionLabel="@string/action_sign_in_short"
+                        android:imeOptions="actionUnspecified"
+                        android:inputType="textPassword"
+                        android:maxLines="1"
+                        android:paddingEnd="4dp"
+                        android:paddingStart="4dp"
+                        android:singleLine="true"
+                        android:textSize="18sp" />
+
+                    <Button
+                        android:id="@+id/showPassword2"
+                        style="?android:attr/borderlessButtonStyle"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/round_button"
+                        android:drawableStart="@drawable/ic_remove_red_eye_black_24dp"
+                        android:gravity="center"
+                        android:padding="3dp"
+                        android:textSize="18sp" />
+
+                    <EditText
+                        android:id="@+id/password2"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
