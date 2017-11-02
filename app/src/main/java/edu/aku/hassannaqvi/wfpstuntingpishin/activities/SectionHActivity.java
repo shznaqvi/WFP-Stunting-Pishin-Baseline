@@ -2,10 +2,13 @@ package edu.aku.hassannaqvi.wfpstuntingpishin.activities;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
@@ -13,10 +16,15 @@ import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -390,11 +398,46 @@ public class SectionHActivity extends Activity {
     @BindView(R.id.fldGrpbtn)
     LinearLayout fldGrpbtn;
 
+    Map<String, String> mwraMap;
+    ArrayList<String> lstMwra;
+
+    int position = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_section_h);
         ButterKnife.bind(this);
+
+
+        mwraMap = new HashMap<>();
+        lstMwra = new ArrayList<>();
+
+        mwraMap.put("....", "");
+        lstMwra.add("....");
+
+        for (byte i = 0; i < MainApp.familyMembersList.size(); i++) {
+            if (MainApp.familyMembersList.get(i).getType().equals("mw")) {
+                mwraMap.put(MainApp.familyMembersList.get(i).getMemberName(), MainApp.familyMembersList.get(i).getSerial());
+                lstMwra.add(MainApp.familyMembersList.get(i).getMemberName());
+            }
+        }
+
+        spblh01.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, lstMwra));
+
+        spblh01.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                position = i;
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
 
         spblh02.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -785,7 +828,6 @@ public class SectionHActivity extends Activity {
                 }
             }
         });
-
 
 
         spblh24.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -1284,7 +1326,7 @@ public class SectionHActivity extends Activity {
 
     @OnClick(R.id.btnNext)
     void onBtnNextClick() {
-       /* if (ValidateForm()) {
+        if (ValidateForm()) {
             try {
                 SaveDraft();
             } catch (JSONException e) {
@@ -1296,18 +1338,15 @@ public class SectionHActivity extends Activity {
                 finish();
 
 
-                Intent endSec = new Intent(this, EndingActivity.class);
-                endSec.putExtra("complete", true);
+                Intent endSec = new Intent(this, SectionIActivity.class);
+                endSec.putExtra("getName", spblh01.getSelectedItem().toString());
                 startActivity(endSec);
 
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }
-        }*/
+        }
 
-        Intent secNext = new Intent(this, SectionIActivity.class);
-        secNext.putExtra("check", false);
-        startActivity(secNext);
 
     }
 
@@ -1325,7 +1364,7 @@ public class SectionHActivity extends Activity {
     private boolean UpdateDB() {
         DatabaseHelper db = new DatabaseHelper(this);
 
-     /*   int updcount = db.updateSH();
+        int updcount = db.updateSH();
 
         if (updcount == 1) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
@@ -1333,9 +1372,9 @@ public class SectionHActivity extends Activity {
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
             return false;
-        }*/
+        }
 
-        return true;
+
     }
 
     private void SaveDraft() throws JSONException {
@@ -1343,6 +1382,8 @@ public class SectionHActivity extends Activity {
 
         JSONObject sh = new JSONObject();
 
+        sh.put("spblh01", spblh01.getSelectedItem().toString());
+        //MainApp.selectedWoman = spblh01.getSelectedItem().toString();
         sh.put("spblh02", spblh02a.isChecked() ? "1" : spblh02b.isChecked() ? "2" : spblh0299.isChecked() ? "99" : "0");
         sh.put("spblh03a", spblh03a.isChecked() ? "1" : "0");
         sh.put("spblh03b", spblh03b.isChecked() ? "2" : "0");
@@ -1487,13 +1528,24 @@ public class SectionHActivity extends Activity {
         sh.put("spblh2588x", spblh2588x.getText().toString());
 
 
-        //   MainApp.fc.setsH(String.valueOf(sh));
+        MainApp.fc.setsH(String.valueOf(sh));
 
         Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
     }
 
     public boolean ValidateForm() {
 
+
+        if (spblh01.getSelectedItem().toString() == "....") {
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblh01), Toast.LENGTH_SHORT).show();
+            ((TextView) spblh01.getSelectedView()).setText("This Data is Required");
+            ((TextView) spblh01.getSelectedView()).setTextColor(Color.RED);
+            spblh01.requestFocus();
+            Log.i(TAG, "spbli01w: This Data is Required!");
+            return false;
+        } else {
+            ((TextView) spblh01.getSelectedView()).setError(null);
+        }
 
         // =================== Q2 ====================
         if (spblh02.getCheckedRadioButtonId() == -1) {
@@ -1517,8 +1569,10 @@ public class SectionHActivity extends Activity {
                 spblh0388.setError("This Data is Required");
                 spblh0388.setFocusableInTouchMode(true);
                 spblh0388.setFocusable(true);
-                spblh0388.requestFocus();
                 Log.d(TAG, "spblh03:This Data is Required");
+                spblh0388.requestFocus();
+                return false;
+
             } else {
                 spblh0388.setError(null);
             }
@@ -1532,6 +1586,7 @@ public class SectionHActivity extends Activity {
                     spblh0388.setFocusable(true);
                     spblh0388.requestFocus();
                     Log.d(TAG, "spblh03:This Data is Required");
+                    return false;
                 } else {
                     spblh0388.setError(null);
                 }
@@ -1555,6 +1610,7 @@ public class SectionHActivity extends Activity {
                 spblh0488.setFocusable(true);
                 spblh0488.requestFocus();
                 Log.d(TAG, "spblh04:This Data is Required");
+                return false;
             } else {
                 spblh0488.setError(null);
             }
@@ -1567,6 +1623,7 @@ public class SectionHActivity extends Activity {
                     spblh0488.setFocusable(true);
                     spblh0488.requestFocus();
                     Log.d(TAG, "spblh04:This Data is Required");
+                    return false;
                 } else {
                     spblh0488.setError(null);
                 }
@@ -1606,6 +1663,7 @@ public class SectionHActivity extends Activity {
                 spblh0688.setFocusable(true);
                 spblh0688.requestFocus();
                 Log.d(TAG, "spblh06:This Data is Required");
+                return false;
             } else {
                 spblh0688.setError(null);
             }
@@ -1619,6 +1677,7 @@ public class SectionHActivity extends Activity {
                     spblh0688.setFocusable(true);
                     spblh0688.requestFocus();
                     Log.d(TAG, "spblh06:This Data is Required");
+                    return false;
                 } else {
                     spblh0688.setError(null);
                 }
@@ -1644,6 +1703,7 @@ public class SectionHActivity extends Activity {
                 spblh0788.setFocusable(true);
                 spblh0788.requestFocus();
                 Log.d(TAG, "spblh07:This Data is Required");
+                return false;
             } else {
                 spblh0788.setError(null);
             }
@@ -1658,6 +1718,7 @@ public class SectionHActivity extends Activity {
                     spblh0788.setFocusable(true);
                     spblh0788.requestFocus();
                     Log.d(TAG, "spblh07:This Data is Required");
+                    return false;
                 } else {
                     spblh0788.setError(null);
                 }
@@ -1696,6 +1757,7 @@ public class SectionHActivity extends Activity {
                 spblh0988.setFocusable(true);
                 spblh0988.requestFocus();
                 Log.d(TAG, "spblh09:This Data is Required");
+                return false;
             } else {
                 spblh0988.setError(null);
             }
@@ -1709,6 +1771,7 @@ public class SectionHActivity extends Activity {
                     spblh0988.setFocusable(true);
                     spblh0988.requestFocus();
                     Log.d(TAG, "spblh09:This Data is Required");
+                    return false;
                 } else {
                     spblh0988.setError(null);
                 }
@@ -1732,7 +1795,8 @@ public class SectionHActivity extends Activity {
                 spblh1088.setFocusableInTouchMode(true);
                 spblh1088.setFocusable(true);
                 spblh1088.requestFocus();
-                Log.d(TAG, "spblh10:This Data is Required");
+                Log.d(TAG, "spblh10: This Data is Required");
+                return false;
             } else {
                 spblh1088.setError(null);
             }
@@ -1745,7 +1809,8 @@ public class SectionHActivity extends Activity {
                     spblh1088.setFocusableInTouchMode(true);
                     spblh1088.setFocusable(true);
                     spblh1088.requestFocus();
-                    Log.d(TAG, "spblh10:This Data is Required");
+                    Log.d(TAG, "spblh10: This Data is Required");
+                    return false;
                 } else {
                     spblh1088.setError(null);
                 }
@@ -1785,6 +1850,7 @@ public class SectionHActivity extends Activity {
                 spblh1288.setFocusable(true);
                 spblh1288.requestFocus();
                 Log.d(TAG, "spblh12:This Data is Required");
+                return false;
             } else {
                 spblh1288.setError(null);
             }
@@ -1798,6 +1864,7 @@ public class SectionHActivity extends Activity {
                     spblh1288.setFocusable(true);
                     spblh1288.requestFocus();
                     Log.d(TAG, "spblh12:This Data is Required");
+                    return false;
                 } else {
                     spblh1288.setError(null);
                 }
@@ -1822,6 +1889,7 @@ public class SectionHActivity extends Activity {
                 spblh1388.setFocusable(true);
                 spblh1388.requestFocus();
                 Log.d(TAG, "spblh13:This Data is Required");
+                return false;
             } else {
                 spblh1388.setError(null);
             }
@@ -1835,6 +1903,7 @@ public class SectionHActivity extends Activity {
                     spblh1388.setFocusable(true);
                     spblh1388.requestFocus();
                     Log.d(TAG, "spblh13:This Data is Required");
+                    return false;
                 } else {
                     spblh1388.setError(null);
                 }
@@ -1875,6 +1944,7 @@ public class SectionHActivity extends Activity {
                 spblh1588.setFocusable(true);
                 spblh1588.requestFocus();
                 Log.d(TAG, "spblh15:This Data is Required");
+                return false;
             } else {
                 spblh1588.setError(null);
             }
@@ -1889,6 +1959,7 @@ public class SectionHActivity extends Activity {
                     spblh1588.setFocusable(true);
                     spblh1588.requestFocus();
                     Log.d(TAG, "spblh15:This Data is Required");
+                    return false;
                 } else {
                     spblh1588.setError(null);
                 }
@@ -1914,6 +1985,7 @@ public class SectionHActivity extends Activity {
                 spblh1688.setFocusable(true);
                 spblh1688.requestFocus();
                 Log.d(TAG, "spblh16:This Data is Required");
+                return false;
             } else {
                 spblh1688.setError(null);
             }
@@ -1928,6 +2000,7 @@ public class SectionHActivity extends Activity {
                     spblh1688.setFocusable(true);
                     spblh1688.requestFocus();
                     Log.d(TAG, "spblh16:This Data is Required");
+                    return false;
                 } else {
                     spblh1688.setError(null);
                 }
@@ -1957,7 +2030,8 @@ public class SectionHActivity extends Activity {
             spblh1799.setError(null);
         }
 
-        if (spblh18a.isChecked()) {
+
+        if (spblh17a.isChecked()) {
             // =================== Q18 ====================
             if (!(spblh18a.isChecked() || spblh18b.isChecked() || spblh18c.isChecked() || spblh18d.isChecked()
                     || spblh18e.isChecked() || spblh18f.isChecked() || spblh18g.isChecked() || spblh18h.isChecked()
@@ -1968,6 +2042,7 @@ public class SectionHActivity extends Activity {
                 spblh1888.setFocusable(true);
                 spblh1888.requestFocus();
                 Log.d(TAG, "spblh18:This Data is Required");
+                return false;
             } else {
                 spblh1888.setError(null);
             }
@@ -1982,6 +2057,7 @@ public class SectionHActivity extends Activity {
                     spblh1888.setFocusable(true);
                     spblh1888.requestFocus();
                     Log.d(TAG, "spblh18:This Data is Required");
+                    return false;
                 } else {
                     spblh1888.setError(null);
                 }
@@ -2006,6 +2082,7 @@ public class SectionHActivity extends Activity {
                 spblh1988.setFocusable(true);
                 spblh1988.requestFocus();
                 Log.d(TAG, "spblh19:This Data is Required");
+                return false;
             } else {
                 spblh1988.setError(null);
             }
@@ -2019,6 +2096,7 @@ public class SectionHActivity extends Activity {
                     spblh1988.setFocusable(true);
                     spblh1988.requestFocus();
                     Log.d(TAG, "spblh19:This Data is Required");
+                    return false;
                 } else {
                     spblh1988.setError(null);
                 }
@@ -2059,6 +2137,7 @@ public class SectionHActivity extends Activity {
                 spblh2188.setFocusable(true);
                 spblh2188.requestFocus();
                 Log.d(TAG, "spblh21:This Data is Required");
+                return false;
             } else {
                 spblh2188.setError(null);
             }
@@ -2072,6 +2151,7 @@ public class SectionHActivity extends Activity {
                     spblh2188.setFocusable(true);
                     spblh2188.requestFocus();
                     Log.d(TAG, "spblh21:This Data is Required");
+                    return false;
                 } else {
                     spblh2188.setError(null);
                 }
@@ -2096,6 +2176,7 @@ public class SectionHActivity extends Activity {
                 spblh2288.setFocusable(true);
                 spblh2288.requestFocus();
                 Log.d(TAG, "spblh22:This Data is Required");
+                return false;
             } else {
                 spblh2288.setError(null);
             }
@@ -2109,6 +2190,7 @@ public class SectionHActivity extends Activity {
                     spblh2288.setFocusable(true);
                     spblh2288.requestFocus();
                     Log.d(TAG, "spblh22:This Data is Required");
+                    return false;
                 } else {
                     spblh2288.setError(null);
                 }
@@ -2161,6 +2243,7 @@ public class SectionHActivity extends Activity {
                     spblh2588.setFocusable(true);
                     spblh2588.requestFocus();
                     Log.d(TAG, "spblh25:This Data is Required");
+                    return false;
                 } else {
                     spblh2588.setError(null);
                 }
@@ -2175,6 +2258,7 @@ public class SectionHActivity extends Activity {
                         spblh2588.setFocusable(true);
                         spblh2588.requestFocus();
                         Log.d(TAG, "spblh25:This Data is Required");
+                        return false;
                     } else {
                         spblh2588.setError(null);
                     }

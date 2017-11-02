@@ -497,6 +497,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/addMember"
+                android:enabled="true"
                 android:textColor="#1ed61e" />
 
             <Button
@@ -505,6 +506,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/nextSection"
+                android:enabled="false"
                 android:textColor="#ff1e1e" />
 
             <Button

@@ -25,6 +25,8 @@ public class SectionJActivity extends Activity {
 
     private static final String TAG = SectionJActivity.class.getSimpleName();
 
+    @BindView(R.id.spblj01w)
+    TextView spblj01w;
     @BindView(R.id.spblj01)
     EditText spblj01;
     @BindView(R.id.spblj0201a)
@@ -49,13 +51,14 @@ public class SectionJActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_section_j);
         ButterKnife.bind(this);
+        spblj01w.setText(getIntent().getStringExtra("getData"));
 
     }
 
     @OnClick(R.id.btn_Continue)
     void onBtnContinueClick() {
 
-        /*if (ValidateForm()) {
+        if (ValidateForm()) {
             try {
                 SaveDraft();
             } catch (JSONException e) {
@@ -67,18 +70,14 @@ public class SectionJActivity extends Activity {
                 finish();
 
 
-                Intent endSec = new Intent(this, EndingActivity.class);
+                Intent endSec = new Intent(this, SectionKActivity.class);
                 endSec.putExtra("complete", true);
                 startActivity(endSec);
 
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }
-        }*/
-
-        Intent secNext = new Intent(this, SectionKActivity.class);
-        secNext.putExtra("check", false);
-        startActivity(secNext);
+        }
 
 
     }
@@ -103,6 +102,7 @@ public class SectionJActivity extends Activity {
 
         JSONObject sJ = new JSONObject();
 
+        sJ.put("spblj01w", spblj01w.getText().toString());
         sJ.put("spblj01", spblj01.getText().toString());
         sJ.put("spblj0201a", spblj0201a.getSelectedItem().toString());
         sJ.put("spblj0201b", spblj0201b.getText().toString());
@@ -113,7 +113,7 @@ public class SectionJActivity extends Activity {
         sJ.put("spblj0302a", spblj0201a.getSelectedItem().toString());
         sJ.put("spblj0302b", spblj0201b.getText().toString());
 
-//        MainApp.ims.setsI(String.valueOf(sI));
+        MainApp.fc.setsJ(String.valueOf(sJ));
 
         Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
 

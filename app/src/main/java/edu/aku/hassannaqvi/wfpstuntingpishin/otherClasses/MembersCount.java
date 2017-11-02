@@ -35,6 +35,10 @@ public class MembersCount {
         this.children = children;
     }
 
+    public void setChildren(int index, Map<Integer, String> children) {
+        this.children.put(index,children);
+    }
+
     public void setWomen(Map<Integer, String> women) {
         this.women = women;
     }

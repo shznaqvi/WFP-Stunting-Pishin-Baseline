@@ -32,6 +32,24 @@
             android:layout_marginTop="5dp"
             android:background="@color/colorPrimary"/>
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@color/colorPrimary"
+            android:text="@string/spbli01w"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@android:color/white"/>
+
+        <TextView
+            android:id="@+id/spblj01w"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@color/pink_100"
+            android:text=""
+            android:textColor="@color/colorPrimaryDark"/>
+
         <!--1-->
         <TextView
             android:layout_width="match_parent"

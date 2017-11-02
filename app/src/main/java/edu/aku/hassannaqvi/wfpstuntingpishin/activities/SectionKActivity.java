@@ -587,7 +587,7 @@ public class SectionKActivity extends AppCompatActivity implements RadioGroup.On
         sK.put("spblk20", spblk20a.isChecked() ? "1" : spblk20b.isChecked() ? "2" : spblk2099.isChecked() ? "99" : "0");
         sK.put("spblk21", spblk21a.isChecked() ? "1" : spblk21b.isChecked() ? "2" : spblk2199.isChecked() ? "99" : "0");
 
-//        MainApp.ims.setsI(String.valueOf(sI));
+        MainApp.fc.setsK(String.valueOf(sK));
 
         Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
 

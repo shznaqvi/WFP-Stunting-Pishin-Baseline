@@ -996,9 +996,26 @@ public class SectionPActivity extends Activity {
     void onBtnNextClick() {
 
 
-        Intent secNext = new Intent(this, SectionQActivity.class);
-        secNext.putExtra("check", false);
-        startActivity(secNext);
+        if (ValidateForm()) {
+            try {
+                SaveDraft();
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+            if (UpdateDB()) {
+                Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
+
+                finish();
+
+                Intent secNext = new Intent(this, SectionQActivity.class);
+                secNext.putExtra("check", true);
+                startActivity(secNext);
+
+            } else {
+                Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
+            }
+        }
+
 
     }
 
@@ -1145,9 +1162,7 @@ public class SectionPActivity extends Activity {
                 : spblp0303d.isChecked() ? "4" : "0");
 
 
-
-
-        //   MainApp.fc.setsP(String.valueOf(sp));
+        MainApp.fc.setsP(String.valueOf(sp));
 
         Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
     }

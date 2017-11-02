@@ -3,6 +3,7 @@ package edu.aku.hassannaqvi.wfpstuntingpishin.activities;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Toast;
@@ -86,7 +87,7 @@ public class SectionFActivity extends Activity {
     @OnClick(R.id.btnNext)
     void SaveData() {
 
-        /*if (ValidateForm()) {
+        if (ValidateForm()) {
             try {
                 SaveDraft();
             } catch (JSONException e) {
@@ -98,12 +99,12 @@ public class SectionFActivity extends Activity {
 
                 finish();
 
-                Intent secNext = new Intent(this, SectionEActivity.class);
+                Intent secNext = new Intent(this, SectionGActivity.class);
                 startActivity(secNext);
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }
-        }*/
+        }
 
         Intent secNext = new Intent(this, SectionGActivity.class);
         secNext.putExtra("check", false);
@@ -127,7 +128,7 @@ public class SectionFActivity extends Activity {
 
         DatabaseHelper db = new DatabaseHelper(this);
 
-        /*int updcount = db.updateSHF();
+        int updcount = db.updateSF();
 
         if (updcount == 1) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
@@ -135,16 +136,16 @@ public class SectionFActivity extends Activity {
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
             return false;
-        }*/
+        }
 
-        return true;
+
 
     }
 
 
     private boolean ValidateForm() {
 
-/*
+
         //        spblf01a
         if (spblf01a.getText().toString().isEmpty()) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblf01a), Toast.LENGTH_SHORT).show();
@@ -216,7 +217,6 @@ public class SectionFActivity extends Activity {
             spblf01f.setError(null);
         }
 
-*/
 
         return true;
     }
@@ -227,11 +227,39 @@ public class SectionFActivity extends Activity {
 
         JSONObject sHE = new JSONObject();
 
-        /*sHE.put("spble01a", spble01a.getSelectedItem().toString());
+        sHE.put("spblf01a", spblf01a.getText().toString());
+        sHE.put("spblf01b", spblf01b.getText().toString());
+        sHE.put("spblf01c", spblf01c.getText().toString());
+        sHE.put("spblf01d", spblf01d.getText().toString());
+        sHE.put("spblf01e", spblf01e.getText().toString());
+        sHE.put("spblf01f", spblf01f.getText().toString());
+        sHE.put("spblf01g", spblf01g.getText().toString());
+        sHE.put("spblf01h", spblf01h.getText().toString());
+        sHE.put("spblf01i", spblf01i.getText().toString());
+        sHE.put("spblf01j", spblf01j.getText().toString());
+        sHE.put("spblf01k", spblf01k.getText().toString());
+        sHE.put("spblf01l", spblf01l.getText().toString());
+        sHE.put("spblf01m", spblf01m.getText().toString());
 
 
-        MainApp.fc.setsHE(String.valueOf(sHE));
-*/
+        sHE.put("spblf02a", spblf02a.getText().toString());
+        sHE.put("spblf02b", spblf02b.getText().toString());
+        sHE.put("spblf02c", spblf02c.getText().toString());
+        sHE.put("spblf02d", spblf02d.getText().toString());
+        sHE.put("spblf02e", spblf02e.getText().toString());
+        sHE.put("spblf02f", spblf02f.getText().toString());
+        sHE.put("spblf02g", spblf02g.getText().toString());
+        sHE.put("spblf02h", spblf02h.getText().toString());
+        sHE.put("spblf02i", spblf02i.getText().toString());
+        sHE.put("spblf02j", spblf02j.getText().toString());
+        sHE.put("spblf02k", spblf02k.getText().toString());
+
+
+        sHE.put("spblf03", spblf03.getText().toString());
+
+
+        MainApp.fc.setsF(String.valueOf(sHE));
+
     }
 
 }

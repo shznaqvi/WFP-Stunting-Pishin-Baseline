@@ -34,10 +34,7 @@ import edu.aku.hassannaqvi.wfpstuntingpishin.core.AndroidDatabaseManager;
 import edu.aku.hassannaqvi.wfpstuntingpishin.core.DatabaseHelper;
 import edu.aku.hassannaqvi.wfpstuntingpishin.core.MainApp;
 import edu.aku.hassannaqvi.wfpstuntingpishin.get.GetUsers;
-import edu.aku.hassannaqvi.wfpstuntingpishin.sync.SyncForms10;
-import edu.aku.hassannaqvi.wfpstuntingpishin.sync.SyncForms3;
-import edu.aku.hassannaqvi.wfpstuntingpishin.sync.SyncForms8;
-import edu.aku.hassannaqvi.wfpstuntingpishin.sync.SyncForms9;
+import edu.aku.hassannaqvi.wfpstuntingpishin.sync.SyncForms;
 
 public class MainActivity extends Activity {
 
@@ -118,11 +115,7 @@ public class MainActivity extends Activity {
 
         DatabaseHelper db = new DatabaseHelper(this);
         Collection<FormsContract> todaysForms = db.getTodayForms();
-        Collection<FormsContract> unsyncedForms3 = db.getUnsyncedForms3();
-        Collection<FormsContract> unsyncedForms8 = db.getUnsyncedForms8();
-     /*   Collection<FetusContract> unsyncedFetus = db.getUnsyncedFetus();*/
-        Collection<FormsContract> unsyncedForms9 = db.getUnsyncedForms9();
-        Collection<FormsContract> unsyncedForms10 = db.getUnsyncedForms10();
+
 
         rSumText += "TODAY'S RECORDS SUMMARY\r\n";
 
@@ -159,7 +152,7 @@ public class MainActivity extends Activity {
                     iStatus = "\tN/A";
                 }
 
-                rSumText += fc.getFormType();
+//                rSumText += fc.getFormType();
 
                 rSumText += " " + iStatus + " ";
 
@@ -177,16 +170,16 @@ public class MainActivity extends Activity {
             rSumText += "Last Data Upload: \t" + syncPref.getString("LastUpSyncServer", "Never Synced");
             rSumText += "\r\n";
             rSumText += "\r\n";
-            rSumText += "Unsynced Forms3: \t" + unsyncedForms3.size();
+            /*rSumText += "Unsynced Forms3: \t" + unsyncedForms.size();
             rSumText += "\r\n";
             rSumText += "Unsynced Forms8: \t" + unsyncedForms8.size();
             rSumText += "\r\n";
-            /*rSumText += "Unsynced Fetus: \t" + unsyncedFetus.size();
-            rSumText += "\r\n";*/
+            *//*rSumText += "Unsynced Fetus: \t" + unsyncedFetus.size();
+            rSumText += "\r\n";*//*
             rSumText += "Unsynced Forms9: \t" + unsyncedForms9.size();
             rSumText += "\r\n";
             rSumText += "Unsynced Forms10: \t" + unsyncedForms10.size();
-            rSumText += "\r\n";
+            rSumText += "\r\n";*/
         }
         Log.d(TAG, "onCreate: " + rSumText);
         recordSummary.setText(rSumText);
@@ -317,6 +310,7 @@ public class MainActivity extends Activity {
         Intent iB = new Intent(this, SectionAActivity.class);
         startActivity(iB);
     }
+
     public void openB(View v) {
         Intent iB = new Intent(this, SectionBActivity.class);
         startActivity(iB);
@@ -398,6 +392,7 @@ public class MainActivity extends Activity {
         startActivity(iEnd);
     }
 
+
     public void testGPS(View v) {
 
         SharedPreferences sharedPref = getSharedPreferences("GPSCoordinates", Context.MODE_PRIVATE);
@@ -430,11 +425,7 @@ public class MainActivity extends Activity {
         Log.e(TAG, "syncServer: 2");
         if (networkInfo != null && networkInfo.isConnected()) {
             Toast.makeText(getApplicationContext(), "Syncing Forms", Toast.LENGTH_SHORT).show();
-            new SyncForms3(this).execute();
-            new SyncForms8(this).execute();
-//            new SyncFetus(this).execute();
-            new SyncForms9(this).execute();
-            new SyncForms10(this).execute();
+            new SyncForms(this).execute();
 
            /* Toast.makeText(getApplicationContext(), "Syncing Participants", Toast.LENGTH_SHORT).show();
             new SyncParticipants(this).execute();*/

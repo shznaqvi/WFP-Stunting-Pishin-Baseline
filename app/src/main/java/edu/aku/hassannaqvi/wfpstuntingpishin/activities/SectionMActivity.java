@@ -234,7 +234,7 @@ public class SectionMActivity extends Activity {
     void onBtnContinueClick() {
         //TODO implement
 
-        /*Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();
         if (formValidation()) {
             try {
                 SaveDraft();
@@ -249,11 +249,9 @@ public class SectionMActivity extends Activity {
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }
-        }*/
+        }
 
-        Intent secNext = new Intent(this, SectionMActivity.class);
-        secNext.putExtra("check", false);
-        startActivity(secNext);
+
 
     }
 
@@ -296,13 +294,13 @@ public class SectionMActivity extends Activity {
                 : spblm05g.isChecked() ? "7" : spblm05h.isChecked() ? "8" : spblm0588.isChecked() ? "88" : "0");
         sM.put("spblm0588x", spblm0588x.getText().toString());
 
-        //        MainApp.fc.setsM(String.valueOf(sM));
+        MainApp.fc.setsM(String.valueOf(sM));
     }
     private boolean UpdateDB() {
 
         DatabaseHelper db = new DatabaseHelper(this);
 
-        /*int updcount = db.updateSM();
+        int updcount = db.updateSM();
 
         if (updcount == 1) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
@@ -310,8 +308,8 @@ public class SectionMActivity extends Activity {
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
             return false;
-        }*/
-        return true;
+        }
+
     }
 
     public boolean formValidation() {

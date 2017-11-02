@@ -317,18 +317,18 @@ public class SectionDActivity extends Activity {
 
         DatabaseHelper db = new DatabaseHelper(this);
 
-        /*int updcount = db.updateSD();
+        int updcount = db.updateSD();
 
         if (updcount == 1) {
-            Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_sdORT).sdow();
+            Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
             return true;
         } else {
-            Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_sdORT).sdow();
+            Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
             return false;
         }
-*/
 
-        return true;
+
+        // return true;
     }
 
 
@@ -485,6 +485,6 @@ public class SectionDActivity extends Activity {
 
         //sd.put("appver", MainApp.versionName + "." + MainApp.versionCode);
 
-        //MainApp.fc.setsd(String.valueOf(sD));
+        MainApp.fc.setsD(String.valueOf(sd));
     }
 }

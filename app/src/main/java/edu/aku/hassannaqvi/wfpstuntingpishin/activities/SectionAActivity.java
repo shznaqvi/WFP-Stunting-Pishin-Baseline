@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -24,11 +25,9 @@ import org.json.JSONObject;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import butterknife.BindView;
-import butterknife.BindViews;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import edu.aku.hassannaqvi.wfpstuntingpishin.R;
@@ -44,6 +43,52 @@ public class SectionAActivity extends Activity {
     Spinner spbla03;
     @BindView(R.id.spbla04)
     EditText spbla04;
+    @BindView(R.id.respname)
+    EditText respname;
+    @BindView(R.id.respage)
+    EditText respage;
+    @BindView(R.id.respedu)
+    RadioGroup respedu;
+    @BindView(R.id.respedu66)
+    RadioButton respedu66;
+    @BindView(R.id.respedua)
+    RadioButton respedua;
+    @BindView(R.id.respedub)
+    RadioButton respedub;
+    @BindView(R.id.respeduc)
+    RadioButton respeduc;
+    @BindView(R.id.respedud)
+    RadioButton respedud;
+    @BindView(R.id.respedue)
+    RadioButton respedue;
+    @BindView(R.id.respeduf)
+    RadioButton respeduf;
+    @BindView(R.id.respedug)
+    RadioButton respedug;
+    @BindView(R.id.respocc)
+    RadioGroup respocc;
+    @BindView(R.id.respocc77)
+    RadioButton respocc77;
+    @BindView(R.id.respocca)
+    RadioButton respocca;
+    @BindView(R.id.respoccb)
+    RadioButton respoccb;
+    @BindView(R.id.respoccc)
+    RadioButton respoccc;
+    @BindView(R.id.respoccd)
+    RadioButton respoccd;
+    @BindView(R.id.respocce)
+    RadioButton respocce;
+    @BindView(R.id.respoccf)
+    RadioButton respoccf;
+    @BindView(R.id.respoccg)
+    RadioButton respoccg;
+    @BindView(R.id.respocch)
+    RadioButton respocch;
+    @BindView(R.id.respocci)
+    RadioButton respocci;
+    @BindView(R.id.respoccj)
+    RadioButton respoccj;
     @BindView(R.id.spbla05)
     RadioGroup spbla05;
     @BindView(R.id.spbla05a)
@@ -53,17 +98,13 @@ public class SectionAActivity extends Activity {
     @BindView(R.id.spbla05c)
     RadioButton spbla05c;
     @BindView(R.id.spbla06a)
-    RadioGroup spbla06a;
-    @BindView(R.id.spbla06a1)
-    RadioButton spbla06a1;
-    @BindView(R.id.spbla06a2)
-    RadioButton spbla06a2;
+    CheckBox spbla06a;
     @BindView(R.id.spbla06b)
-    RadioGroup spbla06b;
-    @BindView(R.id.spbla06b1)
-    RadioButton spbla06b1;
-    @BindView(R.id.spbla06b2)
-    RadioButton spbla06b2;
+    CheckBox spbla06b;
+    @BindView(R.id.spbla06c)
+    CheckBox spbla06c;
+    @BindView(R.id.spbla06d)
+    CheckBox spbla06d;
     @BindView(R.id.spbla07t)
     EditText spbla07t;
     @BindView(R.id.spbla07pw)
@@ -93,8 +134,8 @@ public class SectionAActivity extends Activity {
     @BindView(R.id.spbla08c)
     RadioButton spbla08c;
 
-    @BindViews({R.id.spbla06a, R.id.spbla06b})
-    List<RadioGroup> spbla06;
+    /*@BindViews({R.id.spbla06a, R.id.spbla06b})
+    List<RadioGroup> spbla06;*/
     @BindView(R.id.btn_Continue)
     Button btn_Continue;
     @BindView(R.id.btn_End)
@@ -162,17 +203,29 @@ public class SectionAActivity extends Activity {
 
         MainApp.fc.setDevicetagID(sharedPref.getString("tagName", null));
         MainApp.fc.setFormDate(new Date().toString());
-        MainApp.fc.setUser(MainApp.userName);
+        MainApp.fc.setInterviewer01(MainApp.loginMem[1]);
+        MainApp.fc.setInterviewer02(MainApp.loginMem[2]);
         MainApp.fc.setDeviceID(Settings.Secure.getString(getApplicationContext().getContentResolver(),
                 Settings.Secure.ANDROID_ID));
-        MainApp.fc.setFormType(MainApp.formType);
-//        MainApp.fc.setParticipantID(participantId.getText().toString());
+        MainApp.fc.setAppVersion(MainApp.versionName + "." + MainApp.versionCode);
 
         JSONObject sInfo = new JSONObject();
 
+        sInfo.put("resp_name", respname.getText().toString());
+        sInfo.put("resp_age", respage.getText());
+        sInfo.put("resp_edu", respedua.isChecked() ? "1" : respedub.isChecked() ? "2" : respeduc.isChecked() ? "3"
+                : respedud.isChecked() ? "4" : respedue.isChecked() ? "5" : respeduf.isChecked() ? "6" : respedug.isChecked() ? "7"
+                : respedu66.isChecked() ? "66" : "0");
+        sInfo.put("resp_occ", respocc77.isChecked() ? "77" : respocca.isChecked() ? "1" : respoccb.isChecked() ? "2"
+                : respoccc.isChecked() ? "3"
+                : respoccd.isChecked() ? "4" : respocce.isChecked() ? "5" : respoccf.isChecked() ? "6"
+                : respoccg.isChecked() ? "7" : respocch.isChecked() ? "8" : respocci.isChecked() ? "9"
+                : respoccj.isChecked() ? "10" : "0");
         sInfo.put("spbla05", spbla05a.isChecked() ? "1" : spbla05b.isChecked() ? "2" : spbla05c.isChecked() ? "3" : "0");
-        sInfo.put("spbla06a", spbla06a1.isChecked() ? "1" : spbla06a2.isChecked() ? "2" : "0");
-        sInfo.put("spbla06b", spbla06b1.isChecked() ? "1" : spbla06b2.isChecked() ? "2" : "0");
+        sInfo.put("spbla06a", spbla06a.isChecked() ? "1" : "0");
+        sInfo.put("spbla06b", spbla06b.isChecked() ? "2" : "0");
+        sInfo.put("spbla06c", spbla06c.isChecked() ? "3" : "0");
+        sInfo.put("spbla06d", spbla06d.isChecked() ? "4" : "0");
         sInfo.put("spbla07t", spbla07t.getText().toString());
         sInfo.put("spbla07pw", spbla07pw.getText().toString());
         sInfo.put("spbla07lw", spbla07lw.getText().toString());
@@ -185,7 +238,7 @@ public class SectionAActivity extends Activity {
         sInfo.put("spbla07f59", spbla07f59.getText().toString());
         sInfo.put("spbla08", spbla08a.isChecked() ? "1" : spbla08b.isChecked() ? "2" : spbla08c.isChecked() ? "3" : "0");
 
-        MainApp.fc.setInfo(String.valueOf(sInfo));
+        MainApp.fc.setsA(String.valueOf(sInfo));
 
         Map<Integer, Map<Integer, String>> children = new HashMap<>();
         Map<Integer, String> child = new HashMap<>();
@@ -287,6 +340,65 @@ public class SectionAActivity extends Activity {
             spbla04.setError(null);
         }
 
+        if (respname.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spbla11), Toast.LENGTH_SHORT).show();
+            respname.setError("This data is Required!");
+            Log.i(TAG, "respname: This data is Required!");
+
+            respname.requestFocus();
+            return false;
+        } else {
+            respname.setError(null);
+        }
+
+
+        if (respage.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spbla12), Toast.LENGTH_SHORT).show();
+            respage.setError("This data is Required!");
+            Log.i(TAG, "respage: This data is Required!");
+
+            respage.requestFocus();
+            return false;
+        } else {
+            respage.setError(null);
+        }
+
+        if (Integer.valueOf(respage.getText().toString()) < 15 && Integer.valueOf(respage.getText().toString()) > 49) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spbla12), Toast.LENGTH_SHORT).show();
+            respage.setError("Age should be 15 to 49 years");
+            Log.i(TAG, "respage: Age should be 15 to 49 years!");
+
+            respage.requestFocus();
+            return false;
+        } else {
+            respage.setError(null);
+        }
+
+
+        if (respedu.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spbla13), Toast.LENGTH_SHORT).show();
+            respedua.setError("This data is required");
+            respedua.setFocusable(true);
+            respedua.setFocusableInTouchMode(true);
+            respedua.requestFocus();
+            Log.i(TAG, "respedu: This Data is Required!");
+            return false;
+        } else {
+            respedua.setError(null);
+        }
+
+        if (respocc.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spbla14), Toast.LENGTH_SHORT).show();
+            respocca.setError("This data is required");
+            respocca.setFocusable(true);
+            respocca.setFocusableInTouchMode(true);
+            respocca.requestFocus();
+            Log.i(TAG, "respocc: This Data is Required!");
+            return false;
+        } else {
+            respocca.setError(null);
+        }
+
         if (spbla05.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.spbla05), Toast.LENGTH_SHORT).show();
             spbla05a.setError("This data is Required!");
@@ -299,17 +411,62 @@ public class SectionAActivity extends Activity {
             spbla05a.setError(null);
         }
 
-        if (spbla06a.getCheckedRadioButtonId() == -1 && spbla06b.getCheckedRadioButtonId() == -1) {
+        if (!(spbla06a.isChecked() || spbla06b.isChecked() || spbla06c.isChecked() || spbla06d.isChecked())) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.spbla06), Toast.LENGTH_SHORT).show();
-            spbla06a1.setError("This data is Required!");
-            Log.i(TAG, "spbla05: This data is Required!");
+            spbla06a.setError("This data is Required!");
+            Log.i(TAG, "spbla06: This data is Required!");
             spbla06a.setFocusable(true);
             spbla06a.setFocusableInTouchMode(true);
             spbla06a.requestFocus();
             return false;
         } else {
-            spbla06a1.setError(null);
+            spbla06a.setError(null);
         }
+
+        if (spbla05a.isChecked() && !spbla06a.isChecked()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spbla06), Toast.LENGTH_SHORT).show();
+            spbla05a.setError("Check again!");
+            spbla06a.setError("Check again!");
+            Log.i(TAG, "spbla05: Check again");
+            spbla05a.setFocusable(true);
+            spbla05a.setFocusableInTouchMode(true);
+            spbla05a.requestFocus();
+            spbla06a.setFocusable(true);
+            return false;
+        } else {
+            spbla05a.setError(null);
+            spbla06a.setError(null);
+        }
+
+        if (spbla05b.isChecked() && !spbla06b.isChecked()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spbla06), Toast.LENGTH_SHORT).show();
+            spbla05b.setError("Check again!");
+            spbla06b.setError("Check again!");
+            Log.i(TAG, "spbla05: Check again");
+            spbla05b.setFocusable(true);
+            spbla05b.setFocusableInTouchMode(true);
+            spbla05b.requestFocus();
+            return false;
+        } else {
+            spbla05b.setError(null);
+            spbla06b.setError(null);
+        }
+
+        if (spbla05c.isChecked() && (!spbla06c.isChecked() || !spbla06d.isChecked())) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spbla06), Toast.LENGTH_SHORT).show();
+            spbla05c.setError("Check again!");
+            spbla06c.setError("Check again!");
+            Log.i(TAG, "spbla05: Check again");
+            spbla05b.setFocusable(true);
+            spbla05b.setFocusableInTouchMode(true);
+            spbla05b.requestFocus();
+            return false;
+        } else {
+            spbla05b.setError(null);
+            spbla06c.setError(null);
+        }
+
+
 
         if (spbla07t.getText().toString().isEmpty()) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.spbla07t), Toast.LENGTH_SHORT).show();
@@ -422,7 +579,7 @@ public class SectionAActivity extends Activity {
             spbla07f59.setError(null);
         }
 
-        if (spbla06a1.isChecked() && Integer.valueOf(spbla07pw.getText().toString()) < 1) {
+        if (spbla06a.isChecked() && Integer.valueOf(spbla07pw.getText().toString()) < 1) {
             Toast.makeText(this, "ERROR(Invalid): " + getString(R.string.spbla07pw), Toast.LENGTH_SHORT).show();
             spbla07pw.setError("Can not be zero..!");
             Log.i(TAG, "spbla07pw: Can not be zero..!");
@@ -433,7 +590,7 @@ public class SectionAActivity extends Activity {
             spbla07pw.setError(null);
         }
 
-        if (spbla06a2.isChecked() && Integer.valueOf(spbla07lw.getText().toString()) < 1) {
+        if (spbla06b.isChecked() && Integer.valueOf(spbla07lw.getText().toString()) < 1) {
             Toast.makeText(this, "ERROR(Invalid): " + getString(R.string.spbla07lw), Toast.LENGTH_SHORT).show();
             spbla07lw.setError("Can not be zero..!");
             Log.i(TAG, "spbla07lw: Can not be zero..!");
@@ -444,8 +601,19 @@ public class SectionAActivity extends Activity {
             spbla07lw.setError(null);
         }
 
+        if (spbla05c.isChecked() && Integer.valueOf(spbla07mw.getText().toString()) < 1) {
+            Toast.makeText(this, "ERROR(Invalid): " + getString(R.string.spbla07mw), Toast.LENGTH_SHORT).show();
+            spbla07mw.setError("Can not be zero..!");
+            Log.i(TAG, "spbla07mw: Can not be zero..!");
+
+            spbla07mw.requestFocus();
+            return false;
+        } else {
+            spbla07mw.setError(null);
+        }
+
         int sum23M = Integer.valueOf(spbla07m23.getText().toString()) + Integer.valueOf(spbla07f23.getText().toString());
-        if (spbla06b1.isChecked() && sum23M < 1) {
+        if (spbla06c.isChecked() && sum23M < 1) {
             Toast.makeText(this, "ERROR(Invalid): " + getString(R.string.spbla07b), Toast.LENGTH_SHORT).show();
             spbla07m23.setError("Can not be zero..!");
             spbla07f23.setError("Can not be zero..!");
@@ -461,7 +629,7 @@ public class SectionAActivity extends Activity {
 
         int sum59M = Integer.valueOf(spbla07m59.getText().toString()) + Integer.valueOf(spbla07f59.getText().toString());
 
-        if (spbla06b2.isChecked() && sum59M < 1) {
+        if (spbla06d.isChecked() && sum59M < 1) {
             Toast.makeText(this, "ERROR(Invalid): " + getString(R.string.spbla07c), Toast.LENGTH_SHORT).show();
             spbla07m59.setError("Can not be zero..!");
             spbla07f59.setError("Can not be zero..!");

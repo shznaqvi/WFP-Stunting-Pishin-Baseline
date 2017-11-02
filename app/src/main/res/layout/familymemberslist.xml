@@ -54,7 +54,7 @@
 
     <!-- Status -->
     <TextView
-        android:id="@+id/martialStatus"
+        android:id="@+id/type"
         style="@style/listItems"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -64,7 +64,7 @@
         android:layout_marginRight="8dp"
         android:gravity="right"
         android:text="Status"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/colorPrimary"
         android:textSize="18sp"
         android:textStyle="bold" />
 
@@ -76,11 +76,11 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentStart="false"
-        android:layout_below="@id/martialStatus"
+        android:layout_below="@id/type"
         android:layout_marginRight="8dp"
         android:gravity="right"
         android:text="Status"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/colorPrimary"
         android:textSize="18sp"
         android:textStyle="bold" />
 

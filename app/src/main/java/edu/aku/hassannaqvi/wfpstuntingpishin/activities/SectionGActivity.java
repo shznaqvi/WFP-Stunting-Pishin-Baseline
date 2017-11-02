@@ -6,6 +6,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -18,10 +19,18 @@ import android.widget.Toast;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import butterknife.BindView;
+import butterknife.BindViews;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import edu.aku.hassannaqvi.wfpstuntingpishin.R;
+import edu.aku.hassannaqvi.wfpstuntingpishin.contracts.SourceNGOContract;
 import edu.aku.hassannaqvi.wfpstuntingpishin.core.DatabaseHelper;
 import edu.aku.hassannaqvi.wfpstuntingpishin.core.MainApp;
 
@@ -40,7 +49,7 @@ public class SectionGActivity extends Activity {
     @BindView(R.id.spblg0101num)
     EditText spblg0101num;
     @BindView(R.id.spblg0101src)
-    EditText spblg0101src;
+    Spinner spblg0101src;
     @BindView(R.id.spblg0102)
     RadioGroup spblg0102;
     @BindView(R.id.spblg0102a)
@@ -52,7 +61,7 @@ public class SectionGActivity extends Activity {
     @BindView(R.id.spblg0102num)
     EditText spblg0102num;
     @BindView(R.id.spblg0102src)
-    EditText spblg0102src;
+    Spinner spblg0102src;
     @BindView(R.id.spblg0103)
     RadioGroup spblg0103;
     @BindView(R.id.spblg0103a)
@@ -64,7 +73,7 @@ public class SectionGActivity extends Activity {
     @BindView(R.id.spblg0103num)
     EditText spblg0103num;
     @BindView(R.id.spblg0103src)
-    EditText spblg0103src;
+    Spinner spblg0103src;
     @BindView(R.id.spblg0104)
     RadioGroup spblg0104;
     @BindView(R.id.spblg0104a)
@@ -76,7 +85,7 @@ public class SectionGActivity extends Activity {
     @BindView(R.id.spblg0104num)
     EditText spblg0104num;
     @BindView(R.id.spblg0104src)
-    EditText spblg0104src;
+    Spinner spblg0104src;
     @BindView(R.id.spblg0105)
     RadioGroup spblg0105;
     @BindView(R.id.spblg0105a)
@@ -88,7 +97,7 @@ public class SectionGActivity extends Activity {
     @BindView(R.id.spblg0105num)
     EditText spblg0105num;
     @BindView(R.id.spblg0105src)
-    EditText spblg0105src;
+    Spinner spblg0105src;
     @BindView(R.id.spblg0106)
     RadioGroup spblg0106;
     @BindView(R.id.spblg0106a)
@@ -100,7 +109,7 @@ public class SectionGActivity extends Activity {
     @BindView(R.id.spblg0106num)
     EditText spblg0106num;
     @BindView(R.id.spblg0106src)
-    EditText spblg0106src;
+    Spinner spblg0106src;
     @BindView(R.id.spblg0107)
     RadioGroup spblg0107;
     @BindView(R.id.spblg0107a)
@@ -112,7 +121,7 @@ public class SectionGActivity extends Activity {
     @BindView(R.id.spblg0107num)
     EditText spblg0107num;
     @BindView(R.id.spblg0107src)
-    EditText spblg0107src;
+    Spinner spblg0107src;
     @BindView(R.id.spblg0108)
     RadioGroup spblg0108;
     @BindView(R.id.spblg0108a)
@@ -124,7 +133,7 @@ public class SectionGActivity extends Activity {
     @BindView(R.id.spblg0108num)
     EditText spblg0108num;
     @BindView(R.id.spblg0108src)
-    EditText spblg0108src;
+    Spinner spblg0108src;
     @BindView(R.id.spblg0109)
     RadioGroup spblg0109;
     @BindView(R.id.spblg0109a)
@@ -136,7 +145,7 @@ public class SectionGActivity extends Activity {
     @BindView(R.id.spblg0109num)
     EditText spblg0109num;
     @BindView(R.id.spblg0109src)
-    EditText spblg0109src;
+    Spinner spblg0109src;
     @BindView(R.id.spblg0110)
     RadioGroup spblg0110;
     @BindView(R.id.spblg0110a)
@@ -148,7 +157,7 @@ public class SectionGActivity extends Activity {
     @BindView(R.id.spblg0110num)
     EditText spblg0110num;
     @BindView(R.id.spblg0110src)
-    EditText spblg0110src;
+    Spinner spblg0110src;
     @BindView(R.id.spblg0111)
     RadioGroup spblg0111;
     @BindView(R.id.spblg0111a)
@@ -160,7 +169,7 @@ public class SectionGActivity extends Activity {
     @BindView(R.id.spblg0111num)
     EditText spblg0111num;
     @BindView(R.id.spblg0111src)
-    EditText spblg0111src;
+    Spinner spblg0111src;
     @BindView(R.id.spblg0112)
     RadioGroup spblg0112;
     @BindView(R.id.spblg0112a)
@@ -172,7 +181,7 @@ public class SectionGActivity extends Activity {
     @BindView(R.id.spblg0112num)
     EditText spblg0112num;
     @BindView(R.id.spblg0112src)
-    EditText spblg0112src;
+    Spinner spblg0112src;
     @BindView(R.id.spblg0113)
     RadioGroup spblg0113;
     @BindView(R.id.spblg0113a)
@@ -184,7 +193,7 @@ public class SectionGActivity extends Activity {
     @BindView(R.id.spblg0113num)
     EditText spblg0113num;
     @BindView(R.id.spblg0113src)
-    EditText spblg0113src;
+    Spinner spblg0113src;
     @BindView(R.id.spblg0114)
     RadioGroup spblg0114;
     @BindView(R.id.spblg0114a)
@@ -196,7 +205,7 @@ public class SectionGActivity extends Activity {
     @BindView(R.id.spblg0114num)
     EditText spblg0114num;
     @BindView(R.id.spblg0114src)
-    EditText spblg0114src;
+    Spinner spblg0114src;
     @BindView(R.id.spblg0115)
     RadioGroup spblg0115;
     @BindView(R.id.spblg0115a)
@@ -210,13 +219,17 @@ public class SectionGActivity extends Activity {
     @BindView(R.id.spblg0115num)
     EditText spblg0115num;
     @BindView(R.id.spblg0115src)
-    EditText spblg0115src;
+    Spinner spblg0115src;
     @BindView(R.id.fldGrpbtn)
     LinearLayout fldGrpbtn;
 
-    @BindView(R.id.spbli01c)
-    Spinner spbli01c;
 
+    Map<String, String> getAllNGOsMap;
+    List<String> NGOs;
+
+    @BindViews({R.id.spblg0101src,R.id.spblg0102src,R.id.spblg0103src,R.id.spblg0104src,R.id.spblg0105src,R.id.spblg0106src,R.id.spblg0107src,
+            R.id.spblg0108src,R.id.spblg0109src,R.id.spblg0110src,R.id.spblg0111src,R.id.spblg0112src,R.id.spblg0113src,R.id.spblg0114src,R.id.spblg0115src})
+    List<Spinner> spblg01src;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -232,7 +245,7 @@ public class SectionGActivity extends Activity {
                 } else {
                     fldGrpspblg0101.setVisibility(View.GONE);
                     spblg0101num.setText(null);
-                    spblg0101src.setText(null);
+                    spblg0101src.setSelection(0);
                 }
             }
         });
@@ -245,7 +258,7 @@ public class SectionGActivity extends Activity {
                 } else {
                     fldGrpspblg0102.setVisibility(View.GONE);
                     spblg0102num.setText(null);
-                    spblg0102src.setText(null);
+                    spblg0102src.setSelection(0);
                 }
             }
         });
@@ -258,7 +271,7 @@ public class SectionGActivity extends Activity {
                 } else {
                     fldGrpspblg0103.setVisibility(View.GONE);
                     spblg0103num.setText(null);
-                    spblg0103src.setText(null);
+                    spblg0103src.setSelection(0);
                 }
             }
         });
@@ -271,7 +284,7 @@ public class SectionGActivity extends Activity {
                 } else {
                     fldGrpspblg0104.setVisibility(View.GONE);
                     spblg0104num.setText(null);
-                    spblg0104src.setText(null);
+                    spblg0104src.setSelection(0);
                 }
             }
         });
@@ -284,7 +297,7 @@ public class SectionGActivity extends Activity {
                 } else {
                     fldGrpspblg0105.setVisibility(View.GONE);
                     spblg0105num.setText(null);
-                    spblg0105src.setText(null);
+                    spblg0105src.setSelection(0);
                 }
             }
         });
@@ -297,7 +310,7 @@ public class SectionGActivity extends Activity {
                 } else {
                     fldGrpspblg0106.setVisibility(View.GONE);
                     spblg0106num.setText(null);
-                    spblg0106src.setText(null);
+                    spblg0106src.setSelection(0);
                 }
             }
         });
@@ -310,7 +323,7 @@ public class SectionGActivity extends Activity {
                 } else {
                     fldGrpspblg0107.setVisibility(View.GONE);
                     spblg0107num.setText(null);
-                    spblg0107src.setText(null);
+                    spblg0107src.setSelection(0);
                 }
             }
         });
@@ -323,7 +336,7 @@ public class SectionGActivity extends Activity {
                 } else {
                     fldGrpspblg0108.setVisibility(View.GONE);
                     spblg0108num.setText(null);
-                    spblg0108src.setText(null);
+                    spblg0108src.setSelection(0);
                 }
             }
         });
@@ -336,7 +349,7 @@ public class SectionGActivity extends Activity {
                 } else {
                     fldGrpspblg0109.setVisibility(View.GONE);
                     spblg0109num.setText(null);
-                    spblg0109src.setText(null);
+                    spblg0109src.setSelection(0);
                 }
             }
         });
@@ -349,7 +362,7 @@ public class SectionGActivity extends Activity {
                 } else {
                     fldGrpspblg0110.setVisibility(View.GONE);
                     spblg0110num.setText(null);
-                    spblg0110src.setText(null);
+                    spblg0110src.setSelection(0);
                 }
             }
         });
@@ -362,7 +375,7 @@ public class SectionGActivity extends Activity {
                 } else {
                     fldGrpspblg0111.setVisibility(View.GONE);
                     spblg0111num.setText(null);
-                    spblg0111src.setText(null);
+                    spblg0111src.setSelection(0);
                 }
             }
         });
@@ -375,7 +388,7 @@ public class SectionGActivity extends Activity {
                 } else {
                     fldGrpspblg0112.setVisibility(View.GONE);
                     spblg0112num.setText(null);
-                    spblg0112src.setText(null);
+                    spblg0112src.setSelection(0);
                 }
             }
         });
@@ -388,7 +401,7 @@ public class SectionGActivity extends Activity {
                 } else {
                     fldGrpspblg0113.setVisibility(View.GONE);
                     spblg0113num.setText(null);
-                    spblg0113src.setText(null);
+                    spblg0113src.setSelection(0);
                 }
             }
         });
@@ -401,7 +414,7 @@ public class SectionGActivity extends Activity {
                 } else {
                     fldGrpspblg0114.setVisibility(View.GONE);
                     spblg0114num.setText(null);
-                    spblg0114src.setText(null);
+                    spblg0114src.setSelection(0);
                 }
             }
         });
@@ -415,17 +428,44 @@ public class SectionGActivity extends Activity {
                     fldGrpspblg0115.setVisibility(View.GONE);
                     spblg0115num.setText(null);
                     spblg0115x.setText(null);
-                    spblg0115src.setText(null);
+                    spblg0115src.setSelection(0);
                 }
             }
         });
 
+//        Get All NGOs spinner
+
+        DatabaseHelper db = new DatabaseHelper(this);
+        Collection<SourceNGOContract> allNGOs = db.getAllNGOs();
+
+        getAllNGOsMap = new HashMap<>();
+        NGOs = new ArrayList<>();
+//        if (allNGOs.size() != 0) {
+
+            NGOs.add("...");
+
+/*            for (SourceNGOContract aNGO : allNGOs) {
+                getAllNGOsMap.put(aNGO.getSourceName(), aNGO.getSourceId());
+                NGOs.add(aNGO.getSourceName());
+            }*/
+
+            String[] ngo = new String[]{"NGO 1", "NGOs 2", "NGO 3", "NGO 4", "NGO 5", "NGO 6", "NGO 7"};
+            for (byte i = 0; i < ngo.length; i++) {
+                NGOs.add(ngo[i]);
+                getAllNGOsMap.put(ngo[i], String.valueOf(i + 1));
+            }
+
+            for (Spinner spin : spblg01src){
+                spin.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, NGOs));
+            }
+
+//        }
 
     }
 
     @OnClick(R.id.btnNext)
     void onBtnNextClick() {
-        /*if (ValidateForm()) {
+        if (ValidateForm()) {
             try {
                 SaveDraft();
             } catch (JSONException e) {
@@ -437,18 +477,15 @@ public class SectionGActivity extends Activity {
                 finish();
 
 
-                Intent endSec = new Intent(this, EndingActivity.class);
+                Intent endSec = new Intent(this, SectionHActivity.class);
                 endSec.putExtra("complete", true);
                 startActivity(endSec);
 
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }
-        }*/
+        }
 
-        Intent secNext = new Intent(this, SectionHActivity.class);
-        secNext.putExtra("check", false);
-        startActivity(secNext);
 
     }
 
@@ -457,22 +494,7 @@ public class SectionGActivity extends Activity {
     void onBtnEndClick() {
         Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();
 
-//        if (ValidateForm()) {
-//            try {
-//                SaveDraft();
-//            } catch (JSONException e) {
-//                e.printStackTrace();
-//            }
-//            if (UpdateDB()) {
-
         Toast.makeText(this, "Starting Form Ending Section", Toast.LENGTH_SHORT).show();
-        /*Intent endSec = new Intent(this, EndingActivity.class);
-        endSec.putExtra("complete", false);
-        startActivity(endSec);*/
-//            } else {
-//                Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
-//            }
-//       }
 
         MainApp.endActivity(this, this);
 
@@ -481,7 +503,7 @@ public class SectionGActivity extends Activity {
     private boolean UpdateDB() {
         DatabaseHelper db = new DatabaseHelper(this);
 
-     /*   int updcount = db.updateSG();
+        int updcount = db.updateSG();
 
         if (updcount == 1) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
@@ -489,9 +511,9 @@ public class SectionGActivity extends Activity {
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
             return false;
-        }*/
+        }
 
-        return true;
+
     }
 
     private void SaveDraft() throws JSONException {
@@ -501,70 +523,87 @@ public class SectionGActivity extends Activity {
 
         sg.put("spblg0101", spblg0101a.isChecked() ? "1" : spblg0101b.isChecked() ? "2" : "0");
         sg.put("spblg0101num", spblg0101num.getText().toString());
-        sg.put("spblg0101src", spblg0101src.getText().toString());
+        if (spblg0101src.getSelectedItemPosition()!=0) {
+            sg.put("spblg0101src", getAllNGOsMap.get(spblg0101src.getSelectedItem().toString()));
+        }
         sg.put("spblg0102", spblg0102a.isChecked() ? "1" : spblg0102b.isChecked() ? "2" : "0");
         sg.put("spblg0102num", spblg0102num.getText().toString());
-        sg.put("spblg0102src", spblg0102src.getText().toString());
+        if (spblg0102src.getSelectedItemPosition()!=0) {
+            sg.put("spblg0102src", getAllNGOsMap.get(spblg0102src.getSelectedItem().toString()));
+        }
         sg.put("spblg0103", spblg0103a.isChecked() ? "1" : spblg0103b.isChecked() ? "2" : "0");
         sg.put("spblg0103num", spblg0103num.getText().toString());
-        sg.put("spblg0103src", spblg0103src.getText().toString());
+        if (spblg0103src.getSelectedItemPosition()!=0) {
+            sg.put("spblg0103src", getAllNGOsMap.get(spblg0103src.getSelectedItem().toString()));
+        }
         sg.put("spblg0104", spblg0104a.isChecked() ? "1" : spblg0104b.isChecked() ? "2" : "0");
         sg.put("spblg0104num", spblg0104num.getText().toString());
-        sg.put("spblg0104src", spblg0104src.getText().toString());
+        if (spblg0104src.getSelectedItemPosition()!=0) {
+            sg.put("spblg0104src", getAllNGOsMap.get(spblg0104src.getSelectedItem().toString()));
+        }
         sg.put("spblg0105", spblg0105a.isChecked() ? "1" : spblg0105b.isChecked() ? "2" : "0");
         sg.put("spblg0105num", spblg0105num.getText().toString());
-        sg.put("spblg0105src", spblg0105src.getText().toString());
+        if (spblg0105src.getSelectedItemPosition()!=0) {
+            sg.put("spblg0105src", getAllNGOsMap.get(spblg0105src.getSelectedItem().toString()));
+        }
         sg.put("spblg0106", spblg0106a.isChecked() ? "1" : spblg0106b.isChecked() ? "2" : "0");
         sg.put("spblg0106num", spblg0106num.getText().toString());
-        sg.put("spblg0106src", spblg0106src.getText().toString());
+        if (spblg0106src.getSelectedItemPosition()!=0) {
+            sg.put("spblg0106src", getAllNGOsMap.get(spblg0106src.getSelectedItem().toString()));
+        }
         sg.put("spblg0107", spblg0107a.isChecked() ? "1" : spblg0107b.isChecked() ? "2" : "0");
         sg.put("spblg0107num", spblg0107num.getText().toString());
-        sg.put("spblg0107src", spblg0107src.getText().toString());
+        if (spblg0107src.getSelectedItemPosition()!=0) {
+            sg.put("spblg0107src", getAllNGOsMap.get(spblg0107src.getSelectedItem().toString()));
+        }
         sg.put("spblg0108", spblg0108a.isChecked() ? "1" : spblg0108b.isChecked() ? "2" : "0");
         sg.put("spblg0108num", spblg0108num.getText().toString());
-        sg.put("spblg0108src", spblg0108src.getText().toString());
+        if (spblg0108src.getSelectedItemPosition()!=0) {
+            sg.put("spblg0108src", getAllNGOsMap.get(spblg0108src.getSelectedItem().toString()));
+        }
         sg.put("spblg0109", spblg0109a.isChecked() ? "1" : spblg0109b.isChecked() ? "2" : "0");
         sg.put("spblg0109num", spblg0109num.getText().toString());
-        sg.put("spblg0109src", spblg0109src.getText().toString());
+        if (spblg0109src.getSelectedItemPosition()!=0) {
+            sg.put("spblg0109src", getAllNGOsMap.get(spblg0109src.getSelectedItem().toString()));
+        }
         sg.put("spblg0110", spblg0110a.isChecked() ? "1" : spblg0110b.isChecked() ? "2" : "0");
         sg.put("spblg0110num", spblg0110num.getText().toString());
-        sg.put("spblg0110src", spblg0110src.getText().toString());
+        if (spblg0110src.getSelectedItemPosition()!=0) {
+            sg.put("spblg0110src", getAllNGOsMap.get(spblg0110src.getSelectedItem().toString()));
+        }
         sg.put("spblg0111", spblg0111a.isChecked() ? "1" : spblg0111b.isChecked() ? "2" : "0");
         sg.put("spblg0111num", spblg0111num.getText().toString());
-        sg.put("spblg0111src", spblg0111src.getText().toString());
+        if (spblg0111src.getSelectedItemPosition()!=0) {
+            sg.put("spblg0111src", getAllNGOsMap.get(spblg0111src.getSelectedItem().toString()));
+        }
         sg.put("spblg0112", spblg0112a.isChecked() ? "1" : spblg0112b.isChecked() ? "2" : "0");
         sg.put("spblg0112num", spblg0112num.getText().toString());
-        sg.put("spblg0112src", spblg0112src.getText().toString());
+        if (spblg0112src.getSelectedItemPosition()!=0) {
+            sg.put("spblg0112src", getAllNGOsMap.get(spblg0112src.getSelectedItem().toString()));
+        }
         sg.put("spblg0113", spblg0113a.isChecked() ? "1" : spblg0113b.isChecked() ? "2" : "0");
         sg.put("spblg0113num", spblg0113num.getText().toString());
-        sg.put("spblg0113src", spblg0113src.getText().toString());
+        if (spblg0113src.getSelectedItemPosition()!=0) {
+            sg.put("spblg0113src", getAllNGOsMap.get(spblg0113src.getSelectedItem().toString()));
+        }
         sg.put("spblg0114", spblg0114a.isChecked() ? "1" : spblg0114b.isChecked() ? "2" : "0");
         sg.put("spblg0114num", spblg0114num.getText().toString());
-        sg.put("spblg0114src", spblg0114src.getText().toString());
+        if (spblg0114src.getSelectedItemPosition()!=0) {
+            sg.put("spblg0114src", getAllNGOsMap.get(spblg0114src.getSelectedItem().toString()));
+        }
         sg.put("spblg0115", spblg0115a.isChecked() ? "1" : spblg0115b.isChecked() ? "2" : "0");
         sg.put("spblg0115num", spblg0115num.getText().toString());
         sg.put("spblg0115x", spblg0115x.getText().toString());
-        sg.put("spblg0115src", spblg0115src.getText().toString());
+        if (spblg0115src.getSelectedItemPosition()!=0) {
+            sg.put("spblg0115src", getAllNGOsMap.get(spblg0115src.getSelectedItem().toString()));
+        }
 
-        //   MainApp.fc.setsG(String.valueOf(sg));
+        MainApp.fc.setsG(String.valueOf(sg));
 
         Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
     }
 
     public boolean ValidateForm() {
-
-
-        if (spbli01c.getSelectedItem() == "....") {
-            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spbli01c), Toast.LENGTH_SHORT).show();
-            ((TextView) spbli01c.getSelectedView()).setText("This Data is Required");
-            ((TextView) spbli01c.getSelectedView()).setTextColor(Color.RED);
-            spbli01c.requestFocus();
-            Log.i(TAG, "spbli01c: This Data is Required!");
-            return false;
-        } else {
-            ((TextView) spbli01c.getSelectedView()).setError(null);
-        }
-
 
         //=================== spblg0101 ==============
         if (spblg0101.getCheckedRadioButtonId() == -1) {
@@ -589,15 +628,17 @@ public class SectionGActivity extends Activity {
                 spblg0101num.setError(null);
             }
 
-            if (spblg0101src.getText().toString().isEmpty()) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.src), Toast.LENGTH_SHORT).show();
-                spblg0101src.setError("This data is Required!");
+            if (spblg0101src.getSelectedItem() == "....") {
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblg0101), Toast.LENGTH_SHORT).show();
+                ((TextView) spblg0101src.getSelectedView()).setText("This Data is Required");
+                ((TextView) spblg0101src.getSelectedView()).setTextColor(Color.RED);
                 spblg0101src.requestFocus();
-                Log.i(TAG, "spblg0101src: This data is Required!");
+                Log.i(TAG, "spblg0101src: This Data is Required!");
                 return false;
             } else {
-                spblg0101src.setError(null);
+                ((TextView) spblg0101src.getSelectedView()).setError(null);
             }
+
 
         }
 
@@ -624,14 +665,15 @@ public class SectionGActivity extends Activity {
                 spblg0102num.setError(null);
             }
 
-            if (spblg0102src.getText().toString().isEmpty()) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.src), Toast.LENGTH_SHORT).show();
-                spblg0102src.setError("This data is Required!");
+            if (spblg0102src.getSelectedItem() == "....") {
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblg0102), Toast.LENGTH_SHORT).show();
+                ((TextView) spblg0102src.getSelectedView()).setText("This Data is Required");
+                ((TextView) spblg0102src.getSelectedView()).setTextColor(Color.RED);
                 spblg0102src.requestFocus();
-                Log.i(TAG, "spblg0102src: This data is Required!");
+                Log.i(TAG, "spblg0102src: This Data is Required!");
                 return false;
             } else {
-                spblg0102src.setError(null);
+                ((TextView) spblg0102src.getSelectedView()).setError(null);
             }
 
         }
@@ -659,14 +701,15 @@ public class SectionGActivity extends Activity {
                 spblg0103num.setError(null);
             }
 
-            if (spblg0103src.getText().toString().isEmpty()) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.src), Toast.LENGTH_SHORT).show();
-                spblg0103src.setError("This data is Required!");
+            if (spblg0103src.getSelectedItem() == "....") {
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblg0103), Toast.LENGTH_SHORT).show();
+                ((TextView) spblg0103src.getSelectedView()).setText("This Data is Required");
+                ((TextView) spblg0103src.getSelectedView()).setTextColor(Color.RED);
                 spblg0103src.requestFocus();
-                Log.i(TAG, "spblg0103src: This data is Required!");
+                Log.i(TAG, "spblg0103src: This Data is Required!");
                 return false;
             } else {
-                spblg0103src.setError(null);
+                ((TextView) spblg0103src.getSelectedView()).setError(null);
             }
 
         }
@@ -694,14 +737,15 @@ public class SectionGActivity extends Activity {
                 spblg0104num.setError(null);
             }
 
-            if (spblg0104src.getText().toString().isEmpty()) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.src), Toast.LENGTH_SHORT).show();
-                spblg0104src.setError("This data is Required!");
+            if (spblg0104src.getSelectedItem() == "....") {
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblg0104), Toast.LENGTH_SHORT).show();
+                ((TextView) spblg0104src.getSelectedView()).setText("This Data is Required");
+                ((TextView) spblg0104src.getSelectedView()).setTextColor(Color.RED);
                 spblg0104src.requestFocus();
-                Log.i(TAG, "spblg0104src: This data is Required!");
+                Log.i(TAG, "spblg0104src: This Data is Required!");
                 return false;
             } else {
-                spblg0104src.setError(null);
+                ((TextView) spblg0104src.getSelectedView()).setError(null);
             }
 
         }
@@ -729,14 +773,15 @@ public class SectionGActivity extends Activity {
                 spblg0105num.setError(null);
             }
 
-            if (spblg0105src.getText().toString().isEmpty()) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.src), Toast.LENGTH_SHORT).show();
-                spblg0105src.setError("This data is Required!");
+            if (spblg0105src.getSelectedItem() == "....") {
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblg0105), Toast.LENGTH_SHORT).show();
+                ((TextView) spblg0105src.getSelectedView()).setText("This Data is Required");
+                ((TextView) spblg0105src.getSelectedView()).setTextColor(Color.RED);
                 spblg0105src.requestFocus();
-                Log.i(TAG, "spblg0105src: This data is Required!");
+                Log.i(TAG, "spblg0105src: This Data is Required!");
                 return false;
             } else {
-                spblg0105src.setError(null);
+                ((TextView) spblg0105src.getSelectedView()).setError(null);
             }
 
         }
@@ -765,14 +810,15 @@ public class SectionGActivity extends Activity {
                 spblg0106num.setError(null);
             }
 
-            if (spblg0106src.getText().toString().isEmpty()) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.src), Toast.LENGTH_SHORT).show();
-                spblg0106src.setError("This data is Required!");
+            if (spblg0106src.getSelectedItem() == "....") {
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblg0106), Toast.LENGTH_SHORT).show();
+                ((TextView) spblg0106src.getSelectedView()).setText("This Data is Required");
+                ((TextView) spblg0106src.getSelectedView()).setTextColor(Color.RED);
                 spblg0106src.requestFocus();
-                Log.i(TAG, "spblg0106src: This data is Required!");
+                Log.i(TAG, "spblg0106src: This Data is Required!");
                 return false;
             } else {
-                spblg0106src.setError(null);
+                ((TextView) spblg0106src.getSelectedView()).setError(null);
             }
 
         }
@@ -800,14 +846,15 @@ public class SectionGActivity extends Activity {
                 spblg0107num.setError(null);
             }
 
-            if (spblg0107src.getText().toString().isEmpty()) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.src), Toast.LENGTH_SHORT).show();
-                spblg0107src.setError("This data is Required!");
+            if (spblg0107src.getSelectedItem() == "....") {
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblg0107), Toast.LENGTH_SHORT).show();
+                ((TextView) spblg0107src.getSelectedView()).setText("This Data is Required");
+                ((TextView) spblg0107src.getSelectedView()).setTextColor(Color.RED);
                 spblg0107src.requestFocus();
-                Log.i(TAG, "spblg0107src: This data is Required!");
+                Log.i(TAG, "spblg0107src: This Data is Required!");
                 return false;
             } else {
-                spblg0107src.setError(null);
+                ((TextView) spblg0107src.getSelectedView()).setError(null);
             }
 
         }
@@ -835,14 +882,15 @@ public class SectionGActivity extends Activity {
                 spblg0108num.setError(null);
             }
 
-            if (spblg0108src.getText().toString().isEmpty()) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.src), Toast.LENGTH_SHORT).show();
-                spblg0108src.setError("This data is Required!");
+            if (spblg0108src.getSelectedItem() == "....") {
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblg0108), Toast.LENGTH_SHORT).show();
+                ((TextView) spblg0108src.getSelectedView()).setText("This Data is Required");
+                ((TextView) spblg0108src.getSelectedView()).setTextColor(Color.RED);
                 spblg0108src.requestFocus();
-                Log.i(TAG, "spblg0108src: This data is Required!");
+                Log.i(TAG, "spblg0108src: This Data is Required!");
                 return false;
             } else {
-                spblg0108src.setError(null);
+                ((TextView) spblg0108src.getSelectedView()).setError(null);
             }
 
         }
@@ -870,14 +918,15 @@ public class SectionGActivity extends Activity {
                 spblg0109num.setError(null);
             }
 
-            if (spblg0109src.getText().toString().isEmpty()) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.src), Toast.LENGTH_SHORT).show();
-                spblg0109src.setError("This data is Required!");
+            if (spblg0109src.getSelectedItem() == "....") {
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblg0109), Toast.LENGTH_SHORT).show();
+                ((TextView) spblg0109src.getSelectedView()).setText("This Data is Required");
+                ((TextView) spblg0109src.getSelectedView()).setTextColor(Color.RED);
                 spblg0109src.requestFocus();
-                Log.i(TAG, "spblg0109src: This data is Required!");
+                Log.i(TAG, "spblg0109src: This Data is Required!");
                 return false;
             } else {
-                spblg0109src.setError(null);
+                ((TextView) spblg0109src.getSelectedView()).setError(null);
             }
 
         }
@@ -905,14 +954,15 @@ public class SectionGActivity extends Activity {
                 spblg0110num.setError(null);
             }
 
-            if (spblg0110src.getText().toString().isEmpty()) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.src), Toast.LENGTH_SHORT).show();
-                spblg0110src.setError("This data is Required!");
+            if (spblg0110src.getSelectedItem() == "....") {
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblg0110), Toast.LENGTH_SHORT).show();
+                ((TextView) spblg0110src.getSelectedView()).setText("This Data is Required");
+                ((TextView) spblg0110src.getSelectedView()).setTextColor(Color.RED);
                 spblg0110src.requestFocus();
-                Log.i(TAG, "spblg0110src: This data is Required!");
+                Log.i(TAG, "spblg0110src: This Data is Required!");
                 return false;
             } else {
-                spblg0110src.setError(null);
+                ((TextView) spblg0110src.getSelectedView()).setError(null);
             }
 
         }
@@ -940,14 +990,15 @@ public class SectionGActivity extends Activity {
                 spblg0111num.setError(null);
             }
 
-            if (spblg0111src.getText().toString().isEmpty()) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.src), Toast.LENGTH_SHORT).show();
-                spblg0111src.setError("This data is Required!");
+            if (spblg0111src.getSelectedItem() == "....") {
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblg0111), Toast.LENGTH_SHORT).show();
+                ((TextView) spblg0111src.getSelectedView()).setText("This Data is Required");
+                ((TextView) spblg0111src.getSelectedView()).setTextColor(Color.RED);
                 spblg0111src.requestFocus();
-                Log.i(TAG, "spblg0111src: This data is Required!");
+                Log.i(TAG, "spblg0111src: This Data is Required!");
                 return false;
             } else {
-                spblg0111src.setError(null);
+                ((TextView) spblg0111src.getSelectedView()).setError(null);
             }
 
         }
@@ -975,14 +1026,15 @@ public class SectionGActivity extends Activity {
                 spblg0112num.setError(null);
             }
 
-            if (spblg0112src.getText().toString().isEmpty()) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.src), Toast.LENGTH_SHORT).show();
-                spblg0112src.setError("This data is Required!");
+            if (spblg0112src.getSelectedItem() == "....") {
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblg0112), Toast.LENGTH_SHORT).show();
+                ((TextView) spblg0112src.getSelectedView()).setText("This Data is Required");
+                ((TextView) spblg0112src.getSelectedView()).setTextColor(Color.RED);
                 spblg0112src.requestFocus();
-                Log.i(TAG, "spblg0112src: This data is Required!");
+                Log.i(TAG, "spblg0112src: This Data is Required!");
                 return false;
             } else {
-                spblg0112src.setError(null);
+                ((TextView) spblg0112src.getSelectedView()).setError(null);
             }
 
         }
@@ -1011,14 +1063,15 @@ public class SectionGActivity extends Activity {
                 spblg0113num.setError(null);
             }
 
-            if (spblg0113src.getText().toString().isEmpty()) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.src), Toast.LENGTH_SHORT).show();
-                spblg0113src.setError("This data is Required!");
+            if (spblg0113src.getSelectedItem() == "....") {
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblg0113), Toast.LENGTH_SHORT).show();
+                ((TextView) spblg0113src.getSelectedView()).setText("This Data is Required");
+                ((TextView) spblg0113src.getSelectedView()).setTextColor(Color.RED);
                 spblg0113src.requestFocus();
-                Log.i(TAG, "spblg0113src: This data is Required!");
+                Log.i(TAG, "spblg0113src: This Data is Required!");
                 return false;
             } else {
-                spblg0113src.setError(null);
+                ((TextView) spblg0113src.getSelectedView()).setError(null);
             }
 
         }
@@ -1046,14 +1099,15 @@ public class SectionGActivity extends Activity {
                 spblg0114num.setError(null);
             }
 
-            if (spblg0114src.getText().toString().isEmpty()) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.src), Toast.LENGTH_SHORT).show();
-                spblg0114src.setError("This data is Required!");
+            if (spblg0114src.getSelectedItem() == "....") {
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblg0114), Toast.LENGTH_SHORT).show();
+                ((TextView) spblg0114src.getSelectedView()).setText("This Data is Required");
+                ((TextView) spblg0114src.getSelectedView()).setTextColor(Color.RED);
                 spblg0114src.requestFocus();
-                Log.i(TAG, "spblg0114src: This data is Required!");
+                Log.i(TAG, "spblg0114src: This Data is Required!");
                 return false;
             } else {
-                spblg0114src.setError(null);
+                ((TextView) spblg0114src.getSelectedView()).setError(null);
             }
 
         }
@@ -1092,14 +1146,15 @@ public class SectionGActivity extends Activity {
                 spblg0115num.setError(null);
             }
 
-            if (spblg0115src.getText().toString().isEmpty()) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.src), Toast.LENGTH_SHORT).show();
-                spblg0115src.setError("This data is Required!");
+            if (spblg0115src.getSelectedItem() == "....") {
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.other), Toast.LENGTH_SHORT).show();
+                ((TextView) spblg0115src.getSelectedView()).setText("This Data is Required");
+                ((TextView) spblg0115src.getSelectedView()).setTextColor(Color.RED);
                 spblg0115src.requestFocus();
-                Log.i(TAG, "spblg0115src: This data is Required!");
+                Log.i(TAG, "spblg0115src: This Data is Required!");
                 return false;
             } else {
-                spblg0115src.setError(null);
+                ((TextView) spblg0115src.getSelectedView()).setError(null);
             }
         }
 

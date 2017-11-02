@@ -408,9 +408,26 @@ public class SectionOActivity extends Activity {
     @OnClick(R.id.btnNext)
     void onBtnNextClick() {
 
-        Intent secNext = new Intent(this, SectionPActivity.class);
-        secNext.putExtra("check", false);
-        startActivity(secNext);
+        if (ValidateForm()) {
+            try {
+                SaveDraft();
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+            if (UpdateDB()) {
+                Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
+
+                finish();
+
+                Intent secNext = new Intent(this, SectionPActivity.class);
+                secNext.putExtra("check", true);
+                startActivity(secNext);
+
+            } else {
+                Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
+            }
+        }
+
 
     }
 
@@ -493,7 +510,7 @@ public class SectionOActivity extends Activity {
         so.put("spblo1888x", spblo1888x.getText().toString());
 
 
-        //   MainApp.fc.setsO(String.valueOf(so));
+        MainApp.fc.setsO(String.valueOf(so));
 
         Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
     }

@@ -98,7 +98,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:visibility="gone">
+            android:visibility="gone"
+            tools:visibility="visible">
 
 
             <EditText
@@ -111,15 +112,12 @@
                 android:inputType="number"
                 android:maxLength="2" />
 
-            <EditText
+            <Spinner
                 android:id="@+id/spblg0101src"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="1dp"
-                android:digits="0123456789"
-                android:hint="@string/src"
-                android:inputType="number"
-                android:maxLength="2" />
+                android:layout_marginTop="3dp"
+                android:hint="@string/src" />
 
         </LinearLayout>
 
@@ -170,15 +168,12 @@
                 android:inputType="number"
                 android:maxLength="2" />
 
-            <EditText
+            <Spinner
                 android:id="@+id/spblg0102src"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="1dp"
-                android:digits="0123456789"
-                android:hint="@string/src"
-                android:inputType="number"
-                android:maxLength="2" />
+                android:layout_marginTop="3dp"
+                android:hint="@string/src" />
 
 
         </LinearLayout>
@@ -231,15 +226,12 @@
                 android:inputType="number"
                 android:maxLength="2" />
 
-            <EditText
+            <Spinner
                 android:id="@+id/spblg0103src"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="1dp"
-                android:digits="0123456789"
-                android:hint="@string/src"
-                android:inputType="number"
-                android:maxLength="2" />
+                android:layout_marginTop="3dp"
+                android:hint="@string/src" />
 
         </LinearLayout>
 
@@ -293,15 +285,12 @@
                 android:inputType="number"
                 android:maxLength="2" />
 
-            <EditText
+            <Spinner
                 android:id="@+id/spblg0104src"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="1dp"
-                android:digits="0123456789"
-                android:hint="@string/src"
-                android:inputType="number"
-                android:maxLength="2" />
+                android:layout_marginTop="3dp"
+                android:hint="@string/src" />
 
         </LinearLayout>
 
@@ -353,15 +342,12 @@
                 android:inputType="number"
                 android:maxLength="2" />
 
-            <EditText
+            <Spinner
                 android:id="@+id/spblg0105src"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="1dp"
-                android:digits="0123456789"
-                android:hint="@string/src"
-                android:inputType="number"
-                android:maxLength="2" />
+                android:layout_marginTop="3dp"
+                android:hint="@string/src" />
 
         </LinearLayout>
 
@@ -413,15 +399,12 @@
                 android:inputType="number"
                 android:maxLength="2" />
 
-            <EditText
+            <Spinner
                 android:id="@+id/spblg0106src"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="1dp"
-                android:digits="0123456789"
-                android:hint="@string/src"
-                android:inputType="number"
-                android:maxLength="2" />
+                android:layout_marginTop="3dp"
+                android:hint="@string/src" />
 
         </LinearLayout>
 
@@ -474,15 +457,12 @@
                 android:inputType="number"
                 android:maxLength="2" />
 
-            <EditText
+            <Spinner
                 android:id="@+id/spblg0107src"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="1dp"
-                android:digits="0123456789"
-                android:hint="@string/src"
-                android:inputType="number"
-                android:maxLength="2" />
+                android:layout_marginTop="3dp"
+                android:hint="@string/src" />
 
         </LinearLayout>
 
@@ -534,15 +514,12 @@
                 android:inputType="number"
                 android:maxLength="2" />
 
-            <EditText
+            <Spinner
                 android:id="@+id/spblg0108src"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="1dp"
-                android:digits="0123456789"
-                android:hint="@string/src"
-                android:inputType="number"
-                android:maxLength="2" />
+                android:layout_marginTop="3dp"
+                android:hint="@string/src" />
         </LinearLayout>
 
         <TextView
@@ -593,15 +570,12 @@
                 android:inputType="number"
                 android:maxLength="2" />
 
-            <EditText
+            <Spinner
                 android:id="@+id/spblg0109src"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="1dp"
-                android:digits="0123456789"
-                android:hint="@string/src"
-                android:inputType="number"
-                android:maxLength="2" />
+                android:layout_marginTop="3dp"
+                android:hint="@string/src" />
 
         </LinearLayout>
 
@@ -654,15 +628,12 @@
                 android:inputType="number"
                 android:maxLength="2" />
 
-            <EditText
+            <Spinner
                 android:id="@+id/spblg0110src"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="1dp"
-                android:digits="0123456789"
                 android:hint="@string/src"
-                android:inputType="number"
-                android:maxLength="2" />
+                android:layout_marginTop="3dp" />
 
         </LinearLayout>
 
@@ -714,15 +685,12 @@
                 android:inputType="number"
                 android:maxLength="2" />
 
-            <EditText
+            <Spinner
                 android:id="@+id/spblg0111src"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="1dp"
-                android:digits="0123456789"
                 android:hint="@string/src"
-                android:inputType="number"
-                android:maxLength="2" />
+                android:layout_marginTop="3dp"/>
 
         </LinearLayout>
 
@@ -775,15 +743,12 @@
                 android:inputType="number"
                 android:maxLength="2" />
 
-            <EditText
+            <Spinner
                 android:id="@+id/spblg0112src"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="1dp"
-                android:digits="0123456789"
                 android:hint="@string/src"
-                android:inputType="number"
-                android:maxLength="2" />
+                android:layout_marginTop="3dp" />
 
         </LinearLayout>
 
@@ -836,15 +801,12 @@
                 android:inputType="number"
                 android:maxLength="2" />
 
-            <EditText
+            <Spinner
                 android:id="@+id/spblg0113src"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="1dp"
-                android:digits="0123456789"
                 android:hint="@string/src"
-                android:inputType="number"
-                android:maxLength="2" />
+                android:layout_marginTop="3dp"/>
 
         </LinearLayout>
 
@@ -896,15 +858,12 @@
                 android:inputType="number"
                 android:maxLength="2" />
 
-            <EditText
+            <Spinner
                 android:id="@+id/spblg0114src"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="1dp"
-                android:digits="0123456789"
                 android:hint="@string/src"
-                android:inputType="number"
-                android:maxLength="2" />
+                android:layout_marginTop="3dp" />
 
         </LinearLayout>
 
@@ -965,15 +924,12 @@
                 android:inputType="number"
                 android:maxLength="2" />
 
-            <EditText
+            <Spinner
                 android:id="@+id/spblg0115src"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="1dp"
-                android:digits="0123456789"
                 android:hint="@string/src"
-                android:inputType="number"
-                android:maxLength="2" />
+                android:layout_marginTop="3dp" />
 
         </LinearLayout>
 

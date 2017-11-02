@@ -814,7 +814,7 @@ public class SectionQActivity extends AppCompatActivity
     @OnClick(R.id.btn_Continue)
     void onBtnContinueClick() {
 
-        /*if (ValidateForm()) {
+        if (ValidateForm()) {
             try {
                 SaveDraft();
             } catch (JSONException e) {
@@ -825,8 +825,8 @@ public class SectionQActivity extends AppCompatActivity
 
                 finish();
 
-                Intent secNext = new Intent(this, CounselingSessionsActivity.class);
-                secNext.putExtra("check", false);
+                Intent secNext = new Intent(this, EndingActivity.class);
+                secNext.putExtra("check", true);
                 startActivity(secNext);
 
             } else {
@@ -834,11 +834,7 @@ public class SectionQActivity extends AppCompatActivity
             }
         }
 
-*/
 
-        Intent secNext = new Intent(this, EndingActivity.class);
-        secNext.putExtra("check", true);
-        startActivity(secNext);
 
     }
 
@@ -897,7 +893,10 @@ public class SectionQActivity extends AppCompatActivity
         sn.put("bd08dod1", bd08dod1.getText().toString());
         sn.put("bd08dod2", bd08dod2.getText().toString());
 
-        //MainApp.fc.setBirthsDeaths(String.valueOf(sn));
+        MainApp.fc.setsQ(String.valueOf(sn));
+
+
+
 
         Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
     }
