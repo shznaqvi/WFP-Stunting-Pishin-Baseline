@@ -20,7 +20,7 @@ public class FamilyMembersContract {
     private String _DATE = "";
     private String formDate = "";
     private String deviceId = "";
-    private String user = "";
+    private String interviewer1 = "";
     private String name = "";
     private String ageLess5 = "";
     private String ageLess2 = "";
@@ -140,12 +140,12 @@ public class FamilyMembersContract {
         this.deviceId = deviceId;
     }
 
-    public String getUser() {
-        return user;
+    public String getInterviewer1() {
+        return interviewer1;
     }
 
-    public void setUser(String user) {
-        this.user = user;
+    public void setInterviewer1(String interviewer1) {
+        this.interviewer1 = interviewer1;
     }
 
     public String getName() {
@@ -445,7 +445,7 @@ public class FamilyMembersContract {
         //this._DATE = jsonObject.getString(FamilyMembers.COLUMN_DATE);
         this.formDate = jsonObject.getString(familyMembers.COLUMN_FORMDATE);
         this.deviceId = jsonObject.getString(familyMembers.COLUMN_DEVICEID);
-        this.user = jsonObject.getString(familyMembers.COLUMN_USER);
+        this.interviewer1 = jsonObject.getString(familyMembers.COLUMN_INTERVIEWER1);
 /*        this.dss_id_hh = jsonObject.getString(FamilyMembers.COLUMN_DSS_ID_HH);
         this.dss_id_f = jsonObject.getString(FamilyMembers.COLUMN_DSS_ID_F);
         this.dss_id_m = jsonObject.getString(FamilyMembers.COLUMN_DSS_ID_M);
@@ -494,7 +494,7 @@ public class FamilyMembersContract {
         //this._DATE = cursor.getString(cursor.getColumnIndex(FamilyMembers.COLUMN_DATE));
         this.formDate = cursor.getString(cursor.getColumnIndex(familyMembers.COLUMN_FORMDATE));
         this.deviceId = cursor.getString(cursor.getColumnIndex(familyMembers.COLUMN_DEVICEID));
-        this.user = cursor.getString(cursor.getColumnIndex(familyMembers.COLUMN_USER));
+        this.interviewer1 = cursor.getString(cursor.getColumnIndex(familyMembers.COLUMN_INTERVIEWER1));
 /*        this.dss_id_hh = cursor.getString(cursor.getColumnIndex(FamilyMembers.COLUMN_DSS_ID_HH));
         this.dss_id_f = cursor.getString(cursor.getColumnIndex(FamilyMembers.COLUMN_DSS_ID_F));
         this.dss_id_m = cursor.getString(cursor.getColumnIndex(FamilyMembers.COLUMN_DSS_ID_M));
@@ -544,7 +544,7 @@ public class FamilyMembersContract {
         //json.put(FamilyMembers.COLUMN_DATE, this._DATE == null ? JSONObject.NULL : this._DATE);
         json.put(familyMembers.COLUMN_FORMDATE, this.formDate == null ? JSONObject.NULL : this.formDate);
         json.put(familyMembers.COLUMN_DEVICEID, this.deviceId == null ? JSONObject.NULL : this.deviceId);
-        json.put(familyMembers.COLUMN_USER, this.user == null ? JSONObject.NULL : this.user);
+        json.put(familyMembers.COLUMN_INTERVIEWER1, this.interviewer1 == null ? JSONObject.NULL : this.interviewer1);
 /*        json.put(FamilyMembers.COLUMN_DSS_ID_HH, this.dss_id_hh == null ? JSONObject.NULL : this.dss_id_hh);
         json.put(FamilyMembers.COLUMN_DSS_ID_F, this.dss_id_f == null ? JSONObject.NULL : this.dss_id_f);
         json.put(FamilyMembers.COLUMN_DSS_ID_M, this.dss_id_m == null ? JSONObject.NULL : this.dss_id_m);
@@ -598,7 +598,7 @@ public class FamilyMembersContract {
         //public static final String COLUMN_DATE = "_date";
         public static final String COLUMN_FORMDATE = "formdate";
         public static final String COLUMN_DEVICEID = "deviceid";
-        public static final String COLUMN_USER = "user";
+        public static final String COLUMN_INTERVIEWER1 = "interviewer1";
 /*        public static final String COLUMN_DSS_ID_HH = "dss_id_hh";
         public static final String COLUMN_DSS_ID_F = "dss_id_f";
         public static final String COLUMN_DSS_ID_M = "dss_id_m";

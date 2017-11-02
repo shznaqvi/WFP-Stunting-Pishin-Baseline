@@ -91,7 +91,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             familyMembers.COLUMN_UUID + " TEXT," +
             familyMembers.COLUMN_FORMDATE + " TEXT," +
             familyMembers.COLUMN_DEVICEID + " TEXT," +
-            familyMembers.COLUMN_USER + " TEXT," +
+            familyMembers.COLUMN_INTERVIEWER1 + " TEXT," +
             familyMembers.COLUMN_SB + " TEXT," +
             familyMembers.COLUMN_ISTATUS + " TEXT," +
             familyMembers.COLUMN_SYNCED + " TEXT," +
@@ -402,7 +402,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(familyMembers.COLUMN_UID, fmc.get_UID());
         values.put(familyMembers.COLUMN_UUID, fmc.get_UUID());
         values.put(familyMembers.COLUMN_FORMDATE, fmc.getFormDate());
-        values.put(familyMembers.COLUMN_USER, fmc.getUser());
+        values.put(familyMembers.COLUMN_INTERVIEWER1, fmc.getInterviewer1());
         values.put(familyMembers.COLUMN_ISTATUS, fmc.getIstatus());
         values.put(familyMembers.COLUMN_SB, fmc.getsB());
         values.put(familyMembers.COLUMN_DEVICETAGID, fmc.getDevicetagID());
@@ -760,7 +760,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String[] columns = {
                 FormsTable._ID,
                 FormsTable.COLUMN__UID,
-                FormsTable.COLUMN_USER,
+                FormsTable.COLUMN_INTERVIEWER1,
                 FormsTable.COLUMN_PARTICIPANTID,
                 FormsTable.COLUMN_FORMDATE,
                 FormsTable.COLUMN_FORMTYPE,
