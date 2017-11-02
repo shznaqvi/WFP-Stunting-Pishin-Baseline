@@ -263,6 +263,9 @@ public class SectionBActivity extends Activity {
 
         JSONObject sB = new JSONObject();
 
+        sB.put("tehsil_code", String.valueOf(MainApp.tehsilCode));
+        sB.put("uc_code", String.valueOf(MainApp.ucCode));
+        sB.put("village_code", String.valueOf(MainApp.villageCode));
         sB.put("spblb01Serial", String.valueOf(MainApp.counter));
         sB.put("spblb01", spblb01.getText().toString());
         sB.put("spblb02", spblb02a.isChecked() ? "1" : spblb02b.isChecked() ? "2" : "0");

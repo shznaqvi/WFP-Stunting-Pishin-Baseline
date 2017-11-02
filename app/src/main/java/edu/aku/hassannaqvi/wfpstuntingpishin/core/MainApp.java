@@ -41,7 +41,7 @@ public class MainApp extends Application {
 
     public static final String _IP = "43.245.131.159"; // Test PHP server
     public static final Integer _PORT = 8080; // Port - with colon (:)
-    public static final String _HOST_URL = "http://" + MainApp._IP + ":" + MainApp._PORT + "/wfpsp/api/";
+    public static final String _HOST_URL = "http://" + MainApp._IP + ":" + MainApp._PORT + "/wfp-pishin/api/";
 
     /*
         public static final String _IP = "43.245.131.159"; // Test server
@@ -92,7 +92,9 @@ public class MainApp extends Application {
     public static String userName = "0000";
     public static String userName2 = "0000";
     public static String[] loginMem;
-    public static String areaCode;
+    public static int ucCode = 0;
+    public static int tehsilCode = 0;
+    public static int villageCode = 0;
     //    Total No of members got from Section A
     public static int NoMembersCount = 0;
     public static int NoMaleCount = 0;

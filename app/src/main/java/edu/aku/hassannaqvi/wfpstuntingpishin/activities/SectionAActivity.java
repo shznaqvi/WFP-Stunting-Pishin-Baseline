@@ -1,6 +1,7 @@
 package edu.aku.hassannaqvi.wfpstuntingpishin.activities;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
@@ -9,6 +10,7 @@ import android.provider.Settings;
 import android.support.annotation.IdRes;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -22,7 +24,9 @@ import android.widget.Toast;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -32,6 +36,9 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import edu.aku.hassannaqvi.wfpstuntingpishin.R;
 import edu.aku.hassannaqvi.wfpstuntingpishin.contracts.FormsContract;
+import edu.aku.hassannaqvi.wfpstuntingpishin.contracts.TehsilContract;
+import edu.aku.hassannaqvi.wfpstuntingpishin.contracts.UCsContract;
+import edu.aku.hassannaqvi.wfpstuntingpishin.contracts.VillagesContract;
 import edu.aku.hassannaqvi.wfpstuntingpishin.core.DatabaseHelper;
 import edu.aku.hassannaqvi.wfpstuntingpishin.core.MainApp;
 import edu.aku.hassannaqvi.wfpstuntingpishin.otherClasses.MembersCount;
@@ -39,6 +46,10 @@ import edu.aku.hassannaqvi.wfpstuntingpishin.otherClasses.MembersCount;
 public class SectionAActivity extends Activity {
 
     private static final String TAG = SectionAActivity.class.getSimpleName();
+    @BindView(R.id.spTehsil)
+    Spinner spTehsil;
+    @BindView(R.id.spUCs)
+    Spinner spUCs;
     @BindView(R.id.spbla03)
     Spinner spbla03;
     @BindView(R.id.spbla04)
@@ -141,6 +152,19 @@ public class SectionAActivity extends Activity {
     @BindView(R.id.btn_End)
     Button btn_End;
 
+    ArrayList<String> lablesTehsil;
+    Collection<TehsilContract> TehsilList;
+    Map<String, String> tehsilMap;
+
+    ArrayList<String> lablesUCs;
+    Collection<UCsContract> UcsList;
+    Map<String, String> ucsMap;
+
+    ArrayList<String> lablesVillages;
+    Collection<VillagesContract> VillagesList;
+    Map<String, String> VillagesMap;
+
+    DatabaseHelper db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -151,8 +175,7 @@ public class SectionAActivity extends Activity {
         spbla03.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item,
                 Arrays.asList(new String[]{"....", "abc"})));
 
-        spbla08.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
-        {
+        spbla08.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
                 if (spbla08a.isChecked()) {
@@ -165,7 +188,113 @@ public class SectionAActivity extends Activity {
             }
         });
 
+        db = new DatabaseHelper(this);
+
+        populateSpinner(this);
+
     }
+
+
+    public void populateSpinner(final Context context) {
+
+        final Context mContext = context;
+
+        // Populate Tehsils list
+        TehsilList = db.getAllTehsils();
+
+        lablesTehsil = new ArrayList<>();
+        tehsilMap = new HashMap<>();
+
+        lablesTehsil.add("Select Taluka..");
+
+        for (TehsilContract taluka : TehsilList) {
+            lablesTehsil.add(taluka.getTehsil_name());
+
+            tehsilMap.put(taluka.getTehsil_name(), taluka.getTehsilcode());
+        }
+
+        spTehsil.setAdapter(new ArrayAdapter<>(mContext, android.R.layout.simple_spinner_dropdown_item, lablesTehsil));
+
+        spTehsil.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                // Populate UCs list
+
+                if (spTehsil.getSelectedItemPosition() != 0) {
+                    MainApp.tehsilCode = Integer.valueOf(tehsilMap.get(spTehsil.getSelectedItem().toString()));
+                }
+
+                lablesUCs = new ArrayList<>();
+                ucsMap = new HashMap<>();
+                lablesUCs.add("Select UC..");
+
+                if (spTehsil.getSelectedItemPosition() != 0) {
+                    UcsList = db.getAllUCs(String.valueOf(MainApp.tehsilCode));
+                    for (UCsContract ucs : UcsList) {
+                        lablesUCs.add(ucs.getUcs());
+                        ucsMap.put(ucs.getUcs(), ucs.getUccode());
+                    }
+                }
+                spUCs.setAdapter(new ArrayAdapter<>(mContext, android.R.layout.simple_spinner_dropdown_item, lablesUCs));
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
+        spUCs.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                // Populate UCs list
+
+                if (spUCs.getSelectedItemPosition() != 0) {
+                    MainApp.ucCode = Integer.valueOf(ucsMap.get(spUCs.getSelectedItem().toString()));
+                }
+
+                lablesVillages = new ArrayList<>();
+                VillagesMap = new HashMap<>();
+                lablesVillages.add("Select Village..");
+
+                VillagesList = db.getVillages(String.valueOf(MainApp.ucCode));
+
+                if (VillagesList.size() != 0) {
+                    for (VillagesContract vil : VillagesList) {
+                        lablesVillages.add(vil.getVillagename());
+                        VillagesMap.put(vil.getVillagename(), vil.getVillagecode());
+                    }
+                }
+
+                spbla03.setAdapter(new ArrayAdapter<>(context, android.R.layout.simple_spinner_dropdown_item, lablesVillages));
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
+
+        spbla03.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+
+                if (spbla03.getSelectedItemPosition() != 0) {
+                    MainApp.villageCode = Integer.valueOf(VillagesMap.get(spbla03.getSelectedItem().toString()));
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
+
+    }
+
 
     @OnClick(R.id.btn_End)
     void onBtnEndClick() {
@@ -211,6 +340,9 @@ public class SectionAActivity extends Activity {
 
         JSONObject sInfo = new JSONObject();
 
+        sInfo.put("tehsil_code", String.valueOf(MainApp.tehsilCode));
+        sInfo.put("uc_code", String.valueOf(MainApp.ucCode));
+        sInfo.put("village_code", String.valueOf(MainApp.villageCode));
         sInfo.put("resp_name", respname.getText().toString());
         sInfo.put("resp_age", respage.getText());
         sInfo.put("resp_edu", respedua.isChecked() ? "1" : respedub.isChecked() ? "2" : respeduc.isChecked() ? "3"
@@ -465,7 +597,6 @@ public class SectionAActivity extends Activity {
             spbla05b.setError(null);
             spbla06c.setError(null);
         }
-
 
 
         if (spbla07t.getText().toString().isEmpty()) {

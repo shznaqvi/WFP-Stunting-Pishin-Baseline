@@ -29,6 +29,12 @@ import edu.aku.hassannaqvi.wfpstuntingpishin.otherClasses.MothersLst;
 import edu.aku.hassannaqvi.wfpstuntingpishin.contracts.FamilyMembersContract.familyMembers;
 import edu.aku.hassannaqvi.wfpstuntingpishin.contracts.SourceNGOContract.SourceTable;
 
+import edu.aku.hassannaqvi.wfpstuntingpishin.contracts.TehsilContract;
+import edu.aku.hassannaqvi.wfpstuntingpishin.contracts.TehsilContract.singleTehsil;
+import edu.aku.hassannaqvi.wfpstuntingpishin.contracts.UCsContract;
+import edu.aku.hassannaqvi.wfpstuntingpishin.contracts.UCsContract.singleUCs;
+import edu.aku.hassannaqvi.wfpstuntingpishin.contracts.VillagesContract;
+import edu.aku.hassannaqvi.wfpstuntingpishin.contracts.VillagesContract.singleVillages;
 
 /**
  * Created by hassan.naqvi on 11/30/2016.
@@ -105,6 +111,20 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             SourceTable.COLUMN_SOURCE_NAME + " TEXT " +
             ");";
 
+    final String SQL_CREATE_VILLAGES = "CREATE TABLE " + singleVillages.TABLE_NAME + "("
+//                + singleVillages.COLUMN_ID + " TEXT,"
+            + singleVillages.COLUMN_VILLAGE_NAME + " TEXT,"
+            + singleVillages.COLUMN_UC_CODE + " TEXT,"
+//                + singleVillages.COLUMN_TEHSIL_NAME + " TEXT,"
+            + singleVillages.COLUMN_VILLAGE_CODE + " TEXT );";
+    final String SQL_CREATE_TEHSILS = "CREATE TABLE " + singleTehsil.TABLE_NAME + "("
+            + singleTehsil.COLUMN_TEHSIL_CODE + " TEXT,"
+            + singleTehsil.COLUMN_TEHSIL_NAME + " TEXT );";
+    final String SQL_CREATE_UCS = "CREATE TABLE " + singleUCs.TABLE_NAME + "("
+            + singleUCs.COLUMN_UCCODE + " TEXT,"
+            + singleUCs.COLUMN_TEHSIL_CODE + " TEXT,"
+            + singleUCs.COLUMN_UCS + " TEXT );";
+
 
     private static final String SQL_DELETE_USERS =
             "DROP TABLE IF EXISTS " + UsersTable.TABLE_NAME;
@@ -119,6 +139,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String SQL_SELECT_CHILD =
             "SELECT * from census where member_type =? and dss_id_hh =? and uuid =? and current_status IN ('1', '2')";
 
+    private static final String SQL_DELETE_VILLAGES = "DROP TABLE IF EXISTS " + singleVillages.TABLE_NAME;
+    private static final String SQL_DELETE_TEHSILS = "DROP TABLE IF EXISTS " + singleTehsil.TABLE_NAME;
+    private static final String SQL_DELETE_UCS = "DROP TABLE IF EXISTS " + singleUCs.TABLE_NAME;
 
     private final String TAG = "DatabaseHelper";
 
@@ -140,6 +163,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(SQL_CREATE_FAMILY_MEMBERS);
 
         db.execSQL(SQL_CREATE_SOURCE_TABLE);
+
+        db.execSQL(SQL_CREATE_VILLAGES);
+        db.execSQL(SQL_CREATE_TEHSILS);
+        db.execSQL(SQL_CREATE_UCS);
     }
 
     @Override
@@ -147,6 +174,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(SQL_DELETE_USERS);
         db.execSQL(SQL_DELETE_FORMS);
         db.execSQL(SQL_DELETE_FAMILY_MEMBERS);
+
+        db.execSQL(SQL_DELETE_VILLAGES);
+        db.execSQL(SQL_DELETE_TEHSILS);
+        db.execSQL(SQL_DELETE_UCS);
 
     }
 
@@ -256,6 +287,213 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
         return allSR;
     }
+
+    public void syncVillages(JSONArray Villageslist) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(singleVillages.TABLE_NAME, null, null);
+        try {
+            JSONArray jsonArray = Villageslist;
+            for (int i = 0; i < jsonArray.length(); i++) {
+                JSONObject jsonObjectCC = jsonArray.getJSONObject(i);
+
+                VillagesContract Vc = new VillagesContract();
+                Vc.Sync(jsonObjectCC);
+
+                ContentValues values = new ContentValues();
+
+//                values.put(singleVillages.COLUMN_ID, Vc.getID());
+                values.put(singleVillages.COLUMN_VILLAGE_NAME, Vc.getVillagename());
+                values.put(singleVillages.COLUMN_UC_CODE, Vc.getUc_code());
+//                values.put(singleVillages.COLUMN_TEHSIL_NAME, Vc.getTehsil_name());
+                values.put(singleVillages.COLUMN_VILLAGE_CODE, Vc.getVillagecode());
+
+                db.insert(singleVillages.TABLE_NAME, null, values);
+            }
+        } catch (Exception e) {
+        } finally {
+            db.close();
+        }
+    }
+
+    public void syncTehsil(JSONArray Tehsillist) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(singleTehsil.TABLE_NAME, null, null);
+        try {
+            JSONArray jsonArray = Tehsillist;
+            for (int i = 0; i < jsonArray.length(); i++) {
+                JSONObject jsonObjectCC = jsonArray.getJSONObject(i);
+
+                TehsilContract Vc = new TehsilContract();
+                Vc.Sync(jsonObjectCC);
+
+                ContentValues values = new ContentValues();
+
+                values.put(singleTehsil.COLUMN_TEHSIL_CODE, Vc.getTehsilcode());
+                values.put(singleTehsil.COLUMN_TEHSIL_NAME, Vc.getTehsil_name());
+
+                db.insert(singleTehsil.TABLE_NAME, null, values);
+            }
+        } catch (Exception e) {
+        } finally {
+            db.close();
+        }
+    }
+
+    public void syncUCs(JSONArray UCslist) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(singleUCs.TABLE_NAME, null, null);
+        try {
+            JSONArray jsonArray = UCslist;
+            for (int i = 0; i < jsonArray.length(); i++) {
+                JSONObject jsonObjectCC = jsonArray.getJSONObject(i);
+
+                UCsContract Vc = new UCsContract();
+                Vc.Sync(jsonObjectCC);
+
+                ContentValues values = new ContentValues();
+
+                values.put(singleUCs.COLUMN_UCCODE, Vc.getUccode());
+                values.put(singleUCs.COLUMN_UCS, Vc.getUcs());
+                values.put(singleUCs.COLUMN_TEHSIL_CODE, Vc.getTehsil_code());
+
+                db.insert(singleUCs.TABLE_NAME, null, values);
+            }
+        } catch (Exception e) {
+        } finally {
+            db.close();
+        }
+    }
+
+    public Collection<VillagesContract> getVillages(String uccode) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = {
+//                singleVillages.COLUMN_ID,
+                singleVillages.COLUMN_VILLAGE_NAME,
+                singleVillages.COLUMN_UC_CODE,
+//                singleVillages.COLUMN_TEHSIL_NAME,
+                singleVillages.COLUMN_VILLAGE_CODE,
+        };
+
+        String whereClause = singleVillages.COLUMN_UC_CODE + " =?";
+        String[] whereArgs = {uccode};
+        String groupBy = null;
+        String having = null;
+
+        String orderBy =
+                singleVillages.COLUMN_VILLAGE_NAME + " ASC";
+
+        Collection<VillagesContract> allDC = new ArrayList<>();
+        try {
+            c = db.query(
+                    singleVillages.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                VillagesContract dc = new VillagesContract();
+                allDC.add(dc.HydrateVillages(c));
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return allDC;
+    }
+
+    public Collection<TehsilContract> getAllTehsils() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = {
+                singleTehsil.COLUMN_TEHSIL_CODE,
+                singleTehsil.COLUMN_TEHSIL_NAME
+        };
+
+        String whereClause = null;
+        String[] whereArgs = null;
+        String groupBy = null;
+        String having = null;
+
+        String orderBy =
+                singleTehsil.COLUMN_TEHSIL_NAME + " ASC";
+
+        Collection<TehsilContract> allDC = new ArrayList<>();
+        try {
+            c = db.query(
+                    singleTehsil.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                TehsilContract dc = new TehsilContract();
+                allDC.add(dc.HydrateTehsils(c));
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return allDC;
+    }
+
+    public Collection<UCsContract> getAllUCs(String talukaCode) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = {
+                singleUCs.COLUMN_UCCODE,
+                singleUCs.COLUMN_UCS,
+                singleUCs.COLUMN_TEHSIL_CODE
+        };
+
+        String whereClause = singleUCs.COLUMN_TEHSIL_CODE + "=?";
+        String[] whereArgs = new String[]{talukaCode};
+        String groupBy = null;
+        String having = null;
+
+        String orderBy =
+                singleUCs.COLUMN_UCS + " ASC";
+
+        Collection<UCsContract> allDC = new ArrayList<>();
+        try {
+            c = db.query(
+                    singleUCs.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                UCsContract dc = new UCsContract();
+                allDC.add(dc.HydrateUCs(c));
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return allDC;
+    }
+
 
     public ArrayList<UsersContract> getAllUsers() {
         SQLiteDatabase db = this.getReadableDatabase();
