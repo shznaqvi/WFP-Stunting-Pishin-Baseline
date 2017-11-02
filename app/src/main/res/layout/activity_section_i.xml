@@ -36,11 +36,14 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="@android:color/white" />
 
-        <Spinner
+        <TextView
             android:id="@+id/spbli01w"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"></Spinner>
+            android:layout_marginTop="10dp"
+            android:background="@color/pink_100"
+            android:text=""
+            android:textColor="@color/colorPrimaryDark"/>
 
         <TextView
             android:layout_width="match_parent"
@@ -102,9 +105,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
                 android:digits="0123456789"
-                android:maxLength="2"
                 android:hint="@string/month"
-                android:inputType="number" />
+                android:inputType="number"
+                android:maxLength="2"/>
 
         </LinearLayout>
 

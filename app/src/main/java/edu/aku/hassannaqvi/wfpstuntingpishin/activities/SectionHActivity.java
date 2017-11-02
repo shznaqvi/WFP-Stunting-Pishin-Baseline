@@ -2,10 +2,13 @@ package edu.aku.hassannaqvi.wfpstuntingpishin.activities;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
@@ -13,10 +16,15 @@ import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -390,11 +398,46 @@ public class SectionHActivity extends Activity {
     @BindView(R.id.fldGrpbtn)
     LinearLayout fldGrpbtn;
 
+    Map<String, String> mwraMap;
+    ArrayList<String> lstMwra;
+
+    int position = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_section_h);
         ButterKnife.bind(this);
+
+
+        mwraMap = new HashMap<>();
+        lstMwra = new ArrayList<>();
+
+        mwraMap.put("....", "");
+        lstMwra.add("....");
+
+        for (byte i = 0; i < MainApp.familyMembersList.size(); i++) {
+            if (MainApp.familyMembersList.get(i).getType().equals("mw")) {
+                mwraMap.put(MainApp.familyMembersList.get(i).getMemberName(), MainApp.familyMembersList.get(i).getSerial());
+                lstMwra.add(MainApp.familyMembersList.get(i).getMemberName());
+            }
+        }
+
+        spblh01.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, lstMwra));
+
+        spblh01.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
+        {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                position = i;
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
 
 
         spblh02.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -1298,7 +1341,7 @@ public class SectionHActivity extends Activity {
 
 
                 Intent endSec = new Intent(this, SectionIActivity.class);
-                endSec.putExtra("complete", true);
+                endSec.putExtra("getName", spblh01.getSelectedItem().toString());
                 startActivity(endSec);
 
             } else {
@@ -1306,9 +1349,7 @@ public class SectionHActivity extends Activity {
             }
         }
 
-        Intent secNext = new Intent(this, SectionIActivity.class);
-        secNext.putExtra("check", false);
-        startActivity(secNext);
+
 
     }
 
@@ -1344,6 +1385,8 @@ public class SectionHActivity extends Activity {
 
         JSONObject sh = new JSONObject();
 
+        sh.put("spblh01", spblh01.getSelectedItem().toString());
+        //MainApp.selectedWoman = spblh01.getSelectedItem().toString();
         sh.put("spblh02", spblh02a.isChecked() ? "1" : spblh02b.isChecked() ? "2" : spblh0299.isChecked() ? "99" : "0");
         sh.put("spblh03a", spblh03a.isChecked() ? "1" : "0");
         sh.put("spblh03b", spblh03b.isChecked() ? "2" : "0");
@@ -1495,6 +1538,17 @@ public class SectionHActivity extends Activity {
 
     public boolean ValidateForm() {
 
+
+        if (spblh01.getSelectedItem().toString() == "....") {
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblh01), Toast.LENGTH_SHORT).show();
+            ((TextView) spblh01.getSelectedView()).setText("This Data is Required");
+            ((TextView) spblh01.getSelectedView()).setTextColor(Color.RED);
+            spblh01.requestFocus();
+            Log.i(TAG, "spbli01w: This Data is Required!");
+            return false;
+        } else {
+            ((TextView) spblh01.getSelectedView()).setError(null);
+        }
 
         // =================== Q2 ====================
         if (spblh02.getCheckedRadioButtonId() == -1) {

@@ -2,7 +2,6 @@ package edu.aku.hassannaqvi.wfpstuntingpishin.activities;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
 import android.util.Log;
@@ -13,7 +12,6 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -34,7 +32,7 @@ public class SectionIActivity extends Activity {
 
 
     @BindView(R.id.spbli01w)
-    Spinner spbli01w;
+    TextView spbli01w;
     @BindView(R.id.spbli01)
     RadioGroup spbli01;
     @BindView(R.id.spbli01a)
@@ -352,6 +350,8 @@ public class SectionIActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_section_i);
         ButterKnife.bind(this);
+
+        spbli01w.setText(getIntent().getStringExtra("getName"));
 
         spbli01.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -757,14 +757,13 @@ public class SectionIActivity extends Activity {
                 finish();
 
                 Intent secNext = new Intent(this, SectionJActivity.class);
+                secNext.putExtra("getName", spbli01w.getText().toString());
                 startActivity(secNext);
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }
 
-            Intent secNext = new Intent(this, SectionJActivity.class);
-            secNext.putExtra("check", false);
-            startActivity(secNext);
+
 
         }
     }
@@ -804,7 +803,7 @@ public class SectionIActivity extends Activity {
         Toast.makeText(this, "Validating This Section ", Toast.LENGTH_SHORT).show();
 
 
-        if (spbli01w.getSelectedItem().toString() == "....") {
+        /*if (spbli01w.getSelectedItem().toString() == "....") {
             Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spbli01w), Toast.LENGTH_SHORT).show();
             ((TextView) spbli01w.getSelectedView()).setText("This Data is Required");
             ((TextView) spbli01w.getSelectedView()).setTextColor(Color.RED);
@@ -813,7 +812,7 @@ public class SectionIActivity extends Activity {
             return false;
         } else {
             ((TextView) spbli01w.getSelectedView()).setError(null);
-        }
+        }*/
 
 
         //        spbld01
@@ -1446,7 +1445,7 @@ public class SectionIActivity extends Activity {
 
         JSONObject sHI = new JSONObject();
 
-        sHI.put("spbli01w", spbli01w.getSelectedItemPosition());
+        sHI.put("spbli01w", spbli01w.getText().toString());
 
         sHI.put("spbli01", spbli01a.isChecked() ? "1" : spbli01b.isChecked() ? "2"
                 : spbli01c.isChecked() ? "3"
