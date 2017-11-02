@@ -330,7 +330,20 @@ public class SectionAActivity extends Activity {
 
     @OnClick(R.id.btn_End)
     void onBtnEndClick() {
-        MainApp.endActivity(this, this);
+
+        if (formValidation()) {
+            try {
+                SaveDraft();
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
+            if (UpdateDB()) {
+                Toast.makeText(this, "starting next section", Toast.LENGTH_SHORT).show();
+
+                MainApp.endActivity(this, this);
+            }
+        }
     }
 
     @OnClick(R.id.btn_Continue)
@@ -404,54 +417,59 @@ public class SectionAActivity extends Activity {
 
         MainApp.fc.setsA(String.valueOf(sInfo));
 
-        Map<Integer, Map<Integer, String>> children = new HashMap<>();
-        Map<Integer, String> child = new HashMap<>();
-        child.put(1, spbla07m6.getText().toString());
-        child.put(2, spbla07f6.getText().toString());
+        MainApp.familyMembersList = new ArrayList<>();
 
-        children.put(0, child);
-        child = new HashMap<>();
+        if (spbla08a.isChecked()) {
 
-        child.put(1, spbla07m23.getText().toString());
-        child.put(2, spbla07f23.getText().toString());
 
-        children.put(1, child);
-        child = new HashMap<>();
+            Map<Integer, Map<Integer, String>> children = new HashMap<>();
+            Map<Integer, String> child = new HashMap<>();
+            child.put(1, spbla07m6.getText().toString());
+            child.put(2, spbla07f6.getText().toString());
 
-        child.put(1, spbla07m59.getText().toString());
-        child.put(2, spbla07f59.getText().toString());
+            children.put(0, child);
+            child = new HashMap<>();
 
-        children.put(2, child);
+            child.put(1, spbla07m23.getText().toString());
+            child.put(2, spbla07f23.getText().toString());
+
+            children.put(1, child);
+            child = new HashMap<>();
+
+            child.put(1, spbla07m59.getText().toString());
+            child.put(2, spbla07f59.getText().toString());
+
+            children.put(2, child);
 
 //        Women
-        Map<Integer, String> women = new HashMap<>();
-        women.put(0, spbla07pw.getText().toString());
-        women.put(1, spbla07lw.getText().toString());
-        women.put(2, spbla07mw.getText().toString());
+            Map<Integer, String> women = new HashMap<>();
+            women.put(0, spbla07pw.getText().toString());
+            women.put(1, spbla07lw.getText().toString());
+            women.put(2, spbla07mw.getText().toString());
 
-        MainApp.members = new MembersCount(Integer.parseInt(spbla07t.getText().toString()), children, women);
+            MainApp.members = new MembersCount(Integer.parseInt(spbla07t.getText().toString()), children, women);
 
-        children = new HashMap<>();
-        child = new HashMap<>();
-        child.put(1, "0");
-        child.put(2, "0");
+            children = new HashMap<>();
+            child = new HashMap<>();
+            child.put(1, "0");
+            child.put(2, "0");
 
-        children.put(0, child);
-        child = new HashMap<>();
+            children.put(0, child);
+            child = new HashMap<>();
 
-        child.put(1, "0");
-        child.put(2, "0");
+            child.put(1, "0");
+            child.put(2, "0");
 
-        children.put(1, child);
-        child = new HashMap<>();
+            children.put(1, child);
+            child = new HashMap<>();
 
-        child.put(1, "0");
-        child.put(2, "0");
+            child.put(1, "0");
+            child.put(2, "0");
 
-        children.put(2, child);
+            children.put(2, child);
 
-        MainApp.checkMembers = new MembersCount(0, children);
-
+            MainApp.checkMembers = new MembersCount(0, children);
+        }
         MainApp.setGPS(this);
 
         Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();

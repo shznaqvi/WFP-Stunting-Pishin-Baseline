@@ -18,7 +18,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -86,8 +85,6 @@ public class FamilyMemberListActivity extends Activity implements View.OnKeyList
         spbla07f59.setText(String.valueOf(MainApp.members.getChildren().get(2).get(2)));
 
 //        Recycler View
-
-        MainApp.familyMembersList = new ArrayList<>();
 
         mAdapter = new familyMembersAdapter(MainApp.familyMembersList);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
