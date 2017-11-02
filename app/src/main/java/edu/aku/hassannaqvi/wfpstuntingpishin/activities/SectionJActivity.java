@@ -25,6 +25,8 @@ public class SectionJActivity extends Activity {
 
     private static final String TAG = SectionJActivity.class.getSimpleName();
 
+    @BindView(R.id.spblj01w)
+    TextView spblj01w;
     @BindView(R.id.spblj01)
     EditText spblj01;
     @BindView(R.id.spblj0201a)
@@ -49,6 +51,7 @@ public class SectionJActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_section_j);
         ButterKnife.bind(this);
+        spblj01w.setText(getIntent().getStringExtra("getData"));
 
     }
 
@@ -99,6 +102,7 @@ public class SectionJActivity extends Activity {
 
         JSONObject sJ = new JSONObject();
 
+        sJ.put("spblj01w", spblj01w.getText().toString());
         sJ.put("spblj01", spblj01.getText().toString());
         sJ.put("spblj0201a", spblj0201a.getSelectedItem().toString());
         sJ.put("spblj0201b", spblj0201b.getText().toString());

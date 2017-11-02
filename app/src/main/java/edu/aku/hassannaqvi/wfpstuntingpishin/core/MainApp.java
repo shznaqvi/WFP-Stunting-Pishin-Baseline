@@ -130,6 +130,7 @@ public class MainApp extends Application {
     public static boolean eligibleFlag = false;
     public static MembersCount members;
     public static MembersCount checkMembers;
+    public static String selectedWoman = "";
 
     //    Ali
     public static ArrayList<FamilyMembers> familyMembersList;
