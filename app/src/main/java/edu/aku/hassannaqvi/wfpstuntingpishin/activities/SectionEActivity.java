@@ -61,7 +61,7 @@ public class SectionEActivity extends Activity {
         ButterKnife.bind(this);
 
 
-        ArrayList<String> arrlst = new ArrayList<>();
+        final ArrayList<String> arrlst = new ArrayList<>();
 
         arrlst.add(0, "....");
         arrlst.add(1, "زراعت");
@@ -79,9 +79,11 @@ public class SectionEActivity extends Activity {
         arrlst.add(13, "دیگر وضاحت کریں");
 
 
-        spble01a.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, arrlst));
-        spble01b.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, arrlst));
-        spble01c.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, arrlst));
+        final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, arrlst);
+
+        spble01a.setAdapter(arrayAdapter);
+        spble01b.setAdapter(arrayAdapter);
+        spble01c.setAdapter(arrayAdapter);
 
 
         spble01a.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -113,6 +115,7 @@ public class SectionEActivity extends Activity {
                 }
             }
 
+
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
 
@@ -125,6 +128,7 @@ public class SectionEActivity extends Activity {
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 if (spble01c.getSelectedItemPosition() == 13) {
                     spble01c88x.setVisibility(View.VISIBLE);
+                    spble01c.setVisibility(View.GONE);
                 } else {
                     spble01c88x.setText(null);
                     spble01c88x.setVisibility(View.GONE);

@@ -91,6 +91,12 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
     EditText mEmailView;
     @BindView(edu.aku.hassannaqvi.wfpstuntingpishin.R.id.password)
     EditText mPasswordView;
+
+    @BindView(edu.aku.hassannaqvi.wfpstuntingpishin.R.id.email2)
+    EditText mEmailView2;
+    @BindView(edu.aku.hassannaqvi.wfpstuntingpishin.R.id.password2)
+    EditText mPasswordView2;
+
     @BindView(edu.aku.hassannaqvi.wfpstuntingpishin.R.id.txtinstalldate)
     TextView txtinstalldate;
     @BindView(edu.aku.hassannaqvi.wfpstuntingpishin.R.id.email_sign_in_button)
@@ -114,6 +120,9 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
         setContentView(edu.aku.hassannaqvi.wfpstuntingpishin.R.layout.activity_login);
         ButterKnife.bind(this);
 
+        MainApp.loginMem = new String[3];
+        MainApp.loginMem[0] = "...";    //default value
+
         try {
             long installedOn = this
                     .getPackageManager()
@@ -136,8 +145,27 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
         mEmailView = (EditText) findViewById(R.id.email);
         populateAutoComplete();
 
+        mEmailView2 = (EditText) findViewById(R.id.email2);
+        populateAutoComplete();
+
         mPasswordView = (EditText) findViewById(R.id.password);
         mPasswordView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView textView, int id, KeyEvent keyEvent) {
+                if (id == edu.aku.hassannaqvi.wfpstuntingpishin.R.id.login || id == EditorInfo.IME_NULL) {
+                    attemptLogin();
+
+                    MainApp.loginMem[1] = mEmailView.getText().toString();
+                    MainApp.loginMem[2] = mEmailView2.getText().toString();
+
+                    return true;
+                }
+                return false;
+            }
+        });
+
+        mPasswordView2 = (EditText) findViewById(R.id.password2);
+        mPasswordView2.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView textView, int id, KeyEvent keyEvent) {
                 if (id == edu.aku.hassannaqvi.wfpstuntingpishin.R.id.login || id == EditorInfo.IME_NULL) {
@@ -314,9 +342,15 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
         mEmailView.setError(null);
         mPasswordView.setError(null);
 
+        mEmailView2.setError(null);
+        mPasswordView2.setError(null);
+
         // Store values at the time of the login attempt.
         String email = mEmailView.getText().toString();
         String password = mPasswordView.getText().toString();
+
+        String email2 = mEmailView2.getText().toString();
+        String password2 = mPasswordView2.getText().toString();
 
         boolean cancel = false;
         View focusView = null;
@@ -328,10 +362,26 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
             cancel = true;
         }
 
+        if (!TextUtils.isEmpty(password2) && !isPasswordValid(password2)) {
+            mPasswordView2.setError(getString(edu.aku.hassannaqvi.wfpstuntingpishin.R.string.error_invalid_password));
+            focusView = mPasswordView2;
+            cancel = true;
+        }
+
         // Check for a valid email address.
         if (TextUtils.isEmpty(email)) {
             mEmailView.setError(getString(edu.aku.hassannaqvi.wfpstuntingpishin.R.string.error_field_required));
             focusView = mEmailView;
+            cancel = true;
+        } /*else if (!isEmailValid(email)) {
+            mEmailView.setError(getString(R.string.error_invalid_email));
+            focusView = mEmailView;
+            cancel = true;
+        }*/
+
+        if (TextUtils.isEmpty(email2)) {
+            mEmailView2.setError(getString(edu.aku.hassannaqvi.wfpstuntingpishin.R.string.error_field_required));
+            focusView = mEmailView2;
             cancel = true;
         } /*else if (!isEmailValid(email)) {
             mEmailView.setError(getString(R.string.error_invalid_email));
@@ -347,7 +397,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
             // Show a progress spinner, and kick off a background task to
             // perform the user login attempt.
             showProgress(true);
-            mAuthTask = new UserLoginTask(email, password);
+            mAuthTask = new UserLoginTask(email, password, email2, password2);
             mAuthTask.execute((Void) null);
 
 
@@ -358,6 +408,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
         //TODO: Replace this with your own logic
         return email.contains("@");
     }
+
 
     private boolean isPasswordValid(String password) {
         //TODO: Replace this with your own logic
@@ -445,6 +496,18 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
         }
     }
 
+    @OnClick(R.id.showPassword2)
+    void onShowPasswordClick2() {
+        //TODO implement
+        if (mPasswordView2.getTransformationMethod() == null) {
+            mPasswordView2.setTransformationMethod(new PasswordTransformationMethod());
+            mPasswordView2.setCompoundDrawablesWithIntrinsicBounds(edu.aku.hassannaqvi.wfpstuntingpishin.R.drawable.ic_lock_black_24dp, 0, 0, 0);
+        } else {
+            mPasswordView2.setTransformationMethod(null);
+            mPasswordView2.setCompoundDrawablesWithIntrinsicBounds(edu.aku.hassannaqvi.wfpstuntingpishin.R.drawable.ic_lock_open_black_24dp, 0, 0, 0);
+        }
+    }
+
     public void gotoMain(View v) {
 
         finish();
@@ -472,9 +535,15 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
         private final String mEmail;
         private final String mPassword;
 
-        UserLoginTask(String email, String password) {
+        private final String mEmail2;
+        private final String mPassword2;
+
+        UserLoginTask(String email, String password, String email2, String password2) {
             mEmail = email;
             mPassword = password;
+
+            mEmail2 = email2;
+            mPassword2 = password2;
         }
 
 
@@ -516,12 +585,26 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
 
                     if (!MainApp.regionDss.equals("") || (mEmail.equals("dmu@aku") && mPassword.equals("aku?dmu"))
                             || (mEmail.equals("test1234") && mPassword.equals("test1234"))) {
-                        finish();
 
-                        Intent iLogin = new Intent(LoginActivity.this, MainActivity.class);
-                        startActivity(iLogin);
 
-                        Toast.makeText(LoginActivity.this, "You are assigned to " + MainApp.regionDss + " Block", Toast.LENGTH_SHORT).show();
+                        if ((mEmail2.equals("dmu@aku") && mPassword2.equals("aku?dmu")) || db.Login(mEmail2, mPassword2) ||
+                                (mEmail2.equals("test1234") && mPassword2.equals("test1234")) || (mEmail2.equals("test12345") && mPassword2.equals("test12345"))) {
+                            MainApp.userName = mEmail2;
+                            MainApp.admin = mEmail2.contains("@");
+
+                            finish();
+
+                            Intent iLogin = new Intent(LoginActivity.this, MainActivity.class);
+                            startActivity(iLogin);
+
+                            Toast.makeText(LoginActivity.this, "You are assigned to " + MainApp.regionDss + " Block", Toast.LENGTH_SHORT).show();
+
+                        } else {
+                            mPasswordView2.setError(getString(R.string.error_incorrect_password));
+                            mPasswordView2.requestFocus();
+                            Toast.makeText(LoginActivity.this, mEmail2 + " " + mPassword2, Toast.LENGTH_SHORT).show();
+                        }
+
                     } else {
                         Toast.makeText(LoginActivity.this, "You are not assigned to any block", Toast.LENGTH_SHORT).show();
                     }
@@ -529,6 +612,10 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
                 } else {
                     mPasswordView.setError(getString(edu.aku.hassannaqvi.wfpstuntingpishin.R.string.error_incorrect_password));
                     mPasswordView.requestFocus();
+
+                    mPasswordView2.setError(getString(edu.aku.hassannaqvi.wfpstuntingpishin.R.string.error_incorrect_password));
+                    mPasswordView2.requestFocus();
+
                     Toast.makeText(LoginActivity.this, mEmail + " " + mPassword, Toast.LENGTH_SHORT).show();
                 }
             } else {
