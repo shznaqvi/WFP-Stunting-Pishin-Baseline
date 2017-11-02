@@ -254,7 +254,8 @@ public class SectionBActivity extends Activity {
         MainApp.fmc = new FamilyMembersContract();
         MainApp.fmc.setFormDate(MainApp.fc.getFormDate());
         MainApp.fmc.setDeviceId(MainApp.fc.getDeviceID());
-        MainApp.fmc.setInterviewer1(MainApp.fc.getInterviewer01());
+        MainApp.fmc.setInterviewer1(MainApp.loginMem[0]);
+        MainApp.fmc.setInterviewer2(MainApp.loginMem[1]);
         MainApp.fmc.set_UUID(MainApp.fc.get_UID());
         MainApp.fmc.setDevicetagID(sharedPref.getString("tagName", null));
 

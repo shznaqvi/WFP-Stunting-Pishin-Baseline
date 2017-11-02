@@ -203,8 +203,8 @@ public class SectionAActivity extends Activity {
 
         MainApp.fc.setDevicetagID(sharedPref.getString("tagName", null));
         MainApp.fc.setFormDate(new Date().toString());
-        //MainApp.fc.setInterviewer01(MainApp.loginMem[1]);
-        //MainApp.fc.setInterviewer02(MainApp.loginMem[2]);
+        MainApp.fc.setInterviewer01(MainApp.loginMem[1]);
+        MainApp.fc.setInterviewer02(MainApp.loginMem[2]);
         MainApp.fc.setDeviceID(Settings.Secure.getString(getApplicationContext().getContentResolver(),
                 Settings.Secure.ANDROID_ID));
         MainApp.fc.setAppVersion(MainApp.versionName + "." + MainApp.versionCode);

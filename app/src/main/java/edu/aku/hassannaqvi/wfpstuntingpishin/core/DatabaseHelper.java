@@ -92,6 +92,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             familyMembers.COLUMN_FORMDATE + " TEXT," +
             familyMembers.COLUMN_DEVICEID + " TEXT," +
             familyMembers.COLUMN_INTERVIEWER1 + " TEXT," +
+            familyMembers.COLUMN_INTERVIEWER2 + " TEXT," +
             familyMembers.COLUMN_SB + " TEXT," +
             familyMembers.COLUMN_ISTATUS + " TEXT," +
             familyMembers.COLUMN_SYNCED + " TEXT," +
@@ -403,6 +404,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(familyMembers.COLUMN_UUID, fmc.get_UUID());
         values.put(familyMembers.COLUMN_FORMDATE, fmc.getFormDate());
         values.put(familyMembers.COLUMN_INTERVIEWER1, fmc.getInterviewer1());
+        values.put(familyMembers.COLUMN_INTERVIEWER2, fmc.getInterviewer2());
         values.put(familyMembers.COLUMN_ISTATUS, fmc.getIstatus());
         values.put(familyMembers.COLUMN_SB, fmc.getsB());
         values.put(familyMembers.COLUMN_DEVICETAGID, fmc.getDevicetagID());
