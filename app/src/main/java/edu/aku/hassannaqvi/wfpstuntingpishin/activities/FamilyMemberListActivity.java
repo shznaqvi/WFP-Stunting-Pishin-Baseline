@@ -185,7 +185,7 @@ public class FamilyMemberListActivity extends Activity implements View.OnKeyList
 
         if (formValidation(true)) {
             finish();
-            startActivity(new Intent(this, SectionHActivity.class));
+            startActivity(new Intent(this, SectionCActivity.class));
         }
     }
 

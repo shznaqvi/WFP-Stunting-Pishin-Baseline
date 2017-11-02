@@ -178,7 +178,7 @@ public class SectionBActivity extends Activity {
 
     public boolean validateChecks() {
 
-        int childType = checkChildAgeMonths(spblb04y.getText().toString(), spblb04m.getText().toString(), spblb04d.getText().toString());
+        int childType = MainApp.checkChildAgeMonths(spblb04y.getText().toString(), spblb04m.getText().toString(), spblb04d.getText().toString());
 
         if (MainApp.members.getCount() <= MainApp.checkMembers.getCount()) {
             Toast.makeText(this, "Error", Toast.LENGTH_SHORT).show();
@@ -285,7 +285,7 @@ public class SectionBActivity extends Activity {
 
 //        Checking Type
         String type;
-        int childType = checkChildAgeMonths(spblb04y.getText().toString(), spblb04m.getText().toString(), spblb04d.getText().toString());
+        int childType = MainApp.checkChildAgeMonths(spblb04y.getText().toString(), spblb04m.getText().toString(), spblb04d.getText().toString());
         if (childType == 0) {
             type = spblb02b.isChecked() && spblb07a.isChecked() &&
                     (Integer.valueOf(spblb04y.getText().toString()) >= 15 && Integer.valueOf(spblb04y.getText().toString()) < 50) ? "mw" :
@@ -484,7 +484,7 @@ public class SectionBActivity extends Activity {
             String month = spblb04m.getText().toString().isEmpty() ? "0" : spblb04m.getText().toString();
             String day = spblb04d.getText().toString().isEmpty() ? "0" : spblb04d.getText().toString();
 
-            int ageMonths = checkChildAgeMonths(year, month, day);
+            int ageMonths = MainApp.checkChildAgeMonths(year, month, day);
 
             if (ageMonths == 0) {
                 flag = false;

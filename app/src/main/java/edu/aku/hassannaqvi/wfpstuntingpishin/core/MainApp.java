@@ -21,7 +21,9 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import edu.aku.hassannaqvi.wfpstuntingpishin.activities.EndingActivity;
 import edu.aku.hassannaqvi.wfpstuntingpishin.contracts.FamilyMembersContract;
@@ -132,7 +134,12 @@ public class MainApp extends Application {
     public static MembersCount members;
     public static MembersCount checkMembers;
     public static String selectedWoman = "";
+    public static Map<String, FamilyMembers> childMap = new HashMap<>();
+    public static ArrayList<String> lstChild = new ArrayList<>();
 
+    public static Map<String, FamilyMembers> childMap2 = new HashMap<>();
+    public static ArrayList<String> lstChild2 = new ArrayList<>();
+    public static int postion = 0;
     //    Ali
     public static ArrayList<FamilyMembers> familyMembersList;
     public static FamilyMembersContract fmc;
@@ -286,6 +293,17 @@ public class MainApp extends Application {
         } catch (Exception e) {
             Log.e("GPS", "setGPS: " + e.getMessage());
         }
+
+
+    }
+
+    public static int checkChildAgeMonths(String y, String m, String d) {
+
+        int age = Integer.parseInt(y) * 12 + Integer.parseInt(m) + (Integer.parseInt(d) / 29);
+
+        age = age < 6 ? 1 : age >= 6 && age < 23 ? 2 : age >= 24 && age < 59 ? 3 : 0;
+
+        return age;
 
     }
 

@@ -69,10 +69,23 @@ public class SectionJActivity extends Activity {
 
                 finish();
 
+                for (byte i = 0; i < MainApp.familyMembersList.size(); i++) {
+                    if (MainApp.familyMembersList.get(i).getType().equals("ch") && Integer.valueOf(MainApp.familyMembersList.get(i).getDob().substring(0, 1)) < 2) {
 
-                Intent endSec = new Intent(this, SectionKActivity.class);
-                endSec.putExtra("complete", true);
-                startActivity(endSec);
+                        Intent endSec = new Intent(this, SectionKActivity.class);
+                        endSec.putExtra("complete", true);
+                        startActivity(endSec);
+
+                    } else if (MainApp.familyMembersList.get(i).getType().equals("ch") && Integer.valueOf(MainApp.familyMembersList.get(i).getDob().substring(0, 1)) < 5) {
+                        Intent endSec = new Intent(this, SectionLIMActivity.class);
+                        endSec.putExtra("complete", true);
+                        startActivity(endSec);
+                    } else {
+                        Intent endSec = new Intent(this, SectionOActivity.class);
+                        endSec.putExtra("complete", true);
+                        startActivity(endSec);
+                    }
+                }
 
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
@@ -92,8 +105,18 @@ public class SectionJActivity extends Activity {
 
         DatabaseHelper db = new DatabaseHelper(this);
 
+        int updcount = db.updateSJ();
 
-        return true;
+        if (updcount == 1) {
+            Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
+            return true;
+        } else {
+            Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+
+
+
 
     }
 
