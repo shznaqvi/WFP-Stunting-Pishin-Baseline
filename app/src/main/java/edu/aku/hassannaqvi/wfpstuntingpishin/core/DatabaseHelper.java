@@ -22,10 +22,12 @@ import edu.aku.hassannaqvi.wfpstuntingpishin.contracts.FamilyMembersContract;
 import edu.aku.hassannaqvi.wfpstuntingpishin.contracts.FetusContract;
 import edu.aku.hassannaqvi.wfpstuntingpishin.contracts.FormsContract;
 import edu.aku.hassannaqvi.wfpstuntingpishin.contracts.FormsContract.FormsTable;
+import edu.aku.hassannaqvi.wfpstuntingpishin.contracts.SourceNGOContract;
 import edu.aku.hassannaqvi.wfpstuntingpishin.contracts.UsersContract;
 import edu.aku.hassannaqvi.wfpstuntingpishin.contracts.UsersContract.UsersTable;
 import edu.aku.hassannaqvi.wfpstuntingpishin.otherClasses.MothersLst;
 import edu.aku.hassannaqvi.wfpstuntingpishin.contracts.FamilyMembersContract.familyMembers;
+import edu.aku.hassannaqvi.wfpstuntingpishin.contracts.SourceNGOContract.SourceTable;
 
 
 /**
@@ -96,6 +98,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             familyMembers.COLUMN_SYNCED_DATE + " TEXT"
             + " );";
 
+    final String SQL_CREATE_SOURCE_TABLE = "CREATE TABLE " + SourceTable.TABLE_NAME + " (" +
+            SourceTable._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
+            SourceTable.COLUMN_SOURCE_ID + " TEXT, " +
+            SourceTable.COLUMN_SOURCE_NAME + " TEXT " +
+            ");";
+
 
     private static final String SQL_DELETE_USERS =
             "DROP TABLE IF EXISTS " + UsersTable.TABLE_NAME;
@@ -130,6 +138,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(SQL_CREATE_FORMS);
         db.execSQL(SQL_CREATE_FAMILY_MEMBERS);
 
+        db.execSQL(SQL_CREATE_SOURCE_TABLE);
     }
 
     @Override
@@ -176,6 +185,75 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         } catch (Exception e) {
         }
+    }
+
+    public void syncSources(JSONArray ucList) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(SourceTable.TABLE_NAME, null, null);
+
+        try {
+            JSONArray jsonArray = ucList;
+
+            for (int i = 0; i < jsonArray.length(); i++) {
+                JSONObject jsonObjectUc = jsonArray.getJSONObject(i);
+
+                SourceNGOContract dc = new SourceNGOContract();
+                dc.sync(jsonObjectUc);
+
+                ContentValues values = new ContentValues();
+
+                values.put(SourceTable.COLUMN_SOURCE_ID, dc.getSourceId());
+                values.put(SourceTable.COLUMN_SOURCE_NAME, dc.getSourceName());
+
+                db.insert(SourceTable.TABLE_NAME, null, values);
+            }
+            db.close();
+
+        } catch (Exception e) {
+            Log.e(TAG, "syncUc: " + e.toString());
+        }
+    }
+
+    public Collection<SourceNGOContract> getAllNGOs() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = {
+                SourceTable.COLUMN_SOURCE_ID,
+                SourceTable.COLUMN_SOURCE_NAME
+        };
+
+        String whereClause = null;
+        String[] whereArgs = null;
+        String groupBy = null;
+        String having = null;
+
+        String orderBy =
+                SourceTable.COLUMN_SOURCE_ID + " ASC";
+
+        Collection<SourceNGOContract> allSR = new ArrayList<>();
+        try {
+            c = db.query(
+                    SourceTable.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                SourceNGOContract sr = new SourceNGOContract();
+                allSR.add(sr.hydrate(c));
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return allSR;
     }
 
     public ArrayList<UsersContract> getAllUsers() {

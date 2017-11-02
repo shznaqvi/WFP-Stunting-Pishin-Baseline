@@ -20,6 +20,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -53,6 +55,11 @@ public class SectionEActivity extends Activity {
     @BindView(R.id.fldGrpbtn)
     LinearLayout fldGrpbtn;
 
+    Map<String, Integer> lstMap;
+    ArrayList<String> arrlst1;
+    ArrayList<String> arrlst2;
+    ArrayList<String> arrlst3;
+    int position = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,38 +68,64 @@ public class SectionEActivity extends Activity {
         ButterKnife.bind(this);
 
 
-        ArrayList<String> arrlst = new ArrayList<>();
+        arrlst1 = new ArrayList<>();
 
-        arrlst.add(0, "....");
-        arrlst.add(1, "زراعت");
-        arrlst.add(2, "مال مویشی پالنا اور فروخت کرنا");
-        arrlst.add(3, "مچھلی کا کاروبار");
-        arrlst.add(4, "ہاتھ سے بننے والی اشیاٗ کی فروخت");
-        arrlst.add(5, "لکڑیوں کی فروخت");
-        arrlst.add(6, "کوئلے کا فروخت");
-        arrlst.add(7, "مزدوری زرعی زمینوں پر");
-        arrlst.add(8, "مزدوری");
-        arrlst.add(9, "گلی میں چیزیں فروخت کرنا");
-        arrlst.add(10, "کاروبار /دکان/تجارت");
-        arrlst.add(11, "سرکاری /گورنمنٹ کی نوکری");
-        arrlst.add(12, "پرائیویٹ نوکری");
-        arrlst.add(13, "دیگر وضاحت کریں");
+        final String[] items = {"", "زراعت", "مال مویشی پالنا اور فروخت کرنا",
+                "مچھلی کا کاروبار",
+                "ہاتھ سے بننے والی اشیاٗ کی فروخت",
+                "لکڑیوں کی فروخت",
+                "کوئلے کا فروخت",
+                "مزدوری زرعی زمینوں پر",
+                "مزدوری",
+                "گلی میں چیزیں فروخت کرنا",
+                "کاروبار /دکان/تجارت",
+                "سرکاری /گورنمنٹ کی نوکری",
+                "پرائیویٹ نوکری",
+                "دیگر وضاحت کریں"};
 
+        lstMap = new HashMap<>();
 
-        spble01a.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, arrlst));
-        spble01b.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, arrlst));
-        spble01c.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, arrlst));
+        arrlst1.add("....");
+        for (int i = 1; i < items.length; i++) {
+            arrlst1.add(items[i]);
+            lstMap.put(items[i], i);
+        }
 
+        spble01a.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, arrlst1));
 
         spble01a.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+            public void onItemSelected(AdapterView<?> adapterView, View view, int pos, long l) {
+
+                //Other Txt
                 if (spble01a.getSelectedItemPosition() == 13) {
                     spble01a88x.setVisibility(View.VISIBLE);
                 } else {
                     spble01a88x.setText(null);
                     spble01a88x.setVisibility(View.GONE);
                 }
+
+                arrlst2 = new ArrayList<>();
+                arrlst2.add("....");
+
+                position = pos;
+
+                if (spble01a.getSelectedItemPosition() != 0) {
+                    for (int i = 1; i < items.length; i++) {
+                        if (i != pos) {
+                            arrlst2.add(items[i]);
+                        }
+                    }
+
+                    Toast.makeText(getApplicationContext(), lstMap.get(spble01a.getSelectedItem().toString()).toString(), Toast.LENGTH_SHORT).show();
+
+                }
+
+                spble01b88x.setVisibility(View.GONE);
+                spble01c88x.setVisibility(View.GONE);
+
+                spble01b.setAdapter(new ArrayAdapter<>(getBaseContext(), android.R.layout.simple_spinner_dropdown_item, arrlst2));
+
             }
 
             @Override
@@ -104,13 +137,37 @@ public class SectionEActivity extends Activity {
 
         spble01b.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                if (spble01b.getSelectedItemPosition() == 13) {
-                    spble01b88x.setVisibility(View.VISIBLE);
+            public void onItemSelected(AdapterView<?> adapterView, View view, int pos, long l) {
+                if (spble01b.getSelectedItemPosition() == arrlst2.size() - 1) {
+                    if (spble01b.getSelectedItemPosition() != 0) {
+                        spble01b88x.setVisibility(View.VISIBLE);
+                    }
                 } else {
                     spble01b88x.setText(null);
                     spble01b88x.setVisibility(View.GONE);
                 }
+
+                arrlst3 = new ArrayList<>();
+                arrlst3.add("....");
+
+                if (spble01b.getSelectedItemPosition() != 0) {
+                    for (int i = 1; i < items.length; i++) {
+                        if (i != position) {
+                            arrlst3.add(items[i]);
+                        }
+                    }
+
+                    for (int j = 1; j < arrlst3.size(); j++) {
+                        if (items[j].contains(items[pos])) {
+                            arrlst3.remove(j);
+                            break;
+                        }
+                    }
+
+                    Toast.makeText(getApplicationContext(), lstMap.get(spble01b.getSelectedItem().toString()).toString(), Toast.LENGTH_SHORT).show();
+                }
+                spble01c.setAdapter(new ArrayAdapter<>(getBaseContext(), android.R.layout.simple_spinner_dropdown_item, arrlst3));
+
             }
 
             @Override
@@ -123,11 +180,17 @@ public class SectionEActivity extends Activity {
         spble01c.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                if (spble01c.getSelectedItemPosition() == 13) {
-                    spble01c88x.setVisibility(View.VISIBLE);
+                if (spble01c.getSelectedItemPosition() == arrlst3.size() - 1) {
+                    if (spble01c.getSelectedItemPosition() != 0) {
+                        spble01c88x.setVisibility(View.VISIBLE);
+                    }
                 } else {
                     spble01c88x.setText(null);
                     spble01c88x.setVisibility(View.GONE);
+                }
+
+                if (spble01c.getSelectedItemPosition() != 0) {
+                    Toast.makeText(getApplicationContext(), lstMap.get(spble01c.getSelectedItem().toString()).toString(), Toast.LENGTH_SHORT).show();
                 }
             }
 
@@ -348,14 +411,14 @@ public class SectionEActivity extends Activity {
 
         JSONObject sHE = new JSONObject();
 
-        sHE.put("spble01a", spble01a.getSelectedItem().toString());
+        sHE.put("spble01a", lstMap.get(spble01a.getSelectedItem().toString()));
         sHE.put("spble01a88x", spble01a88x.getText().toString());
 
-        sHE.put("spble01b", spble01b.getSelectedItem().toString());
+        sHE.put("spble01b", lstMap.get(spble01b.getSelectedItem().toString()));
         sHE.put("spble01b88x", spble01b88x.getText().toString());
 
 
-        sHE.put("spble01c", spble01c.getSelectedItem().toString());
+        sHE.put("spble01c", lstMap.get(spble01c.getSelectedItem().toString()));
         sHE.put("spble01c88x", spble01c88x.getText().toString());
 
 
