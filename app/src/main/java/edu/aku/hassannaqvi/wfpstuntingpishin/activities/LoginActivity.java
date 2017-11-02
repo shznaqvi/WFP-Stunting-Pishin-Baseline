@@ -159,6 +159,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
                     MainApp.loginMem[2] = mEmailView2.getText().toString();
 
                     return true;
+
                 }
                 return false;
             }
