@@ -257,7 +257,7 @@
                         android:drawableEnd="@drawable/ic_assignment_ind_black_24dp"
                         android:drawablePadding="8dp"
                         android:hint="Username/Code"
-                        android:imeActionId="@+id/login"
+                        android:imeActionId="1"
                         android:imeActionLabel="@string/action_sign_in_short"
                         android:imeOptions="actionUnspecified"
                         android:inputType="textEmailAddress"
@@ -292,7 +292,7 @@
                         android:drawableEnd="@drawable/ic_lock_black_24dp"
                         android:drawablePadding="2dp"
                         android:hint="@string/prompt_password"
-                        android:imeActionId="@+id/login"
+                        android:imeActionId="1"
                         android:imeActionLabel="@string/action_sign_in_short"
                         android:imeOptions="actionUnspecified"
                         android:inputType="textPassword"
@@ -311,7 +311,7 @@
                         android:drawableEnd="@drawable/ic_assignment_ind_black_24dp"
                         android:drawablePadding="8dp"
                         android:hint="Username/Code"
-                        android:imeActionId="@+id/login"
+                        android:imeActionId="1"
                         android:imeActionLabel="@string/action_sign_in_short"
                         android:imeOptions="actionUnspecified"
                         android:inputType="textEmailAddress"
@@ -343,7 +343,7 @@
                         android:drawableEnd="@drawable/ic_lock_black_24dp"
                         android:drawablePadding="8dp"
                         android:hint="@string/prompt_password"
-                        android:imeActionId="@+id/login"
+                        android:imeActionId="1"
                         android:imeActionLabel="@string/action_sign_in_short"
                         android:imeOptions="actionUnspecified"
                         android:inputType="textPassword"
@@ -366,6 +366,17 @@
                 android:popupBackground="#3d3d3d"
                 android:visibility="gone" />
 
+            <Button
+                android:id="@+id/checkUpdate"
+                style="?android:textAppearanceSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/red"
+                android:drawableStart="@drawable/ic_system_update_white_24dp"
+                android:onClick="checkUpdate"
+                android:padding="15dp"
+                android:text="Check for Update"
+                android:textStyle="bold" />
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

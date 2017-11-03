@@ -43,6 +43,8 @@ import com.github.amlcurran.showcaseview.ShowcaseView;
 import com.github.amlcurran.showcaseview.targets.Target;
 import com.github.amlcurran.showcaseview.targets.ViewTarget;
 
+import org.json.JSONArray;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -58,6 +60,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import edu.aku.hassannaqvi.wfpstuntingpishin.R;
+import edu.aku.hassannaqvi.wfpstuntingpishin.core.CheckUpdate;
 import edu.aku.hassannaqvi.wfpstuntingpishin.core.DatabaseHelper;
 import edu.aku.hassannaqvi.wfpstuntingpishin.core.MainApp;
 import edu.aku.hassannaqvi.wfpstuntingpishin.get.GetSources;
@@ -114,6 +117,8 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
     String DirectoryName;
 
     private UserLoginTask mAuthTask = null;
+    private StringBuffer jsonString_output;
+    private JSONArray json;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -143,13 +148,13 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
         }
 
         // Set up the login form.
-        mEmailView = (EditText) findViewById(R.id.email);
+        mEmailView = findViewById(R.id.email);
         populateAutoComplete();
 
-        mEmailView2 = (EditText) findViewById(R.id.email2);
+        mEmailView2 = findViewById(R.id.email2);
         populateAutoComplete();
 
-        mPasswordView = (EditText) findViewById(R.id.password);
+        mPasswordView = findViewById(R.id.password);
         mPasswordView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView textView, int id, KeyEvent keyEvent) {
@@ -166,7 +171,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
             }
         });
 
-        mPasswordView2 = (EditText) findViewById(R.id.password2);
+        mPasswordView2 = findViewById(R.id.password2);
         mPasswordView2.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView textView, int id, KeyEvent keyEvent) {
@@ -205,6 +210,11 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
         dbBackup();
     }
 
+    public void checkUpdate(View view) throws IOException {
+        new CheckUpdate(this).execute();
+
+
+    }
     public void dbBackup() {
 
         sharedPref = getSharedPreferences("dss01", MODE_PRIVATE);
