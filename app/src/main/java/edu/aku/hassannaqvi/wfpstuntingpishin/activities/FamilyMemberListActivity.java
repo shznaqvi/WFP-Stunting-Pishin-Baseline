@@ -18,6 +18,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -26,6 +29,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import edu.aku.hassannaqvi.wfpstuntingpishin.R;
+import edu.aku.hassannaqvi.wfpstuntingpishin.core.DatabaseHelper;
 import edu.aku.hassannaqvi.wfpstuntingpishin.core.MainApp;
 import edu.aku.hassannaqvi.wfpstuntingpishin.otherClasses.FamilyMembers;
 
@@ -181,9 +185,55 @@ public class FamilyMemberListActivity extends Activity implements View.OnKeyList
         //TODO implement
 
         if (formValidation(true)) {
-            finish();
-            startActivity(new Intent(this, SectionCActivity.class));
+            try {
+                SaveDraft();
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+            if (UpdateDB()) {
+                Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
+
+                finish();
+                startActivity(new Intent(this, SectionCActivity.class));
+
+            } else {
+                Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
+            }
+
         }
+    }
+
+    private void SaveDraft() throws JSONException {
+
+        JSONObject count = new JSONObject();
+        count.put("spbla07t_r", spbla07t.getText().toString());
+        count.put("spbla07pw_r", spbla07pw.getText().toString());
+        count.put("spbla07lw_r", spbla07lw.getText().toString());
+        count.put("spbla07mw_r", spbla07mw.getText().toString());
+        count.put("spbla07m6_r", spbla07m6.getText().toString());
+        count.put("spbla07f6_r", spbla07f6.getText().toString());
+        count.put("spbla07m23_r", spbla07m23.getText().toString());
+        count.put("spbla07f23_r", spbla07f23.getText().toString());
+        count.put("spbla07m59_r", spbla07m59.getText().toString());
+        count.put("spbla07f59_r", spbla07f59.getText().toString());
+
+        MainApp.fc.setsCount(String.valueOf(count));
+    }
+
+    private boolean UpdateDB() {
+
+        DatabaseHelper db = new DatabaseHelper(this);
+
+        int updcount = db.updateSCount();
+
+        if (updcount == 1) {
+            Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
+            return true;
+        } else {
+            Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+
     }
 
     @Override
@@ -363,8 +413,7 @@ public class FamilyMemberListActivity extends Activity implements View.OnKeyList
         return true;
     }
 
-    private class CustomTextWatcher implements TextWatcher
-    {
+    private class CustomTextWatcher implements TextWatcher {
         private EditText edit;
 
         public CustomTextWatcher(EditText e) {
