@@ -61,7 +61,7 @@ public class SectionJActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_section_j);
         ButterKnife.bind(this);
-        spblj01w.setText(getIntent().getStringExtra("getData"));
+        spblj01w.setText(getIntent().getStringExtra("getName"));
 
         String[] users = {"....",MainApp.userName,MainApp.userName2};
 
