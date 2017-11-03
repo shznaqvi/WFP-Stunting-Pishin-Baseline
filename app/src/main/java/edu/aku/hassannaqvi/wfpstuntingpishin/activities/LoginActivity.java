@@ -328,6 +328,16 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
             cancel = true;
         }
 
+        if (TextUtils.isEmpty(email2)) {
+            mEmailView2.setError(getString(edu.aku.hassannaqvi.wfpstuntingpishin.R.string.error_field_required));
+            focusView = mEmailView2;
+            cancel = true;
+        } /*else if (!isEmailValid(email)) {
+            mEmailView.setError(getString(R.string.error_invalid_email));
+            focusView = mEmailView;
+            cancel = true;
+        }*/
+
         // Check for a valid email address.
         if (TextUtils.isEmpty(email)) {
             mEmailView.setError(getString(edu.aku.hassannaqvi.wfpstuntingpishin.R.string.error_field_required));
@@ -339,15 +349,6 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
             cancel = true;
         }*/
 
-        if (TextUtils.isEmpty(email2)) {
-            mEmailView2.setError(getString(edu.aku.hassannaqvi.wfpstuntingpishin.R.string.error_field_required));
-            focusView = mEmailView2;
-            cancel = true;
-        } /*else if (!isEmailValid(email)) {
-            mEmailView.setError(getString(R.string.error_invalid_email));
-            focusView = mEmailView;
-            cancel = true;
-        }*/
 
         if (cancel) {
             // There was an error; don't attempt login and focus the first
