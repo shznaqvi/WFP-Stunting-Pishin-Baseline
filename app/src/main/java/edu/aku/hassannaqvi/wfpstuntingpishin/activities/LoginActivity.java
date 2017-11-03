@@ -151,18 +151,15 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
         mEmailView = findViewById(R.id.email);
         populateAutoComplete();
 
-        mEmailView2 = findViewById(R.id.email2);
-        populateAutoComplete();
 
         mPasswordView = findViewById(R.id.password);
         mPasswordView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView textView, int id, KeyEvent keyEvent) {
-                if (id == edu.aku.hassannaqvi.wfpstuntingpishin.R.id.login || id == EditorInfo.IME_NULL) {
+                if (id == EditorInfo.IME_ACTION_DONE || id == EditorInfo.IME_NULL) {
                     attemptLogin();
-
                     MainApp.loginMem[1] = mEmailView.getText().toString();
-                    MainApp.loginMem[2] = mEmailView2.getText().toString();
+
 
                     return true;
 
@@ -171,12 +168,15 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
             }
         });
 
+        mEmailView2 = findViewById(R.id.email2);
+        populateAutoComplete();
         mPasswordView2 = findViewById(R.id.password2);
         mPasswordView2.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView textView, int id, KeyEvent keyEvent) {
-                if (id == edu.aku.hassannaqvi.wfpstuntingpishin.R.id.login || id == EditorInfo.IME_NULL) {
+                if (id == EditorInfo.IME_ACTION_DONE || id == EditorInfo.IME_NULL) {
                     attemptLogin();
+                    MainApp.loginMem[2] = mEmailView2.getText().toString();
                     return true;
                 }
                 return false;
