@@ -417,6 +417,19 @@ public class SectionBActivity extends Activity {
             spblb04m.setError(null);
         }
 
+        if (Integer.valueOf(spblb04m.getText().toString()) > 11) {
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblb04m), Toast.LENGTH_SHORT).show();
+            spblb04m.setError("Range is 0 to 11 Months");
+            spblb04m.requestFocus();
+            Log.i(TAG, "spblb04m: Range is 0 to 11 Months!");
+            return false;
+        } else {
+            spblb04m.setError(null);
+        }
+
+
+
+
         if (spblb04d.getText().toString().isEmpty()) {
             Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblb04d), Toast.LENGTH_SHORT).show();
             spblb04d.setError("This data is required");
@@ -426,6 +439,18 @@ public class SectionBActivity extends Activity {
         } else {
             spblb04d.setError(null);
         }
+
+        if (Integer.valueOf(spblb04d.getText().toString()) > 29) {
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblb04m), Toast.LENGTH_SHORT).show();
+            spblb04d.setError("Range is 0 to 29 days");
+            spblb04d.requestFocus();
+            Log.i(TAG, "spblb04d: Range is 0 to 29 Months!");
+            return false;
+        } else {
+            spblb04d.setError(null);
+        }
+
+
 
         if (Integer.valueOf(spblb04y.getText().toString()) > 5) {
             if (spblb07.getCheckedRadioButtonId() == -1) {
