@@ -500,7 +500,7 @@ public class SectionAActivity extends Activity {
     public boolean formValidation() {
         Toast.makeText(this, "Validating This Section ", Toast.LENGTH_SHORT).show();
 
-        if (spTehsil.getSelectedItemPosition() != 0) {
+        if (spTehsil.getSelectedItemPosition() == 0) {
             Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spbla01), Toast.LENGTH_SHORT).show();
             ((TextView) spTehsil.getSelectedView()).setText("This Data is Required");
             ((TextView) spTehsil.getSelectedView()).setTextColor(Color.RED);
@@ -511,7 +511,7 @@ public class SectionAActivity extends Activity {
             ((TextView) spTehsil.getSelectedView()).setError(null);
         }
 
-        if (spUCs.getSelectedItemPosition() != 0) {
+        if (spUCs.getSelectedItemPosition() == 0) {
             Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spbla02), Toast.LENGTH_SHORT).show();
             ((TextView) spUCs.getSelectedView()).setText("This Data is Required");
             ((TextView) spUCs.getSelectedView()).setTextColor(Color.RED);
@@ -522,7 +522,7 @@ public class SectionAActivity extends Activity {
             ((TextView) spUCs.getSelectedView()).setError(null);
         }
 
-        if (spbla03.getSelectedItemPosition() != 0) {
+        if (spbla03.getSelectedItemPosition() == 0) {
             Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spbla03), Toast.LENGTH_SHORT).show();
             ((TextView) spbla03.getSelectedView()).setText("This Data is Required");
             ((TextView) spbla03.getSelectedView()).setTextColor(Color.RED);
