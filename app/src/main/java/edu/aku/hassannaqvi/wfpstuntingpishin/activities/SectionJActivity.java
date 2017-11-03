@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -14,7 +15,11 @@ import android.widget.Toast;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.Arrays;
+import java.util.List;
+
 import butterknife.BindView;
+import butterknife.BindViews;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import edu.aku.hassannaqvi.wfpstuntingpishin.R;
@@ -46,12 +51,23 @@ public class SectionJActivity extends Activity {
     @BindView(R.id.spblj0302b)
     EditText spblj0302b;
 
+    @BindViews({R.id.spblj0201a,R.id.spblj0202a,R.id.spblj0301a,R.id.spblj0302a})
+    List<Spinner> spblj023;
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_section_j);
         ButterKnife.bind(this);
         spblj01w.setText(getIntent().getStringExtra("getData"));
+
+        String[] users = {"....",MainApp.userName,MainApp.userName2};
+
+        for (Spinner spin : spblj023){
+            spin.setAdapter(new ArrayAdapter<>(this,android.R.layout.simple_spinner_dropdown_item, Arrays.asList(users)));
+        }
 
     }
 
