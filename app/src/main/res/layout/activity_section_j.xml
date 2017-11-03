@@ -11,19 +11,45 @@
         android:layoutDirection="rtl"
         android:orientation="vertical">
 
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginBottom="5dp"
+            android:background="@color/colorPrimary"/>
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:background="@color/colorPrimaryDark"
             android:gravity="center"
-            android:text="@string/secJLabel"
+            android:text="@string/spbljheading"
             android:textSize="40sp" />
 
         <View
             android:layout_width="match_parent"
             android:layout_height="2dp"
-            android:background="@color/colorPrimary" />
+            android:layout_marginTop="5dp"
+            android:background="@color/colorPrimary"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@color/colorPrimary"
+            android:text="@string/spbli01w"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@android:color/white"/>
+
+        <TextView
+            android:id="@+id/spblj01w"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@color/pink_100"
+            android:gravity="center"
+            android:text=""
+            android:textColor="@color/colorPrimaryDark"/>
 
         <!--1-->
         <TextView
@@ -31,7 +57,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:background="@color/colorPrimary"
-            android:text="@string/spblj01"
+            android:text="@string/spblj03"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="@android:color/white" />
 
@@ -41,7 +67,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="1dp"
             android:digits="0123456789"
-            android:hint="@string/spblj01"
+            android:hint="@string/spblj03"
             android:inputType="number" />
 
         <!--02-->
@@ -50,7 +76,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:background="@color/colorPrimary"
-            android:text="@string/spblj02"
+            android:text="@string/spblj04"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="@android:color/white" />
 
@@ -74,10 +100,10 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
                     android:layout_marginTop="16dp"
-                    android:background="@color/colorPrimary"
-                    android:text="@string/spblj0201"
+                    android:background="@color/pink_100"
+                    android:text="@string/spblj0401"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textColor="@android:color/white" />
+                    android:textColor="@color/colorPrimaryDark"/>
 
                 <Spinner
                     android:id="@+id/spblj0201a"
@@ -91,10 +117,9 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
                     android:layout_marginBottom="1dp"
-                    android:digits="0123456789."
-                    android:hint="@string/spblj0201"
-                    android:inputType="number"
-                    android:maxLength="4"
+                    android:hint="@string/spblj04"
+                    android:inputType="numberDecimal"
+                    android:maxLength="5"
                     android:padding="10dp" />
 
             </LinearLayout>
@@ -111,10 +136,10 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
                     android:layout_marginTop="16dp"
-                    android:background="@color/colorPrimary"
-                    android:text="@string/spblj0202"
+                    android:background="@color/pink_100"
+                    android:text="@string/spblj0402"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textColor="@android:color/white" />
+                    android:textColor="@color/colorPrimaryDark"/>
 
                 <Spinner
                     android:id="@+id/spblj0202a"
@@ -128,10 +153,9 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
                     android:layout_marginBottom="1dp"
-                    android:digits="0123456789."
-                    android:hint="@string/spblj0202"
-                    android:inputType="number"
-                    android:maxLength="4"
+                    android:hint="@string/spblj04"
+                    android:inputType="numberDecimal"
+                    android:maxLength="5"
                     android:padding="10dp" />
 
             </LinearLayout>
@@ -144,7 +168,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:background="@color/colorPrimary"
-            android:text="@string/spblj03"
+            android:text="@string/spblj05"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="@android:color/white" />
 
@@ -168,10 +192,10 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
                     android:layout_marginTop="16dp"
-                    android:background="@color/colorPrimary"
-                    android:text="@string/spblj0301"
+                    android:background="@color/pink_100"
+                    android:text="@string/spblj0401"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textColor="@android:color/white" />
+                    android:textColor="@color/colorPrimaryDark"/>
 
                 <Spinner
                     android:id="@+id/spblj0301a"
@@ -185,10 +209,9 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
                     android:layout_marginBottom="1dp"
-                    android:digits="0123456789."
-                    android:hint="@string/spblj0301"
-                    android:inputType="number"
-                    android:maxLength="3"
+                    android:hint="@string/spblj05"
+                    android:inputType="numberDecimal"
+                    android:maxLength="5"
                     android:padding="10dp" />
 
             </LinearLayout>
@@ -205,10 +228,10 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
                     android:layout_marginTop="16dp"
-                    android:background="@color/colorPrimary"
-                    android:text="@string/spblj0302"
+                    android:background="@color/pink_100"
+                    android:text="@string/spblj0402"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textColor="@android:color/white" />
+                    android:textColor="@color/colorPrimaryDark"/>
 
                 <Spinner
                     android:id="@+id/spblj0302a"
@@ -222,10 +245,10 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
                     android:layout_marginBottom="1dp"
-                    android:digits="0123456789."
-                    android:hint="@string/spblj0302"
-                    android:inputType="number"
-                    android:maxLength="3"
+                    android:hint="@string/spblj05"
+
+                    android:inputType="numberDecimal"
+                    android:maxLength="5"
                     android:padding="10dp" />
 
             </LinearLayout>

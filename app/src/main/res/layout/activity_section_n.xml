@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="edu.aku.hassannaqvi.wfpstuntingpishin.activities.SectionNActivity">
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context="edu.aku.hassannaqvi.wfpstuntingpishin.activities.SectionNActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -18,7 +17,7 @@
         android:layout_gravity="center_horizontal"
         android:background="@color/colorPrimaryDark"
         android:gravity="center"
-        android:text="@string/secNLabel"
+        android:text="@string/spblnheading"
         android:textSize="40sp" />
 
     <View
@@ -36,10 +35,15 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="@android:color/white" />
 
-        <Spinner
+        <TextView
             android:id="@+id/spbln01"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"></Spinner>
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@color/pink_100"
+            android:text=""
+            android:textColor="@color/colorPrimaryDark"/>
+
 
         <!--2-->
         <TextView
@@ -76,9 +80,9 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="1dp"
             android:digits="0123456789."
-            android:maxLength="3"
             android:hint="@string/spbln03"
-            android:inputType="number" />
+            android:inputType="number"
+            android:maxLength="4" />
 
 
         <!--04-->
@@ -117,21 +121,21 @@
                     android:textColor="@android:color/white" />
 
                 <Spinner
-                    android:id="@+id/spblj0401a"
+                    android:id="@+id/spbln0401a"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="10dp"></Spinner>
 
                 <EditText
-                    android:id="@+id/spblj0401b"
+                    android:id="@+id/spbln0401b"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
                     android:layout_marginBottom="1dp"
                     android:digits="0123456789."
                     android:hint="@string/spblj0401"
-                    android:inputType="number"
-                    android:maxLength="4"
+                    android:inputType="numberDecimal"
+                    android:maxLength="5"
                     android:padding="10dp" />
 
             </LinearLayout>
@@ -154,21 +158,21 @@
                     android:textColor="@android:color/white" />
 
                 <Spinner
-                    android:id="@+id/spblj0402a"
+                    android:id="@+id/spbln0402a"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="10dp"></Spinner>
 
                 <EditText
-                    android:id="@+id/spblj0402b"
+                    android:id="@+id/spbln0402b"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
                     android:layout_marginBottom="1dp"
                     android:digits="0123456789."
                     android:hint="@string/spblj0402"
-                    android:inputType="number"
-                    android:maxLength="4"
+                    android:inputType="numberDecimal"
+                    android:maxLength="5"
                     android:padding="10dp" />
 
             </LinearLayout>
@@ -206,26 +210,26 @@
                     android:layout_marginBottom="5dp"
                     android:layout_marginTop="16dp"
                     android:background="@color/colorPrimary"
-                    android:text="@string/spblj0501"
+                    android:text="@string/spblj0401"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:textColor="@android:color/white" />
 
                 <Spinner
-                    android:id="@+id/spblj0501a"
+                    android:id="@+id/spbln0501a"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="10dp"></Spinner>
 
                 <EditText
-                    android:id="@+id/spblj0501b"
+                    android:id="@+id/spbln0501b"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
                     android:layout_marginBottom="1dp"
                     android:digits="0123456789."
-                    android:hint="@string/spblj0501"
-                    android:inputType="number"
-                    android:maxLength="3"
+                    android:hint="@string/spblj05"
+                    android:inputType="numberDecimal"
+                    android:maxLength="4"
                     android:padding="10dp" />
 
             </LinearLayout>
@@ -243,26 +247,26 @@
                     android:layout_marginBottom="5dp"
                     android:layout_marginTop="16dp"
                     android:background="@color/colorPrimary"
-                    android:text="@string/spblj0502"
+                    android:text="@string/spblj0402"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:textColor="@android:color/white" />
 
                 <Spinner
-                    android:id="@+id/spblj0502a"
+                    android:id="@+id/spbln0502a"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="10dp"></Spinner>
 
                 <EditText
-                    android:id="@+id/spblj0502b"
+                    android:id="@+id/spbln0502b"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
                     android:layout_marginBottom="1dp"
                     android:digits="0123456789."
-                    android:hint="@string/spblj0502"
-                    android:inputType="number"
-                    android:maxLength="3"
+                    android:hint="@string/spblj05"
+                    android:inputType="numberDecimal"
+                    android:maxLength="4"
                     android:padding="10dp" />
 
             </LinearLayout>

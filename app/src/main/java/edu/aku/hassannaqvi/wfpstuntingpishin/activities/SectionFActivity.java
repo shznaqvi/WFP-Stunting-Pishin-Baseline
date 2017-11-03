@@ -3,19 +3,79 @@ package edu.aku.hassannaqvi.wfpstuntingpishin.activities;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import edu.aku.hassannaqvi.wfpstuntingpishin.R;
 import edu.aku.hassannaqvi.wfpstuntingpishin.core.DatabaseHelper;
 import edu.aku.hassannaqvi.wfpstuntingpishin.core.MainApp;
 
 public class SectionFActivity extends Activity {
     private static final String TAG = SectionFActivity.class.getName();
 
+
+    @BindView(R.id.spblf01a)
+    EditText spblf01a;
+    @BindView(R.id.spblf01b)
+    EditText spblf01b;
+    @BindView(R.id.spblf01c)
+    EditText spblf01c;
+    @BindView(R.id.spblf01d)
+    EditText spblf01d;
+    @BindView(R.id.spblf01e)
+    EditText spblf01e;
+    @BindView(R.id.spblf01f)
+    EditText spblf01f;
+    @BindView(R.id.spblf01g)
+    EditText spblf01g;
+    @BindView(R.id.spblf01h)
+    EditText spblf01h;
+    @BindView(R.id.spblf01i)
+    EditText spblf01i;
+    @BindView(R.id.spblf01j)
+    EditText spblf01j;
+    @BindView(R.id.spblf01k)
+    EditText spblf01k;
+    @BindView(R.id.spblf01l)
+    EditText spblf01l;
+    @BindView(R.id.spblf01m)
+    EditText spblf01m;
+    @BindView(R.id.spblf02a)
+    EditText spblf02a;
+    @BindView(R.id.spblf02b)
+    EditText spblf02b;
+    @BindView(R.id.spblf02c)
+    EditText spblf02c;
+    @BindView(R.id.spblf02d)
+    EditText spblf02d;
+    @BindView(R.id.spblf02e)
+    EditText spblf02e;
+    @BindView(R.id.spblf02f)
+    EditText spblf02f;
+    @BindView(R.id.spblf02g)
+    EditText spblf02g;
+    @BindView(R.id.spblf02h)
+    EditText spblf02h;
+    @BindView(R.id.spblf02i)
+    EditText spblf02i;
+    @BindView(R.id.spblf02j)
+    EditText spblf02j;
+    @BindView(R.id.spblf02k)
+    EditText spblf02k;
+    @BindView(R.id.spblf02l)
+    EditText spblf02l;
+    @BindView(R.id.spblf03)
+    EditText spblf03;
+    @BindView(R.id.fldGrpbtn)
+    LinearLayout fldGrpbtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,12 +99,17 @@ public class SectionFActivity extends Activity {
 
                 finish();
 
-                Intent secNext = new Intent(this, SectionEActivity.class);
+                Intent secNext = new Intent(this, SectionGActivity.class);
                 startActivity(secNext);
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }
         }
+
+        Intent secNext = new Intent(this, SectionGActivity.class);
+        secNext.putExtra("check", false);
+        startActivity(secNext);
+
     }
 
 
@@ -63,7 +128,7 @@ public class SectionFActivity extends Activity {
 
         DatabaseHelper db = new DatabaseHelper(this);
 
-        int updcount = db.updateSHF();
+        int updcount = db.updateSF();
 
         if (updcount == 1) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
@@ -73,10 +138,13 @@ public class SectionFActivity extends Activity {
             return false;
         }
 
+
+
     }
 
 
     private boolean ValidateForm() {
+
 
         //        spblf01a
         if (spblf01a.getText().toString().isEmpty()) {
@@ -159,10 +227,38 @@ public class SectionFActivity extends Activity {
 
         JSONObject sHE = new JSONObject();
 
-        sHE.put("spble01a", spble01a.getSelectedItem().toString());
+        sHE.put("spblf01a", spblf01a.getText().toString());
+        sHE.put("spblf01b", spblf01b.getText().toString());
+        sHE.put("spblf01c", spblf01c.getText().toString());
+        sHE.put("spblf01d", spblf01d.getText().toString());
+        sHE.put("spblf01e", spblf01e.getText().toString());
+        sHE.put("spblf01f", spblf01f.getText().toString());
+        sHE.put("spblf01g", spblf01g.getText().toString());
+        sHE.put("spblf01h", spblf01h.getText().toString());
+        sHE.put("spblf01i", spblf01i.getText().toString());
+        sHE.put("spblf01j", spblf01j.getText().toString());
+        sHE.put("spblf01k", spblf01k.getText().toString());
+        sHE.put("spblf01l", spblf01l.getText().toString());
+        sHE.put("spblf01m", spblf01m.getText().toString());
 
 
-        MainApp.fc.setsHE(String.valueOf(sHE));
+        sHE.put("spblf02a", spblf02a.getText().toString());
+        sHE.put("spblf02b", spblf02b.getText().toString());
+        sHE.put("spblf02c", spblf02c.getText().toString());
+        sHE.put("spblf02d", spblf02d.getText().toString());
+        sHE.put("spblf02e", spblf02e.getText().toString());
+        sHE.put("spblf02f", spblf02f.getText().toString());
+        sHE.put("spblf02g", spblf02g.getText().toString());
+        sHE.put("spblf02h", spblf02h.getText().toString());
+        sHE.put("spblf02i", spblf02i.getText().toString());
+        sHE.put("spblf02j", spblf02j.getText().toString());
+        sHE.put("spblf02k", spblf02k.getText().toString());
+
+
+        sHE.put("spblf03", spblf03.getText().toString());
+
+
+        MainApp.fc.setsF(String.valueOf(sHE));
 
     }
 

@@ -59,7 +59,7 @@
             android:layout_marginBottom="8dp"
             android:layout_marginTop="16dp"
             android:onClick="openForm"
-            android:text="Open Form 3" />
+            android:text="Open Form"/>
 
         <Button
             android:id="@+id/openForm4"
@@ -88,7 +88,8 @@
             android:layout_marginBottom="8dp"
             android:layout_marginTop="16dp"
             android:onClick="openForm8"
-            android:text="Open Form 8" />
+            android:text="Open Form 8"
+            android:visibility="gone"/>
 
         <Button
             android:id="@+id/openForm9"
@@ -97,7 +98,9 @@
             android:layout_marginBottom="8dp"
             android:layout_marginTop="16dp"
             android:onClick="openForm9"
-            android:text="Open Form 9" />
+            android:text="Open Form 9"
+            android:visibility="gone"
+            />
 
         <Button
             android:id="@+id/openForm10"
@@ -106,7 +109,8 @@
             android:layout_marginBottom="8dp"
             android:layout_marginTop="16dp"
             android:onClick="openForm10"
-            android:text="Open Form 10" />
+            android:text="Open Form 10"
+            android:visibility="gone"/>
 
         <Button
             android:id="@+id/motherForm"
@@ -162,7 +166,8 @@
                 android:layout_marginBottom="8dp"
                 android:layout_marginTop="16dp"
                 android:onClick="openMembers"
-                android:text="Section Members" />
+                android:text="Section Members"
+                android:visibility="gone"/>
 
             <Button
                 android:id="@+id/openA"
@@ -282,6 +287,42 @@
                 android:onClick="openM"
                 android:text="Section M" />
 
+            <Button
+                android:id="@+id/openN"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="16dp"
+                android:onClick="openN"
+                android:text="Section N"/>
+
+            <Button
+                android:id="@+id/openO"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="16dp"
+                android:onClick="openO"
+                android:text="Section O"/>
+
+            <Button
+                android:id="@+id/openP"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="16dp"
+                android:onClick="openP"
+                android:text="Section P"/>
+
+            <Button
+                android:id="@+id/openQ"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="16dp"
+                android:onClick="openQ"
+                android:text="Section Q"/>
+
 
             <!--<Button-->
             <!--android:id="@+id/openEnd"-->
@@ -309,6 +350,8 @@
                 android:layout_marginTop="16dp"
                 android:onClick="testGPS"
                 android:text="Test GPS Coordinates" />
+
+
         </LinearLayout>
 
 

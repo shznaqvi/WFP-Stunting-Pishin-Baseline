@@ -22,7 +22,7 @@ public class UsersContract {
         // Default Constructor
     }
 
-    public UsersContract(String username, String password) {
+    public UsersContract(String username, String password, String username2, String password2) {
         this.ROW_PASSWORD = password;
         this.ROW_USERNAME = username;
     }
@@ -55,6 +55,7 @@ public class UsersContract {
         //this._ID= jsonObject.getLong(UsersTable._ID);
         this.ROW_USERNAME = jsonObject.getString(UsersTable.ROW_USERNAME);
         this.ROW_PASSWORD = jsonObject.getString(UsersTable.ROW_PASSWORD);
+
         return this;
 
     }
@@ -63,6 +64,7 @@ public class UsersContract {
         this._ID = cursor.getLong(cursor.getColumnIndex(UsersTable._ID));
         this.ROW_USERNAME = cursor.getString(cursor.getColumnIndex(UsersTable.ROW_USERNAME));
         this.ROW_PASSWORD = cursor.getString(cursor.getColumnIndex(UsersTable.ROW_PASSWORD));
+
         return this;
 
     }

@@ -30,14 +30,15 @@ import edu.aku.hassannaqvi.wfpstuntingpishin.core.MainApp;
 /**
  * Created by hassan.naqvi on 7/26/2016.
  */
-public class SyncForms10 extends AsyncTask<Void, Void, String> {
+public class SyncForms extends AsyncTask<Void, Void, String>
+{
 
-    private static final String TAG = "SyncForms10";
+    private static final String TAG = "SyncForms";
     private Context mContext;
     private ProgressDialog pd;
 
 
-    public SyncForms10(Context context) {
+    public SyncForms(Context context) {
         mContext = context;
     }
 
@@ -64,7 +65,7 @@ public class SyncForms10 extends AsyncTask<Void, Void, String> {
 
         String line = "No Response";
         try {
-            String url = MainApp._HOST_URL + FormsContract.FormsTable._URL.replace(".php", "10.php");
+            String url = MainApp._HOST_URL + FormsContract.FormsTable._URL.replace(".php", "3.php");
             Log.d(TAG, "doInBackground: URL " + url);
             return downloadUrl(url);
         } catch (IOException e) {
@@ -92,17 +93,17 @@ public class SyncForms10 extends AsyncTask<Void, Void, String> {
                 }
             }
 
-            Toast.makeText(mContext, sSynced + " Forms10 synced." + String.valueOf(json.length() - sSynced) + " Errors: " + sSyncedError, Toast.LENGTH_SHORT).show();
+            Toast.makeText(mContext, sSynced + " Forms3 synced." + String.valueOf(json.length() - sSynced) + " Errors: " + sSyncedError, Toast.LENGTH_SHORT).show();
 
-            pd.setMessage(sSynced + " Forms10 synced." + String.valueOf(json.length() - sSynced) + " Errors: " + sSyncedError);
-            pd.setTitle("Done uploading Forms10 data");
+            pd.setMessage(sSynced + " Forms3 synced." + String.valueOf(json.length() - sSynced) + " Errors: " + sSyncedError);
+            pd.setTitle("Done uploading Forms3 data");
             pd.show();
         } catch (JSONException e) {
             e.printStackTrace();
             Toast.makeText(mContext, "Failed Sync " + result, Toast.LENGTH_SHORT).show();
 
             pd.setMessage(result);
-            pd.setTitle("Forms10 Sync Failed");
+            pd.setTitle("Forms3 Sync Failed");
             pd.show();
         }
     }
@@ -113,7 +114,7 @@ public class SyncForms10 extends AsyncTask<Void, Void, String> {
         // web page content.
         //  int len = 500;
         DatabaseHelper db = new DatabaseHelper(mContext);
-        Collection<FormsContract> forms = db.getUnsyncedForms10();
+        Collection<FormsContract> forms = db.getUnsyncedForms();
         Log.d(TAG, String.valueOf(forms.size()));
         if (forms.size() > 0) {
             try {

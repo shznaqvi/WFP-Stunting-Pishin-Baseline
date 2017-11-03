@@ -36,7 +36,7 @@ public class EndingActivity extends Activity {
         setContentView(R.layout.activity_ending);
         ButterKnife.bind(this);
 
-        Boolean check = getIntent().getExtras().getBoolean("complete");
+        Boolean check = getIntent().getExtras().getBoolean("check");
 
         if (check) {
             dcstatus01.setEnabled(true);
@@ -64,7 +64,8 @@ public class EndingActivity extends Activity {
             }
             if (UpdateDB()) {
 
-                MainApp.FetusCount = 1;
+                MainApp.familyMembersList.clear();
+                MainApp.counter = 0;
 
                 finish();
 

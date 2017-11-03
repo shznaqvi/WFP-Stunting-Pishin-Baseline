@@ -411,8 +411,6 @@ public class SectionCActivity extends Activity {
     RadioButton spblc14t;
     @BindView(R.id.spblc14u)
     RadioButton spblc14u;
-    @BindView(R.id.spblc14v)
-    RadioButton spblc14v;
     @BindView(R.id.spblc1488)
     RadioButton spblc1488;
     @BindView(R.id.spblc1488x)
@@ -535,7 +533,7 @@ public class SectionCActivity extends Activity {
         spblc03.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
-                if (i == R.id.spblc03b) {
+                if (i == R.id.spblc03a) {
                     fldGrpspblc01.setVisibility(View.VISIBLE);
                 } else {
                     fldGrpspblc01.setVisibility(View.GONE);
@@ -549,7 +547,7 @@ public class SectionCActivity extends Activity {
         spblc06.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
-                if (i == R.id.spblc06b) {
+                if (i == R.id.spblc06a) {
                     fldGrpspblc02.setVisibility(View.VISIBLE);
                 } else {
                     fldGrpspblc02.setVisibility(View.GONE);
@@ -563,7 +561,7 @@ public class SectionCActivity extends Activity {
         spblc17.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
-                if (i == R.id.spblc17b) {
+                if (i == R.id.spblc17a) {
                     fldGrpspblc03.setVisibility(View.VISIBLE);
                 } else {
                     fldGrpspblc03.setVisibility(View.GONE);
@@ -579,7 +577,7 @@ public class SectionCActivity extends Activity {
         spblc19.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
-                if (i == R.id.spblc19b) {
+                if (i == R.id.spblc19a) {
                     fldGrpspblc04.setVisibility(View.VISIBLE);
                 } else {
                     fldGrpspblc04.setVisibility(View.GONE);
@@ -654,10 +652,11 @@ public class SectionCActivity extends Activity {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if (b) {
-                    spblc07.setVisibility(View.VISIBLE);
-                } else {
                     spblc07.setVisibility(View.GONE);
                     spblc07.setText(null);
+                } else {
+                    spblc07.setVisibility(View.VISIBLE);
+
                 }
             }
         });
@@ -791,18 +790,22 @@ public class SectionCActivity extends Activity {
                 Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
 
                 finish();
+
                 startActivity(new Intent(this, SectionDActivity.class));
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }
         }
+
+
+
     }
 
     @OnClick(R.id.btn_End)
     void onBtnEndClick() {
         //TODO implement
 
-        MainApp.endActivity(this,this);
+        MainApp.endActivity(this, this);
     }
 
     private void SaveDraft() throws JSONException {
@@ -906,7 +909,7 @@ public class SectionCActivity extends Activity {
                 : spblc14m.isChecked() ? "13" : spblc14n.isChecked() ? "14" : spblc14o.isChecked() ? "15"
                 : spblc14p.isChecked() ? "15" : spblc14q.isChecked() ? "16" : spblc14r.isChecked() ? "17"
                 : spblc14s.isChecked() ? "18" : spblc14t.isChecked() ? "19" : spblc14u.isChecked() ? "20"
-                : spblc14v.isChecked() ? "21" : spblc1488.isChecked() ? "88" : "0");
+                : spblc1488.isChecked() ? "88" : "0");
         sC.put("spblc1488x", spblc1488x.getText().toString());
 
 //        15
@@ -949,14 +952,14 @@ public class SectionCActivity extends Activity {
         sC.put("spblc20f", spblc20f.getText().toString());
         sC.put("spblc20g", spblc20g.getText().toString());
 
-//        MainApp.fc.setsC(String.valueOf(sC));
+        MainApp.fc.setsC(String.valueOf(sC));
     }
 
     private boolean UpdateDB() {
 
         DatabaseHelper db = new DatabaseHelper(this);
 
-        /*int updcount = db.updateSC();
+        int updcount = db.updateSC();
 
         if (updcount == 1) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
@@ -964,8 +967,8 @@ public class SectionCActivity extends Activity {
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
             return false;
-        }*/
-        return true;
+        }
+
     }
 
     public boolean formValidation() {
@@ -984,8 +987,8 @@ public class SectionCActivity extends Activity {
         }
 
 
-        if (spblc0188x.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_SHORT).show();
+        if (spblc0188.isChecked() && spblc0188x.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc01) + " -" + getString(R.string.other), Toast.LENGTH_SHORT).show();
             spblc0188x.setError("This data is Required!");    // Set Error on last radio button
             spblc0188x.requestFocus();
             Log.i(TAG, "spblc0188x: This data is Required!");
@@ -1008,8 +1011,8 @@ public class SectionCActivity extends Activity {
         }
 
 
-        if (spblc0288x.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_SHORT).show();
+        if (spblc0288.isChecked() && spblc0288x.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc02) + " -" + getString(R.string.other), Toast.LENGTH_SHORT).show();
             spblc0288x.setError("This data is Required!");    // Set Error on last radio button
             spblc0288x.requestFocus();
             Log.i(TAG, "spblc0288x: This data is Required!");
@@ -1020,7 +1023,7 @@ public class SectionCActivity extends Activity {
 
 
         if (spblc03.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc03a), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc03), Toast.LENGTH_SHORT).show();
             spblc03a.setError("This data is Required!");    // Set Error on last radio button
             spblc03a.setFocusable(true);
             spblc03a.setFocusableInTouchMode(true);
@@ -1032,27 +1035,29 @@ public class SectionCActivity extends Activity {
         }
 
 
-        if (spblc04.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc04), Toast.LENGTH_SHORT).show();
-            spblc04a.setError("This data is Required!");    // Set Error on last radio button
-            spblc04a.setFocusable(true);
-            spblc04a.setFocusableInTouchMode(true);
-            spblc04a.requestFocus();
-            Log.i(TAG, "spblc04a: This data is Required!");
-            return false;
-        } else {
-            spblc04a.setError(null);
-        }
+        if (spblc03a.isChecked()) {
+            if (spblc04.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc04), Toast.LENGTH_SHORT).show();
+                spblc04a.setError("This data is Required!");    // Set Error on last radio button
+                spblc04a.setFocusable(true);
+                spblc04a.setFocusableInTouchMode(true);
+                spblc04a.requestFocus();
+                Log.i(TAG, "spblc04a: This data is Required!");
+                return false;
+            } else {
+                spblc04a.setError(null);
+            }
 
 
-        if (spblc0488x.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_SHORT).show();
-            spblc0488x.setError("This data is Required!");    // Set Error on last radio button
-            spblc0488x.requestFocus();
-            Log.i(TAG, "spblc0488x: This data is Required!");
-            return false;
-        } else {
-            spblc0488x.setError(null);
+            if (spblc0488.isChecked() && spblc0488x.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc04) + " -" + getString(R.string.other), Toast.LENGTH_SHORT).show();
+                spblc0488x.setError("This data is Required!");    // Set Error on last radio button
+                spblc0488x.requestFocus();
+                Log.i(TAG, "spblc0488x: This data is Required!");
+                return false;
+            } else {
+                spblc0488x.setError(null);
+            }
         }
 
 
@@ -1069,8 +1074,8 @@ public class SectionCActivity extends Activity {
         }
 
 
-        if (spblc0588x.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_SHORT).show();
+        if (spblc0588.isChecked() && spblc0588x.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc05) + " -" + getString(R.string.other), Toast.LENGTH_SHORT).show();
             spblc0588x.setError("This data is Required!");    // Set Error on last radio button
             spblc0588x.requestFocus();
             Log.i(TAG, "spblc0588x: This data is Required!");
@@ -1093,14 +1098,16 @@ public class SectionCActivity extends Activity {
         }
 
 
-        if (spblc07.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc07), Toast.LENGTH_SHORT).show();
-            spblc07.setError("This data is Required!");    // Set Error on last radio button
-            spblc07.requestFocus();
-            Log.i(TAG, "spblc07: This data is Required!");
-            return false;
-        } else {
-            spblc07.setError(null);
+        if (spblc06a.isChecked()) {
+            if (spblc07.getText().toString().isEmpty() && !spblc0799.isChecked()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc07), Toast.LENGTH_SHORT).show();
+                spblc07.setError("This data is Required!");    // Set Error on last radio button
+                spblc07.requestFocus();
+                Log.i(TAG, "spblc07: This data is Required!");
+                return false;
+            } else {
+                spblc07.setError(null);
+            }
         }
 
 
@@ -1351,8 +1358,8 @@ public class SectionCActivity extends Activity {
         }
 
 
-        if (spblc0988x.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_SHORT).show();
+        if (spblc0988.isChecked() && spblc0988x.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc09) + " -" + getString(R.string.other), Toast.LENGTH_SHORT).show();
             spblc0988x.setError("This data is Required!");    // Set Error on last radio button
             spblc0988x.requestFocus();
             Log.i(TAG, "spblc0988x: This data is Required!");
@@ -1375,8 +1382,8 @@ public class SectionCActivity extends Activity {
         }
 
 
-        if (spblc1088x.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_SHORT).show();
+        if (spblc1088.isChecked() && spblc1088x.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc10) + " -" + getString(R.string.other), Toast.LENGTH_SHORT).show();
             spblc1088x.setError("This data is Required!");    // Set Error on last radio button
             spblc1088x.requestFocus();
             Log.i(TAG, "spblc1088x: This data is Required!");
@@ -1412,8 +1419,8 @@ public class SectionCActivity extends Activity {
         }
 
 
-        if (spblc1288x.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_SHORT).show();
+        if (spblc1288.isChecked() && spblc1288x.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc12) + " -" + getString(R.string.other), Toast.LENGTH_SHORT).show();
             spblc1288x.setError("This data is Required!");    // Set Error on last radio button
             spblc1288x.requestFocus();
             Log.i(TAG, "spblc1288x: This data is Required!");
@@ -1436,8 +1443,8 @@ public class SectionCActivity extends Activity {
         }
 
 
-        if (spblc1388x.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_SHORT).show();
+        if (spblc1388.isChecked() && spblc1388x.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc13) + " -" + getString(R.string.other), Toast.LENGTH_SHORT).show();
             spblc1388x.setError("This data is Required!");    // Set Error on last radio button
             spblc1388x.requestFocus();
             Log.i(TAG, "spblc1388x: This data is Required!");
@@ -1460,8 +1467,8 @@ public class SectionCActivity extends Activity {
         }
 
 
-        if (spblc1488x.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_SHORT).show();
+        if (spblc1488.isChecked() && spblc1488x.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc14) + " -" + getString(R.string.other), Toast.LENGTH_SHORT).show();
             spblc1488x.setError("This data is Required!");    // Set Error on last radio button
             spblc1488x.requestFocus();
             Log.i(TAG, "spblc1488x: This data is Required!");
@@ -1612,16 +1619,64 @@ public class SectionCActivity extends Activity {
         }
 
 
-        if (spblc18.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc18), Toast.LENGTH_SHORT).show();
-            spblc18a.setError("This data is Required!");    // Set Error on last radio button
-            spblc18a.setFocusable(true);
-            spblc18a.setFocusableInTouchMode(true);
-            spblc18a.requestFocus();
-            Log.i(TAG, "spblc18a: This data is Required!");
-            return false;
-        } else {
-            spblc18a.setError(null);
+        if (spblc17a.isChecked()) {
+            if (spblc18.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc18), Toast.LENGTH_SHORT).show();
+                spblc18a.setError("This data is Required!");    // Set Error on last radio button
+                spblc18a.setFocusable(true);
+                spblc18a.setFocusableInTouchMode(true);
+                spblc18a.requestFocus();
+                Log.i(TAG, "spblc18a: This data is Required!");
+                return false;
+            } else {
+                spblc18a.setError(null);
+            }
+
+            if (spblc18a.isChecked()) {
+                if (spblc18ac.getText().toString().isEmpty()) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc18a), Toast.LENGTH_SHORT).show();
+                    spblc18ac.setError("This data is Required!");    // Set Error on last radio button
+                    spblc18ac.requestFocus();
+                    Log.i(TAG, "spblc18ac: This data is Required!");
+                    return false;
+                } else {
+                    spblc18ac.setError(null);
+                }
+
+                if (Double.valueOf(spblc18ac.getText().toString()) < 0.1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc18a), Toast.LENGTH_SHORT).show();
+                    spblc18ac.setError("This data is Required!");    // Set Error on last radio button
+                    spblc18ac.requestFocus();
+                    Log.i(TAG, "spblc18ac: This data is Required!");
+                    return false;
+                } else {
+                    spblc18ac.setError(null);
+                }
+            }
+
+            if (spblc18b.isChecked()) {
+                if (spblc18kn.getText().toString().isEmpty()) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc18b), Toast.LENGTH_SHORT).show();
+                    spblc18kn.setError("This data is Required!");    // Set Error on last radio button
+                    spblc18kn.requestFocus();
+                    Log.i(TAG, "spblc18ac: This data is Required!");
+                    return false;
+                } else {
+                    spblc18kn.setError(null);
+                }
+
+                if (Double.valueOf(spblc18kn.getText().toString()) < 0.1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc18b), Toast.LENGTH_SHORT).show();
+                    spblc18kn.setError("This data is Required!");    // Set Error on last radio button
+                    spblc18kn.requestFocus();
+                    Log.i(TAG, "spblc18kn: This data is Required!");
+                    return false;
+                } else {
+                    spblc18kn.setError(null);
+                }
+            }
+
+
         }
 
 
@@ -1638,75 +1693,77 @@ public class SectionCActivity extends Activity {
         }
 
 
-        if (spblc20a.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc20a), Toast.LENGTH_SHORT).show();
-            spblc20a.setError("This data is Required!");    // Set Error on last radio button
-            spblc20a.requestFocus();
-            Log.i(TAG, "spblc20a: This data is Required!");
-            return false;
-        } else {
-            spblc20a.setError(null);
-        }
+        if (spblc19a.isChecked()) {
+
+            if (spblc20a.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc20a), Toast.LENGTH_SHORT).show();
+                spblc20a.setError("This data is Required!");    // Set Error on last radio button
+                spblc20a.requestFocus();
+                Log.i(TAG, "spblc20a: This data is Required!");
+                return false;
+            } else {
+                spblc20a.setError(null);
+            }
 
 
-        if (spblc20b.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc20b), Toast.LENGTH_SHORT).show();
-            spblc20b.setError("This data is Required!");    // Set Error on last radio button
-            spblc20b.requestFocus();
-            Log.i(TAG, "spblc20b: This data is Required!");
-            return false;
-        } else {
-            spblc20b.setError(null);
-        }
+            if (spblc20b.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc20b), Toast.LENGTH_SHORT).show();
+                spblc20b.setError("This data is Required!");    // Set Error on last radio button
+                spblc20b.requestFocus();
+                Log.i(TAG, "spblc20b: This data is Required!");
+                return false;
+            } else {
+                spblc20b.setError(null);
+            }
 
 
-        if (spblc20c.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc20c), Toast.LENGTH_SHORT).show();
-            spblc20c.setError("This data is Required!");    // Set Error on last radio button
-            spblc20c.requestFocus();
-            Log.i(TAG, "spblc20c: This data is Required!");
-            return false;
-        } else {
-            spblc20c.setError(null);
-        }
+            if (spblc20c.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc20c), Toast.LENGTH_SHORT).show();
+                spblc20c.setError("This data is Required!");    // Set Error on last radio button
+                spblc20c.requestFocus();
+                Log.i(TAG, "spblc20c: This data is Required!");
+                return false;
+            } else {
+                spblc20c.setError(null);
+            }
 
 
-        if (spblc20d.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc20d), Toast.LENGTH_SHORT).show();
-            spblc20d.setError("This data is Required!");    // Set Error on last radio button
-            spblc20d.requestFocus();
-            Log.i(TAG, "spblc20d: This data is Required!");
-            return false;
-        } else {
-            spblc20d.setError(null);
-        }
+            if (spblc20d.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc20d), Toast.LENGTH_SHORT).show();
+                spblc20d.setError("This data is Required!");    // Set Error on last radio button
+                spblc20d.requestFocus();
+                Log.i(TAG, "spblc20d: This data is Required!");
+                return false;
+            } else {
+                spblc20d.setError(null);
+            }
 
 
-        if (spblc20e.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc20e), Toast.LENGTH_SHORT).show();
-            spblc20e.setError("This data is Required!");    // Set Error on last radio button
-            spblc20e.requestFocus();
-            Log.i(TAG, "spblc20e: This data is Required!");
-            return false;
-        } else {
-            spblc20e.setError(null);
-        }
+            if (spblc20e.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc20e), Toast.LENGTH_SHORT).show();
+                spblc20e.setError("This data is Required!");    // Set Error on last radio button
+                spblc20e.requestFocus();
+                Log.i(TAG, "spblc20e: This data is Required!");
+                return false;
+            } else {
+                spblc20e.setError(null);
+            }
 
 
-        if (spblc20f.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc20f), Toast.LENGTH_SHORT).show();
-            spblc20f.setError("This data is Required!");    // Set Error on last radio button
-            spblc20f.requestFocus();
-            Log.i(TAG, "spblc20f: This data is Required!");
-            return false;
-        } else {
-            spblc20f.setError(null);
+            if (spblc20f.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc20f), Toast.LENGTH_SHORT).show();
+                spblc20f.setError("This data is Required!");    // Set Error on last radio button
+                spblc20f.requestFocus();
+                Log.i(TAG, "spblc20f: This data is Required!");
+                return false;
+            } else {
+                spblc20f.setError(null);
+            }
         }
 
 
         return true;
     }
-
 
 
 }

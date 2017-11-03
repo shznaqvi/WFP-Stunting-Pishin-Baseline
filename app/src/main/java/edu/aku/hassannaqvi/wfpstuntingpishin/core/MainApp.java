@@ -21,11 +21,16 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import edu.aku.hassannaqvi.wfpstuntingpishin.activities.EndingActivity;
+import edu.aku.hassannaqvi.wfpstuntingpishin.contracts.FamilyMembersContract;
 import edu.aku.hassannaqvi.wfpstuntingpishin.contracts.FetusContract;
 import edu.aku.hassannaqvi.wfpstuntingpishin.contracts.FormsContract;
+import edu.aku.hassannaqvi.wfpstuntingpishin.otherClasses.FamilyMembers;
+import edu.aku.hassannaqvi.wfpstuntingpishin.otherClasses.MembersCount;
 import edu.aku.hassannaqvi.wfpstuntingpishin.otherClasses.MothersLst;
 
 /**
@@ -36,7 +41,7 @@ public class MainApp extends Application {
 
     public static final String _IP = "43.245.131.159"; // Test PHP server
     public static final Integer _PORT = 8080; // Port - with colon (:)
-    public static final String _HOST_URL = "http://" + MainApp._IP + ":" + MainApp._PORT + "/wfpsp/api/";
+    public static final String _HOST_URL = "http://" + MainApp._IP + ":" + MainApp._PORT + "/wfp-pishin/api/";
 
     /*
         public static final String _IP = "43.245.131.159"; // Test server
@@ -72,7 +77,8 @@ public class MainApp extends Application {
     public static final long MILLISECONDS_IN_49Years = MILLIS_IN_SECOND * SECONDS_IN_MINUTE * MINUTES_IN_HOUR * HOURS_IN_DAY * DAYS_IN_49Years;
     private static final long DAYS_IN_15Years = 5475;
     public static final long MILLISECONDS_IN_15Years = MILLIS_IN_SECOND * SECONDS_IN_MINUTE * MINUTES_IN_HOUR * HOURS_IN_DAY * DAYS_IN_15Years;
-
+    public static int versionCode;
+    public static String versionName;
 
     public static String deviceId;
 
@@ -80,11 +86,15 @@ public class MainApp extends Application {
     public static String interviewerCode;
     public static int loginFieldArea = -1;
     public static String child_name = "TEST";
-    public static FormsContract fc = new FormsContract();
+    public static FormsContract fc ;
     public static FetusContract fec;
     public static JSONObject f03 = new JSONObject();
     public static String userName = "0000";
-    public static String areaCode;
+    public static String userName2 = "0000";
+    public static String[] loginMem;
+    public static int ucCode = 0;
+    public static int tehsilCode = 0;
+    public static int villageCode = 0;
     //    Total No of members got from Section A
     public static int NoMembersCount = 0;
     public static int NoMaleCount = 0;
@@ -123,6 +133,19 @@ public class MainApp extends Application {
     public static List<FormsContract> participantList;
     public static String formType;
     public static boolean eligibleFlag = false;
+    public static MembersCount members;
+    public static MembersCount checkMembers;
+    public static String selectedWoman = "";
+    public static Map<String, FamilyMembers> childMap = new HashMap<>();
+    public static ArrayList<String> lstChild = new ArrayList<>();
+
+    public static Map<String, FamilyMembers> childMap2 = new HashMap<>();
+    public static ArrayList<String> lstChild2 = new ArrayList<>();
+    public static int postion = 0;
+    //    Ali
+    public static ArrayList<FamilyMembers> familyMembersList;
+    public static FamilyMembersContract fmc;
+    public static int counter = 0;
     protected static LocationManager locationManager;
     Location location;
 
@@ -272,6 +295,17 @@ public class MainApp extends Application {
         } catch (Exception e) {
             Log.e("GPS", "setGPS: " + e.getMessage());
         }
+
+
+    }
+
+    public static int checkChildAgeMonths(String y, String m, String d) {
+
+        int age = Integer.parseInt(y) * 12 + Integer.parseInt(m) + (Integer.parseInt(d) / 29);
+
+        age = age < 6 ? 1 : age >= 6 && age < 23 ? 2 : age >= 24 && age < 59 ? 3 : 0;
+
+        return age;
 
     }
 

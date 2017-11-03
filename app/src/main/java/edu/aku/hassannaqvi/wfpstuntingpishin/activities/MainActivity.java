@@ -34,10 +34,7 @@ import edu.aku.hassannaqvi.wfpstuntingpishin.core.AndroidDatabaseManager;
 import edu.aku.hassannaqvi.wfpstuntingpishin.core.DatabaseHelper;
 import edu.aku.hassannaqvi.wfpstuntingpishin.core.MainApp;
 import edu.aku.hassannaqvi.wfpstuntingpishin.get.GetUsers;
-import edu.aku.hassannaqvi.wfpstuntingpishin.sync.SyncForms10;
-import edu.aku.hassannaqvi.wfpstuntingpishin.sync.SyncForms3;
-import edu.aku.hassannaqvi.wfpstuntingpishin.sync.SyncForms8;
-import edu.aku.hassannaqvi.wfpstuntingpishin.sync.SyncForms9;
+import edu.aku.hassannaqvi.wfpstuntingpishin.sync.SyncForms;
 
 public class MainActivity extends Activity {
 
@@ -118,11 +115,7 @@ public class MainActivity extends Activity {
 
         DatabaseHelper db = new DatabaseHelper(this);
         Collection<FormsContract> todaysForms = db.getTodayForms();
-        Collection<FormsContract> unsyncedForms3 = db.getUnsyncedForms3();
-        Collection<FormsContract> unsyncedForms8 = db.getUnsyncedForms8();
-     /*   Collection<FetusContract> unsyncedFetus = db.getUnsyncedFetus();*/
-        Collection<FormsContract> unsyncedForms9 = db.getUnsyncedForms9();
-        Collection<FormsContract> unsyncedForms10 = db.getUnsyncedForms10();
+
 
         rSumText += "TODAY'S RECORDS SUMMARY\r\n";
 
@@ -159,7 +152,7 @@ public class MainActivity extends Activity {
                     iStatus = "\tN/A";
                 }
 
-                rSumText += fc.getFormType();
+//                rSumText += fc.getFormType();
 
                 rSumText += " " + iStatus + " ";
 
@@ -177,16 +170,16 @@ public class MainActivity extends Activity {
             rSumText += "Last Data Upload: \t" + syncPref.getString("LastUpSyncServer", "Never Synced");
             rSumText += "\r\n";
             rSumText += "\r\n";
-            rSumText += "Unsynced Forms3: \t" + unsyncedForms3.size();
+            /*rSumText += "Unsynced Forms3: \t" + unsyncedForms.size();
             rSumText += "\r\n";
             rSumText += "Unsynced Forms8: \t" + unsyncedForms8.size();
             rSumText += "\r\n";
-            /*rSumText += "Unsynced Fetus: \t" + unsyncedFetus.size();
-            rSumText += "\r\n";*/
+            *//*rSumText += "Unsynced Fetus: \t" + unsyncedFetus.size();
+            rSumText += "\r\n";*//*
             rSumText += "Unsynced Forms9: \t" + unsyncedForms9.size();
             rSumText += "\r\n";
             rSumText += "Unsynced Forms10: \t" + unsyncedForms10.size();
-            rSumText += "\r\n";
+            rSumText += "\r\n";*/
         }
         Log.d(TAG, "onCreate: " + rSumText);
         recordSummary.setText(rSumText);
@@ -196,9 +189,8 @@ public class MainActivity extends Activity {
 
     public void openForm(View v) {
         if (sharedPref.getString("tagName", null) != "" && sharedPref.getString("tagName", null) != null && !MainApp.userName.equals("0000")) {
-          /*  Intent oF = new Intent(MainActivity.this, F03AActivity.class);
-            MainApp.formType = "3";
-            startActivity(oF);*/
+            Intent oF = new Intent(MainActivity.this, SectionAActivity.class);
+            startActivity(oF);
         } else {
 
             builder = new AlertDialog.Builder(MainActivity.this);
@@ -220,9 +212,9 @@ public class MainActivity extends Activity {
                         editor.commit();
 
                         if (!MainApp.userName.equals("0000")) {
-                           /* Intent oF = new Intent(MainActivity.this, F03AActivity.class);
+                            Intent oF = new Intent(MainActivity.this, SectionAActivity.class);
                             MainApp.formType = "3";
-                            startActivity(oF);*/
+                            startActivity(oF);
                         }
                     }
                 }
@@ -313,65 +305,93 @@ public class MainActivity extends Activity {
         startActivity(iA);
     }
 
+
+    public void openA(View v) {
+        Intent iB = new Intent(this, SectionAActivity.class);
+        startActivity(iB);
+    }
+
     public void openB(View v) {
-      /*  Intent iB = new Intent(this, F04AActivity.class);
-        startActivity(iB);*/
+        Intent iB = new Intent(this, SectionBActivity.class);
+        startActivity(iB);
     }
 
     public void openC(View v) {
-        /*Intent iC = new Intent(this, SectionCActivity.class);
-        startActivity(iC);*/
+        Intent iC = new Intent(this, SectionCActivity.class);
+        startActivity(iC);
     }
 
     public void openD(View v) {
-        /*Intent iD = new Intent(this, SectionDActivity.class);
-        startActivity(iD);*/
+        Intent iD = new Intent(this, SectionDActivity.class);
+        startActivity(iD);
     }
 
     public void openE(View v) {
-        /*Intent iD = new Intent(this, SectionEActivity.class);
-        startActivity(iD);*/
+        Intent iD = new Intent(this, SectionEActivity.class);
+        startActivity(iD);
     }
 
     public void openF(View v) {
-        /*Intent iD = new Intent(this, SectionFActivity.class);
-        startActivity(iD);*/
+        Intent iD = new Intent(this, SectionFActivity.class);
+        startActivity(iD);
     }
 
     public void openG(View v) {
-        /*Intent iG = new Intent(this, SectionGActivity.class);
-        startActivity(iG);*/
+        Intent iG = new Intent(this, SectionGActivity.class);
+        startActivity(iG);
     }
 
     public void openH(View v) {
-        /*Intent iEnd = new Intent(this, SectionHActivity.class);
-        startActivity(iEnd);*/
+        Intent iEnd = new Intent(this, SectionHActivity.class);
+        startActivity(iEnd);
     }
 
     public void openI(View v) {
-        /*Intent iEnd = new Intent(this, SectionIActivity.class);
-        startActivity(iEnd);*/
+        Intent iEnd = new Intent(this, SectionIActivity.class);
+        startActivity(iEnd);
     }
 
     public void openJ(View v) {
-        /*Intent iEnd = new Intent(this, SectionJActivity.class);
-        startActivity(iEnd);*/
+        Intent iEnd = new Intent(this, SectionJActivity.class);
+        startActivity(iEnd);
     }
 
     public void openK(View v) {
-        /*Intent iEnd = new Intent(this, SectionKActivity.class);
-        startActivity(iEnd);*/
+        Intent iEnd = new Intent(this, SectionKActivity.class);
+        startActivity(iEnd);
     }
 
     public void openL(View v) {
-        /*Intent iEnd = new Intent(this, SectionLIMActivity.class);
-        startActivity(iEnd);*/
+        Intent iEnd = new Intent(this, SectionLIMActivity.class);
+        startActivity(iEnd);
     }
 
     public void openM(View v) {
-        /*Intent iEnd = new Intent(this, SectionMActivity.class);
-        startActivity(iEnd);*/
+        Intent iEnd = new Intent(this, SectionMActivity.class);
+        startActivity(iEnd);
     }
+
+    public void openN(View v) {
+        Intent iEnd = new Intent(this, SectionNActivity.class);
+        startActivity(iEnd);
+    }
+
+    public void openO(View v) {
+        Intent iEnd = new Intent(this, SectionOActivity.class);
+        startActivity(iEnd);
+    }
+
+    public void openP(View v) {
+        Intent iEnd = new Intent(this, SectionPActivity.class);
+        startActivity(iEnd);
+    }
+
+
+    public void openQ(View v) {
+        Intent iEnd = new Intent(this, SectionQActivity.class);
+        startActivity(iEnd);
+    }
+
 
     public void testGPS(View v) {
 
@@ -405,11 +425,7 @@ public class MainActivity extends Activity {
         Log.e(TAG, "syncServer: 2");
         if (networkInfo != null && networkInfo.isConnected()) {
             Toast.makeText(getApplicationContext(), "Syncing Forms", Toast.LENGTH_SHORT).show();
-            new SyncForms3(this).execute();
-            new SyncForms8(this).execute();
-//            new SyncFetus(this).execute();
-            new SyncForms9(this).execute();
-            new SyncForms10(this).execute();
+            new SyncForms(this).execute();
 
            /* Toast.makeText(getApplicationContext(), "Syncing Participants", Toast.LENGTH_SHORT).show();
             new SyncParticipants(this).execute();*/

@@ -31,9 +31,6 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.inputmethod.EditorInfo;
-import android.view.inputmethod.InputMethodManager;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
@@ -63,7 +60,11 @@ import butterknife.OnClick;
 import edu.aku.hassannaqvi.wfpstuntingpishin.R;
 import edu.aku.hassannaqvi.wfpstuntingpishin.core.DatabaseHelper;
 import edu.aku.hassannaqvi.wfpstuntingpishin.core.MainApp;
+import edu.aku.hassannaqvi.wfpstuntingpishin.get.GetSources;
+import edu.aku.hassannaqvi.wfpstuntingpishin.get.GetTehsil;
+import edu.aku.hassannaqvi.wfpstuntingpishin.get.GetUCs;
 import edu.aku.hassannaqvi.wfpstuntingpishin.get.GetUsers;
+import edu.aku.hassannaqvi.wfpstuntingpishin.get.GetVillages;
 
 
 /**
@@ -91,6 +92,12 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
     EditText mEmailView;
     @BindView(edu.aku.hassannaqvi.wfpstuntingpishin.R.id.password)
     EditText mPasswordView;
+
+    @BindView(edu.aku.hassannaqvi.wfpstuntingpishin.R.id.email2)
+    EditText mEmailView2;
+    @BindView(edu.aku.hassannaqvi.wfpstuntingpishin.R.id.password2)
+    EditText mPasswordView2;
+
     @BindView(edu.aku.hassannaqvi.wfpstuntingpishin.R.id.txtinstalldate)
     TextView txtinstalldate;
     @BindView(edu.aku.hassannaqvi.wfpstuntingpishin.R.id.email_sign_in_button)
@@ -114,6 +121,9 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
         setContentView(edu.aku.hassannaqvi.wfpstuntingpishin.R.layout.activity_login);
         ButterKnife.bind(this);
 
+        MainApp.loginMem = new String[3];
+        MainApp.loginMem[0] = "...";    //default value
+
         try {
             long installedOn = this
                     .getPackageManager()
@@ -136,8 +146,28 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
         mEmailView = (EditText) findViewById(R.id.email);
         populateAutoComplete();
 
+        mEmailView2 = (EditText) findViewById(R.id.email2);
+        populateAutoComplete();
+
         mPasswordView = (EditText) findViewById(R.id.password);
         mPasswordView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView textView, int id, KeyEvent keyEvent) {
+                if (id == edu.aku.hassannaqvi.wfpstuntingpishin.R.id.login || id == EditorInfo.IME_NULL) {
+                    attemptLogin();
+
+                    MainApp.loginMem[1] = mEmailView.getText().toString();
+                    MainApp.loginMem[2] = mEmailView2.getText().toString();
+
+                    return true;
+
+                }
+                return false;
+            }
+        });
+
+        mPasswordView2 = (EditText) findViewById(R.id.password2);
+        mPasswordView2.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView textView, int id, KeyEvent keyEvent) {
                 if (id == edu.aku.hassannaqvi.wfpstuntingpishin.R.id.login || id == EditorInfo.IME_NULL) {
@@ -169,48 +199,6 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
        /* ArrayList<UCContract> ucList = new ArrayList<UCContract>();
         ucList = db.getAllUC();*/
 
-        // Spinner Drop down elements
-        lables = new ArrayList<String>();
-        lables.add("Rehri Goth");
-        lables.add("Ibrahim Haidery");
-        lables.add("Behns Colony");
-        lables.add("Ali Akber Shah Goth");
-
-        values = new ArrayList<String>();
-        values.add("01");
-        values.add("02");
-        values.add("03");
-        values.add("04");
-
-
-        // Creating adapter for spinner
-        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(getApplicationContext(),
-                android.R.layout.simple_spinner_item, lables);
-
-        // Drop down layout style - list view with radio button
-        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
-        // attaching data adapter to spinner
-        spUC.setAdapter(dataAdapter);
-        spUC.setBackgroundColor(getResources().getColor(edu.aku.hassannaqvi.wfpstuntingpishin.R.color.colorPrimaryDark));
-
-        //spUC.setOnItemSelectedListener(this);
-        spUC.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                MainApp.areaCode = values.get(position);
-
-                InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-                imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0);
-                Toast.makeText(LoginActivity.this, values.get(position), Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
-
 
 //        DB backup
 
@@ -232,7 +220,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
                 editor.commit();
             }
 
-            File folder = new File(Environment.getExternalStorageDirectory() + File.separator + "DMU-DSSCENSUS");
+            File folder = new File(Environment.getExternalStorageDirectory() + File.separator + "DMU-PISHIN");
             boolean success = true;
             if (!folder.exists()) {
                 success = folder.mkdirs();
@@ -314,9 +302,15 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
         mEmailView.setError(null);
         mPasswordView.setError(null);
 
+        mEmailView2.setError(null);
+        mPasswordView2.setError(null);
+
         // Store values at the time of the login attempt.
         String email = mEmailView.getText().toString();
         String password = mPasswordView.getText().toString();
+
+        String email2 = mEmailView2.getText().toString();
+        String password2 = mPasswordView2.getText().toString();
 
         boolean cancel = false;
         View focusView = null;
@@ -328,10 +322,26 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
             cancel = true;
         }
 
+        if (!TextUtils.isEmpty(password2) && !isPasswordValid(password2)) {
+            mPasswordView2.setError(getString(edu.aku.hassannaqvi.wfpstuntingpishin.R.string.error_invalid_password));
+            focusView = mPasswordView2;
+            cancel = true;
+        }
+
         // Check for a valid email address.
         if (TextUtils.isEmpty(email)) {
             mEmailView.setError(getString(edu.aku.hassannaqvi.wfpstuntingpishin.R.string.error_field_required));
             focusView = mEmailView;
+            cancel = true;
+        } /*else if (!isEmailValid(email)) {
+            mEmailView.setError(getString(R.string.error_invalid_email));
+            focusView = mEmailView;
+            cancel = true;
+        }*/
+
+        if (TextUtils.isEmpty(email2)) {
+            mEmailView2.setError(getString(edu.aku.hassannaqvi.wfpstuntingpishin.R.string.error_field_required));
+            focusView = mEmailView2;
             cancel = true;
         } /*else if (!isEmailValid(email)) {
             mEmailView.setError(getString(R.string.error_invalid_email));
@@ -347,7 +357,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
             // Show a progress spinner, and kick off a background task to
             // perform the user login attempt.
             showProgress(true);
-            mAuthTask = new UserLoginTask(email, password);
+            mAuthTask = new UserLoginTask(email, password, email2, password2);
             mAuthTask.execute((Void) null);
 
 
@@ -358,6 +368,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
         //TODO: Replace this with your own logic
         return email.contains("@");
     }
+
 
     private boolean isPasswordValid(String password) {
         //TODO: Replace this with your own logic
@@ -445,6 +456,18 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
         }
     }
 
+    @OnClick(R.id.showPassword2)
+    void onShowPasswordClick2() {
+        //TODO implement
+        if (mPasswordView2.getTransformationMethod() == null) {
+            mPasswordView2.setTransformationMethod(new PasswordTransformationMethod());
+            mPasswordView2.setCompoundDrawablesWithIntrinsicBounds(edu.aku.hassannaqvi.wfpstuntingpishin.R.drawable.ic_lock_black_24dp, 0, 0, 0);
+        } else {
+            mPasswordView2.setTransformationMethod(null);
+            mPasswordView2.setCompoundDrawablesWithIntrinsicBounds(edu.aku.hassannaqvi.wfpstuntingpishin.R.drawable.ic_lock_open_black_24dp, 0, 0, 0);
+        }
+    }
+
     public void gotoMain(View v) {
 
         finish();
@@ -472,9 +495,15 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
         private final String mEmail;
         private final String mPassword;
 
-        UserLoginTask(String email, String password) {
+        private final String mEmail2;
+        private final String mPassword2;
+
+        UserLoginTask(String email, String password, String email2, String password2) {
             mEmail = email;
             mPassword = password;
+
+            mEmail2 = email2;
+            mPassword2 = password2;
         }
 
 
@@ -509,25 +538,35 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
             LocationManager mlocManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
             if (mlocManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
                 DatabaseHelper db = new DatabaseHelper(LoginActivity.this);
-                if ((mEmail.equals("dmu@aku") && mPassword.equals("aku?dmu")) || db.Login(mEmail, mPassword)
-                        || (mEmail.equals("test1234") && mPassword.equals("test1234"))) {
+                if ((mEmail.equals("dmu@aku") && mPassword.equals("aku?dmu")) || db.Login(mEmail, mPassword) ||
+                        (mEmail.equals("test1234") && mPassword.equals("test1234"))
+                        || (mEmail.equals("test12345") && mPassword.equals("test12345"))) {
                     MainApp.userName = mEmail;
                     MainApp.admin = mEmail.contains("@");
 
-                    if (!MainApp.regionDss.equals("") || (mEmail.equals("dmu@aku") && mPassword.equals("aku?dmu"))
-                            || (mEmail.equals("test1234") && mPassword.equals("test1234"))) {
-                        finish();
+                    if ((mEmail2.equals("dmu@aku") && mPassword2.equals("aku?dmu")) || db.Login(mEmail2, mPassword2) ||
+                            (mEmail2.equals("test1234") && mPassword2.equals("test1234")) || (mEmail2.equals("test12345") && mPassword2.equals("test12345"))) {
+                        if (!mEmail.equals(mEmail2)) {
 
-                        Intent iLogin = new Intent(LoginActivity.this, MainActivity.class);
-                        startActivity(iLogin);
+                            MainApp.userName2 = mEmail2;
 
-                        Toast.makeText(LoginActivity.this, "You are assigned to " + MainApp.regionDss + " Block", Toast.LENGTH_SHORT).show();
+                            finish();
+
+                            Intent iLogin = new Intent(LoginActivity.this, MainActivity.class);
+                            startActivity(iLogin);
+                        } else {
+                            mEmailView2.setError("Same username..");
+                            mEmailView2.requestFocus();
+                        }
+
                     } else {
-                        Toast.makeText(LoginActivity.this, "You are not assigned to any block", Toast.LENGTH_SHORT).show();
+                        mPasswordView2.setError(getString(R.string.error_incorrect_password));
+                        mPasswordView2.requestFocus();
+                        Toast.makeText(LoginActivity.this, mEmail2 + " " + mPassword2, Toast.LENGTH_SHORT).show();
                     }
 
                 } else {
-                    mPasswordView.setError(getString(edu.aku.hassannaqvi.wfpstuntingpishin.R.string.error_incorrect_password));
+                    mPasswordView.setError(getString(R.string.error_incorrect_password));
                     mPasswordView.requestFocus();
                     Toast.makeText(LoginActivity.this, mEmail + " " + mPassword, Toast.LENGTH_SHORT).show();
                 }
@@ -584,6 +623,14 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
                 public void run() {
                     Toast.makeText(LoginActivity.this, "Sync User", Toast.LENGTH_LONG).show();
                     new GetUsers(mContext).execute();
+                    Toast.makeText(LoginActivity.this, "Sync Tehsil's", Toast.LENGTH_LONG).show();
+                    new GetTehsil(mContext).execute();
+                    Toast.makeText(LoginActivity.this, "Sync UC's", Toast.LENGTH_LONG).show();
+                    new GetUCs(mContext).execute();
+                    Toast.makeText(LoginActivity.this, "Sync Villages", Toast.LENGTH_LONG).show();
+                    new GetVillages(mContext).execute();
+                    Toast.makeText(LoginActivity.this, "Sync NGOs", Toast.LENGTH_LONG).show();
+                    new GetSources(mContext).execute();
                 }
             });
 

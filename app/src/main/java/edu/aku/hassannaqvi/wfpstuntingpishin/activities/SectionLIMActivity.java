@@ -1,11 +1,15 @@
 package edu.aku.hassannaqvi.wfpstuntingpishin.activities;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.widget.NestedScrollView;
 import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -16,12 +20,17 @@ import android.widget.Toast;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import edu.aku.hassannaqvi.wfpstuntingpishin.R;
 import edu.aku.hassannaqvi.wfpstuntingpishin.core.DatabaseHelper;
 import edu.aku.hassannaqvi.wfpstuntingpishin.core.MainApp;
+import edu.aku.hassannaqvi.wfpstuntingpishin.otherClasses.FamilyMembers;
 
 public class SectionLIMActivity extends Activity
 {
@@ -312,17 +321,88 @@ public class SectionLIMActivity extends Activity
     RadioButton vitaminAC01;
     @BindView(R.id.vitaminAC02)
     RadioButton vitaminAC02;
+    @BindView(R.id.motherName)
+    TextView motherName;
 
+    Map<String, FamilyMembers> childMap;
+    ArrayList<String> lstchild;
+
+    private boolean userIsInteracting = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_section_l_im);
         ButterKnife.bind(this);
 
+        childMap = new HashMap<>();
+        lstchild = new ArrayList<>();
+        childMap.put("....", null);
+        lstchild.add("....");
+
+        for (byte i = 0; i < MainApp.familyMembersList.size(); i++) {
+            if (MainApp.familyMembersList.get(i).getType().equals("ch") && Integer.valueOf(MainApp.familyMembersList.get(i).getDob().substring(0, 1)) < 5) {
+
+
+                childMap.put(MainApp.familyMembersList.get(i).getMemberName(), new FamilyMembers(MainApp.familyMembersList.get(i)));
+                lstchild.add(MainApp.familyMembersList.get(i).getMemberName());
+
+
+            }
+        }
+
+        spblName.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, lstchild));
+
+        spblName.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
+        {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                MainApp.position = i;
+                if (userIsInteracting) {
+                    motherName.setText(childMap.get(spblName.getSelectedItem().toString()).getMotherName());
+                }
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
+
+    }
+
+    @Override
+    public void onUserInteraction() {
+        super.onUserInteraction();
+        userIsInteracting = true;
     }
 
     @OnClick(R.id.btn_Continue)
     void onBtnContinueClick() {
+
+        if (ValidateForm()) {
+            try {
+                SaveDraft();
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+            if (UpdateDB()) {
+                Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
+
+                finish();
+
+
+                Intent endSec = new Intent(this, SectionMActivity.class);
+                endSec.putExtra("getName", spblName.getSelectedItem().toString());
+                startActivity(endSec);
+
+            } else {
+                Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
+            }
+        }
+
+
 
     }
 
@@ -338,10 +418,15 @@ public class SectionLIMActivity extends Activity
     private boolean UpdateDB() {
 
         DatabaseHelper db = new DatabaseHelper(this);
+        int updcount = db.updateSL();
 
-
-        return true;
-
+        if (updcount == 1) {
+            Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
+            return true;
+        } else {
+            Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
+            return false;
+        }
     }
 
     private void SaveDraft() throws JSONException {
@@ -365,6 +450,9 @@ public class SectionLIMActivity extends Activity
 */
         //sI.put("tiImsSerial", MainApp.childsMap.get(tiname.getSelectedItem().toString()).getSerialNo());
 
+        sI.put("mother_name", motherName.getText().toString());
+        sI.put("spblname", spblName.getSelectedItem().toString());
+        sI.put("spblserial", childMap.get(spblName.getSelectedItem().toString()).getSerial());
         sI.put("bcgM", bcgM01.isChecked() ? "1" : bcgM02.isChecked() ? "2" : "0");
         sI.put("bcgC", bcgC01.isChecked() ? "1" : bcgC02.isChecked() ? "2" : "0");
         sI.put("opv0M", opv0M01.isChecked() ? "1" : opv0M02.isChecked() ? "2" : "0");
@@ -400,7 +488,7 @@ public class SectionLIMActivity extends Activity
         sI.put("vitaminAM", vitaminAM01.isChecked() ? "1" : vitaminAM02.isChecked() ? "2" : "0");
         sI.put("vitaminAC", vitaminAC01.isChecked() ? "1" : vitaminAC02.isChecked() ? "2" : "0");
 
-//        MainApp.ims.setsI(String.valueOf(sI));
+        MainApp.fc.setsL(String.valueOf(sI));
 
         Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
 

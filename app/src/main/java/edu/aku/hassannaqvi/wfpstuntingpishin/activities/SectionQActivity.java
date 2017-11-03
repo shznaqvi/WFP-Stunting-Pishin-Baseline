@@ -1,5 +1,6 @@
 package edu.aku.hassannaqvi.wfpstuntingpishin.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
@@ -23,6 +24,8 @@ import butterknife.BindView;
 import butterknife.BindViews;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import edu.aku.hassannaqvi.wfpstuntingpishin.R;
+import edu.aku.hassannaqvi.wfpstuntingpishin.core.DatabaseHelper;
 import edu.aku.hassannaqvi.wfpstuntingpishin.core.MainApp;
 import io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText;
 
@@ -812,7 +815,7 @@ public class SectionQActivity extends AppCompatActivity
     @OnClick(R.id.btn_Continue)
     void onBtnContinueClick() {
 
-        /*if (ValidateForm()) {
+        if (ValidateForm()) {
             try {
                 SaveDraft();
             } catch (JSONException e) {
@@ -823,8 +826,8 @@ public class SectionQActivity extends AppCompatActivity
 
                 finish();
 
-                Intent secNext = new Intent(this, CounselingSessionsActivity.class);
-                secNext.putExtra("check", false);
+                Intent secNext = new Intent(this, EndingActivity.class);
+                secNext.putExtra("check", true);
                 startActivity(secNext);
 
             } else {
@@ -832,7 +835,8 @@ public class SectionQActivity extends AppCompatActivity
             }
         }
 
-*/
+
+
     }
 
 
@@ -890,7 +894,10 @@ public class SectionQActivity extends AppCompatActivity
         sn.put("bd08dod1", bd08dod1.getText().toString());
         sn.put("bd08dod2", bd08dod2.getText().toString());
 
-        //MainApp.fc.setBirthsDeaths(String.valueOf(sn));
+        MainApp.fc.setsQ(String.valueOf(sn));
+
+
+
 
         Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
     }
@@ -1339,17 +1346,17 @@ public class SectionQActivity extends AppCompatActivity
     }
 
     private boolean UpdateDB() {
-        /*DatabaseHelper db = new DatabaseHelper(this);
+        DatabaseHelper db = new DatabaseHelper(this);
 
-        int updcount = db.updateBirthsDeaths();
+        int updcount = db.updateSQ();
         if (updcount == 1) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
             return true;
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
             return false;
-        }*/
-        return true;
+        }
+
     }
 
 
