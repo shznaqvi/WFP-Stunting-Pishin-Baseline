@@ -220,8 +220,6 @@ public class SectionGActivity extends Activity {
     EditText spblg0115num;
     @BindView(R.id.spblg0115src)
     Spinner spblg0115src;
-    @BindView(R.id.fldGrpbtn)
-    LinearLayout fldGrpbtn;
 
 
     Map<String, String> getAllNGOsMap;
@@ -463,7 +461,7 @@ public class SectionGActivity extends Activity {
 
     }
 
-    @OnClick(R.id.btnNext)
+    @OnClick(R.id.btn_Continue)
     void onBtnNextClick() {
         if (ValidateForm()) {
             try {
@@ -490,7 +488,7 @@ public class SectionGActivity extends Activity {
     }
 
 
-    @OnClick(R.id.btnEnd)
+    @OnClick(R.id.btn_End)
     void onBtnEndClick() {
         Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();
 

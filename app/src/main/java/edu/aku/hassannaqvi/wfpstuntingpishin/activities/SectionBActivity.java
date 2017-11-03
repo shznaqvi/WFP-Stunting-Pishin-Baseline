@@ -8,8 +8,10 @@ import android.support.annotation.IdRes;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
@@ -100,6 +102,8 @@ public class SectionBActivity extends Activity {
     RadioButton spblb06i;
     @BindView(R.id.spblb06j)
     RadioButton spblb06j;
+    @BindView(R.id.fldGrp07)
+    LinearLayout fldGrp07;
 
     List<String> mothersList;
     Map<String, String> mothersMap;
@@ -422,41 +426,44 @@ public class SectionBActivity extends Activity {
         } else {
             spblb04d.setError(null);
         }
-        if (spblb07.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblb07), Toast.LENGTH_SHORT).show();
-            spblb07a.setError("This data is required");
-            spblb07a.setFocusable(true);
-            spblb07a.setFocusableInTouchMode(true);
-            spblb07a.requestFocus();
-            Log.i(TAG, "spblb07: This Data is Required!");
-            return false;
-        } else {
-            spblb07a.setError(null);
-        }
+
+        if (Integer.valueOf(spblb04y.getText().toString()) > 5) {
+            if (spblb07.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblb07), Toast.LENGTH_SHORT).show();
+                spblb07a.setError("This data is required");
+                spblb07a.setFocusable(true);
+                spblb07a.setFocusableInTouchMode(true);
+                spblb07a.requestFocus();
+                Log.i(TAG, "spblb07: This Data is Required!");
+                return false;
+            } else {
+                spblb07a.setError(null);
+            }
 
 
-        if (spblb05.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblb05), Toast.LENGTH_SHORT).show();
-            spblb05a.setError("This data is required");
-            spblb05a.setFocusable(true);
-            spblb05a.setFocusableInTouchMode(true);
-            spblb05a.requestFocus();
-            Log.i(TAG, "spblb05: This Data is Required!");
-            return false;
-        } else {
-            spblb05a.setError(null);
-        }
+            if (spblb05.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblb05), Toast.LENGTH_SHORT).show();
+                spblb05a.setError("This data is required");
+                spblb05a.setFocusable(true);
+                spblb05a.setFocusableInTouchMode(true);
+                spblb05a.requestFocus();
+                Log.i(TAG, "spblb05: This Data is Required!");
+                return false;
+            } else {
+                spblb05a.setError(null);
+            }
 
-        if (spblb06.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblb06), Toast.LENGTH_SHORT).show();
-            spblb06a.setError("This data is required");
-            spblb06a.setFocusable(true);
-            spblb06a.setFocusableInTouchMode(true);
-            spblb06a.requestFocus();
-            Log.i(TAG, "spblb06: This Data is Required!");
-            return false;
-        } else {
-            spblb06a.setError(null);
+            if (spblb06.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblb06), Toast.LENGTH_SHORT).show();
+                spblb06a.setError("This data is required");
+                spblb06a.setFocusable(true);
+                spblb06a.setFocusableInTouchMode(true);
+                spblb06a.requestFocus();
+                Log.i(TAG, "spblb06: This Data is Required!");
+                return false;
+            } else {
+                spblb06a.setError(null);
+            }
         }
 
 
@@ -495,6 +502,17 @@ public class SectionBActivity extends Activity {
             } else {
                 flag = true;
                 spblb03.setEnabled(true);
+            }
+
+            if (!spblb04y.getText().toString().isEmpty()) {
+                if (Integer.valueOf(spblb04y.getText().toString()) < 5) {
+                    fldGrp07.setVisibility(View.GONE);
+                    spblb05.clearCheck();
+                    spblb06.clearCheck();
+                    spblb07.clearCheck();
+                } else {
+                    fldGrp07.setVisibility(View.VISIBLE);
+                }
             }
         }
 
