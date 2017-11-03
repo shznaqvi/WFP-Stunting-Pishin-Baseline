@@ -652,10 +652,11 @@ public class SectionCActivity extends Activity {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if (b) {
-                    spblc07.setVisibility(View.VISIBLE);
-                } else {
                     spblc07.setVisibility(View.GONE);
                     spblc07.setText(null);
+                } else {
+                    spblc07.setVisibility(View.VISIBLE);
+
                 }
             }
         });
@@ -1098,7 +1099,7 @@ public class SectionCActivity extends Activity {
 
 
         if (spblc06a.isChecked()) {
-            if (spblc07.getText().toString().isEmpty()) {
+            if (spblc07.getText().toString().isEmpty() && !spblc0799.isChecked()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc07), Toast.LENGTH_SHORT).show();
                 spblc07.setError("This data is Required!");    // Set Error on last radio button
                 spblc07.requestFocus();

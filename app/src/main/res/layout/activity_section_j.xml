@@ -47,6 +47,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:background="@color/pink_100"
+            android:gravity="center"
             android:text=""
             android:textColor="@color/colorPrimaryDark"/>
 
@@ -116,9 +117,8 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
                     android:layout_marginBottom="1dp"
-                    android:digits="0123456789."
                     android:hint="@string/spblj04"
-                    android:inputType="number"
+                    android:inputType="numberDecimal"
                     android:maxLength="5"
                     android:padding="10dp" />
 
@@ -153,9 +153,8 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
                     android:layout_marginBottom="1dp"
-                    android:digits="0123456789."
                     android:hint="@string/spblj04"
-                    android:inputType="number"
+                    android:inputType="numberDecimal"
                     android:maxLength="5"
                     android:padding="10dp" />
 
@@ -169,7 +168,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:background="@color/colorPrimary"
-            android:text="@string/spblj03"
+            android:text="@string/spblj05"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="@android:color/white" />
 
@@ -210,9 +209,8 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
                     android:layout_marginBottom="1dp"
-                    android:digits="0123456789."
                     android:hint="@string/spblj05"
-                    android:inputType="number"
+                    android:inputType="numberDecimal"
                     android:maxLength="5"
                     android:padding="10dp" />
 
@@ -247,9 +245,9 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
                     android:layout_marginBottom="1dp"
-                    android:digits="0123456789."
                     android:hint="@string/spblj05"
-                    android:inputType="number"
+
+                    android:inputType="numberDecimal"
                     android:maxLength="5"
                     android:padding="10dp" />
 

@@ -303,10 +303,7 @@ public class SectionEActivity extends Activity {
 
         }
 
-
-
-
-        /*//        spble01b
+        //        spble01b
         if (spble01b.getSelectedItem() == "....") {
             Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spble01b), Toast.LENGTH_SHORT).show();
             ((TextView) spble01b.getSelectedView()).setText("This Data is Required");
@@ -316,7 +313,7 @@ public class SectionEActivity extends Activity {
             return false;
         } else {
             ((TextView) spble01b.getSelectedView()).setError(null);
-        }*/
+        }
 
 
         if (spble01b.getSelectedItemPosition() == 13) {
@@ -334,10 +331,7 @@ public class SectionEActivity extends Activity {
 
         }
 
-
-
-
-        /*//        spble01c
+        //        spble01c
         if (spble01c.getSelectedItem() == "....") {
             Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spble01c), Toast.LENGTH_SHORT).show();
             ((TextView) spble01c.getSelectedView()).setText("This Data is Required");
@@ -347,7 +341,7 @@ public class SectionEActivity extends Activity {
             return false;
         } else {
             ((TextView) spble01c.getSelectedView()).setError(null);
-        }*/
+        }
 
 
         if (spble01c.getSelectedItemPosition() == 13) {
@@ -381,8 +375,7 @@ public class SectionEActivity extends Activity {
 
         }
 
-
-        if (spble01a.getSelectedItemPosition() == spble01b.getSelectedItemPosition()) {
+        /*if (spble01a.getSelectedItemPosition() == spble01b.getSelectedItemPosition()) {
             Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spble01), Toast.LENGTH_SHORT).show();
             ((TextView) spble01b.getSelectedView()).setText("You cannot have two choices similar");
             ((TextView) spble01b.getSelectedView()).setTextColor(Color.RED);
@@ -399,8 +392,7 @@ public class SectionEActivity extends Activity {
             spble01c.requestFocus();
             Log.i(TAG, "spble01c: This Data is Required!");
             return false;
-        }
-
+        }*/
 
         return true;
     }

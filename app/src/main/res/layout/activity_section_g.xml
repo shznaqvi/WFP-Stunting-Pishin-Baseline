@@ -47,7 +47,7 @@
             tools:typeface="serif" />
 
 
-        <TextView
+        <!--<TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="1dp"
@@ -62,7 +62,7 @@
             android:background="@color/colorHeading"
             android:popupBackground="#d6d6d6"
             android:prompt="@string/spblg0101" />
-
+-->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -633,7 +633,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="3dp"
-                android:hint="@string/src" />
+                android:hint="@string/src"/>
 
         </LinearLayout>
 
@@ -690,7 +690,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="3dp"
-                android:hint="@string/src" />
+                android:hint="@string/src"/>
 
         </LinearLayout>
 
@@ -748,7 +748,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="3dp"
-                android:hint="@string/src" />
+                android:hint="@string/src"/>
 
         </LinearLayout>
 
@@ -806,7 +806,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="3dp"
-                android:hint="@string/src" />
+                android:hint="@string/src"/>
 
         </LinearLayout>
 
@@ -863,7 +863,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="3dp"
-                android:hint="@string/src" />
+                android:hint="@string/src"/>
 
         </LinearLayout>
 
@@ -929,13 +929,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="3dp"
-                android:hint="@string/src" />
+                android:hint="@string/src"/>
 
         </LinearLayout>
 
 
         <LinearLayout
-            android:id="@+id/fldGrpbtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -943,20 +942,21 @@
             android:visibility="visible">
 
             <Button
-                android:id="@+id/btn_End"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/end_interview"
-                android:textColor="#ff1e1e" />
-
-            <Button
                 android:id="@+id/btn_Continue"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/nextSection"
-                android:textColor="#1ed61e" />
+                android:textColor="#1ed61e"/>
+
+            <Button
+                android:id="@+id/btn_End"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/end_interview"
+                android:textColor="#ff1e1e"/>
+
         </LinearLayout>
 
     </LinearLayout>
