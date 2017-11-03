@@ -60,6 +60,7 @@ import butterknife.OnClick;
 import edu.aku.hassannaqvi.wfpstuntingpishin.R;
 import edu.aku.hassannaqvi.wfpstuntingpishin.core.DatabaseHelper;
 import edu.aku.hassannaqvi.wfpstuntingpishin.core.MainApp;
+import edu.aku.hassannaqvi.wfpstuntingpishin.get.GetSources;
 import edu.aku.hassannaqvi.wfpstuntingpishin.get.GetTehsil;
 import edu.aku.hassannaqvi.wfpstuntingpishin.get.GetUCs;
 import edu.aku.hassannaqvi.wfpstuntingpishin.get.GetUsers;
@@ -628,6 +629,8 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
                     new GetUCs(mContext).execute();
                     Toast.makeText(LoginActivity.this, "Sync Villages", Toast.LENGTH_LONG).show();
                     new GetVillages(mContext).execute();
+                    Toast.makeText(LoginActivity.this, "Sync NGOs", Toast.LENGTH_LONG).show();
+                    new GetSources(mContext).execute();
                 }
             });
 

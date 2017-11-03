@@ -440,26 +440,26 @@ public class SectionGActivity extends Activity {
 
         getAllNGOsMap = new HashMap<>();
         NGOs = new ArrayList<>();
-//        if (allNGOs.size() != 0) {
+        if (allNGOs.size() != 0) {
 
-            NGOs.add("...");
+            NGOs.add("....");
 
-/*            for (SourceNGOContract aNGO : allNGOs) {
+            for (SourceNGOContract aNGO : allNGOs) {
                 getAllNGOsMap.put(aNGO.getSourceName(), aNGO.getSourceId());
                 NGOs.add(aNGO.getSourceName());
-            }*/
+            }
 
-            String[] ngo = new String[]{"NGO 1", "NGOs 2", "NGO 3", "NGO 4", "NGO 5", "NGO 6", "NGO 7"};
+            /*String[] ngo = new String[]{"NGO 1", "NGOs 2", "NGO 3", "NGO 4", "NGO 5", "NGO 6", "NGO 7"};
             for (byte i = 0; i < ngo.length; i++) {
                 NGOs.add(ngo[i]);
                 getAllNGOsMap.put(ngo[i], String.valueOf(i + 1));
-            }
+            }*/
 
             for (Spinner spin : spblg01src){
                 spin.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, NGOs));
             }
 
-//        }
+        }
 
     }
 

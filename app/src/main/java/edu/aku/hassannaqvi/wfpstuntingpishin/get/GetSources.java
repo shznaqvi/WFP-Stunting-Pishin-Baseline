@@ -95,7 +95,7 @@ public class GetSources extends AsyncTask<String, String, String> {
             try {
                 JSONArray jsonArray = new JSONArray(json);
                 pd.setMessage("Received: " + jsonArray.length() + " Sources");
-                pd.setTitle("Done... Synced Sources");
+                pd.setTitle("Synced Sources");
                 db.syncSources(jsonArray);
             } catch (JSONException e) {
                 e.printStackTrace();
