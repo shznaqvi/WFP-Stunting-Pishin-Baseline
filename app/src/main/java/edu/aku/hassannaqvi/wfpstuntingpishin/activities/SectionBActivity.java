@@ -178,7 +178,7 @@ public class SectionBActivity extends Activity {
 
     public boolean validateChecks() {
 
-        int childType = checkChildAgeMonths(spblb04y.getText().toString(), spblb04m.getText().toString(), spblb04d.getText().toString());
+        int childType = MainApp.checkChildAgeMonths(spblb04y.getText().toString(), spblb04m.getText().toString(), spblb04d.getText().toString());
 
         if (MainApp.members.getCount() <= MainApp.checkMembers.getCount()) {
             Toast.makeText(this, "Error", Toast.LENGTH_SHORT).show();
@@ -254,8 +254,8 @@ public class SectionBActivity extends Activity {
         MainApp.fmc = new FamilyMembersContract();
         MainApp.fmc.setFormDate(MainApp.fc.getFormDate());
         MainApp.fmc.setDeviceId(MainApp.fc.getDeviceID());
-        MainApp.fmc.setInterviewer1(MainApp.loginMem[0]);
-        MainApp.fmc.setInterviewer2(MainApp.loginMem[1]);
+        MainApp.fmc.setInterviewer1(MainApp.userName);
+        MainApp.fmc.setInterviewer2(MainApp.userName2);
         MainApp.fmc.set_UUID(MainApp.fc.get_UID());
         MainApp.fmc.setDevicetagID(sharedPref.getString("tagName", null));
 
@@ -263,6 +263,9 @@ public class SectionBActivity extends Activity {
 
         JSONObject sB = new JSONObject();
 
+        sB.put("tehsil_code", String.valueOf(MainApp.tehsilCode));
+        sB.put("uc_code", String.valueOf(MainApp.ucCode));
+        sB.put("village_code", String.valueOf(MainApp.villageCode));
         sB.put("spblb01Serial", String.valueOf(MainApp.counter));
         sB.put("spblb01", spblb01.getText().toString());
         sB.put("spblb02", spblb02a.isChecked() ? "1" : spblb02b.isChecked() ? "2" : "0");
@@ -285,7 +288,7 @@ public class SectionBActivity extends Activity {
 
 //        Checking Type
         String type;
-        int childType = checkChildAgeMonths(spblb04y.getText().toString(), spblb04m.getText().toString(), spblb04d.getText().toString());
+        int childType = MainApp.checkChildAgeMonths(spblb04y.getText().toString(), spblb04m.getText().toString(), spblb04d.getText().toString());
         if (childType == 0) {
             type = spblb02b.isChecked() && spblb07a.isChecked() &&
                     (Integer.valueOf(spblb04y.getText().toString()) >= 15 && Integer.valueOf(spblb04y.getText().toString()) < 50) ? "mw" :
@@ -484,7 +487,7 @@ public class SectionBActivity extends Activity {
             String month = spblb04m.getText().toString().isEmpty() ? "0" : spblb04m.getText().toString();
             String day = spblb04d.getText().toString().isEmpty() ? "0" : spblb04d.getText().toString();
 
-            int ageMonths = checkChildAgeMonths(year, month, day);
+            int ageMonths = MainApp.checkChildAgeMonths(year, month, day);
 
             if (ageMonths == 0) {
                 flag = false;

@@ -25,7 +25,7 @@ public class SectionNActivity extends Activity {
     private static final String TAG = SectionNActivity.class.getSimpleName();
 
     @BindView(R.id.spbln01)
-    Spinner spbln01;
+    TextView spbln01;
     @BindView(R.id.spbln02)
     EditText spbln02;
     @BindView(R.id.spbln03)
@@ -47,11 +47,14 @@ public class SectionNActivity extends Activity {
     @BindView(R.id.spbln0502b)
     EditText spbln0502b;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_section_n);
         ButterKnife.bind(this);
+
+        spbln01.setText(getIntent().getStringExtra("getName"));
 
     }
 
@@ -93,7 +96,7 @@ public class SectionNActivity extends Activity {
         JSONObject sN = new JSONObject();
 
 //        01
-        sN.put("spbln01",spbln01.getSelectedItem().toString());
+        sN.put("spbln01", spbln01.getText().toString());
 
 //        02
         sN.put("spbln02", spbln02.getText().toString());

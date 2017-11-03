@@ -58,7 +58,7 @@ public class SourceNGOContract {
 
     public static abstract class SourceTable implements BaseColumns {
 
-        public static final String URI = "/getngos.php";
+        public static final String URI = "ngos.php";
 
         public static final String TABLE_NAME = "Source";
         public static final String COLUMN_NAME_NULLABLE = "nullColumnHack";

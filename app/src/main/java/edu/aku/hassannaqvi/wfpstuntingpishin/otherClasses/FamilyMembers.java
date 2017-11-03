@@ -13,6 +13,24 @@ public class FamilyMembers {
     String type;
     String serial;
 
+    public FamilyMembers(String memberName, String serial, String gender, String dob, String motherName, String type) {
+        this.memberName = memberName;
+        this.serial = serial;
+        this.gender = gender;
+        this.dob = dob;
+        this.motherName = motherName;
+        this.type = type;
+    }
+
+    public FamilyMembers(FamilyMembers fm) {
+        this.memberName = fm.memberName;
+        this.serial = fm.serial;
+        this.gender = fm.gender;
+        this.dob = fm.dob;
+        this.motherName = fm.motherName;
+        this.type = fm.type;
+    }
+
     public String getMotherName() {
         return motherName;
     }
@@ -39,14 +57,5 @@ public class FamilyMembers {
 
     public String getSerial() {
         return serial;
-    }
-
-    public FamilyMembers(String memberName, String serial, String gender, String dob, String motherName, String type) {
-        this.memberName = memberName;
-        this.serial = serial;
-        this.gender = gender;
-        this.dob = dob;
-        this.motherName = motherName;
-        this.type = type;
     }
 }

@@ -7,12 +7,15 @@ import android.support.annotation.IdRes;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONException;
@@ -27,6 +30,7 @@ import butterknife.OnClick;
 import edu.aku.hassannaqvi.wfpstuntingpishin.R;
 import edu.aku.hassannaqvi.wfpstuntingpishin.core.DatabaseHelper;
 import edu.aku.hassannaqvi.wfpstuntingpishin.core.MainApp;
+import edu.aku.hassannaqvi.wfpstuntingpishin.otherClasses.FamilyMembers;
 import io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText;
 
 public class SectionKActivity extends AppCompatActivity implements RadioGroup.OnCheckedChangeListener
@@ -369,6 +373,8 @@ public class SectionKActivity extends AppCompatActivity implements RadioGroup.On
     LinearLayout fldGrpspblk15;
     @BindView(R.id.fldGrpspblk16)
     LinearLayout fldGrpspblk16;
+    @BindView(R.id.motherName)
+    TextView motherName;
 
     @BindViews({R.id.spblk1401, R.id.spblk1402, R.id.spblk1403, R.id.spblk1404, R.id.spblk1405, R.id.spblk1406, R.id.spblk1407,
             R.id.spblk1408, R.id.spblk1409, R.id.spblk1410, R.id.spblk1411, R.id.spblk1412, R.id.spblk1413, R.id.spblk1414,
@@ -385,11 +391,51 @@ public class SectionKActivity extends AppCompatActivity implements RadioGroup.On
             R.id.spblk141399, R.id.spblk141499, R.id.spblk141599, R.id.spblk141699})
     List<RadioButton> spblk1499;
 
+
+    private boolean userIsInteracting = false;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_section_k);
         ButterKnife.bind(this);
+
+        MainApp.childMap.put("....", null);
+        MainApp.lstChild.add("....");
+
+        for (byte i = 0; i < MainApp.familyMembersList.size(); i++) {
+            if (MainApp.familyMembersList.get(i).getType().equals("ch") && Integer.valueOf(MainApp.familyMembersList.get(i).getDob().substring(0, 1)) < 2) {
+
+
+                MainApp.childMap.put(MainApp.familyMembersList.get(i).getMemberName(), new FamilyMembers(MainApp.familyMembersList.get(i)));
+                MainApp.lstChild.add(MainApp.familyMembersList.get(i).getMemberName());
+
+
+            }
+        }
+
+        spblk01.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, MainApp.lstChild));
+
+        spblk01.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
+        {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                MainApp.position = i;
+                if (userIsInteracting) {
+                    motherName.setText(MainApp.childMap.get(spblk01.getSelectedItem().toString()).getMotherName());
+                }
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
+
+        //motherName.setText(childMap.get(spblk01.getSelectedItem().toString()));
 
         spblk04.setManager(getSupportFragmentManager());
 
@@ -485,6 +531,12 @@ public class SectionKActivity extends AppCompatActivity implements RadioGroup.On
 
     }
 
+    @Override
+    public void onUserInteraction() {
+        super.onUserInteraction();
+        userIsInteracting = true;
+    }
+
     @OnClick(R.id.btn_Continue)
     void onBtnContinueClick() {
 
@@ -525,9 +577,17 @@ public class SectionKActivity extends AppCompatActivity implements RadioGroup.On
     private boolean UpdateDB() {
 
         DatabaseHelper db = new DatabaseHelper(this);
+        int updcount = db.updateSK();
+
+        if (updcount == 1) {
+            Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
+            return true;
+        } else {
+            Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
+            return false;
+        }
 
 
-        return true;
 
     }
 
@@ -539,9 +599,10 @@ public class SectionKActivity extends AppCompatActivity implements RadioGroup.On
 
         JSONObject sK = new JSONObject();
 
+        sK.put("motherName", motherName.getText().toString());
         sK.put("spblk01", spblk01.getSelectedItem().toString());
-        sK.put("spblk02", spblk01.getSelectedItem().toString());
-        sK.put("spblk03", spblk01.getSelectedItem().toString());
+        sK.put("spblk02", MainApp.childMap.get(spblk01.getSelectedItem().toString()).getSerial());
+        sK.put("spblk03", MainApp.childMap.get(spblk01.getSelectedItem().toString()).getGender());
         sK.put("spblk04", spblk04.getText().toString());
         sK.put("spblk05", spblk05a.isChecked() ? "1" : spblk05b.isChecked() ? "2" : spblk0599.isChecked() ? "99" : "0");
         sK.put("spblk06", spblk06.getText().toString());

@@ -1,9 +1,5 @@
 package edu.aku.hassannaqvi.wfpstuntingpishin.get;
 
-/**
- * Created by Hassan.naqvi on 3/18/2017.
- */
-
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.AsyncTask;
@@ -19,22 +15,22 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-import edu.aku.hassannaqvi.wfpstuntingpishin.R;
-import edu.aku.hassannaqvi.wfpstuntingpishin.contracts.SourceNGOContract.SourceTable;
+import edu.aku.hassannaqvi.wfpstuntingpishin.contracts.UCsContract.singleUCs;
 import edu.aku.hassannaqvi.wfpstuntingpishin.core.DatabaseHelper;
 import edu.aku.hassannaqvi.wfpstuntingpishin.core.MainApp;
 
 /**
- * Created by hassan.naqvi on 4/28/2016.
+ * Created by ali.azaz on 6/10/2017.
  */
-public class GetSources extends AsyncTask<String, String, String> {
 
-    private final String TAG = "GetSources()";
+public class GetUCs extends AsyncTask<String, String, String> {
+
+    private final String TAG = "GetUCs()";
     HttpURLConnection urlConnection;
     private Context mContext;
     private ProgressDialog pd;
 
-    public GetSources(Context context) {
+    public GetUCs(Context context) {
         mContext = context;
     }
 
@@ -42,9 +38,10 @@ public class GetSources extends AsyncTask<String, String, String> {
     protected void onPreExecute() {
         super.onPreExecute();
         pd = new ProgressDialog(mContext);
-        pd.setTitle("Getting Sources");
-        pd.setMessage("Preparing...");
+        pd.setTitle("Syncing UCs");
+        pd.setMessage("Getting connected to server...");
         pd.show();
+
     }
 
     @Override
@@ -52,30 +49,28 @@ public class GetSources extends AsyncTask<String, String, String> {
 
         StringBuilder result = new StringBuilder();
 
+        URL url = null;
         try {
-            URL url = new URL(MainApp._HOST_URL + SourceTable.URI);
-            Log.d(TAG, "doInBackground: " + url);
+            url = new URL(MainApp._HOST_URL + singleUCs._URI);
             urlConnection = (HttpURLConnection) url.openConnection();
+            urlConnection.setReadTimeout(10000 /* milliseconds */);
+            urlConnection.setConnectTimeout(15000 /* milliseconds */);
+            Log.d(TAG, "doInBackground: " + urlConnection.getResponseCode());
             if (urlConnection.getResponseCode() == HttpURLConnection.HTTP_OK) {
-                //pd.show();
-
                 InputStream in = new BufferedInputStream(urlConnection.getInputStream());
 
                 BufferedReader reader = new BufferedReader(new InputStreamReader(in));
 
-                String line="";
+                String line;
                 while ((line = reader.readLine()) != null) {
-                    Log.i(TAG, "Sources In: " + line);
+                    Log.i(TAG, "UCs In: " + line);
                     result.append(line);
                 }
-            } else {
-                result.append("URL not found");
-
             }
-        } catch (Exception e) {
-            e.printStackTrace();
-
-
+        } catch (java.net.SocketTimeoutException e) {
+            return null;
+        } catch (java.io.IOException e) {
+            return null;
         } finally {
             urlConnection.disconnect();
         }
@@ -88,21 +83,28 @@ public class GetSources extends AsyncTask<String, String, String> {
     protected void onPostExecute(String result) {
 
         //Do something with the JSON string
-        if (result != "URL not found") {
 
+        if (result != null) {
             String json = result;
-            DatabaseHelper db = new DatabaseHelper(mContext);
-            try {
-                JSONArray jsonArray = new JSONArray(json);
-                pd.setMessage("Received: " + jsonArray.length() + " Sources");
-                pd.setTitle("Synced Sources");
-                db.syncSources(jsonArray);
-            } catch (JSONException e) {
-                e.printStackTrace();
-                pd.setMessage("Received: 0 Sources");
-                pd.setTitle("Error... Syncing Sources");
+            if (json.length() > 0) {
+                DatabaseHelper db = new DatabaseHelper(mContext);
+                try {
+                    JSONArray jsonArray = new JSONArray(json);
+                    db.syncUCs(jsonArray);
+                    pd.setMessage("Received: " + jsonArray.length());
+                    pd.show();
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            } else {
+                pd.setMessage("Received: " + json.length() + "");
+                pd.show();
             }
+        } else {
+            pd.setTitle("Connection Error");
+            pd.setMessage("Server not found!");
             pd.show();
         }
     }
+
 }

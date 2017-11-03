@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONException;
@@ -137,6 +138,8 @@ public class SectionMActivity extends Activity {
     LinearLayout fldGrpspblm02;
     @BindView(R.id.fldGrpspblm04)
     LinearLayout fldGrpspblm04;
+    @BindView(R.id.childName)
+    TextView childName;
 
 
     @Override
@@ -144,6 +147,9 @@ public class SectionMActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_section_m);
         ButterKnife.bind(this);
+
+
+        childName.setText(getIntent().getStringExtra("getName"));
 
         spblm0166.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
         {
@@ -245,7 +251,10 @@ public class SectionMActivity extends Activity {
                 Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
 
                 finish();
-                startActivity(new Intent(this, SectionNActivity.class));
+
+                Intent endSec = new Intent(this, SectionNActivity.class);
+                endSec.putExtra("getName", childName.getText().toString());
+                startActivity(endSec);
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }
@@ -267,6 +276,7 @@ public class SectionMActivity extends Activity {
 
         JSONObject sM = new JSONObject();
 
+        sM.put("childname", childName.getText().toString());
         sM.put("spblm01a", spblm01aa.isChecked() ? "1" : spblm01ab.isChecked() ? "2" : "0");
         sM.put("spblm01b", spblm01ba.isChecked() ? "1" : spblm01bb.isChecked() ? "2" : "0");
         sM.put("spblm01c", spblm01ca.isChecked() ? "1" : spblm01cb.isChecked() ? "2" : "0");
