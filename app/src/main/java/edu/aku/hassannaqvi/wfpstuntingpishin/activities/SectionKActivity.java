@@ -562,8 +562,6 @@ public class SectionKActivity extends AppCompatActivity implements RadioGroup.On
         }
 
 
-
-
     }
 
 
