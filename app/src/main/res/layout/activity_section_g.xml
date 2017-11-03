@@ -632,8 +632,8 @@
                 android:id="@+id/spblg0110src"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/src"
-                android:layout_marginTop="3dp" />
+                android:layout_marginTop="3dp"
+                android:hint="@string/src" />
 
         </LinearLayout>
 
@@ -689,8 +689,8 @@
                 android:id="@+id/spblg0111src"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/src"
-                android:layout_marginTop="3dp"/>
+                android:layout_marginTop="3dp"
+                android:hint="@string/src" />
 
         </LinearLayout>
 
@@ -747,8 +747,8 @@
                 android:id="@+id/spblg0112src"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/src"
-                android:layout_marginTop="3dp" />
+                android:layout_marginTop="3dp"
+                android:hint="@string/src" />
 
         </LinearLayout>
 
@@ -805,8 +805,8 @@
                 android:id="@+id/spblg0113src"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/src"
-                android:layout_marginTop="3dp"/>
+                android:layout_marginTop="3dp"
+                android:hint="@string/src" />
 
         </LinearLayout>
 
@@ -862,8 +862,8 @@
                 android:id="@+id/spblg0114src"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/src"
-                android:layout_marginTop="3dp" />
+                android:layout_marginTop="3dp"
+                android:hint="@string/src" />
 
         </LinearLayout>
 
@@ -928,8 +928,8 @@
                 android:id="@+id/spblg0115src"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/src"
-                android:layout_marginTop="3dp" />
+                android:layout_marginTop="3dp"
+                android:hint="@string/src" />
 
         </LinearLayout>
 
@@ -943,28 +943,20 @@
             android:visibility="visible">
 
             <Button
-                android:id="@+id/btnNext"
+                android:id="@+id/btn_End"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_margin="4dp"
                 android:layout_weight="1"
-                android:onClick="submitSecA"
-                android:text="@string/nextSection"
-                android:textColor="@android:color/holo_green_light"
-                android:textSize="24sp" />
+                android:text="@string/end_interview"
+                android:textColor="#ff1e1e" />
 
             <Button
-                android:id="@+id/btnEnd"
+                android:id="@+id/btn_Continue"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_margin="4dp"
                 android:layout_weight="1"
-                android:onClick="endForm"
-                android:text="@string/end_interview"
-                android:textColor="@android:color/holo_red_light"
-                android:textSize="24sp"
-                android:textStyle="bold" />
-
+                android:text="@string/nextSection"
+                android:textColor="#1ed61e" />
         </LinearLayout>
 
     </LinearLayout>
