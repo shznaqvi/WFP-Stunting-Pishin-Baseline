@@ -234,6 +234,7 @@ public class SectionJActivity extends Activity {
             spblj0202a.requestFocus();
             Log.i(TAG, "spblj0202a: This Data is Required!");
             return false;
+
         } else {
             ((TextView) spblj0202a.getSelectedView()).setError(null);
         }
