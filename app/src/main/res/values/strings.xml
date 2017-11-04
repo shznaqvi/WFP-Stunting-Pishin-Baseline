@@ -903,5 +903,6 @@
     <string name="spblp0303b">  بہت مشکل سے ایک مرتبہ(1 سے 2 مرتبہ) </string>
     <string name="spblp0303c">  کبھی کبھی (3 کان 10 وقت) </string>
     <string name="spblp0303d">  اکثر اوقات (10 مرتبہ سے زیادہ) </string>
+  <string name="title_activity_login2">Sign in</string>
 
 </resources>
