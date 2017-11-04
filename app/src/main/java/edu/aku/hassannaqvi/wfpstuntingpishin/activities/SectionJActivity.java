@@ -174,8 +174,8 @@ public class SectionJActivity extends Activity {
 
         if (Double.valueOf(spblj01.getText().toString()) < 4.0 || Double.valueOf(spblj01.getText().toString()) > 18.0) {
             Toast.makeText(this, "ERROR(invalid): " + getString(R.string.spblj01), Toast.LENGTH_SHORT).show();
-            spblj01.setError("Range is 4.0 to 20.0");
-            Log.i(TAG, "spblj01: Range is 4.0 to 20.0");
+            spblj01.setError("Range is 4.0 to 18.0");
+            Log.i(TAG, "spblj01: Range is 4.0 to 18.0");
             return false;
         } else {
             spblj01.setError(null);
@@ -207,14 +207,14 @@ public class SectionJActivity extends Activity {
                 return false;
             } else {
                 spblj0201b.setError(null);
-                if (Double.parseDouble(spblj0201b.getText().toString()) < 1) {
+                if (Double.valueOf(spblj0201b.getText().toString()) < 1) {
                     Toast.makeText(this, "ERROR(invalid): " + getString(R.string.spblj04), Toast.LENGTH_SHORT).show();
                     spblj0201b.setError("Invalid: Greater then 0");
                     Log.i(TAG, "spblj0201b: Invalid Greater then 0");
                     return false;
                 } else {
                     spblj0201b.setError(null);
-                    if (Double.parseDouble(spblj0201b.getText().toString()) < 100 || Double.parseDouble(spblj0201b.getText().toString()) > 180) {
+                    if (Double.valueOf(spblj0201b.getText().toString()) < 100 || Double.valueOf(spblj0201b.getText().toString()) > 180) {
                         Toast.makeText(this, "ERROR(invalid): " + getString(R.string.spblj04), Toast.LENGTH_SHORT).show();
                         spblj0201b.setError("Invalid: Range between 100-180");
                         Log.i(TAG, "spblj0201b: Invalid Range between 100-180");
@@ -253,14 +253,14 @@ public class SectionJActivity extends Activity {
                 return false;
             } else {
                 spblj0202b.setError(null);
-                if (Double.parseDouble(spblj0202b.getText().toString()) < 1) {
+                if (Double.valueOf(spblj0202b.getText().toString()) < 1) {
                     Toast.makeText(this, "ERROR(invalid): " + getString(R.string.spblj04), Toast.LENGTH_SHORT).show();
                     spblj0202b.setError("Invalid: Greater then 0");
                     Log.i(TAG, "spblj0202b: Invalid Greater then 0");
                     return false;
                 } else {
                     spblj0202b.setError(null);
-                    if (Double.parseDouble(spblj0202b.getText().toString()) < 100 || Double.parseDouble(spblj0202b.getText().toString()) > 180) {
+                    if (Double.valueOf(spblj0202b.getText().toString()) < 100 || Double.valueOf(spblj0202b.getText().toString()) > 180) {
                         Toast.makeText(this, "ERROR(invalid): " + getString(R.string.spblj04), Toast.LENGTH_SHORT).show();
                         spblj0202b.setError("Invalid: Range between 100-180");
                         Log.i(TAG, "spblj0202b: Invalid Range between 100-180");
@@ -299,14 +299,14 @@ public class SectionJActivity extends Activity {
                 return false;
             } else {
                 spblj0301b.setError(null);
-                if (Double.parseDouble(spblj0301b.getText().toString()) < 1) {
+                if (Double.valueOf(spblj0301b.getText().toString()) < 1) {
                     Toast.makeText(this, "ERROR(invalid): " + getString(R.string.spblj05), Toast.LENGTH_SHORT).show();
                     spblj0301b.setError("Invalid: Greater then 0");
                     Log.i(TAG, "spblj0301b: Invalid Greater then 0");
                     return false;
                 } else {
                     spblj0301b.setError(null);
-                    if (Double.parseDouble(spblj0301b.getText().toString()) < 20 || Double.parseDouble(spblj0301b.getText().toString()) > 110) {
+                    if (Double.valueOf(spblj0301b.getText().toString()) < 20 || Double.valueOf(spblj0301b.getText().toString()) > 110) {
                         Toast.makeText(this, "ERROR(invalid): " + getString(R.string.spblj05), Toast.LENGTH_SHORT).show();
                         spblj0301b.setError("Invalid: Range between 20-110");
                         Log.i(TAG, "spblj0301b: Invalid Range between 20-110");
@@ -344,14 +344,14 @@ public class SectionJActivity extends Activity {
                 return false;
             } else {
                 spblj0302b.setError(null);
-                if (Double.parseDouble(spblj0302b.getText().toString()) < 1) {
+                if (Double.valueOf(spblj0302b.getText().toString()) < 1) {
                     Toast.makeText(this, "ERROR(invalid): " + getString(R.string.spblj05), Toast.LENGTH_SHORT).show();
                     spblj0302b.setError("Invalid: Greater then 0");
                     Log.i(TAG, "spblj0302b: Invalid Greater then 0");
                     return false;
                 } else {
                     spblj0302b.setError(null);
-                    if (Double.parseDouble(spblj0302b.getText().toString()) < 20 || Double.parseDouble(spblj0302b.getText().toString()) > 110) {
+                    if (Double.valueOf(spblj0302b.getText().toString()) < 20 || Double.valueOf(spblj0302b.getText().toString()) > 110) {
                         Toast.makeText(this, "ERROR(invalid): " + getString(R.string.spblj05), Toast.LENGTH_SHORT).show();
                         spblj0302b.setError("Invalid: Range between 20-110");
                         Log.i(TAG, "spblj0302b: Invalid Range between 20-110");

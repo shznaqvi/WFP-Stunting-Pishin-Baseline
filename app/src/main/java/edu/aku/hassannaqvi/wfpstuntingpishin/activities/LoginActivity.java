@@ -158,7 +158,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
         mPasswordView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView textView, int id, KeyEvent keyEvent) {
-                if (id == edu.aku.hassannaqvi.wfpstuntingpishin.R.id.login || id == EditorInfo.IME_NULL) {
+                if (id == R.id.login_form || id == EditorInfo.IME_NULL) {
                     attemptLogin();
 
                     MainApp.loginMem[1] = mEmailView.getText().toString();
@@ -175,7 +175,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
         mPasswordView2.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView textView, int id, KeyEvent keyEvent) {
-                if (id == edu.aku.hassannaqvi.wfpstuntingpishin.R.id.login || id == EditorInfo.IME_NULL) {
+                if (id == edu.aku.hassannaqvi.wfpstuntingpishin.R.id.login_form || id == EditorInfo.IME_NULL) {
                     attemptLogin();
                     return true;
                 }
@@ -212,9 +212,8 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
 
     public void checkUpdate(View view) throws IOException {
         new CheckUpdate(this).execute();
-
-
     }
+
     public void dbBackup() {
 
         sharedPref = getSharedPreferences("dss01", MODE_PRIVATE);
