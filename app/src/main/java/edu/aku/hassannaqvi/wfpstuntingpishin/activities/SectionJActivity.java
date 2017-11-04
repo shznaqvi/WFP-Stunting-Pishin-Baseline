@@ -51,9 +51,8 @@ public class SectionJActivity extends Activity {
     @BindView(R.id.spblj0302b)
     EditText spblj0302b;
 
-    @BindViews({R.id.spblj0201a,R.id.spblj0202a,R.id.spblj0301a,R.id.spblj0302a})
+    @BindViews({R.id.spblj0201a, R.id.spblj0202a, R.id.spblj0301a, R.id.spblj0302a})
     List<Spinner> spblj023;
-
 
 
     @Override
@@ -63,10 +62,10 @@ public class SectionJActivity extends Activity {
         ButterKnife.bind(this);
         spblj01w.setText(getIntent().getStringExtra("getName"));
 
-        String[] users = {"....",MainApp.userName,MainApp.userName2};
+        String[] users = {"....", MainApp.userName, MainApp.userName2};
 
-        for (Spinner spin : spblj023){
-            spin.setAdapter(new ArrayAdapter<>(this,android.R.layout.simple_spinner_dropdown_item, Arrays.asList(users)));
+        for (Spinner spin : spblj023) {
+            spin.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, Arrays.asList(users)));
         }
 
     }
@@ -130,8 +129,6 @@ public class SectionJActivity extends Activity {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
             return false;
         }
-
-
 
 
     }
@@ -234,7 +231,6 @@ public class SectionJActivity extends Activity {
             spblj0202a.requestFocus();
             Log.i(TAG, "spblj0202a: This Data is Required!");
             return false;
-
         } else {
             ((TextView) spblj0202a.getSelectedView()).setError(null);
         }
