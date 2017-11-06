@@ -7,6 +7,8 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
@@ -38,11 +40,10 @@ import edu.aku.hassannaqvi.wfpstuntingpishin.otherClasses.MothersLst;
  */
 
 public class MainApp extends Application {
-
     public static final String _IP = "43.245.131.159"; // Test PHP server
     public static final Integer _PORT = 8080; // Port - with colon (:)
     public static final String _HOST_URL = "http://" + MainApp._IP + ":" + MainApp._PORT + "/wfp-pishin/api/";
-
+    public static final String _APP_URL = "http://" + MainApp._IP + ":" + MainApp._PORT + "/wfp-pishin/app/";
     /*
         public static final String _IP = "43.245.131.159"; // Test server
     */
@@ -63,20 +64,20 @@ public class MainApp extends Application {
     public static final long MILLISECONDS_IN_YEAR = MILLIS_IN_SECOND * SECONDS_IN_MINUTE * MINUTES_IN_HOUR * HOURS_IN_DAY * DAYS_IN_YEAR;
     private static final long DAYS_IN_MONTH = 30;
     public static final long MILLISECONDS_IN_MONTH = MILLIS_IN_SECOND * SECONDS_IN_MINUTE * MINUTES_IN_HOUR * HOURS_IN_DAY * DAYS_IN_MONTH;
-    //public static final long MILLISECONDS_IN_100_YEAR = MILLISECONDS_IN_YEAR * 100;
-
     private static final long DAYS_IN_13_WEEKS = (7 * 13);
     public static final long MILLISECONDS_IN_13_WEEKS = MILLIS_IN_SECOND * SECONDS_IN_MINUTE * MINUTES_IN_HOUR * HOURS_IN_DAY * DAYS_IN_13_WEEKS;
-
     private static final long DAYS_IN_42_WEEKS = (7 * 42);
+    //public static final long MILLISECONDS_IN_100_YEAR = MILLISECONDS_IN_YEAR * 100;
     public static final long MILLISECONDS_IN_42_WEEKS = MILLIS_IN_SECOND * SECONDS_IN_MINUTE * MINUTES_IN_HOUR * HOURS_IN_DAY * DAYS_IN_42_WEEKS;
-
     private static final long DAYS_IN_5Years = 1826;
     public static final long MILLISECONDS_IN_5Years = MILLIS_IN_SECOND * SECONDS_IN_MINUTE * MINUTES_IN_HOUR * HOURS_IN_DAY * DAYS_IN_5Years;
     private static final long DAYS_IN_49Years = 17885;
     public static final long MILLISECONDS_IN_49Years = MILLIS_IN_SECOND * SECONDS_IN_MINUTE * MINUTES_IN_HOUR * HOURS_IN_DAY * DAYS_IN_49Years;
     private static final long DAYS_IN_15Years = 5475;
     public static final long MILLISECONDS_IN_15Years = MILLIS_IN_SECOND * SECONDS_IN_MINUTE * MINUTES_IN_HOUR * HOURS_IN_DAY * DAYS_IN_15Years;
+    public static Integer _VERSION_CODES;
+    public static String _PACKAGE_NAME;
+    public static Boolean _NEW_UPDATE = false;
     public static int versionCode;
     public static String versionName;
 
@@ -316,7 +317,13 @@ public class MainApp extends Application {
 
         deviceId = Settings.Secure.getString(getApplicationContext().getContentResolver(),
                 Settings.Secure.ANDROID_ID);
-
+        try {
+            PackageInfo pInfo = this.getPackageManager().getPackageInfo(getPackageName(), 0);
+            _PACKAGE_NAME = getPackageName();
+            _VERSION_CODES = Integer.valueOf(pInfo.versionCode);
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
 
         // Requires Permission for GPS -- android.permission.ACCESS_FINE_LOCATION
         // Requires Additional permission for 5.0 -- android.hardware.location.gps
