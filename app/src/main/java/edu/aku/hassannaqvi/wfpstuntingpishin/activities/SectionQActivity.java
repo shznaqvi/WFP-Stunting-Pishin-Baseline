@@ -29,8 +29,7 @@ import edu.aku.hassannaqvi.wfpstuntingpishin.core.DatabaseHelper;
 import edu.aku.hassannaqvi.wfpstuntingpishin.core.MainApp;
 import io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText;
 
-public class SectionQActivity extends AppCompatActivity
-{
+public class SectionQActivity extends AppCompatActivity {
 
     private static final String TAG = SectionQActivity.class.getSimpleName();
     final SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
@@ -195,8 +194,7 @@ public class SectionQActivity extends AppCompatActivity
         bd08dod2.setMinDate(maxDateyear);
 
 
-        bd04dob1.addTextChangedListener(new TextWatcher()
-        {
+        bd04dob1.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
@@ -226,8 +224,7 @@ public class SectionQActivity extends AppCompatActivity
             }
         });
 
-        bd04dob2.addTextChangedListener(new TextWatcher()
-        {
+        bd04dob2.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
@@ -257,8 +254,7 @@ public class SectionQActivity extends AppCompatActivity
             }
         });
 
-        bd05dob1.addTextChangedListener(new TextWatcher()
-        {
+        bd05dob1.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
@@ -291,8 +287,7 @@ public class SectionQActivity extends AppCompatActivity
             }
         });
 
-        bd05dob2.addTextChangedListener(new TextWatcher()
-        {
+        bd05dob2.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
@@ -324,8 +319,7 @@ public class SectionQActivity extends AppCompatActivity
             }
         });
 
-        bd06dob1.addTextChangedListener(new TextWatcher()
-        {
+        bd06dob1.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
@@ -363,8 +357,7 @@ public class SectionQActivity extends AppCompatActivity
         });
 
 
-        bd06dob2.addTextChangedListener(new TextWatcher()
-        {
+        bd06dob2.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
@@ -400,8 +393,7 @@ public class SectionQActivity extends AppCompatActivity
             }
         });
 
-        bd07dob1.addTextChangedListener(new TextWatcher()
-        {
+        bd07dob1.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
@@ -438,8 +430,7 @@ public class SectionQActivity extends AppCompatActivity
             }
         });
 
-        bd07dob2.addTextChangedListener(new TextWatcher()
-        {
+        bd07dob2.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
@@ -477,8 +468,7 @@ public class SectionQActivity extends AppCompatActivity
         });
 
         //======================== Q1 Skip Pattern
-        bd01s.addTextChangedListener(new TextWatcher()
-        {
+        bd01s.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
@@ -514,8 +504,7 @@ public class SectionQActivity extends AppCompatActivity
         });
 
         //======================== Q2 Skip Pattern
-        bd02s.addTextChangedListener(new TextWatcher()
-        {
+        bd02s.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
@@ -551,8 +540,7 @@ public class SectionQActivity extends AppCompatActivity
         });
 
         //======================== Q3 Skip Pattern
-        bd03s.addTextChangedListener(new TextWatcher()
-        {
+        bd03s.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
@@ -630,8 +618,7 @@ public class SectionQActivity extends AppCompatActivity
 
         //=================== Q4 Skip Pattern
 
-        bd04s.addTextChangedListener(new TextWatcher()
-        {
+        bd04s.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
@@ -667,8 +654,7 @@ public class SectionQActivity extends AppCompatActivity
 
         //=================== Q5 Skip Pattern
 
-        bd05s.addTextChangedListener(new TextWatcher()
-        {
+        bd05s.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
@@ -704,8 +690,7 @@ public class SectionQActivity extends AppCompatActivity
 
         //=================== Q6 Skip Pattern
 
-        bd06s.addTextChangedListener(new TextWatcher()
-        {
+        bd06s.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
@@ -740,8 +725,7 @@ public class SectionQActivity extends AppCompatActivity
 
         //=================== Q7 Skip Pattern
 
-        bd07s.addTextChangedListener(new TextWatcher()
-        {
+        bd07s.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
@@ -776,8 +760,7 @@ public class SectionQActivity extends AppCompatActivity
 
         //=================== Q8 Skip Pattern
 
-        bd08s.addTextChangedListener(new TextWatcher()
-        {
+        bd08s.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
@@ -836,7 +819,6 @@ public class SectionQActivity extends AppCompatActivity
         }
 
 
-
     }
 
 
@@ -850,54 +832,51 @@ public class SectionQActivity extends AppCompatActivity
     private void SaveDraft() throws JSONException {
         Toast.makeText(this, "Saving Draft for  This Section", Toast.LENGTH_SHORT).show();
 
-        JSONObject sn = new JSONObject();
+        JSONObject sQ = new JSONObject();
 
-        sn.put("bd01s", bd01s.getText().toString());
-        sn.put("bd01dod1", bd01dod1.getText().toString());
-        sn.put("bd01dod2", bd01dod2.getText().toString());
-        sn.put("bd02s", bd02s.getText().toString());
-        sn.put("bd02dod1", bd02dod1.getText().toString());
-        sn.put("bd02dod2", bd02dod2.getText().toString());
+        sQ.put("bd01s", bd01s.getText().toString());
+        sQ.put("bd01dod1", bd01dod1.getText().toString());
+        sQ.put("bd01dod2", bd01dod2.getText().toString());
+        sQ.put("bd02s", bd02s.getText().toString());
+        sQ.put("bd02dod1", bd02dod1.getText().toString());
+        sQ.put("bd02dod2", bd02dod2.getText().toString());
 
-        sn.put("bd03s", bd03s.getText().toString());
-        sn.put("bd03dob1", bd03dob1.getText().toString());
-        sn.put("bd03dob2", bd03dob2.getText().toString());
-        sn.put("bd03dob3", bd03dob3.getText().toString());
-        sn.put("bd03dob4", bd03dob4.getText().toString());
-        sn.put("bd03dob5", bd03dob5.getText().toString());
+        sQ.put("bd03s", bd03s.getText().toString());
+        sQ.put("bd03dob1", bd03dob1.getText().toString());
+        sQ.put("bd03dob2", bd03dob2.getText().toString());
+        sQ.put("bd03dob3", bd03dob3.getText().toString());
+        sQ.put("bd03dob4", bd03dob4.getText().toString());
+        sQ.put("bd03dob5", bd03dob5.getText().toString());
 
-        sn.put("bd04s", bd04s.getText().toString());
-        sn.put("bd04dob1", bd04dob1.getText().toString());
-        sn.put("bd04dob2", bd04dob2.getText().toString());
-        sn.put("bd04dod1", bd04dod1.getText().toString());
-        sn.put("bd04dod2", bd04dod2.getText().toString());
+        sQ.put("bd04s", bd04s.getText().toString());
+        sQ.put("bd04dob1", bd04dob1.getText().toString());
+        sQ.put("bd04dob2", bd04dob2.getText().toString());
+        sQ.put("bd04dod1", bd04dod1.getText().toString());
+        sQ.put("bd04dod2", bd04dod2.getText().toString());
 
-        sn.put("bd05s", bd05s.getText().toString());
-        sn.put("bd05dob1", bd05dob1.getText().toString());
-        sn.put("bd05dob2", bd05dob2.getText().toString());
-        sn.put("bd05dod1", bd05dod1.getText().toString());
-        sn.put("bd05dod2", bd05dod2.getText().toString());
+        sQ.put("bd05s", bd05s.getText().toString());
+        sQ.put("bd05dob1", bd05dob1.getText().toString());
+        sQ.put("bd05dob2", bd05dob2.getText().toString());
+        sQ.put("bd05dod1", bd05dod1.getText().toString());
+        sQ.put("bd05dod2", bd05dod2.getText().toString());
 
-        sn.put("bd06s", bd06s.getText().toString());
-        sn.put("bd06dob1", bd06dob1.getText().toString());
-        sn.put("bd06dob2", bd06dob2.getText().toString());
-        sn.put("bd06dod1", bd06dod1.getText().toString());
-        sn.put("bd06dod2", bd06dod2.getText().toString());
-        sn.put("bd07s", bd07s.getText().toString());
-        sn.put("bd07dob1", bd07dob1.getText().toString());
-        sn.put("bd07dob2", bd07dob2.getText().toString());
-        sn.put("bd07dod1", bd07dod1.getText().toString());
-        sn.put("bd07dod2", bd07dod2.getText().toString());
-        sn.put("bd08s", bd08s.getText().toString());
-        sn.put("bd08dob1", bd08dob1.getText().toString());
-        sn.put("bd08dob2", bd08dob2.getText().toString());
-        sn.put("bd08dod1", bd08dod1.getText().toString());
-        sn.put("bd08dod2", bd08dod2.getText().toString());
+        sQ.put("bd06s", bd06s.getText().toString());
+        sQ.put("bd06dob1", bd06dob1.getText().toString());
+        sQ.put("bd06dob2", bd06dob2.getText().toString());
+        sQ.put("bd06dod1", bd06dod1.getText().toString());
+        sQ.put("bd06dod2", bd06dod2.getText().toString());
+        sQ.put("bd07s", bd07s.getText().toString());
+        sQ.put("bd07dob1", bd07dob1.getText().toString());
+        sQ.put("bd07dob2", bd07dob2.getText().toString());
+        sQ.put("bd07dod1", bd07dod1.getText().toString());
+        sQ.put("bd07dod2", bd07dod2.getText().toString());
+        sQ.put("bd08s", bd08s.getText().toString());
+        sQ.put("bd08dob1", bd08dob1.getText().toString());
+        sQ.put("bd08dob2", bd08dob2.getText().toString());
+        sQ.put("bd08dod1", bd08dod1.getText().toString());
+        sQ.put("bd08dod2", bd08dod2.getText().toString());
 
-        MainApp.fc.setsQ(String.valueOf(sn));
-
-
-
+        MainApp.fc.setsQ(String.valueOf(sQ));
 
         Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
     }
@@ -1390,7 +1369,6 @@ public class SectionQActivity extends AppCompatActivity
     public void onBackPressed() {
         Toast.makeText(getApplicationContext(), "You Can't go back", Toast.LENGTH_LONG).show();
     }
-
 
 
 }

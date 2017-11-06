@@ -373,6 +373,15 @@ public class SectionEActivity extends Activity {
                 spble02.setError(null);
             }
 
+            if (Integer.valueOf(spble02.getText().toString()) < 500) {
+                Toast.makeText(this, "Cannot be less than 500", Toast.LENGTH_SHORT).show();
+                spble02.setError("Cannot be less than 500");    // Set Error on last radio button
+                spble02.requestFocus();
+                return false;
+            } else {
+                spble02.setError(null);
+            }
+
         }
 
         /*if (spble01a.getSelectedItemPosition() == spble01b.getSelectedItemPosition()) {

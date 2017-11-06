@@ -1,7 +1,6 @@
 package edu.aku.hassannaqvi.wfpstuntingpishin.activities;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
 import android.support.v7.app.AppCompatActivity;
@@ -591,9 +590,6 @@ public class SectionKActivity extends AppCompatActivity implements RadioGroup.On
 
     private void SaveDraft() throws JSONException {
         Toast.makeText(this, "Saving Draft for  This Section", Toast.LENGTH_SHORT).show();
-
-        SharedPreferences sharedPref = getSharedPreferences("tagName", MODE_PRIVATE);
-
 
         JSONObject sK = new JSONObject();
 
