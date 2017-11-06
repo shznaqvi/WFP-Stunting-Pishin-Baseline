@@ -798,7 +798,6 @@ public class SectionCActivity extends Activity {
         }
 
 
-
     }
 
     @OnClick(R.id.btn_End)
@@ -1104,6 +1103,15 @@ public class SectionCActivity extends Activity {
                 spblc07.setError("This data is Required!");    // Set Error on last radio button
                 spblc07.requestFocus();
                 Log.i(TAG, "spblc07: This data is Required!");
+                return false;
+            } else {
+                spblc07.setError(null);
+            }
+
+            if (!spblc07.getText().toString().isEmpty() && Integer.valueOf(spblc07.getText().toString()) > 10) {
+                Toast.makeText(this, "Range cannot be greater than 10", Toast.LENGTH_SHORT).show();
+                spblc07.setError("Range cannot be greater than 10");    // Set Error on last radio button
+                spblc07.requestFocus();
                 return false;
             } else {
                 spblc07.setError(null);
@@ -1483,6 +1491,16 @@ public class SectionCActivity extends Activity {
             spblc15.setError("This data is Required!");    // Set Error on last radio button
             spblc15.requestFocus();
             Log.i(TAG, "spblc15: This data is Required!");
+            return false;
+        } else {
+            spblc15.setError(null);
+        }
+
+        if (!spblc15.getText().toString().isEmpty() &&
+                Integer.valueOf(spblc15.getText().toString()) < 1 || Integer.valueOf(spblc15.getText().toString()) > 99) {
+            Toast.makeText(this, "Range must be 99", Toast.LENGTH_SHORT).show();
+            spblc15.setError("Range must be 99");    // Set Error on last radio button
+            spblc15.requestFocus();
             return false;
         } else {
             spblc15.setError(null);

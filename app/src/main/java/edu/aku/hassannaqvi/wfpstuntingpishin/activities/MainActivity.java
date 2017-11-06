@@ -34,6 +34,7 @@ import edu.aku.hassannaqvi.wfpstuntingpishin.core.AndroidDatabaseManager;
 import edu.aku.hassannaqvi.wfpstuntingpishin.core.DatabaseHelper;
 import edu.aku.hassannaqvi.wfpstuntingpishin.core.MainApp;
 import edu.aku.hassannaqvi.wfpstuntingpishin.get.GetUsers;
+import edu.aku.hassannaqvi.wfpstuntingpishin.sync.SyncFamilyMembers;
 import edu.aku.hassannaqvi.wfpstuntingpishin.sync.SyncForms;
 
 public class MainActivity extends Activity {
@@ -426,6 +427,11 @@ public class MainActivity extends Activity {
         if (networkInfo != null && networkInfo.isConnected()) {
             Toast.makeText(getApplicationContext(), "Syncing Forms", Toast.LENGTH_SHORT).show();
             new SyncForms(this).execute();
+
+
+            Toast.makeText(getApplicationContext(), "Syncing Family Members", Toast.LENGTH_SHORT).show();
+            new SyncFamilyMembers(this).execute();
+
 
            /* Toast.makeText(getApplicationContext(), "Syncing Participants", Toast.LENGTH_SHORT).show();
             new SyncParticipants(this).execute();*/

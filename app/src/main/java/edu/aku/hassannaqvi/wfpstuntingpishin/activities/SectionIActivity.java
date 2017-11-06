@@ -953,6 +953,18 @@ public class SectionIActivity extends Activity {
             }
 
 
+            //        spbli07
+            if (!spbli07.getText().toString().isEmpty() && Integer.valueOf(spbli07.getText().toString()) > 12) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.spbli07), Toast.LENGTH_SHORT).show();
+                spbli07.setError("This data is Required!");    // Set Error on last radio button
+                Log.i(TAG, "spbli07: This data is Required!");
+                spbli07.requestFocus();
+                return false;
+            } else {
+                spbli07.setError(null);
+            }
+
+
             //        spbli08
             if (spbli08.getCheckedRadioButtonId() == -1) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.spbli08), Toast.LENGTH_SHORT).show();

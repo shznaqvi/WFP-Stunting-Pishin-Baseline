@@ -39,7 +39,6 @@ public class CheckUpdate extends AsyncTask<String, String, String> {
         pd.setTitle("App Update");
         pd.setMessage("Checking update on server...");
         pd.show();
-
     }
 
     @Override
@@ -98,12 +97,9 @@ public class CheckUpdate extends AsyncTask<String, String, String> {
             }
             pd.dismiss();
 
-
         } catch (JSONException e2) {
             e2.printStackTrace();
-
         }
-
 
     }
 
