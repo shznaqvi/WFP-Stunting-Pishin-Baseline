@@ -184,12 +184,12 @@ public class SectionBActivity extends Activity {
 
         int childType = MainApp.checkChildAgeMonths(spblb04y.getText().toString(), spblb04m.getText().toString(), spblb04d.getText().toString());
 
-        if (MainApp.members.getCount() <= MainApp.checkMembers.getCount()) {
+        /*if (MainApp.members.getCount() <= MainApp.checkMembers.getCount()) {
             Toast.makeText(this, "Error", Toast.LENGTH_SHORT).show();
             MainApp.errorCountDialog(this, this, "First increase no of members in previous section");
 
             return false;
-        }
+        }*/
         switch (childType) {
             case 1:
                 if (spblb02a.isChecked() && Integer.valueOf(MainApp.members.getChildren().get(0).get(1)).equals(Integer.valueOf(MainApp.checkMembers.getChildren().get(0).get(1)))) {
