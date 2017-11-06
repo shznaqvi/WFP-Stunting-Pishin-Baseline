@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/WFP-Stunting-Pishin-Baseline.iml" filepath="$PROJECT_DIR$/WFP-Stunting-Pishin-Baseline.iml" />
       <module fileurl="file://E:\Hassan\Android\WFPStuntingPishin\WFP-Stunting-Pishin-Baseline.iml" filepath="E:\Hassan\Android\WFPStuntingPishin\WFP-Stunting-Pishin-Baseline.iml" />
-      <module fileurl="file://$PROJECT_DIR$/WFPStuntingPishin.iml" filepath="$PROJECT_DIR$/WFPStuntingPishin.iml" />
       <module fileurl="file://E:\Android\WFP-Stunting-Pishin-Baseline\WFPStuntingPishin.iml" filepath="E:\Android\WFP-Stunting-Pishin-Baseline\WFPStuntingPishin.iml" />
+      <module fileurl="file://C:\Ali Work\Projects\WFP-Stunting-Pishin-Baseline\WFPStuntingPishin.iml" filepath="C:\Ali Work\Projects\WFP-Stunting-Pishin-Baseline\WFPStuntingPishin.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
