@@ -67,6 +67,8 @@ public class EndingActivity extends Activity {
                 MainApp.familyMembersList.clear();
                 MainApp.counter = 0;
 
+                MainApp.selectedMom = -1;
+
                 finish();
 
                 Intent endSec = new Intent(this, MainActivity.class);

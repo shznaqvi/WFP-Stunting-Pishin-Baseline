@@ -147,6 +147,7 @@ public class MainApp extends Application {
     public static ArrayList<FamilyMembers> familyMembersList;
     public static FamilyMembersContract fmc;
     public static int counter = 0;
+    public static int selectedMom = -1;
     protected static LocationManager locationManager;
     Location location;
 

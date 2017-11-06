@@ -357,6 +357,9 @@ public class SectionAActivity extends Activity {
             }
 
             if (UpdateDB()) {
+
+                MainApp.selectedMom = spbla06a.isChecked() ? 0 : spbla06b.isChecked() ? 1 : 2;
+
                 Toast.makeText(this, "starting next section", Toast.LENGTH_SHORT).show();
 
                 Intent secNext = new Intent(this, FamilyMemberListActivity.class);
