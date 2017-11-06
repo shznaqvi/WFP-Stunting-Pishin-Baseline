@@ -137,6 +137,7 @@ public class MainApp extends Application {
     public static MembersCount members;
     public static MembersCount checkMembers;
     public static String selectedWoman = "";
+    public static int TotalChildCount = 0;
     public static Map<String, FamilyMembers> childMap = new HashMap<>();
     public static ArrayList<String> lstChild = new ArrayList<>();
 

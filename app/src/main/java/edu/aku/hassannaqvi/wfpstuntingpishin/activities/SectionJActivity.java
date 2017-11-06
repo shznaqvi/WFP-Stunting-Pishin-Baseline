@@ -83,29 +83,39 @@ public class SectionJActivity extends Activity {
                 Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
 
                 finish();
+                int child2 = 0;
+                int child5 = 0;
 
                 for (byte i = 0; i < MainApp.familyMembersList.size(); i++) {
                     if (MainApp.familyMembersList.get(i).getType().equals("ch") && Integer.valueOf(MainApp.familyMembersList.get(i).getDob().substring(0, 1)) < 2) {
 
-                        Intent endSec = new Intent(this, SectionKActivity.class);
-                        endSec.putExtra("complete", true);
-                        startActivity(endSec);
+                        child2++;
+                    } else if (MainApp.familyMembersList.get(i).getType().equals("ch") && Integer.valueOf(MainApp.familyMembersList.get(i).getDob().substring(0, 1)) > 2
+                            && MainApp.familyMembersList.get(i).getType().equals("ch") && Integer.valueOf(MainApp.familyMembersList.get(i).getDob().substring(0, 1)) < 5)
 
-                    } else if (MainApp.familyMembersList.get(i).getType().equals("ch") && Integer.valueOf(MainApp.familyMembersList.get(i).getDob().substring(0, 1)) < 5) {
-                        Intent endSec = new Intent(this, SectionLIMActivity.class);
-                        endSec.putExtra("complete", true);
-                        startActivity(endSec);
-                    } else {
-                        Intent endSec = new Intent(this, SectionOActivity.class);
-                        endSec.putExtra("complete", true);
-                        startActivity(endSec);
+                        child5++;
+                }
+
+
+                if (child2 > 0) {
+                    Intent secNext = new Intent(this, SectionKActivity.class);
+                    secNext.putExtra("check", false);
+                    startActivity(secNext);
+                } else if (child5 > 0) {
+                    Intent secNext = new Intent(this, SectionLIMActivity.class);
+                    secNext.putExtra("check", false);
+                    startActivity(secNext);
+                } else {
+                    Intent secNext = new Intent(this, SectionOActivity.class);
+                    secNext.putExtra("check", false);
+                    startActivity(secNext);
                     }
                 }
 
-            } else {
+
+        } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }
-        }
 
 
     }

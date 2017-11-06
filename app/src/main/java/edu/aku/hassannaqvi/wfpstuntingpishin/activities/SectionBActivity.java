@@ -299,6 +299,7 @@ public class SectionBActivity extends Activity {
                     spblb02b.isChecked() && spblb07b.isChecked() ? "w" : "m";
         } else {
             type = "ch";
+            MainApp.TotalChildCount++;
         }
 
         Map<Integer, String> child = new HashMap<>();
