@@ -1,9 +1,5 @@
 package edu.aku.hassannaqvi.wfpstuntingpishin.sync;
 
-/**
- * Created by hassan.naqvi on 12/2/2016.
- */
-
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.AsyncTask;
@@ -23,37 +19,37 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Collection;
 
-import edu.aku.hassannaqvi.wfpstuntingpishin.contracts.FormsContract;
+import edu.aku.hassannaqvi.wfpstuntingpishin.contracts.FamilyMembersContract;
 import edu.aku.hassannaqvi.wfpstuntingpishin.core.DatabaseHelper;
 import edu.aku.hassannaqvi.wfpstuntingpishin.core.MainApp;
 
 /**
- * Created by hassan.naqvi on 7/26/2016.
+ * Created by javed.khan on 11/6/2017.
  */
-public class SyncForms extends AsyncTask<Void, Void, String> {
 
-    private static final String TAG = "SyncForms";
+public class SyncFamilyMembers extends AsyncTask<Void, Void, String> {
+
+    private static final String TAG = "SyncFamilyMembers";
     private Context mContext;
     private ProgressDialog pd;
 
-
-    public SyncForms(Context context) {
+    public SyncFamilyMembers(Context context) {
         mContext = context;
     }
 
     public static void longInfo(String str) {
         if (str.length() > 4000) {
-            Log.i("TAG: ", str.substring(0, 4000));
+            Log.i(TAG, str.substring(0, 4000));
             longInfo(str.substring(4000));
         } else
-            Log.i("TAG: ", str);
+            Log.i(TAG, str);
     }
 
     @Override
     protected void onPreExecute() {
         super.onPreExecute();
         pd = new ProgressDialog(mContext);
-        pd.setTitle("Please wait... Processing Forms");
+        pd.setTitle("Please wait... Processing FamilyMember");
         pd.show();
     }
 
@@ -63,7 +59,7 @@ public class SyncForms extends AsyncTask<Void, Void, String> {
 
         String line = "No Response";
         try {
-            String url = MainApp._HOST_URL + FormsContract.FormsTable._URL;
+            String url = MainApp._HOST_URL + FamilyMembersContract.familyMembers._URL;
             Log.d(TAG, "doInBackground: URL " + url);
             return downloadUrl(url);
         } catch (IOException e) {
@@ -71,7 +67,7 @@ public class SyncForms extends AsyncTask<Void, Void, String> {
         }
     }
 
-
+    @Override
     protected void onPostExecute(String result) {
         super.onPostExecute(result);
         int sSynced = 0;
@@ -81,27 +77,25 @@ public class SyncForms extends AsyncTask<Void, Void, String> {
             json = new JSONArray(result);
             DatabaseHelper db = new DatabaseHelper(mContext);
             for (int i = 0; i < json.length(); i++) {
-
                 JSONObject jsonObject = new JSONObject(json.getString(i));
                 if (jsonObject.getString("status").equals("1") && jsonObject.getString("error").equals("0")) {
-                    db.updateForms(jsonObject.getString("id"));
+                    db.updateFamilyMember(jsonObject.getString("id"));
                     sSynced++;
                 } else {
-                    sSyncedError += jsonObject.getString("message").toString() + "\n";
+                    sSyncedError += "\nError: " + jsonObject.getString("message").toString();
                 }
             }
+            Toast.makeText(mContext, sSynced + " FamilyMember's synced." + String.valueOf(json.length() - sSynced) + " Errors: " + sSyncedError, Toast.LENGTH_SHORT).show();
 
-            Toast.makeText(mContext, sSynced + " Forms synced." + String.valueOf(json.length() - sSynced) + " Errors: " + sSyncedError, Toast.LENGTH_SHORT).show();
-
-            pd.setMessage(sSynced + " Forms synced." + String.valueOf(json.length() - sSynced) + " Errors: " + sSyncedError);
-            pd.setTitle("Done uploading Forms data");
+            pd.setMessage(sSynced + " FamilyMember's synced." + String.valueOf(json.length() - sSynced) + " Errors: " + sSyncedError);
+            pd.setTitle("Done uploading FamilyMember's data");
             pd.show();
         } catch (JSONException e) {
             e.printStackTrace();
             Toast.makeText(mContext, "Failed Sync " + result, Toast.LENGTH_SHORT).show();
 
             pd.setMessage(result);
-            pd.setTitle("Forms Sync Failed");
+            pd.setTitle("FamilyMember Sync Failed");
             pd.show();
         }
     }
@@ -110,44 +104,52 @@ public class SyncForms extends AsyncTask<Void, Void, String> {
         String line = "No Response";
         // Only display the first 500 characters of the retrieved
         // web page content.
-        //  int len = 500;
+        //int len = 500;
         DatabaseHelper db = new DatabaseHelper(mContext);
-        Collection<FormsContract> forms = db.getUnsyncedForms();
-        Log.d(TAG, String.valueOf(forms.size()));
-        if (forms.size() > 0) {
+        Collection<FamilyMembersContract> FamilyMember = db.getUnsyncedFamilyMembers();
+        Log.d(TAG, String.valueOf(FamilyMember.size()));
+        if (FamilyMember.size() > 0) {
             try {
                 URL url = new URL(myurl);
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-                conn.setReadTimeout(20000 /* milliseconds */);
-                conn.setConnectTimeout(30000 /* milliseconds */);
-                conn.setRequestMethod("POST");
-                conn.setDoOutput(true);
-                conn.setDoInput(true);
-                conn.setRequestProperty("Content-Type", "application/json");
-                conn.setRequestProperty("charset", "utf-8");
-                conn.setUseCaches(false);
-                // Starts the query
                 conn.connect();
-                JSONArray jsonSync = new JSONArray();
-                try {
-                    DataOutputStream wr = new DataOutputStream(conn.getOutputStream());
-
-                    for (FormsContract fc : forms) {
-
-                        jsonSync.put(fc.toJSONObject());
-
-                    }
-                    wr.writeBytes(jsonSync.toString().replace("\uFEFF", "") + "\n");
-                    //longInfo(jsonSync.toString().replace("\uFEFF", "") + "\n");
-                    wr.flush();
-                } catch (JSONException e) {
-                    // TODO Auto-generated catch block
-                    e.printStackTrace();
-                }
-
-/*===================================================================*/
                 int HttpResult = conn.getResponseCode();
                 if (HttpResult == HttpURLConnection.HTTP_OK) {
+                    JSONArray jsonSync = new JSONArray();
+
+                    conn = (HttpURLConnection) url.openConnection();
+
+                    conn.setReadTimeout(20000 /* milliseconds */);
+                    conn.setConnectTimeout(30000 /* milliseconds */);
+                    conn.setRequestMethod("POST");
+                    conn.setDoOutput(true);
+                    conn.setDoInput(true);
+                    conn.setRequestProperty("Content-Type", "application/json");
+                    conn.setRequestProperty("charset", "utf-8");
+                    conn.setUseCaches(false);
+                    // Starts the query
+                    conn.connect();
+
+                    try {
+                        DataOutputStream wr = new DataOutputStream(conn.getOutputStream());
+
+                        for (FamilyMembersContract fc : FamilyMember) {
+
+                            //if (fc.getIstatus().equals("1")) {
+                            jsonSync.put(fc.toJSONObject());
+                            //}
+
+                        }
+                        wr.writeBytes(jsonSync.toString().replace("\uFEFF", "") + "\n");
+                        longInfo(jsonSync.toString().replace("\uFEFF", "") + "\n");
+                        wr.flush();
+                    } catch (JSONException e) {
+                        // TODO Auto-generated catch block
+                        e.printStackTrace();
+                    }
+
+/*===================================================================*/
+
                     BufferedReader br = new BufferedReader(new InputStreamReader(
                             conn.getInputStream(), "utf-8"));
                     StringBuffer sb = new StringBuffer();
