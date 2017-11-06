@@ -622,6 +622,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(FormsTable.COLUMN_SYNCED, fc.getSynced());
         values.put(FormsTable.COLUMN_SYNCED_DATE, fc.getSynced_date());
 
+
         // Insert the new row, returning the primary key value of the new row
         long newRowId;
         newRowId = db.insert(
