@@ -101,19 +101,19 @@ public class FamilyMemberListActivity extends Activity implements View.OnKeyList
 //        Text Watchers
 
 
-        spbla07t.setOnKeyListener(this);
+//        spbla07t.setOnKeyListener(this);
         spbla07t.addTextChangedListener(new CustomTextWatcher(spbla07t));
-        spbla07m6.setOnKeyListener(this);
+//        spbla07m6.setOnKeyListener(this);
         spbla07m6.addTextChangedListener(new CustomTextWatcher(spbla07m6));
-        spbla07f6.setOnKeyListener(this);
+//        spbla07f6.setOnKeyListener(this);
         spbla07f6.addTextChangedListener(new CustomTextWatcher(spbla07f6));
-        spbla07m23.setOnKeyListener(this);
+//        spbla07m23.setOnKeyListener(this);
         spbla07m23.addTextChangedListener(new CustomTextWatcher(spbla07m23));
-        spbla07f23.setOnKeyListener(this);
+//        spbla07f23.setOnKeyListener(this);
         spbla07f23.addTextChangedListener(new CustomTextWatcher(spbla07f23));
-        spbla07m59.setOnKeyListener(this);
+//        spbla07m59.setOnKeyListener(this);
         spbla07m59.addTextChangedListener(new CustomTextWatcher(spbla07m59));
-        spbla07f59.setOnKeyListener(this);
+//        spbla07f59.setOnKeyListener(this);
         spbla07f59.addTextChangedListener(new CustomTextWatcher(spbla07f59));
 
         spbla07pw.addTextChangedListener(new CustomTextWatcher(spbla07pw));
@@ -645,11 +645,11 @@ public class FamilyMemberListActivity extends Activity implements View.OnKeyList
         }
 
         public void afterTextChanged(Editable s) {
-            if (flag && !(spbla07pw.getText().toString().isEmpty() && spbla07lw.getText().toString().isEmpty() &&
-                    spbla07mw.getText().toString().isEmpty() && spbla07t.getText().toString().isEmpty() &&
-                    spbla07m6.getText().toString().isEmpty() && spbla07f6.getText().toString().isEmpty() &&
-                    spbla07m23.getText().toString().isEmpty() && spbla07f23.getText().toString().isEmpty() &&
-                    spbla07m59.getText().toString().isEmpty() && spbla07f59.getText().toString().isEmpty())) {
+            if (flag && !spbla07pw.getText().toString().isEmpty() && !spbla07lw.getText().toString().isEmpty() &&
+                    !spbla07mw.getText().toString().isEmpty() && !spbla07t.getText().toString().isEmpty() &&
+                    !spbla07m6.getText().toString().isEmpty() && !spbla07f6.getText().toString().isEmpty() &&
+                    !spbla07m23.getText().toString().isEmpty() && !spbla07f23.getText().toString().isEmpty() &&
+                    !spbla07m59.getText().toString().isEmpty() && !spbla07f59.getText().toString().isEmpty()) {
                 resumeWork();
             }
         }
