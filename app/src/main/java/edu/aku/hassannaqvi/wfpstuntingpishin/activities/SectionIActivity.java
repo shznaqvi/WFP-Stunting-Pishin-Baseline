@@ -796,6 +796,7 @@ public class SectionIActivity extends Activity {
                     spbli02588.setChecked(false);
 
 
+
                     spbli02588x.setText(null);
                     spbli02588x.setVisibility(View.GONE);
                 }
