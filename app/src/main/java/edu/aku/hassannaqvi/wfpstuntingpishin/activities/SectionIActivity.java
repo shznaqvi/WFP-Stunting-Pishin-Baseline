@@ -147,6 +147,10 @@ public class SectionIActivity extends Activity {
     RadioButton spbli01499;
     @BindView(R.id.spbli015)
     EditText spbli015;
+
+    @BindView(R.id.spbli015m)
+    EditText spbli015m;
+
     @BindView(R.id.spbli01597)
     CheckBox spbli01597;
     @BindView(R.id.spbli01599)
@@ -219,6 +223,8 @@ public class SectionIActivity extends Activity {
     RadioButton spbli021a;
     @BindView(R.id.spbli021b)
     RadioButton spbli021b;
+    @BindView(R.id.spbli02199)
+    RadioButton spbli02199;
     @BindView(R.id.spbli021a1)
     EditText spbli021a1;
     @BindView(R.id.spbli021a2)
@@ -253,26 +259,28 @@ public class SectionIActivity extends Activity {
     RadioButton spbli02399;
     @BindView(R.id.spbli024)
     RadioGroup spbli024;
-    @BindView(R.id.spbli24a)
-    RadioButton spbli24a;
+    @BindView(R.id.spbli024a)
+    RadioButton spbli024a;
     @BindView(R.id.spbli024b)
     RadioButton spbli024b;
     @BindView(R.id.spbli02499)
     RadioButton spbli02499;
-    @BindView(R.id.spbli025)
-    RadioGroup spbli025;
+    /*@BindView(R.id.spbli025)
+    RadioGroup spbli025;*/
+
     @BindView(R.id.spbli025a)
-    RadioButton spbli025a;
+    CheckBox spbli025a;
     @BindView(R.id.spbli025b)
-    RadioButton spbli025b;
+    CheckBox spbli025b;
     @BindView(R.id.spbli025c)
-    RadioButton spbli025c;
+    CheckBox spbli025c;
     @BindView(R.id.spbli02588)
-    RadioButton spbli02588;
+    CheckBox spbli02588;
     @BindView(R.id.spbli02599)
-    RadioButton spbli02599;
+    CheckBox spbli02599;
     @BindView(R.id.spbli02588x)
     EditText spbli02588x;
+
     @BindView(R.id.spbli026)
     RadioGroup spbli026;
     @BindView(R.id.spbli026h)
@@ -343,6 +351,9 @@ public class SectionIActivity extends Activity {
 
     @BindView(R.id.fldGrpspbli021)
     LinearLayout fldGrpspbli021;
+
+    @BindView(R.id.fldGrpspbli025)
+    LinearLayout fldGrpspbli025;
 
 
     @Override
@@ -644,6 +655,15 @@ public class SectionIActivity extends Activity {
 
                     spbli021a2.setVisibility(View.VISIBLE);
                     spbli021a2.requestFocus();
+                } else if (spbli02199.isChecked()) {
+                    spbli021a1.setText(null);
+                    spbli021a1.setVisibility(View.GONE);
+
+                    spbli021a2.setText(null);
+                    spbli021a2.setVisibility(View.GONE);
+
+                    spbli021a1.setVisibility(View.VISIBLE);
+                    spbli021a2.setVisibility(View.VISIBLE);
                 }
             }
         });
@@ -697,6 +717,24 @@ public class SectionIActivity extends Activity {
         });
 
 
+        spbli024.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                if (spbli024a.isChecked()) {
+                    fldGrpspbli025.setVisibility(View.VISIBLE);
+                } else {
+                    spbli025a.setChecked(false);
+                    spbli025b.setChecked(false);
+                    spbli025c.setChecked(false);
+                    spbli02588.setChecked(false);
+                    spbli02599.setChecked(false);
+
+                    fldGrpspbli025.setVisibility(View.GONE);
+                }
+            }
+        });
+
+
         spbli02588.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
@@ -704,6 +742,17 @@ public class SectionIActivity extends Activity {
                     spbli02588x.setVisibility(View.VISIBLE);
                     spbli02588x.requestFocus();
                 } else {
+                    spbli02588x.setText(null);
+                    spbli02588x.setVisibility(View.GONE);
+                }
+            }
+        });
+
+
+        spbli02599.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (spbli02599.isChecked()) {
                     spbli02588x.setText(null);
                     spbli02588x.setVisibility(View.GONE);
                 }
@@ -941,6 +990,18 @@ public class SectionIActivity extends Activity {
             }
 
 
+            if (!spbli06999.isChecked() && Integer.valueOf(spbli06.getText().toString()) < 0
+                    || Integer.valueOf(spbli06.getText().toString()) > 12) {
+                Toast.makeText(this, "Range must be 0 - 12", Toast.LENGTH_SHORT).show();
+                spbli06.setError("Range must be 0 - 12");    // Set Error on last radio button
+                Log.i(TAG, "spbli06: Range must be 0 - 12");
+                spbli06.requestFocus();
+                return false;
+            } else {
+                spbli06.setError(null);
+            }
+
+
             //        spbli07
             if (!spbli07999.isChecked() && spbli07.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.spbli07), Toast.LENGTH_SHORT).show();
@@ -954,10 +1015,10 @@ public class SectionIActivity extends Activity {
 
 
             //        spbli07
-            if (!spbli07.getText().toString().isEmpty() && Integer.valueOf(spbli07.getText().toString()) > 12) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.spbli07), Toast.LENGTH_SHORT).show();
-                spbli07.setError("This data is Required!");    // Set Error on last radio button
-                Log.i(TAG, "spbli07: This data is Required!");
+            if (!spbli07.getText().toString().isEmpty() && Integer.valueOf(spbli07.getText().toString()) > 9) {
+                Toast.makeText(this, "Range cannot be greater than 9", Toast.LENGTH_SHORT).show();
+                spbli07.setError("Range cannot be greater than 9");    // Set Error on last radio button
+                Log.i(TAG, "spbli07: Range cannot be greater than 9");
                 spbli07.requestFocus();
                 return false;
             } else {
@@ -1019,6 +1080,18 @@ public class SectionIActivity extends Activity {
                 spbli010.setError(null);
             }
 
+
+            //        spbli010
+            if (!spbli01099.isChecked() && Integer.valueOf(spbli010.getText().toString()) > 5) {
+                Toast.makeText(this, "Range cannot be greater than 5", Toast.LENGTH_SHORT).show();
+                spbli010.setError("Range cannot be greater than 5");    // Set Error on last radio button
+                Log.i(TAG, "spbli010: Range cannot be greater than 5");
+                spbli010.requestFocus();
+                return false;
+            } else {
+                spbli010.setError(null);
+            }
+
         }
 
 
@@ -1050,11 +1123,35 @@ public class SectionIActivity extends Activity {
             }
 
 
+            //        spbli012
+            if (!spbli01299.isChecked() && Integer.valueOf(spbli012.getText().toString()) > 5) {
+                Toast.makeText(this, "Range cannot be greater than 5", Toast.LENGTH_SHORT).show();
+                spbli012.setError("Range cannot be greater than 5");    // Set Error on last radio button
+                Log.i(TAG, "spbli012: Range cannot be greater than 5");
+                spbli012.requestFocus();
+                return false;
+            } else {
+                spbli012.setError(null);
+            }
+
+
             //        spbli013
             if (spbli013.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.spbli13), Toast.LENGTH_SHORT).show();
                 spbli013.setError("This data is Required!");    // Set Error on last radio button
                 Log.i(TAG, "spbli013: This data is Required!");
+                spbli013.requestFocus();
+                return false;
+            } else {
+                spbli013.setError(null);
+            }
+
+
+            //        spbli013
+            if (Integer.valueOf(spbli013.getText().toString()) > 10) {
+                Toast.makeText(this, "Range cannot be greater than 10", Toast.LENGTH_SHORT).show();
+                spbli013.setError("Range cannot be greater than 10");    // Set Error on last radio button
+                Log.i(TAG, "spbli013: Range cannot be greater than 10");
                 spbli013.requestFocus();
                 return false;
             } else {
@@ -1089,6 +1186,32 @@ public class SectionIActivity extends Activity {
                 return false;
             } else {
                 spbli015.setError(null);
+            }
+
+
+            //        spbli015
+            if (!spbli01599.isChecked() && !spbli01597.isChecked() && Integer.valueOf(spbli015.getText().toString()) < 0 ||
+                    Integer.valueOf(spbli015.getText().toString()) > 30) {
+                Toast.makeText(this, "Range must be 0 - 30", Toast.LENGTH_SHORT).show();
+                spbli015.setError("Range must be 0 - 30");    // Set Error on last radio button
+                Log.i(TAG, "spbli015: Range must be 0 - 30");
+                spbli015.requestFocus();
+                return false;
+            } else {
+                spbli015.setError(null);
+            }
+
+
+            //        spbli015m
+            if (!spbli01599.isChecked() && !spbli01597.isChecked() && Integer.valueOf(spbli015m.getText().toString()) < 0 ||
+                    Integer.valueOf(spbli015m.getText().toString()) > 11) {
+                Toast.makeText(this, "Range must be 0 - 11", Toast.LENGTH_SHORT).show();
+                spbli015m.setError("Range must be 0 - 30");    // Set Error on last radio button
+                Log.i(TAG, "spbli015m: Range must be 0 - 11");
+                spbli015m.requestFocus();
+                return false;
+            } else {
+                spbli015m.setError(null);
             }
 
         }
@@ -1216,6 +1339,19 @@ public class SectionIActivity extends Activity {
                     spbli021a1.setError(null);
                 }
 
+
+                if (spbli021a1.getText().toString().isEmpty() && Double.valueOf(spbli021a1.getText().toString()) < 1.00
+                        || Double.valueOf(spbli021a1.getText().toString()) > 10.00) {
+                    Toast.makeText(this, "Range must be 01.00 - 10.00", Toast.LENGTH_SHORT).show();
+                    spbli021a1.setError("Range must be 01.00 - 10.00");    // Set Error on last radio button
+                    Log.i(TAG, "spbli021a1: Range must be 01.00 - 10.00");
+                    spbli021a1.requestFocus();
+                    return false;
+                } else {
+                    spbli021a1.setError(null);
+                }
+
+
             } else if (spbli021b.isChecked()) {
 
                 //        spbli021a2
@@ -1223,6 +1359,18 @@ public class SectionIActivity extends Activity {
                     Toast.makeText(this, "ERROR(empty): " + getString(R.string.spbli21b), Toast.LENGTH_SHORT).show();
                     spbli021a2.setError("This data is Required!");    // Set Error on last radio button
                     Log.i(TAG, "spbli021a2: This data is Required!");
+                    spbli021a2.requestFocus();
+                    return false;
+                } else {
+                    spbli021a2.setError(null);
+                }
+
+
+                if (spbli021a2.getText().toString().isEmpty() && Double.valueOf(spbli021a2.getText().toString()) < 1.00
+                        || Double.valueOf(spbli021a2.getText().toString()) > 10.00) {
+                    Toast.makeText(this, "Range must be 01.00 - 10.00", Toast.LENGTH_SHORT).show();
+                    spbli021a2.setError("Range must be 01.00 - 10.00");    // Set Error on last radio button
+                    Log.i(TAG, "spbli021a2: Range must be 01.00 - 10.00");
                     spbli021a2.requestFocus();
                     return false;
                 } else {
@@ -1277,40 +1425,44 @@ public class SectionIActivity extends Activity {
         //        spbli024
         if (spbli024.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.spbli24), Toast.LENGTH_SHORT).show();
-            spbli24a.setError("This data is Required!");    // Set Error on last radio button
+            spbli024a.setError("This data is Required!");    // Set Error on last radio button
             Log.i(TAG, "spbli024a: This data is Required!");
-            spbli24a.setFocusable(true);
-            spbli24a.setFocusableInTouchMode(true);
-            spbli24a.requestFocus();
+            spbli024a.setFocusable(true);
+            spbli024a.setFocusableInTouchMode(true);
+            spbli024a.requestFocus();
             return false;
         } else {
-            spbli24a.setError(null);
+            spbli024a.setError(null);
         }
 
+        if (spbli024a.isChecked()) {
 
-        //        spbli025
-        if (spbli025.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spbli25), Toast.LENGTH_SHORT).show();
-            spbli025a.setError("This data is Required!");    // Set Error on last radio button
-            Log.i(TAG, "spbli025a: This data is Required!");
-            spbli025a.setFocusable(true);
-            spbli025a.setFocusableInTouchMode(true);
-            spbli025a.requestFocus();
-            return false;
-        } else {
-            spbli025a.setError(null);
-        }
+            //        spbli025
+            if (!spbli025a.isChecked() && !spbli025b.isChecked() && !spbli025c.isChecked() && !spbli02588.isChecked()
+                    && !spbli02599.isChecked()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.spbli25), Toast.LENGTH_SHORT).show();
+                spbli025a.setError("This data is Required!");    // Set Error on last radio button
+                Log.i(TAG, "spbli025a: This data is Required!");
+                spbli025a.setFocusable(true);
+                spbli025a.setFocusableInTouchMode(true);
+                spbli025a.requestFocus();
+                return false;
+            } else {
+                spbli025a.setError(null);
+            }
 
 
-        //        spbli02588x
-        if (spbli02588.isChecked() && spbli02588x.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_SHORT).show();
-            spbli02588x.setError("This data is Required!");    // Set Error on last radio button
-            Log.i(TAG, "spbli02588x: This data is Required!");
-            spbli02588x.requestFocus();
-            return false;
-        } else {
-            spbli02588x.setError(null);
+            //        spbli02588x
+            if (spbli02588.isChecked() && spbli02588x.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_SHORT).show();
+                spbli02588x.setError("This data is Required!");    // Set Error on last radio button
+                Log.i(TAG, "spbli02588x: This data is Required!");
+                spbli02588x.requestFocus();
+                return false;
+            } else {
+                spbli02588x.setError(null);
+            }
+
         }
 
 
@@ -1341,6 +1493,20 @@ public class SectionIActivity extends Activity {
                 spbli026hr.setError(null);
             }
 
+
+            //        spbli026hr
+            if (spbli026hr.getText().toString().isEmpty() && Integer.valueOf(spbli026hr.getText().toString()) < 0 ||
+                    Integer.valueOf(spbli026hr.getText().toString()) > 12) {
+                Toast.makeText(this, "Range must be 0 - 12", Toast.LENGTH_SHORT).show();
+                spbli026hr.setError("Range must be 0 - 12");    // Set Error on last radio button
+                Log.i(TAG, "spbli026hr: Range must be 0 - 12");
+                spbli026hr.requestFocus();
+                return false;
+            } else {
+                spbli026hr.setError(null);
+            }
+
+
         } else if (spbli026d.isChecked()) {
 
             //        spbli026day
@@ -1354,6 +1520,20 @@ public class SectionIActivity extends Activity {
                 spbli026day.setError(null);
             }
 
+
+            //        spbli026day
+            if (spbli026day.getText().toString().isEmpty() && Integer.valueOf(spbli026day.getText().toString()) < 0
+                    || Integer.valueOf(spbli026day.getText().toString()) > 30) {
+                Toast.makeText(this, "Range must be 0 - 30", Toast.LENGTH_SHORT).show();
+                spbli026day.setError("Range must be 0 - 30");    // Set Error on last radio button
+                Log.i(TAG, "spbli026day: Range must be 0 - 30");
+                spbli026day.requestFocus();
+                return false;
+            } else {
+                spbli026day.setError(null);
+            }
+
+
         } else if (spbli026w.isChecked()) {
 
             //        spbli026wk
@@ -1366,6 +1546,20 @@ public class SectionIActivity extends Activity {
             } else {
                 spbli026wk.setError(null);
             }
+
+
+            //        spbli026wk
+            if (spbli026wk.getText().toString().isEmpty() && Integer.valueOf(spbli026wk.getText().toString()) < 0
+                    || Integer.valueOf(spbli026wk.getText().toString()) > 12) {
+                Toast.makeText(this, "Range must be 0 - 12", Toast.LENGTH_SHORT).show();
+                spbli026wk.setError("Range must be 0 - 12");    // Set Error on last radio button
+                Log.i(TAG, "spbli026wk: Range must be 0 - 12");
+                spbli026wk.requestFocus();
+                return false;
+            } else {
+                spbli026wk.setError(null);
+            }
+
 
         }
 
@@ -1496,6 +1690,7 @@ public class SectionIActivity extends Activity {
                 : "0");
 
         sHI.put("spbli015", spbli015.getText().toString());
+        sHI.put("spbli015m", spbli015m.getText().toString());
 
 
         sHI.put("spbli016", spbli016a.isChecked() ? "1" : spbli016b.isChecked() ? "2"
@@ -1536,7 +1731,7 @@ public class SectionIActivity extends Activity {
                 : "0");
 
 
-        sHI.put("spbli021", spbli021a.isChecked() ? "1" : spbli021b.isChecked() ? "2"
+        sHI.put("spbli021", spbli021a.isChecked() ? "1" : spbli021b.isChecked() ? "2" : spbli021b.isChecked() ? "99"
                 : "0");
 
 
@@ -1561,16 +1756,17 @@ public class SectionIActivity extends Activity {
                 : "0");
 
 
-        sHI.put("spbli024", spbli24a.isChecked() ? "1" : spbli024b.isChecked() ? "2"
+        sHI.put("spbli024", spbli024a.isChecked() ? "1" : spbli024b.isChecked() ? "2"
                 : spbli02499.isChecked() ? "99"
                 : "0");
 
 
-        sHI.put("spbli025", spbli025a.isChecked() ? "1" : spbli025b.isChecked() ? "2"
-                : spbli025c.isChecked() ? "3"
-                : spbli02588.isChecked() ? "88"
-                : spbli02599.isChecked() ? "99"
-                : "0");
+        sHI.put("spbli025a", spbli025a.isChecked() ? "1" : "0");
+        sHI.put("spbli025b", spbli025b.isChecked() ? "2" : "0");
+        sHI.put("spbli025c", spbli025c.isChecked() ? "3" : "0");
+        sHI.put("spbli02588", spbli02588.isChecked() ? "88" : "0");
+        sHI.put("spbli02599", spbli02599.isChecked() ? "99" : "0");
+
 
         sHI.put("spbli02588x", spbli02588x.getText().toString());
 

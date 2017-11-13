@@ -597,6 +597,7 @@
     <string name="spbli14">  اس حمل یا آخری حمل کے دوران آپ کو فولاد کی گولیاں دی گئی یا آپ نے خود خریدی؟ گولیاں ؍شربت دیکھا ئیں۔ </string>
     <string name="spbli15">  اس حمل یا آخری حمل کے دوران کتنے دنوں تک گولیاں یا شربت استعمال کی؟ </string>
     <string name="spbli15a">  دن </string>
+    <string name="spbli15m">  ماہ </string>
     <string name="spbli15b">  نہیں لیا </string>
     <string name="spbli16">  اس حمل کے دوران کیا آپ نے کوئی پیٹ کے کیڑوں کی دوائی کھائی تھی؟ </string>
     <string name="spbli17">  کس کے ہاتھوں (نام)زچگی ہوئی؟ </string>
@@ -903,6 +904,6 @@
     <string name="spblp0303b">  بہت مشکل سے ایک مرتبہ(1 سے 2 مرتبہ) </string>
     <string name="spblp0303c">  کبھی کبھی (3 کان 10 وقت) </string>
     <string name="spblp0303d">  اکثر اوقات (10 مرتبہ سے زیادہ) </string>
-  <string name="title_activity_login2">Sign in</string>
+    <string name="title_activity_login2">Sign in</string>
 
 </resources>

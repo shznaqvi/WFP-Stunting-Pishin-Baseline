@@ -152,8 +152,7 @@ public class SectionMActivity extends Activity {
 
         childName.setText(getIntent().getStringExtra("getName"));
 
-        spblm0166.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
-        {
+        spblm0166.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
                 if (spblm0166a.isChecked()) {
@@ -217,8 +216,20 @@ public class SectionMActivity extends Activity {
             }
         });
 
-        spblm03.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
-        {
+
+        spblm0188.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                if (spblm0188a.isChecked()) {
+
+                } else {
+
+                }
+            }
+        });
+
+
+        spblm03.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
                 if (spblm03a.isChecked()) {
@@ -273,7 +284,6 @@ public class SectionMActivity extends Activity {
         });
 
 
-
     }
 
     @OnClick(R.id.btn_Continue)
@@ -299,7 +309,6 @@ public class SectionMActivity extends Activity {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }
         }
-
 
 
     }
@@ -346,6 +355,7 @@ public class SectionMActivity extends Activity {
 
         MainApp.fc.setsM(String.valueOf(sM));
     }
+
     private boolean UpdateDB() {
 
         DatabaseHelper db = new DatabaseHelper(this);
