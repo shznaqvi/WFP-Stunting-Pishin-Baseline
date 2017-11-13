@@ -1098,23 +1098,25 @@ public class SectionCActivity extends Activity {
 
 
         if (spblc06a.isChecked()) {
-            if (spblc07.getText().toString().isEmpty() && !spblc0799.isChecked()) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc07), Toast.LENGTH_SHORT).show();
-                spblc07.setError("This data is Required!");    // Set Error on last radio button
-                spblc07.requestFocus();
-                Log.i(TAG, "spblc07: This data is Required!");
-                return false;
-            } else {
-                spblc07.setError(null);
-            }
+            if (!spblc0799.isChecked()) {
+                if (spblc07.getText().toString().isEmpty()) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc07), Toast.LENGTH_SHORT).show();
+                    spblc07.setError("This data is Required!");    // Set Error on last radio button
+                    spblc07.requestFocus();
+                    Log.i(TAG, "spblc07: This data is Required!");
+                    return false;
+                } else {
+                    spblc07.setError(null);
+                }
 
-            if (!spblc07.getText().toString().isEmpty() && Integer.valueOf(spblc07.getText().toString()) > 10) {
-                Toast.makeText(this, "Range cannot be greater than 10", Toast.LENGTH_SHORT).show();
-                spblc07.setError("Range cannot be greater than 10");    // Set Error on last radio button
-                spblc07.requestFocus();
-                return false;
-            } else {
-                spblc07.setError(null);
+                if (Integer.valueOf(spblc07.getText().toString()) < 1 || Integer.valueOf(spblc07.getText().toString()) > 10) {
+                    Toast.makeText(this, "Range cannot be greater than 10", Toast.LENGTH_SHORT).show();
+                    spblc07.setError("Range cannot be greater than 10");    // Set Error on last radio button
+                    spblc07.requestFocus();
+                    return false;
+                } else {
+                    spblc07.setError(null);
+                }
             }
         }
 
@@ -1133,11 +1135,11 @@ public class SectionCActivity extends Activity {
 
 
         if (spblc08b.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc08a), Toast.LENGTH_SHORT).show();
-            spblc08aa.setError("This data is Required!");    // Set Error on last radio button
-            spblc08aa.setFocusable(true);
-            spblc08aa.setFocusableInTouchMode(true);
-            spblc08aa.requestFocus();
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc08b), Toast.LENGTH_SHORT).show();
+            spblc08ba.setError("This data is Required!");    // Set Error on last radio button
+            spblc08ba.setFocusable(true);
+            spblc08ba.setFocusableInTouchMode(true);
+            spblc08ba.requestFocus();
             Log.i(TAG, "spblc08aa: This data is Required!");
             return false;
         } else {
@@ -1498,8 +1500,8 @@ public class SectionCActivity extends Activity {
 
         if (!spblc15.getText().toString().isEmpty() &&
                 Integer.valueOf(spblc15.getText().toString()) < 1 || Integer.valueOf(spblc15.getText().toString()) > 99) {
-            Toast.makeText(this, "Range must be 99", Toast.LENGTH_SHORT).show();
-            spblc15.setError("Range must be 99");    // Set Error on last radio button
+            Toast.makeText(this, "Range must be 1 - 99", Toast.LENGTH_SHORT).show();
+            spblc15.setError("Range must be 1 - 99");    // Set Error on last radio button
             spblc15.requestFocus();
             return false;
         } else {

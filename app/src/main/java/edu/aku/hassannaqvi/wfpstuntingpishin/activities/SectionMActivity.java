@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.annotation.IdRes;
 import android.util.Log;
 import android.view.View;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
@@ -227,6 +228,45 @@ public class SectionMActivity extends Activity {
                     spblm04.clearCheck();
                     spblm0488x.setText(null);
                     spblm05.clearCheck();
+                    spblm0588x.setText(null);
+                }
+            }
+        });
+
+        spblm0188.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
+        {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                if (spblm0188a.isChecked()) {
+                    spblm0188x.setVisibility(View.VISIBLE);
+                } else {
+                    spblm0188x.setVisibility(View.GONE);
+                    spblm0188x.setText(null);
+                }
+            }
+        });
+
+        spblm0488.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
+        {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (b) {
+                    spblm0488x.setVisibility(View.VISIBLE);
+                } else {
+                    spblm0488x.setVisibility(View.GONE);
+                    spblm0488x.setText(null);
+                }
+            }
+        });
+
+        spblm0588.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
+        {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (b) {
+                    spblm0588x.setVisibility(View.VISIBLE);
+                } else {
+                    spblm0588x.setVisibility(View.GONE);
                     spblm0588x.setText(null);
                 }
             }

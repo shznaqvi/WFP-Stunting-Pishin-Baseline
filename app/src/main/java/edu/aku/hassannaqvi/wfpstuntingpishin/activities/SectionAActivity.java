@@ -587,7 +587,7 @@ public class SectionAActivity extends Activity {
                 respage.setError(null);
             }
 
-            if (Integer.valueOf(respage.getText().toString()) < 15 && Integer.valueOf(respage.getText().toString()) > 49) {
+            if (Integer.valueOf(respage.getText().toString()) < 15 || Integer.valueOf(respage.getText().toString()) > 49) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.spbla12), Toast.LENGTH_SHORT).show();
                 respage.setError("Age should be 15 to 49 years");
                 Log.i(TAG, "respage: Age should be 15 to 49 years!");
