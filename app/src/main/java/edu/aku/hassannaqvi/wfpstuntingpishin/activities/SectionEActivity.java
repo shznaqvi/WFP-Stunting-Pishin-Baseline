@@ -114,6 +114,8 @@ public class SectionEActivity extends Activity {
                     for (int i = 1; i < items.length; i++) {
                         if (i != pos) {
                             arrlst2.add(items[i]);
+                        }else if (i == 13){
+                            arrlst2.add(items[i]);
                         }
                     }
 
@@ -154,11 +156,13 @@ public class SectionEActivity extends Activity {
                     for (int i = 1; i < items.length; i++) {
                         if (i != position) {
                             arrlst3.add(items[i]);
+                        }else if (i == arrlst2.size() - 1){
+                            arrlst3.add(items[i]);
                         }
                     }
 
                     for (int j = 1; j < arrlst3.size(); j++) {
-                        if (items[j].contains(items[pos])) {
+                        if (arrlst3.get(j).equals(arrlst2.get(pos)) && pos != arrlst2.size() - 1) {
                             arrlst3.remove(j);
                             break;
                         }
