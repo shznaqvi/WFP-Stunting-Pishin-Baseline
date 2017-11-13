@@ -1516,7 +1516,7 @@ public class SectionHActivity extends Activity {
         sh.put("spblh2288", spblh2288.isChecked() ? "88" : "0");
         sh.put("spblh2288x", spblh2288x.getText().toString());
         sh.put("spblh23", spblh23a.isChecked() ? "1" : spblh23b.isChecked() ? "2" : spblh2399.isChecked() ? "99" : "0");
-        sh.put("spblh24", spblh23a.isChecked() ? "1" : spblh24b.isChecked() ? "2" : spblh2499.isChecked() ? "99" : "0");
+        sh.put("spblh24", spblh24a.isChecked() ? "1" : spblh24b.isChecked() ? "2" : spblh2499.isChecked() ? "99" : "0");
         sh.put("spblh25a", spblh25a.isChecked() ? "1" : "0");
         sh.put("spblh25b", spblh25b.isChecked() ? "2" : "0");
         sh.put("spblh25c", spblh25c.isChecked() ? "3" : "0");

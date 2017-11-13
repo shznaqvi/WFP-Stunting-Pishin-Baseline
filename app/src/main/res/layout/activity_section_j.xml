@@ -67,7 +67,10 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="1dp"
             android:hint="@string/spblj03"
-            android:inputType="numberDecimal" />
+            android:inputType="numberDecimal">
+
+            <requestFocus/>
+        </EditText>
 
         <!--02-->
         <TextView

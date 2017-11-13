@@ -41,7 +41,6 @@ public class GetUsers extends AsyncTask<String, String, String> {
         pd.setTitle("Syncing Users");
         pd.setMessage("Getting connected to server...");
         pd.show();
-
     }
 
     @Override

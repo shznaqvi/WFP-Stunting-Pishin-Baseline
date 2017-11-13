@@ -221,6 +221,8 @@ public class FamilyMemberListActivity extends Activity implements View.OnKeyList
         count.put("spbla07m59_r", spbla07m59.getText().toString());
         count.put("spbla07f59_r", spbla07f59.getText().toString());
 
+        MainApp.TotalMembersCount = Integer.valueOf(spbla07t.getText().toString());
+
         MainApp.fc.setsCount(String.valueOf(count));
     }
 

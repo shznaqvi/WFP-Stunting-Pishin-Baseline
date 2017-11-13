@@ -171,10 +171,19 @@ public class SectionDActivity extends Activity {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if (spbld0366.isChecked()) {
+                    spbld03a.setEnabled(false);
+                    spbld03b.setEnabled(false);
+                    spbld03c.setEnabled(false);
+                    spbld03d.setEnabled(false);
                     spbld03a.setChecked(false);
                     spbld03b.setChecked(false);
                     spbld03c.setChecked(false);
                     spbld03d.setChecked(false);
+                } else {
+                    spbld03a.setEnabled(true);
+                    spbld03b.setEnabled(true);
+                    spbld03c.setEnabled(true);
+                    spbld03d.setEnabled(true);
                 }
             }
         });
@@ -238,10 +247,19 @@ public class SectionDActivity extends Activity {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if (spbld0566.isChecked()) {
+                    spbld05a.setEnabled(false);
+                    spbld05b.setEnabled(false);
+                    spbld05c.setEnabled(false);
+                    spbld05d.setEnabled(false);
                     spbld05a.setChecked(false);
                     spbld05b.setChecked(false);
                     spbld05c.setChecked(false);
                     spbld05d.setChecked(false);
+                } else {
+                    spbld05a.setEnabled(true);
+                    spbld05b.setEnabled(true);
+                    spbld05c.setEnabled(true);
+                    spbld05d.setEnabled(true);
                 }
             }
         });
