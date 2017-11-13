@@ -553,12 +553,15 @@ public class SectionIActivity extends Activity {
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if (spbli01599.isChecked()) {
                     spbli015.setText(null);
+                    spbli015m.setText(null);
                     spbli01597.setChecked(false);
                     spbli01597.setVisibility(View.GONE);
                     spbli015.setVisibility(View.GONE);
+                    spbli015m.setVisibility(View.GONE);
                 } else {
                     spbli015.setVisibility(View.VISIBLE);
                     spbli01597.setVisibility(View.VISIBLE);
+                    spbli015m.setVisibility(View.VISIBLE);
                     spbli015.requestFocus();
                 }
             }
@@ -569,12 +572,15 @@ public class SectionIActivity extends Activity {
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if (spbli01597.isChecked()) {
                     spbli015.setText(null);
+                    spbli015m.setText(null);
                     spbli01599.setChecked(false);
                     spbli01599.setVisibility(View.GONE);
                     spbli015.setVisibility(View.GONE);
+                    spbli015m.setVisibility(View.GONE);
                 } else {
                     spbli015.setVisibility(View.VISIBLE);
                     spbli01599.setVisibility(View.VISIBLE);
+                    spbli015m.setVisibility(View.VISIBLE);
                     spbli015.requestFocus();
                 }
             }
@@ -735,10 +741,40 @@ public class SectionIActivity extends Activity {
         });
 
 
+        spbli025a.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (spbli025a.isChecked()) {
+                    spbli02599.setChecked(false);
+                }
+            }
+        });
+
+        spbli025b.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (spbli025b.isChecked()) {
+                    spbli02599.setChecked(false);
+                }
+            }
+        });
+
+        spbli025c.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (spbli025c.isChecked()) {
+                    spbli02599.setChecked(false);
+                }
+            }
+        });
+
         spbli02588.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if (spbli02588.isChecked()) {
+
+                    spbli02599.setChecked(false);
+
                     spbli02588x.setVisibility(View.VISIBLE);
                     spbli02588x.requestFocus();
                 } else {
@@ -753,6 +789,12 @@ public class SectionIActivity extends Activity {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if (spbli02599.isChecked()) {
+
+                    spbli025a.setChecked(false);
+                    spbli025b.setChecked(false);
+                    spbli025c.setChecked(false);
+                    spbli02588.setChecked(false);
+
                     spbli02588x.setText(null);
                     spbli02588x.setVisibility(View.GONE);
                 }
@@ -1190,7 +1232,7 @@ public class SectionIActivity extends Activity {
 
 
             //        spbli015
-            if (!spbli01599.isChecked() && !spbli01597.isChecked() && Integer.valueOf(spbli015.getText().toString()) < 0 ||
+            if (!spbli015.getText().toString().isEmpty() && Integer.valueOf(spbli015.getText().toString()) < 0 ||
                     Integer.valueOf(spbli015.getText().toString()) > 30) {
                 Toast.makeText(this, "Range must be 0 - 30", Toast.LENGTH_SHORT).show();
                 spbli015.setError("Range must be 0 - 30");    // Set Error on last radio button
@@ -1203,10 +1245,22 @@ public class SectionIActivity extends Activity {
 
 
             //        spbli015m
-            if (!spbli01599.isChecked() && !spbli01597.isChecked() && Integer.valueOf(spbli015m.getText().toString()) < 0 ||
+            if (!spbli01599.isChecked() && !spbli01597.isChecked() && spbli015m.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.spbli15), Toast.LENGTH_SHORT).show();
+                spbli015m.setError("This data is Required!");    // Set Error on last radio button
+                Log.i(TAG, "spbli015m: This data is Required!");
+                spbli015m.requestFocus();
+                return false;
+            } else {
+                spbli015m.setError(null);
+            }
+
+
+            //        spbli015m
+            if (!spbli015m.getText().toString().isEmpty() && Integer.valueOf(spbli015m.getText().toString()) < 0 ||
                     Integer.valueOf(spbli015m.getText().toString()) > 11) {
                 Toast.makeText(this, "Range must be 0 - 11", Toast.LENGTH_SHORT).show();
-                spbli015m.setError("Range must be 0 - 30");    // Set Error on last radio button
+                spbli015m.setError("Range must be 0 - 11");    // Set Error on last radio button
                 Log.i(TAG, "spbli015m: Range must be 0 - 11");
                 spbli015m.requestFocus();
                 return false;
