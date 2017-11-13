@@ -668,8 +668,8 @@ public class SectionIActivity extends Activity {
                     spbli021a2.setText(null);
                     spbli021a2.setVisibility(View.GONE);
 
-                    spbli021a1.setVisibility(View.VISIBLE);
-                    spbli021a2.setVisibility(View.VISIBLE);
+                    spbli021a1.setVisibility(View.GONE);
+                    spbli021a2.setVisibility(View.GONE);
                 }
             }
         });
@@ -794,7 +794,6 @@ public class SectionIActivity extends Activity {
                     spbli025b.setChecked(false);
                     spbli025c.setChecked(false);
                     spbli02588.setChecked(false);
-
 
 
                     spbli02588x.setText(null);
@@ -1035,7 +1034,7 @@ public class SectionIActivity extends Activity {
 
 
             if (!spbli06999.isChecked() && Integer.valueOf(spbli06.getText().toString()) < 0
-                    || Integer.valueOf(spbli06.getText().toString()) > 12) {
+                    || !spbli06999.isChecked() && Integer.valueOf(spbli06.getText().toString()) > 12) {
                 Toast.makeText(this, "Range must be 0 - 12", Toast.LENGTH_SHORT).show();
                 spbli06.setError("Range must be 0 - 12");    // Set Error on last radio button
                 Log.i(TAG, "spbli06: Range must be 0 - 12");
@@ -1235,7 +1234,7 @@ public class SectionIActivity extends Activity {
 
             //        spbli015
             if (!spbli015.getText().toString().isEmpty() && Integer.valueOf(spbli015.getText().toString()) < 0 ||
-                    Integer.valueOf(spbli015.getText().toString()) > 30) {
+                    !spbli015.getText().toString().isEmpty() && Integer.valueOf(spbli015.getText().toString()) > 30) {
                 Toast.makeText(this, "Range must be 0 - 30", Toast.LENGTH_SHORT).show();
                 spbli015.setError("Range must be 0 - 30");    // Set Error on last radio button
                 Log.i(TAG, "spbli015: Range must be 0 - 30");
@@ -1260,7 +1259,7 @@ public class SectionIActivity extends Activity {
 
             //        spbli015m
             if (!spbli015m.getText().toString().isEmpty() && Integer.valueOf(spbli015m.getText().toString()) < 0 ||
-                    Integer.valueOf(spbli015m.getText().toString()) > 11) {
+                    !spbli015m.getText().toString().isEmpty() && Integer.valueOf(spbli015m.getText().toString()) > 11) {
                 Toast.makeText(this, "Range must be 0 - 11", Toast.LENGTH_SHORT).show();
                 spbli015m.setError("Range must be 0 - 11");    // Set Error on last radio button
                 Log.i(TAG, "spbli015m: Range must be 0 - 11");
@@ -1269,6 +1268,7 @@ public class SectionIActivity extends Activity {
             } else {
                 spbli015m.setError(null);
             }
+
 
         }
 
