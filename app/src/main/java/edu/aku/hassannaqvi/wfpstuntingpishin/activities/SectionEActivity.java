@@ -321,7 +321,7 @@ public class SectionEActivity extends Activity {
         }*/
 
 
-        if (spble01b.getSelectedItemPosition() == 13) {
+        if (spble01b.getSelectedItemPosition() == arrlst2.size() - 1) {
 
             //        spble01b88x
             if (spble01b88x.getText().toString().isEmpty()) {
@@ -349,7 +349,7 @@ public class SectionEActivity extends Activity {
         }*/
 
 
-        if (spble01c.getSelectedItemPosition() == 13) {
+        if (spble01c.getSelectedItemPosition() == arrlst3.size() - 1) {
 
             //        spble01c88x
             if (spble01c88x.getText().toString().isEmpty()) {
