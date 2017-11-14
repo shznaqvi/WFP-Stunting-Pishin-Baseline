@@ -41,6 +41,8 @@ public class SectionIActivity extends Activity {
     RadioButton spbli01b;
     @BindView(R.id.spbli01c)
     RadioButton spbli01c;
+    @BindView(R.id.fldGrpspbli02)
+    LinearLayout fldGrpspbli02;
     @BindView(R.id.spbli02)
     EditText spbli02;
     @BindView(R.id.spbli03)
@@ -51,40 +53,38 @@ public class SectionIActivity extends Activity {
     RadioButton spbli03b;
     @BindView(R.id.spbli03c)
     RadioButton spbli03c;
-    @BindView(R.id.spbli04)
-    RadioGroup spbli04;
+    @BindView(R.id.fldGrpspbli04)
+    LinearLayout fldGrpspbli04;
     @BindView(R.id.spbli04a)
-    RadioButton spbli04a;
+    CheckBox spbli04a;
     @BindView(R.id.spbli04b)
-    RadioButton spbli04b;
+    CheckBox spbli04b;
     @BindView(R.id.spbli04c)
-    RadioButton spbli04c;
+    CheckBox spbli04c;
     @BindView(R.id.spbli04d)
-    RadioButton spbli04d;
+    CheckBox spbli04d;
     @BindView(R.id.spbli04e)
-    RadioButton spbli04e;
+    CheckBox spbli04e;
     @BindView(R.id.spbli04f)
-    RadioButton spbli04f;
+    CheckBox spbli04f;
     @BindView(R.id.spbli04g)
-    RadioButton spbli04g;
+    CheckBox spbli04g;
     @BindView(R.id.spbli04h)
-    RadioButton spbli04h;
+    CheckBox spbli04h;
     @BindView(R.id.spbli0488)
-    RadioButton spbli0488;
+    CheckBox spbli0488;
     @BindView(R.id.spbli0488x)
     EditText spbli0488x;
-    @BindView(R.id.spbli05)
-    RadioGroup spbli05;
     @BindView(R.id.spbli05a)
-    RadioButton spbli05a;
+    CheckBox spbli05a;
     @BindView(R.id.spbli05b)
-    RadioButton spbli05b;
+    CheckBox spbli05b;
     @BindView(R.id.spbli05c)
-    RadioButton spbli05c;
+    CheckBox spbli05c;
     @BindView(R.id.spbli05d)
-    RadioButton spbli05d;
+    CheckBox spbli05d;
     @BindView(R.id.spbli0588)
-    RadioButton spbli0588;
+    CheckBox spbli0588;
     @BindView(R.id.spbli0588x)
     EditText spbli0588x;
     @BindView(R.id.spbli06)
@@ -95,20 +95,18 @@ public class SectionIActivity extends Activity {
     EditText spbli07;
     @BindView(R.id.spbli07999)
     CheckBox spbli07999;
-    @BindView(R.id.spbli08)
-    RadioGroup spbli08;
     @BindView(R.id.spbli08a)
-    RadioButton spbli08a;
+    CheckBox spbli08a;
     @BindView(R.id.spbli08b)
-    RadioButton spbli08b;
+    CheckBox spbli08b;
     @BindView(R.id.spbli08c)
-    RadioButton spbli08c;
+    CheckBox spbli08c;
     @BindView(R.id.spbli08d)
-    RadioButton spbli08d;
+    CheckBox spbli08d;
     @BindView(R.id.spbli08e)
-    RadioButton spbli08e;
+    CheckBox spbli08e;
     @BindView(R.id.spbli0888)
-    RadioButton spbli0888;
+    CheckBox spbli0888;
     @BindView(R.id.spbli0888x)
     EditText spbli0888x;
     @BindView(R.id.spbli09)
@@ -119,6 +117,8 @@ public class SectionIActivity extends Activity {
     RadioButton spbli09b;
     @BindView(R.id.spbli0999)
     RadioButton spbli0999;
+    @BindView(R.id.fldGrpspbli010)
+    LinearLayout fldGrpspbli010;
     @BindView(R.id.spbli010)
     EditText spbli010;
     @BindView(R.id.spbli01099)
@@ -131,6 +131,8 @@ public class SectionIActivity extends Activity {
     RadioButton spbli011b;
     @BindView(R.id.spbli01199)
     RadioButton spbli01199;
+    @BindView(R.id.fldGrpspbli012)
+    LinearLayout fldGrpspbli012;
     @BindView(R.id.spbli012)
     EditText spbli012;
     @BindView(R.id.spbli01299)
@@ -145,12 +147,12 @@ public class SectionIActivity extends Activity {
     RadioButton spbli014b;
     @BindView(R.id.spbli01499)
     RadioButton spbli01499;
+    @BindView(R.id.fldGrpspbli015)
+    LinearLayout fldGrpspbli015;
     @BindView(R.id.spbli015)
     EditText spbli015;
-
     @BindView(R.id.spbli015m)
     EditText spbli015m;
-
     @BindView(R.id.spbli01597)
     CheckBox spbli01597;
     @BindView(R.id.spbli01599)
@@ -217,6 +219,8 @@ public class SectionIActivity extends Activity {
     RadioButton spbli020b;
     @BindView(R.id.spbli02099)
     RadioButton spbli02099;
+    @BindView(R.id.fldGrpspbli021)
+    LinearLayout fldGrpspbli021;
     @BindView(R.id.spbli021)
     RadioGroup spbli021;
     @BindView(R.id.spbli021a)
@@ -265,9 +269,8 @@ public class SectionIActivity extends Activity {
     RadioButton spbli024b;
     @BindView(R.id.spbli02499)
     RadioButton spbli02499;
-    /*@BindView(R.id.spbli025)
-    RadioGroup spbli025;*/
-
+    @BindView(R.id.fldGrpspbli025)
+    LinearLayout fldGrpspbli025;
     @BindView(R.id.spbli025a)
     CheckBox spbli025a;
     @BindView(R.id.spbli025b)
@@ -280,7 +283,6 @@ public class SectionIActivity extends Activity {
     CheckBox spbli02599;
     @BindView(R.id.spbli02588x)
     EditText spbli02588x;
-
     @BindView(R.id.spbli026)
     RadioGroup spbli026;
     @BindView(R.id.spbli026h)
@@ -334,27 +336,6 @@ public class SectionIActivity extends Activity {
     @BindView(R.id.fldGrpbtn)
     LinearLayout fldGrpbtn;
 
-    @BindView(R.id.fldGrpspbli02)
-    LinearLayout fldGrpspbli02;
-
-    @BindView(R.id.fldGrpspbli04)
-    LinearLayout fldGrpspbli04;
-
-    @BindView(R.id.fldGrpspbli010)
-    LinearLayout fldGrpspbli010;
-
-    @BindView(R.id.fldGrpspbli012)
-    LinearLayout fldGrpspbli012;
-
-    @BindView(R.id.fldGrpspbli015)
-    LinearLayout fldGrpspbli015;
-
-    @BindView(R.id.fldGrpspbli021)
-    LinearLayout fldGrpspbli021;
-
-    @BindView(R.id.fldGrpspbli025)
-    LinearLayout fldGrpspbli025;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -384,15 +365,36 @@ public class SectionIActivity extends Activity {
                 if (spbli03a.isChecked()) {
                     fldGrpspbli04.setVisibility(View.VISIBLE);
                 } else {
-                    spbli04.clearCheck();
-                    spbli05.clearCheck();
+                    spbli04a.setChecked(false);
+                    spbli04b.setChecked(false);
+                    spbli04c.setChecked(false);
+                    spbli04d.setChecked(false);
+                    spbli04e.setChecked(false);
+                    spbli04f.setChecked(false);
+                    spbli04g.setChecked(false);
+                    spbli04h.setChecked(false);
+                    spbli0488.setChecked(false);
+                    spbli0488x.setText(null);
+                    spbli05a.setChecked(false);
+                    spbli05b.setChecked(false);
+                    spbli05c.setChecked(false);
+                    spbli05d.setChecked(false);
+                    spbli0588.setChecked(false);
+                    spbli0588x.setText(null);
                     spbli06.setText(null);
                     spbli06999.setChecked(false);
 
                     spbli07.setText(null);
                     spbli07999.setChecked(false);
 
-                    spbli08.clearCheck();
+                    spbli08a.setChecked(false);
+                    spbli08b.setChecked(false);
+                    spbli08c.setChecked(false);
+                    spbli08d.setChecked(false);
+                    spbli08e.setChecked(false);
+
+                    spbli0888.setChecked(false);
+                    spbli0888x.setText(null);
 
                     fldGrpspbli04.setVisibility(View.GONE);
                 }
@@ -962,7 +964,8 @@ public class SectionIActivity extends Activity {
 
 
             //        spbli04
-            if (spbli04.getCheckedRadioButtonId() == -1) {
+            if (!(spbli04a.isChecked() || spbli04b.isChecked() || spbli04c.isChecked() || spbli04d.isChecked()
+                    || spbli04e.isChecked() || spbli04f.isChecked() || spbli04g.isChecked() || spbli04h.isChecked() || spbli0488.isChecked())) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.spbli04), Toast.LENGTH_SHORT).show();
                 spbli04a.setError("This data is Required!");    // Set Error on last radio button
                 Log.i(TAG, "spbli04a: This data is Required!");
@@ -992,7 +995,8 @@ public class SectionIActivity extends Activity {
 
 
             //        spbli05
-            if (spbli05.getCheckedRadioButtonId() == -1) {
+            if (!(spbli05a.isChecked() || spbli05b.isChecked() || spbli05c.isChecked() || spbli05d.isChecked()
+                    || spbli0588.isChecked())) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.spbli05), Toast.LENGTH_SHORT).show();
                 spbli05a.setError("This data is Required!");    // Set Error on last radio button
                 Log.i(TAG, "spbli04a: This data is Required!");
@@ -1070,7 +1074,8 @@ public class SectionIActivity extends Activity {
 
 
             //        spbli08
-            if (spbli08.getCheckedRadioButtonId() == -1) {
+            if (!(spbli08a.isChecked() || spbli08b.isChecked() || spbli08c.isChecked() || spbli08d.isChecked()
+                    || spbli08e.isChecked() || spbli0888.isChecked())) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.spbli08), Toast.LENGTH_SHORT).show();
                 spbli08a.setError("This data is Required!");    // Set Error on last radio button
                 Log.i(TAG, "spbli08a: This data is Required!");
@@ -1693,35 +1698,35 @@ public class SectionIActivity extends Activity {
                 : spbli03c.isChecked() ? "3"
                 : "0");
 
-        sHI.put("spbli04", spbli04a.isChecked() ? "1" : spbli04b.isChecked() ? "2"
-                : spbli04c.isChecked() ? "3"
-                : spbli04d.isChecked() ? "4"
-                : spbli04e.isChecked() ? "5"
-                : spbli04f.isChecked() ? "6"
-                : spbli04g.isChecked() ? "7"
-                : spbli04h.isChecked() ? "8"
-                : spbli0488.isChecked() ? "88"
-                : "0");
+        sHI.put("spbli04a", spbli04a.isChecked() ? "1" : "0");
+        sHI.put("spbli04b", spbli04b.isChecked() ? "2" : "0");
+        sHI.put("spbli04c", spbli04c.isChecked() ? "3" : "0");
+        sHI.put("spbli04d", spbli04d.isChecked() ? "4" : "0");
+        sHI.put("spbli04e", spbli04e.isChecked() ? "5" : "0");
+        sHI.put("spbli04f", spbli04f.isChecked() ? "6" : "0");
+        sHI.put("spbli04g", spbli04g.isChecked() ? "7" : "0");
+        sHI.put("spbli04h", spbli04h.isChecked() ? "8" : "0");
+        sHI.put("spbli0488", spbli0488.isChecked() ? "88" : "0");
 
         sHI.put("spbli0488x", spbli0488x.getText().toString());
 
-        sHI.put("spbli05", spbli05a.isChecked() ? "1" : spbli05b.isChecked() ? "2"
-                : spbli05c.isChecked() ? "3"
-                : spbli05d.isChecked() ? "4"
-                : spbli0588.isChecked() ? "88"
-                : "0");
+        sHI.put("spbli05a", spbli05a.isChecked() ? "1" : "0");
+        sHI.put("spbli05b", spbli05b.isChecked() ? "2" : "0");
+        sHI.put("spbli05c", spbli05c.isChecked() ? "3" : "0");
+        sHI.put("spbli05d", spbli05d.isChecked() ? "4" : "0");
+        sHI.put("spbli0588", spbli0588.isChecked() ? "88" : "0");
 
         sHI.put("spbli0588x", spbli0588x.getText().toString());
 
         sHI.put("spbli06", spbli06.getText().toString());
         sHI.put("spbli07", spbli07.getText().toString());
 
-        sHI.put("spbli08", spbli08a.isChecked() ? "1" : spbli08b.isChecked() ? "2"
-                : spbli08c.isChecked() ? "3"
-                : spbli08d.isChecked() ? "4"
-                : spbli08e.isChecked() ? "5"
-                : spbli0888.isChecked() ? "88"
-                : "0");
+        sHI.put("spbli08a", spbli08a.isChecked() ? "1" : "0");
+        sHI.put("spbli08b", spbli08b.isChecked() ? "2" : "0");
+        sHI.put("spbli08c", spbli08c.isChecked() ? "3" : "0");
+        sHI.put("spbli08d", spbli08d.isChecked() ? "4" : "0");
+        sHI.put("spbli08e", spbli08e.isChecked() ? "5" : "0");
+        sHI.put("spbli0888", spbli0888.isChecked() ? "88" : "0");
 
         sHI.put("spbli0888x", spbli0888x.getText().toString());
 
