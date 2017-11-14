@@ -512,54 +512,54 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="@android:color/white" />
 
-        <RadioGroup
+        <!--<RadioGroup
             android:id="@+id/spblo13"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content">-->
 
-            <RadioButton
+        <CheckBox
                 android:id="@+id/spblo13a"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
                 android:text="@string/spblo13a" />
 
-            <RadioButton
+        <CheckBox
                 android:id="@+id/spblo13b"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
                 android:text="@string/spblo13b" />
 
-            <RadioButton
+        <CheckBox
                 android:id="@+id/spblo13c"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
                 android:text="@string/spblo13c" />
 
-            <RadioButton
+        <CheckBox
                 android:id="@+id/spblo13d"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
                 android:text="@string/spblo13d" />
 
-            <RadioButton
+        <CheckBox
                 android:id="@+id/spblo1399"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
                 android:text="@string/dkn" />
 
-            <RadioButton
+        <CheckBox
                 android:id="@+id/spblo1388"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
                 android:text="@string/other" />
 
-        </RadioGroup>
+        <!--</RadioGroup>-->
 
         <EditText
             android:id="@+id/spblo1388x"

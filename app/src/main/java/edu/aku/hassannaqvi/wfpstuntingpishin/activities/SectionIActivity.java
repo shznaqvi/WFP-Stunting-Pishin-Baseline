@@ -541,6 +541,7 @@ public class SectionIActivity extends Activity {
                 } else {
 
                     spbli015.setText(null);
+                    spbli015m.setText(null);
                     spbli01597.setChecked(false);
                     spbli01599.setChecked(false);
 
@@ -828,6 +829,25 @@ public class SectionIActivity extends Activity {
                 } else {
                     spbli02888x.setText(null);
                     spbli02888x.setVisibility(View.GONE);
+                }
+            }
+        });
+
+        spbli018a.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
+        {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (b) {
+                    spbli019b.setEnabled(false);
+                    spbli019b.setChecked(false);
+                    spbli019c.setEnabled(false);
+                    spbli019c.setChecked(false);
+                    spbli019d.setEnabled(false);
+                    spbli019d.setChecked(false);
+                } else {
+                    spbli019b.setEnabled(true);
+                    spbli019c.setEnabled(true);
+                    spbli019d.setEnabled(true);
                 }
             }
         });
@@ -1196,10 +1216,10 @@ public class SectionIActivity extends Activity {
 
 
             //        spbli013
-            if (Integer.valueOf(spbli013.getText().toString()) > 10) {
+            if (Integer.valueOf(spbli013.getText().toString()) < 0 || Integer.valueOf(spbli013.getText().toString()) > 10) {
                 Toast.makeText(this, "Range cannot be greater than 10", Toast.LENGTH_SHORT).show();
-                spbli013.setError("Range cannot be greater than 10");    // Set Error on last radio button
-                Log.i(TAG, "spbli013: Range cannot be greater than 10");
+                spbli013.setError("Range is 1 - 10");    // Set Error on last radio button
+                Log.i(TAG, "spbli013: Range is 1 - 10");
                 spbli013.requestFocus();
                 return false;
             } else {
@@ -1750,7 +1770,7 @@ public class SectionIActivity extends Activity {
                 : spbli01499.isChecked() ? "99"
                 : "0");
 
-        sHI.put("spbli015", spbli015.getText().toString());
+        sHI.put("spbli015d", spbli015.getText().toString());
         sHI.put("spbli015m", spbli015m.getText().toString());
 
 

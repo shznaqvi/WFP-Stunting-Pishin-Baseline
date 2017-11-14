@@ -1015,7 +1015,8 @@
                 android:digits="0123456789."
                 android:hint="@string/kg"
                 android:inputType="numberDecimal"
-                android:visibility="gone" />
+                android:maxLength="4"
+                android:visibility="gone"/>
 
             <EditText
                 android:id="@+id/spbli021a2"
@@ -1025,7 +1026,8 @@
                 android:digits="0123456789."
                 android:hint="@string/kg"
                 android:inputType="numberDecimal"
-                android:visibility="gone" />
+                android:maxLength="4"
+                android:visibility="gone"/>
 
         </LinearLayout>
 

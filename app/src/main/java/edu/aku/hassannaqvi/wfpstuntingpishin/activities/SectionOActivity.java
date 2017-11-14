@@ -33,10 +33,10 @@ public class SectionOActivity extends Activity {
     EditText spblo01;
     @BindView(R.id.spblo02)
     RadioGroup spblo02;
-    @BindView(R.id.spblo02b)
-    RadioButton spblo02b;
     @BindView(R.id.spblo02a)
     RadioButton spblo02a;
+    @BindView(R.id.spblo02b)
+    RadioButton spblo02b;
     @BindView(R.id.fldGrpspblo02)
     LinearLayout fldGrpspblo02;
     @BindView(R.id.spblo03a)
@@ -135,20 +135,18 @@ public class SectionOActivity extends Activity {
     LinearLayout fldGrpspblo11;
     @BindView(R.id.spblo12a)
     EditText spblo12a;
-    @BindView(R.id.spblo13)
-    RadioGroup spblo13;
     @BindView(R.id.spblo13a)
-    RadioButton spblo13a;
+    CheckBox spblo13a;
     @BindView(R.id.spblo13b)
-    RadioButton spblo13b;
+    CheckBox spblo13b;
     @BindView(R.id.spblo13c)
-    RadioButton spblo13c;
+    CheckBox spblo13c;
     @BindView(R.id.spblo13d)
-    RadioButton spblo13d;
+    CheckBox spblo13d;
     @BindView(R.id.spblo1399)
-    RadioButton spblo1399;
+    CheckBox spblo1399;
     @BindView(R.id.spblo1388)
-    RadioButton spblo1388;
+    CheckBox spblo1388;
     @BindView(R.id.spblo1388x)
     EditText spblo1388x;
     @BindView(R.id.spblo14)
@@ -201,6 +199,7 @@ public class SectionOActivity extends Activity {
     EditText spblo1888x;
     @BindView(R.id.fldGrpbtn)
     LinearLayout fldGrpbtn;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -463,8 +462,8 @@ public class SectionOActivity extends Activity {
                 if (b) {
                     spblo1888x.setVisibility(View.VISIBLE);
                 } else {
-                    spblo1788x.setVisibility(View.GONE);
-                    spblo1788x.setText(null);
+                    spblo1888x.setVisibility(View.GONE);
+                    spblo1888x.setText(null);
                 }
             }
         });
@@ -564,7 +563,12 @@ public class SectionOActivity extends Activity {
         so.put("spblo1088x", spblo1088x.getText().toString());
         so.put("spblo11", spblo11a.isChecked() ? "1" : spblo11b.isChecked() ? "2" : spblo1199.isChecked() ? "99" : "0");
         so.put("spblo12a", spblo12a.getText().toString());
-        so.put("spblo13", spblo13a.isChecked() ? "1" : spblo13b.isChecked() ? "2" : spblo13c.isChecked() ? "3" : spblo13d.isChecked() ? "4" : spblo1399.isChecked() ? "99" : spblo1388.isChecked() ? "88" : "0");
+        so.put("spblo13a", spblo13a.isChecked() ? "1" : "0");
+        so.put("spblo13b", spblo13b.isChecked() ? "2" : "0");
+        so.put("spblo13c", spblo13c.isChecked() ? "3" : "0");
+        so.put("spblo13d", spblo13d.isChecked() ? "4" : "0");
+        so.put("spblo1399", spblo1399.isChecked() ? "99" : "0");
+        so.put("spblo1388", spblo1388.isChecked() ? "88" : "0");
         so.put("spblo1388x", spblo1388x.getText().toString());
         so.put("spblo14", spblo14a.isChecked() ? "1" : spblo14b.isChecked() ? "2" : spblo1499.isChecked() ? "99" : "0");
         so.put("spblo15", spblo15a.isChecked() ? "1" : spblo1588.isChecked() ? "88" : "0");
@@ -761,11 +765,11 @@ public class SectionOActivity extends Activity {
                 spblo09a.setError(null);
             }
 
-            if ((Integer.parseInt(spblo09a.getText().toString().isEmpty() ? "0" : spblo09a.getText().toString()) == 0)) {
+            if (Integer.valueOf(spblo09a.getText().toString()) > 29) {
                 Toast.makeText(this, "ERROR: " + getString(R.string.spblo09a), Toast.LENGTH_LONG).show();
-                spblo09a.setError("Days cannnot be zero");
+                spblo09a.setError("Range is 0 to 29");
                 spblo09a.requestFocus();
-                Log.i(TAG, "spblo09a : days cannot not be zero");
+                Log.i(TAG, "spblo09a : Range is 0 to 29");
                 return false;
             } else {
                 spblo09a.setError(null);
@@ -781,14 +785,16 @@ public class SectionOActivity extends Activity {
                 spblo09b.setError(null);
             }
 
-            if ((Integer.parseInt(spblo09b.getText().toString().isEmpty() ? "0" : spblo09b.getText().toString()) == 0)) {
-                Toast.makeText(this, "ERROR: " + getString(R.string.spblo09b), Toast.LENGTH_LONG).show();
-                spblo09b.setError("months cannnot be zero");
-                spblo09b.requestFocus();
-                Log.i(TAG, "spblo09b : months cannot not be zero");
-                return false;
-            } else {
-                spblo09b.setError(null);
+            if (Integer.valueOf(spblo06a.getText().toString()) < 1) {
+                if (Integer.valueOf(spblo06b.getText().toString()) < 1 || Integer.valueOf(spblo06b.getText().toString()) > 12) {
+                    Toast.makeText(this, "ERROR: " + getString(R.string.spblo09b), Toast.LENGTH_LONG).show();
+                    spblo09b.setError("Range is 0 to 12 months");
+                    spblo09b.requestFocus();
+                    Log.i(TAG, "spblo09b : Range is 0 to 12 months");
+                    return false;
+                } else {
+                    spblo09b.setError(null);
+                }
             }
 
             if (!(spblo10a.isChecked() || spblo10b.isChecked() || spblo10c.isChecked() || spblo10d.isChecked()
@@ -841,7 +847,8 @@ public class SectionOActivity extends Activity {
             }
         }
 
-        if (spblo13.getCheckedRadioButtonId() == -1) {
+        if (!(spblo13a.isChecked() || spblo13b.isChecked() || spblo13c.isChecked()
+                || spblo13d.isChecked() || spblo1399.isChecked() || spblo1388.isChecked())) {
             Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblo13), Toast.LENGTH_SHORT).show();
             spblo1388.setError("This Data is Required");
             spblo1388.setFocusableInTouchMode(true);
