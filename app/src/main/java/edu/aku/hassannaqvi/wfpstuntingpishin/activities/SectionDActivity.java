@@ -123,6 +123,7 @@ public class SectionDActivity extends Activity {
                     spbld03b.setChecked(false);
                     spbld03c.setChecked(false);
                     spbld03d.setChecked(false);
+                    spbld0366.setChecked(false);
 
                     fldGrpspbld02.setVisibility(View.GONE);
                 }
@@ -130,41 +131,6 @@ public class SectionDActivity extends Activity {
         });
 
 
-        spbld03a.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if (spbld03a.isChecked()) {
-                    spbld0366.setChecked(false);
-                }
-            }
-        });
-
-        spbld03b.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if (spbld03b.isChecked()) {
-                    spbld0366.setChecked(false);
-                }
-            }
-        });
-
-        spbld03c.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if (spbld03c.isChecked()) {
-                    spbld0366.setChecked(false);
-                }
-            }
-        });
-
-        spbld03d.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if (spbld03d.isChecked()) {
-                    spbld0366.setChecked(false);
-                }
-            }
-        });
 
 
         spbld0366.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -207,41 +173,6 @@ public class SectionDActivity extends Activity {
             }
         });
 
-        spbld05a.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if (spbld05a.isChecked()) {
-                    spbld0566.setChecked(false);
-                }
-            }
-        });
-
-        spbld05b.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if (spbld05b.isChecked()) {
-                    spbld0566.setChecked(false);
-                }
-            }
-        });
-
-        spbld05c.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if (spbld05c.isChecked()) {
-                    spbld0566.setChecked(false);
-                }
-            }
-        });
-
-        spbld05d.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if (spbld05d.isChecked()) {
-                    spbld0566.setChecked(false);
-                }
-            }
-        });
 
         spbld0566.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override

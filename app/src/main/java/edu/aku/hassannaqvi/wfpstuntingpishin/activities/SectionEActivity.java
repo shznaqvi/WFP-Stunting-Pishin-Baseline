@@ -280,7 +280,8 @@ public class SectionEActivity extends Activity {
     private boolean ValidateForm() {
 
         //        spble01a
-        if (spble01a.getSelectedItem().toString() == "....") {
+        if (spble01a.getSelectedItem().toString() == "...."
+                && spble01b.getSelectedItem().toString() == "...." && spble01c.getSelectedItem().toString() == "....") {
             Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spble01), Toast.LENGTH_SHORT).show();
             ((TextView) spble01a.getSelectedView()).setText("This Data is Required");
             ((TextView) spble01a.getSelectedView()).setTextColor(Color.RED);
@@ -308,7 +309,7 @@ public class SectionEActivity extends Activity {
         }
 
         //        spble01b
-        if (spble01b.getSelectedItem() == "....") {
+        /*if (spble01b.getSelectedItem() == "....") {
             Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spble01b), Toast.LENGTH_SHORT).show();
             ((TextView) spble01b.getSelectedView()).setText("This Data is Required");
             ((TextView) spble01b.getSelectedView()).setTextColor(Color.RED);
@@ -317,7 +318,7 @@ public class SectionEActivity extends Activity {
             return false;
         } else {
             ((TextView) spble01b.getSelectedView()).setError(null);
-        }
+        }*/
 
 
         if (spble01b.getSelectedItemPosition() == 13) {
@@ -336,7 +337,7 @@ public class SectionEActivity extends Activity {
         }
 
         //        spble01c
-        if (spble01c.getSelectedItem() == "....") {
+        /*if (spble01c.getSelectedItem() == "....") {
             Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spble01c), Toast.LENGTH_SHORT).show();
             ((TextView) spble01c.getSelectedView()).setText("This Data is Required");
             ((TextView) spble01c.getSelectedView()).setTextColor(Color.RED);
@@ -345,7 +346,7 @@ public class SectionEActivity extends Activity {
             return false;
         } else {
             ((TextView) spble01c.getSelectedView()).setError(null);
-        }
+        }*/
 
 
         if (spble01c.getSelectedItemPosition() == 13) {

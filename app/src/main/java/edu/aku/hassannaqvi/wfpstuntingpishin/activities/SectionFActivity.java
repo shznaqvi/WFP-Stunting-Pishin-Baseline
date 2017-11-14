@@ -106,9 +106,6 @@ public class SectionFActivity extends Activity {
             }
         }
 
-        Intent secNext = new Intent(this, SectionGActivity.class);
-        secNext.putExtra("check", false);
-        startActivity(secNext);
 
     }
 
@@ -217,6 +214,216 @@ public class SectionFActivity extends Activity {
             spblf01f.setError(null);
         }
 
+        if (spblf01g.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblf01g), Toast.LENGTH_SHORT).show();
+            spblf01g.setError("This data is Required!");    // Set Error on last radio button
+            Log.i(TAG, "spblf01g: This data is Required!");
+            spblf01g.requestFocus();
+            return false;
+        } else {
+            spblf01g.setError(null);
+        }
+
+        if (spblf01h.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblf01h), Toast.LENGTH_SHORT).show();
+            spblf01h.setError("This data is Required!");    // Set Error on last radio button
+            Log.i(TAG, "spblf01h: This data is Required!");
+            spblf01h.requestFocus();
+            return false;
+        } else {
+            spblf01h.setError(null);
+        }
+
+
+        if (spblf01i.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblf01i), Toast.LENGTH_SHORT).show();
+            spblf01i.setError("This data is Required!");    // Set Error on last radio button
+            Log.i(TAG, "spblf01i: This data is Required!");
+            spblf01i.requestFocus();
+            return false;
+        } else {
+            spblf01i.setError(null);
+        }
+
+        if (spblf01j.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblf01j), Toast.LENGTH_SHORT).show();
+            spblf01j.setError("This data is Required!");    // Set Error on last radio button
+            Log.i(TAG, "spblf01j: This data is Required!");
+            spblf01j.requestFocus();
+            return false;
+        } else {
+            spblf01j.setError(null);
+        }
+
+
+        if (spblf01k.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblf01k), Toast.LENGTH_SHORT).show();
+            spblf01k.setError("This data is Required!");    // Set Error on last radio button
+            Log.i(TAG, "spblf01k: This data is Required!");
+            spblf01k.requestFocus();
+            return false;
+        } else {
+            spblf01k.setError(null);
+        }
+
+
+        if (spblf01l.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblf01l), Toast.LENGTH_SHORT).show();
+            spblf01l.setError("This data is Required!");    // Set Error on last radio button
+            Log.i(TAG, "spblf01l: This data is Required!");
+            spblf01l.requestFocus();
+            return false;
+        } else {
+            spblf01l.setError(null);
+        }
+
+        if (spblf01m.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblf01m), Toast.LENGTH_SHORT).show();
+            spblf01m.setError("This data is Required!");    // Set Error on last radio button
+            Log.i(TAG, "spblf01m: This data is Required!");
+            spblf01m.requestFocus();
+            return false;
+        } else {
+            spblf01m.setError(null);
+        }
+
+        if (spblf02a.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblf02a), Toast.LENGTH_SHORT).show();
+            spblf02a.setError("This data is Required!");    // Set Error on last radio button
+            Log.i(TAG, "spblf02a: This data is Required!");
+            spblf02a.requestFocus();
+            return false;
+        } else {
+            spblf02a.setError(null);
+        }
+
+
+        if (spblf02b.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblf02b), Toast.LENGTH_SHORT).show();
+            spblf02b.setError("This data is Required!");    // Set Error on last radio button
+            Log.i(TAG, "spblf02b: This data is Required!");
+            spblf02b.requestFocus();
+            return false;
+        } else {
+            spblf02b.setError(null);
+        }
+
+
+        if (spblf02c.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblf02c), Toast.LENGTH_SHORT).show();
+            spblf02c.setError("This data is Required!");    // Set Error on last radio button
+            Log.i(TAG, "spblf02c: This data is Required!");
+            spblf02c.requestFocus();
+            return false;
+        } else {
+            spblf02c.setError(null);
+        }
+
+        if (spblf02d.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblf02d), Toast.LENGTH_SHORT).show();
+            spblf02d.setError("This data is Required!");    // Set Error on last radio button
+            Log.i(TAG, "spblf02d: This data is Required!");
+            spblf02d.requestFocus();
+            return false;
+        } else {
+            spblf02d.setError(null);
+        }
+
+        if (spblf02e.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblf02e), Toast.LENGTH_SHORT).show();
+            spblf02e.setError("This data is Required!");    // Set Error on last radio button
+            Log.i(TAG, "spblf02e: This data is Required!");
+            spblf02e.requestFocus();
+            return false;
+        } else {
+            spblf02e.setError(null);
+        }
+
+        if (spblf02f.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblf02f), Toast.LENGTH_SHORT).show();
+            spblf02f.setError("This data is Required!");    // Set Error on last radio button
+            Log.i(TAG, "spblf02f: This data is Required!");
+            spblf02f.requestFocus();
+            return false;
+        } else {
+            spblf02f.setError(null);
+        }
+
+        if (spblf02g.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblf02g), Toast.LENGTH_SHORT).show();
+            spblf02g.setError("This data is Required!");    // Set Error on last radio button
+            Log.i(TAG, "spblf02g: This data is Required!");
+            spblf02g.requestFocus();
+            return false;
+        } else {
+            spblf02g.setError(null);
+        }
+
+        if (spblf02h.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblf02h), Toast.LENGTH_SHORT).show();
+            spblf02h.setError("This data is Required!");    // Set Error on last radio button
+            Log.i(TAG, "spblf02h: This data is Required!");
+            spblf02h.requestFocus();
+            return false;
+        } else {
+            spblf02h.setError(null);
+        }
+
+        if (spblf02i.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblf02i), Toast.LENGTH_SHORT).show();
+            spblf02i.setError("This data is Required!");    // Set Error on last radio button
+            Log.i(TAG, "spblf02i: This data is Required!");
+            spblf02i.requestFocus();
+            return false;
+        } else {
+            spblf02i.setError(null);
+        }
+
+        if (spblf02j.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblf02j), Toast.LENGTH_SHORT).show();
+            spblf02j.setError("This data is Required!");    // Set Error on last radio button
+            Log.i(TAG, "spblf02j: This data is Required!");
+            spblf02j.requestFocus();
+            return false;
+        } else {
+            spblf02j.setError(null);
+        }
+
+
+        if (spblf02k.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblf02k), Toast.LENGTH_SHORT).show();
+            spblf02k.setError("This data is Required!");    // Set Error on last radio button
+            Log.i(TAG, "spblf02k: This data is Required!");
+            spblf02k.requestFocus();
+            return false;
+        } else {
+            spblf02k.setError(null);
+        }
+
+
+        if (spblf02l.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblf02l), Toast.LENGTH_SHORT).show();
+            spblf02l.setError("This data is Required!");    // Set Error on last radio button
+            Log.i(TAG, "spblf02l: This data is Required!");
+            spblf02l.requestFocus();
+            return false;
+        } else {
+            spblf02l.setError(null);
+        }
+
+        if (spblf03.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblf03), Toast.LENGTH_SHORT).show();
+            spblf03.setError("This data is Required!");    // Set Error on last radio button
+            Log.i(TAG, "spblf03: This data is Required!");
+            spblf03.requestFocus();
+            return false;
+        } else {
+            spblf03.setError(null);
+        }
+
+
+
+
 
         return true;
     }
@@ -253,7 +460,7 @@ public class SectionFActivity extends Activity {
         sHE.put("spblf02i", spblf02i.getText().toString());
         sHE.put("spblf02j", spblf02j.getText().toString());
         sHE.put("spblf02k", spblf02k.getText().toString());
-
+        sHE.put("spblf02l", spblf02l.getText().toString());
 
         sHE.put("spblf03", spblf03.getText().toString());
 
