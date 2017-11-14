@@ -21,6 +21,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -445,6 +446,7 @@ public class SectionGActivity extends Activity {
             for (SourceNGOContract aNGO : allNGOs) {
                 getAllNGOsMap.put(aNGO.getSourceName(), aNGO.getSourceId());
                 NGOs.add(aNGO.getSourceName());
+                Collections.sort(NGOs);
             }
 
             /*String[] ngo = new String[]{"NGO 1", "NGOs 2", "NGO 3", "NGO 4", "NGO 5", "NGO 6", "NGO 7"};
