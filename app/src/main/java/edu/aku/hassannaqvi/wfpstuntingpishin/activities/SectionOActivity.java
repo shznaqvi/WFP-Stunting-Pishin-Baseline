@@ -597,7 +597,7 @@ public class SectionOActivity extends Activity {
             spblo01.setError(null);
         }
 
-        if ((Integer.parseInt(spblo01.getText().toString().isEmpty() ? "0" : spblo01.getText().toString()) == 0)) {
+        /*if ((Integer.parseInt(spblo01.getText().toString().isEmpty() ? "0" : spblo01.getText().toString()) == 0)) {
             Toast.makeText(this, "ERROR: " + getString(R.string.spblo01) + getString(R.string.spblo01a), Toast.LENGTH_LONG).show();
             spblo01.setError("Days cannnot be zero");
             spblo01.requestFocus();
@@ -605,7 +605,7 @@ public class SectionOActivity extends Activity {
             return false;
         } else {
             spblo01.setError(null);
-        }
+        }*/
 
         if (spblo02.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblo02), Toast.LENGTH_SHORT).show();

@@ -327,7 +327,7 @@
                 android:digits="0123456789"
                 android:hint="@string/spbli06"
                 android:inputType="number"
-                android:maxLength="2" />
+                android:maxLength="1" />
 
             <CheckBox
                 android:id="@+id/spbli06999"
