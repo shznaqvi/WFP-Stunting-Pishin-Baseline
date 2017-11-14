@@ -144,7 +144,7 @@ public class SectionBActivity extends Activity {
         mothersMap.put("N/A", "0");
 
         for (FamilyMembers mem : MainApp.familyMembersList) {
-            if (mem.getType().equals("mw") || mem.getType().equals("w")) {
+            if (mem.getType().equals("mw")) {
                 mothersList.add(mem.getMemberName());
                 mothersMap.put(mem.getMemberName(), mem.getSerial());
             }
@@ -155,6 +155,20 @@ public class SectionBActivity extends Activity {
         spblb04y.addTextChangedListener(new CustomTextWatcher(spblb04y));
         spblb04m.addTextChangedListener(new CustomTextWatcher(spblb04m));
         spblb04d.addTextChangedListener(new CustomTextWatcher(spblb04d));
+
+//        Skip
+
+        spblb05.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                if (i == R.id.spblb0566){
+                    spblb06b.setChecked(false);
+                    spblb06b.setEnabled(false);
+                }else {
+                    spblb06b.setEnabled(true);
+                }
+            }
+        });
 
     }
 
@@ -429,8 +443,6 @@ public class SectionBActivity extends Activity {
         }
 
 
-
-
         if (spblb04d.getText().toString().isEmpty()) {
             Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblb04d), Toast.LENGTH_SHORT).show();
             spblb04d.setError("This data is required");
@@ -450,7 +462,6 @@ public class SectionBActivity extends Activity {
         } else {
             spblb04d.setError(null);
         }
-
 
 
         if (Integer.valueOf(spblb04y.getText().toString()) > 5) {

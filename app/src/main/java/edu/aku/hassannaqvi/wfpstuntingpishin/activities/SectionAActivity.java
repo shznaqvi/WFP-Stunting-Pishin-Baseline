@@ -224,6 +224,20 @@ public class SectionAActivity extends Activity {
 
         populateSpinner(this);
 
+        //        Skip
+
+        respedu.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                if (i == R.id.respedu66){
+                    respoccb.setChecked(false);
+                    respoccb.setEnabled(false);
+                }else {
+                    respoccb.setEnabled(true);
+                }
+            }
+        });
+
     }
 
 
@@ -540,6 +554,17 @@ public class SectionAActivity extends Activity {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.spbla04), Toast.LENGTH_SHORT).show();
             spbla04.setError("This data is Required!");
             Log.i(TAG, "spbla04: This data is Required!");
+
+            spbla04.requestFocus();
+            return false;
+        } else {
+            spbla04.setError(null);
+        }
+
+        if (Integer.valueOf(spbla04.getText().toString()) < 1 || Integer.valueOf(spbla04.getText().toString()) > 300) {
+            Toast.makeText(this, "ERROR(invalid): Range 1 - 300", Toast.LENGTH_SHORT).show();
+            spbla04.setError("This data req Range 1 - 300!");
+            Log.i(TAG, "spbla04: This data req Range 1 - 300!");
 
             spbla04.requestFocus();
             return false;
