@@ -1033,10 +1033,10 @@ public class SectionIActivity extends Activity {
             }
 
 
-            if (!spbli06999.isChecked() && Integer.valueOf(spbli06.getText().toString()) < 0
-                    || !spbli06999.isChecked() && Integer.valueOf(spbli06.getText().toString()) > 12) {
-                Toast.makeText(this, "Range must be 0 - 12", Toast.LENGTH_SHORT).show();
-                spbli06.setError("Range must be 0 - 12");    // Set Error on last radio button
+            if (!spbli06999.isChecked() &&
+                    Integer.valueOf(spbli06.getText().toString()) < 1 || Integer.valueOf(spbli06.getText().toString()) > 9) {
+                Toast.makeText(this, "Range must be 1 - 9", Toast.LENGTH_SHORT).show();
+                spbli06.setError("Range must be 1 - 9");    // Set Error on last radio button
                 Log.i(TAG, "spbli06: Range must be 0 - 12");
                 spbli06.requestFocus();
                 return false;
@@ -1535,7 +1535,6 @@ public class SectionIActivity extends Activity {
             spbli026h.setError(null);
         }
 
-
         if (spbli026h.isChecked()) {
 
             //        spbli026hr
@@ -1551,11 +1550,10 @@ public class SectionIActivity extends Activity {
 
 
             //        spbli026hr
-            if (spbli026hr.getText().toString().isEmpty() && Integer.valueOf(spbli026hr.getText().toString()) < 0 ||
-                    Integer.valueOf(spbli026hr.getText().toString()) > 12) {
-                Toast.makeText(this, "Range must be 0 - 12", Toast.LENGTH_SHORT).show();
-                spbli026hr.setError("Range must be 0 - 12");    // Set Error on last radio button
-                Log.i(TAG, "spbli026hr: Range must be 0 - 12");
+            if (Integer.valueOf(spbli026hr.getText().toString()) > 23) {
+                Toast.makeText(this, "Range must be 0 - 23", Toast.LENGTH_SHORT).show();
+                spbli026hr.setError("Range must be 0 - 23");    // Set Error on last radio button
+                Log.i(TAG, "spbli026hr: Range must be 0 - 23");
                 spbli026hr.requestFocus();
                 return false;
             } else {
@@ -1578,11 +1576,10 @@ public class SectionIActivity extends Activity {
 
 
             //        spbli026day
-            if (spbli026day.getText().toString().isEmpty() && Integer.valueOf(spbli026day.getText().toString()) < 0
-                    || Integer.valueOf(spbli026day.getText().toString()) > 30) {
-                Toast.makeText(this, "Range must be 0 - 30", Toast.LENGTH_SHORT).show();
-                spbli026day.setError("Range must be 0 - 30");    // Set Error on last radio button
-                Log.i(TAG, "spbli026day: Range must be 0 - 30");
+            if (Integer.valueOf(spbli026day.getText().toString()) < 1 || Integer.valueOf(spbli026day.getText().toString()) > 6) {
+                Toast.makeText(this, "Range must be 1 - 6", Toast.LENGTH_SHORT).show();
+                spbli026day.setError("Range must be 1 - 6");    // Set Error on last radio button
+                Log.i(TAG, "spbli026day: Range must be 1 - 6");
                 spbli026day.requestFocus();
                 return false;
             } else {
@@ -1603,22 +1600,17 @@ public class SectionIActivity extends Activity {
                 spbli026wk.setError(null);
             }
 
-
             //        spbli026wk
-            if (spbli026wk.getText().toString().isEmpty() && Integer.valueOf(spbli026wk.getText().toString()) < 0
-                    || Integer.valueOf(spbli026wk.getText().toString()) > 12) {
-                Toast.makeText(this, "Range must be 0 - 12", Toast.LENGTH_SHORT).show();
-                spbli026wk.setError("Range must be 0 - 12");    // Set Error on last radio button
-                Log.i(TAG, "spbli026wk: Range must be 0 - 12");
+            if (spbli026wk.getText().toString().isEmpty() && Integer.valueOf(spbli026wk.getText().toString()) < 1) {
+                Toast.makeText(this, "Range must be greater then 0", Toast.LENGTH_SHORT).show();
+                spbli026wk.setError("Range must be greater then 0");    // Set Error on last radio button
+                Log.i(TAG, "spbli026wk: Range must be greater then 0");
                 spbli026wk.requestFocus();
                 return false;
             } else {
                 spbli026wk.setError(null);
             }
-
-
         }
-
 
         //        spbli027
         if (spbli027.getCheckedRadioButtonId() == -1) {

@@ -279,6 +279,16 @@ public class SectionJActivity extends Activity {
             }
         }
 
+        if (spblj0201a.getSelectedItemPosition() == spblj0202a.getSelectedItemPosition()){
+            Toast.makeText(this, "ERROR(Invalid): Both spinner have same value.", Toast.LENGTH_SHORT).show();
+            ((TextView) spblj0201a.getSelectedView()).setText("Both spinner have same value");
+            ((TextView) spblj0201a.getSelectedView()).setTextColor(Color.RED);
+            spblj0201a.requestFocus();
+            Log.i(TAG, "spblj0201a: Both spinner have same value!");
+            return false;
+        } else {
+            ((TextView) spblj0201a.getSelectedView()).setError(null);
+        }
 
         if (spblj0301a.getSelectedItem() == "....") {
             Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblj0401), Toast.LENGTH_SHORT).show();
@@ -370,6 +380,16 @@ public class SectionJActivity extends Activity {
             }
         }
 
+        if (spblj0301a.getSelectedItemPosition() == spblj0302a.getSelectedItemPosition()){
+            Toast.makeText(this, "ERROR(Invalid): Both spinner have same value.", Toast.LENGTH_SHORT).show();
+            ((TextView) spblj0301a.getSelectedView()).setText("Both spinner have same value");
+            ((TextView) spblj0301a.getSelectedView()).setTextColor(Color.RED);
+            spblj0301a.requestFocus();
+            Log.i(TAG, "spblj0301a: Both spinner have same value!");
+            return false;
+        } else {
+            ((TextView) spblj0301a.getSelectedView()).setError(null);
+        }
 
         return true;
     }

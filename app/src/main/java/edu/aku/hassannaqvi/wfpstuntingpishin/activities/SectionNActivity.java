@@ -327,13 +327,23 @@ public class SectionNActivity extends Activity {
             }
         }
 
+        if (spbln0401a.getSelectedItemPosition() == spbln0402a.getSelectedItemPosition()){
+            Toast.makeText(this, "ERROR(Invalid): Both spinner have same value.", Toast.LENGTH_SHORT).show();
+            ((TextView) spbln0401a.getSelectedView()).setText("Both spinner have same value");
+            ((TextView) spbln0401a.getSelectedView()).setTextColor(Color.RED);
+            spbln0401a.requestFocus();
+            Log.i(TAG, "spbln0401a: Both spinner have same value!");
+            return false;
+        } else {
+            ((TextView) spbln0401a.getSelectedView()).setError(null);
+        }
 
         if (spbln0501a.getSelectedItem() == "....") {
             Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblj0401), Toast.LENGTH_SHORT).show();
             ((TextView) spbln0501a.getSelectedView()).setText("This Data is Required");
             ((TextView) spbln0501a.getSelectedView()).setTextColor(Color.RED);
             spbln0501a.requestFocus();
-            Log.i(TAG, "spblj0301a: This Data is Required!");
+            Log.i(TAG, "spblj0501a: This Data is Required!");
             return false;
         } else {
             ((TextView) spbln0501a.getSelectedView()).setError(null);
@@ -401,6 +411,17 @@ public class SectionNActivity extends Activity {
                     spbln0502b.setError(null);
                 }
             }
+        }
+
+        if (spbln0501a.getSelectedItemPosition() == spbln0502a.getSelectedItemPosition()){
+            Toast.makeText(this, "ERROR(Invalid): Both spinner have same value.", Toast.LENGTH_SHORT).show();
+            ((TextView) spbln0501a.getSelectedView()).setText("Both spinner have same value");
+            ((TextView) spbln0501a.getSelectedView()).setTextColor(Color.RED);
+            spbln0501a.requestFocus();
+            Log.i(TAG, "spbln0501a: Both spinner have same value!");
+            return false;
+        } else {
+            ((TextView) spbln0501a.getSelectedView()).setError(null);
         }
 
         return true;
