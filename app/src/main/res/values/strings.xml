@@ -132,7 +132,7 @@
     <string name="spbla07a"> 6 ماہ سے کم عمر بچے </string>
     <string name="spbla07b"> 6 سے 23 مہینے کے بچے </string>
     <string name="spbla07c"> 24 سے 59 مہینے کے بچے </string>
-    <string name="spbla08"> Have you got the permission to start interview? </string>
+  <string name="spbla08"> کیا جوابدہندہ مطالعے میں شامل ہونے کے لیے رضامند ہے؟ </string>
 
     <string name="secBLabel">  خاندان کی معلومات </string>
     <string name="spblb01">  گھر کے افراد کا نام گھر کے سربراہ سے شروع کریں. </string>

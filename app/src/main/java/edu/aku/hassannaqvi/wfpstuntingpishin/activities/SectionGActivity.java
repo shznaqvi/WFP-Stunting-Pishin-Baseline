@@ -1278,21 +1278,22 @@ public class SectionGActivity extends Activity {
                 spblg0115x.setError(null);
             }
 
-            if (Integer.valueOf(spblg0115num.getText().toString()) < 1 || Integer.valueOf(spblg0115num.getText().toString()) > MainApp.TotalMembersCount) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.bnf), Toast.LENGTH_SHORT).show();
-                spblg0115num.setError("Range is 1 to " + MainApp.TotalMembersCount);
-                spblg0115num.requestFocus();
-                Log.i(TAG, "spblg0115num: Range!");
-                return false;
-            } else {
-                spblg0115num.setError(null);
-            }
 
             if (spblg0115num.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.bnf), Toast.LENGTH_SHORT).show();
                 spblg0115num.setError("This data is Required!");
                 spblg0115num.requestFocus();
                 Log.i(TAG, "spblg0115num: This data is Required!");
+                return false;
+            } else {
+                spblg0115num.setError(null);
+            }
+
+            if (Integer.valueOf(spblg0115num.getText().toString()) < 1 || Integer.valueOf(spblg0115num.getText().toString()) > MainApp.TotalMembersCount) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.bnf), Toast.LENGTH_SHORT).show();
+                spblg0115num.setError("Range is 1 to " + MainApp.TotalMembersCount);
+                spblg0115num.requestFocus();
+                Log.i(TAG, "spblg0115num: Range!");
                 return false;
             } else {
                 spblg0115num.setError(null);

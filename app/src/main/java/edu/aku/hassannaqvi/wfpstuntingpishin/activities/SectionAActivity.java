@@ -143,9 +143,9 @@ public class SectionAActivity extends Activity {
     RadioButton spbla08a;
     @BindView(R.id.spbla08b)
     RadioButton spbla08b;
-    @BindView(R.id.spbla08c)
+    /*@BindView(R.id.spbla08c)
     RadioButton spbla08c;
-
+*/
     @BindView(R.id.fldGrprespname)
     LinearLayout fldGrprespname;
 
@@ -430,7 +430,7 @@ public class SectionAActivity extends Activity {
         sInfo.put("spbla07f23", spbla07f23.getText().toString());
         sInfo.put("spbla07m59", spbla07m59.getText().toString());
         sInfo.put("spbla07f59", spbla07f59.getText().toString());
-        sInfo.put("spbla08", spbla08a.isChecked() ? "1" : spbla08b.isChecked() ? "2" : spbla08c.isChecked() ? "3" : "0");
+        sInfo.put("spbla08", spbla08a.isChecked() ? "1" : spbla08b.isChecked() ? "2" : "0");
 
         MainApp.fc.setsA(String.valueOf(sInfo));
 
