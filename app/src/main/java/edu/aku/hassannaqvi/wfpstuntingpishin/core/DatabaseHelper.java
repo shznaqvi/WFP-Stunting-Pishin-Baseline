@@ -35,6 +35,8 @@ import edu.aku.hassannaqvi.wfpstuntingpishin.contracts.UCsContract;
 import edu.aku.hassannaqvi.wfpstuntingpishin.contracts.UCsContract.singleUCs;
 import edu.aku.hassannaqvi.wfpstuntingpishin.contracts.VillagesContract;
 import edu.aku.hassannaqvi.wfpstuntingpishin.contracts.VillagesContract.singleVillages;
+import edu.aku.hassannaqvi.wfpstuntingpishin.contracts.LHWsContract;
+import edu.aku.hassannaqvi.wfpstuntingpishin.contracts.LHWsContract.singleLHWs;
 
 /**
  * Created by hassan.naqvi on 11/30/2016.
@@ -118,6 +120,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             + singleVillages.COLUMN_UC_CODE + " TEXT,"
 //                + singleVillages.COLUMN_TEHSIL_NAME + " TEXT,"
             + singleVillages.COLUMN_VILLAGE_CODE + " TEXT );";
+
+    final String SQL_CREATE_LHWS = "CREATE TABLE " + singleLHWs.TABLE_NAME + "("
+            + singleLHWs.COLUMN_LHW_NAME + " TEXT,"
+            + singleLHWs.COLUMN_UC_CODE + " TEXT,"
+            + singleLHWs.COLUMN_LHW_CODE + " TEXT );";
+
     final String SQL_CREATE_TEHSILS = "CREATE TABLE " + singleTehsil.TABLE_NAME + "("
             + singleTehsil.COLUMN_TEHSIL_CODE + " TEXT,"
             + singleTehsil.COLUMN_TEHSIL_NAME + " TEXT );";
@@ -143,6 +151,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String SQL_DELETE_VILLAGES = "DROP TABLE IF EXISTS " + singleVillages.TABLE_NAME;
     private static final String SQL_DELETE_TEHSILS = "DROP TABLE IF EXISTS " + singleTehsil.TABLE_NAME;
     private static final String SQL_DELETE_UCS = "DROP TABLE IF EXISTS " + singleUCs.TABLE_NAME;
+    private static final String SQL_DELETE_LHWs = "DROP TABLE IF EXISTS " + singleLHWs.TABLE_NAME;
 
     private final String TAG = "DatabaseHelper";
 
@@ -168,6 +177,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(SQL_CREATE_VILLAGES);
         db.execSQL(SQL_CREATE_TEHSILS);
         db.execSQL(SQL_CREATE_UCS);
+        db.execSQL(SQL_CREATE_LHWS);
     }
 
     @Override
@@ -179,6 +189,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(SQL_DELETE_VILLAGES);
         db.execSQL(SQL_DELETE_TEHSILS);
         db.execSQL(SQL_DELETE_UCS);
+        db.execSQL(SQL_DELETE_LHWs);
 
     }
 
@@ -287,6 +298,31 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             }
         }
         return allSR;
+    }
+
+    public void syncLHWs(JSONArray LHWslist) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(singleLHWs.TABLE_NAME, null, null);
+        try {
+            JSONArray jsonArray = LHWslist;
+            for (int i = 0; i < jsonArray.length(); i++) {
+                JSONObject jsonObjectCC = jsonArray.getJSONObject(i);
+
+                LHWsContract Vc = new LHWsContract();
+                Vc.Sync(jsonObjectCC);
+
+                ContentValues values = new ContentValues();
+
+                values.put(singleLHWs.COLUMN_LHW_NAME, Vc.getLhwname());
+                values.put(singleLHWs.COLUMN_UC_CODE, Vc.getUc_code());
+                values.put(singleLHWs.COLUMN_LHW_CODE, Vc.getLhwcode());
+
+                db.insert(singleLHWs.TABLE_NAME, null, values);
+            }
+        } catch (Exception e) {
+        } finally {
+            db.close();
+        }
     }
 
     public void syncVillages(JSONArray Villageslist) {
@@ -398,6 +434,49 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             while (c.moveToNext()) {
                 VillagesContract dc = new VillagesContract();
                 allDC.add(dc.HydrateVillages(c));
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return allDC;
+    }
+
+    public Collection<LHWsContract> getLHWs(String uccode) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = {
+                singleLHWs.COLUMN_LHW_NAME,
+                singleLHWs.COLUMN_UC_CODE,
+                singleLHWs.COLUMN_LHW_CODE,
+        };
+
+        String whereClause = singleLHWs.COLUMN_UC_CODE + " =?";
+        String[] whereArgs = {uccode};
+        String groupBy = null;
+        String having = null;
+
+        String orderBy =
+                singleLHWs.COLUMN_LHW_NAME + " ASC";
+
+        Collection<LHWsContract> allDC = new ArrayList<>();
+        try {
+            c = db.query(
+                    singleLHWs.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                LHWsContract dc = new LHWsContract();
+                allDC.add(dc.HydrateLHWs(c));
             }
         } finally {
             if (c != null) {

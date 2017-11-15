@@ -114,7 +114,7 @@ public class SectionEActivity extends Activity {
                     for (int i = 1; i < items.length; i++) {
                         if (i != pos) {
                             arrlst2.add(items[i]);
-                        }else if (i == 13){
+                        } else if (i == 13) {
                             arrlst2.add(items[i]);
                         }
                     }
@@ -156,7 +156,7 @@ public class SectionEActivity extends Activity {
                     for (int i = 1; i < items.length; i++) {
                         if (i != position) {
                             arrlst3.add(items[i]);
-                        }else if (i == arrlst2.size() - 1){
+                        } else if (i == arrlst2.size() - 1) {
                             arrlst3.add(items[i]);
                         }
                     }
@@ -349,7 +349,7 @@ public class SectionEActivity extends Activity {
         }*/
 
 
-        if (spble01c.getSelectedItemPosition() == arrlst3.size() - 1) {
+        if (spble01c.getSelectedItemPosition() == arrlst3.size() - 1 && arrlst3.size() != 1) {
 
             //        spble01c88x
             if (spble01c88x.getText().toString().isEmpty()) {

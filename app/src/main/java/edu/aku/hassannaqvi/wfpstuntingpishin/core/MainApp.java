@@ -98,6 +98,7 @@ public class MainApp extends Application {
     public static int ucCode = 0;
     public static int tehsilCode = 0;
     public static int villageCode = 0;
+    public static int lhwCode = 0;
     //    Total No of members got from Section A
     public static int NoMembersCount = 0;
     public static int NoMaleCount = 0;

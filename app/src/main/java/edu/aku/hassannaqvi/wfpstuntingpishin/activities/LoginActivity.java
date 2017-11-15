@@ -63,6 +63,7 @@ import edu.aku.hassannaqvi.wfpstuntingpishin.R;
 import edu.aku.hassannaqvi.wfpstuntingpishin.core.CheckUpdate;
 import edu.aku.hassannaqvi.wfpstuntingpishin.core.DatabaseHelper;
 import edu.aku.hassannaqvi.wfpstuntingpishin.core.MainApp;
+import edu.aku.hassannaqvi.wfpstuntingpishin.get.GetLHWs;
 import edu.aku.hassannaqvi.wfpstuntingpishin.get.GetSources;
 import edu.aku.hassannaqvi.wfpstuntingpishin.get.GetTehsil;
 import edu.aku.hassannaqvi.wfpstuntingpishin.get.GetUCs;
@@ -648,6 +649,8 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
                     new GetVillages(mContext).execute();
                     Toast.makeText(LoginActivity.this, "Sync NGOs", Toast.LENGTH_LONG).show();
                     new GetSources(mContext).execute();
+                    Toast.makeText(LoginActivity.this, "Sync LHWs", Toast.LENGTH_LONG).show();
+                    new GetLHWs(mContext).execute();
                 }
             });
 

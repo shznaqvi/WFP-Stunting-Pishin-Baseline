@@ -955,10 +955,10 @@ public class SectionIActivity extends Activity {
             }
 
 
-            if (Integer.valueOf(spbli02.getText().toString()) < 1 || Integer.valueOf(spbli02.getText().toString()) > 42) {
-                Toast.makeText(this, "Gestational age must be 1 - 42", Toast.LENGTH_SHORT).show();
-                spbli02.setError("Gestational age must be 1 - 42");    // Set Error on last radio button
-                Log.i(TAG, "spbli02: This data is Required!");
+            if (Integer.valueOf(spbli02.getText().toString()) < 1 || Integer.valueOf(spbli02.getText().toString()) > 9) {
+                Toast.makeText(this, "Gestational age must be 1 - 9", Toast.LENGTH_SHORT).show();
+                spbli02.setError("Gestational age must be 1 - 9");    // Set Error on last radio button
+                Log.i(TAG, "spbli02: This data is Invalid!");
                 spbli02.requestFocus();
                 return false;
             }
@@ -1046,26 +1046,26 @@ public class SectionIActivity extends Activity {
 
 
             //        spbli06
-            if (!spbli06999.isChecked() && spbli06.getText().toString().isEmpty()) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.spbli06), Toast.LENGTH_SHORT).show();
-                spbli06.setError("This data is Required!");    // Set Error on last radio button
-                Log.i(TAG, "spbli06: This data is Required!");
-                spbli06.requestFocus();
-                return false;
-            } else {
-                spbli06.setError(null);
-            }
+            if (!spbli06999.isChecked()) {
+                if (spbli06.getText().toString().isEmpty()) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.spbli06), Toast.LENGTH_SHORT).show();
+                    spbli06.setError("This data is Required!");    // Set Error on last radio button
+                    Log.i(TAG, "spbli06: This data is Required!");
+                    spbli06.requestFocus();
+                    return false;
+                } else {
+                    spbli06.setError(null);
+                }
 
-
-            if (!spbli06999.isChecked() &&
-                    Integer.valueOf(spbli06.getText().toString()) < 1 || Integer.valueOf(spbli06.getText().toString()) > 9) {
-                Toast.makeText(this, "Range must be 1 - 9", Toast.LENGTH_SHORT).show();
-                spbli06.setError("Range must be 1 - 9");    // Set Error on last radio button
-                Log.i(TAG, "spbli06: Range must be 0 - 12");
-                spbli06.requestFocus();
-                return false;
-            } else {
-                spbli06.setError(null);
+                if (Integer.valueOf(spbli06.getText().toString()) < 1 || Integer.valueOf(spbli06.getText().toString()) > 9) {
+                    Toast.makeText(this, "Range must be 1 - 9", Toast.LENGTH_SHORT).show();
+                    spbli06.setError("Range must be 1 - 9");    // Set Error on last radio button
+                    Log.i(TAG, "spbli06: Range must be 1 - 9");
+                    spbli06.requestFocus();
+                    return false;
+                } else {
+                    spbli06.setError(null);
+                }
             }
 
 
