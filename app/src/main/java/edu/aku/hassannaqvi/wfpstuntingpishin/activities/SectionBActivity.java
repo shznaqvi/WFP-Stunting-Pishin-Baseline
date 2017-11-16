@@ -276,6 +276,8 @@ public class SectionBActivity extends Activity {
         MainApp.fmc.setInterviewer2(MainApp.userName2);
         MainApp.fmc.set_UUID(MainApp.fc.get_UID());
         MainApp.fmc.setDevicetagID(sharedPref.getString("tagName", null));
+        MainApp.fmc.setApp_ver(MainApp.fc.getAppVersion());
+
 
         MainApp.counter++;
 
@@ -357,7 +359,7 @@ public class SectionBActivity extends Activity {
                         spblb04m.getText().toString() + "-" +
                         spblb04d.getText().toString(),
                 spblb03.getSelectedItemPosition() != 0 ? "" + spblb03.getSelectedItem().toString() : "N/A",
-                type));
+                type, mothersMap.get(spblb03.getSelectedItem().toString())));
 
 
         Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();

@@ -148,7 +148,8 @@ public class SectionJActivity extends Activity {
 
         JSONObject sJ = new JSONObject();
 
-        sJ.put("spblj01w", spblj01w.getText().toString());
+        sJ.put("spblj01wname", spblj01w.getText().toString());
+        sJ.put("spblj01wserial", getIntent().getStringExtra("getSerial"));
         sJ.put("spblj01", spblj01.getText().toString());
         sJ.put("spblj0201a", spblj0201a.getSelectedItem().toString());
         sJ.put("spblj0201b", spblj0201b.getText().toString());

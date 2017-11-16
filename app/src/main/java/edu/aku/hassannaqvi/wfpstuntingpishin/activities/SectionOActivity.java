@@ -542,7 +542,7 @@ public class SectionOActivity extends Activity {
         so.put("spblo05", spblo0599.isChecked() ? "99" : spblo05a.getText().toString());
         so.put("spblo06a", spblo06a.getText().toString());
         so.put("spblo06b", spblo06b.getText().toString());
-        so.put("spblo06c", spblo06c.isChecked() ? "3" : "0");
+        so.put("spblo06c", spblo06c.isChecked() ? "1" : "2");
         so.put("spblo07a", spblo07a.isChecked() ? "1" : "0");
         so.put("spblo07b", spblo07b.isChecked() ? "2" : "0");
         so.put("spblo07c", spblo07c.isChecked() ? "3" : "0");

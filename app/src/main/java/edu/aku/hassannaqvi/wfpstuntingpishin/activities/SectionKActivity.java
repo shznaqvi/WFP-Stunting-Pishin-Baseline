@@ -418,6 +418,7 @@ public class SectionKActivity extends AppCompatActivity implements RadioGroup.On
                 MainApp.lstChild.add(MainApp.familyMembersList.get(i).getMemberName());
 
 
+
             }
         }
 
@@ -628,7 +629,8 @@ public class SectionKActivity extends AppCompatActivity implements RadioGroup.On
 
         JSONObject sK = new JSONObject();
 
-        sK.put("motherName", motherName.getText().toString());
+        sK.put("mother_name", motherName.getText().toString());
+        sK.put("motherserial", MainApp.childMap.get(spblk01.getSelectedItem().toString()).getMother_serial());
         sK.put("spblk01", spblk01.getSelectedItem().toString());
         sK.put("spblk02", MainApp.childMap.get(spblk01.getSelectedItem().toString()).getSerial());
         sK.put("spblk03", MainApp.childMap.get(spblk01.getSelectedItem().toString()).getGender());

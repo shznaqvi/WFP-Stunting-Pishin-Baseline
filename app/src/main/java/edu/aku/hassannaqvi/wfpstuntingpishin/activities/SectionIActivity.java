@@ -872,6 +872,7 @@ public class SectionIActivity extends Activity {
 
                 Intent secNext = new Intent(this, SectionJActivity.class);
                 secNext.putExtra("getName", spbli01w.getText().toString());
+                secNext.putExtra("getSerial", getIntent().getStringExtra("getSerial"));
                 startActivity(secNext);
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
@@ -1698,7 +1699,8 @@ public class SectionIActivity extends Activity {
 
         JSONObject sHI = new JSONObject();
 
-        sHI.put("spbli01w", spbli01w.getText().toString());
+        sHI.put("spbli01wname", spbli01w.getText().toString());
+        sHI.put("spbli01wserial", getIntent().getStringExtra("getSerial"));
 
         sHI.put("spbli01", spbli01a.isChecked() ? "1" : spbli01b.isChecked() ? "2"
                 : spbli01c.isChecked() ? "3"

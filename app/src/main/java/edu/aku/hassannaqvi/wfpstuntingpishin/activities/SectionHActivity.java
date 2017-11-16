@@ -1340,6 +1340,7 @@ public class SectionHActivity extends Activity {
 
                 Intent endSec = new Intent(this, SectionIActivity.class);
                 endSec.putExtra("getName", spblh01.getSelectedItem().toString());
+                endSec.putExtra("getSerial", mwraMap.get(spblh01.getSelectedItem().toString()));
                 startActivity(endSec);
 
             } else {
@@ -1383,6 +1384,7 @@ public class SectionHActivity extends Activity {
         JSONObject sh = new JSONObject();
 
         sh.put("spblh01", spblh01.getSelectedItem().toString());
+        sh.put("womanserial", mwraMap.get(spblh01.getSelectedItem().toString()));
         //MainApp.selectedWoman = spblh01.getSelectedItem().toString();
         sh.put("spblh02", spblh02a.isChecked() ? "1" : spblh02b.isChecked() ? "2" : spblh0299.isChecked() ? "99" : "0");
         sh.put("spblh03a", spblh03a.isChecked() ? "1" : "0");
