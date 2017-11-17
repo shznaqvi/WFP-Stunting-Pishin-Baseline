@@ -113,9 +113,9 @@ public class SectionNActivity extends Activity {
 //        01
 
         sN.put("spbln01", spbln01.getText().toString());
-        sN.put("child_serial", getIntent().getStringExtra("getSerial"));
-        sN.put("mother_name", getIntent().getStringExtra("getMotherName"));
-        sN.put("mother_serial", getIntent().getStringExtra("getMSerial"));
+        sN.put("spblnchild_serial", getIntent().getStringExtra("getSerial"));
+        sN.put("spblnmother_name", getIntent().getStringExtra("getMotherName"));
+        sN.put("spblnmother_serial", getIntent().getStringExtra("getMSerial"));
 
 //        02
         sN.put("spbln02m", spbln02m.getText().toString());
