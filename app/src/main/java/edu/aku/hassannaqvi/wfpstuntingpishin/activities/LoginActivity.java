@@ -63,6 +63,7 @@ import edu.aku.hassannaqvi.wfpstuntingpishin.R;
 import edu.aku.hassannaqvi.wfpstuntingpishin.core.CheckUpdate;
 import edu.aku.hassannaqvi.wfpstuntingpishin.core.DatabaseHelper;
 import edu.aku.hassannaqvi.wfpstuntingpishin.core.MainApp;
+import edu.aku.hassannaqvi.wfpstuntingpishin.get.GetLHWs;
 import edu.aku.hassannaqvi.wfpstuntingpishin.get.GetSources;
 import edu.aku.hassannaqvi.wfpstuntingpishin.get.GetTehsil;
 import edu.aku.hassannaqvi.wfpstuntingpishin.get.GetUCs;
@@ -143,6 +144,11 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
                     .getPackageInfo("edu.aku.hassannaqvi.wfpstuntingpishin", 0)
                     .versionName;
             txtinstalldate.setText("Ver. " + versionName + "." + String.valueOf(versionCode) + " \r\n( Last Updated: " + new SimpleDateFormat("dd MMM. yyyy").format(new Date(installedOn)) + " )");
+
+            MainApp.versionCode = versionCode;
+            MainApp.versionName = versionName;
+
+
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();
         }
@@ -215,6 +221,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
 
 
     }
+
     public void dbBackup() {
 
         sharedPref = getSharedPreferences("dss01", MODE_PRIVATE);
@@ -642,6 +649,8 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
                     new GetVillages(mContext).execute();
                     Toast.makeText(LoginActivity.this, "Sync NGOs", Toast.LENGTH_LONG).show();
                     new GetSources(mContext).execute();
+                    Toast.makeText(LoginActivity.this, "Sync LHWs", Toast.LENGTH_LONG).show();
+                    new GetLHWs(mContext).execute();
                 }
             });
 

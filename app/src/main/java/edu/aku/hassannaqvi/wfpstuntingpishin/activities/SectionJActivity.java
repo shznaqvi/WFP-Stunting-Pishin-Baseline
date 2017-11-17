@@ -51,9 +51,8 @@ public class SectionJActivity extends Activity {
     @BindView(R.id.spblj0302b)
     EditText spblj0302b;
 
-    @BindViews({R.id.spblj0201a,R.id.spblj0202a,R.id.spblj0301a,R.id.spblj0302a})
+    @BindViews({R.id.spblj0201a, R.id.spblj0202a, R.id.spblj0301a, R.id.spblj0302a})
     List<Spinner> spblj023;
-
 
 
     @Override
@@ -63,10 +62,10 @@ public class SectionJActivity extends Activity {
         ButterKnife.bind(this);
         spblj01w.setText(getIntent().getStringExtra("getName"));
 
-        String[] users = {"....",MainApp.userName,MainApp.userName2};
+        String[] users = {"....", MainApp.userName, MainApp.userName2};
 
-        for (Spinner spin : spblj023){
-            spin.setAdapter(new ArrayAdapter<>(this,android.R.layout.simple_spinner_dropdown_item, Arrays.asList(users)));
+        for (Spinner spin : spblj023) {
+            spin.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, Arrays.asList(users)));
         }
 
     }
@@ -84,29 +83,39 @@ public class SectionJActivity extends Activity {
                 Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
 
                 finish();
+                int child2 = 0;
+                int child5 = 0;
 
                 for (byte i = 0; i < MainApp.familyMembersList.size(); i++) {
                     if (MainApp.familyMembersList.get(i).getType().equals("ch") && Integer.valueOf(MainApp.familyMembersList.get(i).getDob().substring(0, 1)) < 2) {
 
-                        Intent endSec = new Intent(this, SectionKActivity.class);
-                        endSec.putExtra("complete", true);
-                        startActivity(endSec);
+                        child2++;
+                    } else if (MainApp.familyMembersList.get(i).getType().equals("ch") && Integer.valueOf(MainApp.familyMembersList.get(i).getDob().substring(0, 1)) > 2
+                            && MainApp.familyMembersList.get(i).getType().equals("ch") && Integer.valueOf(MainApp.familyMembersList.get(i).getDob().substring(0, 1)) < 5)
 
-                    } else if (MainApp.familyMembersList.get(i).getType().equals("ch") && Integer.valueOf(MainApp.familyMembersList.get(i).getDob().substring(0, 1)) < 5) {
-                        Intent endSec = new Intent(this, SectionLIMActivity.class);
-                        endSec.putExtra("complete", true);
-                        startActivity(endSec);
-                    } else {
-                        Intent endSec = new Intent(this, SectionOActivity.class);
-                        endSec.putExtra("complete", true);
-                        startActivity(endSec);
+                        child5++;
+                }
+
+
+                if (child2 > 0) {
+                    Intent secNext = new Intent(this, SectionKActivity.class);
+                    secNext.putExtra("check", false);
+                    startActivity(secNext);
+                } else if (child5 > 0) {
+                    Intent secNext = new Intent(this, SectionLIMActivity.class);
+                    secNext.putExtra("check", false);
+                    startActivity(secNext);
+                } else {
+                    Intent secNext = new Intent(this, SectionOActivity.class);
+                    secNext.putExtra("check", false);
+                    startActivity(secNext);
                     }
                 }
 
-            } else {
+
+        } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }
-        }
 
 
     }
@@ -132,8 +141,6 @@ public class SectionJActivity extends Activity {
         }
 
 
-
-
     }
 
     private void SaveDraft() throws JSONException {
@@ -141,7 +148,8 @@ public class SectionJActivity extends Activity {
 
         JSONObject sJ = new JSONObject();
 
-        sJ.put("spblj01w", spblj01w.getText().toString());
+        sJ.put("spblj01wname", spblj01w.getText().toString());
+        sJ.put("spblj01wserial", getIntent().getStringExtra("getSerial"));
         sJ.put("spblj01", spblj01.getText().toString());
         sJ.put("spblj0201a", spblj0201a.getSelectedItem().toString());
         sJ.put("spblj0201b", spblj0201b.getText().toString());
@@ -174,8 +182,8 @@ public class SectionJActivity extends Activity {
 
         if (Double.valueOf(spblj01.getText().toString()) < 4.0 || Double.valueOf(spblj01.getText().toString()) > 18.0) {
             Toast.makeText(this, "ERROR(invalid): " + getString(R.string.spblj01), Toast.LENGTH_SHORT).show();
-            spblj01.setError("Range is 4.0 to 20.0");
-            Log.i(TAG, "spblj01: Range is 4.0 to 20.0");
+            spblj01.setError("Range is 4.0 to 18.0");
+            Log.i(TAG, "spblj01: Range is 4.0 to 18.0");
             return false;
         } else {
             spblj01.setError(null);
@@ -207,14 +215,14 @@ public class SectionJActivity extends Activity {
                 return false;
             } else {
                 spblj0201b.setError(null);
-                if (Double.parseDouble(spblj0201b.getText().toString()) < 1) {
+                if (Double.valueOf(spblj0201b.getText().toString()) < 1) {
                     Toast.makeText(this, "ERROR(invalid): " + getString(R.string.spblj04), Toast.LENGTH_SHORT).show();
                     spblj0201b.setError("Invalid: Greater then 0");
                     Log.i(TAG, "spblj0201b: Invalid Greater then 0");
                     return false;
                 } else {
                     spblj0201b.setError(null);
-                    if (Double.parseDouble(spblj0201b.getText().toString()) < 100 || Double.parseDouble(spblj0201b.getText().toString()) > 180) {
+                    if (Double.valueOf(spblj0201b.getText().toString()) < 100 || Double.valueOf(spblj0201b.getText().toString()) > 180) {
                         Toast.makeText(this, "ERROR(invalid): " + getString(R.string.spblj04), Toast.LENGTH_SHORT).show();
                         spblj0201b.setError("Invalid: Range between 100-180");
                         Log.i(TAG, "spblj0201b: Invalid Range between 100-180");
@@ -253,14 +261,14 @@ public class SectionJActivity extends Activity {
                 return false;
             } else {
                 spblj0202b.setError(null);
-                if (Double.parseDouble(spblj0202b.getText().toString()) < 1) {
+                if (Double.valueOf(spblj0202b.getText().toString()) < 1) {
                     Toast.makeText(this, "ERROR(invalid): " + getString(R.string.spblj04), Toast.LENGTH_SHORT).show();
                     spblj0202b.setError("Invalid: Greater then 0");
                     Log.i(TAG, "spblj0202b: Invalid Greater then 0");
                     return false;
                 } else {
                     spblj0202b.setError(null);
-                    if (Double.parseDouble(spblj0202b.getText().toString()) < 100 || Double.parseDouble(spblj0202b.getText().toString()) > 180) {
+                    if (Double.valueOf(spblj0202b.getText().toString()) < 100 || Double.valueOf(spblj0202b.getText().toString()) > 180) {
                         Toast.makeText(this, "ERROR(invalid): " + getString(R.string.spblj04), Toast.LENGTH_SHORT).show();
                         spblj0202b.setError("Invalid: Range between 100-180");
                         Log.i(TAG, "spblj0202b: Invalid Range between 100-180");
@@ -272,6 +280,16 @@ public class SectionJActivity extends Activity {
             }
         }
 
+        if (spblj0201a.getSelectedItemPosition() == spblj0202a.getSelectedItemPosition()){
+            Toast.makeText(this, "ERROR(Invalid): Both spinner have same value.", Toast.LENGTH_SHORT).show();
+            ((TextView) spblj0201a.getSelectedView()).setText("Both spinner have same value");
+            ((TextView) spblj0201a.getSelectedView()).setTextColor(Color.RED);
+            spblj0201a.requestFocus();
+            Log.i(TAG, "spblj0201a: Both spinner have same value!");
+            return false;
+        } else {
+            ((TextView) spblj0201a.getSelectedView()).setError(null);
+        }
 
         if (spblj0301a.getSelectedItem() == "....") {
             Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblj0401), Toast.LENGTH_SHORT).show();
@@ -299,14 +317,14 @@ public class SectionJActivity extends Activity {
                 return false;
             } else {
                 spblj0301b.setError(null);
-                if (Double.parseDouble(spblj0301b.getText().toString()) < 1) {
+                if (Double.valueOf(spblj0301b.getText().toString()) < 1) {
                     Toast.makeText(this, "ERROR(invalid): " + getString(R.string.spblj05), Toast.LENGTH_SHORT).show();
                     spblj0301b.setError("Invalid: Greater then 0");
                     Log.i(TAG, "spblj0301b: Invalid Greater then 0");
                     return false;
                 } else {
                     spblj0301b.setError(null);
-                    if (Double.parseDouble(spblj0301b.getText().toString()) < 20 || Double.parseDouble(spblj0301b.getText().toString()) > 110) {
+                    if (Double.valueOf(spblj0301b.getText().toString()) < 20 || Double.valueOf(spblj0301b.getText().toString()) > 110) {
                         Toast.makeText(this, "ERROR(invalid): " + getString(R.string.spblj05), Toast.LENGTH_SHORT).show();
                         spblj0301b.setError("Invalid: Range between 20-110");
                         Log.i(TAG, "spblj0301b: Invalid Range between 20-110");
@@ -344,14 +362,14 @@ public class SectionJActivity extends Activity {
                 return false;
             } else {
                 spblj0302b.setError(null);
-                if (Double.parseDouble(spblj0302b.getText().toString()) < 1) {
+                if (Double.valueOf(spblj0302b.getText().toString()) < 1) {
                     Toast.makeText(this, "ERROR(invalid): " + getString(R.string.spblj05), Toast.LENGTH_SHORT).show();
                     spblj0302b.setError("Invalid: Greater then 0");
                     Log.i(TAG, "spblj0302b: Invalid Greater then 0");
                     return false;
                 } else {
                     spblj0302b.setError(null);
-                    if (Double.parseDouble(spblj0302b.getText().toString()) < 20 || Double.parseDouble(spblj0302b.getText().toString()) > 110) {
+                    if (Double.valueOf(spblj0302b.getText().toString()) < 20 || Double.valueOf(spblj0302b.getText().toString()) > 110) {
                         Toast.makeText(this, "ERROR(invalid): " + getString(R.string.spblj05), Toast.LENGTH_SHORT).show();
                         spblj0302b.setError("Invalid: Range between 20-110");
                         Log.i(TAG, "spblj0302b: Invalid Range between 20-110");
@@ -363,6 +381,16 @@ public class SectionJActivity extends Activity {
             }
         }
 
+        if (spblj0301a.getSelectedItemPosition() == spblj0302a.getSelectedItemPosition()){
+            Toast.makeText(this, "ERROR(Invalid): Both spinner have same value.", Toast.LENGTH_SHORT).show();
+            ((TextView) spblj0301a.getSelectedView()).setText("Both spinner have same value");
+            ((TextView) spblj0301a.getSelectedView()).setTextColor(Color.RED);
+            spblj0301a.requestFocus();
+            Log.i(TAG, "spblj0301a: Both spinner have same value!");
+            return false;
+        } else {
+            ((TextView) spblj0301a.getSelectedView()).setError(null);
+        }
 
         return true;
     }

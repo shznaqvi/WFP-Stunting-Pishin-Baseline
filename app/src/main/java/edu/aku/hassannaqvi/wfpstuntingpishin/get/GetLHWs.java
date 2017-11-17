@@ -15,22 +15,22 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-import edu.aku.hassannaqvi.wfpstuntingpishin.contracts.UsersContract;
+import edu.aku.hassannaqvi.wfpstuntingpishin.contracts.LHWsContract.singleLHWs;
 import edu.aku.hassannaqvi.wfpstuntingpishin.core.DatabaseHelper;
 import edu.aku.hassannaqvi.wfpstuntingpishin.core.MainApp;
 
 /**
- * Created by hassan.naqvi on 11/30/2016.
+ * Created by ali.azaz on 7/14/2017.
  */
 
-public class GetUsers extends AsyncTask<String, String, String> {
+public class GetLHWs extends AsyncTask<String, String, String> {
 
-    private final String TAG = "GetUsers()";
+    private final String TAG = "GetLHWs()";
     HttpURLConnection urlConnection;
     private Context mContext;
     private ProgressDialog pd;
 
-    public GetUsers(Context context) {
+    public GetLHWs(Context context) {
         mContext = context;
     }
 
@@ -38,9 +38,10 @@ public class GetUsers extends AsyncTask<String, String, String> {
     protected void onPreExecute() {
         super.onPreExecute();
         pd = new ProgressDialog(mContext);
-        pd.setTitle("Syncing Users");
+        pd.setTitle("Syncing LHWs");
         pd.setMessage("Getting connected to server...");
         pd.show();
+
     }
 
     @Override
@@ -48,9 +49,13 @@ public class GetUsers extends AsyncTask<String, String, String> {
 
         StringBuilder result = new StringBuilder();
 
+        URL url = null;
         try {
-            URL url = new URL(MainApp._HOST_URL + UsersContract.UsersTable._URI);
+            url = new URL(MainApp._HOST_URL + singleLHWs._URI);
             urlConnection = (HttpURLConnection) url.openConnection();
+            urlConnection.setReadTimeout(10000 /* milliseconds */);
+            urlConnection.setConnectTimeout(15000 /* milliseconds */);
+            Log.d(TAG, "doInBackground: " + urlConnection.getResponseCode());
             if (urlConnection.getResponseCode() == HttpURLConnection.HTTP_OK) {
                 InputStream in = new BufferedInputStream(urlConnection.getInputStream());
 
@@ -58,14 +63,14 @@ public class GetUsers extends AsyncTask<String, String, String> {
 
                 String line;
                 while ((line = reader.readLine()) != null) {
-                    Log.i(TAG, "User In: " + line);
+                    Log.i(TAG, "LHWs In: " + line);
                     result.append(line);
                 }
             }
-        } catch (Exception e) {
-            e.printStackTrace();
-
-
+        } catch (java.net.SocketTimeoutException e) {
+            return null;
+        } catch (java.io.IOException e) {
+            return null;
         } finally {
             urlConnection.disconnect();
         }
@@ -79,23 +84,25 @@ public class GetUsers extends AsyncTask<String, String, String> {
 
         //Do something with the JSON string
 
-        String json = result;
-        //json = json.replaceAll("\\[", "").replaceAll("\\]","");
-        Log.d(TAG, result);
-        if (json.length() > 0) {
-            DatabaseHelper db = new DatabaseHelper(mContext);
-            try {
-
-                JSONArray jsonArray = new JSONArray(json);
-                db.syncUsers(jsonArray);
-                pd.setMessage("Received: " + jsonArray.length());
+        if (result != null) {
+            String json = result;
+            if (json.length() > 0) {
+                DatabaseHelper db = new DatabaseHelper(mContext);
+                try {
+                    JSONArray jsonArray = new JSONArray(json);
+                    db.syncLHWs(jsonArray);
+                    pd.setMessage("Received: " + jsonArray.length());
+                    pd.show();
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            } else {
+                pd.setMessage("Received: " + json.length() + "");
                 pd.show();
-            } catch (JSONException e) {
-                e.printStackTrace();
             }
-            // db.getAllUsers();
         } else {
-            pd.setMessage("Received: " + json.length() + "");
+            pd.setTitle("Connection Error");
+            pd.setMessage("Server not found!");
             pd.show();
         }
     }

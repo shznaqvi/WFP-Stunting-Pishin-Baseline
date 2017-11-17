@@ -147,14 +147,14 @@ public class FormsContract {
 
         try {
             if (!this.sA.equals("")) {
-                json.put(FormsTable.COLUMN_SA, this.sA == null ? JSONObject.NULL : this.sA);
+                json.put(FormsTable.COLUMN_SA, this.sA == null ? JSONObject.NULL : new JSONObject(this.sA));
             }
         } catch (Exception e) {
 
         }
         try {
             if (!this.sC.equals("")) {
-                json.put(FormsTable.COLUMN_SC, this.sC == null ? JSONObject.NULL : this.sC);
+                json.put(FormsTable.COLUMN_SC, this.sC == null ? JSONObject.NULL : new JSONObject(this.sC));
             }
         } catch (Exception e) {
 
@@ -163,7 +163,7 @@ public class FormsContract {
         try {
             if (!this.sD.equals("")) {
 
-                json.put(FormsTable.COLUMN_SD, this.sD == null ? JSONObject.NULL : this.sD);
+                json.put(FormsTable.COLUMN_SD, this.sD == null ? JSONObject.NULL : new JSONObject(this.sD));
             }
         } catch (Exception e) {
 
@@ -171,7 +171,7 @@ public class FormsContract {
 
         try {
             if (!this.sE.equals("")) {
-                json.put(FormsTable.COLUMN_SE, this.sE == null ? JSONObject.NULL : this.sE);
+                json.put(FormsTable.COLUMN_SE, this.sE == null ? JSONObject.NULL : new JSONObject(this.sE));
             }
         } catch (Exception e) {
 
@@ -179,7 +179,7 @@ public class FormsContract {
 
         try {
             if (!this.sF.equals("")) {
-                json.put(FormsTable.COLUMN_SF, this.sF == null ? JSONObject.NULL : this.sF);
+                json.put(FormsTable.COLUMN_SF, this.sF == null ? JSONObject.NULL : new JSONObject(this.sF));
             }
         } catch (Exception e) {
 
@@ -187,7 +187,7 @@ public class FormsContract {
 
         try {
             if (!this.sG.equals("")) {
-                json.put(FormsTable.COLUMN_SG, this.sG == null ? JSONObject.NULL : this.sG);
+                json.put(FormsTable.COLUMN_SG, this.sG == null ? JSONObject.NULL : new JSONObject(this.sG));
             }
         } catch (Exception e) {
 
@@ -195,7 +195,7 @@ public class FormsContract {
 
         try {
             if (!this.sH.equals("")) {
-                json.put(FormsTable.COLUMN_SH, this.sH == null ? JSONObject.NULL : this.sH);
+                json.put(FormsTable.COLUMN_SH, this.sH == null ? JSONObject.NULL : new JSONObject(this.sH));
             }
         } catch (Exception e) {
 
@@ -203,7 +203,7 @@ public class FormsContract {
 
         try {
             if (!this.sI.equals("")) {
-                json.put(FormsTable.COLUMN_SI, this.sI == null ? JSONObject.NULL : this.sI);
+                json.put(FormsTable.COLUMN_SI, this.sI == null ? JSONObject.NULL : new JSONObject(this.sI));
             }
         } catch (Exception e) {
 
@@ -211,7 +211,7 @@ public class FormsContract {
 
         try {
             if (!this.sJ.equals("")) {
-                json.put(FormsTable.COLUMN_SJ, this.sJ == null ? JSONObject.NULL : this.sJ);
+                json.put(FormsTable.COLUMN_SJ, this.sJ == null ? JSONObject.NULL : new JSONObject(this.sJ));
             }
         } catch (Exception e) {
 
@@ -219,7 +219,7 @@ public class FormsContract {
 
         try {
             if (!this.sK.equals("")) {
-                json.put(FormsTable.COLUMN_SK, this.sK == null ? JSONObject.NULL : this.sK);
+                json.put(FormsTable.COLUMN_SK, this.sK == null ? JSONObject.NULL : new JSONObject(this.sK));
             }
         } catch (Exception e) {
 
@@ -227,7 +227,7 @@ public class FormsContract {
 
         try {
             if (!this.sL.equals("")) {
-                json.put(FormsTable.COLUMN_SL, this.sL == null ? JSONObject.NULL : this.sL);
+                json.put(FormsTable.COLUMN_SL, this.sL == null ? JSONObject.NULL : new JSONObject(this.sL));
             }
         } catch (Exception e) {
 
@@ -235,7 +235,7 @@ public class FormsContract {
 
         try {
             if (!this.sM.equals("")) {
-                json.put(FormsTable.COLUMN_SM, this.sM == null ? JSONObject.NULL : this.sM);
+                json.put(FormsTable.COLUMN_SM, this.sM == null ? JSONObject.NULL : new JSONObject(this.sM));
             }
         } catch (Exception e) {
 
@@ -243,7 +243,7 @@ public class FormsContract {
 
         try {
             if (!this.sN.equals("")) {
-                json.put(FormsTable.COLUMN_SN, this.sN == null ? JSONObject.NULL : this.sN);
+                json.put(FormsTable.COLUMN_SN, this.sN == null ? JSONObject.NULL : new JSONObject(this.sN));
             }
         } catch (Exception e) {
 
@@ -251,7 +251,7 @@ public class FormsContract {
 
         try {
             if (!this.sO.equals("")) {
-                json.put(FormsTable.COLUMN_SO, this.sO == null ? JSONObject.NULL : this.sO);
+                json.put(FormsTable.COLUMN_SO, this.sO == null ? JSONObject.NULL : new JSONObject(this.sO));
             }
         } catch (Exception e) {
 
@@ -259,7 +259,7 @@ public class FormsContract {
 
         try {
             if (!this.sP.equals("")) {
-                json.put(FormsTable.COLUMN_SP, this.sP == null ? JSONObject.NULL : this.sP);
+                json.put(FormsTable.COLUMN_SP, this.sP == null ? JSONObject.NULL : new JSONObject(this.sP));
             }
         } catch (Exception e) {
 
@@ -268,7 +268,7 @@ public class FormsContract {
 
         try {
             if (!this.sQ.equals("")) {
-                json.put(FormsTable.COLUMN_SQ, this.sQ == null ? JSONObject.NULL : this.sQ);
+                json.put(FormsTable.COLUMN_SQ, this.sQ == null ? JSONObject.NULL : new JSONObject(this.sQ));
             }
         } catch (Exception e) {
 
@@ -277,7 +277,7 @@ public class FormsContract {
 
         try {
             if (!this.sCount.equals("")) {
-                json.put(FormsTable.COLUMN_SCOUNT, this.sCount == null ? JSONObject.NULL : this.sCount);
+                json.put(FormsTable.COLUMN_SCOUNT, this.sCount == null ? JSONObject.NULL : new JSONObject(this.sCount));
             }
         } catch (Exception e) {
 
@@ -566,8 +566,8 @@ public class FormsContract {
         public static final String TABLE_NAME = "forms";
         public static final String COLUMN_NAME_NULLABLE = "NULLHACK";
         public static final String COLUMN_PROJECTNAME = "projectname";
-        public static final String COLUMN__ID = "_id ";
-        public static final String COLUMN__UID = "_uid ";
+        public static final String COLUMN__ID = "_id";
+        public static final String COLUMN__UID = "_uid";
         public static final String COLUMN_INTERVIEWER01 = "interviewer01";
         public static final String COLUMN_INTERVIEWER02 = "interviewer02";
         public static final String COLUMN_FORMDATE = "formdate";

@@ -1340,6 +1340,7 @@ public class SectionHActivity extends Activity {
 
                 Intent endSec = new Intent(this, SectionIActivity.class);
                 endSec.putExtra("getName", spblh01.getSelectedItem().toString());
+                endSec.putExtra("getSerial", mwraMap.get(spblh01.getSelectedItem().toString()));
                 startActivity(endSec);
 
             } else {
@@ -1383,6 +1384,7 @@ public class SectionHActivity extends Activity {
         JSONObject sh = new JSONObject();
 
         sh.put("spblh01", spblh01.getSelectedItem().toString());
+        sh.put("womanserial", mwraMap.get(spblh01.getSelectedItem().toString()));
         //MainApp.selectedWoman = spblh01.getSelectedItem().toString();
         sh.put("spblh02", spblh02a.isChecked() ? "1" : spblh02b.isChecked() ? "2" : spblh0299.isChecked() ? "99" : "0");
         sh.put("spblh03a", spblh03a.isChecked() ? "1" : "0");
@@ -1516,7 +1518,7 @@ public class SectionHActivity extends Activity {
         sh.put("spblh2288", spblh2288.isChecked() ? "88" : "0");
         sh.put("spblh2288x", spblh2288x.getText().toString());
         sh.put("spblh23", spblh23a.isChecked() ? "1" : spblh23b.isChecked() ? "2" : spblh2399.isChecked() ? "99" : "0");
-        sh.put("spblh24", spblh23a.isChecked() ? "1" : spblh24b.isChecked() ? "2" : spblh2499.isChecked() ? "99" : "0");
+        sh.put("spblh24", spblh24a.isChecked() ? "1" : spblh24b.isChecked() ? "2" : spblh2499.isChecked() ? "99" : "0");
         sh.put("spblh25a", spblh25a.isChecked() ? "1" : "0");
         sh.put("spblh25b", spblh25b.isChecked() ? "2" : "0");
         sh.put("spblh25c", spblh25c.isChecked() ? "3" : "0");

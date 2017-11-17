@@ -12,14 +12,17 @@ public class FamilyMembers {
     String motherName;
     String type;
     String serial;
+    String mother_serial;
 
-    public FamilyMembers(String memberName, String serial, String gender, String dob, String motherName, String type) {
+    public FamilyMembers(String memberName, String serial, String gender, String dob, String motherName, String type, String mother_serial) {
         this.memberName = memberName;
         this.serial = serial;
         this.gender = gender;
         this.dob = dob;
         this.motherName = motherName;
         this.type = type;
+        this.mother_serial = mother_serial;
+
     }
 
     public FamilyMembers(FamilyMembers fm) {
@@ -29,10 +32,15 @@ public class FamilyMembers {
         this.dob = fm.dob;
         this.motherName = fm.motherName;
         this.type = fm.type;
+        this.mother_serial = fm.mother_serial;
     }
 
     public String getMotherName() {
         return motherName;
+    }
+
+    public String getMother_serial() {
+        return mother_serial;
     }
 
     public String getMemberName() {

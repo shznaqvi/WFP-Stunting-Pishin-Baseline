@@ -37,6 +37,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import edu.aku.hassannaqvi.wfpstuntingpishin.R;
 import edu.aku.hassannaqvi.wfpstuntingpishin.contracts.FormsContract;
+import edu.aku.hassannaqvi.wfpstuntingpishin.contracts.LHWsContract;
 import edu.aku.hassannaqvi.wfpstuntingpishin.contracts.TehsilContract;
 import edu.aku.hassannaqvi.wfpstuntingpishin.contracts.UCsContract;
 import edu.aku.hassannaqvi.wfpstuntingpishin.contracts.VillagesContract;
@@ -53,6 +54,8 @@ public class SectionAActivity extends Activity {
     Spinner spUCs;
     @BindView(R.id.spbla03)
     Spinner spbla03;
+    @BindView(R.id.spbla03b)
+    Spinner spbla03b;
     @BindView(R.id.spbla04)
     EditText spbla04;
     @BindView(R.id.respname)
@@ -143,9 +146,9 @@ public class SectionAActivity extends Activity {
     RadioButton spbla08a;
     @BindView(R.id.spbla08b)
     RadioButton spbla08b;
-    @BindView(R.id.spbla08c)
+    /*@BindView(R.id.spbla08c)
     RadioButton spbla08c;
-
+*/
     @BindView(R.id.fldGrprespname)
     LinearLayout fldGrprespname;
 
@@ -169,6 +172,10 @@ public class SectionAActivity extends Activity {
     Collection<VillagesContract> VillagesList;
     Map<String, String> VillagesMap;
 
+    ArrayList<String> lablesLHWs;
+    Collection<LHWsContract> LHWsList;
+    Map<String, String> LHWsMap;
+
     DatabaseHelper db;
 
     @Override
@@ -176,9 +183,6 @@ public class SectionAActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_section_a);
         ButterKnife.bind(this);
-
-        spbla03.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item,
-                Arrays.asList(new String[]{"....", "abc"})));
 
 
         spbla08.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -223,6 +227,20 @@ public class SectionAActivity extends Activity {
         db = new DatabaseHelper(this);
 
         populateSpinner(this);
+
+        //        Skip
+
+        respedu.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                if (i == R.id.respedu66){
+                    respoccb.setChecked(false);
+                    respoccb.setEnabled(false);
+                }else {
+                    respoccb.setEnabled(true);
+                }
+            }
+        });
 
     }
 
@@ -300,6 +318,21 @@ public class SectionAActivity extends Activity {
 
                 spbla03.setAdapter(new ArrayAdapter<>(context, android.R.layout.simple_spinner_dropdown_item, lablesVillages));
 
+                lablesLHWs = new ArrayList<>();
+                LHWsMap = new HashMap<>();
+                lablesLHWs.add("Select LHWs..");
+
+                LHWsList = db.getLHWs(String.valueOf(MainApp.ucCode));
+
+                if (LHWsList.size() != 0) {
+                    for (LHWsContract vil : LHWsList) {
+                        lablesLHWs.add(vil.getLhwname());
+                        LHWsMap.put(vil.getLhwname(), vil.getLhwcode());
+                    }
+                }
+
+                spbla03b.setAdapter(new ArrayAdapter<>(context, android.R.layout.simple_spinner_dropdown_item, lablesLHWs));
+
             }
 
             @Override
@@ -315,6 +348,21 @@ public class SectionAActivity extends Activity {
 
                 if (spbla03.getSelectedItemPosition() != 0) {
                     MainApp.villageCode = Integer.valueOf(VillagesMap.get(spbla03.getSelectedItem().toString()));
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
+        spbla03b.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+
+                if (spbla03b.getSelectedItemPosition() != 0) {
+                    MainApp.lhwCode = Integer.valueOf(LHWsMap.get(spbla03b.getSelectedItem().toString()));
                 }
             }
 
@@ -357,6 +405,9 @@ public class SectionAActivity extends Activity {
             }
 
             if (UpdateDB()) {
+
+                MainApp.selectedMom = spbla06a.isChecked() ? 0 : spbla06b.isChecked() ? 1 : 2;
+
                 Toast.makeText(this, "starting next section", Toast.LENGTH_SHORT).show();
 
                 Intent secNext = new Intent(this, FamilyMemberListActivity.class);
@@ -388,6 +439,7 @@ public class SectionAActivity extends Activity {
         sInfo.put("tehsil_code", String.valueOf(MainApp.tehsilCode));
         sInfo.put("uc_code", String.valueOf(MainApp.ucCode));
         sInfo.put("village_code", String.valueOf(MainApp.villageCode));
+        sInfo.put("lhw_code", String.valueOf(MainApp.lhwCode));
         sInfo.put("resp_name", respname.getText().toString());
         sInfo.put("resp_age", respage.getText());
         sInfo.put("resp_edu", respedua.isChecked() ? "1" : respedub.isChecked() ? "2" : respeduc.isChecked() ? "3"
@@ -413,7 +465,7 @@ public class SectionAActivity extends Activity {
         sInfo.put("spbla07f23", spbla07f23.getText().toString());
         sInfo.put("spbla07m59", spbla07m59.getText().toString());
         sInfo.put("spbla07f59", spbla07f59.getText().toString());
-        sInfo.put("spbla08", spbla08a.isChecked() ? "1" : spbla08b.isChecked() ? "2" : spbla08c.isChecked() ? "3" : "0");
+        sInfo.put("spbla08", spbla08a.isChecked() ? "1" : spbla08b.isChecked() ? "2" : "0");
 
         MainApp.fc.setsA(String.valueOf(sInfo));
 
@@ -533,10 +585,32 @@ public class SectionAActivity extends Activity {
             ((TextView) spbla03.getSelectedView()).setError(null);
         }
 
+        if (spbla03b.getSelectedItemPosition() == 0) {
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spbla03b), Toast.LENGTH_SHORT).show();
+            ((TextView) spbla03b.getSelectedView()).setText("This Data is Required");
+            ((TextView) spbla03b.getSelectedView()).setTextColor(Color.RED);
+            spbla03b.requestFocus();
+            Log.i(TAG, "spbla03b: This Data is Required!");
+            return false;
+        } else {
+            ((TextView) spbla03b.getSelectedView()).setError(null);
+        }
+
         if (spbla04.getText().toString().isEmpty()) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.spbla04), Toast.LENGTH_SHORT).show();
             spbla04.setError("This data is Required!");
             Log.i(TAG, "spbla04: This data is Required!");
+
+            spbla04.requestFocus();
+            return false;
+        } else {
+            spbla04.setError(null);
+        }
+
+        if (Integer.valueOf(spbla04.getText().toString()) < 1 || Integer.valueOf(spbla04.getText().toString()) > 300) {
+            Toast.makeText(this, "ERROR(invalid): Range 1 - 300", Toast.LENGTH_SHORT).show();
+            spbla04.setError("This data req Range 1 - 300!");
+            Log.i(TAG, "spbla04: This data req Range 1 - 300!");
 
             spbla04.requestFocus();
             return false;
@@ -584,7 +658,7 @@ public class SectionAActivity extends Activity {
                 respage.setError(null);
             }
 
-            if (Integer.valueOf(respage.getText().toString()) < 15 && Integer.valueOf(respage.getText().toString()) > 49) {
+            if (Integer.valueOf(respage.getText().toString()) < 15 || Integer.valueOf(respage.getText().toString()) > 49) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.spbla12), Toast.LENGTH_SHORT).show();
                 respage.setError("Age should be 15 to 49 years");
                 Log.i(TAG, "respage: Age should be 15 to 49 years!");
@@ -673,17 +747,17 @@ public class SectionAActivity extends Activity {
                 spbla06b.setError(null);
             }
 
-            if (spbla05c.isChecked() && (!spbla06c.isChecked() || !spbla06d.isChecked())) {
+            if (spbla05c.isChecked() && (!spbla06c.isChecked() && !spbla06d.isChecked())) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.spbla06), Toast.LENGTH_SHORT).show();
                 spbla05c.setError("Check again!");
                 spbla06c.setError("Check again!");
                 Log.i(TAG, "spbla05: Check again");
-                spbla05b.setFocusable(true);
-                spbla05b.setFocusableInTouchMode(true);
-                spbla05b.requestFocus();
+                spbla05c.setFocusable(true);
+                spbla05c.setFocusableInTouchMode(true);
+                spbla05c.requestFocus();
                 return false;
             } else {
-                spbla05b.setError(null);
+                spbla05c.setError(null);
                 spbla06c.setError(null);
             }
 

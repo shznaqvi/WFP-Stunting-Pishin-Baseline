@@ -2,7 +2,6 @@ package edu.aku.hassannaqvi.wfpstuntingpishin.activities;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.widget.NestedScrollView;
@@ -395,6 +394,10 @@ public class SectionLIMActivity extends Activity
 
                 Intent endSec = new Intent(this, SectionMActivity.class);
                 endSec.putExtra("getName", spblName.getSelectedItem().toString());
+                endSec.putExtra("getSerial", childMap.get(spblName.getSelectedItem().toString()).getSerial());
+                endSec.putExtra("getMotherName", childMap.get(spblName.getSelectedItem().toString()).getMotherName());
+                endSec.putExtra("getMSerial", childMap.get(spblName.getSelectedItem().toString()).getMother_serial());
+
                 startActivity(endSec);
 
             } else {
@@ -432,7 +435,6 @@ public class SectionLIMActivity extends Activity
     private void SaveDraft() throws JSONException {
         Toast.makeText(this, "Saving Draft for  This Section", Toast.LENGTH_SHORT).show();
 
-        SharedPreferences sharedPref = getSharedPreferences("tagName", MODE_PRIVATE);
 
         /*MainApp.ims = new SectionIIMContract();
 
@@ -442,7 +444,7 @@ public class SectionLIMActivity extends Activity
         MainApp.ims.setUser(MainApp.fc.getUser());
         MainApp.ims.setDevicetagID(sharedPref.getString("tagName", null));
 */
-        JSONObject sI = new JSONObject();
+        JSONObject sL = new JSONObject();
 
         /*sI.put("ta01", MainApp.cluster);
         sI.put("ta05h", MainApp.hhno);
@@ -450,45 +452,46 @@ public class SectionLIMActivity extends Activity
 */
         //sI.put("tiImsSerial", MainApp.childsMap.get(tiname.getSelectedItem().toString()).getSerialNo());
 
-        sI.put("mother_name", motherName.getText().toString());
-        sI.put("spblname", spblName.getSelectedItem().toString());
-        sI.put("spblserial", childMap.get(spblName.getSelectedItem().toString()).getSerial());
-        sI.put("bcgM", bcgM01.isChecked() ? "1" : bcgM02.isChecked() ? "2" : "0");
-        sI.put("bcgC", bcgC01.isChecked() ? "1" : bcgC02.isChecked() ? "2" : "0");
-        sI.put("opv0M", opv0M01.isChecked() ? "1" : opv0M02.isChecked() ? "2" : "0");
-        sI.put("opv0C", opv0C01.isChecked() ? "1" : opv0C02.isChecked() ? "2" : "0");
-        sI.put("penta1M", penta1M01.isChecked() ? "1" : penta1M02.isChecked() ? "2" : "0");
-        sI.put("penta1C", penta1C01.isChecked() ? "1" : penta1C02.isChecked() ? "2" : "0");
-        sI.put("pneumo1M", pneumo1M01.isChecked() ? "1" : pneumo1M02.isChecked() ? "2" : "0");
-        sI.put("pneumo1C", pneumo1C01.isChecked() ? "1" : pneumo1C02.isChecked() ? "2" : "0");
-        sI.put("opv1M", opv1M01.isChecked() ? "1" : opv1M02.isChecked() ? "2" : "0");
-        sI.put("opv1C", opv1C01.isChecked() ? "1" : opv1C02.isChecked() ? "2" : "0");
-        sI.put("penta2M", penta2M01.isChecked() ? "1" : penta2M02.isChecked() ? "2" : "0");
-        sI.put("penta2C", penta2C01.isChecked() ? "1" : penta2C02.isChecked() ? "2" : "0");
-        sI.put("pneumo2M", pneumo2M01.isChecked() ? "1" : pneumo2M02.isChecked() ? "2" : "0");
-        sI.put("pneumo2C", pneumo2C01.isChecked() ? "1" : pneumo2C02.isChecked() ? "2" : "0");
+        sL.put("mother_name", motherName.getText().toString());
+        sL.put("mother_serial", childMap.get(spblName.getSelectedItem().toString()).getMother_serial());
+        sL.put("spblname", spblName.getSelectedItem().toString());
+        sL.put("spblserial", childMap.get(spblName.getSelectedItem().toString()).getSerial());
+        sL.put("bcgM", bcgM01.isChecked() ? "1" : bcgM02.isChecked() ? "2" : "0");
+        sL.put("bcgC", bcgC01.isChecked() ? "1" : bcgC02.isChecked() ? "2" : "0");
+        sL.put("opv0M", opv0M01.isChecked() ? "1" : opv0M02.isChecked() ? "2" : "0");
+        sL.put("opv0C", opv0C01.isChecked() ? "1" : opv0C02.isChecked() ? "2" : "0");
+        sL.put("penta1M", penta1M01.isChecked() ? "1" : penta1M02.isChecked() ? "2" : "0");
+        sL.put("penta1C", penta1C01.isChecked() ? "1" : penta1C02.isChecked() ? "2" : "0");
+        sL.put("pneumo1M", pneumo1M01.isChecked() ? "1" : pneumo1M02.isChecked() ? "2" : "0");
+        sL.put("pneumo1C", pneumo1C01.isChecked() ? "1" : pneumo1C02.isChecked() ? "2" : "0");
+        sL.put("opv1M", opv1M01.isChecked() ? "1" : opv1M02.isChecked() ? "2" : "0");
+        sL.put("opv1C", opv1C01.isChecked() ? "1" : opv1C02.isChecked() ? "2" : "0");
+        sL.put("penta2M", penta2M01.isChecked() ? "1" : penta2M02.isChecked() ? "2" : "0");
+        sL.put("penta2C", penta2C01.isChecked() ? "1" : penta2C02.isChecked() ? "2" : "0");
+        sL.put("pneumo2M", pneumo2M01.isChecked() ? "1" : pneumo2M02.isChecked() ? "2" : "0");
+        sL.put("pneumo2C", pneumo2C01.isChecked() ? "1" : pneumo2C02.isChecked() ? "2" : "0");
 
-        sI.put("opv2M", opv2M01.isChecked() ? "1" : opv2M02.isChecked() ? "2" : "0");
-        sI.put("opv2C", opv2C01.isChecked() ? "1" : opv2C02.isChecked() ? "2" : "0");
-        sI.put("penta3M", penta3M01.isChecked() ? "1" : penta3M02.isChecked() ? "2" : "0");
-        sI.put("penta3C", penta3C01.isChecked() ? "1" : penta3C02.isChecked() ? "2" : "0");
-        sI.put("pneumo3M", pneumo3M01.isChecked() ? "1" : pneumo3M02.isChecked() ? "2" : "0");
-        sI.put("pneumo3C", pneumo3C01.isChecked() ? "1" : pneumo3C02.isChecked() ? "2" : "0");
-        sI.put("opv3M", opv3M01.isChecked() ? "1" : opv3M02.isChecked() ? "2" : "0");
-        sI.put("opv3C", opv3C01.isChecked() ? "1" : opv3C02.isChecked() ? "2" : "0");
+        sL.put("opv2M", opv2M01.isChecked() ? "1" : opv2M02.isChecked() ? "2" : "0");
+        sL.put("opv2C", opv2C01.isChecked() ? "1" : opv2C02.isChecked() ? "2" : "0");
+        sL.put("penta3M", penta3M01.isChecked() ? "1" : penta3M02.isChecked() ? "2" : "0");
+        sL.put("penta3C", penta3C01.isChecked() ? "1" : penta3C02.isChecked() ? "2" : "0");
+        sL.put("pneumo3M", pneumo3M01.isChecked() ? "1" : pneumo3M02.isChecked() ? "2" : "0");
+        sL.put("pneumo3C", pneumo3C01.isChecked() ? "1" : pneumo3C02.isChecked() ? "2" : "0");
+        sL.put("opv3M", opv3M01.isChecked() ? "1" : opv3M02.isChecked() ? "2" : "0");
+        sL.put("opv3C", opv3C01.isChecked() ? "1" : opv3C02.isChecked() ? "2" : "0");
         // pneumo 3 at 14 weeks
-        sI.put("ipvM", ipvM01.isChecked() ? "1" : ipvM02.isChecked() ? "2" : "0");
-        sI.put("ipvC", ipvC01.isChecked() ? "1" : ipvC02.isChecked() ? "2" : "0");
+        sL.put("ipvM", ipvM01.isChecked() ? "1" : ipvM02.isChecked() ? "2" : "0");
+        sL.put("ipvC", ipvC01.isChecked() ? "1" : ipvC02.isChecked() ? "2" : "0");
 
-        sI.put("measles1M", measles1M01.isChecked() ? "1" : measles1M02.isChecked() ? "2" : "0");
-        sI.put("measles1C", measles1C01.isChecked() ? "1" : measles1C02.isChecked() ? "2" : "0");
+        sL.put("measles1M", measles1M01.isChecked() ? "1" : measles1M02.isChecked() ? "2" : "0");
+        sL.put("measles1C", measles1C01.isChecked() ? "1" : measles1C02.isChecked() ? "2" : "0");
 
-        sI.put("measles2M", measles2M01.isChecked() ? "1" : measles2M02.isChecked() ? "2" : "0");
-        sI.put("measles2C", measles2C01.isChecked() ? "1" : measles2C02.isChecked() ? "2" : "0");
-        sI.put("vitaminAM", vitaminAM01.isChecked() ? "1" : vitaminAM02.isChecked() ? "2" : "0");
-        sI.put("vitaminAC", vitaminAC01.isChecked() ? "1" : vitaminAC02.isChecked() ? "2" : "0");
+        sL.put("measles2M", measles2M01.isChecked() ? "1" : measles2M02.isChecked() ? "2" : "0");
+        sL.put("measles2C", measles2C01.isChecked() ? "1" : measles2C02.isChecked() ? "2" : "0");
+        sL.put("vitaminAM", vitaminAM01.isChecked() ? "1" : vitaminAM02.isChecked() ? "2" : "0");
+        sL.put("vitaminAC", vitaminAC01.isChecked() ? "1" : vitaminAC02.isChecked() ? "2" : "0");
 
-        MainApp.fc.setsL(String.valueOf(sI));
+        MainApp.fc.setsL(String.valueOf(sL));
 
         Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
 

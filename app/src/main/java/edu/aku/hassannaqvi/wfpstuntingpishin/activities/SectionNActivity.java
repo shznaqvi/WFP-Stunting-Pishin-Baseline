@@ -31,8 +31,10 @@ public class SectionNActivity extends Activity {
 
     @BindView(R.id.spbln01)
     TextView spbln01;
-    @BindView(R.id.spbln02)
-    EditText spbln02;
+    @BindView(R.id.spbln02m)
+    EditText spbln02m;
+    @BindView(R.id.spbln02d)
+    EditText spbln02d;
     @BindView(R.id.spbln03)
     EditText spbln03;
     @BindView(R.id.spbln0401a)
@@ -109,10 +111,15 @@ public class SectionNActivity extends Activity {
         JSONObject sN = new JSONObject();
 
 //        01
+
         sN.put("spbln01", spbln01.getText().toString());
+        sN.put("child_serial", getIntent().getStringExtra("getSerial"));
+        sN.put("mother_name", getIntent().getStringExtra("getMotherName"));
+        sN.put("mother_serial", getIntent().getStringExtra("getMSerial"));
 
 //        02
-        sN.put("spbln02", spbln02.getText().toString());
+        sN.put("spbln02m", spbln02m.getText().toString());
+        sN.put("spbln02d", spbln02d.getText().toString());
 
 //        03
         sN.put("spbln03", spbln03.getText().toString());
@@ -175,6 +182,55 @@ public class SectionNActivity extends Activity {
             ((TextView) spbln01.getSelectedView()).setError(null);
         }
 */
+
+        if (spbln02m.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spbln02), Toast.LENGTH_SHORT).show();
+            spbln02m.setError("This data is Required!");
+            Log.i(TAG, "spbln02m: This data is Required!");
+            spbln02m.requestFocus();
+            return false;
+        } else {
+            spbln02m.setError(null);
+        }
+
+        if (Integer.valueOf(spbln02m.getText().toString()) > 59) {
+            Toast.makeText(this, "ERROR(invalid): " + getString(R.string.day), Toast.LENGTH_SHORT).show();
+            spbln02m.setError("Range is 0 to 59");
+            Log.i(TAG, "spbln02m: Range is 0 to 59");
+            return false;
+        } else {
+            spbln02m.setError(null);
+        }
+
+        if (spbln02d.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spbln02), Toast.LENGTH_SHORT).show();
+            spbln02d.setError("This data is Required!");
+            Log.i(TAG, "spbln02d: This data is Required!");
+            spbln02d.requestFocus();
+            return false;
+        } else {
+            spbln02d.setError(null);
+        }
+
+        if (Integer.valueOf(spbln02m.getText().toString()) < 1) {
+            if (Integer.valueOf(spbln02d.getText().toString()) < 1 || Integer.valueOf(spbln02d.getText().toString()) > 29) {
+                Toast.makeText(this, "ERROR(invalid): " + getString(R.string.day), Toast.LENGTH_SHORT).show();
+                spbln02d.setError("Range is 01 to 29");
+                Log.i(TAG, "spbln02d: Range is 01 to 29");
+                return false;
+            } else {
+                spbln02d.setError(null);
+            }
+        } else {
+            if (Integer.valueOf(spbln02d.getText().toString()) < 0 || Integer.valueOf(spbln02d.getText().toString()) > 29) {
+                Toast.makeText(this, "ERROR(invalid): " + getString(R.string.day), Toast.LENGTH_SHORT).show();
+                spbln02d.setError("Range is 0 to 29");
+                Log.i(TAG, "spbln02d: Range is 0 to 29");
+                return false;
+            } else {
+                spbln02d.setError(null);
+            }
+        }
 
         if (spbln03.getText().toString().isEmpty()) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.spbln03), Toast.LENGTH_SHORT).show();
@@ -286,13 +342,23 @@ public class SectionNActivity extends Activity {
             }
         }
 
+        if (spbln0401a.getSelectedItemPosition() == spbln0402a.getSelectedItemPosition()){
+            Toast.makeText(this, "ERROR(Invalid): Both spinner have same value.", Toast.LENGTH_SHORT).show();
+            ((TextView) spbln0401a.getSelectedView()).setText("Both spinner have same value");
+            ((TextView) spbln0401a.getSelectedView()).setTextColor(Color.RED);
+            spbln0401a.requestFocus();
+            Log.i(TAG, "spbln0401a: Both spinner have same value!");
+            return false;
+        } else {
+            ((TextView) spbln0401a.getSelectedView()).setError(null);
+        }
 
         if (spbln0501a.getSelectedItem() == "....") {
             Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblj0401), Toast.LENGTH_SHORT).show();
             ((TextView) spbln0501a.getSelectedView()).setText("This Data is Required");
             ((TextView) spbln0501a.getSelectedView()).setTextColor(Color.RED);
             spbln0501a.requestFocus();
-            Log.i(TAG, "spblj0301a: This Data is Required!");
+            Log.i(TAG, "spblj0501a: This Data is Required!");
             return false;
         } else {
             ((TextView) spbln0501a.getSelectedView()).setError(null);
@@ -360,6 +426,17 @@ public class SectionNActivity extends Activity {
                     spbln0502b.setError(null);
                 }
             }
+        }
+
+        if (spbln0501a.getSelectedItemPosition() == spbln0502a.getSelectedItemPosition()){
+            Toast.makeText(this, "ERROR(Invalid): Both spinner have same value.", Toast.LENGTH_SHORT).show();
+            ((TextView) spbln0501a.getSelectedView()).setText("Both spinner have same value");
+            ((TextView) spbln0501a.getSelectedView()).setTextColor(Color.RED);
+            spbln0501a.requestFocus();
+            Log.i(TAG, "spbln0501a: Both spinner have same value!");
+            return false;
+        } else {
+            ((TextView) spbln0501a.getSelectedView()).setError(null);
         }
 
         return true;

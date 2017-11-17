@@ -1,7 +1,6 @@
 package edu.aku.hassannaqvi.wfpstuntingpishin.activities;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
 import android.support.v7.app.AppCompatActivity;
@@ -21,6 +20,8 @@ import android.widget.Toast;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.List;
 
 import butterknife.BindView;
@@ -49,8 +50,10 @@ public class SectionKActivity extends AppCompatActivity implements RadioGroup.On
     RadioButton spblk05b;
     @BindView(R.id.spblk0599)
     RadioButton spblk0599;
-    @BindView(R.id.spblk06)
-    EditText spblk06;
+    @BindView(R.id.spblk06m)
+    EditText spblk06m;
+    @BindView(R.id.spblk06d)
+    EditText spblk06d;
     @BindView(R.id.spblk07)
     RadioGroup spblk07;
     @BindView(R.id.spblk07a)
@@ -401,6 +404,9 @@ public class SectionKActivity extends AppCompatActivity implements RadioGroup.On
         setContentView(R.layout.activity_section_k);
         ButterKnife.bind(this);
 
+        String dateToday = new SimpleDateFormat("dd/MM/yyyy").format(Calendar.getInstance().getTime());
+        String maxDate2year = new SimpleDateFormat("dd/MM/yyyy").format(Calendar.getInstance().getTimeInMillis() - (MainApp.MILLISECONDS_IN_2YEAR));
+
         MainApp.childMap.put("....", null);
         MainApp.lstChild.add("....");
 
@@ -410,6 +416,7 @@ public class SectionKActivity extends AppCompatActivity implements RadioGroup.On
 
                 MainApp.childMap.put(MainApp.familyMembersList.get(i).getMemberName(), new FamilyMembers(MainApp.familyMembersList.get(i)));
                 MainApp.lstChild.add(MainApp.familyMembersList.get(i).getMemberName());
+
 
 
             }
@@ -438,6 +445,8 @@ public class SectionKActivity extends AppCompatActivity implements RadioGroup.On
         //motherName.setText(childMap.get(spblk01.getSelectedItem().toString()));
 
         spblk04.setManager(getSupportFragmentManager());
+        spblk04.setMaxDate(dateToday);
+        spblk04.setMinDate(maxDate2year);
 
         spblk07.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
         {
@@ -527,6 +536,32 @@ public class SectionKActivity extends AppCompatActivity implements RadioGroup.On
             rg.setOnCheckedChangeListener(this);
         }
 
+        spblk08b.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
+        {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
+                if (isChecked) {
+                    spblk08bx.setVisibility(View.VISIBLE);
+                } else {
+                    spblk08bx.setVisibility(View.GONE);
+                    spblk08bx.setText(null);
+                }
+            }
+        });
+
+        spblk08c.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
+        {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
+                if (isChecked) {
+                    spblk08cx.setVisibility(View.VISIBLE);
+                } else {
+                    spblk08cx.setVisibility(View.GONE);
+                    spblk08cx.setText(null);
+                }
+            }
+        });
+
 
 
     }
@@ -592,18 +627,17 @@ public class SectionKActivity extends AppCompatActivity implements RadioGroup.On
     private void SaveDraft() throws JSONException {
         Toast.makeText(this, "Saving Draft for  This Section", Toast.LENGTH_SHORT).show();
 
-        SharedPreferences sharedPref = getSharedPreferences("tagName", MODE_PRIVATE);
-
-
         JSONObject sK = new JSONObject();
 
-        sK.put("motherName", motherName.getText().toString());
+        sK.put("mother_name", motherName.getText().toString());
+        sK.put("motherserial", MainApp.childMap.get(spblk01.getSelectedItem().toString()).getMother_serial());
         sK.put("spblk01", spblk01.getSelectedItem().toString());
         sK.put("spblk02", MainApp.childMap.get(spblk01.getSelectedItem().toString()).getSerial());
         sK.put("spblk03", MainApp.childMap.get(spblk01.getSelectedItem().toString()).getGender());
         sK.put("spblk04", spblk04.getText().toString());
         sK.put("spblk05", spblk05a.isChecked() ? "1" : spblk05b.isChecked() ? "2" : spblk0599.isChecked() ? "99" : "0");
-        sK.put("spblk06", spblk06.getText().toString());
+        sK.put("spblk06m", spblk06m.getText().toString());
+        sK.put("spblk06d", spblk06d.getText().toString());
         sK.put("spblk07", spblk07a.isChecked() ? "1" : spblk07b.isChecked() ? "2" : "0");
         sK.put("spblk08", spblk08a.isChecked() ? "1" : spblk08b.isChecked() ? "2" : spblk08c.isChecked() ? "3" : "0");
         sK.put("spblk08bx", spblk08bx.getText().toString());
@@ -690,25 +724,49 @@ public class SectionKActivity extends AppCompatActivity implements RadioGroup.On
             spblk05a.setError(null);
         }
 
-        if (spblk06.getText().toString().isEmpty()) {
+        if (spblk06m.getText().toString().isEmpty()) {
             Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblk06), Toast.LENGTH_SHORT).show();
-            spblk06.setError("This Data is Required!");
-            spblk06.requestFocus();
+            spblk06m.setError("This Data is Required!");
+            spblk06m.requestFocus();
             Log.i(TAG, "spblk06: This Data is Required!");
             return false;
         } else {
-            spblk06.setError(null);
+            spblk06m.setError(null);
         }
 
-        if (Integer.valueOf(spblk06.getText().toString()) < 0 || Integer.valueOf(spblk06.getText().toString()) > 23) {
+        if (Integer.valueOf(spblk06m.getText().toString()) < 0 || Integer.valueOf(spblk06m.getText().toString()) > 23) {
             Toast.makeText(this, "ERROR(Invalid)" + getString(R.string.spblk06), Toast.LENGTH_SHORT).show();
-            spblk06.setError("Age Range is 0 to 23 months");
-            spblk06.requestFocus();
+            spblk06m.setError("Age Range is 0 to 23 months");
+            spblk06m.requestFocus();
             Log.i(TAG, "spblk06: Age Range is 0 to 23 months");
             return false;
         } else {
-            spblk06.setError(null);
+            spblk06m.setError(null);
         }
+
+        if (spblk06d.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblk06), Toast.LENGTH_SHORT).show();
+            spblk06d.setError("This Data is Required!");
+            spblk06d.requestFocus();
+            Log.i(TAG, "spblk06: This Data is Required!");
+            return false;
+        } else {
+            spblk06d.setError(null);
+        }
+
+        if (Integer.valueOf(spblk06m.getText().toString()) < 1) {
+            if (Integer.valueOf(spblk06d.getText().toString()) < 1 || Integer.valueOf(spblk06d.getText().toString()) > 29) {
+                Toast.makeText(this, "ERROR(Invalid)" + getString(R.string.spblk06), Toast.LENGTH_SHORT).show();
+                spblk06d.setError("Age Range is 0 to 29 days");
+                spblk06d.requestFocus();
+                Log.i(TAG, "spblk06: Age Range is 0 to 29 days");
+                return false;
+            } else {
+                spblk06d.setError(null);
+            }
+        }
+
+
 
         if (spblk07.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblk07), Toast.LENGTH_SHORT).show();
@@ -735,24 +793,49 @@ public class SectionKActivity extends AppCompatActivity implements RadioGroup.On
                 spblk08a.setError(null);
             }
 
-            if (spblk08b.isChecked() && spblk08bx.getText().toString().isEmpty()) {
-                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblk08) + " - " + getString(R.string.hour), Toast.LENGTH_SHORT).show();
-                spblk08bx.setError("This Data is Required!");
-                spblk08bx.requestFocus();
-                Log.i(TAG, "spblk08bx: This Data is Required!");
-                return false;
-            } else {
-                spblk08bx.setError(null);
+            if (spblk08b.isChecked()) {
+
+                if (spblk08bx.getText().toString().isEmpty()) {
+                    Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblk08) + " - " + getString(R.string.hour), Toast.LENGTH_SHORT).show();
+                    spblk08bx.setError("This Data is Required!");
+                    spblk08bx.requestFocus();
+                    Log.i(TAG, "spblk08bx: This Data is Required!");
+                    return false;
+                } else {
+                    spblk08bx.setError(null);
+                }
+
+                if (Integer.valueOf(spblk08bx.getText().toString()) < 1 || Integer.valueOf(spblk08bx.getText().toString()) > 23) {
+                    Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblk08) + " - " + getString(R.string.hour), Toast.LENGTH_SHORT).show();
+                    spblk08bx.setError("Range is 1 to 23 hours");
+                    spblk08bx.requestFocus();
+                    Log.i(TAG, "spblk08bx: Range is 1 to 23 hours");
+                    return false;
+                } else {
+                    spblk08bx.setError(null);
+                }
             }
 
-            if (spblk08c.isChecked() && spblk08cx.getText().toString().isEmpty()) {
-                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblk08) + " - " + getString(R.string.day), Toast.LENGTH_SHORT).show();
-                spblk08cx.setError("This Data is Required!");
-                spblk08cx.requestFocus();
-                Log.i(TAG, "spblk08cx: This Data is Required!");
-                return false;
-            } else {
-                spblk08cx.setError(null);
+            if (spblk08c.isChecked()) {
+                if (spblk08cx.getText().toString().isEmpty()) {
+                    Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblk08) + " - " + getString(R.string.day), Toast.LENGTH_SHORT).show();
+                    spblk08cx.setError("This Data is Required!");
+                    spblk08cx.requestFocus();
+                    Log.i(TAG, "spblk08cx: This Data is Required!");
+                    return false;
+                } else {
+                    spblk08cx.setError(null);
+                }
+
+                if (Integer.valueOf(spblk08cx.getText().toString()) < 1) {
+                    Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblk08) + " - " + getString(R.string.day), Toast.LENGTH_SHORT).show();
+                    spblk08cx.setError("Can not be zero");
+                    spblk08cx.requestFocus();
+                    Log.i(TAG, "spblk08bx: Can not be zero");
+                    return false;
+                } else {
+                    spblk08cx.setError(null);
+                }
             }
 
 
@@ -936,11 +1019,11 @@ public class SectionKActivity extends AppCompatActivity implements RadioGroup.On
                 spblk1303x.setError(null);
             }
 
-            if (Integer.valueOf(spblk1306x.getText().toString()) < 1 || Integer.valueOf(spblk1306x.getText().toString()) > 20) {
+            if (Integer.valueOf(spblk1306x.getText().toString()) < 1 || Integer.valueOf(spblk1306x.getText().toString()) > 5) {
                 Toast.makeText(this, "ERROR(Invalid): " + getString(R.string.times), Toast.LENGTH_SHORT).show();
-                spblk1306x.setError("Range is 1 to 20 times...");
+                spblk1306x.setError("Range is 1 to 5 times...");
                 spblk1306x.requestFocus();
-                Log.i(TAG, "spblk1306x: Range is 1 to 20 times...");
+                Log.i(TAG, "spblk1306x: Range is 1 to 5 times...");
                 return false;
             } else {
                 spblk1306x.setError(null);

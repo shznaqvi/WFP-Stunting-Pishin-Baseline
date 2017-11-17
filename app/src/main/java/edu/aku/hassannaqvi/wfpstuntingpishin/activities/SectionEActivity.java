@@ -114,6 +114,8 @@ public class SectionEActivity extends Activity {
                     for (int i = 1; i < items.length; i++) {
                         if (i != pos) {
                             arrlst2.add(items[i]);
+                        } else if (i == 13) {
+                            arrlst2.add(items[i]);
                         }
                     }
 
@@ -154,11 +156,13 @@ public class SectionEActivity extends Activity {
                     for (int i = 1; i < items.length; i++) {
                         if (i != position) {
                             arrlst3.add(items[i]);
+                        } else if (i == arrlst2.size() - 1) {
+                            arrlst3.add(items[i]);
                         }
                     }
 
                     for (int j = 1; j < arrlst3.size(); j++) {
-                        if (items[j].contains(items[pos])) {
+                        if (arrlst3.get(j).equals(arrlst2.get(pos)) && pos != arrlst2.size() - 1) {
                             arrlst3.remove(j);
                             break;
                         }
@@ -276,7 +280,8 @@ public class SectionEActivity extends Activity {
     private boolean ValidateForm() {
 
         //        spble01a
-        if (spble01a.getSelectedItem().toString() == "....") {
+        if (spble01a.getSelectedItem().toString() == "...."
+                && spble01b.getSelectedItem().toString() == "...." && spble01c.getSelectedItem().toString() == "....") {
             Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spble01), Toast.LENGTH_SHORT).show();
             ((TextView) spble01a.getSelectedView()).setText("This Data is Required");
             ((TextView) spble01a.getSelectedView()).setTextColor(Color.RED);
@@ -304,7 +309,7 @@ public class SectionEActivity extends Activity {
         }
 
         //        spble01b
-        if (spble01b.getSelectedItem() == "....") {
+        /*if (spble01b.getSelectedItem() == "....") {
             Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spble01b), Toast.LENGTH_SHORT).show();
             ((TextView) spble01b.getSelectedView()).setText("This Data is Required");
             ((TextView) spble01b.getSelectedView()).setTextColor(Color.RED);
@@ -313,10 +318,10 @@ public class SectionEActivity extends Activity {
             return false;
         } else {
             ((TextView) spble01b.getSelectedView()).setError(null);
-        }
+        }*/
 
 
-        if (spble01b.getSelectedItemPosition() == 13) {
+        if (spble01b.getSelectedItemPosition() == arrlst2.size() - 1) {
 
             //        spble01b88x
             if (spble01b88x.getText().toString().isEmpty()) {
@@ -332,7 +337,7 @@ public class SectionEActivity extends Activity {
         }
 
         //        spble01c
-        if (spble01c.getSelectedItem() == "....") {
+        /*if (spble01c.getSelectedItem() == "....") {
             Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spble01c), Toast.LENGTH_SHORT).show();
             ((TextView) spble01c.getSelectedView()).setText("This Data is Required");
             ((TextView) spble01c.getSelectedView()).setTextColor(Color.RED);
@@ -341,10 +346,10 @@ public class SectionEActivity extends Activity {
             return false;
         } else {
             ((TextView) spble01c.getSelectedView()).setError(null);
-        }
+        }*/
 
 
-        if (spble01c.getSelectedItemPosition() == 13) {
+        if (spble01c.getSelectedItemPosition() == arrlst3.size() - 1 && arrlst3.size() != 1) {
 
             //        spble01c88x
             if (spble01c88x.getText().toString().isEmpty()) {
@@ -367,6 +372,15 @@ public class SectionEActivity extends Activity {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.spble02), Toast.LENGTH_SHORT).show();
                 spble02.setError("This data is Required!");    // Set Error on last radio button
                 Log.i(TAG, "spble02: This data is Required!");
+                spble02.requestFocus();
+                return false;
+            } else {
+                spble02.setError(null);
+            }
+
+            if (Integer.valueOf(spble02.getText().toString()) < 500) {
+                Toast.makeText(this, "Cannot be less than 500", Toast.LENGTH_SHORT).show();
+                spble02.setError("Cannot be less than 500");    // Set Error on last radio button
                 spble02.requestFocus();
                 return false;
             } else {

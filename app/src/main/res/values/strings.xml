@@ -110,6 +110,7 @@
     <string name="spbla01">  تحصیل کا نام </string>
     <string name="spbla02">  یونین کونسل کا نام </string>-->
     <string name="spbla03">  گاؤں یا علاقہ کا نام </string>
+    <string name="spbla03b">  LHW </string>
     <string name="spbla04">  گھر کا نمبر </string>
     <string name="spbla11">  جواب دہندہ کا نام </string>
     <string name="spbla12">  جواب دہندہ کی عمر </string>
@@ -132,7 +133,7 @@
     <string name="spbla07a"> 6 ماہ سے کم عمر بچے </string>
     <string name="spbla07b"> 6 سے 23 مہینے کے بچے </string>
     <string name="spbla07c"> 24 سے 59 مہینے کے بچے </string>
-    <string name="spbla08"> Have you got the permission to start interview? </string>
+  <string name="spbla08"> کیا جوابدہندہ مطالعے میں شامل ہونے کے لیے رضامند ہے؟ </string>
 
     <string name="secBLabel">  خاندان کی معلومات </string>
     <string name="spblb01">  گھر کے افراد کا نام گھر کے سربراہ سے شروع کریں. </string>
@@ -218,24 +219,24 @@
     <string name="spblc07">  اگرہاں تو دوسرے کتنے گھر لیٹرین کی یہ سہولت استعمال کرتے ہیں؟ </string>
     <string name="spblc07a">  گھروں کی تعداد </string>
     <string name="spblc08">  کیا آپ کے گھر میں موجود ہیں؟ مثال کے طور پر </string>
-    <string name="spblc08a">  بجلی </string>
-    <string name="spblc08b">  ریڈیو </string>
-    <string name="spblc08c">  ٹی۔وی </string>
-    <string name="spblc08d">  ٹیلی فون </string>
-    <string name="spblc08e">  فریج </string>
-    <string name="spblc08f">  الماری؍خانے </string>
-    <string name="spblc08g">  کر سی </string>
-    <string name="spblc08h">  روم کولر </string>
-    <string name="spblc08i">  ائر کنڈیشنر </string>
-    <string name="spblc08j">  واشنگ مشین </string>
-    <string name="spblc08k">  واٹر پمپ </string>
-    <string name="spblc08l">  بستر </string>
-    <string name="spblc08m">  دیوار پر لگانے والی گھڑی </string>
-    <string name="spblc08n">  صوفہ </string>
-    <string name="spblc08o">  کیمرہ </string>
-    <string name="spblc08p">  سلائی مشین </string>
-    <string name="spblc08q">  کمپیو ٹر </string>
-    <string name="spblc08r">  انٹرنٹ کینکشن </string>
+    <string name="spblc0801">  بجلی </string>
+    <string name="spblc0802">  ریڈیو </string>
+    <string name="spblc0803">  ٹی۔وی </string>
+    <string name="spblc0804">  ٹیلی فون </string>
+    <string name="spblc0805">  فریج </string>
+    <string name="spblc0806">  الماری؍خانے </string>
+    <string name="spblc0807">  کر سی </string>
+    <string name="spblc0808">  روم کولر </string>
+    <string name="spblc0809">  ائر کنڈیشنر </string>
+    <string name="spblc0810">  واشنگ مشین </string>
+    <string name="spblc0811">  واٹر پمپ </string>
+    <string name="spblc0812">  بستر </string>
+    <string name="spblc0813">  دیوار پر لگانے والی گھڑی </string>
+    <string name="spblc0814">  صوفہ </string>
+    <string name="spblc0815">  کیمرہ </string>
+    <string name="spblc0816">  سلائی مشین </string>
+    <string name="spblc0817">  کمپیو ٹر </string>
+    <string name="spblc0818">  انٹرنٹ کینکشن </string>
     <string name="spblc09">  آپ کے گھر میں بنیادی طور پر کھانا پکانے کے لئے کس قسم کے ایندھن کا استعمال ہوتا ہے؟ </string>
     <string name="spblc09a">  بجلی </string>
     <string name="spblc09b">  ایل ۔پی۔جی </string>
@@ -328,7 +329,7 @@
     <string name="spblc18">  اگر ہاں تو کتنی ایکڑ اور کنال زرعی زمین ہے؟ </string>
     <string name="spblc18a">  ایکڑ </string>
     <string name="spblc18b">  کانال </string>
-    <string name="spblc18c">  مرحلہ </string>
+    <string name="spblc18c">  مرلہ </string>
     <string name="spblc19">  کیا آپ کے اپنے مال مویشی یا مرغیاں ہیں؟ </string>
     <string name="spblc20">  اگر ہاں تو کتنے مال مویشی اور مر غیاں ہیں؟ </string>
     <string name="spblc20a">  گائے ،بیل </string>
@@ -597,6 +598,7 @@
     <string name="spbli14">  اس حمل یا آخری حمل کے دوران آپ کو فولاد کی گولیاں دی گئی یا آپ نے خود خریدی؟ گولیاں ؍شربت دیکھا ئیں۔ </string>
     <string name="spbli15">  اس حمل یا آخری حمل کے دوران کتنے دنوں تک گولیاں یا شربت استعمال کی؟ </string>
     <string name="spbli15a">  دن </string>
+    <string name="spbli15m">  ماہ </string>
     <string name="spbli15b">  نہیں لیا </string>
     <string name="spbli16">  اس حمل کے دوران کیا آپ نے کوئی پیٹ کے کیڑوں کی دوائی کھائی تھی؟ </string>
     <string name="spbli17">  کس کے ہاتھوں (نام)زچگی ہوئی؟ </string>
@@ -903,6 +905,6 @@
     <string name="spblp0303b">  بہت مشکل سے ایک مرتبہ(1 سے 2 مرتبہ) </string>
     <string name="spblp0303c">  کبھی کبھی (3 کان 10 وقت) </string>
     <string name="spblp0303d">  اکثر اوقات (10 مرتبہ سے زیادہ) </string>
-  <string name="title_activity_login2">Sign in</string>
+    <string name="title_activity_login2">Sign in</string>
 
 </resources>

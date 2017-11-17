@@ -144,7 +144,7 @@ public class SectionBActivity extends Activity {
         mothersMap.put("N/A", "0");
 
         for (FamilyMembers mem : MainApp.familyMembersList) {
-            if (mem.getType().equals("mw") || mem.getType().equals("w")) {
+            if (mem.getType().equals("mw")) {
                 mothersList.add(mem.getMemberName());
                 mothersMap.put(mem.getMemberName(), mem.getSerial());
             }
@@ -155,6 +155,20 @@ public class SectionBActivity extends Activity {
         spblb04y.addTextChangedListener(new CustomTextWatcher(spblb04y));
         spblb04m.addTextChangedListener(new CustomTextWatcher(spblb04m));
         spblb04d.addTextChangedListener(new CustomTextWatcher(spblb04d));
+
+//        Skip
+
+        spblb05.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                if (i == R.id.spblb0566){
+                    spblb06b.setChecked(false);
+                    spblb06b.setEnabled(false);
+                }else {
+                    spblb06b.setEnabled(true);
+                }
+            }
+        });
 
     }
 
@@ -262,6 +276,8 @@ public class SectionBActivity extends Activity {
         MainApp.fmc.setInterviewer2(MainApp.userName2);
         MainApp.fmc.set_UUID(MainApp.fc.get_UID());
         MainApp.fmc.setDevicetagID(sharedPref.getString("tagName", null));
+        MainApp.fmc.setApp_ver(MainApp.fc.getAppVersion());
+
 
         MainApp.counter++;
 
@@ -270,6 +286,7 @@ public class SectionBActivity extends Activity {
         sB.put("tehsil_code", String.valueOf(MainApp.tehsilCode));
         sB.put("uc_code", String.valueOf(MainApp.ucCode));
         sB.put("village_code", String.valueOf(MainApp.villageCode));
+        sB.put("lhw_code", String.valueOf(MainApp.lhwCode));
         sB.put("spblb01Serial", String.valueOf(MainApp.counter));
         sB.put("spblb01", spblb01.getText().toString());
         sB.put("spblb02", spblb02a.isChecked() ? "1" : spblb02b.isChecked() ? "2" : "0");
@@ -299,6 +316,7 @@ public class SectionBActivity extends Activity {
                     spblb02b.isChecked() && spblb07b.isChecked() ? "w" : "m";
         } else {
             type = "ch";
+            MainApp.TotalChildCount++;
         }
 
         Map<Integer, String> child = new HashMap<>();
@@ -341,7 +359,7 @@ public class SectionBActivity extends Activity {
                         spblb04m.getText().toString() + "-" +
                         spblb04d.getText().toString(),
                 spblb03.getSelectedItemPosition() != 0 ? "" + spblb03.getSelectedItem().toString() : "N/A",
-                type));
+                type, mothersMap.get(spblb03.getSelectedItem().toString())));
 
 
         Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
@@ -428,8 +446,6 @@ public class SectionBActivity extends Activity {
         }
 
 
-
-
         if (spblb04d.getText().toString().isEmpty()) {
             Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblb04d), Toast.LENGTH_SHORT).show();
             spblb04d.setError("This data is required");
@@ -449,7 +465,6 @@ public class SectionBActivity extends Activity {
         } else {
             spblb04d.setError(null);
         }
-
 
 
         if (Integer.valueOf(spblb04y.getText().toString()) > 5) {

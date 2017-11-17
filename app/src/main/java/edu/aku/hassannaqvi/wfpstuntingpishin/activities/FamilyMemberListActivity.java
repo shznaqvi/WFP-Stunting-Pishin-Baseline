@@ -101,20 +101,24 @@ public class FamilyMemberListActivity extends Activity implements View.OnKeyList
 //        Text Watchers
 
 
-        spbla07t.setOnKeyListener(this);
+//        spbla07t.setOnKeyListener(this);
         spbla07t.addTextChangedListener(new CustomTextWatcher(spbla07t));
-        spbla07m6.setOnKeyListener(this);
+//        spbla07m6.setOnKeyListener(this);
         spbla07m6.addTextChangedListener(new CustomTextWatcher(spbla07m6));
-        spbla07f6.setOnKeyListener(this);
+//        spbla07f6.setOnKeyListener(this);
         spbla07f6.addTextChangedListener(new CustomTextWatcher(spbla07f6));
-        spbla07m23.setOnKeyListener(this);
+//        spbla07m23.setOnKeyListener(this);
         spbla07m23.addTextChangedListener(new CustomTextWatcher(spbla07m23));
-        spbla07f23.setOnKeyListener(this);
+//        spbla07f23.setOnKeyListener(this);
         spbla07f23.addTextChangedListener(new CustomTextWatcher(spbla07f23));
-        spbla07m59.setOnKeyListener(this);
+//        spbla07m59.setOnKeyListener(this);
         spbla07m59.addTextChangedListener(new CustomTextWatcher(spbla07m59));
-        spbla07f59.setOnKeyListener(this);
+//        spbla07f59.setOnKeyListener(this);
         spbla07f59.addTextChangedListener(new CustomTextWatcher(spbla07f59));
+
+        spbla07pw.addTextChangedListener(new CustomTextWatcher(spbla07pw));
+        spbla07lw.addTextChangedListener(new CustomTextWatcher(spbla07lw));
+        spbla07mw.addTextChangedListener(new CustomTextWatcher(spbla07mw));
 
 
     }
@@ -175,7 +179,7 @@ public class FamilyMemberListActivity extends Activity implements View.OnKeyList
     void onBtnAddMemberClick() {
         //TODO implement
 
-        if (formValidation(true)) {
+        if (formValidation(false)) {
             startActivity(new Intent(this, SectionBActivity.class));
         }
     }
@@ -216,6 +220,8 @@ public class FamilyMemberListActivity extends Activity implements View.OnKeyList
         count.put("spbla07f23_r", spbla07f23.getText().toString());
         count.put("spbla07m59_r", spbla07m59.getText().toString());
         count.put("spbla07f59_r", spbla07f59.getText().toString());
+
+        MainApp.TotalMembersCount = Integer.valueOf(spbla07t.getText().toString());
 
         MainApp.fc.setsCount(String.valueOf(count));
     }
@@ -278,7 +284,7 @@ public class FamilyMemberListActivity extends Activity implements View.OnKeyList
         MainApp.endActivity(this, this);
     }
 
-    public boolean formValidation(boolean flag) {
+    public boolean formValidation(boolean flag1) {
 
         if (spbla07t.getText().toString().isEmpty()) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.spbla07t), Toast.LENGTH_SHORT).show();
@@ -391,24 +397,48 @@ public class FamilyMemberListActivity extends Activity implements View.OnKeyList
             spbla07f59.setError(null);
         }
 
-        if (flag) {
-            if (Integer.valueOf(spbla07t.getText().toString()) < (Integer.valueOf(spbla07pw.getText().toString())
-                    + Integer.valueOf(spbla07lw.getText().toString()) + Integer.valueOf(spbla07mw.getText().toString())
-                    + Integer.valueOf(spbla07m6.getText().toString()) + Integer.valueOf(spbla07f6.getText().toString())
-                    + Integer.valueOf(spbla07m23.getText().toString()) + Integer.valueOf(spbla07f23.getText().toString())
-                    + Integer.valueOf(spbla07m59.getText().toString()) + Integer.valueOf(spbla07f59.getText().toString()))) {
-                Toast.makeText(this, "ERROR(Invalid): " + getString(R.string.spbla07t), Toast.LENGTH_SHORT).show();
-                spbla07t.setError("Can not be greater than total members..!");
-                Log.i(TAG, "spbla07: Can not be zero..!");
+        if (Integer.valueOf(spbla07t.getText().toString()) < (Integer.valueOf(spbla07pw.getText().toString())
+                + Integer.valueOf(spbla07lw.getText().toString()) + Integer.valueOf(spbla07mw.getText().toString())
+                + Integer.valueOf(spbla07m6.getText().toString()) + Integer.valueOf(spbla07f6.getText().toString())
+                + Integer.valueOf(spbla07m23.getText().toString()) + Integer.valueOf(spbla07f23.getText().toString())
+                + Integer.valueOf(spbla07m59.getText().toString()) + Integer.valueOf(spbla07f59.getText().toString()))) {
+            Toast.makeText(this, "ERROR(Invalid): " + getString(R.string.spbla07t), Toast.LENGTH_SHORT).show();
+            spbla07t.setError("Can not be greater than total members..!");
+            Log.i(TAG, "spbla07: Can not be zero..!");
 
-                spbla07t.requestFocus();
-                return false;
-            } else {
-                spbla07t.setError(null);
-            }
+            spbla07t.requestFocus();
+            return false;
+        } else {
+            spbla07t.setError(null);
         }
 
 //        Main Validation
+        if (flag1) {
+            Boolean check = false;
+            for (FamilyMembers mem : MainApp.familyMembersList) {
+                if (mem.getType().equals("mw")) {
+                    check = false;
+                    break;
+                } else {
+                    check = true;
+                }
+            }
+
+            if (check) {
+                Toast.makeText(this, "ERROR(Invalid): Fill Women", Toast.LENGTH_SHORT).show();
+                switch (MainApp.selectedMom) {
+                    case 0:
+                        spbla07pw.setError("Fill atleast 1");
+                        return false;
+                    case 1:
+                        spbla07lw.setError("Fill atleast 1");
+                        return false;
+                    case 2:
+                        spbla07mw.setError("Fill atleast 1");
+                        return false;
+                }
+            }
+        }
 
         return true;
     }
@@ -431,8 +461,15 @@ public class FamilyMemberListActivity extends Activity implements View.OnKeyList
             switch (edit.getId()) {
 
                 case R.id.spbla07t:
-                    if (spbla07t.getText().toString().isEmpty()) {
+                    if (!spbla07t.getText().toString().isEmpty()) {
                         MainApp.members.setCount(Integer.valueOf(spbla07t.getText().toString()));
+                        if (Integer.valueOf(spbla07t.getText().toString()) > MainApp.checkMembers.getCount()) {
+                            btn_addMember.setEnabled(true);
+                            btn_Continue.setEnabled(false);
+                        } else {
+                            btn_Continue.setEnabled(true);
+                            btn_addMember.setEnabled(false);
+                        }
                     }
                     break;
 
@@ -552,6 +589,50 @@ public class FamilyMemberListActivity extends Activity implements View.OnKeyList
                     MainApp.members.setChildren(2, child);
 
                     break;
+
+                case R.id.spbla07pw:
+
+                    if (!spbla07pw.getText().toString().isEmpty()) {
+                        if (MainApp.selectedMom == 0 && Integer.valueOf(spbla07pw.getText().toString()) < 1) {
+                            createToast("Can't be less than 1", spbla07pw);
+                        } else if (Integer.valueOf(spbla07t.getText().toString()) > MainApp.checkMembers.getCount()) {
+                            btn_addMember.setEnabled(true);
+                            btn_Continue.setEnabled(false);
+                        } else {
+                            btn_Continue.setEnabled(true);
+                            btn_addMember.setEnabled(false);
+                        }
+                    }
+
+                    break;
+                case R.id.spbla07lw:
+                    if (!spbla07lw.getText().toString().isEmpty()) {
+                        if (MainApp.selectedMom == 1 && Integer.valueOf(spbla07lw.getText().toString()) < 1) {
+                            createToast("Can't be less than 1", spbla07lw);
+                        } else if (Integer.valueOf(spbla07t.getText().toString()) > MainApp.checkMembers.getCount()) {
+                            btn_addMember.setEnabled(true);
+                            btn_Continue.setEnabled(false);
+                        } else {
+                            btn_Continue.setEnabled(true);
+                            btn_addMember.setEnabled(false);
+                        }
+                    }
+
+                    break;
+                case R.id.spbla07mw:
+                    if (!spbla07mw.getText().toString().isEmpty()) {
+                        if (MainApp.selectedMom == 2 && Integer.valueOf(spbla07mw.getText().toString()) < 1) {
+                            createToast("Can't be less than 1", spbla07mw);
+                        } else if (Integer.valueOf(spbla07t.getText().toString()) > MainApp.checkMembers.getCount()) {
+                            btn_addMember.setEnabled(true);
+                            btn_Continue.setEnabled(false);
+                        } else {
+                            btn_Continue.setEnabled(true);
+                            btn_addMember.setEnabled(false);
+                        }
+                    }
+
+                    break;
             }
 
 //        Women
@@ -566,10 +647,11 @@ public class FamilyMemberListActivity extends Activity implements View.OnKeyList
         }
 
         public void afterTextChanged(Editable s) {
-            if (flag && !(spbla07t.getText().toString().isEmpty() &&
-                    spbla07m6.getText().toString().isEmpty() && spbla07f6.getText().toString().isEmpty() &&
-                    spbla07m23.getText().toString().isEmpty() && spbla07f23.getText().toString().isEmpty() &&
-                    spbla07m59.getText().toString().isEmpty() && spbla07f59.getText().toString().isEmpty())) {
+            if (flag && !spbla07pw.getText().toString().isEmpty() && !spbla07lw.getText().toString().isEmpty() &&
+                    !spbla07mw.getText().toString().isEmpty() && !spbla07t.getText().toString().isEmpty() &&
+                    !spbla07m6.getText().toString().isEmpty() && !spbla07f6.getText().toString().isEmpty() &&
+                    !spbla07m23.getText().toString().isEmpty() && !spbla07f23.getText().toString().isEmpty() &&
+                    !spbla07m59.getText().toString().isEmpty() && !spbla07f59.getText().toString().isEmpty()) {
                 resumeWork();
             }
         }
@@ -599,6 +681,7 @@ public class FamilyMemberListActivity extends Activity implements View.OnKeyList
             holder.gender.setText(familyMembers.getGender());
             holder.motherName.setText("Mother:" + familyMembers.getMotherName());
             holder.type.setText(memberType(familyMembers.getType()));
+
 
             String[] dob = familyMembers.getDob().split("-");
 

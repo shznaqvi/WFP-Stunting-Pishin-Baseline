@@ -265,6 +265,7 @@
                         android:paddingEnd="4dp"
                         android:paddingStart="4dp"
                         android:singleLine="true"
+                        android:text="dmu@aku"
                         android:textSize="18sp">
 
                         <requestFocus />
@@ -276,7 +277,7 @@
                         style="?android:attr/borderlessButtonStyle"
                         android:layout_width="30dp"
                         android:layout_height="30dp"
-                        android:layout_marginTop="0dp"
+                        android:layout_marginTop="10dp"
                         android:background="@drawable/round_button"
                         android:drawableStart="@drawable/ic_remove_red_eye_black_24dp"
                         android:gravity="center"
@@ -287,7 +288,7 @@
                         android:id="@+id/password"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="0dp"
+                        android:layout_marginTop="-10dp"
                         android:layout_weight="0.99"
                         android:drawableEnd="@drawable/ic_lock_black_24dp"
                         android:drawablePadding="2dp"
@@ -300,6 +301,7 @@
                         android:paddingEnd="4dp"
                         android:paddingStart="4dp"
                         android:singleLine="true"
+                        android:text="aku?dmu"
                         android:textSize="18sp" />
 
                     <EditText
@@ -319,6 +321,7 @@
                         android:paddingEnd="4dp"
                         android:paddingStart="4dp"
                         android:singleLine="true"
+                        android:text="test1234"
                         android:textSize="18sp">
 
                     </EditText>
@@ -328,7 +331,7 @@
                         style="?android:attr/borderlessButtonStyle"
                         android:layout_width="30dp"
                         android:layout_height="30dp"
-                        android:layout_marginTop="5dp"
+                        android:layout_marginTop="10dp"
                         android:background="@drawable/round_button"
                         android:drawableStart="@drawable/ic_remove_red_eye_black_24dp"
                         android:gravity="center"
@@ -338,7 +341,7 @@
                         android:id="@+id/password2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="0dp"
+                        android:layout_marginTop="-10dp"
                         android:layout_weight="0.99"
                         android:drawableEnd="@drawable/ic_lock_black_24dp"
                         android:drawablePadding="8dp"
@@ -351,6 +354,7 @@
                         android:paddingEnd="4dp"
                         android:paddingStart="4dp"
                         android:singleLine="true"
+                        android:text="test1234"
                         android:textSize="18sp" />
 
                 </LinearLayout>
@@ -377,6 +381,7 @@
                 android:padding="15dp"
                 android:text="Check for Update"
                 android:textStyle="bold" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

@@ -21,6 +21,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -445,6 +446,7 @@ public class SectionGActivity extends Activity {
             for (SourceNGOContract aNGO : allNGOs) {
                 getAllNGOsMap.put(aNGO.getSourceName(), aNGO.getSourceId());
                 NGOs.add(aNGO.getSourceName());
+                Collections.sort(NGOs);
             }
 
             /*String[] ngo = new String[]{"NGO 1", "NGOs 2", "NGO 3", "NGO 4", "NGO 5", "NGO 6", "NGO 7"};
@@ -603,7 +605,6 @@ public class SectionGActivity extends Activity {
 
     public boolean ValidateForm() {
 
-
         //=================== spblg0101 ==============
         if (spblg0101.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblg0101), Toast.LENGTH_SHORT).show();
@@ -627,11 +628,11 @@ public class SectionGActivity extends Activity {
                 spblg0101num.setError(null);
             }
 
-            if (Integer.valueOf(spblg0101num.getText().toString()) > (Integer.valueOf(MainApp.members.getCount()))) {
+            if (Integer.valueOf(spblg0101num.getText().toString()) < 1 || Integer.valueOf(spblg0101num.getText().toString()) > MainApp.TotalMembersCount) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.bnf), Toast.LENGTH_SHORT).show();
-                spblg0101num.setError("cannot be greater than total members");
+                spblg0101num.setError("Range is 1 to " + MainApp.TotalMembersCount);
                 spblg0101num.requestFocus();
-                Log.i(TAG, "spblg0101num: cannot be greater than total members ");
+                Log.i(TAG, "spblg0101num: Range!");
                 return false;
             } else {
                 spblg0101num.setError(null);
@@ -674,15 +675,16 @@ public class SectionGActivity extends Activity {
                 spblg0102num.setError(null);
             }
 
-            if (Integer.valueOf(spblg0102num.getText().toString()) > (Integer.valueOf(MainApp.members.getCount()))) {
+            if (Integer.valueOf(spblg0102num.getText().toString()) < 1 || Integer.valueOf(spblg0102num.getText().toString()) > MainApp.TotalMembersCount) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.bnf), Toast.LENGTH_SHORT).show();
-                spblg0102num.setError("cannot be greater than total members");
+                spblg0102num.setError("Range is 1 to " + MainApp.TotalMembersCount);
                 spblg0102num.requestFocus();
-                Log.i(TAG, "spblg0102num: cannot be greater than total members ");
+                Log.i(TAG, "spblg0102num: Range!");
                 return false;
             } else {
                 spblg0102num.setError(null);
             }
+
 
             if (spblg0102src.getSelectedItem() == "....") {
                 Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblg0102), Toast.LENGTH_SHORT).show();
@@ -720,11 +722,11 @@ public class SectionGActivity extends Activity {
                 spblg0103num.setError(null);
             }
 
-            if (Integer.valueOf(spblg0103num.getText().toString()) > (Integer.valueOf(MainApp.members.getCount()))) {
+            if (Integer.valueOf(spblg0103num.getText().toString()) < 1 || Integer.valueOf(spblg0103num.getText().toString()) > MainApp.TotalMembersCount) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.bnf), Toast.LENGTH_SHORT).show();
-                spblg0103num.setError("cannot be greater than total members");
+                spblg0103num.setError("Range is 1 to " + MainApp.TotalMembersCount);
                 spblg0103num.requestFocus();
-                Log.i(TAG, "spblg0103num: cannot be greater than total members ");
+                Log.i(TAG, "spblg0103num: Range!");
                 return false;
             } else {
                 spblg0103num.setError(null);
@@ -766,11 +768,11 @@ public class SectionGActivity extends Activity {
                 spblg0104num.setError(null);
             }
 
-            if (Integer.valueOf(spblg0104num.getText().toString()) > (Integer.valueOf(MainApp.members.getCount()))) {
+            if (Integer.valueOf(spblg0104num.getText().toString()) < 1 || Integer.valueOf(spblg0104num.getText().toString()) > MainApp.TotalMembersCount) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.bnf), Toast.LENGTH_SHORT).show();
-                spblg0104num.setError("cannot be greater than total members");
+                spblg0104num.setError("Range is 1 to " + MainApp.TotalMembersCount);
                 spblg0104num.requestFocus();
-                Log.i(TAG, "spblg0104num: cannot be greater than total members ");
+                Log.i(TAG, "spblg0104num: Range!");
                 return false;
             } else {
                 spblg0104num.setError(null);
@@ -812,15 +814,16 @@ public class SectionGActivity extends Activity {
                 spblg0105num.setError(null);
             }
 
-            if (Integer.valueOf(spblg0105num.getText().toString()) > (Integer.valueOf(MainApp.members.getCount()))) {
+            if (Integer.valueOf(spblg0105num.getText().toString()) < 1 || Integer.valueOf(spblg0105num.getText().toString()) > MainApp.TotalMembersCount) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.bnf), Toast.LENGTH_SHORT).show();
-                spblg0105num.setError("cannot be greater than total members");
+                spblg0105num.setError("Range is 1 to " + MainApp.TotalMembersCount);
                 spblg0105num.requestFocus();
-                Log.i(TAG, "spblg0105num: cannot be greater than total members ");
+                Log.i(TAG, "spblg0105num: Range!");
                 return false;
             } else {
                 spblg0105num.setError(null);
             }
+
 
             if (spblg0105src.getSelectedItem() == "....") {
                 Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblg0105), Toast.LENGTH_SHORT).show();
@@ -859,15 +862,16 @@ public class SectionGActivity extends Activity {
                 spblg0106num.setError(null);
             }
 
-            if (Integer.valueOf(spblg0106num.getText().toString()) > (Integer.valueOf(MainApp.members.getCount()))) {
+            if (Integer.valueOf(spblg0106num.getText().toString()) < 1 || Integer.valueOf(spblg0106num.getText().toString()) > MainApp.TotalMembersCount) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.bnf), Toast.LENGTH_SHORT).show();
-                spblg0106num.setError("cannot be greater than total members");
+                spblg0106num.setError("Range is 1 to " + MainApp.TotalMembersCount);
                 spblg0106num.requestFocus();
-                Log.i(TAG, "spblg0106num: cannot be greater than total members ");
+                Log.i(TAG, "spblg0106num: Range!");
                 return false;
             } else {
                 spblg0106num.setError(null);
             }
+
 
             if (spblg0106src.getSelectedItem() == "....") {
                 Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblg0106), Toast.LENGTH_SHORT).show();
@@ -905,11 +909,11 @@ public class SectionGActivity extends Activity {
                 spblg0107num.setError(null);
             }
 
-            if (Integer.valueOf(spblg0107num.getText().toString()) > (Integer.valueOf(MainApp.members.getCount()))) {
+            if (Integer.valueOf(spblg0107num.getText().toString()) < 1 || Integer.valueOf(spblg0107num.getText().toString()) > MainApp.TotalMembersCount) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.bnf), Toast.LENGTH_SHORT).show();
-                spblg0107num.setError("cannot be greater than total members");
+                spblg0107num.setError("Range is 1 to " + MainApp.TotalMembersCount);
                 spblg0107num.requestFocus();
-                Log.i(TAG, "spblg0107num: cannot be greater than total members ");
+                Log.i(TAG, "spblg0107num: Range!");
                 return false;
             } else {
                 spblg0107num.setError(null);
@@ -951,15 +955,16 @@ public class SectionGActivity extends Activity {
                 spblg0108num.setError(null);
             }
 
-            if (Integer.valueOf(spblg0108num.getText().toString()) > (Integer.valueOf(MainApp.members.getCount()))) {
+            if (Integer.valueOf(spblg0108num.getText().toString()) < 1 || Integer.valueOf(spblg0108num.getText().toString()) > MainApp.TotalMembersCount) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.bnf), Toast.LENGTH_SHORT).show();
-                spblg0108num.setError("cannot be greater than total members");
+                spblg0108num.setError("Range is 1 to " + MainApp.TotalMembersCount);
                 spblg0108num.requestFocus();
-                Log.i(TAG, "spblg0108num: cannot be greater than total members ");
+                Log.i(TAG, "spblg0108num: Range!");
                 return false;
             } else {
                 spblg0108num.setError(null);
             }
+
 
             if (spblg0108src.getSelectedItem() == "....") {
                 Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblg0108), Toast.LENGTH_SHORT).show();
@@ -997,11 +1002,11 @@ public class SectionGActivity extends Activity {
                 spblg0109num.setError(null);
             }
 
-            if (Integer.valueOf(spblg0109num.getText().toString()) > (Integer.valueOf(MainApp.members.getCount()))) {
+            if (Integer.valueOf(spblg0109num.getText().toString()) < 1 || Integer.valueOf(spblg0109num.getText().toString()) > MainApp.TotalMembersCount) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.bnf), Toast.LENGTH_SHORT).show();
-                spblg0109num.setError("cannot be greater than total members");
+                spblg0109num.setError("Range is 1 to " + MainApp.TotalMembersCount);
                 spblg0109num.requestFocus();
-                Log.i(TAG, "spblg0109num: cannot be greater than total members ");
+                Log.i(TAG, "spblg0109num: Range!");
                 return false;
             } else {
                 spblg0109num.setError(null);
@@ -1043,11 +1048,11 @@ public class SectionGActivity extends Activity {
                 spblg0110num.setError(null);
             }
 
-            if (Integer.valueOf(spblg0110num.getText().toString()) > (Integer.valueOf(MainApp.members.getCount()))) {
+            if (Integer.valueOf(spblg0110num.getText().toString()) < 1 || Integer.valueOf(spblg0110num.getText().toString()) > MainApp.TotalMembersCount) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.bnf), Toast.LENGTH_SHORT).show();
-                spblg0110num.setError("cannot be greater than total members");
+                spblg0110num.setError("Range is 1 to " + MainApp.TotalMembersCount);
                 spblg0110num.requestFocus();
-                Log.i(TAG, "spblg0110num: cannot be greater than total members ");
+                Log.i(TAG, "spblg0110num: Range!");
                 return false;
             } else {
                 spblg0110num.setError(null);
@@ -1089,11 +1094,11 @@ public class SectionGActivity extends Activity {
                 spblg0111num.setError(null);
             }
 
-            if (Integer.valueOf(spblg0111num.getText().toString()) > (Integer.valueOf(MainApp.members.getCount()))) {
+            if (Integer.valueOf(spblg0111num.getText().toString()) < 1 || Integer.valueOf(spblg0111num.getText().toString()) > MainApp.TotalMembersCount) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.bnf), Toast.LENGTH_SHORT).show();
-                spblg0111num.setError("cannot be greater than total members");
+                spblg0111num.setError("Range is 1 to " + MainApp.TotalMembersCount);
                 spblg0111num.requestFocus();
-                Log.i(TAG, "spblg0111num: cannot be greater than total members ");
+                Log.i(TAG, "spblg0111num: Range!");
                 return false;
             } else {
                 spblg0111num.setError(null);
@@ -1135,16 +1140,16 @@ public class SectionGActivity extends Activity {
                 spblg0112num.setError(null);
             }
 
-            if (Integer.valueOf(spblg0112num.getText().toString()) > (Integer.valueOf(MainApp.members.getCount()))) {
+
+            if (Integer.valueOf(spblg0112num.getText().toString()) < 1 || Integer.valueOf(spblg0112num.getText().toString()) > MainApp.TotalMembersCount) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.bnf), Toast.LENGTH_SHORT).show();
-                spblg0112num.setError("cannot be greater than total members");
+                spblg0112num.setError("Range is 1 to " + MainApp.TotalMembersCount);
                 spblg0112num.requestFocus();
-                Log.i(TAG, "spblg0112num: cannot be greater than total members ");
+                Log.i(TAG, "spblg0112num: Range!");
                 return false;
             } else {
                 spblg0112num.setError(null);
             }
-
             if (spblg0112src.getSelectedItem() == "....") {
                 Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblg0112), Toast.LENGTH_SHORT).show();
                 ((TextView) spblg0112src.getSelectedView()).setText("This Data is Required");
@@ -1182,11 +1187,11 @@ public class SectionGActivity extends Activity {
                 spblg0113num.setError(null);
             }
 
-            if (Integer.valueOf(spblg0113num.getText().toString()) > (Integer.valueOf(MainApp.members.getCount()))) {
+            if (Integer.valueOf(spblg0113num.getText().toString()) < 1 || Integer.valueOf(spblg0113num.getText().toString()) > MainApp.TotalMembersCount) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.bnf), Toast.LENGTH_SHORT).show();
-                spblg0113num.setError("cannot be greater than total members");
+                spblg0113num.setError("Range is 1 to " + MainApp.TotalMembersCount);
                 spblg0113num.requestFocus();
-                Log.i(TAG, "spblg0113num: cannot be greater than total members ");
+                Log.i(TAG, "spblg0113num: Range!");
                 return false;
             } else {
                 spblg0113num.setError(null);
@@ -1228,11 +1233,11 @@ public class SectionGActivity extends Activity {
                 spblg0114num.setError(null);
             }
 
-            if (Integer.valueOf(spblg0114num.getText().toString()) > (Integer.valueOf(MainApp.members.getCount()))) {
+            if (Integer.valueOf(spblg0114num.getText().toString()) < 1 || Integer.valueOf(spblg0114num.getText().toString()) > MainApp.TotalMembersCount) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.bnf), Toast.LENGTH_SHORT).show();
-                spblg0114num.setError("cannot be greater than total members");
+                spblg0114num.setError("Range is 1 to " + MainApp.TotalMembersCount);
                 spblg0114num.requestFocus();
-                Log.i(TAG, "spblg0114num: cannot be greater than total members ");
+                Log.i(TAG, "spblg0114num: Range!");
                 return false;
             } else {
                 spblg0114num.setError(null);
@@ -1275,6 +1280,7 @@ public class SectionGActivity extends Activity {
                 spblg0115x.setError(null);
             }
 
+
             if (spblg0115num.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.bnf), Toast.LENGTH_SHORT).show();
                 spblg0115num.setError("This data is Required!");
@@ -1285,11 +1291,11 @@ public class SectionGActivity extends Activity {
                 spblg0115num.setError(null);
             }
 
-            if (Integer.valueOf(spblg0115num.getText().toString()) > (Integer.valueOf(MainApp.members.getCount()))) {
+            if (Integer.valueOf(spblg0115num.getText().toString()) < 1 || Integer.valueOf(spblg0115num.getText().toString()) > MainApp.TotalMembersCount) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.bnf), Toast.LENGTH_SHORT).show();
-                spblg0115num.setError("cannot be greater than total members");
+                spblg0115num.setError("Range is 1 to " + MainApp.TotalMembersCount);
                 spblg0115num.requestFocus();
-                Log.i(TAG, "spblg0115num: cannot be greater than total members ");
+                Log.i(TAG, "spblg0115num: Range!");
                 return false;
             } else {
                 spblg0115num.setError(null);
