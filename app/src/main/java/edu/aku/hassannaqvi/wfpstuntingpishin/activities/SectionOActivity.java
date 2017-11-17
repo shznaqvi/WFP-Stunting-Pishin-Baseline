@@ -542,7 +542,7 @@ public class SectionOActivity extends Activity {
         so.put("spblo05", spblo0599.isChecked() ? "99" : spblo05a.getText().toString());
         so.put("spblo06a", spblo06a.getText().toString());
         so.put("spblo06b", spblo06b.getText().toString());
-        so.put("spblo06c", spblo06c.isChecked() ? "3" : "0");
+        so.put("spblo06c", spblo06c.isChecked() ? "1" : "2");
         so.put("spblo07a", spblo07a.isChecked() ? "1" : "0");
         so.put("spblo07b", spblo07b.isChecked() ? "2" : "0");
         so.put("spblo07c", spblo07c.isChecked() ? "3" : "0");
@@ -785,8 +785,8 @@ public class SectionOActivity extends Activity {
                 spblo09b.setError(null);
             }
 
-            if (Integer.valueOf(spblo06a.getText().toString()) < 1) {
-                if (Integer.valueOf(spblo06b.getText().toString()) < 1 || Integer.valueOf(spblo06b.getText().toString()) > 12) {
+            if (Integer.valueOf(spblo09a.getText().toString()) < 1) {
+                if (Integer.valueOf(spblo09b.getText().toString()) < 1 || Integer.valueOf(spblo09b.getText().toString()) > 12) {
                     Toast.makeText(this, "ERROR: " + getString(R.string.spblo09b), Toast.LENGTH_LONG).show();
                     spblo09b.setError("Range is 0 to 12 months");
                     spblo09b.requestFocus();

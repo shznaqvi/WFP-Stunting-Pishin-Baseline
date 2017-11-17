@@ -19,24 +19,23 @@ import java.util.Date;
 import java.util.List;
 
 import edu.aku.hassannaqvi.wfpstuntingpishin.contracts.FamilyMembersContract;
+import edu.aku.hassannaqvi.wfpstuntingpishin.contracts.FamilyMembersContract.familyMembers;
 import edu.aku.hassannaqvi.wfpstuntingpishin.contracts.FetusContract;
 import edu.aku.hassannaqvi.wfpstuntingpishin.contracts.FormsContract;
 import edu.aku.hassannaqvi.wfpstuntingpishin.contracts.FormsContract.FormsTable;
+import edu.aku.hassannaqvi.wfpstuntingpishin.contracts.LHWsContract;
+import edu.aku.hassannaqvi.wfpstuntingpishin.contracts.LHWsContract.singleLHWs;
 import edu.aku.hassannaqvi.wfpstuntingpishin.contracts.SourceNGOContract;
-import edu.aku.hassannaqvi.wfpstuntingpishin.contracts.UsersContract;
-import edu.aku.hassannaqvi.wfpstuntingpishin.contracts.UsersContract.UsersTable;
-import edu.aku.hassannaqvi.wfpstuntingpishin.otherClasses.MothersLst;
-import edu.aku.hassannaqvi.wfpstuntingpishin.contracts.FamilyMembersContract.familyMembers;
 import edu.aku.hassannaqvi.wfpstuntingpishin.contracts.SourceNGOContract.SourceTable;
-
 import edu.aku.hassannaqvi.wfpstuntingpishin.contracts.TehsilContract;
 import edu.aku.hassannaqvi.wfpstuntingpishin.contracts.TehsilContract.singleTehsil;
 import edu.aku.hassannaqvi.wfpstuntingpishin.contracts.UCsContract;
 import edu.aku.hassannaqvi.wfpstuntingpishin.contracts.UCsContract.singleUCs;
+import edu.aku.hassannaqvi.wfpstuntingpishin.contracts.UsersContract;
+import edu.aku.hassannaqvi.wfpstuntingpishin.contracts.UsersContract.UsersTable;
 import edu.aku.hassannaqvi.wfpstuntingpishin.contracts.VillagesContract;
 import edu.aku.hassannaqvi.wfpstuntingpishin.contracts.VillagesContract.singleVillages;
-import edu.aku.hassannaqvi.wfpstuntingpishin.contracts.LHWsContract;
-import edu.aku.hassannaqvi.wfpstuntingpishin.contracts.LHWsContract.singleLHWs;
+import edu.aku.hassannaqvi.wfpstuntingpishin.otherClasses.MothersLst;
 
 /**
  * Created by hassan.naqvi on 11/30/2016.
@@ -104,28 +103,40 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             familyMembers.COLUMN_INTERVIEWER2 + " TEXT," +
             familyMembers.COLUMN_SB + " TEXT," +
             familyMembers.COLUMN_ISTATUS + " TEXT," +
+            familyMembers.COLUMN_APP_VERSION + " TEXT," +
             familyMembers.COLUMN_SYNCED + " TEXT," +
             familyMembers.COLUMN_SYNCED_DATE + " TEXT"
-            + " );";
 
+            + " );";
+    private static final String SQL_DELETE_USERS =
+            "DROP TABLE IF EXISTS " + UsersTable.TABLE_NAME;
+    private static final String SQL_DELETE_FORMS =
+            "DROP TABLE IF EXISTS " + FormsTable.TABLE_NAME;
+    private static final String SQL_DELETE_FAMILY_MEMBERS =
+            "DROP TABLE IF EXISTS " + familyMembers.TABLE_NAME;
+    private static final String SQL_SELECT_MOTHER_BY_CHILD =
+            "SELECT c.agem cm, c.agey cy, c.aged cd, c.gender, c.serial serial, m.serial serialm, c.name child_name, c.dss_id_member child_id, m.name mother_name, c.dss_id_member mother_id, c.dob date_of_birth FROM census C join census m on c.dss_id_m = m.dss_id_member where c.member_type =? and c.uuid = m.uuid and c.current_status IN ('1', '2') and c.uuid = ? group by mother_id order by substr(c.dob, 7) desc, substr(c.dob, 4,2) desc, substr(c.dob, 1,2) desc;";
+    private static final String SQL_SELECT_CHILD =
+            "SELECT * from census where member_type =? and dss_id_hh =? and uuid =? and current_status IN ('1', '2')";
+    private static final String SQL_DELETE_VILLAGES = "DROP TABLE IF EXISTS " + singleVillages.TABLE_NAME;
+    private static final String SQL_DELETE_TEHSILS = "DROP TABLE IF EXISTS " + singleTehsil.TABLE_NAME;
+    private static final String SQL_DELETE_UCS = "DROP TABLE IF EXISTS " + singleUCs.TABLE_NAME;
+    private static final String SQL_DELETE_LHWs = "DROP TABLE IF EXISTS " + singleLHWs.TABLE_NAME;
     final String SQL_CREATE_SOURCE_TABLE = "CREATE TABLE " + SourceTable.TABLE_NAME + " (" +
             SourceTable._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
             SourceTable.COLUMN_SOURCE_ID + " TEXT, " +
             SourceTable.COLUMN_SOURCE_NAME + " TEXT " +
             ");";
-
     final String SQL_CREATE_VILLAGES = "CREATE TABLE " + singleVillages.TABLE_NAME + "("
 //                + singleVillages.COLUMN_ID + " TEXT,"
             + singleVillages.COLUMN_VILLAGE_NAME + " TEXT,"
             + singleVillages.COLUMN_UC_CODE + " TEXT,"
 //                + singleVillages.COLUMN_TEHSIL_NAME + " TEXT,"
             + singleVillages.COLUMN_VILLAGE_CODE + " TEXT );";
-
     final String SQL_CREATE_LHWS = "CREATE TABLE " + singleLHWs.TABLE_NAME + "("
             + singleLHWs.COLUMN_LHW_NAME + " TEXT,"
             + singleLHWs.COLUMN_UC_CODE + " TEXT,"
             + singleLHWs.COLUMN_LHW_CODE + " TEXT );";
-
     final String SQL_CREATE_TEHSILS = "CREATE TABLE " + singleTehsil.TABLE_NAME + "("
             + singleTehsil.COLUMN_TEHSIL_CODE + " TEXT,"
             + singleTehsil.COLUMN_TEHSIL_NAME + " TEXT );";
@@ -133,26 +144,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             + singleUCs.COLUMN_UCCODE + " TEXT,"
             + singleUCs.COLUMN_TEHSIL_CODE + " TEXT,"
             + singleUCs.COLUMN_UCS + " TEXT );";
-
-
-    private static final String SQL_DELETE_USERS =
-            "DROP TABLE IF EXISTS " + UsersTable.TABLE_NAME;
-    private static final String SQL_DELETE_FORMS =
-            "DROP TABLE IF EXISTS " + FormsTable.TABLE_NAME;
-
-    private static final String SQL_DELETE_FAMILY_MEMBERS =
-            "DROP TABLE IF EXISTS " + familyMembers.TABLE_NAME;
-
-    private static final String SQL_SELECT_MOTHER_BY_CHILD =
-            "SELECT c.agem cm, c.agey cy, c.aged cd, c.gender, c.serial serial, m.serial serialm, c.name child_name, c.dss_id_member child_id, m.name mother_name, c.dss_id_member mother_id, c.dob date_of_birth FROM census C join census m on c.dss_id_m = m.dss_id_member where c.member_type =? and c.uuid = m.uuid and c.current_status IN ('1', '2') and c.uuid = ? group by mother_id order by substr(c.dob, 7) desc, substr(c.dob, 4,2) desc, substr(c.dob, 1,2) desc;";
-    private static final String SQL_SELECT_CHILD =
-            "SELECT * from census where member_type =? and dss_id_hh =? and uuid =? and current_status IN ('1', '2')";
-
-    private static final String SQL_DELETE_VILLAGES = "DROP TABLE IF EXISTS " + singleVillages.TABLE_NAME;
-    private static final String SQL_DELETE_TEHSILS = "DROP TABLE IF EXISTS " + singleTehsil.TABLE_NAME;
-    private static final String SQL_DELETE_UCS = "DROP TABLE IF EXISTS " + singleUCs.TABLE_NAME;
-    private static final String SQL_DELETE_LHWs = "DROP TABLE IF EXISTS " + singleLHWs.TABLE_NAME;
-
     private final String TAG = "DatabaseHelper";
 
 
@@ -727,6 +718,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(familyMembers.COLUMN_INTERVIEWER2, fmc.getInterviewer2());
         values.put(familyMembers.COLUMN_ISTATUS, fmc.getIstatus());
         values.put(familyMembers.COLUMN_SB, fmc.getsB());
+        values.put(familyMembers.COLUMN_APP_VERSION, fmc.getApp_ver());
         values.put(familyMembers.COLUMN_DEVICETAGID, fmc.getDevicetagID());
         values.put(familyMembers.COLUMN_DEVICEID, fmc.getDeviceId());
 
@@ -1621,7 +1613,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 familyMembers.COLUMN_INTERVIEWER1,
                 familyMembers.COLUMN_INTERVIEWER2,
                 familyMembers.COLUMN_SB,
+                familyMembers.COLUMN_APP_VERSION,
                 familyMembers.COLUMN_DEVICETAGID
+
         };
         String whereClause = familyMembers.COLUMN_SYNCED + " is null";
         String[] whereArgs = null;

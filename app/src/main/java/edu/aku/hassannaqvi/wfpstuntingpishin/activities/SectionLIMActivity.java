@@ -394,6 +394,10 @@ public class SectionLIMActivity extends Activity
 
                 Intent endSec = new Intent(this, SectionMActivity.class);
                 endSec.putExtra("getName", spblName.getSelectedItem().toString());
+                endSec.putExtra("getSerial", childMap.get(spblName.getSelectedItem().toString()).getSerial());
+                endSec.putExtra("getMotherName", childMap.get(spblName.getSelectedItem().toString()).getMotherName());
+                endSec.putExtra("getMSerial", childMap.get(spblName.getSelectedItem().toString()).getMother_serial());
+
                 startActivity(endSec);
 
             } else {
@@ -448,9 +452,10 @@ public class SectionLIMActivity extends Activity
 */
         //sI.put("tiImsSerial", MainApp.childsMap.get(tiname.getSelectedItem().toString()).getSerialNo());
 
-        sL.put("mother_name", motherName.getText().toString());
-        sL.put("spblname", spblName.getSelectedItem().toString());
-        sL.put("spblserial", childMap.get(spblName.getSelectedItem().toString()).getSerial());
+        sL.put("spbllmother_name", motherName.getText().toString());
+        sL.put("spbllmother_serial", childMap.get(spblName.getSelectedItem().toString()).getMother_serial());
+        sL.put("spbllchildname", spblName.getSelectedItem().toString());
+        sL.put("spbllchildserial", childMap.get(spblName.getSelectedItem().toString()).getSerial());
         sL.put("bcgM", bcgM01.isChecked() ? "1" : bcgM02.isChecked() ? "2" : "0");
         sL.put("bcgC", bcgC01.isChecked() ? "1" : bcgC02.isChecked() ? "2" : "0");
         sL.put("opv0M", opv0M01.isChecked() ? "1" : opv0M02.isChecked() ? "2" : "0");

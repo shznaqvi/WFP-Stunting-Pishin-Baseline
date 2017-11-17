@@ -147,116 +147,116 @@ public class SectionCActivity extends Activity {
     EditText spblc07;
     @BindView(R.id.spblc0799)
     CheckBox spblc0799;
-    @BindView(R.id.spblc08a)
-    RadioGroup spblc08a;
-    @BindView(R.id.spblc08aa)
-    RadioButton spblc08aa;
-    @BindView(R.id.spblc08ab)
-    RadioButton spblc08ab;
-    @BindView(R.id.spblc08b)
-    RadioGroup spblc08b;
-    @BindView(R.id.spblc08ba)
-    RadioButton spblc08ba;
-    @BindView(R.id.spblc08bb)
-    RadioButton spblc08bb;
+    @BindView(R.id.spblc0801)
+    RadioGroup spblc0801;
+    @BindView(R.id.spblc0801a)
+    RadioButton spblc0801a;
+    @BindView(R.id.spblc0801b)
+    RadioButton spblc0801b;
+    @BindView(R.id.spblc0802)
+    RadioGroup spblc0802;
+    @BindView(R.id.spblc0802a)
+    RadioButton spblc0802a;
+    @BindView(R.id.spblc0802b)
+    RadioButton spblc0802b;
     @BindView(R.id.textView2)
     TextView textView2;
-    @BindView(R.id.spblc08c)
-    RadioGroup spblc08c;
-    @BindView(R.id.spblc08ca)
-    RadioButton spblc08ca;
-    @BindView(R.id.spblc08cb)
-    RadioButton spblc08cb;
-    @BindView(R.id.spblc08d)
-    RadioGroup spblc08d;
-    @BindView(R.id.spblc08da)
-    RadioButton spblc08da;
-    @BindView(R.id.spblc08db)
-    RadioButton spblc08db;
-    @BindView(R.id.spblc08e)
-    RadioGroup spblc08e;
-    @BindView(R.id.spblc08ea)
-    RadioButton spblc08ea;
-    @BindView(R.id.spblc08eb)
-    RadioButton spblc08eb;
-    @BindView(R.id.spblc08f)
-    RadioGroup spblc08f;
-    @BindView(R.id.spblc08fa)
-    RadioButton spblc08fa;
-    @BindView(R.id.spblc08fb)
-    RadioButton spblc08fb;
-    @BindView(R.id.spblc08g)
-    RadioGroup spblc08g;
-    @BindView(R.id.spblc08ga)
-    RadioButton spblc08ga;
-    @BindView(R.id.spblc08gb)
-    RadioButton spblc08gb;
-    @BindView(R.id.spblc08h)
-    RadioGroup spblc08h;
-    @BindView(R.id.spblc08ha)
-    RadioButton spblc08ha;
-    @BindView(R.id.spblc08hb)
-    RadioButton spblc08hb;
-    @BindView(R.id.spblc08i)
-    RadioGroup spblc08i;
-    @BindView(R.id.spblc08ia)
-    RadioButton spblc08ia;
-    @BindView(R.id.spblc08ib)
-    RadioButton spblc08ib;
-    @BindView(R.id.spblc08j)
-    RadioGroup spblc08j;
-    @BindView(R.id.spblc08ja)
-    RadioButton spblc08ja;
-    @BindView(R.id.spblc08jb)
-    RadioButton spblc08jb;
-    @BindView(R.id.spblc08k)
-    RadioGroup spblc08k;
-    @BindView(R.id.spblc08ka)
-    RadioButton spblc08ka;
-    @BindView(R.id.spblc08kb)
-    RadioButton spblc08kb;
-    @BindView(R.id.spblc08l)
-    RadioGroup spblc08l;
-    @BindView(R.id.spblc08la)
-    RadioButton spblc08la;
-    @BindView(R.id.spblc08lb)
-    RadioButton spblc08lb;
-    @BindView(R.id.spblc08m)
-    RadioGroup spblc08m;
-    @BindView(R.id.spblc08ma)
-    RadioButton spblc08ma;
-    @BindView(R.id.spblc08mb)
-    RadioButton spblc08mb;
-    @BindView(R.id.spblc08n)
-    RadioGroup spblc08n;
-    @BindView(R.id.spblc08na)
-    RadioButton spblc08na;
-    @BindView(R.id.spblc08nb)
-    RadioButton spblc08nb;
-    @BindView(R.id.spblc08o)
-    RadioGroup spblc08o;
-    @BindView(R.id.spblc08oa)
-    RadioButton spblc08oa;
-    @BindView(R.id.spblc08ob)
-    RadioButton spblc08ob;
-    @BindView(R.id.spblc08p)
-    RadioGroup spblc08p;
-    @BindView(R.id.spblc08pa)
-    RadioButton spblc08pa;
-    @BindView(R.id.spblc08pb)
-    RadioButton spblc08pb;
-    @BindView(R.id.spblc08q)
-    RadioGroup spblc08q;
-    @BindView(R.id.spblc08qa)
-    RadioButton spblc08qa;
-    @BindView(R.id.spblc08qb)
-    RadioButton spblc08qb;
-    @BindView(R.id.spblc08r)
-    RadioGroup spblc08r;
-    @BindView(R.id.spblc08ra)
-    RadioButton spblc08ra;
-    @BindView(R.id.spblc08rb)
-    RadioButton spblc08rb;
+    @BindView(R.id.spblc0803)
+    RadioGroup spblc0803;
+    @BindView(R.id.spblc0803a)
+    RadioButton spblc0803a;
+    @BindView(R.id.spblc0803b)
+    RadioButton spblc0803b;
+    @BindView(R.id.spblc0804)
+    RadioGroup spblc0804;
+    @BindView(R.id.spblc0804a)
+    RadioButton spblc0804a;
+    @BindView(R.id.spblc0804b)
+    RadioButton spblc0804b;
+    @BindView(R.id.spblc0805)
+    RadioGroup spblc0805;
+    @BindView(R.id.spblc0805a)
+    RadioButton spblc0805a;
+    @BindView(R.id.spblc0805b)
+    RadioButton spblc0805b;
+    @BindView(R.id.spblc0806)
+    RadioGroup spblc0806;
+    @BindView(R.id.spblc0806a)
+    RadioButton spblc0806a;
+    @BindView(R.id.spblc0806b)
+    RadioButton spblc0806b;
+    @BindView(R.id.spblc0807)
+    RadioGroup spblc0807;
+    @BindView(R.id.spblc0807a)
+    RadioButton spblc0807a;
+    @BindView(R.id.spblc0807b)
+    RadioButton spblc0807b;
+    @BindView(R.id.spblc0808)
+    RadioGroup spblc0808;
+    @BindView(R.id.spblc0808a)
+    RadioButton spblc0808a;
+    @BindView(R.id.spblc0808b)
+    RadioButton spblc0808b;
+    @BindView(R.id.spblc0809)
+    RadioGroup spblc0809;
+    @BindView(R.id.spblc0809a)
+    RadioButton spblc0809a;
+    @BindView(R.id.spblc0809b)
+    RadioButton spblc0809b;
+    @BindView(R.id.spblc0810)
+    RadioGroup spblc0810;
+    @BindView(R.id.spblc0810a)
+    RadioButton spblc0810a;
+    @BindView(R.id.spblc0810b)
+    RadioButton spblc0810b;
+    @BindView(R.id.spblc0811)
+    RadioGroup spblc0811;
+    @BindView(R.id.spblc0811a)
+    RadioButton spblc0811a;
+    @BindView(R.id.spblc0811b)
+    RadioButton spblc0811b;
+    @BindView(R.id.spblc0812)
+    RadioGroup spblc0812;
+    @BindView(R.id.spblc0812a)
+    RadioButton spblc0812a;
+    @BindView(R.id.spblc0812b)
+    RadioButton spblc0812b;
+    @BindView(R.id.spblc0813)
+    RadioGroup spblc0813;
+    @BindView(R.id.spblc0813a)
+    RadioButton spblc0813a;
+    @BindView(R.id.spblc0813b)
+    RadioButton spblc0813b;
+    @BindView(R.id.spblc0814)
+    RadioGroup spblc0814;
+    @BindView(R.id.spblc0814a)
+    RadioButton spblc0814a;
+    @BindView(R.id.spblc0814b)
+    RadioButton spblc0814b;
+    @BindView(R.id.spblc0815)
+    RadioGroup spblc0815;
+    @BindView(R.id.spblc0815a)
+    RadioButton spblc0815a;
+    @BindView(R.id.spblc0815b)
+    RadioButton spblc0815b;
+    @BindView(R.id.spblc0816)
+    RadioGroup spblc0816;
+    @BindView(R.id.spblc0816a)
+    RadioButton spblc0816a;
+    @BindView(R.id.spblc0816b)
+    RadioButton spblc0816b;
+    @BindView(R.id.spblc0817)
+    RadioGroup spblc0817;
+    @BindView(R.id.spblc0817a)
+    RadioButton spblc0817a;
+    @BindView(R.id.spblc0817b)
+    RadioButton spblc0817b;
+    @BindView(R.id.spblc0818)
+    RadioGroup spblc0818;
+    @BindView(R.id.spblc0818a)
+    RadioButton spblc0818a;
+    @BindView(R.id.spblc0818b)
+    RadioButton spblc0818b;
     @BindView(R.id.spblc09)
     RadioGroup spblc09;
     @BindView(R.id.spblc09a)
@@ -850,24 +850,24 @@ public class SectionCActivity extends Activity {
         sC.put("spblc07", spblc0799.isChecked() ? "99" : spblc07.getText().toString());
 
 //        08
-        sC.put("spblc08a", spblc08aa.isChecked() ? "1" : spblc08ab.isChecked() ? "2" : "0");
-        sC.put("spblc08b", spblc08ba.isChecked() ? "1" : spblc08bb.isChecked() ? "2" : "0");
-        sC.put("spblc08c", spblc08ca.isChecked() ? "1" : spblc08cb.isChecked() ? "2" : "0");
-        sC.put("spblc08d", spblc08da.isChecked() ? "1" : spblc08db.isChecked() ? "2" : "0");
-        sC.put("spblc08e", spblc08ea.isChecked() ? "1" : spblc08eb.isChecked() ? "2" : "0");
-        sC.put("spblc08f", spblc08fa.isChecked() ? "1" : spblc08fb.isChecked() ? "2" : "0");
-        sC.put("spblc08g", spblc08ga.isChecked() ? "1" : spblc08gb.isChecked() ? "2" : "0");
-        sC.put("spblc08h", spblc08ha.isChecked() ? "1" : spblc08hb.isChecked() ? "2" : "0");
-        sC.put("spblc08i", spblc08ia.isChecked() ? "1" : spblc08ib.isChecked() ? "2" : "0");
-        sC.put("spblc08j", spblc08ja.isChecked() ? "1" : spblc08jb.isChecked() ? "2" : "0");
-        sC.put("spblc08k", spblc08ka.isChecked() ? "1" : spblc08kb.isChecked() ? "2" : "0");
-        sC.put("spblc08l", spblc08la.isChecked() ? "1" : spblc08lb.isChecked() ? "2" : "0");
-        sC.put("spblc08m", spblc08ma.isChecked() ? "1" : spblc08mb.isChecked() ? "2" : "0");
-        sC.put("spblc08n", spblc08na.isChecked() ? "1" : spblc08nb.isChecked() ? "2" : "0");
-        sC.put("spblc08o", spblc08oa.isChecked() ? "1" : spblc08ob.isChecked() ? "2" : "0");
-        sC.put("spblc08p", spblc08pa.isChecked() ? "1" : spblc08pb.isChecked() ? "2" : "0");
-        sC.put("spblc08q", spblc08qa.isChecked() ? "1" : spblc08qb.isChecked() ? "2" : "0");
-        sC.put("spblc08r", spblc08ra.isChecked() ? "1" : spblc08rb.isChecked() ? "2" : "0");
+        sC.put("spblc0801", spblc0801a.isChecked() ? "1" : spblc0801b.isChecked() ? "2" : "0");
+        sC.put("spblc0802", spblc0802a.isChecked() ? "1" : spblc0802b.isChecked() ? "2" : "0");
+        sC.put("spblc0803", spblc0803a.isChecked() ? "1" : spblc0803b.isChecked() ? "2" : "0");
+        sC.put("spblc0804", spblc0804a.isChecked() ? "1" : spblc0804b.isChecked() ? "2" : "0");
+        sC.put("spblc0805", spblc0805a.isChecked() ? "1" : spblc0805b.isChecked() ? "2" : "0");
+        sC.put("spblc0806", spblc0806a.isChecked() ? "1" : spblc0806b.isChecked() ? "2" : "0");
+        sC.put("spblc0807", spblc0807a.isChecked() ? "1" : spblc0807b.isChecked() ? "2" : "0");
+        sC.put("spblc0808", spblc0808a.isChecked() ? "1" : spblc0808b.isChecked() ? "2" : "0");
+        sC.put("spblc0809", spblc0809a.isChecked() ? "1" : spblc0809b.isChecked() ? "2" : "0");
+        sC.put("spblc0810", spblc0810a.isChecked() ? "1" : spblc0810b.isChecked() ? "2" : "0");
+        sC.put("spblc0811", spblc0811a.isChecked() ? "1" : spblc0811b.isChecked() ? "2" : "0");
+        sC.put("spblc0812", spblc0812a.isChecked() ? "1" : spblc0812b.isChecked() ? "2" : "0");
+        sC.put("spblc0813", spblc0813a.isChecked() ? "1" : spblc0813b.isChecked() ? "2" : "0");
+        sC.put("spblc0814", spblc0814a.isChecked() ? "1" : spblc0814b.isChecked() ? "2" : "0");
+        sC.put("spblc0815", spblc0815a.isChecked() ? "1" : spblc0815b.isChecked() ? "2" : "0");
+        sC.put("spblc0816", spblc0816a.isChecked() ? "1" : spblc0816b.isChecked() ? "2" : "0");
+        sC.put("spblc0817", spblc0817a.isChecked() ? "1" : spblc0817b.isChecked() ? "2" : "0");
+        sC.put("spblc0818", spblc0818a.isChecked() ? "1" : spblc0818b.isChecked() ? "2" : "0");
 
 //        09
         sC.put("spblc09", spblc09a.isChecked() ? "1" : spblc09b.isChecked() ? "2" : spblc09c.isChecked() ? "3"
@@ -1121,237 +1121,237 @@ public class SectionCActivity extends Activity {
         }
 
 
-        if (spblc08a.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc08a), Toast.LENGTH_SHORT).show();
-            spblc08aa.setError("This data is Required!");    // Set Error on last radio button
-            spblc08aa.setFocusable(true);
-            spblc08aa.setFocusableInTouchMode(true);
-            spblc08aa.requestFocus();
-            Log.i(TAG, "spblc08aa: This data is Required!");
+        if (spblc0801.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc0801), Toast.LENGTH_SHORT).show();
+            spblc0801a.setError("This data is Required!");    // Set Error on last radio button
+            spblc0801a.setFocusable(true);
+            spblc0801a.setFocusableInTouchMode(true);
+            spblc0801a.requestFocus();
+            Log.i(TAG, "spblc0801a: This data is Required!");
             return false;
         } else {
-            spblc08aa.setError(null);
+            spblc0801a.setError(null);
         }
 
 
-        if (spblc08b.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc08b), Toast.LENGTH_SHORT).show();
-            spblc08ba.setError("This data is Required!");    // Set Error on last radio button
-            spblc08ba.setFocusable(true);
-            spblc08ba.setFocusableInTouchMode(true);
-            spblc08ba.requestFocus();
-            Log.i(TAG, "spblc08aa: This data is Required!");
+        if (spblc0802.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc0802), Toast.LENGTH_SHORT).show();
+            spblc0802a.setError("This data is Required!");    // Set Error on last radio button
+            spblc0802a.setFocusable(true);
+            spblc0802a.setFocusableInTouchMode(true);
+            spblc0802a.requestFocus();
+            Log.i(TAG, "spblc0801a: This data is Required!");
             return false;
         } else {
-            spblc08aa.setError(null);
+            spblc0802a.setError(null);
         }
 
 
-        if (spblc08c.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc08c), Toast.LENGTH_SHORT).show();
-            spblc08ca.setError("This data is Required!");    // Set Error on last radio button
-            spblc08ca.setFocusable(true);
-            spblc08ca.setFocusableInTouchMode(true);
-            spblc08ca.requestFocus();
-            Log.i(TAG, "spblc08ca: This data is Required!");
+        if (spblc0803.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc0803), Toast.LENGTH_SHORT).show();
+            spblc0803a.setError("This data is Required!");    // Set Error on last radio button
+            spblc0803a.setFocusable(true);
+            spblc0803a.setFocusableInTouchMode(true);
+            spblc0803a.requestFocus();
+            Log.i(TAG, "spblc0803a: This data is Required!");
             return false;
         } else {
-            spblc08ca.setError(null);
+            spblc0803a.setError(null);
         }
 
 
-        if (spblc08d.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc08d), Toast.LENGTH_SHORT).show();
-            spblc08da.setError("This data is Required!");    // Set Error on last radio button
-            spblc08da.setFocusable(true);
-            spblc08da.setFocusableInTouchMode(true);
-            spblc08da.requestFocus();
-            Log.i(TAG, "spblc08da: This data is Required!");
+        if (spblc0804.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc0804), Toast.LENGTH_SHORT).show();
+            spblc0804a.setError("This data is Required!");    // Set Error on last radio button
+            spblc0804a.setFocusable(true);
+            spblc0804a.setFocusableInTouchMode(true);
+            spblc0804a.requestFocus();
+            Log.i(TAG, "spblc0804a: This data is Required!");
             return false;
         } else {
-            spblc08da.setError(null);
+            spblc0804a.setError(null);
         }
 
 
-        if (spblc08e.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc08e), Toast.LENGTH_SHORT).show();
-            spblc08ea.setError("This data is Required!");    // Set Error on last radio button
-            spblc08ea.setFocusable(true);
-            spblc08ea.setFocusableInTouchMode(true);
-            spblc08ea.requestFocus();
-            Log.i(TAG, "spblc08ea: This data is Required!");
+        if (spblc0805.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc0805), Toast.LENGTH_SHORT).show();
+            spblc0805a.setError("This data is Required!");    // Set Error on last radio button
+            spblc0805a.setFocusable(true);
+            spblc0805a.setFocusableInTouchMode(true);
+            spblc0805a.requestFocus();
+            Log.i(TAG, "spblc0805a: This data is Required!");
             return false;
         } else {
-            spblc08ea.setError(null);
+            spblc0805a.setError(null);
         }
 
 
-        if (spblc08f.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc08f), Toast.LENGTH_SHORT).show();
-            spblc08fa.setError("This data is Required!");    // Set Error on last radio button
-            spblc08fa.setFocusable(true);
-            spblc08fa.setFocusableInTouchMode(true);
-            spblc08fa.requestFocus();
-            Log.i(TAG, "spblc08fa: This data is Required!");
+        if (spblc0806.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc0806), Toast.LENGTH_SHORT).show();
+            spblc0806a.setError("This data is Required!");    // Set Error on last radio button
+            spblc0806a.setFocusable(true);
+            spblc0806a.setFocusableInTouchMode(true);
+            spblc0806a.requestFocus();
+            Log.i(TAG, "spblc0806a: This data is Required!");
             return false;
         } else {
-            spblc08fa.setError(null);
+            spblc0806a.setError(null);
         }
 
 
-        if (spblc08g.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc08g), Toast.LENGTH_SHORT).show();
-            spblc08ga.setError("This data is Required!");    // Set Error on last radio button
-            spblc08ga.setFocusable(true);
-            spblc08ga.setFocusableInTouchMode(true);
-            spblc08ga.requestFocus();
-            Log.i(TAG, "spblc08ga: This data is Required!");
+        if (spblc0807.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc0807), Toast.LENGTH_SHORT).show();
+            spblc0807a.setError("This data is Required!");    // Set Error on last radio button
+            spblc0807a.setFocusable(true);
+            spblc0807a.setFocusableInTouchMode(true);
+            spblc0807a.requestFocus();
+            Log.i(TAG, "spblc0807a: This data is Required!");
             return false;
         } else {
-            spblc08ga.setError(null);
+            spblc0807a.setError(null);
         }
 
 
-        if (spblc08h.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc08h), Toast.LENGTH_SHORT).show();
-            spblc08ha.setError("This data is Required!");    // Set Error on last radio button
-            spblc08ha.setFocusable(true);
-            spblc08ha.setFocusableInTouchMode(true);
-            spblc08ha.requestFocus();
-            Log.i(TAG, "spblc08ha: This data is Required!");
+        if (spblc0808.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc0808), Toast.LENGTH_SHORT).show();
+            spblc0808a.setError("This data is Required!");    // Set Error on last radio button
+            spblc0808a.setFocusable(true);
+            spblc0808a.setFocusableInTouchMode(true);
+            spblc0808a.requestFocus();
+            Log.i(TAG, "spblc0808a: This data is Required!");
             return false;
         } else {
-            spblc08ha.setError(null);
+            spblc0808a.setError(null);
         }
 
 
-        if (spblc08i.getCheckedRadioButtonId() == -1) {
+        if (spblc0809.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc08), Toast.LENGTH_SHORT).show();
-            spblc08ia.setError("This data is Required!");    // Set Error on last radio button
-            spblc08ia.setFocusable(true);
-            spblc08ia.setFocusableInTouchMode(true);
-            spblc08ia.requestFocus();
-            Log.i(TAG, "spblc08i: This data is Required!");
+            spblc0809a.setError("This data is Required!");    // Set Error on last radio button
+            spblc0809a.setFocusable(true);
+            spblc0809a.setFocusableInTouchMode(true);
+            spblc0809a.requestFocus();
+            Log.i(TAG, "spblc0809: This data is Required!");
             return false;
         } else {
-            spblc08ia.setError(null);
+            spblc0809a.setError(null);
         }
 
 
-        if (spblc08j.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc08j), Toast.LENGTH_SHORT).show();
-            spblc08ja.setError("This data is Required!");    // Set Error on last radio button
-            spblc08ja.setFocusable(true);
-            spblc08ja.setFocusableInTouchMode(true);
-            spblc08ja.requestFocus();
-            Log.i(TAG, "spblc08ja: This data is Required!");
+        if (spblc0810.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc0810), Toast.LENGTH_SHORT).show();
+            spblc0810a.setError("This data is Required!");    // Set Error on last radio button
+            spblc0810a.setFocusable(true);
+            spblc0810a.setFocusableInTouchMode(true);
+            spblc0810a.requestFocus();
+            Log.i(TAG, "spblc0810a: This data is Required!");
             return false;
         } else {
-            spblc08ja.setError(null);
+            spblc0810a.setError(null);
         }
 
 
-        if (spblc08k.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc08k), Toast.LENGTH_SHORT).show();
-            spblc08ka.setError("This data is Required!");    // Set Error on last radio button
-            spblc08ka.setFocusable(true);
-            spblc08ka.setFocusableInTouchMode(true);
-            spblc08ka.requestFocus();
-            Log.i(TAG, "spblc08ka: This data is Required!");
+        if (spblc0811.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc0811), Toast.LENGTH_SHORT).show();
+            spblc0811a.setError("This data is Required!");    // Set Error on last radio button
+            spblc0811a.setFocusable(true);
+            spblc0811a.setFocusableInTouchMode(true);
+            spblc0811a.requestFocus();
+            Log.i(TAG, "spblc0811a: This data is Required!");
             return false;
         } else {
-            spblc08ka.setError(null);
+            spblc0811a.setError(null);
         }
 
 
-        if (spblc08l.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc08l), Toast.LENGTH_SHORT).show();
-            spblc08la.setError("This data is Required!");    // Set Error on last radio button
-            spblc08la.setFocusable(true);
-            spblc08la.setFocusableInTouchMode(true);
-            spblc08la.requestFocus();
-            Log.i(TAG, "spblc08la: This data is Required!");
+        if (spblc0812.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc0812), Toast.LENGTH_SHORT).show();
+            spblc0812a.setError("This data is Required!");    // Set Error on last radio button
+            spblc0812a.setFocusable(true);
+            spblc0812a.setFocusableInTouchMode(true);
+            spblc0812a.requestFocus();
+            Log.i(TAG, "spblc0812a: This data is Required!");
             return false;
         } else {
-            spblc08la.setError(null);
+            spblc0812a.setError(null);
         }
 
 
-        if (spblc08m.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc08m), Toast.LENGTH_SHORT).show();
-            spblc08ma.setError("This data is Required!");    // Set Error on last radio button
-            spblc08ma.setFocusable(true);
-            spblc08ma.setFocusableInTouchMode(true);
-            spblc08ma.requestFocus();
-            Log.i(TAG, "spblc08ma: This data is Required!");
+        if (spblc0813.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc0813), Toast.LENGTH_SHORT).show();
+            spblc0813a.setError("This data is Required!");    // Set Error on last radio button
+            spblc0813a.setFocusable(true);
+            spblc0813a.setFocusableInTouchMode(true);
+            spblc0813a.requestFocus();
+            Log.i(TAG, "spblc0813a: This data is Required!");
             return false;
         } else {
-            spblc08ma.setError(null);
+            spblc0813a.setError(null);
         }
 
 
-        if (spblc08n.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc08n), Toast.LENGTH_SHORT).show();
-            spblc08na.setError("This data is Required!");    // Set Error on last radio button
-            spblc08na.setFocusable(true);
-            spblc08na.setFocusableInTouchMode(true);
-            spblc08na.requestFocus();
-            Log.i(TAG, "spblc08na: This data is Required!");
+        if (spblc0814.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc0814), Toast.LENGTH_SHORT).show();
+            spblc0814a.setError("This data is Required!");    // Set Error on last radio button
+            spblc0814a.setFocusable(true);
+            spblc0814a.setFocusableInTouchMode(true);
+            spblc0814a.requestFocus();
+            Log.i(TAG, "spblc0814a: This data is Required!");
             return false;
         } else {
-            spblc08na.setError(null);
+            spblc0814a.setError(null);
         }
 
 
-        if (spblc08o.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc08o), Toast.LENGTH_SHORT).show();
-            spblc08oa.setError("This data is Required!");    // Set Error on last radio button
-            spblc08oa.setFocusable(true);
-            spblc08oa.setFocusableInTouchMode(true);
-            spblc08oa.requestFocus();
-            Log.i(TAG, "spblc08oa: This data is Required!");
+        if (spblc0815.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc0815), Toast.LENGTH_SHORT).show();
+            spblc0815a.setError("This data is Required!");    // Set Error on last radio button
+            spblc0815a.setFocusable(true);
+            spblc0815a.setFocusableInTouchMode(true);
+            spblc0815a.requestFocus();
+            Log.i(TAG, "spblc0815a: This data is Required!");
             return false;
         } else {
-            spblc08oa.setError(null);
+            spblc0815a.setError(null);
         }
 
 
-        if (spblc08p.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc08p), Toast.LENGTH_SHORT).show();
-            spblc08pa.setError("This data is Required!");    // Set Error on last radio button
-            spblc08pa.setFocusable(true);
-            spblc08pa.setFocusableInTouchMode(true);
-            spblc08pa.requestFocus();
-            Log.i(TAG, "spblc08pa: This data is Required!");
+        if (spblc0816.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc0816), Toast.LENGTH_SHORT).show();
+            spblc0816a.setError("This data is Required!");    // Set Error on last radio button
+            spblc0816a.setFocusable(true);
+            spblc0816a.setFocusableInTouchMode(true);
+            spblc0816a.requestFocus();
+            Log.i(TAG, "spblc0816a: This data is Required!");
             return false;
         } else {
-            spblc08pa.setError(null);
+            spblc0816a.setError(null);
         }
 
 
-        if (spblc08q.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc08q), Toast.LENGTH_SHORT).show();
-            spblc08qa.setError("This data is Required!");    // Set Error on last radio button
-            spblc08qa.setFocusable(true);
-            spblc08qa.setFocusableInTouchMode(true);
-            spblc08qa.requestFocus();
-            Log.i(TAG, "spblc08qa: This data is Required!");
+        if (spblc0817.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc0817), Toast.LENGTH_SHORT).show();
+            spblc0817a.setError("This data is Required!");    // Set Error on last radio button
+            spblc0817a.setFocusable(true);
+            spblc0817a.setFocusableInTouchMode(true);
+            spblc0817a.requestFocus();
+            Log.i(TAG, "spblc0817a: This data is Required!");
             return false;
         } else {
-            spblc08qa.setError(null);
+            spblc0817a.setError(null);
         }
 
 
-        if (spblc08r.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc08r), Toast.LENGTH_SHORT).show();
-            spblc08ra.setError("This data is Required!");    // Set Error on last radio button
-            spblc08ra.setFocusable(true);
-            spblc08ra.setFocusableInTouchMode(true);
-            spblc08ra.requestFocus();
-            Log.i(TAG, "spblc08ra: This data is Required!");
+        if (spblc0818.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblc0818), Toast.LENGTH_SHORT).show();
+            spblc0818a.setError("This data is Required!");    // Set Error on last radio button
+            spblc0818a.setFocusable(true);
+            spblc0818a.setFocusableInTouchMode(true);
+            spblc0818a.requestFocus();
+            Log.i(TAG, "spblc0818a: This data is Required!");
             return false;
         } else {
-            spblc08ra.setError(null);
+            spblc0818a.setError(null);
         }
 
 

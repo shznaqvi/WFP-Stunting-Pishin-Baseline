@@ -682,6 +682,7 @@ public class FamilyMemberListActivity extends Activity implements View.OnKeyList
             holder.motherName.setText("Mother:" + familyMembers.getMotherName());
             holder.type.setText(memberType(familyMembers.getType()));
 
+
             String[] dob = familyMembers.getDob().split("-");
 
             holder.age.setText(dob[0] + "y - " + dob[1] + "m - " + dob[2] + "d");

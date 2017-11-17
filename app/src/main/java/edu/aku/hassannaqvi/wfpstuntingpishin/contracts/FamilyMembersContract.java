@@ -26,8 +26,10 @@ public class FamilyMembersContract {
     private String ageLess5 = "";
     private String ageLess2 = "";
     private String dob = "";
+    private String app_ver = "";
 
-    /*    private String dss_id_hh = "";
+
+    /*    private String app_ver = "";
         private String dss_id_f = "";
         private String dss_id_m = "";
         private String dss_id_h = "";
@@ -190,15 +192,15 @@ public class FamilyMembersContract {
     public void setDob(String dob) {
         this.dob = dob;
     }
+
+    public String getApp_ver() {
+        return app_ver;
+    }
+
+    public void setApp_ver(String app_ver) {
+        this.app_ver = app_ver;
+    }
 /*
-    public String getDss_id_hh() {
-        return dss_id_hh;
-    }
-
-    public void setDss_id_hh(String dss_id_hh) {
-        this.dss_id_hh = dss_id_hh;
-    }
-
     public String getDss_id_f() {
         return dss_id_f;
     }
@@ -458,8 +460,8 @@ public class FamilyMembersContract {
         this.deviceId = jsonObject.getString(familyMembers.COLUMN_DEVICEID);
         this.interviewer1 = jsonObject.getString(familyMembers.COLUMN_INTERVIEWER1);
         this.interviewer2 = jsonObject.getString(familyMembers.COLUMN_INTERVIEWER2);
-/*        this.dss_id_hh = jsonObject.getString(FamilyMembers.COLUMN_DSS_ID_HH);
-        this.dss_id_f = jsonObject.getString(FamilyMembers.COLUMN_DSS_ID_F);
+        this.app_ver = jsonObject.getString(familyMembers.COLUMN_APP_VERSION);
+/*        this.dss_id_f = jsonObject.getString(FamilyMembers.COLUMN_DSS_ID_F);
         this.dss_id_m = jsonObject.getString(FamilyMembers.COLUMN_DSS_ID_M);
         this.dss_id_h = jsonObject.getString(FamilyMembers.COLUMN_DSS_ID_H);
         this.dss_id_member = jsonObject.getString(FamilyMembers.COLUMN_DSS_ID_MEMBER);
@@ -508,8 +510,8 @@ public class FamilyMembersContract {
         this.deviceId = cursor.getString(cursor.getColumnIndex(familyMembers.COLUMN_DEVICEID));
         this.interviewer1 = cursor.getString(cursor.getColumnIndex(familyMembers.COLUMN_INTERVIEWER1));
         this.interviewer2 = cursor.getString(cursor.getColumnIndex(familyMembers.COLUMN_INTERVIEWER2));
-/*        this.dss_id_hh = cursor.getString(cursor.getColumnIndex(FamilyMembers.COLUMN_DSS_ID_HH));
-        this.dss_id_f = cursor.getString(cursor.getColumnIndex(FamilyMembers.COLUMN_DSS_ID_F));
+        this.app_ver = cursor.getString(cursor.getColumnIndex(familyMembers.COLUMN_APP_VERSION));
+/*        this.dss_id_f = cursor.getString(cursor.getColumnIndex(FamilyMembers.COLUMN_DSS_ID_F));
         this.dss_id_m = cursor.getString(cursor.getColumnIndex(FamilyMembers.COLUMN_DSS_ID_M));
         this.dss_id_h = cursor.getString(cursor.getColumnIndex(FamilyMembers.COLUMN_DSS_ID_H));
         this.dss_id_member = cursor.getString(cursor.getColumnIndex(FamilyMembers.COLUMN_DSS_ID_MEMBER));
@@ -559,7 +561,8 @@ public class FamilyMembersContract {
         json.put(familyMembers.COLUMN_DEVICEID, this.deviceId == null ? JSONObject.NULL : this.deviceId);
         json.put(familyMembers.COLUMN_INTERVIEWER1, this.interviewer1 == null ? JSONObject.NULL : this.interviewer1);
         json.put(familyMembers.COLUMN_INTERVIEWER2, this.interviewer2 == null ? JSONObject.NULL : this.interviewer2);
-/*        json.put(FamilyMembers.COLUMN_DSS_ID_HH, this.dss_id_hh == null ? JSONObject.NULL : this.dss_id_hh);
+        json.put(familyMembers.COLUMN_APP_VERSION, this.app_ver == null ? JSONObject.NULL : this.app_ver);
+/*        json.put(FamilyMembers.COLUMN_DSS_ID_HH, this.app_ver == null ? JSONObject.NULL : this.app_ver);
         json.put(FamilyMembers.COLUMN_DSS_ID_F, this.dss_id_f == null ? JSONObject.NULL : this.dss_id_f);
         json.put(FamilyMembers.COLUMN_DSS_ID_M, this.dss_id_m == null ? JSONObject.NULL : this.dss_id_m);
         json.put(FamilyMembers.COLUMN_DSS_ID_H, this.dss_id_h == null ? JSONObject.NULL : this.dss_id_h);
@@ -614,8 +617,8 @@ public class FamilyMembersContract {
         public static final String COLUMN_DEVICEID = "deviceid";
         public static final String COLUMN_INTERVIEWER1 = "interviewer1";
         public static final String COLUMN_INTERVIEWER2 = "interviewer2";
-/*        public static final String COLUMN_DSS_ID_HH = "dss_id_hh";
-        public static final String COLUMN_DSS_ID_F = "dss_id_f";
+        public static final String COLUMN_APP_VERSION = "app_ver";
+/*        public static final String COLUMN_DSS_ID_F = "dss_id_f";
         public static final String COLUMN_DSS_ID_M = "dss_id_m";
         public static final String COLUMN_DSS_ID_H = "dss_id_h";
         public static final String COLUMN_DSS_ID_MEMBER = "dss_id_member";

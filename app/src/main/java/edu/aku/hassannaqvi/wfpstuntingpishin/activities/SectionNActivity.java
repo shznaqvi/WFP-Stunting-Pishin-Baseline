@@ -111,7 +111,11 @@ public class SectionNActivity extends Activity {
         JSONObject sN = new JSONObject();
 
 //        01
+
         sN.put("spbln01", spbln01.getText().toString());
+        sN.put("spblnchild_serial", getIntent().getStringExtra("getSerial"));
+        sN.put("spblnmother_name", getIntent().getStringExtra("getMotherName"));
+        sN.put("spblnmother_serial", getIntent().getStringExtra("getMSerial"));
 
 //        02
         sN.put("spbln02m", spbln02m.getText().toString());
@@ -208,13 +212,24 @@ public class SectionNActivity extends Activity {
             spbln02d.setError(null);
         }
 
-        if (Integer.valueOf(spbln02d.getText().toString()) < 1 || Integer.valueOf(spbln02d.getText().toString()) > 29) {
-            Toast.makeText(this, "ERROR(invalid): " + getString(R.string.day), Toast.LENGTH_SHORT).show();
-            spbln02d.setError("Range is 01 to 29");
-            Log.i(TAG, "spbln02d: Range is 01 to 29");
-            return false;
+        if (Integer.valueOf(spbln02m.getText().toString()) < 1) {
+            if (Integer.valueOf(spbln02d.getText().toString()) < 1 || Integer.valueOf(spbln02d.getText().toString()) > 29) {
+                Toast.makeText(this, "ERROR(invalid): " + getString(R.string.day), Toast.LENGTH_SHORT).show();
+                spbln02d.setError("Range is 01 to 29");
+                Log.i(TAG, "spbln02d: Range is 01 to 29");
+                return false;
+            } else {
+                spbln02d.setError(null);
+            }
         } else {
-            spbln02d.setError(null);
+            if (Integer.valueOf(spbln02d.getText().toString()) < 0 || Integer.valueOf(spbln02d.getText().toString()) > 29) {
+                Toast.makeText(this, "ERROR(invalid): " + getString(R.string.day), Toast.LENGTH_SHORT).show();
+                spbln02d.setError("Range is 0 to 29");
+                Log.i(TAG, "spbln02d: Range is 0 to 29");
+                return false;
+            } else {
+                spbln02d.setError(null);
+            }
         }
 
         if (spbln03.getText().toString().isEmpty()) {

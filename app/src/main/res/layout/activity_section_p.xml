@@ -57,7 +57,6 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
             android:layout_marginTop="16dp"
             android:background="@color/colorHeading"
             android:text="@string/spblp01sub2"
@@ -70,7 +69,6 @@
             android:id="@+id/spblp0101a"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="1dp"
             android:digits="0123456789"
             android:hint="@string/day"
             android:inputType="number"
@@ -86,7 +84,6 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
                 android:layout_marginTop="16dp"
                 android:background="@color/colorHeading"
                 android:text="@string/spblp01sub3"
@@ -177,14 +174,12 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="2dp"
+            android:layout_marginTop="16dp"
             android:text="@string/spblp0102" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:layout_marginTop="16dp"
             android:background="@color/colorHeading"
             android:text="@string/spblp01sub2"
             android:textColor="@color/colorPrimaryDark"
@@ -212,7 +207,6 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
                 android:layout_marginTop="16dp"
                 android:background="@color/colorHeading"
                 android:text="@string/spblp01sub3"
@@ -309,7 +303,6 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
             android:layout_marginTop="16dp"
             android:background="@color/colorHeading"
             android:text="@string/spblp01sub2"
@@ -338,7 +331,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
+
                 android:layout_marginTop="16dp"
                 android:background="@color/colorHeading"
                 android:text="@string/spblp01sub3"
@@ -436,7 +429,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
+
             android:layout_marginTop="16dp"
             android:background="@color/colorHeading"
             android:text="@string/spblp01sub2"
@@ -471,7 +464,6 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
                     android:layout_marginTop="16dp"
                     android:background="@color/colorHeading"
                     android:text="@string/spblp01sub3"
@@ -568,7 +560,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
+
                 android:layout_marginTop="16dp"
                 android:background="@color/colorHeading"
                 android:text="@string/spblp01sub2"
@@ -596,7 +588,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
+
                     android:layout_marginTop="16dp"
                     android:background="@color/colorHeading"
                     android:text="@string/spblp01sub3"
@@ -694,7 +686,6 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
                 android:layout_marginTop="16dp"
                 android:background="@color/colorHeading"
                 android:text="@string/spblp01sub2"
@@ -723,7 +714,6 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
                     android:layout_marginTop="16dp"
                     android:background="@color/colorHeading"
                     android:text="@string/spblp01sub3"
@@ -821,7 +811,6 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
                 android:layout_marginTop="16dp"
                 android:background="@color/colorHeading"
                 android:text="@string/spblp01sub2"
@@ -850,7 +839,6 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
                     android:layout_marginTop="16dp"
                     android:background="@color/colorHeading"
                     android:text="@string/spblp01sub2"
@@ -948,7 +936,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
+
                 android:layout_marginTop="16dp"
                 android:background="@color/colorHeading"
                 android:text="@string/spblp01sub2"
@@ -977,7 +965,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
+
                     android:layout_marginTop="16dp"
                     android:background="@color/colorHeading"
                     android:text="@string/spblp01sub3"
@@ -1076,7 +1064,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
+
             android:layout_marginTop="16dp"
             android:background="@color/colorHeading"
             android:text="@string/spblp01sub2"
@@ -1111,7 +1099,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
+
                     android:layout_marginTop="16dp"
                     android:background="@color/colorHeading"
                     android:text="@string/spblp01sub3"
@@ -1209,7 +1197,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
+
                 android:layout_marginTop="16dp"
                 android:background="@color/colorHeading"
                 android:text="@string/spblp01sub2"
@@ -1237,7 +1225,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
+
                     android:layout_marginTop="16dp"
                     android:background="@color/colorHeading"
                     android:text="@string/spblp01sub3"
@@ -1335,7 +1323,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
+
                 android:layout_marginTop="16dp"
                 android:background="@color/colorHeading"
                 android:text="@string/spblp01sub2"
@@ -1363,7 +1351,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
+
                     android:layout_marginTop="16dp"
                     android:background="@color/colorHeading"
                     android:text="@string/spblp01sub3"
@@ -1462,7 +1450,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
+
             android:layout_marginTop="16dp"
             android:background="@color/colorHeading"
             android:text="@string/spblp01sub2"
@@ -1496,7 +1484,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
+
                     android:layout_marginTop="16dp"
                     android:background="@color/colorHeading"
                     android:text="@string/spblp01sub3"
@@ -1594,7 +1582,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
+
                 android:layout_marginTop="16dp"
                 android:background="@color/colorHeading"
                 android:text="@string/spblp01sub2"
@@ -1622,7 +1610,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
+
                     android:layout_marginTop="16dp"
                     android:background="@color/colorHeading"
                     android:text="@string/spblp01sub3"
@@ -1720,7 +1708,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
+
             android:layout_marginTop="16dp"
             android:background="@color/colorHeading"
             android:text="@string/spblp01sub2"
@@ -1748,7 +1736,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
+
                 android:layout_marginTop="16dp"
                 android:background="@color/colorHeading"
                 android:text="@string/spblp01sub3"
@@ -1845,7 +1833,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
+
             android:layout_marginTop="16dp"
             android:background="@color/colorHeading"
             android:text="@string/spblp01sub2"
@@ -1874,7 +1862,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
+
                 android:layout_marginTop="16dp"
                 android:background="@color/colorHeading"
                 android:text="@string/spblp01sub3"
@@ -1971,7 +1959,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
+
             android:layout_marginTop="16dp"
             android:background="@color/colorHeading"
             android:text="@string/spblp01sub2"
@@ -1999,7 +1987,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
+
                 android:layout_marginTop="16dp"
                 android:background="@color/colorHeading"
                 android:text="@string/spblp01sub3"
@@ -2102,7 +2090,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
+
             android:layout_marginTop="16dp"
             android:background="@color/colorHeading"
             android:text="@string/spblp02"
@@ -2566,17 +2554,7 @@
             android:visibility="visible">
 
 
-            <Button
-                android:id="@+id/btnEnd"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_margin="4dp"
-                android:layout_weight="1"
-                android:onClick="endForm"
-                android:text="@string/end_interview"
-                android:textColor="#ff1e1e"
-                android:textSize="24sp"
-                android:textStyle="bold" />
+
 
             <Button
                 android:id="@+id/btnNext"
@@ -2588,6 +2566,18 @@
                 android:text="@string/nextSection"
                 android:textColor="#1ed61e"
                 android:textSize="24sp"/>
+
+            <Button
+                android:id="@+id/btnEnd"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:onClick="endForm"
+                android:text="@string/end_interview"
+                android:textColor="#ff1e1e"
+                android:textSize="24sp"
+                android:textStyle="bold"/>
 
 
         </LinearLayout>
