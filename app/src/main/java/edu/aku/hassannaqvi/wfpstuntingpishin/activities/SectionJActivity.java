@@ -153,12 +153,12 @@ public class SectionJActivity extends Activity {
         sJ.put("spblj01", spblj01.getText().toString());
         sJ.put("spblj0201a", spblj0201a.getSelectedItem().toString());
         sJ.put("spblj0201b", spblj0201b.getText().toString());
-        sJ.put("spblj0202a", spblj0201a.getSelectedItem().toString());
-        sJ.put("spblj0202b", spblj0201b.getText().toString());
-        sJ.put("spblj0301a", spblj0201a.getSelectedItem().toString());
-        sJ.put("spblj0301b", spblj0201b.getText().toString());
-        sJ.put("spblj0302a", spblj0201a.getSelectedItem().toString());
-        sJ.put("spblj0302b", spblj0201b.getText().toString());
+        sJ.put("spblj0202a", spblj0202a.getSelectedItem().toString());
+        sJ.put("spblj0202b", spblj0202b.getText().toString());
+        sJ.put("spblj0301a", spblj0301a.getSelectedItem().toString());
+        sJ.put("spblj0301b", spblj0301b.getText().toString());
+        sJ.put("spblj0302a", spblj0302a.getSelectedItem().toString());
+        sJ.put("spblj0302b", spblj0302b.getText().toString());
 
         MainApp.fc.setsJ(String.valueOf(sJ));
 

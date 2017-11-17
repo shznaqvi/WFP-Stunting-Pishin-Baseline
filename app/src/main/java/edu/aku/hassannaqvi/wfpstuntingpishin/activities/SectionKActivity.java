@@ -951,7 +951,7 @@ public class SectionKActivity extends AppCompatActivity implements RadioGroup.On
         }
 
         if (spblk1303a.isChecked()) {
-            if (spblk1302x.getText().toString().isEmpty()) {
+            if (spblk1303x.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblk1303) + "-" + getString(R.string.times), Toast.LENGTH_SHORT).show();
                 spblk1303x.setError("This data is Required!");
                 Log.i(TAG, "spblk1303x: This data is Required!");
@@ -1016,7 +1016,7 @@ public class SectionKActivity extends AppCompatActivity implements RadioGroup.On
                 spblk1306x.requestFocus();
                 return false;
             } else {
-                spblk1303x.setError(null);
+                spblk1306x.setError(null);
             }
 
             if (Integer.valueOf(spblk1306x.getText().toString()) < 1 || Integer.valueOf(spblk1306x.getText().toString()) > 5) {
