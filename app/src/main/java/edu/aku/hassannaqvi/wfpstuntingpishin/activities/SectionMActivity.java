@@ -217,18 +217,6 @@ public class SectionMActivity extends Activity {
         });
 
 
-        spblm0188.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                if (spblm0188a.isChecked()) {
-
-                } else {
-
-                }
-            }
-        });
-
-
         spblm03.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
