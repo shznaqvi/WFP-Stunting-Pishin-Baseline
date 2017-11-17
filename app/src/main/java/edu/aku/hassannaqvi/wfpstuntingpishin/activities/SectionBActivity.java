@@ -255,7 +255,7 @@ public class SectionBActivity extends Activity {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
 
             MainApp.fmc.set_UID(
-                    (MainApp.fc.getDeviceID() + MainApp.fc.get_ID()));
+                    (MainApp.fmc.getDeviceId() + MainApp.fmc.get_ID()));
             db.updateFamilyMemberID();
             return true;
         } else {
