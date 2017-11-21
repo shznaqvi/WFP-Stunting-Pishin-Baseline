@@ -217,7 +217,6 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
     }
 
     public void checkUpdate(View view) throws IOException {
-        new CheckUpdate(this).execute();
 
 
     }
@@ -294,6 +293,8 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
         NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
         if (networkInfo != null && networkInfo.isConnected()) {
             new syncData(this).execute();
+            new CheckUpdate(this).execute();
+
 
         } else {
             Toast.makeText(this, "No network connection available.", Toast.LENGTH_SHORT).show();
