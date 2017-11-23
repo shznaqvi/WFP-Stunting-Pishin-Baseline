@@ -429,7 +429,7 @@ public class SectionEActivity extends Activity {
 
 
         if (spble0299.isChecked()) {
-            sHE.put("spble02", "");
+            sHE.put("spble02", "99");
         } else {
             sHE.put("spble02", spble02.getText().toString());
         }
