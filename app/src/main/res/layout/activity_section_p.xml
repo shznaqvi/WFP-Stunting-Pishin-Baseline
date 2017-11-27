@@ -2110,6 +2110,13 @@
             android:layout_height="wrap_content">
 
             <RadioButton
+                android:id="@+id/spblp0201h"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:text="@string/spblp0301a" />
+
+            <RadioButton
                 android:id="@+id/spblp0201a"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -2172,6 +2179,13 @@
             android:layout_height="wrap_content">
 
             <RadioButton
+                android:id="@+id/spblp0202h"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:text="@string/spblp0301a" />
+
+            <RadioButton
                 android:id="@+id/spblp0202a"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -2232,6 +2246,14 @@
             android:id="@+id/spblp0203"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
+
+            <RadioButton
+                android:id="@+id/spblp0203h"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:text="@string/spblp0301a" />
 
             <RadioButton
                 android:id="@+id/spblp0203a"
@@ -2296,6 +2318,13 @@
             android:layout_height="wrap_content">
 
             <RadioButton
+                android:id="@+id/spblp0204h"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:text="@string/spblp0301a" />
+
+            <RadioButton
                 android:id="@+id/spblp0204a"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -2356,6 +2385,13 @@
             android:id="@+id/spblp0205"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/spblp0205h"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:text="@string/spblp0301a" />
 
             <RadioButton
                 android:id="@+id/spblp0205a"
