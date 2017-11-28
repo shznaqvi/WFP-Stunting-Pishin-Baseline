@@ -55,7 +55,8 @@
             android:background="@color/colorPrimary"
             android:text="@string/spblk01"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textColor="@android:color/white"/>
+            android:textColor="@android:color/white"
+            />
 
         <Spinner
             android:id="@+id/spblk01"

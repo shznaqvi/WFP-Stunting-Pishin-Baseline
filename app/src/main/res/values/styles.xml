@@ -2,6 +2,7 @@
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="android:Theme.Material.Light.DarkActionBar">
+        <item name="android:typeface">serif</item>
         <item name="android:scrollViewStyle">@style/BackgroundStyle</item>
         <item name="android:textViewStyle">@style/labels</item>
         <item name="android:editTextStyle">@style/textInput</item>
@@ -12,6 +13,7 @@
     </style>
 
     <style name="AppTheme1" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:typeface">serif</item>
         <item name="android:scrollViewStyle">@style/BackgroundStyle</item>
         <item name="android:textViewStyle">@style/labels</item>
         <item name="android:editTextStyle">@style/textInput</item>
@@ -50,7 +52,22 @@
         <item name="android:layout_marginTop">24dp</item>
         <item name="android:background">@color/colorPrimary</item>
         <item name="android:drawable">@drawable/textview_background_grad</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:typeface">serif</item>
+        <item name="android:paddingTop">16dp</item>
+        <item name="android:elevation">1dp</item>
+        <item name="android:paddingStart">8dp</item>
 
+
+    </style>
+
+    <style name="labels1" parent="TextAppearance.AppCompat">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">24dp</item>
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="android:drawable">@drawable/textview_background_grad</item>
         <item name="android:textColor">#ffffff</item>
         <item name="android:textSize">24sp</item>
         <item name="android:typeface">serif</item>

@@ -1083,10 +1083,11 @@ public class SectionIActivity extends Activity {
 
 
             //        spbli07
-            if (!spbli07999.isChecked() && (Integer.valueOf(spbli07.getText().toString()) < 1 || Integer.valueOf(spbli07.getText().toString()) > 12)) {
-                Toast.makeText(this, "Range cannot be greater than 12", Toast.LENGTH_SHORT).show();
-                spbli07.setError("Range cannot be greater than 12");    // Set Error on last radio button
-                Log.i(TAG, "spbli07: Range cannot be greater than 12");
+            if (!spbli07.getText().toString().isEmpty() && (Integer.valueOf(spbli07.getText().toString()) < 1
+                    || Integer.valueOf(spbli07.getText().toString()) > 9)) {
+                Toast.makeText(this, "Range cannot be greater than 9", Toast.LENGTH_SHORT).show();
+                spbli07.setError("Range cannot be greater than 9");    // Set Error on last radio button
+                Log.i(TAG, "spbli07: Range cannot be greater than 9");
                 spbli07.requestFocus();
                 return false;
             } else {
@@ -1627,10 +1628,11 @@ public class SectionIActivity extends Activity {
             }
 
             //        spbli026wk
-            if (Integer.valueOf(spbli026wk.getText().toString()) < 1 || Integer.valueOf(spbli026wk.getText().toString()) > 14) {
-                Toast.makeText(this, "Range must be 1 - 14", Toast.LENGTH_SHORT).show();
-                spbli026wk.setError("Range must be 1 - 14");    // Set Error on last radio button
-                Log.i(TAG, "spbli026wk: Range must be 1 - 14");
+            if (spbli026wk.getText().toString().isEmpty() && (Integer.valueOf(spbli026wk.getText().toString()) < 1
+                    || Integer.valueOf(spbli026wk.getText().toString()) > 14)) {
+                Toast.makeText(this, "Range is 1 to 14 weeks", Toast.LENGTH_SHORT).show();
+                spbli026wk.setError("Range is 1 to 14 weeks");    // Set Error on last radio button
+                Log.i(TAG, "spbli026wk: Range is 1 to 14 weeks");
                 spbli026wk.requestFocus();
                 return false;
             } else {
@@ -1699,9 +1701,9 @@ public class SectionIActivity extends Activity {
 
         JSONObject sHI = new JSONObject();
 
-        sHI.put("spbli01wname", spbli01w.getText().toString());
+        /*sHI.put("spbli01wname", spbli01w.getText().toString());
         sHI.put("spbli01wserial", getIntent().getStringExtra("getSerial"));
-
+*/
         sHI.put("spbli01", spbli01a.isChecked() ? "1" : spbli01b.isChecked() ? "2"
                 : spbli01c.isChecked() ? "3"
                 : "0");

@@ -45,7 +45,7 @@
             android:textColor="@color/colorPrimaryDark"
             android:textSize="25sp"
             android:textStyle="bold"
-            tools:typeface="serif" />
+            />
 
 
         <TextView
@@ -62,7 +62,7 @@
             android:text="@string/spblp01sub2"
             android:textColor="@color/colorPrimaryDark"
             android:textSize="25sp"
-            tools:typeface="serif" />
+            />
 
 
         <EditText
@@ -89,7 +89,7 @@
                 android:text="@string/spblp01sub3"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="25sp"
-                tools:typeface="serif" />
+                />
 
             <RadioGroup
                 android:id="@+id/spblp0101b"
@@ -184,7 +184,7 @@
             android:text="@string/spblp01sub2"
             android:textColor="@color/colorPrimaryDark"
             android:textSize="25sp"
-            tools:typeface="serif" />
+            />
 
 
         <EditText
@@ -212,7 +212,7 @@
                 android:text="@string/spblp01sub3"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="25sp"
-                tools:typeface="serif" />
+                />
 
             <RadioGroup
                 android:id="@+id/spblp0102b"
@@ -308,7 +308,7 @@
             android:text="@string/spblp01sub2"
             android:textColor="@color/colorPrimaryDark"
             android:textSize="25sp"
-            tools:typeface="serif" />
+            />
 
 
         <EditText
@@ -337,7 +337,7 @@
                 android:text="@string/spblp01sub3"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="25sp"
-                tools:typeface="serif" />
+                />
 
             <RadioGroup
                 android:id="@+id/spblp0103b"
@@ -435,7 +435,7 @@
             android:text="@string/spblp01sub2"
             android:textColor="@color/colorPrimaryDark"
             android:textSize="25sp"
-            tools:typeface="serif" />
+            />
 
 
         <EditText
@@ -469,7 +469,7 @@
                     android:text="@string/spblp01sub3"
                     android:textColor="@color/colorPrimaryDark"
                     android:textSize="25sp"
-                    tools:typeface="serif" />
+                    />
 
                 <RadioGroup
                     android:id="@+id/spblp0104b"
@@ -566,7 +566,7 @@
                 android:text="@string/spblp01sub2"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="25sp"
-                tools:typeface="serif" />
+                />
 
             <EditText
                 android:id="@+id/spblp010401a"
@@ -594,7 +594,7 @@
                     android:text="@string/spblp01sub3"
                     android:textColor="@color/colorPrimaryDark"
                     android:textSize="25sp"
-                    tools:typeface="serif" />
+                    />
 
                 <RadioGroup
                     android:id="@+id/spblp010401b"
@@ -691,7 +691,7 @@
                 android:text="@string/spblp01sub2"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="25sp"
-                tools:typeface="serif" />
+                />
 
 
             <EditText
@@ -719,7 +719,7 @@
                     android:text="@string/spblp01sub3"
                     android:textColor="@color/colorPrimaryDark"
                     android:textSize="25sp"
-                    tools:typeface="serif" />
+                    />
 
                 <RadioGroup
                     android:id="@+id/spblp010402b"
@@ -844,7 +844,7 @@
                     android:text="@string/spblp01sub2"
                     android:textColor="@color/colorPrimaryDark"
                     android:textSize="25sp"
-                    tools:typeface="serif" />
+                    />
 
                 <RadioGroup
                     android:id="@+id/spblp010403b"
@@ -971,7 +971,7 @@
                     android:text="@string/spblp01sub3"
                     android:textColor="@color/colorPrimaryDark"
                     android:textSize="25sp"
-                    tools:typeface="serif" />
+                    />
 
                 <RadioGroup
                     android:id="@+id/spblp010404b"
@@ -1105,7 +1105,7 @@
                     android:text="@string/spblp01sub3"
                     android:textColor="@color/colorPrimaryDark"
                     android:textSize="25sp"
-                    tools:typeface="serif" />
+                    />
 
                 <RadioGroup
                     android:id="@+id/spblp0105b"
@@ -1231,7 +1231,7 @@
                     android:text="@string/spblp01sub3"
                     android:textColor="@color/colorPrimaryDark"
                     android:textSize="25sp"
-                    tools:typeface="serif" />
+                    />
 
                 <RadioGroup
                     android:id="@+id/spblp010501b"
@@ -1357,7 +1357,7 @@
                     android:text="@string/spblp01sub3"
                     android:textColor="@color/colorPrimaryDark"
                     android:textSize="25sp"
-                    tools:typeface="serif" />
+                    />
 
                 <RadioGroup
                     android:id="@+id/spblp010502b"
@@ -1490,7 +1490,7 @@
                     android:text="@string/spblp01sub3"
                     android:textColor="@color/colorPrimaryDark"
                     android:textSize="25sp"
-                    tools:typeface="serif" />
+                    />
 
                 <RadioGroup
                     android:id="@+id/spblp0106b"
@@ -1616,7 +1616,7 @@
                     android:text="@string/spblp01sub3"
                     android:textColor="@color/colorPrimaryDark"
                     android:textSize="25sp"
-                    tools:typeface="serif" />
+                    />
 
                 <RadioGroup
                     android:id="@+id/spblp010601b"
@@ -1742,7 +1742,7 @@
                 android:text="@string/spblp01sub3"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="25sp"
-                tools:typeface="serif" />
+                />
 
             <RadioGroup
                 android:id="@+id/spblp0107b"
@@ -1868,7 +1868,7 @@
                 android:text="@string/spblp01sub3"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="25sp"
-                tools:typeface="serif" />
+                />
 
             <RadioGroup
                 android:id="@+id/spblp0108b"
@@ -1993,7 +1993,7 @@
                 android:text="@string/spblp01sub3"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="25sp"
-                tools:typeface="serif" />
+                />
 
             <RadioGroup
                 android:id="@+id/spblp0109b"
@@ -2096,7 +2096,7 @@
             android:text="@string/spblp02"
             android:textColor="@color/colorPrimaryDark"
             android:textSize="25sp"
-            tools:typeface="serif" />
+            />
 
         <TextView
             android:layout_width="match_parent"
@@ -2110,11 +2110,12 @@
             android:layout_height="wrap_content">
 
             <RadioButton
-                android:id="@+id/spblp0201h"
+                android:id="@+id/spblp020155"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
-                android:text="@string/spblp0301a" />
+                android:text="@string/never"/>
+
 
             <RadioButton
                 android:id="@+id/spblp0201a"
@@ -2179,11 +2180,12 @@
             android:layout_height="wrap_content">
 
             <RadioButton
-                android:id="@+id/spblp0202h"
+                android:id="@+id/spblp020255"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
-                android:text="@string/spblp0301a" />
+                android:text="@string/never"/>
+
 
             <RadioButton
                 android:id="@+id/spblp0202a"
@@ -2247,13 +2249,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-
             <RadioButton
-                android:id="@+id/spblp0203h"
+                android:id="@+id/spblp020355"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
-                android:text="@string/spblp0301a" />
+                android:text="@string/never"/>
+
 
             <RadioButton
                 android:id="@+id/spblp0203a"
@@ -2318,11 +2320,12 @@
             android:layout_height="wrap_content">
 
             <RadioButton
-                android:id="@+id/spblp0204h"
+                android:id="@+id/spblp020455"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
-                android:text="@string/spblp0301a" />
+                android:text="@string/never"/>
+
 
             <RadioButton
                 android:id="@+id/spblp0204a"
@@ -2387,11 +2390,12 @@
             android:layout_height="wrap_content">
 
             <RadioButton
-                android:id="@+id/spblp0205h"
+                android:id="@+id/spblp020555"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
-                android:text="@string/spblp0301a" />
+                android:text="@string/never"/>
+
 
             <RadioButton
                 android:id="@+id/spblp0205a"

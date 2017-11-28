@@ -6,8 +6,6 @@ import android.support.annotation.IdRes;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -31,7 +29,6 @@ import butterknife.OnClick;
 import edu.aku.hassannaqvi.wfpstuntingpishin.R;
 import edu.aku.hassannaqvi.wfpstuntingpishin.core.DatabaseHelper;
 import edu.aku.hassannaqvi.wfpstuntingpishin.core.MainApp;
-import edu.aku.hassannaqvi.wfpstuntingpishin.otherClasses.FamilyMembers;
 import io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText;
 
 public class SectionKActivity extends AppCompatActivity implements RadioGroup.OnCheckedChangeListener
@@ -379,17 +376,26 @@ public class SectionKActivity extends AppCompatActivity implements RadioGroup.On
     @BindView(R.id.motherName)
     TextView motherName;
 
-    @BindViews({R.id.spblk1401, R.id.spblk1402, R.id.spblk1403, R.id.spblk1404, R.id.spblk1405, R.id.spblk1406, R.id.spblk1407,
+    @BindViews({R.id.spblk1301, R.id.spblk1302, R.id.spblk1303, R.id.spblk1304, R.id.spblk1305, R.id.spblk1306, R.id.spblk1307,
+            R.id.spblk1308, R.id.spblk1309, R.id.spblk1401, R.id.spblk1402, R.id.spblk1403, R.id.spblk1404, R.id.spblk1405, R.id.spblk1406, R.id.spblk1407,
             R.id.spblk1408, R.id.spblk1409, R.id.spblk1410, R.id.spblk1411, R.id.spblk1412, R.id.spblk1413, R.id.spblk1414,
             R.id.spblk1415, R.id.spblk1416})
     List<RadioGroup> spblk14;
 
-    @BindViews({R.id.spblk1401b, R.id.spblk1402b, R.id.spblk1403b, R.id.spblk1404b, R.id.spblk1405b, R.id.spblk1406b,
+    @BindViews({R.id.spblk1301a, R.id.spblk1302a, R.id.spblk1303a, R.id.spblk1304a, R.id.spblk1305a, R.id.spblk1306a,
+            R.id.spblk1307a, R.id.spblk1308a, R.id.spblk1309a, R.id.spblk1401a, R.id.spblk1402a, R.id.spblk1403a,
+            R.id.spblk1404a, R.id.spblk1405a, R.id.spblk1406a, R.id.spblk1407a, R.id.spblk1408a, R.id.spblk1409a,
+            R.id.spblk1410a, R.id.spblk1411a, R.id.spblk1412a, R.id.spblk1413a, R.id.spblk1414a, R.id.spblk1415a, R.id.spblk1416a})
+    List<RadioButton> spblk14a;
+
+    @BindViews({R.id.spblk1301b, R.id.spblk1302b, R.id.spblk1303b, R.id.spblk1304b, R.id.spblk1305b, R.id.spblk1306b,
+            R.id.spblk1307b, R.id.spblk1308b, R.id.spblk1309b, R.id.spblk1401b, R.id.spblk1402b, R.id.spblk1403b, R.id.spblk1404b, R.id.spblk1405b, R.id.spblk1406b,
             R.id.spblk1407b, R.id.spblk1408b, R.id.spblk1409b, R.id.spblk1410b, R.id.spblk1411b, R.id.spblk1412b,
             R.id.spblk1413b, R.id.spblk1414b, R.id.spblk1415b, R.id.spblk1416b})
     List<RadioButton> spblk14b;
 
-    @BindViews({R.id.spblk140199, R.id.spblk140299, R.id.spblk140399, R.id.spblk140499, R.id.spblk140599, R.id.spblk140699,
+    @BindViews({R.id.spblk130199, R.id.spblk130299, R.id.spblk130399, R.id.spblk130499, R.id.spblk130599, R.id.spblk130699,
+            R.id.spblk130799, R.id.spblk130899, R.id.spblk130999, R.id.spblk140199, R.id.spblk140299, R.id.spblk140399, R.id.spblk140499, R.id.spblk140599, R.id.spblk140699,
             R.id.spblk140799, R.id.spblk140899, R.id.spblk140999, R.id.spblk141099, R.id.spblk141199, R.id.spblk141299,
             R.id.spblk141399, R.id.spblk141499, R.id.spblk141599, R.id.spblk141699})
     List<RadioButton> spblk1499;
@@ -410,7 +416,7 @@ public class SectionKActivity extends AppCompatActivity implements RadioGroup.On
         MainApp.childMap.put("....", null);
         MainApp.lstChild.add("....");
 
-        for (byte i = 0; i < MainApp.familyMembersList.size(); i++) {
+        /*for (byte i = 0; i < MainApp.familyMembersList.size(); i++) {
             if (MainApp.familyMembersList.get(i).getType().equals("ch") && Integer.valueOf(MainApp.familyMembersList.get(i).getDob().substring(0, 1)) < 2) {
 
 
@@ -441,7 +447,7 @@ public class SectionKActivity extends AppCompatActivity implements RadioGroup.On
             }
         });
 
-
+*/
         //motherName.setText(childMap.get(spblk01.getSelectedItem().toString()));
 
         spblk04.setManager(getSupportFragmentManager());
@@ -480,7 +486,7 @@ public class SectionKActivity extends AppCompatActivity implements RadioGroup.On
             }
         });
 
-        spblk1302.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
+        /*spblk1302.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
         {
             @Override
             public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
@@ -518,7 +524,7 @@ public class SectionKActivity extends AppCompatActivity implements RadioGroup.On
                 }
             }
         });
-
+*/
         spblk1699.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
         {
             @Override
@@ -565,6 +571,7 @@ public class SectionKActivity extends AppCompatActivity implements RadioGroup.On
 
 
     }
+
 
     @Override
     public void onUserInteraction() {
@@ -1261,7 +1268,7 @@ public class SectionKActivity extends AppCompatActivity implements RadioGroup.On
         }
 
 
-        if (is14AllNo()) {
+        if (is14AllNo() || is14Alldkn() || (!is14AllYes())) {
             //============ Q 8 ==========
             if (spblk15.getCheckedRadioButtonId() == -1) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.spblk15), Toast.LENGTH_SHORT).show();
@@ -1276,9 +1283,8 @@ public class SectionKActivity extends AppCompatActivity implements RadioGroup.On
             }
 
             if (is14AllNo() && spblk15a.isChecked()) {
-                Toast.makeText(this, "ERROR: " + getString(R.string.spblk1401) + "Atleast one should be Yes", Toast.LENGTH_SHORT).show();
-                spblk15a.setError("Atlease one should be yes Other wise Select no in " + getString(R.string.spblk15));
-                spblk1401a.setError("Atlease one should be yes Other wise Select no in " + getString(R.string.spblk15));
+                Toast.makeText(this, "ERROR: " + getString(R.string.spblk15a) + "Atleast one should be Yes", Toast.LENGTH_SHORT).show();
+                spblk15a.setError(getString(R.string.spblk15a));
                 spblk15a.setFocusable(true);
                 spblk15a.setFocusableInTouchMode(true);
                 spblk15a.requestFocus();
@@ -1286,13 +1292,12 @@ public class SectionKActivity extends AppCompatActivity implements RadioGroup.On
                 return false;
             } else {
                 spblk15a.setError(null);
-                spblk1401a.setError(null);
+
             }
 
-            if (!is14AllNo() && spblk15b.isChecked()) {
-                Toast.makeText(this, "ERROR: " + getString(R.string.spblk15) + "Can not be no", Toast.LENGTH_SHORT).show();
-                spblk15a.setError("Can not be no in " + getString(R.string.spblk15));
-                spblk1401a.setError("Atlease one should be yes Other wise Select no in " + getString(R.string.spblk15));
+            if (is14Alldkn() && spblk15a.isChecked()) {
+                Toast.makeText(this, "ERROR: " + getString(R.string.spblk15a) + "Atleast one should be Yes", Toast.LENGTH_SHORT).show();
+                spblk15a.setError(getString(R.string.spblk15a));
                 spblk15a.setFocusable(true);
                 spblk15a.setFocusableInTouchMode(true);
                 spblk15a.requestFocus();
@@ -1300,12 +1305,24 @@ public class SectionKActivity extends AppCompatActivity implements RadioGroup.On
                 return false;
             } else {
                 spblk15a.setError(null);
-                spblk1401a.setError(null);
+
+            }
+
+            if ((!is14AllNo() || !is14Alldkn()) && spblk15a.isChecked()) {
+                Toast.makeText(this, "ERROR: " + getString(R.string.spblk15a) + "Atleast one should be Yes", Toast.LENGTH_SHORT).show();
+                spblk15a.setError(getString(R.string.spblk15a));
+                spblk15a.setFocusable(true);
+                spblk15a.setFocusableInTouchMode(true);
+                spblk15a.requestFocus();
+                Log.i(TAG, "spblk15: This data is Required!");
+                return false;
+            } else {
+                spblk15a.setError(null);
             }
         }
 
 
-        if (!is14AllNo()) {
+        if (is14AllYes()) {
             //============ Q 9 ==========
 
             if (spblk16.getCheckedRadioButtonId() == -1) {
@@ -1416,19 +1433,41 @@ public class SectionKActivity extends AppCompatActivity implements RadioGroup.On
     @Override
     public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
 
-        if (is14AllNo()) {
-            // Show answer here
-            fldGrpspblk15.setVisibility(View.VISIBLE);
-            fldGrpspblk16.setVisibility(View.GONE);
-            spblk16x.setText(null);
-            spblk16.clearCheck();
 
-        } else {
+        if (is14AllYes()) {
             fldGrpspblk15.setVisibility(View.GONE);
-            fldGrpspblk16.setVisibility(View.VISIBLE);
             spblk15.clearCheck();
+        } else {
+            fldGrpspblk15.setVisibility(View.VISIBLE);
         }
 
+
+        if (group == spblk1302) {
+            if (spblk1302a.isChecked()) {
+                spblk1302x.setVisibility(View.VISIBLE);
+            } else {
+                spblk1302x.setVisibility(View.GONE);
+                spblk1302x.setText(null);
+            }
+        }
+
+        if (group == spblk1303) {
+            if (spblk1303a.isChecked()) {
+                spblk1303x.setVisibility(View.VISIBLE);
+            } else {
+                spblk1303x.setVisibility(View.GONE);
+                spblk1303x.setText(null);
+            }
+        }
+
+        if (group == spblk1306) {
+            if (spblk1306a.isChecked()) {
+                spblk1306x.setVisibility(View.VISIBLE);
+            } else {
+                spblk1306x.setVisibility(View.GONE);
+                spblk1306x.setText(null);
+            }
+        }
     }
 
     public boolean is14AllNo() {
@@ -1441,6 +1480,31 @@ public class SectionKActivity extends AppCompatActivity implements RadioGroup.On
 
         // Show answer here
         return i == spblk14b.size();
+    }
+
+    public boolean is14AllYes() {
+
+        int i = 0;
+        for (RadioButton rg : spblk14a) {
+            if (rg.isChecked())
+                return true;
+        }
+
+        // Show answer here
+        // return i == rg;
+        return false;
+    }
+
+    public boolean is14Alldkn() {
+
+        int i = 0;
+        for (RadioButton rg : spblk1499) {
+            if (rg.isChecked())
+                i++;
+        }
+
+        // Show answer here
+        return i == spblk1499.size();
     }
 
 }
