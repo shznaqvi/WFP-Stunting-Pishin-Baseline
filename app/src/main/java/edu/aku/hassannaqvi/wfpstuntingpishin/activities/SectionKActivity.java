@@ -6,6 +6,8 @@ import android.support.annotation.IdRes;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -29,6 +31,7 @@ import butterknife.OnClick;
 import edu.aku.hassannaqvi.wfpstuntingpishin.R;
 import edu.aku.hassannaqvi.wfpstuntingpishin.core.DatabaseHelper;
 import edu.aku.hassannaqvi.wfpstuntingpishin.core.MainApp;
+import edu.aku.hassannaqvi.wfpstuntingpishin.otherClasses.FamilyMembers;
 import io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText;
 
 public class SectionKActivity extends AppCompatActivity implements RadioGroup.OnCheckedChangeListener
@@ -416,7 +419,7 @@ public class SectionKActivity extends AppCompatActivity implements RadioGroup.On
         MainApp.childMap.put("....", null);
         MainApp.lstChild.add("....");
 
-        /*for (byte i = 0; i < MainApp.familyMembersList.size(); i++) {
+        for (byte i = 0; i < MainApp.familyMembersList.size(); i++) {
             if (MainApp.familyMembersList.get(i).getType().equals("ch") && Integer.valueOf(MainApp.familyMembersList.get(i).getDob().substring(0, 1)) < 2) {
 
 
@@ -447,7 +450,7 @@ public class SectionKActivity extends AppCompatActivity implements RadioGroup.On
             }
         });
 
-*/
+
         //motherName.setText(childMap.get(spblk01.getSelectedItem().toString()));
 
         spblk04.setManager(getSupportFragmentManager());
