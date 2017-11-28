@@ -265,7 +265,6 @@
                         android:paddingEnd="4dp"
                         android:paddingStart="4dp"
                         android:singleLine="true"
-                        android:text="dmu@aku"
                         android:textSize="18sp">
 
                         <requestFocus />
@@ -301,7 +300,6 @@
                         android:paddingEnd="4dp"
                         android:paddingStart="4dp"
                         android:singleLine="true"
-                        android:text="aku?dmu"
                         android:textSize="18sp" />
 
                     <EditText
@@ -321,7 +319,6 @@
                         android:paddingEnd="4dp"
                         android:paddingStart="4dp"
                         android:singleLine="true"
-                        android:text="test1234"
                         android:textSize="18sp">
 
                     </EditText>
@@ -354,7 +351,6 @@
                         android:paddingEnd="4dp"
                         android:paddingStart="4dp"
                         android:singleLine="true"
-                        android:text="test1234"
                         android:textSize="18sp" />
 
                 </LinearLayout>

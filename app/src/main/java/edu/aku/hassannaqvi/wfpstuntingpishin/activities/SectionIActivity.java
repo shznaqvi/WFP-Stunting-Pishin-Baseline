@@ -1083,7 +1083,8 @@ public class SectionIActivity extends Activity {
 
 
             //        spbli07
-            if (!spbli07.getText().toString().isEmpty() && Integer.valueOf(spbli07.getText().toString()) > 9) {
+            if (!spbli07.getText().toString().isEmpty() && (Integer.valueOf(spbli07.getText().toString()) < 1
+                    || Integer.valueOf(spbli07.getText().toString()) > 9)) {
                 Toast.makeText(this, "Range cannot be greater than 9", Toast.LENGTH_SHORT).show();
                 spbli07.setError("Range cannot be greater than 9");    // Set Error on last radio button
                 Log.i(TAG, "spbli07: Range cannot be greater than 9");
@@ -1151,7 +1152,7 @@ public class SectionIActivity extends Activity {
 
 
             //        spbli010
-            if (!spbli01099.isChecked() && Integer.valueOf(spbli010.getText().toString()) > 5) {
+            if (!spbli01099.isChecked() && (Integer.valueOf(spbli010.getText().toString()) < 1 || Integer.valueOf(spbli010.getText().toString()) > 5)) {
                 Toast.makeText(this, "Range cannot be greater than 5", Toast.LENGTH_SHORT).show();
                 spbli010.setError("Range cannot be greater than 5");    // Set Error on last radio button
                 Log.i(TAG, "spbli010: Range cannot be greater than 5");
@@ -1193,7 +1194,7 @@ public class SectionIActivity extends Activity {
 
 
             //        spbli012
-            if (!spbli01299.isChecked() && Integer.valueOf(spbli012.getText().toString()) > 5) {
+            if (!spbli01299.isChecked() && (Integer.valueOf(spbli012.getText().toString()) < 1 || Integer.valueOf(spbli012.getText().toString()) > 5)) {
                 Toast.makeText(this, "Range cannot be greater than 5", Toast.LENGTH_SHORT).show();
                 spbli012.setError("Range cannot be greater than 5");    // Set Error on last radio button
                 Log.i(TAG, "spbli012: Range cannot be greater than 5");
@@ -1217,7 +1218,7 @@ public class SectionIActivity extends Activity {
 
 
             //        spbli013
-            if (Integer.valueOf(spbli013.getText().toString()) < 0 || Integer.valueOf(spbli013.getText().toString()) > 10) {
+            if (Integer.valueOf(spbli013.getText().toString()) < 1 || Integer.valueOf(spbli013.getText().toString()) > 10) {
                 Toast.makeText(this, "Range cannot be greater than 10", Toast.LENGTH_SHORT).show();
                 spbli013.setError("Range is 1 - 10");    // Set Error on last radio button
                 Log.i(TAG, "spbli013: Range is 1 - 10");
@@ -1627,10 +1628,11 @@ public class SectionIActivity extends Activity {
             }
 
             //        spbli026wk
-            if (spbli026wk.getText().toString().isEmpty() && Integer.valueOf(spbli026wk.getText().toString()) < 1) {
-                Toast.makeText(this, "Range must be greater then 0", Toast.LENGTH_SHORT).show();
-                spbli026wk.setError("Range must be greater then 0");    // Set Error on last radio button
-                Log.i(TAG, "spbli026wk: Range must be greater then 0");
+            if (spbli026wk.getText().toString().isEmpty() && (Integer.valueOf(spbli026wk.getText().toString()) < 1
+                    || Integer.valueOf(spbli026wk.getText().toString()) > 14)) {
+                Toast.makeText(this, "Range is 1 to 14 weeks", Toast.LENGTH_SHORT).show();
+                spbli026wk.setError("Range is 1 to 14 weeks");    // Set Error on last radio button
+                Log.i(TAG, "spbli026wk: Range is 1 to 14 weeks");
                 spbli026wk.requestFocus();
                 return false;
             } else {
@@ -1699,9 +1701,9 @@ public class SectionIActivity extends Activity {
 
         JSONObject sHI = new JSONObject();
 
-        sHI.put("spbli01wname", spbli01w.getText().toString());
+        /*sHI.put("spbli01wname", spbli01w.getText().toString());
         sHI.put("spbli01wserial", getIntent().getStringExtra("getSerial"));
-
+*/
         sHI.put("spbli01", spbli01a.isChecked() ? "1" : spbli01b.isChecked() ? "2"
                 : spbli01c.isChecked() ? "3"
                 : "0");

@@ -320,15 +320,7 @@
                     android:layout_weight="1"
                     android:text="@string/yes" />
 
-                <EditText
-                    android:id="@+id/spblm0188x"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
-                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
-                    android:hint="@string/other"
-                    android:inputType="textCapWords"
-                    android:visibility="gone" />
+
 
                 <RadioButton
                     android:id="@+id/spblm0188b"
@@ -338,6 +330,17 @@
                     android:text="@string/no" />
 
             </RadioGroup>
+
+            <EditText
+                android:id="@+id/spblm0188x"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:layout_marginTop="1dp"
+                android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
+                android:hint="@string/other"
+                android:inputType="textCapWords"
+                android:visibility="gone"/>
 
 
             <TextView

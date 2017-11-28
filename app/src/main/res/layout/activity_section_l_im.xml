@@ -88,7 +88,7 @@
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="30sp"
                 android:textStyle="bold"
-                tools:typeface="serif"/>
+                />
 
             <android.support.v4.widget.NestedScrollView
                 android:id="@+id/scbirth"
@@ -881,7 +881,7 @@
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="30sp"
                 android:textStyle="bold"
-                tools:typeface="serif"/>
+                />
 
 
             <android.support.v4.widget.NestedScrollView
@@ -1933,7 +1933,7 @@
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="30sp"
                 android:textStyle="bold"
-                tools:typeface="serif"/>
+                />
 
             <android.support.v4.widget.NestedScrollView
                 android:id="@+id/sc9M"

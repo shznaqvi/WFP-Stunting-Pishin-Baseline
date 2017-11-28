@@ -135,7 +135,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             + singleVillages.COLUMN_VILLAGE_CODE + " TEXT );";
     final String SQL_CREATE_LHWS = "CREATE TABLE " + singleLHWs.TABLE_NAME + "("
             + singleLHWs.COLUMN_LHW_NAME + " TEXT,"
-            + singleLHWs.COLUMN_UC_CODE + " TEXT,"
+            + singleLHWs.COLUMN_HF_CODE + " TEXT,"
             + singleLHWs.COLUMN_LHW_CODE + " TEXT );";
     final String SQL_CREATE_TEHSILS = "CREATE TABLE " + singleTehsil.TABLE_NAME + "("
             + singleTehsil.COLUMN_TEHSIL_CODE + " TEXT,"
@@ -305,7 +305,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 ContentValues values = new ContentValues();
 
                 values.put(singleLHWs.COLUMN_LHW_NAME, Vc.getLhwname());
-                values.put(singleLHWs.COLUMN_UC_CODE, Vc.getUc_code());
+                values.put(singleLHWs.COLUMN_HF_CODE, Vc.getHf_code());
                 values.put(singleLHWs.COLUMN_LHW_CODE, Vc.getLhwcode());
 
                 db.insert(singleLHWs.TABLE_NAME, null, values);
@@ -442,11 +442,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         Cursor c = null;
         String[] columns = {
                 singleLHWs.COLUMN_LHW_NAME,
-                singleLHWs.COLUMN_UC_CODE,
+                singleLHWs.COLUMN_HF_CODE,
                 singleLHWs.COLUMN_LHW_CODE,
         };
 
-        String whereClause = singleLHWs.COLUMN_UC_CODE + " =?";
+        String whereClause = singleLHWs.COLUMN_HF_CODE + " =?";
         String[] whereArgs = {uccode};
         String groupBy = null;
         String having = null;
@@ -590,17 +590,32 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     public boolean Login(String username, String password) throws SQLException {
+
+        // Cursor mCursor = db.rawQuery("SELECT * FROM " + UsersContract.singleUser.TABLE_NAME + " WHERE " + UsersContract.singleUser.ROW_USERNAME +
+        // "= ? AND " + UsersContract.singleUser.ROW_PASSWORD + "=?", new String[]{username, password});
         SQLiteDatabase db = this.getReadableDatabase();
 
-        Cursor mCursor = db.rawQuery("SELECT * FROM " + UsersContract.UsersTable.TABLE_NAME + " WHERE " + UsersContract.UsersTable.ROW_USERNAME + "=? AND " + UsersContract.UsersTable.ROW_PASSWORD + "=?", new String[]{username, password});
+// New value for one column
+        String[] columns = {
+                UsersContract.UsersTable._ID
+        };
 
-        if (mCursor != null) {
-            if (mCursor.getCount() > 0) {
-                return true;
-            }
-        }
+// Which row to update, based on the ID
+        String selection = UsersContract.UsersTable.ROW_USERNAME + " = ?" + " AND " + UsersContract.UsersTable.ROW_PASSWORD + " = ?";
+        String[] selectionArgs = {username, password};
+        Cursor cursor = db.query(UsersContract.UsersTable.TABLE_NAME, //Table to query
+                columns,                    //columns to return
+                selection,                  //columns for the WHERE clause
+                selectionArgs,              //The values for the WHERE clause
+                null,                       //group the rows
+                null,                       //filter by row groups
+                null);                      //The sort order
+
+        int cursorCount = cursor.getCount();
+
+        cursor.close();
         db.close();
-        return false;
+        return cursorCount > 0;
     }
 
 
@@ -797,7 +812,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(familyMembers.COLUMN_UID, MainApp.fmc.get_UID());
 
 // Which row to update, based on the ID
-        String selection = familyMembers._ID + " = ?";
+        String selection = familyMembers.COLUMN_ID + " = ?";
         String[] selectionArgs = {String.valueOf(MainApp.fmc.get_ID())};
 
         int count = db.update(familyMembers.TABLE_NAME,

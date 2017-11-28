@@ -217,18 +217,6 @@ public class SectionMActivity extends Activity {
         });
 
 
-        spblm0188.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                if (spblm0188a.isChecked()) {
-
-                } else {
-
-                }
-            }
-        });
-
-
         spblm03.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
@@ -328,10 +316,10 @@ public class SectionMActivity extends Activity {
 
         JSONObject sM = new JSONObject();
 
-        sM.put("childname", childName.getText().toString());
-        sM.put("childserial", getIntent().getStringExtra("getSerial"));
-        sM.put("mother_name", getIntent().getStringExtra("getMotherName"));
-        sM.put("mother_serial", getIntent().getStringExtra("getMSerial"));
+        sM.put("mbd_childname", childName.getText().toString());
+        sM.put("mbd_childserial", getIntent().getStringExtra("getSerial"));
+        sM.put("mbd_mother_name", getIntent().getStringExtra("getMotherName"));
+        sM.put("mbd_mother_serial", getIntent().getStringExtra("getMSerial"));
         sM.put("spblm01a", spblm01aa.isChecked() ? "1" : spblm01ab.isChecked() ? "2" : "0");
         sM.put("spblm01b", spblm01ba.isChecked() ? "1" : spblm01bb.isChecked() ? "2" : "0");
         sM.put("spblm01c", spblm01ca.isChecked() ? "1" : spblm01cb.isChecked() ? "2" : "0");

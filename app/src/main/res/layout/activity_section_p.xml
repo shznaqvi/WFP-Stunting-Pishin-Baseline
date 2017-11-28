@@ -45,7 +45,7 @@
             android:textColor="@color/colorPrimaryDark"
             android:textSize="25sp"
             android:textStyle="bold"
-            tools:typeface="serif" />
+            />
 
 
         <TextView
@@ -57,20 +57,18 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
             android:layout_marginTop="16dp"
             android:background="@color/colorHeading"
             android:text="@string/spblp01sub2"
             android:textColor="@color/colorPrimaryDark"
             android:textSize="25sp"
-            tools:typeface="serif" />
+            />
 
 
         <EditText
             android:id="@+id/spblp0101a"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="1dp"
             android:digits="0123456789"
             android:hint="@string/day"
             android:inputType="number"
@@ -86,13 +84,12 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
                 android:layout_marginTop="16dp"
                 android:background="@color/colorHeading"
                 android:text="@string/spblp01sub3"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="25sp"
-                tools:typeface="serif" />
+                />
 
             <RadioGroup
                 android:id="@+id/spblp0101b"
@@ -177,19 +174,17 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="2dp"
+            android:layout_marginTop="16dp"
             android:text="@string/spblp0102" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:layout_marginTop="16dp"
             android:background="@color/colorHeading"
             android:text="@string/spblp01sub2"
             android:textColor="@color/colorPrimaryDark"
             android:textSize="25sp"
-            tools:typeface="serif" />
+            />
 
 
         <EditText
@@ -212,13 +207,12 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
                 android:layout_marginTop="16dp"
                 android:background="@color/colorHeading"
                 android:text="@string/spblp01sub3"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="25sp"
-                tools:typeface="serif" />
+                />
 
             <RadioGroup
                 android:id="@+id/spblp0102b"
@@ -309,13 +303,12 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
             android:layout_marginTop="16dp"
             android:background="@color/colorHeading"
             android:text="@string/spblp01sub2"
             android:textColor="@color/colorPrimaryDark"
             android:textSize="25sp"
-            tools:typeface="serif" />
+            />
 
 
         <EditText
@@ -338,13 +331,13 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
+
                 android:layout_marginTop="16dp"
                 android:background="@color/colorHeading"
                 android:text="@string/spblp01sub3"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="25sp"
-                tools:typeface="serif" />
+                />
 
             <RadioGroup
                 android:id="@+id/spblp0103b"
@@ -436,13 +429,13 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
+
             android:layout_marginTop="16dp"
             android:background="@color/colorHeading"
             android:text="@string/spblp01sub2"
             android:textColor="@color/colorPrimaryDark"
             android:textSize="25sp"
-            tools:typeface="serif" />
+            />
 
 
         <EditText
@@ -471,13 +464,12 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
                     android:layout_marginTop="16dp"
                     android:background="@color/colorHeading"
                     android:text="@string/spblp01sub3"
                     android:textColor="@color/colorPrimaryDark"
                     android:textSize="25sp"
-                    tools:typeface="serif" />
+                    />
 
                 <RadioGroup
                     android:id="@+id/spblp0104b"
@@ -568,13 +560,13 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
+
                 android:layout_marginTop="16dp"
                 android:background="@color/colorHeading"
                 android:text="@string/spblp01sub2"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="25sp"
-                tools:typeface="serif" />
+                />
 
             <EditText
                 android:id="@+id/spblp010401a"
@@ -596,13 +588,13 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
+
                     android:layout_marginTop="16dp"
                     android:background="@color/colorHeading"
                     android:text="@string/spblp01sub3"
                     android:textColor="@color/colorPrimaryDark"
                     android:textSize="25sp"
-                    tools:typeface="serif" />
+                    />
 
                 <RadioGroup
                     android:id="@+id/spblp010401b"
@@ -694,13 +686,12 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
                 android:layout_marginTop="16dp"
                 android:background="@color/colorHeading"
                 android:text="@string/spblp01sub2"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="25sp"
-                tools:typeface="serif" />
+                />
 
 
             <EditText
@@ -723,13 +714,12 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
                     android:layout_marginTop="16dp"
                     android:background="@color/colorHeading"
                     android:text="@string/spblp01sub3"
                     android:textColor="@color/colorPrimaryDark"
                     android:textSize="25sp"
-                    tools:typeface="serif" />
+                    />
 
                 <RadioGroup
                     android:id="@+id/spblp010402b"
@@ -821,7 +811,6 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
                 android:layout_marginTop="16dp"
                 android:background="@color/colorHeading"
                 android:text="@string/spblp01sub2"
@@ -850,13 +839,12 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
                     android:layout_marginTop="16dp"
                     android:background="@color/colorHeading"
                     android:text="@string/spblp01sub2"
                     android:textColor="@color/colorPrimaryDark"
                     android:textSize="25sp"
-                    tools:typeface="serif" />
+                    />
 
                 <RadioGroup
                     android:id="@+id/spblp010403b"
@@ -948,7 +936,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
+
                 android:layout_marginTop="16dp"
                 android:background="@color/colorHeading"
                 android:text="@string/spblp01sub2"
@@ -977,13 +965,13 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
+
                     android:layout_marginTop="16dp"
                     android:background="@color/colorHeading"
                     android:text="@string/spblp01sub3"
                     android:textColor="@color/colorPrimaryDark"
                     android:textSize="25sp"
-                    tools:typeface="serif" />
+                    />
 
                 <RadioGroup
                     android:id="@+id/spblp010404b"
@@ -1076,7 +1064,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
+
             android:layout_marginTop="16dp"
             android:background="@color/colorHeading"
             android:text="@string/spblp01sub2"
@@ -1111,13 +1099,13 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
+
                     android:layout_marginTop="16dp"
                     android:background="@color/colorHeading"
                     android:text="@string/spblp01sub3"
                     android:textColor="@color/colorPrimaryDark"
                     android:textSize="25sp"
-                    tools:typeface="serif" />
+                    />
 
                 <RadioGroup
                     android:id="@+id/spblp0105b"
@@ -1209,7 +1197,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
+
                 android:layout_marginTop="16dp"
                 android:background="@color/colorHeading"
                 android:text="@string/spblp01sub2"
@@ -1237,13 +1225,13 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
+
                     android:layout_marginTop="16dp"
                     android:background="@color/colorHeading"
                     android:text="@string/spblp01sub3"
                     android:textColor="@color/colorPrimaryDark"
                     android:textSize="25sp"
-                    tools:typeface="serif" />
+                    />
 
                 <RadioGroup
                     android:id="@+id/spblp010501b"
@@ -1335,7 +1323,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
+
                 android:layout_marginTop="16dp"
                 android:background="@color/colorHeading"
                 android:text="@string/spblp01sub2"
@@ -1363,13 +1351,13 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
+
                     android:layout_marginTop="16dp"
                     android:background="@color/colorHeading"
                     android:text="@string/spblp01sub3"
                     android:textColor="@color/colorPrimaryDark"
                     android:textSize="25sp"
-                    tools:typeface="serif" />
+                    />
 
                 <RadioGroup
                     android:id="@+id/spblp010502b"
@@ -1462,7 +1450,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
+
             android:layout_marginTop="16dp"
             android:background="@color/colorHeading"
             android:text="@string/spblp01sub2"
@@ -1496,13 +1484,13 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
+
                     android:layout_marginTop="16dp"
                     android:background="@color/colorHeading"
                     android:text="@string/spblp01sub3"
                     android:textColor="@color/colorPrimaryDark"
                     android:textSize="25sp"
-                    tools:typeface="serif" />
+                    />
 
                 <RadioGroup
                     android:id="@+id/spblp0106b"
@@ -1594,7 +1582,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
+
                 android:layout_marginTop="16dp"
                 android:background="@color/colorHeading"
                 android:text="@string/spblp01sub2"
@@ -1622,13 +1610,13 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
+
                     android:layout_marginTop="16dp"
                     android:background="@color/colorHeading"
                     android:text="@string/spblp01sub3"
                     android:textColor="@color/colorPrimaryDark"
                     android:textSize="25sp"
-                    tools:typeface="serif" />
+                    />
 
                 <RadioGroup
                     android:id="@+id/spblp010601b"
@@ -1720,7 +1708,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
+
             android:layout_marginTop="16dp"
             android:background="@color/colorHeading"
             android:text="@string/spblp01sub2"
@@ -1748,13 +1736,13 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
+
                 android:layout_marginTop="16dp"
                 android:background="@color/colorHeading"
                 android:text="@string/spblp01sub3"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="25sp"
-                tools:typeface="serif" />
+                />
 
             <RadioGroup
                 android:id="@+id/spblp0107b"
@@ -1845,7 +1833,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
+
             android:layout_marginTop="16dp"
             android:background="@color/colorHeading"
             android:text="@string/spblp01sub2"
@@ -1874,13 +1862,13 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
+
                 android:layout_marginTop="16dp"
                 android:background="@color/colorHeading"
                 android:text="@string/spblp01sub3"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="25sp"
-                tools:typeface="serif" />
+                />
 
             <RadioGroup
                 android:id="@+id/spblp0108b"
@@ -1971,7 +1959,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
+
             android:layout_marginTop="16dp"
             android:background="@color/colorHeading"
             android:text="@string/spblp01sub2"
@@ -1999,13 +1987,13 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
+
                 android:layout_marginTop="16dp"
                 android:background="@color/colorHeading"
                 android:text="@string/spblp01sub3"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="25sp"
-                tools:typeface="serif" />
+                />
 
             <RadioGroup
                 android:id="@+id/spblp0109b"
@@ -2102,13 +2090,13 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
+
             android:layout_marginTop="16dp"
             android:background="@color/colorHeading"
             android:text="@string/spblp02"
             android:textColor="@color/colorPrimaryDark"
             android:textSize="25sp"
-            tools:typeface="serif" />
+            />
 
         <TextView
             android:layout_width="match_parent"
@@ -2120,6 +2108,14 @@
             android:id="@+id/spblp0201"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/spblp020155"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:text="@string/never"/>
+
 
             <RadioButton
                 android:id="@+id/spblp0201a"
@@ -2184,6 +2180,14 @@
             android:layout_height="wrap_content">
 
             <RadioButton
+                android:id="@+id/spblp020255"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:text="@string/never"/>
+
+
+            <RadioButton
                 android:id="@+id/spblp0202a"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -2244,6 +2248,14 @@
             android:id="@+id/spblp0203"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/spblp020355"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:text="@string/never"/>
+
 
             <RadioButton
                 android:id="@+id/spblp0203a"
@@ -2308,6 +2320,14 @@
             android:layout_height="wrap_content">
 
             <RadioButton
+                android:id="@+id/spblp020455"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:text="@string/never"/>
+
+
+            <RadioButton
                 android:id="@+id/spblp0204a"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -2368,6 +2388,14 @@
             android:id="@+id/spblp0205"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/spblp020555"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:text="@string/never"/>
+
 
             <RadioButton
                 android:id="@+id/spblp0205a"
@@ -2566,17 +2594,7 @@
             android:visibility="visible">
 
 
-            <Button
-                android:id="@+id/btnEnd"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_margin="4dp"
-                android:layout_weight="1"
-                android:onClick="endForm"
-                android:text="@string/end_interview"
-                android:textColor="#ff1e1e"
-                android:textSize="24sp"
-                android:textStyle="bold" />
+
 
             <Button
                 android:id="@+id/btnNext"
@@ -2588,6 +2606,18 @@
                 android:text="@string/nextSection"
                 android:textColor="#1ed61e"
                 android:textSize="24sp"/>
+
+            <Button
+                android:id="@+id/btnEnd"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:onClick="endForm"
+                android:text="@string/end_interview"
+                android:textColor="#ff1e1e"
+                android:textSize="24sp"
+                android:textStyle="bold"/>
 
 
         </LinearLayout>
