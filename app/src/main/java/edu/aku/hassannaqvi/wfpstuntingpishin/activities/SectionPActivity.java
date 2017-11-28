@@ -467,8 +467,8 @@ public class SectionPActivity extends Activity {
     RadioButton spblp0201f;
     @BindView(R.id.spblp0201g)
     RadioButton spblp0201g;
-    @BindView(R.id.spblp0201h)
-    RadioButton spblp0201h;
+    /*@BindView(R.id.spblp0201h)
+    RadioButton spblp0201h;*/
     @BindView(R.id.spblp0202)
     RadioGroup spblp0202;
     @BindView(R.id.spblp020255)
@@ -487,8 +487,8 @@ public class SectionPActivity extends Activity {
     RadioButton spblp0202f;
     @BindView(R.id.spblp0202g)
     RadioButton spblp0202g;
-    @BindView(R.id.spblp0202h)
-    RadioButton spblp0202h;
+    /*@BindView(R.id.spblp0202h)
+    RadioButton spblp0202h;*/
     @BindView(R.id.spblp0203)
     RadioGroup spblp0203;
     @BindView(R.id.spblp020355)
@@ -507,8 +507,8 @@ public class SectionPActivity extends Activity {
     RadioButton spblp0203f;
     @BindView(R.id.spblp0203g)
     RadioButton spblp0203g;
-    @BindView(R.id.spblp0203h)
-    RadioButton spblp0203h;
+    /*@BindView(R.id.spblp0203h)
+    RadioButton spblp0203h;*/
     @BindView(R.id.spblp0204)
     RadioGroup spblp0204;
     @BindView(R.id.spblp020455)
@@ -527,8 +527,8 @@ public class SectionPActivity extends Activity {
     RadioButton spblp0204f;
     @BindView(R.id.spblp0204g)
     RadioButton spblp0204g;
-    @BindView(R.id.spblp0204h)
-    RadioButton spblp0204h;
+    /*@BindView(R.id.spblp0204h)
+    RadioButton spblp0204h;*/
     @BindView(R.id.spblp0205)
     RadioGroup spblp0205;
     @BindView(R.id.spblp020555)
@@ -547,8 +547,8 @@ public class SectionPActivity extends Activity {
     RadioButton spblp0205f;
     @BindView(R.id.spblp0205g)
     RadioButton spblp0205g;
-    @BindView(R.id.spblp0205h)
-    RadioButton spblp0205h;
+    /*@BindView(R.id.spblp0205h)
+    RadioButton spblp0205h;*/
     @BindView(R.id.spblp0301)
     RadioGroup spblp0301;
     @BindView(R.id.spblp0301a)
@@ -1154,23 +1154,23 @@ public class SectionPActivity extends Activity {
 
         sp.put("spblp0201", spblp020155.isChecked() ? "55" : spblp0201a.isChecked() ? "1" : spblp0201b.isChecked() ? "2" : spblp0201c.isChecked() ? "3"
                 : spblp0201d.isChecked() ? "4" : spblp0201e.isChecked() ? "5" : spblp0201f.isChecked() ? "6"
-                : spblp0201g.isChecked() ? "7" : spblp0201h.isChecked() ? "55" : "0");
+                : spblp0201g.isChecked() ? "7" : "0");
 
         sp.put("spblp0202", spblp020255.isChecked() ? "55" : spblp0202a.isChecked() ? "1" : spblp0202b.isChecked() ? "2" : spblp0202c.isChecked() ? "3"
                 : spblp0202d.isChecked() ? "4" : spblp0202e.isChecked() ? "5" : spblp0202f.isChecked() ? "6"
-                : spblp0202g.isChecked() ? "7" : spblp0202h.isChecked() ? "55" : "0");
+                : spblp0202g.isChecked() ? "7" : "0");
 
         sp.put("spblp0203", spblp020355.isChecked() ? "55" : spblp0203a.isChecked() ? "1" : spblp0203b.isChecked() ? "2" : spblp0203c.isChecked() ? "3"
                 : spblp0203d.isChecked() ? "4" : spblp0203e.isChecked() ? "5" : spblp0203f.isChecked() ? "6"
-                : spblp0203g.isChecked() ? "7" : spblp0203h.isChecked() ? "55" : "0");
+                : spblp0203g.isChecked() ? "7" : "0");
 
         sp.put("spblp0204", spblp020455.isChecked() ? "55" : spblp0204a.isChecked() ? "1" : spblp0204b.isChecked() ? "2" : spblp0204c.isChecked() ? "3"
                 : spblp0204d.isChecked() ? "4" : spblp0204e.isChecked() ? "5" : spblp0204f.isChecked() ? "6"
-                : spblp0204g.isChecked() ? "7" : spblp0204h.isChecked() ? "55" : "0");
+                : spblp0204g.isChecked() ? "7" : "0");
 
         sp.put("spblp0205", spblp020555.isChecked() ? "55" : spblp0205a.isChecked() ? "1" : spblp0205b.isChecked() ? "2" : spblp0205c.isChecked() ? "3"
                 : spblp0205d.isChecked() ? "4" : spblp0205e.isChecked() ? "5" : spblp0205f.isChecked() ? "6"
-                : spblp0205g.isChecked() ? "7" : spblp0205h.isChecked() ? "55" : "0");
+                : spblp0205g.isChecked() ? "7" : "0");
 
         sp.put("spblp0301", spblp0301a.isChecked() ? "55" : spblp0301b.isChecked() ? "1" : spblp0301c.isChecked() ? "2"
                 : spblp0301d.isChecked() ? "3" : "0");
