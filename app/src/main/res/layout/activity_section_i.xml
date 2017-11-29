@@ -142,7 +142,7 @@
                 android:text="@string/no" />
 
             <RadioButton
-                android:id="@+id/spbli03c"
+                android:id="@+id/spbli0399"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
@@ -330,7 +330,7 @@
                 android:maxLength="1" />
 
             <CheckBox
-                android:id="@+id/spbli06999"
+                android:id="@+id/spbli0699"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/dkn" />
@@ -356,7 +356,7 @@
                 android:maxLength="1" />
 
             <CheckBox
-                android:id="@+id/spbli07999"
+                android:id="@+id/spbli0799"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/dkn" />
@@ -655,12 +655,12 @@
                 android:textColor="@android:color/white" />
 
             <EditText
-                android:id="@+id/spbli015"
+                android:id="@+id/spbli015d"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
                 android:digits="0123456789"
-                android:hint="@string/spbli15a"
+                android:hint="@string/spbli15d"
                 android:inputType="number"
                 android:maxLength="2" />
 
@@ -675,10 +675,10 @@
                 android:maxLength="2" />
 
             <CheckBox
-                android:id="@+id/spbli01597"
+                android:id="@+id/spbli01555"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/spbli15b" />
+                android:text="@string/spbli1555" />
 
             <CheckBox
                 android:id="@+id/spbli01599"
@@ -985,14 +985,14 @@
                 android:layout_height="wrap_content">
 
                 <RadioButton
-                    android:id="@+id/spbli021a"
+                    android:id="@+id/spbli021card"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:text="@string/spbli21a" />
 
                 <RadioButton
-                    android:id="@+id/spbli021b"
+                    android:id="@+id/spbli021recall"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
@@ -1299,7 +1299,7 @@
         </RadioGroup>
 
         <EditText
-            android:id="@+id/spbli026hr"
+            android:id="@+id/spbli026hx"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="1dp"
@@ -1310,7 +1310,7 @@
             android:visibility="gone" />
 
         <EditText
-            android:id="@+id/spbli026day"
+            android:id="@+id/spbli026dx"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="1dp"
@@ -1321,7 +1321,7 @@
             android:visibility="gone" />
 
         <EditText
-            android:id="@+id/spbli026wk"
+            android:id="@+id/spbli026wx"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="1dp"

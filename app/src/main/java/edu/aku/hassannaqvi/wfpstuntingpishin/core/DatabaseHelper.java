@@ -135,7 +135,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             + singleVillages.COLUMN_VILLAGE_CODE + " TEXT );";
     final String SQL_CREATE_LHWS = "CREATE TABLE " + singleLHWs.TABLE_NAME + "("
             + singleLHWs.COLUMN_LHW_NAME + " TEXT,"
-            + singleLHWs.COLUMN_UC_CODE + " TEXT,"
+            + singleLHWs.COLUMN_HF_CODE + " TEXT,"
             + singleLHWs.COLUMN_LHW_CODE + " TEXT );";
     final String SQL_CREATE_TEHSILS = "CREATE TABLE " + singleTehsil.TABLE_NAME + "("
             + singleTehsil.COLUMN_TEHSIL_CODE + " TEXT,"
@@ -305,7 +305,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 ContentValues values = new ContentValues();
 
                 values.put(singleLHWs.COLUMN_LHW_NAME, Vc.getLhwname());
-                values.put(singleLHWs.COLUMN_UC_CODE, Vc.getUc_code());
+                values.put(singleLHWs.COLUMN_HF_CODE, Vc.getHf_code());
                 values.put(singleLHWs.COLUMN_LHW_CODE, Vc.getLhwcode());
 
                 db.insert(singleLHWs.TABLE_NAME, null, values);
@@ -442,11 +442,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         Cursor c = null;
         String[] columns = {
                 singleLHWs.COLUMN_LHW_NAME,
-                singleLHWs.COLUMN_UC_CODE,
+                singleLHWs.COLUMN_HF_CODE,
                 singleLHWs.COLUMN_LHW_CODE,
         };
 
-        String whereClause = singleLHWs.COLUMN_UC_CODE + " =?";
+        String whereClause = singleLHWs.COLUMN_HF_CODE + " =?";
         String[] whereArgs = {uccode};
         String groupBy = null;
         String having = null;

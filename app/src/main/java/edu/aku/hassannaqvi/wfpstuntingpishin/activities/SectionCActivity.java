@@ -878,7 +878,7 @@ public class SectionCActivity extends Activity {
 
 //        10
         sC.put("spblc10", spblc10a.isChecked() ? "1" : spblc10b.isChecked() ? "2" : spblc10c.isChecked() ? "3"
-                : "0");
+                : spblc10c.isChecked() ? "88" : "0");
         sC.put("spblc1088x", spblc1088x.getText().toString());
 
 //        11
@@ -906,8 +906,8 @@ public class SectionCActivity extends Activity {
                 : spblc14g.isChecked() ? "7" : spblc14h.isChecked() ? "8" : spblc14i.isChecked() ? "9"
                 : spblc14j.isChecked() ? "10" : spblc14k.isChecked() ? "11" : spblc14l.isChecked() ? "12"
                 : spblc14m.isChecked() ? "13" : spblc14n.isChecked() ? "14" : spblc14o.isChecked() ? "15"
-                : spblc14p.isChecked() ? "15" : spblc14q.isChecked() ? "16" : spblc14r.isChecked() ? "17"
-                : spblc14s.isChecked() ? "18" : spblc14t.isChecked() ? "19" : spblc14u.isChecked() ? "20"
+                : spblc14p.isChecked() ? "16" : spblc14q.isChecked() ? "17" : spblc14r.isChecked() ? "18"
+                : spblc14s.isChecked() ? "19" : spblc14t.isChecked() ? "20" : spblc14u.isChecked() ? "21"
                 : spblc1488.isChecked() ? "88" : "0");
         sC.put("spblc1488x", spblc1488x.getText().toString());
 

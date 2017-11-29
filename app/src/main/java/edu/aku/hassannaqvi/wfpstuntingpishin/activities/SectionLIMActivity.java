@@ -452,7 +452,7 @@ public class SectionLIMActivity extends Activity
 */
         //sI.put("tiImsSerial", MainApp.childsMap.get(tiname.getSelectedItem().toString()).getSerialNo());
 
-        sL.put("spbllmother_name", motherName.getText().toString());
+        //  sL.put("spbllmother_name", motherName.getText().toString());
         sL.put("spbllmother_serial", childMap.get(spblName.getSelectedItem().toString()).getMother_serial());
         sL.put("spbllchildname", spblName.getSelectedItem().toString());
         sL.put("spbllchildserial", childMap.get(spblName.getSelectedItem().toString()).getSerial());

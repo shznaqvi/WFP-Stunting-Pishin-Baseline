@@ -57,14 +57,14 @@
                 android:textColor="@color/colorPrimaryDark"/>
 
             <RadioButton
-                android:id="@+id/spbld01c"
+                android:id="@+id/spbld01b"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
                 android:text="@string/spbld01c" />
 
             <RadioButton
-                android:id="@+id/spbld01d"
+                android:id="@+id/spbld01c"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"

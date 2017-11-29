@@ -71,12 +71,12 @@ public class SectionOActivity extends Activity {
     EditText spblo05a;
     @BindView(R.id.spblo0599)
     CheckBox spblo0599;
-    @BindView(R.id.spblo06a)
-    EditText spblo06a;
-    @BindView(R.id.spblo06b)
-    EditText spblo06b;
-    @BindView(R.id.spblo06c)
-    CheckBox spblo06c;
+    @BindView(R.id.spblo06d)
+    EditText spblo06d;
+    @BindView(R.id.spblo06m)
+    EditText spblo06m;
+    @BindView(R.id.spblo0655)
+    CheckBox spblo0655;
     @BindView(R.id.fldGrpspblo06)
     LinearLayout fldGrpspblo06;
     @BindView(R.id.spblo07a)
@@ -107,10 +107,10 @@ public class SectionOActivity extends Activity {
     RadioButton spblo0899;
     @BindView(R.id.fldGrpspblo08)
     LinearLayout fldGrpspblo08;
-    @BindView(R.id.spblo09a)
-    EditText spblo09a;
-    @BindView(R.id.spblo09b)
-    EditText spblo09b;
+    @BindView(R.id.spblo09d)
+    EditText spblo09d;
+    @BindView(R.id.spblo09m)
+    EditText spblo09m;
     @BindView(R.id.spblo10a)
     CheckBox spblo10a;
     @BindView(R.id.spblo10b)
@@ -133,8 +133,8 @@ public class SectionOActivity extends Activity {
     RadioButton spblo1199;
     @BindView(R.id.fldGrpspblo11)
     LinearLayout fldGrpspblo11;
-    @BindView(R.id.spblo12a)
-    EditText spblo12a;
+    @BindView(R.id.spblo12)
+    EditText spblo12;
     @BindView(R.id.spblo13a)
     CheckBox spblo13a;
     @BindView(R.id.spblo13b)
@@ -248,9 +248,9 @@ public class SectionOActivity extends Activity {
                     fldGrpspblo04.setVisibility(View.GONE);
                     spblo05a.setText(null);
                     spblo0599.setChecked(false);
-                    spblo06a.setText(null);
-                    spblo06b.setText(null);
-                    spblo06c.setChecked(false);
+                    spblo06d.setText(null);
+                    spblo06m.setText(null);
+                    spblo0655.setChecked(false);
                     spblo07a.setChecked(false);
                     spblo07b.setChecked(false);
                     spblo07c.setChecked(false);
@@ -284,8 +284,8 @@ public class SectionOActivity extends Activity {
                     fldGrpspblo08.setVisibility(View.VISIBLE);
                 } else {
                     fldGrpspblo08.setVisibility(View.GONE);
-                    spblo09a.setText(null);
-                    spblo09b.setText(null);
+                    spblo09d.setText(null);
+                    spblo09m.setText(null);
                     spblo10a.setChecked(false);
                     spblo10b.setChecked(false);
                     spblo10c.setChecked(false);
@@ -316,7 +316,7 @@ public class SectionOActivity extends Activity {
                     fldGrpspblo11.setVisibility(View.VISIBLE);
                 } else {
                     fldGrpspblo11.setVisibility(View.GONE);
-                    spblo12a.setText(null);
+                    spblo12.setText(null);
 
                 }
             }
@@ -415,15 +415,15 @@ public class SectionOActivity extends Activity {
             }
         });
 
-        spblo06c.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
+        spblo0655.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
         {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if (b) {
-                    spblo06a.setVisibility(View.GONE);
-                    spblo06a.setText(null);
-                    spblo06b.setVisibility(View.GONE);
-                    spblo06b.setText(null);
+                    spblo06d.setVisibility(View.GONE);
+                    spblo06d.setText(null);
+                    spblo06m.setVisibility(View.GONE);
+                    spblo06m.setText(null);
                     fldGrpspblo06.setVisibility(View.GONE);
                     spblo07a.setChecked(false);
                     spblo07b.setChecked(false);
@@ -435,8 +435,8 @@ public class SectionOActivity extends Activity {
                     spblo0788.setChecked(false);
                     spblo0788x.setText(null);
                 } else {
-                    spblo06a.setVisibility(View.VISIBLE);
-                    spblo06b.setVisibility(View.VISIBLE);
+                    spblo06d.setVisibility(View.VISIBLE);
+                    spblo06m.setVisibility(View.VISIBLE);
                     fldGrpspblo06.setVisibility(View.VISIBLE);
                 }
             }
@@ -528,7 +528,7 @@ public class SectionOActivity extends Activity {
 
         JSONObject so = new JSONObject();
 
-        so.put("spblo01a", spblo01.getText().toString());
+        so.put("spblo01", spblo01.getText().toString());
         so.put("spblo02", spblo02a.isChecked() ? "1" : spblo02b.isChecked() ? "2" : "0");
         so.put("spblo03a", spblo03a.isChecked() ? "1" : "0");
         so.put("spblo03b", spblo03b.isChecked() ? "2" : "0");
@@ -540,9 +540,9 @@ public class SectionOActivity extends Activity {
         so.put("spblo0388x", spblo0388x.getText().toString());
         so.put("spblo04", spblo04a.isChecked() ? "1" : spblo04b.isChecked() ? "2" : spblo0499.isChecked() ? "99" : "0");
         so.put("spblo05", spblo0599.isChecked() ? "99" : spblo05a.getText().toString());
-        so.put("spblo06a", spblo06a.getText().toString());
-        so.put("spblo06b", spblo06b.getText().toString());
-        so.put("spblo06c", spblo06c.isChecked() ? "1" : "2");
+        so.put("spblo06d", spblo06d.getText().toString());
+        so.put("spblo06m", spblo06m.getText().toString());
+        so.put("spblo0655", spblo0655.isChecked() ? "55" : "2");
         so.put("spblo07a", spblo07a.isChecked() ? "1" : "0");
         so.put("spblo07b", spblo07b.isChecked() ? "2" : "0");
         so.put("spblo07c", spblo07c.isChecked() ? "3" : "0");
@@ -553,8 +553,8 @@ public class SectionOActivity extends Activity {
         so.put("spblo0788", spblo0788.isChecked() ? "88" : "0");
         so.put("spblo0788x", spblo0788x.getText().toString());
         so.put("spblo08", spblo08a.isChecked() ? "1" : spblo08b.isChecked() ? "2" : spblo0899.isChecked() ? "99" : "0");
-        so.put("spblo09a", spblo09a.getText().toString());
-        so.put("spblo09b", spblo09b.getText().toString());
+        so.put("spblo09d", spblo09d.getText().toString());
+        so.put("spblo09m", spblo09m.getText().toString());
         so.put("spblo10a", spblo10a.isChecked() ? "1" : "0");
         so.put("spblo10b", spblo10b.isChecked() ? "2" : "0");
         so.put("spblo10c", spblo10c.isChecked() ? "3" : "0");
@@ -562,7 +562,7 @@ public class SectionOActivity extends Activity {
         so.put("spblo1088", spblo1088.isChecked() ? "88" : "0");
         so.put("spblo1088x", spblo1088x.getText().toString());
         so.put("spblo11", spblo11a.isChecked() ? "1" : spblo11b.isChecked() ? "2" : spblo1199.isChecked() ? "99" : "0");
-        so.put("spblo12a", spblo12a.getText().toString());
+        so.put("spblo12", spblo12.getText().toString());
         so.put("spblo13a", spblo13a.isChecked() ? "1" : "0");
         so.put("spblo13b", spblo13b.isChecked() ? "2" : "0");
         so.put("spblo13c", spblo13c.isChecked() ? "3" : "0");
@@ -670,46 +670,46 @@ public class SectionOActivity extends Activity {
                 }
             }
 
-            if (!spblo06c.isChecked()) {
-                if (spblo06a.getText().toString().isEmpty()) {
+            if (!spblo0655.isChecked()) {
+                if (spblo06d.getText().toString().isEmpty()) {
                     Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblo06) + getString(R.string.spblo06a), Toast.LENGTH_SHORT).show();
-                    spblo06a.setError("This data is Required!");
-                    spblo06a.requestFocus();
+                    spblo06d.setError("This data is Required!");
+                    spblo06d.requestFocus();
                     Log.i(TAG, "spblo06: This Data is Required!");
                     return false;
                 } else {
-                    spblo06a.setError(null);
+                    spblo06d.setError(null);
                 }
 
-                if (Integer.valueOf(spblo06a.getText().toString()) < 0 || Integer.valueOf(spblo06a.getText().toString()) > 29) {
+                if (Integer.valueOf(spblo06d.getText().toString()) < 0 || Integer.valueOf(spblo06d.getText().toString()) > 29) {
                     Toast.makeText(this, "ERROR: " + getString(R.string.spblo06a), Toast.LENGTH_LONG).show();
-                    spblo06a.setError("Range is 0 to 29 days");
-                    spblo06a.requestFocus();
+                    spblo06d.setError("Range is 0 to 29 days");
+                    spblo06d.requestFocus();
                     Log.i(TAG, "spblo06a : Range is 0 to 29 days");
                     return false;
                 } else {
-                    spblo06a.setError(null);
+                    spblo06d.setError(null);
                 }
 
-                if (spblo06b.getText().toString().isEmpty()) {
+                if (spblo06m.getText().toString().isEmpty()) {
                     Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblo06) + getString(R.string.spblo06a), Toast.LENGTH_SHORT).show();
-                    spblo06b.setError("This data is Required!");
-                    spblo06b.requestFocus();
-                    Log.i(TAG, "spblo06b: This Data is Required!");
+                    spblo06m.setError("This data is Required!");
+                    spblo06m.requestFocus();
+                    Log.i(TAG, "spblo06m: This Data is Required!");
                     return false;
                 } else {
-                    spblo06b.setError(null);
+                    spblo06m.setError(null);
                 }
 
-                if (Integer.valueOf(spblo06a.getText().toString()) < 1) {
-                    if (Integer.valueOf(spblo06b.getText().toString()) < 1) {
+                if (Integer.valueOf(spblo06d.getText().toString()) < 1) {
+                    if (Integer.valueOf(spblo06m.getText().toString()) < 1) {
                         Toast.makeText(this, "ERROR: " + getString(R.string.spblo06b), Toast.LENGTH_LONG).show();
-                        spblo06b.setError("months cannnot be zero");
-                        spblo06b.requestFocus();
-                        Log.i(TAG, "spblo06b : months cannot not be zero");
+                        spblo06m.setError("months cannnot be zero");
+                        spblo06m.requestFocus();
+                        Log.i(TAG, "spblo06m : months cannot not be zero");
                         return false;
                     } else {
-                        spblo06b.setError(null);
+                        spblo06m.setError(null);
                     }
 
                 }
@@ -755,45 +755,45 @@ public class SectionOActivity extends Activity {
 
         if (spblo08a.isChecked()) {
 
-            if (spblo09a.getText().toString().isEmpty()) {
+            if (spblo09d.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblo09) + getString(R.string.spblo09a), Toast.LENGTH_SHORT).show();
-                spblo09a.setError("This data is Required!");
-                spblo09a.requestFocus();
+                spblo09d.setError("This data is Required!");
+                spblo09d.requestFocus();
                 Log.i(TAG, "spblo09: This Data is Required!");
                 return false;
             } else {
-                spblo09a.setError(null);
+                spblo09d.setError(null);
             }
 
-            if (Integer.valueOf(spblo09a.getText().toString()) > 29) {
+            if (Integer.valueOf(spblo09d.getText().toString()) > 29) {
                 Toast.makeText(this, "ERROR: " + getString(R.string.spblo09a), Toast.LENGTH_LONG).show();
-                spblo09a.setError("Range is 0 to 29");
-                spblo09a.requestFocus();
-                Log.i(TAG, "spblo09a : Range is 0 to 29");
+                spblo09d.setError("Range is 0 to 29");
+                spblo09d.requestFocus();
+                Log.i(TAG, "spblo09d : Range is 0 to 29");
                 return false;
             } else {
-                spblo09a.setError(null);
+                spblo09d.setError(null);
             }
 
-            if (spblo09b.getText().toString().isEmpty()) {
+            if (spblo09m.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblo09) + getString(R.string.spblo09a), Toast.LENGTH_SHORT).show();
-                spblo09b.setError("This data is Required!");
-                spblo09b.requestFocus();
-                Log.i(TAG, "spblo09b: This Data is Required!");
+                spblo09m.setError("This data is Required!");
+                spblo09m.requestFocus();
+                Log.i(TAG, "spblo09m: This Data is Required!");
                 return false;
             } else {
-                spblo09b.setError(null);
+                spblo09m.setError(null);
             }
 
-            if (Integer.valueOf(spblo09a.getText().toString()) < 1) {
-                if (Integer.valueOf(spblo09b.getText().toString()) < 1 || Integer.valueOf(spblo09b.getText().toString()) > 12) {
+            if (Integer.valueOf(spblo09d.getText().toString()) < 1) {
+                if (Integer.valueOf(spblo09m.getText().toString()) < 1 || Integer.valueOf(spblo09m.getText().toString()) > 12) {
                     Toast.makeText(this, "ERROR: " + getString(R.string.spblo09b), Toast.LENGTH_LONG).show();
-                    spblo09b.setError("Range is 0 to 12 months");
-                    spblo09b.requestFocus();
-                    Log.i(TAG, "spblo09b : Range is 0 to 12 months");
+                    spblo09m.setError("Range is 0 to 12 months");
+                    spblo09m.requestFocus();
+                    Log.i(TAG, "spblo09m : Range is 0 to 12 months");
                     return false;
                 } else {
-                    spblo09b.setError(null);
+                    spblo09m.setError(null);
                 }
             }
 
@@ -836,14 +836,14 @@ public class SectionOActivity extends Activity {
 
         if (spblo11b.isChecked()) {
 
-            if (spblo12a.getText().toString().isEmpty()) {
+            if (spblo12.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblo12) + getString(R.string.spblo12a), Toast.LENGTH_SHORT).show();
-                spblo12a.setError("This data is Required!");
-                spblo12a.requestFocus();
+                spblo12.setError("This data is Required!");
+                spblo12.requestFocus();
                 Log.i(TAG, "spblo12: This Data is Required!");
                 return false;
             } else {
-                spblo12a.setError(null);
+                spblo12.setError(null);
             }
         }
 
