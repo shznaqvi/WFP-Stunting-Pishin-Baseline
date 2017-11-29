@@ -639,11 +639,11 @@ public class SectionKActivity extends AppCompatActivity implements RadioGroup.On
 
         JSONObject sK = new JSONObject();
 
-        sK.put("spblkmother_name", motherName.getText().toString());
+        // sK.put("spblkmother_name", motherName.getText().toString());
         sK.put("spblkmotherserial", MainApp.childMap.get(spblk01.getSelectedItem().toString()).getMother_serial());
-        sK.put("spblk01", spblk01.getSelectedItem().toString());
+        //   sK.put("spblk01", spblk01.getSelectedItem().toString());
         sK.put("spblk02", MainApp.childMap.get(spblk01.getSelectedItem().toString()).getSerial());
-        sK.put("spblk03", MainApp.childMap.get(spblk01.getSelectedItem().toString()).getGender());
+        //  sK.put("spblk03", MainApp.childMap.get(spblk01.getSelectedItem().toString()).getGender());
         sK.put("spblk04", spblk04.getText().toString());
         sK.put("spblk05", spblk05a.isChecked() ? "1" : spblk05b.isChecked() ? "2" : spblk0599.isChecked() ? "99" : "0");
         sK.put("spblk06m", spblk06m.getText().toString());

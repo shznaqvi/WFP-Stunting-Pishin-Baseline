@@ -428,11 +428,7 @@ public class SectionEActivity extends Activity {
         sHE.put("spble01c88x", spble01c88x.getText().toString());
 
 
-        if (spble0299.isChecked()) {
-            sHE.put("spble02", "99");
-        } else {
-            sHE.put("spble02", spble02.getText().toString());
-        }
+        sHE.put("spble02", spble0299.isChecked() ? "77" : spble02.getText().toString());
 
         //sHE.put("appver", MainApp.versionName + "." + MainApp.versionCode);
 

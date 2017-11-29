@@ -51,8 +51,8 @@ public class SectionIActivity extends Activity {
     RadioButton spbli03a;
     @BindView(R.id.spbli03b)
     RadioButton spbli03b;
-    @BindView(R.id.spbli03c)
-    RadioButton spbli03c;
+    @BindView(R.id.spbli0399)
+    RadioButton spbli0399;
     @BindView(R.id.fldGrpspbli04)
     LinearLayout fldGrpspbli04;
     @BindView(R.id.spbli04a)
@@ -89,12 +89,12 @@ public class SectionIActivity extends Activity {
     EditText spbli0588x;
     @BindView(R.id.spbli06)
     EditText spbli06;
-    @BindView(R.id.spbli06999)
-    CheckBox spbli06999;
+    @BindView(R.id.spbli0699)
+    CheckBox spbli0699;
     @BindView(R.id.spbli07)
     EditText spbli07;
-    @BindView(R.id.spbli07999)
-    CheckBox spbli07999;
+    @BindView(R.id.spbli0799)
+    CheckBox spbli0799;
     @BindView(R.id.spbli08a)
     CheckBox spbli08a;
     @BindView(R.id.spbli08b)
@@ -149,12 +149,12 @@ public class SectionIActivity extends Activity {
     RadioButton spbli01499;
     @BindView(R.id.fldGrpspbli015)
     LinearLayout fldGrpspbli015;
-    @BindView(R.id.spbli015)
-    EditText spbli015;
+    @BindView(R.id.spbli015d)
+    EditText spbli015d;
     @BindView(R.id.spbli015m)
     EditText spbli015m;
-    @BindView(R.id.spbli01597)
-    CheckBox spbli01597;
+    @BindView(R.id.spbli01555)
+    CheckBox spbli01555;
     @BindView(R.id.spbli01599)
     CheckBox spbli01599;
     @BindView(R.id.spbli016)
@@ -223,10 +223,10 @@ public class SectionIActivity extends Activity {
     LinearLayout fldGrpspbli021;
     @BindView(R.id.spbli021)
     RadioGroup spbli021;
-    @BindView(R.id.spbli021a)
-    RadioButton spbli021a;
-    @BindView(R.id.spbli021b)
-    RadioButton spbli021b;
+    @BindView(R.id.spbli021card)
+    RadioButton spbli021card;
+    @BindView(R.id.spbli021recall)
+    RadioButton spbli021recall;
     @BindView(R.id.spbli02199)
     RadioButton spbli02199;
     @BindView(R.id.spbli021a1)
@@ -293,12 +293,12 @@ public class SectionIActivity extends Activity {
     RadioButton spbli026w;
     @BindView(R.id.spbli26n)
     RadioButton spbli26n;
-    @BindView(R.id.spbli026hr)
-    EditText spbli026hr;
-    @BindView(R.id.spbli026day)
-    EditText spbli026day;
-    @BindView(R.id.spbli026wk)
-    EditText spbli026wk;
+    @BindView(R.id.spbli026hx)
+    EditText spbli026hx;
+    @BindView(R.id.spbli026dx)
+    EditText spbli026dx;
+    @BindView(R.id.spbli026wx)
+    EditText spbli026wx;
     @BindView(R.id.spbli027)
     RadioGroup spbli027;
     @BindView(R.id.spbli027a)
@@ -382,10 +382,10 @@ public class SectionIActivity extends Activity {
                     spbli0588.setChecked(false);
                     spbli0588x.setText(null);
                     spbli06.setText(null);
-                    spbli06999.setChecked(false);
+                    spbli0699.setChecked(false);
 
                     spbli07.setText(null);
-                    spbli07999.setChecked(false);
+                    spbli0799.setChecked(false);
 
                     spbli08a.setChecked(false);
                     spbli08b.setChecked(false);
@@ -430,10 +430,10 @@ public class SectionIActivity extends Activity {
         });
 
 
-        spbli06999.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        spbli0699.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if (spbli06999.isChecked()) {
+                if (spbli0699.isChecked()) {
                     spbli06.setText(null);
                     spbli06.setVisibility(View.GONE);
                 } else {
@@ -444,10 +444,10 @@ public class SectionIActivity extends Activity {
         });
 
 
-        spbli07999.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        spbli0799.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if (spbli07999.isChecked()) {
+                if (spbli0799.isChecked()) {
                     spbli07.setText(null);
                     spbli07.setVisibility(View.GONE);
                 } else {
@@ -537,12 +537,12 @@ public class SectionIActivity extends Activity {
             public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
                 if (spbli014a.isChecked()) {
                     fldGrpspbli015.setVisibility(View.VISIBLE);
-                    spbli015.requestFocus();
+                    spbli015d.requestFocus();
                 } else {
 
-                    spbli015.setText(null);
+                    spbli015d.setText(null);
                     spbli015m.setText(null);
-                    spbli01597.setChecked(false);
+                    spbli01555.setChecked(false);
                     spbli01599.setChecked(false);
 
                     fldGrpspbli015.setVisibility(View.GONE);
@@ -555,36 +555,36 @@ public class SectionIActivity extends Activity {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if (spbli01599.isChecked()) {
-                    spbli015.setText(null);
+                    spbli015d.setText(null);
                     spbli015m.setText(null);
-                    spbli01597.setChecked(false);
-                    spbli01597.setVisibility(View.GONE);
-                    spbli015.setVisibility(View.GONE);
+                    spbli01555.setChecked(false);
+                    spbli01555.setVisibility(View.GONE);
+                    spbli015d.setVisibility(View.GONE);
                     spbli015m.setVisibility(View.GONE);
                 } else {
-                    spbli015.setVisibility(View.VISIBLE);
-                    spbli01597.setVisibility(View.VISIBLE);
+                    spbli015d.setVisibility(View.VISIBLE);
+                    spbli01555.setVisibility(View.VISIBLE);
                     spbli015m.setVisibility(View.VISIBLE);
-                    spbli015.requestFocus();
+                    spbli015d.requestFocus();
                 }
             }
         });
 
-        spbli01597.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        spbli01555.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if (spbli01597.isChecked()) {
-                    spbli015.setText(null);
+                if (spbli01555.isChecked()) {
+                    spbli015d.setText(null);
                     spbli015m.setText(null);
                     spbli01599.setChecked(false);
                     spbli01599.setVisibility(View.GONE);
-                    spbli015.setVisibility(View.GONE);
+                    spbli015d.setVisibility(View.GONE);
                     spbli015m.setVisibility(View.GONE);
                 } else {
-                    spbli015.setVisibility(View.VISIBLE);
+                    spbli015d.setVisibility(View.VISIBLE);
                     spbli01599.setVisibility(View.VISIBLE);
                     spbli015m.setVisibility(View.VISIBLE);
-                    spbli015.requestFocus();
+                    spbli015d.requestFocus();
                 }
             }
         });
@@ -651,14 +651,14 @@ public class SectionIActivity extends Activity {
         spbli021.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
-                if (spbli021a.isChecked()) {
+                if (spbli021card.isChecked()) {
                     spbli021a2.setText(null);
                     spbli021a2.setVisibility(View.GONE);
 
                     spbli021a1.setVisibility(View.VISIBLE);
                     spbli021a1.requestFocus();
 
-                } else if (spbli021b.isChecked()) {
+                } else if (spbli021recall.isChecked()) {
                     spbli021a1.setText(null);
                     spbli021a1.setVisibility(View.GONE);
 
@@ -683,43 +683,43 @@ public class SectionIActivity extends Activity {
             public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
                 if (spbli026h.isChecked()) {
 
-                    spbli026wk.setText(null);
-                    spbli026day.setText(null);
-                    spbli026day.setVisibility(View.GONE);
-                    spbli026wk.setVisibility(View.GONE);
+                    spbli026wx.setText(null);
+                    spbli026dx.setText(null);
+                    spbli026dx.setVisibility(View.GONE);
+                    spbli026wx.setVisibility(View.GONE);
 
-                    spbli026hr.setVisibility(View.VISIBLE);
-                    spbli026hr.requestFocus();
+                    spbli026hx.setVisibility(View.VISIBLE);
+                    spbli026hx.requestFocus();
 
                 } else if (spbli026d.isChecked()) {
 
-                    spbli026hr.setText(null);
-                    spbli026wk.setText(null);
-                    spbli026hr.setVisibility(View.GONE);
-                    spbli026wk.setVisibility(View.GONE);
+                    spbli026hx.setText(null);
+                    spbli026wx.setText(null);
+                    spbli026hx.setVisibility(View.GONE);
+                    spbli026wx.setVisibility(View.GONE);
 
-                    spbli026day.setVisibility(View.VISIBLE);
-                    spbli026day.requestFocus();
+                    spbli026dx.setVisibility(View.VISIBLE);
+                    spbli026dx.requestFocus();
 
                 } else if (spbli026w.isChecked()) {
 
-                    spbli026hr.setText(null);
-                    spbli026day.setText(null);
-                    spbli026hr.setVisibility(View.GONE);
-                    spbli026day.setVisibility(View.GONE);
+                    spbli026hx.setText(null);
+                    spbli026dx.setText(null);
+                    spbli026hx.setVisibility(View.GONE);
+                    spbli026dx.setVisibility(View.GONE);
 
-                    spbli026wk.setVisibility(View.VISIBLE);
-                    spbli026wk.requestFocus();
+                    spbli026wx.setVisibility(View.VISIBLE);
+                    spbli026wx.requestFocus();
 
                 } else {
 
-                    spbli026hr.setText(null);
-                    spbli026day.setText(null);
-                    spbli026wk.setText(null);
+                    spbli026hx.setText(null);
+                    spbli026dx.setText(null);
+                    spbli026wx.setText(null);
 
-                    spbli026hr.setVisibility(View.GONE);
-                    spbli026day.setVisibility(View.GONE);
-                    spbli026wk.setVisibility(View.GONE);
+                    spbli026hx.setVisibility(View.GONE);
+                    spbli026dx.setVisibility(View.GONE);
+                    spbli026wx.setVisibility(View.GONE);
 
                 }
             }
@@ -970,14 +970,14 @@ public class SectionIActivity extends Activity {
         //        spbli03
         if (spbli03.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.spbli03), Toast.LENGTH_SHORT).show();
-            spbli03a.setError("This data is Required!");    // Set Error on last radio button
-            Log.i(TAG, "spbli03a: This data is Required!");
-            spbli03a.setFocusable(true);
-            spbli03a.setFocusableInTouchMode(true);
-            spbli03a.requestFocus();
+            spbli0399.setError("This data is Required!");    // Set Error on last radio button
+            Log.i(TAG, "spbli03: This data is Required!");
+            spbli0399.setFocusable(true);
+            spbli0399.setFocusableInTouchMode(true);
+            spbli0399.requestFocus();
             return false;
         } else {
-            spbli03a.setError(null);
+            spbli0399.setError(null);
         }
 
 
@@ -1047,7 +1047,7 @@ public class SectionIActivity extends Activity {
 
 
             //        spbli06
-            if (!spbli06999.isChecked()) {
+            if (!spbli0699.isChecked()) {
                 if (spbli06.getText().toString().isEmpty()) {
                     Toast.makeText(this, "ERROR(empty): " + getString(R.string.spbli06), Toast.LENGTH_SHORT).show();
                     spbli06.setError("This data is Required!");    // Set Error on last radio button
@@ -1071,7 +1071,7 @@ public class SectionIActivity extends Activity {
 
 
             //        spbli07
-            if (!spbli07999.isChecked() && spbli07.getText().toString().isEmpty()) {
+            if (!spbli0799.isChecked() && spbli07.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.spbli07), Toast.LENGTH_SHORT).show();
                 spbli07.setError("This data is Required!");    // Set Error on last radio button
                 Log.i(TAG, "spbli07: This data is Required!");
@@ -1248,32 +1248,32 @@ public class SectionIActivity extends Activity {
         if (spbli014a.isChecked()) {
 
             //        spbli015
-            if (!spbli01599.isChecked() && !spbli01597.isChecked() && spbli015.getText().toString().isEmpty()) {
+            if (!spbli01599.isChecked() && !spbli01555.isChecked() && spbli015d.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.spbli15), Toast.LENGTH_SHORT).show();
-                spbli015.setError("This data is Required!");    // Set Error on last radio button
+                spbli015d.setError("This data is Required!");    // Set Error on last radio button
                 Log.i(TAG, "spbli015: This data is Required!");
-                spbli015.requestFocus();
+                spbli015d.requestFocus();
                 return false;
             } else {
-                spbli015.setError(null);
+                spbli015d.setError(null);
             }
 
 
             //        spbli015
-            if (!spbli015.getText().toString().isEmpty() && Integer.valueOf(spbli015.getText().toString()) < 0 ||
-                    !spbli015.getText().toString().isEmpty() && Integer.valueOf(spbli015.getText().toString()) > 30) {
+            if (!spbli015d.getText().toString().isEmpty() && Integer.valueOf(spbli015d.getText().toString()) < 0 ||
+                    !spbli015d.getText().toString().isEmpty() && Integer.valueOf(spbli015d.getText().toString()) > 30) {
                 Toast.makeText(this, "Range must be 0 - 30", Toast.LENGTH_SHORT).show();
-                spbli015.setError("Range must be 0 - 30");    // Set Error on last radio button
-                Log.i(TAG, "spbli015: Range must be 0 - 30");
-                spbli015.requestFocus();
+                spbli015d.setError("Range must be 0 - 30");    // Set Error on last radio button
+                Log.i(TAG, "spbli015d: Range must be 0 - 30");
+                spbli015d.requestFocus();
                 return false;
             } else {
-                spbli015.setError(null);
+                spbli015d.setError(null);
             }
 
 
             //        spbli015m
-            if (!spbli01599.isChecked() && !spbli01597.isChecked() && spbli015m.getText().toString().isEmpty()) {
+            if (!spbli01599.isChecked() && !spbli01555.isChecked() && spbli015m.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.spbli15), Toast.LENGTH_SHORT).show();
                 spbli015m.setError("This data is Required!");    // Set Error on last radio button
                 Log.i(TAG, "spbli015m: This data is Required!");
@@ -1399,18 +1399,18 @@ public class SectionIActivity extends Activity {
             //        spbli021
             if (spbli021.getCheckedRadioButtonId() == -1) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.spbli21), Toast.LENGTH_SHORT).show();
-                spbli021a.setError("This data is Required!");    // Set Error on last radio button
+                spbli021card.setError("This data is Required!");    // Set Error on last radio button
                 Log.i(TAG, "spbli021a: This data is Required!");
-                spbli021a.setFocusable(true);
-                spbli021a.setFocusableInTouchMode(true);
-                spbli021a.requestFocus();
+                spbli021card.setFocusable(true);
+                spbli021card.setFocusableInTouchMode(true);
+                spbli021card.requestFocus();
                 return false;
             } else {
-                spbli021a.setError(null);
+                spbli021card.setError(null);
             }
 
 
-            if (spbli021a.isChecked()) {
+            if (spbli021card.isChecked()) {
                 //        spbli021a1
                 if (spbli021a1.getText().toString().isEmpty()) {
                     Toast.makeText(this, "ERROR(empty): " + getString(R.string.spbli21a), Toast.LENGTH_SHORT).show();
@@ -1435,7 +1435,7 @@ public class SectionIActivity extends Activity {
                 }
 
 
-            } else if (spbli021b.isChecked()) {
+            } else if (spbli021recall.isChecked()) {
 
                 //        spbli021a2
                 if (spbli021a2.getText().toString().isEmpty()) {
@@ -1565,78 +1565,78 @@ public class SectionIActivity extends Activity {
         if (spbli026h.isChecked()) {
 
             //        spbli026hr
-            if (spbli026hr.getText().toString().isEmpty()) {
+            if (spbli026hx.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.spbli26a), Toast.LENGTH_SHORT).show();
-                spbli026hr.setError("This data is Required!");    // Set Error on last radio button
+                spbli026hx.setError("This data is Required!");    // Set Error on last radio button
                 Log.i(TAG, "spbli026hr: This data is Required!");
-                spbli026hr.requestFocus();
+                spbli026hx.requestFocus();
                 return false;
             } else {
-                spbli026hr.setError(null);
+                spbli026hx.setError(null);
             }
 
 
             //        spbli026hr
-            if (Integer.valueOf(spbli026hr.getText().toString()) > 23) {
+            if (Integer.valueOf(spbli026hx.getText().toString()) > 23) {
                 Toast.makeText(this, "Range must be 0 - 23", Toast.LENGTH_SHORT).show();
-                spbli026hr.setError("Range must be 0 - 23");    // Set Error on last radio button
+                spbli026hx.setError("Range must be 0 - 23");    // Set Error on last radio button
                 Log.i(TAG, "spbli026hr: Range must be 0 - 23");
-                spbli026hr.requestFocus();
+                spbli026hx.requestFocus();
                 return false;
             } else {
-                spbli026hr.setError(null);
+                spbli026hx.setError(null);
             }
 
 
         } else if (spbli026d.isChecked()) {
 
             //        spbli026day
-            if (spbli026day.getText().toString().isEmpty()) {
+            if (spbli026dx.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.spbli26b), Toast.LENGTH_SHORT).show();
-                spbli026day.setError("This data is Required!");    // Set Error on last radio button
+                spbli026dx.setError("This data is Required!");    // Set Error on last radio button
                 Log.i(TAG, "spbli026day: This data is Required!");
-                spbli026day.requestFocus();
+                spbli026dx.requestFocus();
                 return false;
             } else {
-                spbli026day.setError(null);
+                spbli026dx.setError(null);
             }
 
 
             //        spbli026day
-            if (Integer.valueOf(spbli026day.getText().toString()) < 1 || Integer.valueOf(spbli026day.getText().toString()) > 6) {
+            if (Integer.valueOf(spbli026dx.getText().toString()) < 1 || Integer.valueOf(spbli026dx.getText().toString()) > 6) {
                 Toast.makeText(this, "Range must be 1 - 6", Toast.LENGTH_SHORT).show();
-                spbli026day.setError("Range must be 1 - 6");    // Set Error on last radio button
+                spbli026dx.setError("Range must be 1 - 6");    // Set Error on last radio button
                 Log.i(TAG, "spbli026day: Range must be 1 - 6");
-                spbli026day.requestFocus();
+                spbli026dx.requestFocus();
                 return false;
             } else {
-                spbli026day.setError(null);
+                spbli026dx.setError(null);
             }
 
 
         } else if (spbli026w.isChecked()) {
 
             //        spbli026wk
-            if (spbli026wk.getText().toString().isEmpty()) {
+            if (spbli026wx.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.spbli26c), Toast.LENGTH_SHORT).show();
-                spbli026wk.setError("This data is Required!");    // Set Error on last radio button
+                spbli026wx.setError("This data is Required!");    // Set Error on last radio button
                 Log.i(TAG, "spbli026wk: This data is Required!");
-                spbli026wk.requestFocus();
+                spbli026wx.requestFocus();
                 return false;
             } else {
-                spbli026wk.setError(null);
+                spbli026wx.setError(null);
             }
 
             //        spbli026wk
-            if (spbli026wk.getText().toString().isEmpty() && (Integer.valueOf(spbli026wk.getText().toString()) < 1
-                    || Integer.valueOf(spbli026wk.getText().toString()) > 14)) {
+            if (spbli026wx.getText().toString().isEmpty() && (Integer.valueOf(spbli026wx.getText().toString()) < 1
+                    || Integer.valueOf(spbli026wx.getText().toString()) > 14)) {
                 Toast.makeText(this, "Range is 1 to 14 weeks", Toast.LENGTH_SHORT).show();
-                spbli026wk.setError("Range is 1 to 14 weeks");    // Set Error on last radio button
+                spbli026wx.setError("Range is 1 to 14 weeks");    // Set Error on last radio button
                 Log.i(TAG, "spbli026wk: Range is 1 to 14 weeks");
-                spbli026wk.requestFocus();
+                spbli026wx.requestFocus();
                 return false;
             } else {
-                spbli026wk.setError(null);
+                spbli026wx.setError(null);
             }
         }
 
@@ -1711,8 +1711,7 @@ public class SectionIActivity extends Activity {
         sHI.put("spbli02", spbli02.getText().toString());
 
         sHI.put("spbli03", spbli03a.isChecked() ? "1" : spbli03b.isChecked() ? "2"
-                : spbli03c.isChecked() ? "3"
-                : "0");
+                : spbli0399.isChecked() ? "99" : "0");
 
         sHI.put("spbli04a", spbli04a.isChecked() ? "1" : "0");
         sHI.put("spbli04b", spbli04b.isChecked() ? "2" : "0");
@@ -1734,8 +1733,9 @@ public class SectionIActivity extends Activity {
 
         sHI.put("spbli0588x", spbli0588x.getText().toString());
 
-        sHI.put("spbli06", spbli06.getText().toString());
-        sHI.put("spbli07", spbli07.getText().toString());
+
+        sHI.put("spbli06", spbli0699.isChecked() ? "99" : spbli06.getText().toString());
+        sHI.put("spbli07", spbli0799.isChecked() ? "99" : spbli07.getText().toString());
 
         sHI.put("spbli08a", spbli08a.isChecked() ? "1" : "0");
         sHI.put("spbli08b", spbli08b.isChecked() ? "2" : "0");
@@ -1751,14 +1751,14 @@ public class SectionIActivity extends Activity {
                 : spbli0999.isChecked() ? "99"
                 : "0");
 
-        sHI.put("spbli010", spbli010.getText().toString());
+        sHI.put("spbli010", spbli01099.isChecked() ? "99" : spbli010.getText().toString());
 
 
         sHI.put("spbli011", spbli011a.isChecked() ? "1" : spbli011b.isChecked() ? "2"
                 : spbli01199.isChecked() ? "99"
                 : "0");
 
-        sHI.put("spbli012", spbli012.getText().toString());
+        sHI.put("spbli012", spbli01299.isChecked() ? "99" : spbli012.getText().toString());
         sHI.put("spbli013", spbli013.getText().toString());
 
 
@@ -1766,8 +1766,10 @@ public class SectionIActivity extends Activity {
                 : spbli01499.isChecked() ? "99"
                 : "0");
 
-        sHI.put("spbli015d", spbli015.getText().toString());
+        sHI.put("spbli015d", spbli015d.getText().toString());
         sHI.put("spbli015m", spbli015m.getText().toString());
+        sHI.put("spbli01555", spbli01555.isChecked() ? "55" : "0");
+        sHI.put("spbli01599", spbli01599.isChecked() ? "99" : "0");
 
 
         sHI.put("spbli016", spbli016a.isChecked() ? "1" : spbli016b.isChecked() ? "2"
@@ -1808,7 +1810,7 @@ public class SectionIActivity extends Activity {
                 : "0");
 
 
-        sHI.put("spbli021", spbli021a.isChecked() ? "1" : spbli021b.isChecked() ? "2" : spbli021b.isChecked() ? "99"
+        sHI.put("spbli021", spbli021card.isChecked() ? "1" : spbli021recall.isChecked() ? "2" : spbli02199.isChecked() ? "99"
                 : "0");
 
 
@@ -1853,9 +1855,9 @@ public class SectionIActivity extends Activity {
                 : spbli26n.isChecked() ? "66"
                 : "0");
 
-        sHI.put("spbli026hr", spbli026hr.getText().toString());
-        sHI.put("spbli026day", spbli026day.getText().toString());
-        sHI.put("spbli026wk", spbli026wk.getText().toString());
+        sHI.put("spbli026hx", spbli026hx.getText().toString());
+        sHI.put("spbli026dx", spbli026dx.getText().toString());
+        sHI.put("spbli026wx", spbli026wx.getText().toString());
 
         sHI.put("spbli027", spbli027a.isChecked() ? "1" : spbli027b.isChecked() ? "2"
                 : spbli027c.isChecked() ? "3"

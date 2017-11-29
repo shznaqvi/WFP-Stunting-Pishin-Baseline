@@ -441,7 +441,7 @@ public class SectionAActivity extends Activity {
         sInfo.put("village_code", String.valueOf(MainApp.villageCode));
         sInfo.put("lhw_code", String.valueOf(MainApp.lhwCode));
         sInfo.put("resp_name", respname.getText().toString());
-        sInfo.put("resp_age", respage.getText());
+        sInfo.put("resp_age", respage.getText().toString());
         sInfo.put("resp_edu", respedua.isChecked() ? "1" : respedub.isChecked() ? "2" : respeduc.isChecked() ? "3"
                 : respedud.isChecked() ? "4" : respedue.isChecked() ? "5" : respeduf.isChecked() ? "6" : respedug.isChecked() ? "7"
                 : respedu66.isChecked() ? "66" : "0");
