@@ -32,10 +32,10 @@ public class SectionDActivity extends Activity {
     RadioGroup spbld01;
     @BindView(R.id.spbld01a)
     RadioButton spbld01a;
+    @BindView(R.id.spbld01b)
+    RadioButton spbld01b;
     @BindView(R.id.spbld01c)
     RadioButton spbld01c;
-    @BindView(R.id.spbld01d)
-    RadioButton spbld01d;
     @BindView(R.id.spbld0188)
     RadioButton spbld0188;
     @BindView(R.id.spbld0188x)
@@ -399,9 +399,8 @@ public class SectionDActivity extends Activity {
 
         JSONObject sd = new JSONObject();
 
-        sd.put("spbld01", spbld01a.isChecked() ? "1" : spbld01c.isChecked() ? "3"
-                : spbld01d.isChecked() ? "4"
-                : "0");
+        sd.put("spbld01", spbld01a.isChecked() ? "1" : spbld01b.isChecked() ? "2"
+                : spbld01c.isChecked() ? "3" : spbld0188.isChecked() ? "88" : "0");
         sd.put("spbld0188x", spbld0188x.getText().toString());
 
         sd.put("spbld02", spbld02a.isChecked() ? "1" : spbld02b.isChecked() ? "2" : "0");

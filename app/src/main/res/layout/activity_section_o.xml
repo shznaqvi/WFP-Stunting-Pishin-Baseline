@@ -224,7 +224,7 @@
                 android:text="@string/spblo06" />
 
             <EditText
-                android:id="@+id/spblo06a"
+                android:id="@+id/spblo06d"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
@@ -233,7 +233,7 @@
                 android:maxLength="2"/>
 
             <EditText
-                android:id="@+id/spblo06b"
+                android:id="@+id/spblo06m"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
@@ -242,7 +242,7 @@
                 android:maxLength="2"/>
 
             <CheckBox
-                android:id="@+id/spblo06c"
+                android:id="@+id/spblo0655"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/spblo06c" />
@@ -377,7 +377,7 @@
                 android:text="@string/spblo09" />
 
             <EditText
-                android:id="@+id/spblo09a"
+                android:id="@+id/spblo09d"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/spblo09a"
@@ -385,7 +385,7 @@
                 android:maxLength="2" />
 
             <EditText
-                android:id="@+id/spblo09b"
+                android:id="@+id/spblo09m"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/spblo09b"
@@ -494,7 +494,7 @@
                 android:text="@string/spblo12" />
 
             <EditText
-                android:id="@+id/spblo12a"
+                android:id="@+id/spblo12"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
