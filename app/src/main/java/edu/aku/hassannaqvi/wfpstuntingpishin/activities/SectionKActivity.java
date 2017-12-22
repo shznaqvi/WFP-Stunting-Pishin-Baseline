@@ -388,17 +388,20 @@ public class SectionKActivity extends AppCompatActivity implements RadioGroup.On
     @BindViews({R.id.spblk1301a, R.id.spblk1302a, R.id.spblk1303a, R.id.spblk1304a, R.id.spblk1305a, R.id.spblk1306a,
             R.id.spblk1307a, R.id.spblk1308a, R.id.spblk1309a, R.id.spblk1401a, R.id.spblk1402a, R.id.spblk1403a,
             R.id.spblk1404a, R.id.spblk1405a, R.id.spblk1406a, R.id.spblk1407a, R.id.spblk1408a, R.id.spblk1409a,
-            R.id.spblk1410a, R.id.spblk1411a, R.id.spblk1412a, R.id.spblk1413a, R.id.spblk1414a, R.id.spblk1415a, R.id.spblk1416a})
+            R.id.spblk1410a, R.id.spblk1411a, R.id.spblk1412a, R.id.spblk1413a, R.id.spblk1414a, R.id.spblk1415a,
+            R.id.spblk1416a})
     List<RadioButton> spblk14a;
 
     @BindViews({R.id.spblk1301b, R.id.spblk1302b, R.id.spblk1303b, R.id.spblk1304b, R.id.spblk1305b, R.id.spblk1306b,
-            R.id.spblk1307b, R.id.spblk1308b, R.id.spblk1309b, R.id.spblk1401b, R.id.spblk1402b, R.id.spblk1403b, R.id.spblk1404b, R.id.spblk1405b, R.id.spblk1406b,
+            R.id.spblk1307b, R.id.spblk1308b, R.id.spblk1309b, R.id.spblk1401b, R.id.spblk1402b, R.id.spblk1403b,
+            R.id.spblk1404b, R.id.spblk1405b, R.id.spblk1406b,
             R.id.spblk1407b, R.id.spblk1408b, R.id.spblk1409b, R.id.spblk1410b, R.id.spblk1411b, R.id.spblk1412b,
             R.id.spblk1413b, R.id.spblk1414b, R.id.spblk1415b, R.id.spblk1416b})
     List<RadioButton> spblk14b;
 
     @BindViews({R.id.spblk130199, R.id.spblk130299, R.id.spblk130399, R.id.spblk130499, R.id.spblk130599, R.id.spblk130699,
-            R.id.spblk130799, R.id.spblk130899, R.id.spblk130999, R.id.spblk140199, R.id.spblk140299, R.id.spblk140399, R.id.spblk140499, R.id.spblk140599, R.id.spblk140699,
+            R.id.spblk130799, R.id.spblk130899, R.id.spblk130999, R.id.spblk140199, R.id.spblk140299,
+            R.id.spblk140399, R.id.spblk140499, R.id.spblk140599, R.id.spblk140699,
             R.id.spblk140799, R.id.spblk140899, R.id.spblk140999, R.id.spblk141099, R.id.spblk141199, R.id.spblk141299,
             R.id.spblk141399, R.id.spblk141499, R.id.spblk141599, R.id.spblk141699})
     List<RadioButton> spblk1499;

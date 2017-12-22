@@ -335,6 +335,8 @@ public class SectionIActivity extends Activity {
     EditText spbli02888x;
     @BindView(R.id.fldGrpbtn)
     LinearLayout fldGrpbtn;
+    @BindView(R.id.fldGrpspbli27)
+    LinearLayout fldGrpspbli27;
 
 
     @Override
@@ -848,6 +850,22 @@ public class SectionIActivity extends Activity {
                     spbli019b.setEnabled(true);
                     spbli019c.setEnabled(true);
                     spbli019d.setEnabled(true);
+                }
+            }
+        });
+
+        spbli26n.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
+        {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (b) {
+                    fldGrpspbli27.setVisibility(View.GONE);
+                    spbli027.clearCheck();
+                    spbli02788x.setText(null);
+                    spbli028.clearCheck();
+                    spbli02888x.setText(null);
+                } else {
+                    fldGrpspbli27.setVisibility(View.VISIBLE);
                 }
             }
         });
@@ -1640,55 +1658,58 @@ public class SectionIActivity extends Activity {
             }
         }
 
-        //        spbli027
-        if (spbli027.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spbli27), Toast.LENGTH_SHORT).show();
-            spbli027a.setError("This data is Required!");    // Set Error on last radio button
-            Log.i(TAG, "spbli027a: This data is Required!");
-            spbli027a.setFocusable(true);
-            spbli027a.setFocusableInTouchMode(true);
-            spbli027a.requestFocus();
-            return false;
-        } else {
-            spbli027a.setError(null);
-        }
+        if (!spbli26n.isChecked()) {
+
+            //        spbli027
+            if (spbli027.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.spbli27), Toast.LENGTH_SHORT).show();
+                spbli027a.setError("This data is Required!");    // Set Error on last radio button
+                Log.i(TAG, "spbli027a: This data is Required!");
+                spbli027a.setFocusable(true);
+                spbli027a.setFocusableInTouchMode(true);
+                spbli027a.requestFocus();
+                return false;
+            } else {
+                spbli027a.setError(null);
+            }
 
 
-        //        spbli02788x
-        if (spbli02788.isChecked() && spbli02788x.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_SHORT).show();
-            spbli02788x.setError("This data is Required!");    // Set Error on last radio button
-            Log.i(TAG, "spbli02788x: This data is Required!");
-            spbli02788x.requestFocus();
-            return false;
-        } else {
-            spbli02788x.setError(null);
-        }
+            //        spbli02788x
+            if (spbli02788.isChecked() && spbli02788x.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_SHORT).show();
+                spbli02788x.setError("This data is Required!");    // Set Error on last radio button
+                Log.i(TAG, "spbli02788x: This data is Required!");
+                spbli02788x.requestFocus();
+                return false;
+            } else {
+                spbli02788x.setError(null);
+            }
 
 
-        //        spbli028
-        if (spbli028.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.spbli28), Toast.LENGTH_SHORT).show();
-            spbli028a.setError("This data is Required!");    // Set Error on last radio button
-            Log.i(TAG, "spbli028a: This data is Required!");
-            spbli028a.setFocusable(true);
-            spbli028a.setFocusableInTouchMode(true);
-            spbli028a.requestFocus();
-            return false;
-        } else {
-            spbli028a.setError(null);
-        }
+            //        spbli028
+            if (spbli028.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.spbli28), Toast.LENGTH_SHORT).show();
+                spbli028a.setError("This data is Required!");    // Set Error on last radio button
+                Log.i(TAG, "spbli028a: This data is Required!");
+                spbli028a.setFocusable(true);
+                spbli028a.setFocusableInTouchMode(true);
+                spbli028a.requestFocus();
+                return false;
+            } else {
+                spbli028a.setError(null);
+            }
 
 
-        //        spbli02888x
-        if (spbli02888.isChecked() && spbli02888x.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_SHORT).show();
-            spbli02888x.setError("This data is Required!");    // Set Error on last radio button
-            Log.i(TAG, "spbli02888x: This data is Required!");
-            spbli02888x.requestFocus();
-            return false;
-        } else {
-            spbli02888x.setError(null);
+            //        spbli02888x
+            if (spbli02888.isChecked() && spbli02888x.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_SHORT).show();
+                spbli02888x.setError("This data is Required!");    // Set Error on last radio button
+                Log.i(TAG, "spbli02888x: This data is Required!");
+                spbli02888x.requestFocus();
+                return false;
+            } else {
+                spbli02888x.setError(null);
+            }
         }
 
 

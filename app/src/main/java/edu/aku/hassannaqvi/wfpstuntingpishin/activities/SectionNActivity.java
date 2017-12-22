@@ -71,6 +71,7 @@ public class SectionNActivity extends Activity {
             spin.setAdapter(new ArrayAdapter<>(this,android.R.layout.simple_spinner_dropdown_item, Arrays.asList(users)));
         }
 
+
     }
 
     @OnClick(R.id.btn_Continue)
