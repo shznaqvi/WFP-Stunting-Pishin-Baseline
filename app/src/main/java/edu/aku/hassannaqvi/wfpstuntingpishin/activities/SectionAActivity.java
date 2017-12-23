@@ -233,10 +233,10 @@ public class SectionAActivity extends Activity {
         respedu.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                if (i == R.id.respedu66){
+                if (i == R.id.respedu66) {
                     respoccb.setChecked(false);
                     respoccb.setEnabled(false);
-                }else {
+                } else {
                     respoccb.setEnabled(true);
                 }
             }
@@ -450,6 +450,9 @@ public class SectionAActivity extends Activity {
                 : respoccd.isChecked() ? "4" : respocce.isChecked() ? "5" : respoccf.isChecked() ? "6"
                 : respoccg.isChecked() ? "7" : respocch.isChecked() ? "8" : respocci.isChecked() ? "9"
                 : respoccj.isChecked() ? "10" : "0");
+
+
+        sInfo.put("spbla04", spbla04.getText().toString());
         sInfo.put("spbla05", spbla05a.isChecked() ? "1" : spbla05b.isChecked() ? "2" : spbla05c.isChecked() ? "3" : "0");
         sInfo.put("spbla06a", spbla06a.isChecked() ? "1" : "0");
         sInfo.put("spbla06b", spbla06b.isChecked() ? "2" : "0");
