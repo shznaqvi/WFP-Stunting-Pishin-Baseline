@@ -248,7 +248,7 @@
                     android:digits="0123456789."
                     android:hint="@string/spblj05"
                     android:inputType="numberDecimal"
-                    android:maxLength="4"
+                    android:maxLength="5"
                     android:padding="10dp" />
 
             </LinearLayout>
@@ -285,7 +285,7 @@
                     android:digits="0123456789."
                     android:hint="@string/spblj05"
                     android:inputType="numberDecimal"
-                    android:maxLength="4"
+                    android:maxLength="5"
                     android:padding="10dp" />
 
             </LinearLayout>
