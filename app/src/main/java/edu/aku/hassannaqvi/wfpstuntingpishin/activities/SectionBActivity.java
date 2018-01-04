@@ -404,7 +404,7 @@ public class SectionBActivity extends Activity {
         }
 
         if (flag) {
-            if (spblb03.getSelectedItem() == "....") {
+            if (spblb03.getSelectedItemPosition() == 0) {
                 Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spblb03), Toast.LENGTH_SHORT).show();
                 ((TextView) spblb03.getSelectedView()).setText("This Data is Required");
                 ((TextView) spblb03.getSelectedView()).setTextColor(Color.RED);

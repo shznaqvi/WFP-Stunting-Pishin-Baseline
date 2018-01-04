@@ -310,7 +310,7 @@ public class MainApp extends Application {
 
         int age = Integer.parseInt(y) * 12 + Integer.parseInt(m) + (Integer.parseInt(d) / 29);
 
-        age = age < 6 ? 1 : age >= 6 && age < 23 ? 2 : age >= 24 && age < 59 ? 3 : 0;
+        age = age < 6 ? 1 : age >= 6 && age < 24 ? 2 : age >= 24 && age < 60 ? 3 : 0;
 
         return age;
 
