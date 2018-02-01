@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -26,8 +25,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="30dp"
-            android:orientation="vertical"
-            android:layoutDirection="rtl">
+            android:layoutDirection="rtl"
+            android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -167,6 +166,7 @@
                         android:hint="@string/spbla07mw"
                         android:inputType="number"
                         android:maxLength="2" />
+
 
                 </LinearLayout>
 
@@ -496,8 +496,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/addMember"
                 android:enabled="true"
+                android:text="@string/addMember"
                 android:textColor="#1ed61e" />
 
             <Button
@@ -505,8 +505,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/nextSection"
                 android:enabled="false"
+                android:text="@string/nextSection"
                 android:textColor="#ff1e1e" />
 
             <Button
