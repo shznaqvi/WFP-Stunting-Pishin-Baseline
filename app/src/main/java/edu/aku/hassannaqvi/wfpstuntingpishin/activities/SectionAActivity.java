@@ -159,6 +159,10 @@ public class SectionAActivity extends Activity {
     Button btn_Continue;
     @BindView(R.id.btn_End)
     Button btn_End;
+    @BindView(R.id.spbla0388)
+    CheckBox spbla0388;
+    @BindView(R.id.spbla0388x)
+    EditText spbla0388x;
 
     ArrayList<String> lablesTehsil;
     Collection<TehsilContract> TehsilList;
@@ -439,6 +443,8 @@ public class SectionAActivity extends Activity {
         sInfo.put("tehsil_code", String.valueOf(MainApp.tehsilCode));
         sInfo.put("uc_code", String.valueOf(MainApp.ucCode));
         sInfo.put("village_code", String.valueOf(MainApp.villageCode));
+        sInfo.put("spbla0388", spbla0388.isChecked() ? "1" : "0");
+        sInfo.put("spbla0388x", spbla0388x.getText().toString());
         sInfo.put("lhw_code", String.valueOf(MainApp.lhwCode));
         sInfo.put("resp_name", respname.getText().toString());
         sInfo.put("resp_age", respage.getText().toString());
@@ -578,16 +584,31 @@ public class SectionAActivity extends Activity {
             ((TextView) spUCs.getSelectedView()).setError(null);
         }
 
-        if (spbla03.getSelectedItemPosition() == 0) {
-            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spbla03), Toast.LENGTH_SHORT).show();
-            ((TextView) spbla03.getSelectedView()).setText("This Data is Required");
-            ((TextView) spbla03.getSelectedView()).setTextColor(Color.RED);
-            spbla03.requestFocus();
-            Log.i(TAG, "spbla03: This Data is Required!");
-            return false;
+        if (spbla0388.isChecked()) {
+            if (spbla0388x.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.spbla03) + " - " + getString(R.string.other), Toast.LENGTH_SHORT).show();
+                spbla0388x.setError("This data is Required!");
+                Log.i(TAG, "spbla03: This data is Required!");
+
+                spbla0388x.requestFocus();
+                return false;
+            } else {
+                spbla0388x.setError(null);
+            }
         } else {
-            ((TextView) spbla03.getSelectedView()).setError(null);
+            if (spbla03.getSelectedItemPosition() == 0) {
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spbla03), Toast.LENGTH_SHORT).show();
+                ((TextView) spbla03.getSelectedView()).setText("This Data is Required");
+                ((TextView) spbla03.getSelectedView()).setTextColor(Color.RED);
+                spbla03.requestFocus();
+                Log.i(TAG, "spbla03: This Data is Required!");
+                return false;
+            } else {
+                ((TextView) spbla03.getSelectedView()).setError(null);
+            }
         }
+
+
 
         if (spbla03b.getSelectedItemPosition() == 0) {
             Toast.makeText(this, "ERROR(Empty)" + getString(R.string.spbla03b), Toast.LENGTH_SHORT).show();

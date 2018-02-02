@@ -91,6 +91,22 @@
             android:background="@color/colorHeading"
             android:popupBackground="#d6d6d6" />
 
+        <CheckBox
+            android:id="@+id/spbla0388"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/other" />
+
+        <EditText
+            android:id="@+id/spbla0388x"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
+            android:hint="@string/spbla03"
+            android:inputType="text"
+            android:maxLength="30" />
+
         <!--03b-->
         <TextView
             android:layout_width="match_parent"
